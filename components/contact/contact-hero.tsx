@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 
 const contactInfo = [
   {
@@ -8,12 +8,6 @@ const contactInfo = [
     label: "Email",
     value: "hello@nobleleads.co.uk",
     href: "mailto:hello@nobleleads.co.uk",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "0800 123 4567",
-    href: "tel:08001234567",
   },
   {
     icon: MapPin,

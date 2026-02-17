@@ -107,24 +107,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col gap-4 border-t border-border/50 py-6 sm:py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-muted-foreground order-2 sm:order-1">
+        <div className="border-t border-border/50 py-6 sm:py-8">
+          <p className="text-xs text-muted-foreground">
             {"© 2026 Noble Leads. All rights reserved. United Kingdom."}
           </p>
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 order-1 sm:order-2">
-            <Link
-              href="/contact"
-              className="min-touch inline-flex py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/contact"
-              className="min-touch inline-flex py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
