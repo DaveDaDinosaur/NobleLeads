@@ -72,8 +72,8 @@ export function WhoWeServe() {
         </SectionReveal>
 
         {/* Looping carousel */}
-        <div className="mt-10 sm:mt-14 relative">
-          <div className="overflow-hidden mask-fade-both">
+        <div className="mt-10 sm:mt-14 relative w-full min-w-0">
+          <div className="w-full min-w-0 overflow-hidden mask-fade-both">
             <div className="flex w-max gap-4 carousel-scroll-loop">
               {duplicated.map((trade, i) => (
                 <TradeCard key={`${trade.name}-${i}`} icon={trade.icon} name={trade.name} />

@@ -5,12 +5,12 @@ import { PILLARS } from "@/lib/services-data"
 
 export function ServicesPillarOverview() {
   return (
-    <section className="relative py-12 sm:py-14 lg:py-16 overflow-hidden">
+    <section className="relative py-12 sm:py-14 lg:py-16 overflow-hidden w-full min-w-0">
       {/* Subtle background */}
       <div className="absolute inset-0 bg-muted/15" aria-hidden />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" aria-hidden />
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full min-w-0 px-4 sm:px-6 lg:px-8">
         <SectionReveal>
           <div className="text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-4 py-1.5 text-xs font-medium text-muted-foreground">
