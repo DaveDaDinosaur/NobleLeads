@@ -2,10 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizePackageImports: [
-      "lucide-react",
-      "recharts",
-    ],
+    optimizePackageImports: ["lucide-react"],
   },
   typescript: {
     ignoreBuildErrors: true,
