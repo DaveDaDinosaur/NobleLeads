@@ -1,6 +1,10 @@
 "use client"
 
+import { useRef, useEffect, useState } from "react"
 import { Mail, MapPin, Phone } from "lucide-react"
+import { useMouseParallax } from "@/hooks/use-mouse-parallax"
+
+const PARALLAX_FACTOR = 24
 
 const contactInfo = [
   {
@@ -24,12 +28,81 @@ const contactInfo = [
 ]
 
 export function ContactHero() {
-  return (
-    <section className="relative pt-28 sm:pt-32 pb-10 lg:pt-40 lg:pb-16 overflow-hidden">
-      <div className="absolute inset-0 bg-background" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full bg-navy-500/8 blur-[120px]" />
+  const mouse = useMouseParallax()
+  const sectionRef = useRef<HTMLElement>(null)
+  const [orbsVisible, setOrbsVisible] = useState(true)
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => setOrbsVisible(e.isIntersecting),
+      { threshold: 0.1, rootMargin: "0px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <>
+      {/* Fixed orbs — same as about/services, hidden when hero is out of view */}
+      <div
+        className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-500"
+        style={{ opacity: orbsVisible ? 1 : 0 }}
+        aria-hidden
+      >
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 about-orb-parallax-wrapper">
+          <div
+            className="absolute -top-20 -right-20 w-[560px] h-[560px] transition-transform duration-300 ease-out [transform-style:preserve-3d]"
+            style={{
+              transform: `translate(${mouse.x * PARALLAX_FACTOR}px, ${mouse.y * PARALLAX_FACTOR * 0.7}px)`,
+            }}
+          >
+            <div
+              className="about-hero-orb w-full h-full rounded-full blur-[100px]"
+              style={{
+                background: "radial-gradient(circle, hsl(215 52% 35% / 0.5) 0%, transparent 70%)",
+              }}
+            />
+          </div>
+          <div
+            className="absolute bottom-1/5 -left-20 w-[440px] h-[440px] transition-transform duration-300 ease-out [transform-style:preserve-3d]"
+            style={{
+              transform: `translate(${mouse.x * -PARALLAX_FACTOR * 0.8}px, ${mouse.y * -PARALLAX_FACTOR * 0.6}px)`,
+            }}
+          >
+            <div
+              className="about-hero-orb w-full h-full rounded-full blur-[95px]"
+              style={{
+                animationDelay: "-7s",
+                background: "radial-gradient(circle, hsl(42 45% 60% / 0.4) 0%, transparent 70%)",
+              }}
+            />
+          </div>
+          <div
+            className="absolute top-1/2 left-1/2 w-[360px] h-[360px] transition-transform duration-300 ease-out [transform-style:preserve-3d]"
+            style={{
+              transform: `translate(calc(-50% + ${mouse.x * PARALLAX_FACTOR * 0.5}px), calc(-50% + ${mouse.y * PARALLAX_FACTOR * 0.5}px))`,
+            }}
+          >
+            <div
+              className="about-hero-orb w-full h-full rounded-full blur-[85px]"
+              style={{
+                animationDelay: "-14s",
+                background: "radial-gradient(circle, hsl(215 40% 30% / 0.35) 0%, transparent 70%)",
+              }}
+            />
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />
+      </div>
+
+      <section
+        ref={sectionRef}
+        className="relative pt-28 sm:pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden z-10"
+      >
+        <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
             Get in Touch
@@ -74,5 +147,6 @@ export function ContactHero() {
         </div>
       </div>
     </section>
+    </>
   )
 }
