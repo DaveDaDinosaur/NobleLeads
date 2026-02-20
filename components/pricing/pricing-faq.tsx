@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "What’s included in the monthly management?",
-    a: "Hosting, updates, security, and keeping everything running. For Growth and Dominate we also manage your ads, adjust campaigns, and run your follow-up sequences. You get a clear view of what’s happening without having to do it yourself.",
+    a: "Monthly management covers hosting, technical upkeep, performance monitoring, and ongoing improvements. For Growth and Dominate clients, it also includes active ad management and optimisation to keep enquiries consistent and cost-effective. We manage the system so it continues to perform - not just sit online.",
   },
   {
     q: "Can I upgrade later?",
@@ -31,11 +31,11 @@ const FAQ = [
   },
   {
     q: "What if I already have a website?",
-    a: "We can work with what you have — improve it, add the enquiry system and tracking, or rebuild if it’s holding you back. The strategy call is where we decide the best path.",
+    a: "We can work with what you have, improve it, add the enquiry system and tracking, or rebuild if it’s holding you back. The strategy call is where we decide the best path.",
   },
   {
     q: "How much should I spend on ads?",
-    a: "It depends on your trade, area and competition. We’ll recommend a sensible starting budget on the strategy call and adjust as we see what works. No guesswork — we track everything.",
+    a: "It depends on your trade, area and competition. We’ll recommend a sensible starting budget on the strategy call and adjust as we see what works. No guesswork: everything is tracked and optimised.",
   },
   {
     q: "Will this work in my area?",
