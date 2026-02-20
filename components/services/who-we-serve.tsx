@@ -50,7 +50,7 @@ export function WhoWeServe() {
   const duplicated = [...trades, ...trades]
 
   return (
-    <section className="relative py-14 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="relative py-14 sm:py-20 lg:py-24 overflow-hidden w-full">
       <div className="absolute inset-0 bg-muted/20" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -64,24 +64,26 @@ export function WhoWeServe() {
               <span className="text-secondary">property services.</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-              We don&apos;t work with everyone. We specialise in UK property
-              service businesses because we understand the market, the
-              clients, and the revenue model.
+              We specialise in UK property service businesses. We understand the
+              market, your clients and how you get paid—so the system we build
+              fits how you work.
             </p>
           </div>
         </SectionReveal>
+      </div>
 
-        {/* Looping carousel */}
-        <div className="mt-10 sm:mt-14 relative w-full min-w-0">
-          <div className="w-full min-w-0 overflow-hidden mask-fade-both">
-            <div className="flex w-max gap-4 carousel-scroll-loop">
-              {duplicated.map((trade, i) => (
-                <TradeCard key={`${trade.name}-${i}`} icon={trade.icon} name={trade.name} />
-              ))}
-            </div>
+      {/* Looping carousel — edge to edge */}
+      <div className="mt-10 sm:mt-14 relative w-full min-w-0">
+        <div className="w-full min-w-0 overflow-hidden mask-fade-both">
+          <div className="flex w-max gap-4 carousel-scroll-loop">
+            {duplicated.map((trade, i) => (
+              <TradeCard key={`${trade.name}-${i}`} icon={trade.icon} name={trade.name} />
+            ))}
           </div>
         </div>
+      </div>
 
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionReveal delay={200}>
           <div className="mt-12 sm:mt-14 rounded-xl border border-border/30 bg-card/30 p-6 sm:p-8 text-center">
             <p className="text-sm text-muted-foreground">

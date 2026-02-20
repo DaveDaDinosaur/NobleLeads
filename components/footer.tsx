@@ -6,6 +6,7 @@ const footerLinks = {
   navigation: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
@@ -39,13 +40,13 @@ export function Footer() {
                 </span>
               </Link>
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                Growth systems for UK property service businesses. We build the
-                infrastructure that turns your reputation into a predictable
-                stream of qualified enquiries.
+                We build enquiry and conversion systems for UK trade businesses.
+                Your reputation, properly positioned—so you get a consistent flow
+                of qualified leads.
               </p>
               <div className="mt-6 flex items-center gap-2 text-sm text-secondary font-medium">
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                Accepting new partners
+                Accepting new clients
               </div>
             </div>
 
@@ -90,10 +91,10 @@ export function Footer() {
             {/* CTA */}
             <div className="lg:col-span-3">
               <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                Ready to grow?
+                Ready for consistent enquiries?
               </h4>
               <p className="mt-5 text-sm text-foreground/70 leading-relaxed">
-                One conversation could change the trajectory of your business.
+                One strategy call can clarify your next steps.
               </p>
               <Link
                 href="/contact"

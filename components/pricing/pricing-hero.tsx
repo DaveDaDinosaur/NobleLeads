@@ -7,7 +7,7 @@ import { useMouseParallax } from "@/hooks/use-mouse-parallax"
 
 const PARALLAX_FACTOR = 24
 
-export function AboutHero() {
+export function PricingHero() {
   const mouse = useMouseParallax()
   const sectionRef = useRef<HTMLElement>(null)
   const [orbsVisible, setOrbsVisible] = useState(true)
@@ -25,7 +25,6 @@ export function AboutHero() {
 
   return (
     <>
-      {/* Fixed orbs — stay in place while scrolling, hidden when hero is out of view */}
       <div
         className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-500"
         style={{ opacity: orbsVisible ? 1 : 0 }}
@@ -80,48 +79,26 @@ export function AboutHero() {
 
       <section
         ref={sectionRef}
-        className="relative pt-28 sm:pt-32 pb-16 lg:pt-36 lg:pb-20 overflow-hidden z-10"
+        className="relative pt-28 sm:pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden z-10"
       >
         <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p
-              className="text-xs font-semibold uppercase tracking-widest text-secondary animate-fade-in-up"
-              style={{ animationDelay: "150ms", animationFillMode: "both" }}
-            >
-              About Us
-            </p>
-            <h1
-              className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-[1.15] animate-fade-in-up"
-              style={{ animationDelay: "300ms", animationFillMode: "both" }}
-            >
-              We Build Systems That Deliver Consistent Enquiries for Established Trade Businesses.
+            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-[1.15]">
+              Growth Systems Built For Trade Businesses
             </h1>
-            <div
-              className="mt-4 space-y-3 text-base sm:text-lg leading-relaxed text-muted-foreground animate-fade-in-up"
-              style={{ animationDelay: "450ms", animationFillMode: "both" }}
-            >
-              <p>
-                Most trade businesses don&apos;t have a skill problem—they have a
-                predictability problem. Strong work and solid reputations, but
-                inconsistent lead flow and heavy reliance on referrals.
-              </p>
-              <p className="text-foreground/90 font-medium">
-                We build the system that fixes that.
-              </p>
-            </div>
-            <div
-              className="mt-7 animate-fade-in-up"
-              style={{ animationDelay: "600ms", animationFillMode: "both" }}
-            >
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
+              Clear pricing. Proper setup. Ongoing management. Designed to bring in consistent enquiries.
+            </p>
+            <div className="mt-7 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
                 href="/contact"
-                className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
+                className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
               >
-                Book a Strategy Call
+                Book A Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
-              <p className="mt-2.5 text-xs text-muted-foreground">
-                Free call · No obligation
+              <p className="text-sm text-muted-foreground">
+                Pick the level that fits where your business is now.
               </p>
             </div>
           </div>

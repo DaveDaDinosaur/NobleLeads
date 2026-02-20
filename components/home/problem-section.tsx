@@ -59,9 +59,9 @@ export function ProblemSection() {
                 </span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground max-w-lg">
-                Most property service businesses we work with have the same
-                problem: incredible work, proven results, loyal clients, but
-                zero systems to consistently attract new ones.
+                Most trade businesses we work with share the same gap: strong work,
+                proven results, loyal clients—but no system to consistently attract
+                new enquiries.
               </p>
             </div>
           </SectionReveal>

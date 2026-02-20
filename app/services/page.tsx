@@ -39,8 +39,8 @@ export default function ServicesPage() {
           <ServicesROI />
           <ServicesFAQ />
         </div>
+        <WhoWeServe />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <WhoWeServe />
           <ServicesCTA />
         </div>
       </div>

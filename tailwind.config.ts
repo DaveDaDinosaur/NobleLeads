@@ -1,12 +1,16 @@
 import type { Config } from 'tailwindcss'
+import path from 'path'
+
+// Use cwd so Tailwind resolves content from project root (where next dev is run)
+const root = process.cwd()
 
 const config: Config = {
   darkMode: ['class'],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    '*.{js,ts,jsx,tsx,mdx}',
+    path.join(root, 'pages/**/*.{js,ts,jsx,tsx,mdx}'),
+    path.join(root, 'components/**/*.{js,ts,jsx,tsx,mdx}'),
+    path.join(root, 'app/**/*.{js,ts,jsx,tsx,mdx}'),
+    path.join(root, '*.{js,ts,jsx,tsx,mdx}'),
   ],
   theme: {
     extend: {

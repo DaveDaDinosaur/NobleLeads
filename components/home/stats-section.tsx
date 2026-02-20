@@ -7,26 +7,26 @@ const stats = [
   {
     value: 150,
     suffix: "+",
-    label: "Qualified Leads Generated Monthly",
-    description: "Across all client accounts",
+    label: "Qualified Leads Per Month",
+    description: "Across client accounts",
   },
   {
     value: 340,
     suffix: "%",
-    label: "Avg. Enquiry Increase",
+    label: "Average Enquiry Increase",
     description: "Within first 90 days",
   },
   {
     value: 24,
     suffix: "/7",
-    label: "Automated Lead Capture",
-    description: "No missed opportunities",
+    label: "Lead Capture",
+    description: "Enquiries captured round the clock",
   },
   {
     value: 4,
     suffix: ".8x",
     label: "Return on Investment",
-    description: "Average across all clients",
+    description: "Average across clients",
   },
 ]
 

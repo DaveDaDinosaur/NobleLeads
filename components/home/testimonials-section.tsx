@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     quote:
-      "They didn't just build us a website. They built us an entire lead generation machine. We've secured 3 new commercial contracts worth over 45k in the first quarter alone.",
+      "They didn't just build us a website. They built a proper system for enquiries and follow-up. We've secured three new commercial contracts worth over £45k in the first quarter alone.",
     name: "Sarah Mitchell",
     role: "Owner, Mitchell Fire & Security",
     result: "+45k in Q1",

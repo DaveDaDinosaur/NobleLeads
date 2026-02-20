@@ -64,10 +64,9 @@ export function HeroSection() {
             className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl animate-fade-in-up px-1"
             style={{ animationDelay: "600ms" }}
           >
-            We install automated lead generation and conversion systems that
-            turn your property service business into a predictable revenue
-            engine. No guesswork. No wasted spend. Just qualified enquiries,
-            consistently.
+            We build systems that generate qualified enquiries and consistent lead flow
+            for trade businesses. No guesswork. No wasted spend. You get visibility and
+            follow-up that converts.
           </p>
 
           {/* CTA buttons */}

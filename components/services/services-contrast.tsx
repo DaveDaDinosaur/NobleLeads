@@ -30,7 +30,7 @@ export function ServicesContrast() {
             {/* Left: Without */}
             <div className="bg-muted/40 backdrop-blur-sm p-8 sm:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-border/50">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-                Without Infrastructure
+                Without a proper system
               </h3>
               <ul className="mt-6 space-y-3">
                 {WITHOUT.map((item) => (

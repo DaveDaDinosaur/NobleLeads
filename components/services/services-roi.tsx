@@ -29,13 +29,13 @@ export function ServicesROI() {
             </div>
           </div>
           <p className="mt-8 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            This isn&apos;t marketing spend. It&apos;s growth infrastructure.
+            This isn&apos;t discretionary marketing. It&apos;s infrastructure that pays back in enquiries and jobs.
           </p>
           <Link
             href="/contact"
             className="mt-8 min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
           >
-            Let&apos;s Map This For Your Business
+            Map this to your business
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </SectionReveal>

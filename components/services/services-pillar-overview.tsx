@@ -18,10 +18,10 @@ export function ServicesPillarOverview() {
               6 pillars · 18 integrated services
             </p>
             <h2 className="mt-4 text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
-              The six pillars of your growth journey
+              Six pillars. One system.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-              Click any pillar to jump to the details below.
+              Click any pillar to see what&apos;s included.
             </p>
           </div>
         </SectionReveal>

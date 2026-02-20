@@ -52,7 +52,7 @@ export function CTASection() {
                 </Link>
               </div>
               <p className="mt-4 sm:mt-5 text-xs sm:text-sm text-muted-foreground/60">
-                No obligation. No hard sell. Just a conversation about growth.
+                No obligation. A straightforward conversation about your growth.
               </p>
             </div>
 

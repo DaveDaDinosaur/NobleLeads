@@ -15,7 +15,7 @@ const FAQ = [
   },
   {
     q: "Is this a contract?",
-    a: "We’re not interested in locking you in. We offer clear scope and flexible terms. Many clients start with one pillar and expand as they see results.",
+    a: "We’re not interested in locking you in. We offer clear scope and flexible terms. Many clients start with one part of the system and expand as they see results.",
   },
   {
     q: "How long does it take?",
@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: "Who is this for?",
-    a: "UK property service businesses that want predictable enquiries—commercial cleaners, fire & security, electrical, facilities, roofing, plumbing, landscaping and related trades. If you have strong reviews and ambition to grow, we want to talk.",
+    a: "UK trade businesses that want consistent enquiries—commercial cleaners, fire & security, electrical, facilities, roofing, plumbing, landscaping and related trades. If you have strong reviews and want to grow without relying on word of mouth, we want to talk.",
   },
 ]
 

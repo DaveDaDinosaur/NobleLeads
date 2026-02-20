@@ -91,13 +91,13 @@ export function ServicesHero() {
               What we build for you
             </h1>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
-              Integrated infrastructure: more enquiries, faster follow-up, stronger authority and contract-ready positioning.
+              One system: more enquiries, faster follow-up, stronger positioning and contract-ready credibility.
             </p>
             <ul className="mt-5 space-y-2">
               {[
                 "More inbound enquiries",
                 "Faster follow-up",
-                "Stronger authority & contract-ready positioning",
+                "Stronger credibility and contract-ready positioning",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-sm text-foreground/90">
                   <Check className="h-4 w-4 text-secondary flex-shrink-0" />

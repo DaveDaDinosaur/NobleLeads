@@ -16,39 +16,39 @@ import Link from "next/link"
 const systemParts = [
   {
     icon: Globe,
-    title: "High-Converting Website",
+    title: "Conversion-Focused Website",
     description:
-      "Not a brochure. A conversion engine built to turn visitors into phone calls and form submissions.",
+      "Built to turn visitors into phone calls and form submissions. Not a brochure—a tool that brings in enquiries.",
   },
   {
     icon: Target,
-    title: "Targeted Advertising",
+    title: "Paid Lead Generation",
     description:
-      "Google Ads targeting high-intent commercial keywords. Every penny tracked, every lead measured.",
+      "Ads aimed at prospects actively looking for your services. Every lead tracked and measured.",
   },
   {
     icon: Bot,
-    title: "AI Enquiry Capture",
+    title: "Round-the-Clock Capture",
     description:
-      "An intelligent chatbot that qualifies and captures leads 24/7. No missed opportunities.",
+      "Enquiries captured and qualified even when you're on the tools. Fewer missed calls and lost leads.",
   },
   {
     icon: MessageSquare,
     title: "Automated Follow-Up",
     description:
-      "SMS and email sequences that nurture every lead automatically. Instant responses. Zero manual effort.",
+      "SMS and email sequences that follow up every lead automatically. Fast response without the manual chase.",
   },
   {
     icon: PhoneCall,
     title: "Call Tracking",
     description:
-      "Know exactly which leads came from where. Track every call, every form, every conversion.",
+      "See which leads came from where. Track every call, form and conversion so you know what's working.",
   },
   {
     icon: BarChart3,
-    title: "Performance Dashboard",
+    title: "Clear Pipeline Visibility",
     description:
-      "Real-time visibility into your lead pipeline. Cost per lead, conversion rates, ROI. Complete clarity.",
+      "A clear view of your leads, conversion and ROI. No black box—you see what you're getting.",
   },
 ]
 
@@ -70,9 +70,9 @@ export function SolutionSection() {
                 <span className="text-secondary">Every lead converted.</span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                We don{"'"}t sell websites, ads, or marketing packages. We install a
-                complete commercial enquiry acquisition system that works while
-                you work.
+                We don{"'"}t sell one-off websites or ad campaigns. We build a single
+                system that captures enquiries, follows up automatically and gives you
+                clear visibility—so you can focus on the work.
               </p>
             </div>
           </SectionReveal>
@@ -112,7 +112,7 @@ export function SolutionSection() {
               href="/services"
               className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg border border-secondary/30 bg-secondary/5 px-6 py-3.5 text-sm font-semibold text-secondary backdrop-blur-sm transition-all duration-300 hover:bg-secondary/10 hover:border-secondary/50 active:scale-[0.98]"
             >
-              See full service breakdown
+              See how it works
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

@@ -112,9 +112,8 @@ export function ContactHero() {
             <span className="text-secondary">growth system.</span>
           </h1>
           <p className="mt-4 sm:mt-6 max-w-lg text-sm sm:text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Book a strategy call and we{"'"}ll walk through your current lead flow,
-            identify the gaps, and map out exactly how to create predictable
-            revenue for your business.
+            Book a strategy call. We{"'"}ll review your current lead flow, identify
+            gaps and show you how to get to consistent enquiries.
           </p>
         </div>
 
