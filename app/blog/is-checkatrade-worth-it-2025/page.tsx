@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
+import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema, getFAQPageSchema, type FAQItem } from "../../(shared)/schema"
 
@@ -393,26 +394,10 @@ export default function IsCheckatradeWorthIt2025Page() {
           </SectionReveal>
 
           <SectionReveal delay={240}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Quick FAQs About Checkatrade in 2025
-              </h2>
-              <div className="mt-4 space-y-4">
-                {faqItems.map((item) => (
-                  <div
-                    key={item.question}
-                    className="rounded-xl border border-border/40 bg-card/40 p-5 sm:p-6"
-                  >
-                    <h3 className="text-sm sm:text-base font-semibold text-foreground">
-                      {item.question}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                      {item.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            <FAQAccordionSection
+              title="Quick FAQs About Checkatrade in 2025"
+              items={faqItems}
+            />
           </SectionReveal>
         </div>
       </article>

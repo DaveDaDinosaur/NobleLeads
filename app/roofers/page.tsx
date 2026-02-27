@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
+import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
@@ -276,9 +277,6 @@ export default function RoofersPage() {
                 booking 8–12 extra enquiries per month and closed two additional
                 full re-roofs—enough to comfortably pay for the system and reinvest.”
               </p>
-              <p className="text-xs text-muted-foreground/80">
-                [CLIENT TESTIMONIAL — ADD WHEN AVAILABLE]
-              </p>
             </section>
           </SectionReveal>
 
@@ -321,26 +319,7 @@ export default function RoofersPage() {
 
           {/* Section 7: FAQ */}
           <SectionReveal delay={180}>
-            <section className="mt-10 space-y-5">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Questions From Roofers Like You
-              </h2>
-              <div className="mt-4 space-y-4">
-                {faqItems.map((item) => (
-                  <div
-                    key={item.question}
-                    className="rounded-xl border border-border/40 bg-card/40 p-5 sm:p-6"
-                  >
-                    <h3 className="text-sm sm:text-base font-semibold text-foreground">
-                      {item.question}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                      {item.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            <FAQAccordionSection title="Questions From Roofers Like You" items={faqItems} />
           </SectionReveal>
 
           {/* Section 8: Final CTA */}
