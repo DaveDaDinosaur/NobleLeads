@@ -1,5 +1,11 @@
 import { SectionReveal } from "@/components/section-reveal"
 import type { FAQItem } from "@/app/(shared)/schema"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export const homepageFAQs: FAQItem[] = [
   {
@@ -54,19 +60,28 @@ export function HomeFAQSection({ items = homepageFAQs }: HomeFAQSectionProps) {
             </p>
           </div>
         </SectionReveal>
-        <div className="mt-8 sm:mt-10 grid grid-cols-1 gap-4 sm:gap-5">
-          {items.map((item) => (
-            <SectionReveal key={item.question} direction="up" delay={40}>
-              <div className="rounded-xl border border-border/40 bg-card/40 p-5 sm:p-6">
-                <h3 className="text-sm sm:text-base font-semibold text-foreground">
-                  {item.question}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {item.answer}
-                </p>
-              </div>
-            </SectionReveal>
-          ))}
+        <div className="mt-8 sm:mt-10">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full space-y-3"
+          >
+            {items.map((item, index) => (
+              <SectionReveal key={item.question} direction="up" delay={40}>
+                <AccordionItem
+                  value={`faq-${index}`}
+                  className="border border-border/40 bg-card/40 rounded-xl px-4 sm:px-5"
+                >
+                  <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-foreground hover:no-underline">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm leading-relaxed text-muted-foreground pb-4 sm:pb-5">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </SectionReveal>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>

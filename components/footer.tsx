@@ -11,12 +11,20 @@ const footerLinks = {
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
+  trades: [
+    { label: "Window Cleaners", href: "/window-cleaners" },
+    { label: "Roofers", href: "/roofers" },
+    { label: "Landscapers", href: "/landscaping-marketing" },
+    { label: "Driveway Contractors", href: "/driveway-contractors" },
+  ],
   services: [
     { label: "Website Design for Trades", href: "/website-design-for-trades" },
     { label: "Google Ads for Trades", href: "/google-ads-for-trades" },
     { label: "CRM & Automation", href: "/crm-automation" },
-    { label: "Window Cleaner Marketing", href: "/window-cleaners" },
-    { label: "Roofer Marketing", href: "/roofers" },
+  ],
+  legal: [
+    { label: "Privacy policy", href: "/privacy-policy" },
+    { label: "Sitemap", href: "/sitemap.xml" },
   ],
 }
 
@@ -53,12 +61,31 @@ export function Footer() {
             </div>
 
             {/* Navigation */}
-            <div className="lg:col-span-2 lg:col-start-7">
+            <div className="lg:col-span-2 lg:col-start-6">
               <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 Navigation
               </h4>
               <ul className="mt-5 flex flex-col gap-1">
                 {footerLinks.navigation.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="min-touch inline-flex py-2 text-sm text-foreground/70 transition-colors hover:text-secondary active:text-secondary"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Trades */}
+            <div className="lg:col-span-2">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                Trades we work with
+              </h4>
+              <ul className="mt-5 flex flex-col gap-1">
+                {footerLinks.trades.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
@@ -111,9 +138,22 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-border/50 py-6 sm:py-8">
-          <p className="text-xs text-muted-foreground">
-            {"© 2026 Noble Leads. All rights reserved. United Kingdom."}
-          </p>
+          <div className="flex flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              {"© 2026 Noble Leads. All rights reserved. United Kingdom."}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {footerLinks.legal.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="min-touch text-xs text-muted-foreground hover:text-secondary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

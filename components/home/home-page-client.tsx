@@ -28,10 +28,6 @@ const StatsSection = dynamic(
   () => import("@/components/home/stats-section").then((mod) => ({ default: mod.StatsSection })),
   { ssr: true }
 )
-const TimelineSection = dynamic(
-  () => import("@/components/home/timeline-section").then((mod) => ({ default: mod.TimelineSection })),
-  { ssr: true }
-)
 const TestimonialsSection = dynamic(
   () =>
     import("@/components/home/testimonials-section").then((mod) => ({
@@ -108,7 +104,6 @@ export function HomePageClient() {
           <TradeGridSection />
           <HomePricingSection />
           <StatsSection />
-          <TimelineSection />
           <TestimonialsSection />
           <HomeFAQSection />
           <CTASection />
