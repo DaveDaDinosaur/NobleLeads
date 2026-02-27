@@ -47,6 +47,7 @@ const MobileCTABar = dynamic(
 export function HomePageClient() {
   const lastScrollY = useRef(0)
   const scrollVelocity = useRef(0)
+  const scrollProgress = useRef(0)
   const scrollStateRef = useRef<typeof import("@/components/hero-scene").scrollState | null>(null)
   const [heroActivated, setHeroActivated] = useState(false)
   const [showHeroScene, setShowHeroScene] = useState(false)
@@ -93,34 +94,38 @@ export function HomePageClient() {
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY
     const docHeight = document.documentElement.scrollHeight - window.innerHeight
-    const progress = Math.min(scrollY / Math.max(docHeight, 1), 1)
+    const rawProgress = Math.min(scrollY / Math.max(docHeight, 1), 1)
+    // Smooth progress to avoid jittery camera/orb movement
+    const current = scrollProgress.current
+    const smoothed = current + (rawProgress - current) * 0.18
+    scrollProgress.current = smoothed
+
     scrollVelocity.current = (scrollY - lastScrollY.current) * 0.01
     lastScrollY.current = scrollY
 
     if (scrollStateRef.current) {
-      scrollStateRef.current.progress = progress
+      scrollStateRef.current.progress = smoothed
       scrollStateRef.current.velocity = scrollVelocity.current
       return
     }
 
-    import("@/components/hero-scene").then((mod) => {
-      scrollStateRef.current = mod.scrollState
-      mod.scrollState.progress = progress
-      mod.scrollState.velocity = scrollVelocity.current
-    })
-  }, [])
+    if (!heroActivated) return
+
+    import("@/components/hero-scene")
+      .then((mod) => {
+        scrollStateRef.current = mod.scrollState
+        mod.scrollState.progress = smoothed
+        mod.scrollState.velocity = scrollVelocity.current
+      })
+      .catch(() => {
+        // ignore dynamic import errors on scroll
+      })
+  }, [heroActivated])
 
   useEffect(() => {
-    let raf: number
-    const tick = () => {
-      scrollVelocity.current *= 0.92
-      raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
       window.removeEventListener("scroll", handleScroll)
-      cancelAnimationFrame(raf)
     }
   }, [handleScroll])
 
@@ -133,7 +138,8 @@ export function HomePageClient() {
         <Navigation />
         <HeroSection />
         <SocialProofBar />
-        <div className="relative -mt-2 bg-background/90 backdrop-blur-sm sm:-mt-4">
+        {/* Slightly translucent section background so 3D globes can show through edges */}
+        <div className="relative -mt-2 bg-background/80 sm:-mt-4">
           <ProblemSection />
 
           {/* Divider pulse */}

@@ -41,7 +41,7 @@ export function TradeGridSection() {
               <SectionReveal key={trade.href} direction="scale" delay={50}>
                 <Link
                   href={trade.href}
-                  className="group flex h-full flex-col justify-between rounded-xl border border-border/40 bg-card/40 p-5 sm:p-6 text-left transition-all duration-300 hover:border-secondary/40 hover:bg-card/70 hover:shadow-lg hover:shadow-secondary/10"
+                  className="group flex h-full flex-col justify-between rounded-xl border border-border/40 bg-card p-5 sm:p-6 text-left transition-all duration-300 hover:border-secondary/40 hover:bg-card hover:shadow-lg hover:shadow-secondary/10"
                 >
                   <div>
                     <div className="inline-flex items-center gap-3">

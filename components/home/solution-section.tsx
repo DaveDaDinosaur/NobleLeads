@@ -76,7 +76,7 @@ export function SolutionSection() {
               </p>
 
               <ol className="mt-6 grid gap-4 text-left sm:grid-cols-3 sm:gap-6" aria-label="The three parts of the NobleLeads system">
-                <li className="relative rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6 backdrop-blur-sm">
+                <li className="relative rounded-xl border border-border/40 bg-card p-5 sm:p-6">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/40 text-xs font-semibold tabular-nums text-secondary border border-border/30">
                     1
                   </span>
@@ -87,7 +87,7 @@ export function SolutionSection() {
                     Your trade site built to turn visitors into enquiries.
                   </p>
                 </li>
-                <li className="relative rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6 backdrop-blur-sm">
+                <li className="relative rounded-xl border border-border/40 bg-card p-5 sm:p-6">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/40 text-xs font-semibold tabular-nums text-secondary border border-border/30">
                     2
                   </span>
@@ -98,7 +98,7 @@ export function SolutionSection() {
                     Google Ads and local SEO putting you in front of people actively searching.
                   </p>
                 </li>
-                <li className="relative rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6 backdrop-blur-sm">
+                <li className="relative rounded-xl border border-border/40 bg-card p-5 sm:p-6">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/40 text-xs font-semibold tabular-nums text-secondary border border-border/30">
                     3
                   </span>
@@ -142,7 +142,7 @@ export function SolutionSection() {
         <div className="mt-10 sm:mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {systemParts.map((part, i) => (
             <SectionReveal key={part.title} delay={i * 100} direction="scale">
-              <div className="group relative rounded-xl border border-border/40 bg-card/30 p-6 sm:p-8 backdrop-blur-sm transition-all duration-500 hover:border-secondary/30 hover:bg-card/60 h-full">
+              <div className="group relative rounded-xl border border-border/40 bg-card p-6 sm:p-8 transition-all duration-500 hover:border-secondary/30 hover:bg-card h-full">
                 {/* Number + icon row */}
                 <div className="flex items-center gap-4">
                   <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/40 border border-border/30 transition-all duration-300 group-hover:bg-primary/60 group-hover:border-secondary/30">

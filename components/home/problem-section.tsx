@@ -74,7 +74,7 @@ export function ProblemSection() {
               delay={i * 120}
               direction={i % 2 === 0 ? "left" : "right"}
             >
-              <div className="group relative rounded-xl border border-border/40 bg-card/30 p-6 sm:p-8 lg:p-10 backdrop-blur-sm transition-all duration-500 hover:border-secondary/30 hover:bg-card/60 overflow-hidden">
+              <div className="group relative rounded-xl border border-border/40 bg-card p-6 sm:p-8 lg:p-10 transition-all duration-500 hover:border-secondary/30 hover:bg-card overflow-hidden">
                 {/* Hover glow */}
                 <div className="absolute inset-0 bg-secondary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
