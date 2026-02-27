@@ -240,13 +240,13 @@ export default function IsCheckatradeWorthIt2025Page() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  A conversion-ready{" "}
-                  <Link
-                    href="/website-design-for-trades"
-                    className="font-semibold text-secondary hover:underline"
-                  >
-                    website built for trades
-                  </Link>{" "}
+                A conversion-ready{" "}
+                <Link
+                  href="/services"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  website built for trades
+                </Link>{" "}
                   that makes it easy to call, book and trust you.
                 </li>
                 <li>

@@ -171,7 +171,7 @@ export default function RoofersPage() {
               <p>
                 We build{" "}
                 <Link
-                  href="/website-design-for-trades"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   conversion-focused trade websites
@@ -186,7 +186,7 @@ export default function RoofersPage() {
               <p>
                 Roofing is one of the strongest fits for{" "}
                 <Link
-                  href="/google-ads-for-trades"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   Google Ads for trades
@@ -210,7 +210,7 @@ export default function RoofersPage() {
               <p>
                 With{" "}
                 <Link
-                  href="/crm-automation"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   CRM &amp; automation for trades

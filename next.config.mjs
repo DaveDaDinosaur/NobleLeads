@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: [
+      "lucide-react",
+      "@react-three/fiber",
+      "@react-three/drei",
+    ],
   },
   images: {
     formats: ["image/avif", "image/webp"],

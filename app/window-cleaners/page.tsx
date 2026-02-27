@@ -179,7 +179,7 @@ export default function WindowCleanersPage() {
                 Most window cleaning websites are digital business cards. Ours are
                 built as{" "}
                 <Link
-                  href="/website-design-for-trades"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   conversion-ready trade websites
@@ -192,9 +192,9 @@ export default function WindowCleanersPage() {
                 Step 2 — Traffic That Targets Your Rounds
               </p>
               <p>
-                A good site is useless if no one sees it. We run local SEO and{" "}
+                A good site is useless if no one sees it.                 We run local SEO and{" "}
                 <Link
-                  href="/google-ads-for-trades"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   Google Ads campaigns for window cleaners
@@ -208,9 +208,9 @@ export default function WindowCleanersPage() {
               </p>
               <p>
                 Most window cleaners lose work simply because they{"'"}re up a ladder
-                when the phone rings. With{" "}
+                when the phone rings.                 With{" "}
                 <Link
-                  href="/crm-automation"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   CRM &amp; automation for trades

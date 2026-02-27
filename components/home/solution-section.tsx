@@ -94,21 +94,21 @@ export function SolutionSection() {
               <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                 Learn more about each part of the system:{" "}
                 <Link
-                  href="/website-design-for-trades"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   website design for trades
                 </Link>
                 ,{" "}
                 <Link
-                  href="/google-ads-for-trades"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   Google Ads for trades
                 </Link>{" "}
                 and{" "}
                 <Link
-                  href="/crm-automation"
+                  href="/services"
                   className="font-semibold text-secondary hover:underline"
                 >
                   CRM &amp; automation for trades
