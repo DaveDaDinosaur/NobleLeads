@@ -11,17 +11,14 @@ import { WhoWeServe } from "@/components/services/who-we-serve"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 
 import type { Metadata } from "next"
+import { buildMetadata } from "../(shared)/seo-config"
 
-export const metadata: Metadata = {
-  title: "Services",
+export const metadata: Metadata = buildMetadata({
+  title: "Marketing Services for UK Trades",
   description:
-    "Conversion websites, SEO, CRM, lead alerts, booking, automation and tender-ready infrastructure for UK property service businesses.",
-  openGraph: {
-    title: "Services | Noble Leads",
-    description:
-      "Conversion websites, SEO, CRM, lead alerts, booking, automation and tender-ready infrastructure for UK property service businesses.",
-  },
-}
+    "Conversion websites, SEO, Google Ads, CRM automation and tender-ready infrastructure for UK property service businesses across the UK.",
+  canonicalPath: "/services",
+})
 
 export default function ServicesPage() {
   return (

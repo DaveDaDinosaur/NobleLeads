@@ -9,17 +9,14 @@ import { AboutCTA } from "@/components/about/about-cta"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 
 import type { Metadata } from "next"
+import { buildMetadata } from "../(shared)/seo-config"
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = buildMetadata({
+  title: "About NobleLeads",
   description:
-    "UK performance partner for property service businesses. We build predictable revenue systems — not just websites.",
-  openGraph: {
-    title: "About | Noble Leads",
-    description:
-      "UK performance partner for property service businesses. We build predictable revenue systems — not just websites.",
-  },
-}
+    "UK performance partner for property service trades. We build predictable revenue systems for cleaners, roofers, landscapers and more — not just websites.",
+  canonicalPath: "/about",
+})
 
 export default function AboutPage() {
   return (

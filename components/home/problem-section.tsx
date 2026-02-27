@@ -53,9 +53,9 @@ export function ProblemSection() {
                 The Reality
               </span>
               <h2 className="mt-6 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-5xl">
-                Your reputation is strong.{" "}
+                You{"'"}re Great at Your Trade.{" "}
                 <span className="text-muted-foreground">
-                  Your lead flow isn{"'"}t.
+                  Getting Clients Shouldn{"'"}t Be This Hard.
                 </span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground max-w-lg">

@@ -66,13 +66,54 @@ export function SolutionSection() {
                 The System
               </span>
               <h2 className="mt-6 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-5xl text-balance">
-                One system. Every enquiry captured.{" "}
-                <span className="text-secondary">Every lead converted.</span>
+                The NobleLeads Growth System
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                We don{"'"}t sell one-off websites or ad campaigns. We build a single
-                system that captures enquiries, follows up automatically and gives you
-                clear visibility—so you can focus on the work.
+                We don{"'"}t sell one-off websites or ad campaigns. We build a
+                three-part system: a website that converts, paid traffic that targets
+                your area, and automation that follows up every lead—so you can focus
+                on the work.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                Step 1:{" "}
+                <span className="font-medium text-foreground">
+                  Conversion website
+                </span>{" "}
+                – your trade site built to turn visitors into enquiries. Step 2:{" "}
+                <span className="font-medium text-foreground">
+                  Targeted traffic
+                </span>{" "}
+                – Google Ads and local SEO putting you in front of people actively
+                searching. Step 3:{" "}
+                <span className="font-medium text-foreground">
+                  Automation
+                </span>{" "}
+                – CRM, missed call text-back and follow-up that closes more of the
+                leads you{"'"}re already getting.
+              </p>
+              <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                Learn more about each part of the system:{" "}
+                <Link
+                  href="/website-design-for-trades"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  website design for trades
+                </Link>
+                ,{" "}
+                <Link
+                  href="/google-ads-for-trades"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Google Ads for trades
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/crm-automation"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  CRM &amp; automation for trades
+                </Link>
+                .
               </p>
             </div>
           </SectionReveal>

@@ -52,21 +52,21 @@ export function HeroSection() {
             className="mt-6 sm:mt-8 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-[1.08] animate-fade-in-up"
             style={{ animationDelay: "400ms" }}
           >
-            {"Stop Waiting for "}
-            <span className="text-secondary">Referrals.</span>
+            More Leads. More Jobs.
             <br />
-            <span className="text-foreground/80">{"Start Generating "}</span>
-            <span className="text-secondary">Enquiries.</span>
+            <span className="text-secondary">More Revenue.</span>
+            <br />
+            <span className="text-foreground/80">For UK Trades.</span>
           </h1>
 
           {/* Subheading */}
           <p
-            className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl animate-fade-in-up px-1"
+            className="mt-4 sm:mt-6 max-w-2xl px-1 text-sm leading-relaxed text-muted-foreground sm:text-base sm:text-lg lg:text-xl animate-fade-in-up"
             style={{ animationDelay: "600ms" }}
           >
-            We build systems that generate qualified enquiries and consistent lead flow
-            for trade businesses. No guesswork. No wasted spend. You get visibility and
-            follow-up that converts.
+            We{"'"}re a marketing agency for tradesmen in the UK that builds the systems
+            turning your trade skills into consistent enquiries. No Checkatrade
+            dependency. No Bark fees. Just a lead machine you own.
           </p>
 
           {/* CTA buttons */}
@@ -78,7 +78,7 @@ export function HeroSection() {
               href="/contact"
               className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-4 sm:px-8 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Book Your Strategy Call
+              Book Your Free Strategy Call
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" />
             </Link>
             <Link

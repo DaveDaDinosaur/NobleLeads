@@ -10,17 +10,14 @@ import { PricingCTA } from "@/components/pricing/pricing-cta"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 
 import type { Metadata } from "next"
+import { buildMetadata } from "../(shared)/seo-config"
 
-export const metadata: Metadata = {
-  title: "Pricing",
+export const metadata: Metadata = buildMetadata({
+  title: "Pricing for Trade Marketing Systems",
   description:
-    "Clear pricing for trade businesses. Professional websites, lead generation and ongoing management. Built for roofers, electricians, plumbers and builders.",
-  openGraph: {
-    title: "Pricing | Noble Leads",
-    description:
-      "Clear pricing. Proper setup. Ongoing management. Growth systems for UK trade businesses.",
-  },
-}
+    "Clear pricing for UK trade businesses. Professional websites, lead generation and CRM automation, built for roofers, electricians, plumbers and property services.",
+  canonicalPath: "/pricing",
+})
 
 export default function PricingPage() {
   return (

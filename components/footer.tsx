@@ -7,14 +7,16 @@ const footerLinks = {
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Growth Systems", href: "/services" },
-    { label: "Conversion Websites", href: "/services" },
-    { label: "Lead Generation", href: "/services" },
-    { label: "Automation", href: "/services" },
+    { label: "Website Design for Trades", href: "/website-design-for-trades" },
+    { label: "Google Ads for Trades", href: "/google-ads-for-trades" },
+    { label: "CRM & Automation", href: "/crm-automation" },
+    { label: "Window Cleaner Marketing", href: "/window-cleaners" },
+    { label: "Roofer Marketing", href: "/roofers" },
   ],
 }
 

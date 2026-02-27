@@ -4,17 +4,14 @@ import { ContactHero } from "@/components/contact/contact-hero"
 import { BookingEmbed } from "@/components/contact/booking-embed"
 
 import type { Metadata } from "next"
+import { buildMetadata } from "../(shared)/seo-config"
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = buildMetadata({
+  title: "Book a Strategy Call",
   description:
-    "Book a Growth & Enquiry Strategy Call with Noble Leads. A quick look at your online presence and how we can turn it into a consistent enquiry system.",
-  openGraph: {
-    title: "Contact | Noble Leads",
-    description:
-      "Book a Growth & Enquiry Strategy Call. A quick look at your online presence and how we can turn it into a consistent enquiry system.",
-  },
-}
+    "Book a Growth & Enquiry Strategy Call with NobleLeads. We review your online presence and show you how to turn it into a consistent lead system.",
+  canonicalPath: "/contact",
+})
 
 export default function ContactPage() {
   return (
