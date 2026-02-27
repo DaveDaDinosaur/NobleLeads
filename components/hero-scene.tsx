@@ -5,10 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { Float } from "@react-three/drei"
 import * as THREE from "three"
 
-/* ── shared scroll state (written by homepage, read by 3D scene) ── */
-export const scrollState = { progress: 0, velocity: 0 }
-
-/* ── Wireframe orb that floats and distorts on scroll ── */
+/* ── Wireframe orb that floats gently in space ── */
 function WireframeOrb({
   position,
   color,
@@ -32,16 +29,15 @@ function WireframeOrb({
   useFrame((state) => {
     if (!meshRef.current) return
     const t = state.clock.elapsedTime
-    const sp = scrollState.progress
-    const sv = scrollState.velocity
+    const sv = Math.sin(t * 0.4)
 
-    meshRef.current.rotation.x = t * speed * 0.3 + sp * scrollInfluence * 0.6
+    meshRef.current.rotation.x = t * speed * 0.3
     meshRef.current.rotation.z = t * speed * 0.2
-    meshRef.current.position.y = baseY + Math.sin(t * 0.5) * 0.3 - sp * scrollInfluence * 2
-    meshRef.current.scale.setScalar(1 + Math.abs(sv) * 0.4 + Math.sin(t * 0.8) * 0.05)
+    meshRef.current.position.y = baseY + Math.sin(t * floatSpeed * 0.4) * 0.4
+    meshRef.current.scale.setScalar(1 + Math.abs(sv) * 0.25 + Math.sin(t * 0.8) * 0.04)
 
     const mat = meshRef.current.material as THREE.MeshStandardMaterial
-    mat.opacity = THREE.MathUtils.lerp(0.35, 0.12, sp)
+    mat.opacity = 0.28
   })
 
   return (
@@ -78,9 +74,9 @@ function FloatingRing({ radius, tubeRadius, color, rotSpeed, yOffset }: {
     const t = state.clock.elapsedTime
     ref.current.rotation.x = t * rotSpeed
     ref.current.rotation.y = t * rotSpeed * 0.6
-    ref.current.position.y = yOffset + Math.sin(t * 0.4) * 0.5 - scrollState.progress * 3
+    ref.current.position.y = yOffset + Math.sin(t * 0.4) * 0.5
     const mat = ref.current.material as THREE.MeshStandardMaterial
-    mat.opacity = THREE.MathUtils.lerp(0.15, 0.04, scrollState.progress)
+    mat.opacity = 0.12
   })
 
   return (
@@ -104,13 +100,10 @@ function CameraRig() {
 
   useFrame((state) => {
     const t = state.clock.elapsedTime
-    const sp = scrollState.progress
-
     camera.position.x = Math.sin(t * 0.1) * 0.3
-    camera.position.y = 0.5 - sp * 1.6
-    camera.position.z = 7 - sp * 1.2
-
-    camera.lookAt(0, -sp * 1.4, 0)
+    camera.position.y = 0.5 + Math.sin(t * 0.03) * 0.1
+    camera.position.z = 7
+    camera.lookAt(0, 0, 0)
   })
 
   return null

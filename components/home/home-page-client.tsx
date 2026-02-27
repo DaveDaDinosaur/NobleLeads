@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 
 import { Navigation } from "@/components/navigation"
@@ -45,40 +45,10 @@ const MobileCTABar = dynamic(
 )
 
 export function HomePageClient() {
-  const lastScrollY = useRef(0)
-  const scrollVelocity = useRef(0)
-  const scrollProgress = useRef(0)
-  const scrollStateRef = useRef<typeof import("@/components/hero-scene").scrollState | null>(null)
-  const [heroActivated, setHeroActivated] = useState(false)
   const [showHeroScene, setShowHeroScene] = useState(false)
 
   useEffect(() => {
-    // Activate hero immediately on touch / coarse pointer devices (mobile, tablets)
-    const mq = window.matchMedia("(pointer: fine)")
-    if (!mq.matches) {
-      setHeroActivated(true)
-      return
-    }
-
-    // On desktop, only activate once the user interacts (scroll or mouse move)
-    const activate = () => {
-      setHeroActivated(true)
-      window.removeEventListener("scroll", activate)
-      window.removeEventListener("mousemove", activate)
-    }
-
-    window.addEventListener("scroll", activate, { passive: true })
-    window.addEventListener("mousemove", activate)
-
-    return () => {
-      window.removeEventListener("scroll", activate)
-      window.removeEventListener("mousemove", activate)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!heroActivated) return
-
+    // Defer heavy 3D hero until the browser is idle or a short delay has passed
     if ("requestIdleCallback" in window) {
       const id = (window as any).requestIdleCallback(
         () => setShowHeroScene(true),
@@ -89,45 +59,7 @@ export function HomePageClient() {
 
     const t = window.setTimeout(() => setShowHeroScene(true), 1200)
     return () => window.clearTimeout(t)
-  }, [heroActivated])
-
-  const handleScroll = useCallback(() => {
-    const scrollY = window.scrollY
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight
-    const rawProgress = Math.min(scrollY / Math.max(docHeight, 1), 1)
-    // Smooth progress to avoid jittery camera/orb movement
-    const current = scrollProgress.current
-    const smoothed = current + (rawProgress - current) * 0.18
-    scrollProgress.current = smoothed
-
-    scrollVelocity.current = (scrollY - lastScrollY.current) * 0.01
-    lastScrollY.current = scrollY
-
-    if (scrollStateRef.current) {
-      scrollStateRef.current.progress = smoothed
-      scrollStateRef.current.velocity = scrollVelocity.current
-      return
-    }
-
-    if (!heroActivated) return
-
-    import("@/components/hero-scene")
-      .then((mod) => {
-        scrollStateRef.current = mod.scrollState
-        mod.scrollState.progress = smoothed
-        mod.scrollState.velocity = scrollVelocity.current
-      })
-      .catch(() => {
-        // ignore dynamic import errors on scroll
-      })
-  }, [heroActivated])
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [handleScroll])
+  }, [])
 
   return (
     <>
