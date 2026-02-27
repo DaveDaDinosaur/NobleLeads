@@ -1,18 +1,5 @@
 import Link from "next/link"
-import {
-  Sparkles,
-  Droplets,
-  Building2,
-  HardHat,
-  TreePine,
-  Flame,
-  Paintbrush,
-  ShowerHead,
-  Zap,
-  Shield,
-  FileCheck2,
-  FileText,
-} from "lucide-react"
+import { Droplets, HardHat } from "lucide-react"
 
 import { SectionReveal } from "@/components/section-reveal"
 
@@ -24,70 +11,10 @@ const trades = [
     icon: Droplets,
   },
   {
-    name: "House Cleaning Companies",
-    benefit: "Get more regular cleaning contracts",
-    href: "/house-cleaning-companies",
-    icon: Sparkles,
-  },
-  {
-    name: "Commercial Cleaners",
-    benefit: "Win higher-value commercial cleaning work",
-    href: "/commercial-cleaning-marketing",
-    icon: Building2,
-  },
-  {
     name: "Roofers",
     benefit: "Fill your roofing schedule with good jobs",
     href: "/roofers",
     icon: HardHat,
-  },
-  {
-    name: "Landscapers",
-    benefit: "Smooth out the seasonal ups and downs",
-    href: "/landscaping-marketing",
-    icon: TreePine,
-  },
-  {
-    name: "Driveway Contractors",
-    benefit: "Generate more paving and driveway projects",
-    href: "/driveway-contractors",
-    icon: Flame,
-  },
-  {
-    name: "Painters & Decorators",
-    benefit: "Book more interior and exterior projects",
-    href: "/painters-decorators",
-    icon: Paintbrush,
-  },
-  {
-    name: "Pressure Washing",
-    benefit: "Monetise every high-margin exterior clean",
-    href: "/pressure-washing-marketing",
-    icon: ShowerHead,
-  },
-  {
-    name: "Plumbers",
-    benefit: "Be the first plumber prospects call",
-    href: "/plumbing-marketing",
-    icon: Shield,
-  },
-  {
-    name: "Electricians",
-    benefit: "Win more urgent and project work",
-    href: "/electrical-contractors",
-    icon: Zap,
-  },
-  {
-    name: "Facilities Management",
-    benefit: "Position for long-term FM contracts",
-    href: "/facilities-management",
-    icon: FileCheck2,
-  },
-  {
-    name: "Tender Support",
-    benefit: "Get tender-ready and win bigger work",
-    href: "/tender-services",
-    icon: FileText,
   },
 ]
 

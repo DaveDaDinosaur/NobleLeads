@@ -14,16 +14,12 @@ const footerLinks = {
   trades: [
     { label: "Window Cleaners", href: "/window-cleaners" },
     { label: "Roofers", href: "/roofers" },
-    { label: "Landscapers", href: "/landscaping-marketing" },
-    { label: "Driveway Contractors", href: "/driveway-contractors" },
   ],
   services: [
-    { label: "Website Design for Trades", href: "/website-design-for-trades" },
-    { label: "Google Ads for Trades", href: "/google-ads-for-trades" },
-    { label: "CRM & Automation", href: "/crm-automation" },
+    { label: "Services overview", href: "/services" },
+    { label: "Pricing", href: "/pricing" },
   ],
   legal: [
-    { label: "Privacy policy", href: "/privacy-policy" },
     { label: "Sitemap", href: "/sitemap.xml" },
   ],
 }
