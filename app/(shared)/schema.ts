@@ -12,7 +12,7 @@ export function getLocalBusinessSchema() {
     "@type": "LocalBusiness",
     name: BUSINESS_NAME,
     url: BUSINESS_URL,
-    telephone: "[INSERT PHONE]",
+    telephone: "+441223679988",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cambridge",

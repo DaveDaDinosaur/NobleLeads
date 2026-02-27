@@ -194,13 +194,10 @@ export default function RoofersPage() {
                 . People rarely browse for fun—they search because they have a leak, a
                 storm-damaged roof or a planned re-roof. We target those searches in
                 your chosen areas and send people straight to your own landing pages,
-                not a directory listing. For a deeper dive into the numbers, see our
-                article{" "}
-                <Link
-                  href="/blog/google-ads-cost-roofers-uk"
-                  className="font-semibold text-secondary hover:underline"
-                >
-                  how much Google Ads cost for roofers in the UK
+                not a directory listing. For a deeper dive into paid traffic, explore
+                the articles on our{" "}
+                <Link href="/blog" className="font-semibold text-secondary hover:underline">
+                  trade marketing blog
                 </Link>
                 .
               </p>

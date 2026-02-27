@@ -9,9 +9,11 @@ import { ServicesFAQ } from "@/components/services/services-faq"
 import { ServicesCTA } from "@/components/services/services-cta"
 import { WhoWeServe } from "@/components/services/who-we-serve"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
+import { JsonLd } from "@/components/json-ld"
 
 import type { Metadata } from "next"
 import { buildMetadata } from "../(shared)/seo-config"
+import { getLocalBusinessSchema } from "../(shared)/schema"
 
 export const metadata: Metadata = buildMetadata({
   title: "Marketing Services for UK Trades",
@@ -41,6 +43,7 @@ export default function ServicesPage() {
           <ServicesCTA />
         </div>
       </div>
+      <JsonLd data={getLocalBusinessSchema()} />
       <Footer />
       <MobileCTABar />
     </main>

@@ -74,24 +74,44 @@ export function SolutionSection() {
                 your area, and automation that follows up every lead—so you can focus
                 on the work.
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Step 1:{" "}
-                <span className="font-medium text-foreground">
-                  Conversion website
-                </span>{" "}
-                – your trade site built to turn visitors into enquiries. Step 2:{" "}
-                <span className="font-medium text-foreground">
-                  Targeted traffic
-                </span>{" "}
-                – Google Ads and local SEO putting you in front of people actively
-                searching. Step 3:{" "}
-                <span className="font-medium text-foreground">
-                  Automation
-                </span>{" "}
-                – CRM, missed call text-back and follow-up that closes more of the
-                leads you{"'"}re already getting.
-              </p>
-              <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+
+              <ol className="mt-6 grid gap-4 text-left sm:grid-cols-3 sm:gap-6" aria-label="The three parts of the NobleLeads system">
+                <li className="relative rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6 backdrop-blur-sm">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/40 text-xs font-semibold tabular-nums text-secondary border border-border/30">
+                    1
+                  </span>
+                  <h3 className="mt-4 text-base font-semibold text-foreground sm:text-lg">
+                    Conversion website
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Your trade site built to turn visitors into enquiries.
+                  </p>
+                </li>
+                <li className="relative rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6 backdrop-blur-sm">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/40 text-xs font-semibold tabular-nums text-secondary border border-border/30">
+                    2
+                  </span>
+                  <h3 className="mt-4 text-base font-semibold text-foreground sm:text-lg">
+                    Targeted traffic
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Google Ads and local SEO putting you in front of people actively searching.
+                  </p>
+                </li>
+                <li className="relative rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6 backdrop-blur-sm">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/40 text-xs font-semibold tabular-nums text-secondary border border-border/30">
+                    3
+                  </span>
+                  <h3 className="mt-4 text-base font-semibold text-foreground sm:text-lg">
+                    Automation
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    CRM, missed call text-back and follow-up that closes more of the leads you{"'"}re already getting.
+                  </p>
+                </li>
+              </ol>
+
+              <p className="mt-6 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                 Learn more about each part of the system:{" "}
                 <Link
                   href="/services"

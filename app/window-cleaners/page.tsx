@@ -220,12 +220,9 @@ export default function WindowCleanersPage() {
                 quoted, who{"'"}s booked and who{"'"}s ready to add to the round.
               </p>
               <p>
-                For a step-by-step breakdown of the approach, read our guide{" "}
-                <Link
-                  href="/blog/how-to-get-more-window-cleaning-customers"
-                  className="font-semibold text-secondary hover:underline"
-                >
-                  how to get more window cleaning customers without buying leads
+                For a step-by-step breakdown of the approach, read more on our{" "}
+                <Link href="/blog" className="font-semibold text-secondary hover:underline">
+                  trade marketing blog
                 </Link>{" "}
                 and our honest take on{" "}
                 <Link
