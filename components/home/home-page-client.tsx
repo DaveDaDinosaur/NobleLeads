@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useRef } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import dynamic from "next/dynamic"
 
 import { Navigation } from "@/components/navigation"
@@ -48,6 +48,12 @@ export function HomePageClient() {
   const lastScrollY = useRef(0)
   const scrollVelocity = useRef(0)
   const scrollStateRef = useRef<typeof import("@/components/hero-scene").scrollState | null>(null)
+  const [showHeroScene, setShowHeroScene] = useState(false)
+
+  useEffect(() => {
+    const t = window.setTimeout(() => setShowHeroScene(true), 200)
+    return () => clearTimeout(t)
+  }, [])
 
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY
@@ -85,8 +91,8 @@ export function HomePageClient() {
 
   return (
     <>
-      {/* Persistent 3D background that reacts to scroll */}
-      <HeroScene />
+      {/* Deferred 3D background so LCP (hero text) isn't blocked by Three.js */}
+      {showHeroScene && <HeroScene />}
 
       <main className="relative z-10">
         <Navigation />

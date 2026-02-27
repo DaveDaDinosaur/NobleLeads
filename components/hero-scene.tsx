@@ -287,15 +287,17 @@ export function HeroScene() {
     <div className="fixed inset-0 z-0" style={{ pointerEvents: "none" }}>
       <Canvas
         camera={{ position: [0, 0.5, 7], fov: 55 }}
-        dpr={mobile ? [1, 1] : [1, 1.5]}
+        dpr={mobile ? [1, 1] : [1, 2]}
         gl={{
           antialias: !mobile,
           alpha: true,
           powerPreference: "high-performance",
+          stencil: false,
+          depth: true,
         }}
         style={{ background: "transparent" }}
       >
-        <Scene particleCount={mobile ? 160 : 320} />
+        <Scene particleCount={mobile ? 120 : 280} />
       </Canvas>
     </div>
   )
