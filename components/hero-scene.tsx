@@ -8,76 +8,6 @@ import * as THREE from "three"
 /* ── shared scroll state (written by homepage, read by 3D scene) ── */
 export const scrollState = { progress: 0, velocity: 0 }
 
-/* ── Particle field that drifts & reacts to scroll ── */
-function ParticleField({ count = 400 }: { count?: number }) {
-  const ref = useRef<THREE.Points>(null!)
-  const basePositions = useRef<Float32Array | null>(null)
-  const frameRef = useRef(0)
-
-  const { positions, colors, sizes } = useMemo(() => {
-    const pos = new Float32Array(count * 3)
-    const col = new Float32Array(count * 3)
-    const sz = new Float32Array(count)
-    const navy = new THREE.Color("#1B3A5C")
-    const gold = new THREE.Color("#C5A55A")
-    const dim = new THREE.Color("#2a3444")
-    const bright = new THREE.Color("#4a6a8c")
-
-    for (let i = 0; i < count; i++) {
-      const i3 = i * 3
-      pos[i3] = (Math.random() - 0.5) * 22
-      pos[i3 + 1] = (Math.random() - 0.5) * 22
-      pos[i3 + 2] = (Math.random() - 0.5) * 14
-      const r = Math.random()
-      const c = r < 0.08 ? gold : r < 0.3 ? navy : r < 0.55 ? bright : dim
-      col[i3] = c.r
-      col[i3 + 1] = c.g
-      col[i3 + 2] = c.b
-      sz[i] = Math.random() * 0.03 + 0.01
-    }
-    basePositions.current = new Float32Array(pos)
-    return { positions: pos, colors: col, sizes: sz }
-  }, [count])
-
-  const geometry = useMemo(() => {
-    const geo = new THREE.BufferGeometry()
-    geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3))
-    geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3))
-    return geo
-  }, [positions, colors])
-
-  useFrame((state) => {
-    frameRef.current += 1
-    if (frameRef.current % 2 !== 0) return
-
-    if (!ref.current || !basePositions.current) return
-    const t = state.clock.elapsedTime
-    const sp = scrollState.progress
-    const sv = scrollState.velocity
-
-    ref.current.rotation.y = t * 0.015 + sp * 1.2
-    ref.current.rotation.x = Math.sin(t * 0.008) * 0.15 + sp * 0.4
-
-    const posArr = ref.current.geometry.attributes.position.array as Float32Array
-    const base = basePositions.current
-    for (let i = 0; i < count; i++) {
-      const i3 = i * 3
-      const wave = Math.sin(t * 0.3 + base[i3] * 0.5) * 0.15
-      const breathe = Math.sin(t * 0.15 + i * 0.01) * 0.08
-      posArr[i3] = base[i3] + wave + sv * base[i3] * 0.3
-      posArr[i3 + 1] = base[i3 + 1] + breathe + sv * 0.5
-      posArr[i3 + 2] = base[i3 + 2] + Math.cos(t * 0.2 + base[i3 + 1] * 0.3) * 0.1
-    }
-    ref.current.geometry.attributes.position.needsUpdate = true
-  })
-
-  return (
-    <points ref={ref} geometry={geometry}>
-      <pointsMaterial size={0.04} vertexColors transparent opacity={0.65} sizeAttenuation />
-    </points>
-  )
-}
-
 /* ── Wireframe orb that floats and distorts on scroll ── */
 function WireframeOrb({
   position,
@@ -235,7 +165,7 @@ function CameraRig() {
 }
 
 /* ── Scene ── */
-function Scene({ particleCount }: { particleCount: number }) {
+function Scene() {
   return (
     <>
       <CameraRig />
@@ -245,7 +175,6 @@ function Scene({ particleCount }: { particleCount: number }) {
       <pointLight position={[-6, -4, 4]} intensity={0.4} color="#1B3A5C" distance={18} />
       <pointLight position={[0, 8, -3]} intensity={0.2} color="#4a6a8c" distance={15} />
 
-      <ParticleField count={particleCount} />
       <ConnectionLines />
 
       <WireframeOrb
@@ -318,7 +247,7 @@ export function HeroScene() {
         }}
         style={{ background: "transparent" }}
       >
-        <Scene particleCount={mobile ? 100 : 200} />
+        <Scene />
       </Canvas>
     </div>
   )
