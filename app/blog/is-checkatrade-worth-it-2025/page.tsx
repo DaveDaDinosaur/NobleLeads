@@ -72,12 +72,6 @@ export default function IsCheckatradeWorthIt2025Page() {
                   is Checkatrade actually worth it for your trade business?
                 </span>
               </p>
-              <p className="mt-2 text-xs text-muted-foreground/80">
-                Primary keyword:{" "}
-                <span className="font-medium text-foreground">
-                  {primaryKeyword}
-                </span>
-              </p>
             </header>
           </SectionReveal>
 

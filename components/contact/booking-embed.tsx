@@ -23,7 +23,7 @@ export function BookingEmbed() {
                     Pick a time that works
                   </p>
                   <h3 className="mt-2 text-xl font-bold text-foreground">
-                    Growth & Enquiry Strategy Call (10 Minutes)
+                    Growth & Enquiry Strategy Call (30 Minutes)
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A quick look at your online presence and how we can turn it
@@ -55,7 +55,7 @@ export function BookingEmbed() {
                       step: "1",
                       title: "Pick Your Time",
                       description:
-                        "Choose a 10-minute slot that fits your schedule. You'll get a calendar invite right away.",
+                        "Choose a 30-minute slot that fits your schedule. You'll get a calendar invite right away.",
                     },
                     {
                       step: "2",
