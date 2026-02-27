@@ -38,7 +38,7 @@ export function StatsSection() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionReveal direction="scale">
-          <div className="relative rounded-2xl border border-border/40 bg-card/20 p-6 sm:p-10 lg:p-16 backdrop-blur-md overflow-hidden">
+          <div className="relative rounded-2xl border border-border/40 bg-card p-6 sm:p-10 lg:p-16 overflow-hidden">
             {/* Subtle interior glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent" />
 

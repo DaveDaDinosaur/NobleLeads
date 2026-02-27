@@ -51,7 +51,7 @@ export function TestimonialsSection() {
         <div className="mt-10 sm:mt-16 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-3">
           {testimonials.map((testimonial, i) => (
             <SectionReveal key={testimonial.name} delay={i * 140} direction="up">
-              <div className="group flex h-full flex-col rounded-xl border border-border/40 bg-card/30 p-6 sm:p-8 lg:p-10 backdrop-blur-sm transition-all duration-500 hover:border-secondary/30 hover:bg-card/50 relative overflow-hidden">
+              <div className="group flex h-full flex-col rounded-xl border border-border/40 bg-card p-6 sm:p-8 lg:p-10 transition-all duration-500 hover:border-secondary/30 hover:bg-card relative overflow-hidden">
                 {/* Result badge */}
                 <div className="inline-flex self-start items-center gap-1 rounded-full bg-secondary/10 border border-secondary/20 px-3 py-1 text-[11px] font-semibold text-secondary">
                   {testimonial.result}

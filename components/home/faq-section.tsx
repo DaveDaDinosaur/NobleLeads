@@ -70,7 +70,7 @@ export function HomeFAQSection({ items = homepageFAQs }: HomeFAQSectionProps) {
               <SectionReveal key={item.question} direction="up" delay={40}>
                 <AccordionItem
                   value={`faq-${index}`}
-                  className="border border-border/40 bg-card/40 rounded-xl px-4 sm:px-5"
+                  className="border border-border/40 bg-card rounded-xl px-4 sm:px-5"
                 >
                   <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-foreground hover:no-underline">
                     {item.question}

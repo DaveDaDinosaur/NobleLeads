@@ -12,7 +12,7 @@ export function CTASection() {
     >
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionReveal direction="scale">
-          <div className="relative rounded-2xl border border-secondary/20 bg-card/20 p-8 sm:p-12 lg:p-20 backdrop-blur-md text-center overflow-hidden">
+          <div className="relative rounded-2xl border border-secondary/20 bg-card p-8 sm:p-12 lg:p-20 text-center overflow-hidden">
             {/* Top accent line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-secondary/50" />
 
