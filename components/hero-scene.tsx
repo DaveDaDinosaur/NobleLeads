@@ -9,9 +9,10 @@ import * as THREE from "three"
 export const scrollState = { progress: 0, velocity: 0 }
 
 /* ── Particle field that drifts & reacts to scroll ── */
-function ParticleField({ count = 600 }: { count?: number }) {
+function ParticleField({ count = 400 }: { count?: number }) {
   const ref = useRef<THREE.Points>(null!)
   const basePositions = useRef<Float32Array | null>(null)
+  const frameRef = useRef(0)
 
   const { positions, colors, sizes } = useMemo(() => {
     const pos = new Float32Array(count * 3)
@@ -46,6 +47,9 @@ function ParticleField({ count = 600 }: { count?: number }) {
   }, [positions, colors])
 
   useFrame((state) => {
+    frameRef.current += 1
+    if (frameRef.current % 2 !== 0) return
+
     if (!ref.current || !basePositions.current) return
     const t = state.clock.elapsedTime
     const sp = scrollState.progress
@@ -133,6 +137,7 @@ function WireframeOrb({
 function ConnectionLines() {
   const ref = useRef<THREE.LineSegments>(null!)
   const maxConnections = 24
+  const frameRef = useRef(0)
 
   const geometry = useMemo(() => {
     const geo = new THREE.BufferGeometry()
@@ -142,6 +147,9 @@ function ConnectionLines() {
   }, [])
 
   useFrame((state) => {
+    frameRef.current += 1
+    if (frameRef.current % 2 !== 0) return
+
     if (!ref.current) return
     const t = state.clock.elapsedTime
     const posArr = ref.current.geometry.attributes.position.array as Float32Array
@@ -275,13 +283,26 @@ function Scene({ particleCount }: { particleCount: number }) {
 
 export function HeroScene() {
   const [mobile, setMobile] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
 
   useEffect(() => {
     const check = () => setMobile(window.innerWidth < 768)
     check()
     window.addEventListener("resize", check)
-    return () => window.removeEventListener("resize", check)
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const updateMotion = () => setReducedMotion(mq.matches)
+    updateMotion()
+    mq.addEventListener("change", updateMotion)
+
+    return () => {
+      window.removeEventListener("resize", check)
+      mq.removeEventListener("change", updateMotion)
+    }
   }, [])
+
+  if (reducedMotion) {
+    return null
+  }
 
   return (
     <div className="fixed inset-0 z-0" style={{ pointerEvents: "none" }}>
@@ -297,7 +318,7 @@ export function HeroScene() {
         }}
         style={{ background: "transparent" }}
       >
-        <Scene particleCount={mobile ? 120 : 280} />
+        <Scene particleCount={mobile ? 100 : 200} />
       </Canvas>
     </div>
   )

@@ -51,8 +51,16 @@ export function HomePageClient() {
   const [showHeroScene, setShowHeroScene] = useState(false)
 
   useEffect(() => {
-    const t = window.setTimeout(() => setShowHeroScene(true), 200)
-    return () => clearTimeout(t)
+    if ("requestIdleCallback" in window) {
+      const id = (window as any).requestIdleCallback(
+        () => setShowHeroScene(true),
+        { timeout: 1500 }
+      )
+      return () => (window as any).cancelIdleCallback?.(id)
+    }
+
+    const t = window.setTimeout(() => setShowHeroScene(true), 1200)
+    return () => window.clearTimeout(t)
   }, [])
 
   const handleScroll = useCallback(() => {
