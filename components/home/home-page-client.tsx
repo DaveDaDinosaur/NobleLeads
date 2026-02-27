@@ -48,9 +48,36 @@ export function HomePageClient() {
   const lastScrollY = useRef(0)
   const scrollVelocity = useRef(0)
   const scrollStateRef = useRef<typeof import("@/components/hero-scene").scrollState | null>(null)
+  const [heroActivated, setHeroActivated] = useState(false)
   const [showHeroScene, setShowHeroScene] = useState(false)
 
   useEffect(() => {
+    // Activate hero immediately on touch / coarse pointer devices (mobile, tablets)
+    const mq = window.matchMedia("(pointer: fine)")
+    if (!mq.matches) {
+      setHeroActivated(true)
+      return
+    }
+
+    // On desktop, only activate once the user interacts (scroll or mouse move)
+    const activate = () => {
+      setHeroActivated(true)
+      window.removeEventListener("scroll", activate)
+      window.removeEventListener("mousemove", activate)
+    }
+
+    window.addEventListener("scroll", activate, { passive: true })
+    window.addEventListener("mousemove", activate)
+
+    return () => {
+      window.removeEventListener("scroll", activate)
+      window.removeEventListener("mousemove", activate)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!heroActivated) return
+
     if ("requestIdleCallback" in window) {
       const id = (window as any).requestIdleCallback(
         () => setShowHeroScene(true),
@@ -61,7 +88,7 @@ export function HomePageClient() {
 
     const t = window.setTimeout(() => setShowHeroScene(true), 1200)
     return () => window.clearTimeout(t)
-  }, [])
+  }, [heroActivated])
 
   const handleScroll = useCallback(() => {
     const scrollY = window.scrollY
