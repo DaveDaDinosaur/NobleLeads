@@ -230,7 +230,7 @@ export default function WindowCleanersPage() {
                   href="/blog/is-checkatrade-worth-it-2025"
                   className="font-semibold text-secondary hover:underline"
                 >
-                  whether Checkatrade is worth it in 2025 for UK trades
+                  whether Checkatrade is worth it in 2026 for UK trades
                 </Link>
                 .
               </p>

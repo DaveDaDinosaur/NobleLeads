@@ -18,10 +18,10 @@ type BlogPostMeta = {
 const posts: BlogPostMeta[] = [
   {
     slug: "is-checkatrade-worth-it-2025",
-    title: "Is Checkatrade Worth It in 2025? Honest Answer for UK Trades",
+    title: "Is Checkatrade Worth It in 2026? Honest Answer for UK Trades",
     description:
-      "Thinking about joining or staying on Checkatrade? We break down what it really costs in 2025, when it makes sense and when you should own your own lead flow instead.",
-    primaryKeyword: "is checkatrade worth it 2025 UK",
+      "Thinking about joining or staying on Checkatrade? We break down what it really costs in 2026, when it makes sense and when you should own your own lead flow instead.",
+    primaryKeyword: "is checkatrade worth it 2026 UK",
     readTime: "12 min read",
   },
 ]
