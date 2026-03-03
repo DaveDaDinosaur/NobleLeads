@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NobleLeads — Brand Design Package</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black:    #0A0A0A;
+    --charcoal: #141414;
+    --dark:     #1C1C1C;
+    --mid:      #2A2A2A;
+    --gold:     #C8A45A;
+    --gold-light: #E2C17A;
+    --gold-dark:  #9A7B3A;
+    --cream:    #F5EDD8;
+    --cream-pale: #FAF6EE;
+    --warm-white: #FDFAF4;
+    --text-dim: #888880;
+    --text-mid: #AAAAAA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--charcoal);
+    color: var(--cream);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,164,90,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200,164,90,0.06) 0%, transparent 60%);
+  }
+  .cover-ornament {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+  }
+  .cover-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .cover h1 span { color: var(--gold); font-style: italic; }
+  .cover-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    margin-top: 24px;
+    position: relative;
+  }
+  .cover-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 48px auto;
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+  }
+  .cover-divider::before, .cover-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dark));
+  }
+  .cover-divider::after { background: linear-gradient(to left, transparent, var(--gold-dark)); }
+  .cover-divider span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .cover-note {
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    position: relative;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 60px;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .section-label span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    font-size: 10px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--mid);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.1;
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
+  }
+  .section-title em { color: var(--gold); font-style: italic; }
+
+  .page-divider {
+    border: none;
+    border-top: 1px solid var(--mid);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── COLOURS ── */
+  .colours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .swatch {
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--dark);
+    border: 1px solid var(--mid);
+  }
+  .swatch-colour {
+    height: 100px;
+    position: relative;
+  }
+  .swatch-colour.primary { background: var(--gold); }
+  .swatch-colour.gold-light { background: var(--gold-light); }
+  .swatch-colour.gold-dark { background: var(--gold-dark); }
+  .swatch-colour.black { background: var(--black); border-bottom: 1px solid var(--mid); }
+  .swatch-colour.charcoal { background: var(--charcoal); border-bottom: 1px solid var(--mid); }
+  .swatch-colour.dark { background: var(--dark); border-bottom: 1px solid var(--mid); }
+  .swatch-colour.cream { background: var(--cream); }
+  .swatch-colour.cream-pale { background: var(--cream-pale); }
+  .swatch-colour.warm-white { background: var(--warm-white); }
+  .swatch-info {
+    padding: 14px 16px;
+  }
+  .swatch-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .swatch-hex {
+    font-size: 12px;
+    font-family: monospace;
+    color: var(--text-dim);
+  }
+  .swatch-rgb {
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  .swatch-role {
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .colour-usage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .colour-usage-card {
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 28px;
+  }
+  .colour-usage-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .colour-usage-card ul {
+    list-style: none;
+  }
+  .colour-usage-card ul li {
+    font-size: 13px;
+    color: var(--text-mid);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .colour-usage-card ul li:last-child { border-bottom: none; }
+  .colour-usage-card ul li::before {
+    content: '–';
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .type-specimen {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--mid);
+  }
+  .type-specimen:last-child { border-bottom: none; padding-bottom: 0; }
+  .type-meta {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    margin-bottom: 32px;
+  }
+  .type-meta-info {
+    min-width: 200px;
+  }
+  .type-font-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .type-font-role {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .type-font-source {
+    font-size: 11px;
+    color: var(--mid);
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-family: monospace;
+  }
+  .type-display-large {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+  .type-display-large em { color: var(--gold); font-style: italic; }
+  .type-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+  .type-body-large {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--cream-pale);
+    max-width: 600px;
+  }
+  .type-sizes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .type-size-row {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .type-size-label {
+    font-size: 11px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    min-width: 80px;
+  }
+  .type-size-example {
+    color: var(--cream);
+  }
+  .ts-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 56px; line-height: 1; }
+  .ts-h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 40px; }
+  .ts-h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 28px; text-transform: uppercase; }
+  .ts-h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .ts-body { font-family: 'Barlow', sans-serif; font-weight: 300; font-size: 16px; }
+  .ts-small { font-family: 'Barlow', sans-serif; font-weight: 400; font-size: 13px; color: var(--text-mid); }
+  .ts-caption { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); }
+
+  /* ── LOGO / WORDMARK ── */
+  .logo-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .logo-card {
+    border-radius: 4px;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border: 1px solid var(--mid);
+  }
+  .logo-card.dark-bg { background: var(--black); }
+  .logo-card.light-bg { background: var(--cream-pale); }
+  .logo-card.gold-bg { background: var(--gold); }
+  .logo-card.charcoal-bg { background: var(--charcoal); }
+
+  .wordmark {
+    text-align: center;
+    line-height: 1;
+  }
+  .wordmark-noble {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 42px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+  }
+  .wordmark-leads {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+  }
+  .wordmark-divider {
+    height: 1px;
+    margin: 8px auto;
+  }
+
+  .on-dark .wordmark-noble { color: var(--gold); }
+  .on-dark .wordmark-leads { color: var(--text-mid); }
+  .on-dark .wordmark-divider { background: var(--gold-dark); width: 60px; }
+
+  .on-light .wordmark-noble { color: var(--black); }
+  .on-light .wordmark-leads { color: #6A6A5A; }
+  .on-light .wordmark-divider { background: #C8A45A; width: 60px; }
+
+  .on-gold .wordmark-noble { color: var(--black); }
+  .on-gold .wordmark-leads { color: rgba(0,0,0,0.5); }
+  .on-gold .wordmark-divider { background: rgba(0,0,0,0.25); width: 60px; }
+
+  .logo-card-label {
+    margin-top: 24px;
+    font-size: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .logo-card.light-bg .logo-card-label { color: #AAAAAA; }
+  .logo-card.gold-bg .logo-card-label { color: rgba(0,0,0,0.4); }
+
+  /* ── CANVA SETTINGS ── */
+  .canva-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .canva-card {
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 28px 24px;
+  }
+  .canva-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .canva-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .canva-card table td {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--mid);
+    vertical-align: top;
+  }
+  .canva-card table td:first-child {
+    color: var(--text-dim);
+    width: 48%;
+    padding-right: 12px;
+    font-size: 11px;
+  }
+  .canva-card table td:last-child {
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .canva-card table tr:last-child td { border-bottom: none; }
+
+  /* ── DESIGN ELEMENTS ── */
+  .elements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .element-card {
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 32px 28px;
+  }
+  .element-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 12px;
+    display: block;
+    text-align: center;
+  }
+  .btn-secondary {
+    display: block;
+    background: transparent;
+    color: var(--cream);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 13px 28px;
+    border: 1px solid var(--gold);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .btn-ghost {
+    display: block;
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0;
+    text-align: center;
+    border-bottom: 1px solid var(--gold-dark);
+    padding-bottom: 4px;
+  }
+
+  /* Divider ornament */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .ornament-divider::before, .ornament-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--mid);
+  }
+  .ornament-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  /* Tag / badge */
+  .tag-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-block;
+    border: 1px solid var(--gold-dark);
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+
+  /* Stat block */
+  .stat-block {
+    margin-top: 16px;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* ── BRAND VOICE / COPY ── */
+  .tone-examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 0;
+  }
+  .tone-card {
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 28px;
+  }
+  .tone-card.yes { border-left: 3px solid var(--gold); }
+  .tone-card.no { border-left: 3px solid #666; }
+  .tone-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .tone-card.yes h4 { color: var(--gold); }
+  .tone-card.no h4 { color: #555; }
+  .tone-item {
+    font-size: 13px;
+    color: var(--cream);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .tone-item:last-child { border-bottom: none; }
+  .tone-item-icon { flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+
+  /* ── CANVA SOCIAL SIZES ── */
+  .sizes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .size-card {
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .size-visual {
+    margin: 0 auto 14px;
+    background: var(--mid);
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .size-visual span {
+    font-size: 8px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+  .size-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .size-dims {
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--gold);
+  }
+  .size-use {
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ── IMAGERY GUIDANCE ── */
+  .imagery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .imagery-card {
+    background: var(--dark);
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .imagery-preview {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .imagery-preview.good {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  }
+  .imagery-preview.bad {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  }
+  .imagery-preview-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--gold);
+    text-align: center;
+    padding: 20px;
+    line-height: 1.4;
+  }
+  .bad .imagery-preview-text { color: #999; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; }
+  .imagery-card-body {
+    padding: 20px;
+  }
+  .imagery-card-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .good .imagery-card-label { color: var(--gold); }
+  .bad .imagery-card-label { color: #555; }
+  .imagery-card-body ul { list-style: none; }
+  .imagery-card-body ul li {
+    font-size: 12px;
+    color: var(--text-mid);
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    border-bottom: 1px solid var(--mid);
+  }
+  .imagery-card-body ul li:last-child { border-bottom: none; }
+  .imagery-card-body ul li::before { flex-shrink: 0; }
+  .good .imagery-card-body ul li::before { content: '✓'; color: var(--gold); }
+  .bad .imagery-card-body ul li::before { content: '✗'; color: #555; }
+
+  /* ── FOOTER ── */
+  .brand-footer {
+    background: var(--black);
+    padding: 60px;
+    text-align: center;
+    border-top: 1px solid var(--mid);
+  }
+  .brand-footer-wordmark .wordmark-noble { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .brand-footer-wordmark .wordmark-leads { font-family: 'Barlow Condensed', sans-serif; font-weight: 400; font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase; color: var(--text-dim); }
+  .brand-footer-note {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* responsive tweaks */
+  @media (max-width: 768px) {
+    section { padding: 60px 24px; }
+    .logo-variants, .colour-usage, .canva-grid, .tone-examples, .imagery-grid { grid-template-columns: 1fr; }
+    .elements-grid, .sizes-grid { grid-template-columns: 1fr 1fr; }
+    .canva-grid { grid-template-columns: 1fr; }
+    .cover { padding: 60px 24px; }
+    .brand-footer { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-ornament"></div>
+  <div class="cover-eyebrow">Brand Design System</div>
+  <h1>Noble<span>Leads</span></h1>
+  <div class="cover-sub">Visual Identity &amp; Design Package</div>
+  <div class="cover-divider"><span>✦</span></div>
+  <div class="cover-note">For use in Canva, social media, documents &amp; all brand touchpoints</div>
+</div>
+
+<!-- COLOUR PALETTE -->
+<section>
+  <div class="section-label"><span>01 — Colour System</span></div>
+  <div class="section-title">The <em>Palette</em></div>
+
+  <div class="colours-grid">
+    <div class="swatch">
+      <div class="swatch-colour primary"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gold</div>
+        <div class="swatch-hex">#C8A45A</div>
+        <div class="swatch-rgb">RGB 200 · 164 · 90</div>
+        <div class="swatch-role">Primary Brand Gold</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour gold-light"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gold Light</div>
+        <div class="swatch-hex">#E2C17A</div>
+        <div class="swatch-rgb">RGB 226 · 193 · 122</div>
+        <div class="swatch-role">Highlights / Hover</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour gold-dark"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gold Deep</div>
+        <div class="swatch-hex">#9A7B3A</div>
+        <div class="swatch-rgb">RGB 154 · 123 · 58</div>
+        <div class="swatch-role">Borders / Accents</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour black"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">True Black</div>
+        <div class="swatch-hex">#0A0A0A</div>
+        <div class="swatch-rgb">RGB 10 · 10 · 10</div>
+        <div class="swatch-role">Hero BG / Covers</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour charcoal"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Charcoal</div>
+        <div class="swatch-hex">#141414</div>
+        <div class="swatch-rgb">RGB 20 · 20 · 20</div>
+        <div class="swatch-role">Page Background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour dark"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark</div>
+        <div class="swatch-hex">#1C1C1C</div>
+        <div class="swatch-rgb">RGB 28 · 28 · 28</div>
+        <div class="swatch-role">Cards / Panels</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour cream"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cream</div>
+        <div class="swatch-hex">#F5EDD8</div>
+        <div class="swatch-rgb">RGB 245 · 237 · 216</div>
+        <div class="swatch-role">Body Text</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour cream-pale"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cream Pale</div>
+        <div class="swatch-hex">#FAF6EE</div>
+        <div class="swatch-rgb">RGB 250 · 246 · 238</div>
+        <div class="swatch-role">Light BG Option</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-colour warm-white"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm White</div>
+        <div class="swatch-hex">#FDFAF4</div>
+        <div class="swatch-rgb">RGB 253 · 250 · 244</div>
+        <div class="swatch-role">Section Contrast</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="colour-usage">
+    <div class="colour-usage-card">
+      <h4>Primary Combinations</h4>
+      <ul>
+        <li>Gold #C8A45A on True Black #0A0A0A — hero text, CTAs</li>
+        <li>Cream #F5EDD8 on Charcoal #141414 — body copy</li>
+        <li>Black #0A0A0A on Gold #C8A45A — filled buttons</li>
+        <li>Gold #C8A45A on Dark #1C1C1C — card accents</li>
+        <li>Cream Pale #FAF6EE on Black — contrast sections</li>
+      </ul>
+    </div>
+    <div class="colour-usage-card">
+      <h4>Usage Rules</h4>
+      <ul>
+        <li>Gold is ALWAYS an accent — never a full background for large areas</li>
+        <li>Never use pure #FFFFFF — always warm white or cream</li>
+        <li>Dark backgrounds should dominate (70–80% of any design)</li>
+        <li>Gold should never appear on Gold Light — no light-on-light</li>
+        <li>Charcoal / Dark / Black can be mixed freely for depth</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- TYPOGRAPHY -->
+<section>
+  <div class="section-label"><span>02 — Typography</span></div>
+  <div class="section-title">Type <em>System</em></div>
+
+  <div class="type-specimen">
+    <div class="type-meta">
+      <div class="type-meta-info">
+        <div class="type-font-name">Cormorant Garamond</div>
+        <div class="type-font-role">Display / Headlines</div>
+        <div class="type-font-source">Google Fonts · Free</div>
+      </div>
+    </div>
+    <div class="type-display-large">Consistent<br/><em>Enquiries.</em><br/>Serious Growth.</div>
+    <div class="type-sizes">
+      <div class="type-size-row">
+        <span class="type-size-label">H1 · 64px</span>
+        <span class="type-size-example ts-h1">More Leads, More Jobs.</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">H2 · 40px</span>
+        <span class="type-size-example ts-h2">The Growth System</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta">
+      <div class="type-meta-info">
+        <div class="type-font-name">Barlow Condensed</div>
+        <div class="type-font-role">Sub-headings / Labels / CTAs</div>
+        <div class="type-font-source">Google Fonts · Free</div>
+      </div>
+    </div>
+    <div class="type-heading">BUILT FOR UK TRADES</div>
+    <div class="type-sizes">
+      <div class="type-size-row">
+        <span class="type-size-label">H3 · 28px</span>
+        <span class="type-size-example ts-h3">BOOK A STRATEGY CALL</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">H4 · 18px</span>
+        <span class="type-size-example ts-h4">NOBLE GROWTH PACKAGE</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">Caption · 10px</span>
+        <span class="type-size-example ts-caption">UK PROPERTY SERVICES</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta">
+      <div class="type-meta-info">
+        <div class="type-font-name">Barlow</div>
+        <div class="type-font-role">Body Copy / UI Text</div>
+        <div class="type-font-source">Google Fonts · Free</div>
+      </div>
+    </div>
+    <div class="type-body-large">We build the systems that turn your trade skills into consistent enquiries — without the Checkatrade dependency or Bark fees. A lead machine you own.</div>
+    <div class="type-sizes">
+      <div class="type-size-row">
+        <span class="type-size-label">Body · 16px</span>
+        <span class="type-size-example ts-body">Conversion-focused. Fully automated. Built around your trade.</span>
+      </div>
+      <div class="type-size-row">
+        <span class="type-size-label">Small · 13px</span>
+        <span class="type-size-example ts-small">Setup fee · Month-to-month · No lock-in</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- LOGO / WORDMARK -->
+<section>
+  <div class="section-label"><span>03 — Logo &amp; Wordmark</span></div>
+  <div class="section-title">Brand <em>Identity</em></div>
+
+  <div class="logo-variants">
+    <div class="logo-card dark-bg">
+      <div class="wordmark on-dark">
+        <span class="wordmark-noble">Noble</span>
+        <div class="wordmark-divider"></div>
+        <span class="wordmark-leads">Leads</span>
+      </div>
+      <div class="logo-card-label">Primary — Dark Background</div>
+    </div>
+    <div class="logo-card light-bg">
+      <div class="wordmark on-light">
+        <span class="wordmark-noble">Noble</span>
+        <div class="wordmark-divider"></div>
+        <span class="wordmark-leads">Leads</span>
+      </div>
+      <div class="logo-card-label">Reverse — Light Background</div>
+    </div>
+    <div class="logo-card charcoal-bg">
+      <div class="wordmark on-dark">
+        <span class="wordmark-noble">Noble</span>
+        <div class="wordmark-divider"></div>
+        <span class="wordmark-leads">Leads</span>
+      </div>
+      <div class="logo-card-label">On Charcoal</div>
+    </div>
+    <div class="logo-card gold-bg">
+      <div class="wordmark on-gold">
+        <span class="wordmark-noble">Noble</span>
+        <div class="wordmark-divider"></div>
+        <span class="wordmark-leads">Leads</span>
+      </div>
+      <div class="logo-card-label">On Gold (use sparingly)</div>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- UI ELEMENTS -->
+<section>
+  <div class="section-label"><span>04 — Design Elements</span></div>
+  <div class="section-title">UI <em>Components</em></div>
+
+  <div class="elements-grid">
+    <div class="element-card">
+      <h4>Buttons</h4>
+      <div class="btn-primary">Book a Strategy Call</div>
+      <div class="btn-secondary">See How It Works</div>
+      <div class="btn-ghost">View Pricing →</div>
+    </div>
+    <div class="element-card">
+      <h4>Ornaments &amp; Dividers</h4>
+      <div class="ornament-divider"><div class="ornament-diamond"></div></div>
+      <div style="height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:16px 0;"></div>
+      <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);margin:16px auto;"></div>
+      <div style="border:1px solid var(--gold-dark);height:40px;display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);">✦ Noble Leads ✦</span>
+      </div>
+    </div>
+    <div class="element-card">
+      <h4>Labels &amp; Stats</h4>
+      <div class="tag-eyebrow">UK Growth Agency</div>
+      <div class="stat-block">
+        <div class="stat-num">97%</div>
+        <div class="stat-label">Client Retention Rate</div>
+      </div>
+      <div class="ornament-divider" style="margin:16px 0;"><div class="ornament-diamond"></div></div>
+      <div class="stat-block">
+        <div class="stat-num">5×</div>
+        <div class="stat-label">Average ROI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- CANVA SETTINGS -->
+<section>
+  <div class="section-label"><span>05 — Canva Setup</span></div>
+  <div class="section-title"><em>Canva</em> Settings</div>
+
+  <div class="canva-grid">
+    <div class="canva-card">
+      <h4>Brand Colours to Add</h4>
+      <table>
+        <tr><td>Primary Gold</td><td>#C8A45A</td></tr>
+        <tr><td>Gold Light</td><td>#E2C17A</td></tr>
+        <tr><td>Gold Deep</td><td>#9A7B3A</td></tr>
+        <tr><td>True Black</td><td>#0A0A0A</td></tr>
+        <tr><td>Charcoal</td><td>#141414</td></tr>
+        <tr><td>Dark Panel</td><td>#1C1C1C</td></tr>
+        <tr><td>Cream</td><td>#F5EDD8</td></tr>
+        <tr><td>Warm White</td><td>#FDFAF4</td></tr>
+      </table>
+    </div>
+    <div class="canva-card">
+      <h4>Brand Fonts (via Canva)</h4>
+      <table>
+        <tr><td>Display</td><td>Cormorant Garamond Light / SemiBold</td></tr>
+        <tr><td>Sub-heads</td><td>Barlow Condensed Bold</td></tr>
+        <tr><td>Body</td><td>Barlow Light / Regular</td></tr>
+        <tr><td>Fallback Display</td><td>Playfair Display</td></tr>
+        <tr><td>Fallback Sans</td><td>Montserrat (Condensed)</td></tr>
+        <tr><td>Fallback Body</td><td>Lato Light</td></tr>
+      </table>
+    </div>
+    <div class="canva-card">
+      <h4>Default Design Ratios</h4>
+      <table>
+        <tr><td>Black/Dark</td><td>70–75% of layout area</td></tr>
+        <tr><td>Gold accents</td><td>10–15% max</td></tr>
+        <tr><td>Cream / Text</td><td>Remainder</td></tr>
+        <tr><td>Padding</td><td>Generous — 48–80px min</td></tr>
+        <tr><td>Body size</td><td>16px / 48pt minimum</td></tr>
+        <tr><td>Title weight</td><td>Light (300) for serif; Bold for condensed</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- CANVAS SIZES -->
+<section>
+  <div class="section-label"><span>06 — Template Sizes</span></div>
+  <div class="section-title">Canva <em>Document Sizes</em></div>
+  <div class="sizes-grid">
+    <div class="size-card">
+      <div class="size-visual" style="width:56px;height:56px;"><span>1:1</span></div>
+      <div class="size-name">Instagram Post</div>
+      <div class="size-dims">1080 × 1080px</div>
+      <div class="size-use">Feed posts, testimonials, stats</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:42px;height:72px;"><span>9:16</span></div>
+      <div class="size-name">Story / Reel</div>
+      <div class="size-dims">1080 × 1920px</div>
+      <div class="size-use">Stories, short-form video slides</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:72px;height:40px;"><span>16:9</span></div>
+      <div class="size-name">Presentation</div>
+      <div class="size-dims">1920 × 1080px</div>
+      <div class="size-use">Proposals, strategy decks</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:52px;height:72px;"><span>A4</span></div>
+      <div class="size-name">Document / Flyer</div>
+      <div class="size-dims">2480 × 3508px</div>
+      <div class="size-use">Proposals, capability docs</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:64px;height:36px;"><span>FB</span></div>
+      <div class="size-name">FB / LinkedIn Cover</div>
+      <div class="size-dims">1200 × 630px</div>
+      <div class="size-use">Social sharing / link preview</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:56px;height:56px;"><span>1:1</span></div>
+      <div class="size-name">LinkedIn Post</div>
+      <div class="size-dims">1200 × 1200px</div>
+      <div class="size-use">Authority / value posts</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:72px;height:40px;"><span>BNR</span></div>
+      <div class="size-name">Email Banner</div>
+      <div class="size-dims">600 × 200px</div>
+      <div class="size-use">Newsletter / automation emails</div>
+    </div>
+    <div class="size-card">
+      <div class="size-visual" style="width:52px;height:72px;"><span>BIZ</span></div>
+      <div class="size-name">Business Card</div>
+      <div class="size-dims">3.5 × 2 in</div>
+      <div class="size-use">Print · 300 DPI minimum</div>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- IMAGERY / CONTENT DIRECTION -->
+<section>
+  <div class="section-label"><span>07 — Imagery Direction</span></div>
+  <div class="section-title">Visual <em>Language</em></div>
+
+  <div class="imagery-grid">
+    <div class="imagery-card good">
+      <div class="imagery-preview good">
+        <div class="imagery-preview-text">"Dark, dramatic, purposeful — the craftsman behind the brand."</div>
+      </div>
+      <div class="imagery-card-body">
+        <div class="imagery-card-label">✦ Use This</div>
+        <ul>
+          <li>Dark / moody photography — dramatic lighting, deep contrast</li>
+          <li>Close-up craft shots: tools, materials, finished work</li>
+          <li>Before/after with side-by-side layout in dark frame</li>
+          <li>Overlaid with translucent black + subtle gold text</li>
+          <li>Clean, uncluttered compositions with deliberate negative space</li>
+          <li>Real tradespeople — not stock-photo-perfect strangers</li>
+          <li>Gold gradient overlays on image-heavy posts</li>
+        </ul>
+      </div>
+    </div>
+    <div class="imagery-card bad">
+      <div class="imagery-preview bad">
+        <div class="imagery-preview-text" style="">Avoid: Generic stock photos, rainbow gradients, white backgrounds with no atmosphere.</div>
+      </div>
+      <div class="imagery-card-body">
+        <div class="imagery-card-label">✗ Avoid This</div>
+        <ul>
+          <li>Bright white / pastel backgrounds</li>
+          <li>Generic stock photos of people in suits</li>
+          <li>Rainbow or purple gradient overlays</li>
+          <li>Cluttered layouts with too many elements</li>
+          <li>Comic Sans or any novelty fonts</li>
+          <li>Bright, saturated colours beyond gold</li>
+          <li>Red, blue, or green accent colours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider"/>
+
+<!-- BRAND VOICE -->
+<section>
+  <div class="section-label"><span>08 — Brand Voice</span></div>
+  <div class="section-title">Copy <em>Direction</em></div>
+
+  <div class="tone-examples">
+    <div class="tone-card yes">
+      <h4>✦ Write Like This</h4>
+      <div class="tone-item"><span class="tone-item-icon">✓</span>"More calls. More booked jobs. Less chasing."</div>
+      <div class="tone-item"><span class="tone-item-icon">✓</span>"You're great at the work. Getting clients shouldn't be this hard."</div>
+      <div class="tone-item"><span class="tone-item-icon">✓</span>"Stop paying Checkatrade to rent your own customers."</div>
+      <div class="tone-item"><span class="tone-item-icon">✓</span>"A lead machine you own — not rent."</div>
+      <div class="tone-item"><span class="tone-item-icon">✓</span>Short sentences. Plain English. Outcome first.</div>
+      <div class="tone-item"><span class="tone-item-icon">✓</span>UK spelling: "enquiries", "recognised", "optimised"</div>
+    </div>
+    <div class="tone-card no">
+      <h4>✗ Don't Write Like This</h4>
+      <div class="tone-item"><span class="tone-item-icon">✗</span>"Leveraging cutting-edge omnichannel marketing solutions..."</div>
+      <div class="tone-item"><span class="tone-item-icon">✗</span>"Synergising your brand's digital footprint across touchpoints"</div>
+      <div class="tone-item"><span class="tone-item-icon">✗</span>"We are passionate about helping your business thrive!"</div>
+      <div class="tone-item"><span class="tone-item-icon">✗</span>American spellings: "optimize", "analyze"</div>
+      <div class="tone-item"><span class="tone-item-icon">✗</span>Excessive exclamation marks or emojis in professional content</div>
+      <div class="tone-item"><span class="tone-item-icon">✗</span>Vague promises without concrete outcomes</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="brand-footer">
+  <div class="brand-footer-wordmark">
+    <div class="wordmark-noble">Noble</div>
+    <div class="wordmark-leads">Leads</div>
+  </div>
+  <div class="brand-footer-note">Brand Design Package · nobleleads.uk · Internal Reference Document</div>
+</div>
+
+</body>
+</html>

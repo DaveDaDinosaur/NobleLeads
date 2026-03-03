@@ -4,10 +4,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nobleleads.uk"
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      { userAgent: "*", allow: "/", disallow: ["/brand-kit"] },
+    ],
     sitemap: `${siteUrl}/sitemap.xml`,
   }
 }
