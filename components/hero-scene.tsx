@@ -1,105 +1,147 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect, useMemo } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { Float } from "@react-three/drei"
 import * as THREE from "three"
 
-/* ── Wireframe orb that floats gently in space ── */
+/* Shared materials (tip 33: share materials between meshes) */
+function useSharedMaterials() {
+  const matBlue = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        color: "#1B3A5C",
+        emissive: "#C5A55A",
+        emissiveIntensity: 0.15,
+        roughness: 0.4,
+        metalness: 0.9,
+        transparent: true,
+        opacity: 0.35,
+        wireframe: true,
+      }),
+    []
+  )
+  const matGold = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        color: "#C5A55A",
+        emissive: "#C5A55A",
+        emissiveIntensity: 0.15,
+        roughness: 0.4,
+        metalness: 0.9,
+        transparent: true,
+        opacity: 0.35,
+        wireframe: true,
+      }),
+    []
+  )
+  const matRing = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        color: "#1B3A5C",
+        transparent: true,
+        opacity: 0.15,
+        wireframe: true,
+        emissive: "#1B3A5C",
+        emissiveIntensity: 0.08,
+      }),
+    []
+  )
+  useEffect(() => {
+    return () => {
+      matBlue.dispose()
+      matGold.dispose()
+      matRing.dispose()
+    }
+  }, [matBlue, matGold, matRing])
+  return { matBlue, matGold, matRing }
+}
+
+/* Wireframe orb — no Float wrapper; single useFrame; delta for frame-rate independence */
 function WireframeOrb({
   position,
-  color,
-  emissive,
+  material,
   size,
   speed,
   floatSpeed,
-  scrollInfluence = 1,
+  detail = 3,
 }: {
   position: [number, number, number]
-  color: string
-  emissive: string
+  material: THREE.MeshStandardMaterial
   size: number
   speed: number
   floatSpeed: number
-  scrollInfluence?: number
+  detail?: number
 }) {
   const meshRef = useRef<THREE.Mesh>(null!)
   const baseY = position[1]
 
-  useFrame((state) => {
+  useFrame((_, delta) => {
     if (!meshRef.current) return
-    const t = state.clock.elapsedTime
-    const sv = Math.sin(t * 0.4)
+    let t = (meshRef.current.userData.time as number) ?? 0
+    t += delta
+    meshRef.current.userData.time = t
 
+    const sv = Math.sin(t * 0.4)
     meshRef.current.rotation.x = t * speed * 0.3
     meshRef.current.rotation.z = t * speed * 0.2
     meshRef.current.position.y = baseY + Math.sin(t * floatSpeed * 0.4) * 0.4
     meshRef.current.scale.setScalar(1 + Math.abs(sv) * 0.25 + Math.sin(t * 0.8) * 0.04)
-
-    const mat = meshRef.current.material as THREE.MeshStandardMaterial
-    mat.opacity = 0.28
+    ;(meshRef.current.material as THREE.MeshStandardMaterial).opacity = 0.28
   })
 
   return (
-    <Float speed={floatSpeed} rotationIntensity={0.2} floatIntensity={0.5}>
-      <mesh ref={meshRef} position={position}>
-        <icosahedronGeometry args={[size, 4]} />
-        <meshStandardMaterial
-          color={color}
-          emissive={emissive}
-          emissiveIntensity={0.15}
-          roughness={0.4}
-          metalness={0.9}
-          transparent
-          opacity={0.35}
-          wireframe
-        />
-      </mesh>
-    </Float>
-  )
-}
-
-/* ── Ambient floating ring ── */
-function FloatingRing({ radius, tubeRadius, color, rotSpeed, yOffset }: {
-  radius: number
-  tubeRadius: number
-  color: string
-  rotSpeed: number
-  yOffset: number
-}) {
-  const ref = useRef<THREE.Mesh>(null!)
-
-  useFrame((state) => {
-    if (!ref.current) return
-    const t = state.clock.elapsedTime
-    ref.current.rotation.x = t * rotSpeed
-    ref.current.rotation.y = t * rotSpeed * 0.6
-    ref.current.position.y = yOffset + Math.sin(t * 0.4) * 0.5
-    const mat = ref.current.material as THREE.MeshStandardMaterial
-    mat.opacity = 0.12
-  })
-
-  return (
-    <mesh ref={ref}>
-      <torusGeometry args={[radius, tubeRadius, 16, 60]} />
-      <meshStandardMaterial
-        color={color}
-        transparent
-        opacity={0.15}
-        wireframe
-        emissive={color}
-        emissiveIntensity={0.08}
-      />
+    <mesh ref={meshRef} position={position} material={material}>
+      <icosahedronGeometry args={[size, detail]} />
     </mesh>
   )
 }
 
-/* ── Camera rig that drifts based on scroll ── */
+/* Floating ring — shared material; reduced segments for fewer triangles */
+function FloatingRing({
+  radius,
+  tubeRadius,
+  material,
+  rotSpeed,
+  yOffset,
+  segments = 12,
+  tubularSegments = 48,
+}: {
+  radius: number
+  tubeRadius: number
+  material: THREE.MeshStandardMaterial
+  rotSpeed: number
+  yOffset: number
+  segments?: number
+  tubularSegments?: number
+}) {
+  const ref = useRef<THREE.Mesh>(null!)
+
+  useFrame((_, delta) => {
+    if (!ref.current) return
+    let t = (ref.current.userData.time as number) ?? 0
+    t += delta
+    ref.current.userData.time = t
+    ref.current.rotation.x = t * rotSpeed
+    ref.current.rotation.y = t * rotSpeed * 0.6
+    ref.current.position.y = yOffset + Math.sin(t * 0.4) * 0.5
+    ;(ref.current.material as THREE.MeshStandardMaterial).opacity = 0.12
+  })
+
+  return (
+    <mesh ref={ref} material={material}>
+      <torusGeometry args={[radius, tubeRadius, segments, tubularSegments]} />
+    </mesh>
+  )
+}
+
+/* Camera rig — delta-based for frame-rate independence */
 function CameraRig() {
   const { camera } = useThree()
+  const timeRef = useRef(0)
 
-  useFrame((state) => {
-    const t = state.clock.elapsedTime
+  useFrame((_, delta) => {
+    timeRef.current += delta
+    const t = timeRef.current
     camera.position.x = Math.sin(t * 0.1) * 0.3
     camera.position.y = 0.5 + Math.sin(t * 0.03) * 0.1
     camera.position.z = 7
@@ -109,46 +151,52 @@ function CameraRig() {
   return null
 }
 
-/* ── Scene ── */
+/* Scene — limit lights to 3 (ambient + 2 point); shared materials */
 function Scene() {
+  const { matBlue, matGold, matRing } = useSharedMaterials()
+
   return (
     <>
       <CameraRig />
 
-      <ambientLight intensity={0.2} />
-      <pointLight position={[6, 6, 6]} intensity={0.6} color="#C5A55A" distance={20} />
-      <pointLight position={[-6, -4, 4]} intensity={0.4} color="#1B3A5C" distance={18} />
-      <pointLight position={[0, 8, -3]} intensity={0.2} color="#4a6a8c" distance={15} />
+      <ambientLight intensity={0.25} />
+      <pointLight position={[6, 6, 6]} intensity={0.65} color="#C5A55A" distance={20} />
+      <pointLight position={[-6, -4, 4]} intensity={0.45} color="#1B3A5C" distance={18} />
 
       <WireframeOrb
         position={[3.5, 1, -2]}
-        color="#1B3A5C"
-        emissive="#C5A55A"
+        material={matBlue}
         size={2}
         speed={0.4}
         floatSpeed={1.2}
-        scrollInfluence={1.5}
+        detail={3}
       />
       <WireframeOrb
         position={[-3.5, -1, -3]}
-        color="#C5A55A"
-        emissive="#C5A55A"
+        material={matGold}
         size={0.9}
         speed={0.7}
         floatSpeed={1.8}
-        scrollInfluence={0.8}
+        detail={2}
       />
       <WireframeOrb
         position={[-1.5, 2.5, -4]}
-        color="#1B3A5C"
-        emissive="#1B3A5C"
+        material={matBlue}
         size={0.6}
         speed={0.9}
         floatSpeed={2.2}
-        scrollInfluence={1.2}
+        detail={2}
       />
 
-      <FloatingRing radius={4.5} tubeRadius={0.015} color="#1B3A5C" rotSpeed={0.08} yOffset={0} />
+      <FloatingRing
+        radius={4.5}
+        tubeRadius={0.015}
+        material={matRing}
+        rotSpeed={0.08}
+        yOffset={0}
+        segments={12}
+        tubularSegments={48}
+      />
     </>
   )
 }
@@ -180,7 +228,7 @@ export function HeroScene() {
     <div className="fixed inset-0 z-0" style={{ pointerEvents: "none" }}>
       <Canvas
         camera={{ position: [0, 0.5, 7], fov: 55 }}
-        dpr={mobile ? [1, 1] : [1, 2]}
+        dpr={mobile ? [1, 1] : [1, 1.5]}
         gl={{
           antialias: !mobile,
           alpha: true,

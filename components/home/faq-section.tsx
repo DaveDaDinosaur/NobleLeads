@@ -54,9 +54,8 @@ export function HomeFAQSection({ items = homepageFAQs }: HomeFAQSectionProps) {
               Common Questions
             </h2>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-xl">
-              Straight answers to the questions trades ask us before they come on
-              board. No fluff, no jargon—just what you need to know before you
-              make a decision.
+              Things we get asked a lot—and how we answer them. So you can see
+              if we’re a good fit before you get in touch.
             </p>
           </div>
         </SectionReveal>
