@@ -31,11 +31,11 @@ export function BookingEmbed() {
                     clarity.
                   </p>
                 </div>
-                <div className="w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] overflow-hidden">
+                <div className="w-full min-h-[720px] sm:min-h-[780px] lg:min-h-[820px] overflow-auto">
                   <iframe
                     src={GHL_BOOKING_URL}
-                    className="w-full border-0 min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] block"
-                    scrolling="no"
+                    className="w-full border-0 min-h-[720px] sm:min-h-[780px] lg:min-h-[820px] block"
+                    scrolling="auto"
                     title="Growth & Enquiry Strategy Call - Book with Noble Leads"
                   />
                 </div>
