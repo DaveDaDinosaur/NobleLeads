@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
-import Script from "next/script"
+
+import { CookieConsentBanner } from "@/components/consent/CookieConsentBanner"
+import { Ga4Loader } from "@/components/consent/Ga4Loader"
 
 import "./globals.css"
 
@@ -74,18 +76,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body className="font-sans antialiased">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-3HHVV0V655"
-          strategy="lazyOnload"
-        />
-        <Script id="ga4-init" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3HHVV0V655');
-          `}
-        </Script>
+        <Ga4Loader />
+        <CookieConsentBanner />
         {children}
       </body>
     </html>

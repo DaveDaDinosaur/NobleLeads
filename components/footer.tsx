@@ -20,6 +20,8 @@ const footerLinks = {
     { label: "Pricing", href: "/pricing" },
   ],
   legal: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
     { label: "Sitemap", href: "/sitemap.xml" },
   ],
 }
@@ -136,7 +138,9 @@ export function Footer() {
         <div className="border-t border-border/50 py-6 sm:py-8">
           <div className="flex flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p>
-              {"© 2026 Noble Leads. All rights reserved. United Kingdom."}
+              {
+                "© 2026 Noble Leads. All rights reserved. United Kingdom. · Company number 17063686"
+              }
             </p>
             <div className="flex flex-wrap gap-4">
               {footerLinks.legal.map((item) => (
