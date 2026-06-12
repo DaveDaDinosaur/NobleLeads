@@ -42,6 +42,7 @@ function TierCard({
   badge,
   setup,
   ongoing,
+  adSpendNote,
   commitment,
   description,
   includesPrefix,
@@ -54,6 +55,7 @@ function TierCard({
   badge?: string
   setup: string
   ongoing: string
+  adSpendNote?: string
   commitment: string
   description: string
   includesPrefix?: string
@@ -90,6 +92,9 @@ function TierCard({
             <span className="text-muted-foreground">Monthly management</span>
             <span className="font-semibold text-foreground">{ongoing}</span>
           </div>
+          {adSpendNote && (
+            <p className="text-[11px] text-muted-foreground/70 italic">{adSpendNote}</p>
+          )}
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Commitment</span>
             <span className="font-medium text-foreground">{commitment}</span>
@@ -159,6 +164,7 @@ export function PricingTiers() {
             badge="Most Popular"
             setup="£1,495"
             ongoing="£495/month + ad spend"
+            adSpendNote="Typical ad budget: £300–£800/month"
             commitment="3-month initial optimisation period"
             description="Active lead generation with paid ads and follow-up systems."
             includesPrefix="Everything in Core, plus:"
@@ -170,6 +176,7 @@ export function PricingTiers() {
             name="Noble Dominate"
             setup="£1,995"
             ongoing="£895/month + ad spend"
+            adSpendNote="Typical ad budget: £500–£1,500/month"
             commitment="3-month rollout period"
             description="Multi-channel growth and commercial positioning for serious operators."
             includesPrefix="Everything in Growth, plus:"

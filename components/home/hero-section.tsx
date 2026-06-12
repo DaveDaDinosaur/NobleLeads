@@ -64,9 +64,10 @@ export function HeroSection() {
             className="mt-4 sm:mt-6 max-w-2xl px-1 text-sm leading-relaxed text-muted-foreground sm:text-base sm:text-lg lg:text-xl animate-fade-in-up"
             style={{ animationDelay: "600ms" }}
           >
-            We{"'"}re a marketing agency for tradesmen in the UK that builds the systems
-            turning your trade skills into consistent enquiries. No Checkatrade
-            dependency. No Bark fees. Just a lead machine you own.
+            We build the lead machine behind UK trades who{"'"}ve stopped chasing work
+            and started choosing it. No Checkatrade dependency. No Bark fees.
+            A system that brings enquiries to you — and follows up automatically
+            while you{"'"}re on the tools.
           </p>
 
           {/* CTA buttons */}
@@ -108,8 +109,8 @@ export function HeroSection() {
             </div>
             <div className="hidden sm:block w-px h-10 bg-border/30" />
             <div className="flex flex-col items-center min-w-[4rem]">
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground tabular-nums">48hr</span>
-              <span className="text-[10px] sm:text-[11px] text-muted-foreground tracking-wide text-center">System Launch</span>
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground tabular-nums">60s</span>
+              <span className="text-[10px] sm:text-[11px] text-muted-foreground tracking-wide text-center">Missed Call Text-Back</span>
             </div>
           </div>
         </div>

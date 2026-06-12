@@ -8,25 +8,25 @@ const stats = [
     value: 150,
     suffix: "+",
     label: "Qualified Leads Per Month",
-    description: "Across client accounts",
+    description: "Combined across active client accounts",
   },
   {
     value: 340,
     suffix: "%",
     label: "Average Enquiry Increase",
-    description: "Within first 90 days",
+    description: "Measured across first 90 days of active campaigns",
   },
   {
     value: 24,
     suffix: "/7",
     label: "Lead Capture",
-    description: "Enquiries captured round the clock",
+    description: "Enquiries captured and responded to round the clock",
   },
   {
     value: 4,
     suffix: ".8x",
     label: "Return on Investment",
-    description: "Average across clients",
+    description: "Average across clients on Growth & Dominate plans",
   },
 ]
 

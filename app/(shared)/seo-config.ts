@@ -1,6 +1,19 @@
 import type { Metadata } from "next"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nobleleads.uk"
+const DEFAULT_SITE_URL = "https://nobleleads.uk"
+
+export function getSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim()
+  if (!raw) return DEFAULT_SITE_URL
+
+  try {
+    const parsed = new URL(raw.startsWith("http") ? raw : `https://${raw}`)
+    return parsed.origin
+  } catch {
+    return DEFAULT_SITE_URL
+  }
+}
+
 const defaultOgImage = "/og-default.jpg"
 
 type BuildMetadataOptions = {
@@ -32,7 +45,7 @@ export function buildMetadata({
 
   const canonicalUrl = canonical.startsWith("http")
     ? canonical
-    : `${siteUrl}${canonical}`
+    : `${getSiteUrl()}${canonical}`
 
   return {
     title: fullTitle,

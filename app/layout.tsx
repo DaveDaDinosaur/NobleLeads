@@ -4,6 +4,8 @@ import { Inter, JetBrains_Mono } from "next/font/google"
 import { CookieConsentBanner } from "@/components/consent/CookieConsentBanner"
 import { Ga4Loader } from "@/components/consent/Ga4Loader"
 
+import { getSiteUrl } from "./(shared)/seo-config"
+
 import "./globals.css"
 
 const inter = Inter({
@@ -18,10 +20,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nobleleads.uk"
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Noble Leads | Growth Systems for Property Service Businesses",
     template: "%s | Noble Leads",

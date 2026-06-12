@@ -28,15 +28,15 @@ const systemParts = [
   },
   {
     icon: Bot,
-    title: "Round-the-Clock Capture",
+    title: "Missed Call Text-Back",
     description:
-      "Enquiries captured and qualified even when you're on the tools. Fewer missed calls and lost leads.",
+      "Miss a call while on the tools? The system texts them back within 60 seconds — so you never lose a lead to a competitor who answered faster.",
   },
   {
     icon: MessageSquare,
-    title: "Automated Follow-Up",
+    title: "Two-Way SMS Follow-Up",
     description:
-      "SMS and email sequences that follow up every lead automatically. Fast response without the manual chase.",
+      "Automated SMS and email sequences follow up every lead from your branded number. Fast response, no manual chasing.",
   },
   {
     icon: PhoneCall,
@@ -46,9 +46,9 @@ const systemParts = [
   },
   {
     icon: BarChart3,
-    title: "Clear Pipeline Visibility",
+    title: "Your Own Lead Dashboard",
     description:
-      "A clear view of your leads, conversion and ROI. No black box—you see what you're getting.",
+      "A branded client dashboard on your phone — see every lead, conversation and pipeline value in real time. No black box, no spreadsheets.",
   },
 ]
 

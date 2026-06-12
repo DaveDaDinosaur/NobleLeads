@@ -49,16 +49,16 @@ export function HomePageClient() {
 
   useEffect(() => {
     // Defer heavy 3D hero until the browser is idle or a short delay has passed
-    if ("requestIdleCallback" in window) {
-      const id = (window as any).requestIdleCallback(
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(
         () => setShowHeroScene(true),
         { timeout: 1500 }
       )
-      return () => (window as any).cancelIdleCallback?.(id)
+      return () => window.cancelIdleCallback(id)
     }
 
-    const t = window.setTimeout(() => setShowHeroScene(true), 1200)
-    return () => window.clearTimeout(t)
+    const t = setTimeout(() => setShowHeroScene(true), 1200)
+    return () => clearTimeout(t)
   }, [])
 
   return (

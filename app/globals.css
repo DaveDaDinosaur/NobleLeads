@@ -81,7 +81,8 @@
 @media (prefers-reduced-motion: reduce) {
   .text-gold-ripple,
   .text-shimmer-gold,
-  .carousel-scroll-loop {
+  .carousel-scroll-loop,
+  .carousel-scroll-loop-reverse {
     animation: none;
   }
 }
@@ -98,6 +99,24 @@
 
 .carousel-scroll-loop {
   animation: carousel-scroll 45s linear infinite;
+}
+
+.carousel-scroll-loop-reverse {
+  animation: carousel-scroll-reverse 50s linear infinite;
+}
+
+.carousel-scroll-loop:hover,
+.carousel-scroll-loop-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carousel-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Fade edges for looping carousel */

@@ -17,6 +17,22 @@ type BlogPostMeta = {
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "is-bark-worth-it-tradesmen",
+    title: "Is Bark Worth It for Tradesmen in 2026? Honest Answer",
+    description:
+      "Is Bark.com worth it for UK tradesmen in 2026? We break down the real cost per lead, the quality problem, what tradesmen actually say and what to do instead.",
+    primaryKeyword: "is bark worth it for tradesmen UK",
+    readTime: "11 min read",
+  },
+  {
+    slug: "google-ads-for-tradesmen-uk",
+    title: "Google Ads for Tradesmen UK — What Works and What to Avoid",
+    description:
+      "A straight guide to Google Ads for UK tradesmen. What works, what wastes money, how much to spend and how to tell if your campaigns are actually generating profitable jobs.",
+    primaryKeyword: "Google Ads for tradesmen UK",
+    readTime: "14 min read",
+  },
+  {
     slug: "is-checkatrade-worth-it-2025",
     title: "Is Checkatrade Worth It in 2026? Honest Answer for UK Trades",
     description:

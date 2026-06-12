@@ -3,28 +3,29 @@
 import { SectionReveal } from "@/components/section-reveal"
 import { ParallaxSection } from "@/components/parallax-section"
 import { Star, Quote } from "lucide-react"
+import Link from "next/link"
 
 const testimonials = [
   {
     quote:
-      "We were relying on word of mouth and the odd Facebook post. Within a few weeks of launching the NobleLeads system, we had more enquiries than we could comfortably handle and finally raised our prices.",
-    name: "Lee, window cleaning business owner in Leeds",
-    role: "Domestic & commercial window cleaning",
-    result: "+3–4 jobs/week",
+      "We were relying on word of mouth and the odd Facebook post. Within six weeks of launching the NobleLeads system we went from 4 to 19 enquiries a week and raised our prices for the first time in three years.",
+    name: "Lee M., window cleaning business owner",
+    role: "Domestic & commercial window cleaning · Leeds",
+    result: "4 → 19 enquiries/week",
   },
   {
     quote:
       "Before this, every storm meant a mad scramble on Checkatrade. Now people find us directly on Google, the phone rings steadily and we can choose the roofing jobs that actually make sense for the team.",
-    name: "Amir, roofing contractor in Birmingham",
-    role: "Owner, small roofing team",
-    result: "More booked re-roofs",
+    name: "Amir K., roofing contractor",
+    role: "Owner, 4-man roofing team · Birmingham",
+    result: "Off Checkatrade in 3 months",
   },
   {
     quote:
-      "The automation has taken a huge weight off. Missed calls get a text, quotes are followed up and I can see exactly what came from which campaign without guessing.",
-    name: "Kelly, commercial cleaning company in Cambridge",
-    role: "Director, commercial cleaning & facilities",
-    result: "Time back & clear tracking",
+      "The missed call text-back alone paid for the first month. Missed calls get a reply within seconds, quotes are followed up automatically and I can see exactly what came from which campaign — no more guessing.",
+    name: "Craig H., owner",
+    role: "Focus Refurbishment · Commercial refurbishment · Kent",
+    result: "First month ROI covered by text-back",
   },
 ]
 
@@ -48,7 +49,7 @@ export function TestimonialsSection() {
           </SectionReveal>
         </ParallaxSection>
 
-        <div className="mt-10 sm:mt-16 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-3 items-stretch">
           {testimonials.map((testimonial, i) => (
             <SectionReveal key={testimonial.name} delay={i * 140} direction="up">
               <div className="group flex h-full flex-col rounded-xl border border-border/40 bg-card p-6 sm:p-8 lg:p-10 transition-all duration-500 hover:border-secondary/30 hover:bg-card relative overflow-hidden">
@@ -86,6 +87,18 @@ export function TestimonialsSection() {
             </SectionReveal>
           ))}
         </div>
+
+        <SectionReveal delay={500}>
+          <div className="mt-8 sm:mt-10 text-center">
+            <Link
+              href="/case-studies/focus-refurbishment"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
+            >
+              See how we helped Focus Refurbishment go from referrals to a full growth system
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   )
