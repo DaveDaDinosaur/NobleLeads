@@ -422,20 +422,21 @@ export default function WindowCleanersPage() {
               </h2>
               <div className="rounded-xl border border-secondary/20 bg-card/40 p-5 sm:p-6 space-y-3">
                 <p className="text-sm leading-relaxed text-foreground/90 italic">
-                  "We were relying on word of mouth and the odd Facebook post. Within
-                  six weeks of launching the NobleLeads system we went from 4 to 19
-                  enquiries a week and raised our prices for the first time in three
-                  years."
+                  "We were losing commercial contracts to competitors who simply showed
+                  up higher on Google. Within six weeks of launching the NobleLeads
+                  system, we picked up two new shop fronts and a monthly office block —
+                  and the round filled out faster than we'd managed in the previous two
+                  years on Checkatrade."
                 </p>
                 <div>
-                  <p className="text-xs font-semibold text-foreground">Lee M.</p>
+                  <p className="text-xs font-semibold text-foreground">Marcus D.</p>
                   <p className="text-xs text-muted-foreground">
-                    Domestic &amp; commercial window cleaning · Leeds
+                    Domestic &amp; commercial window cleaning · Cambridge
                   </p>
                 </div>
               </div>
               <p>
-                Lee{"'"}s experience is the pattern we see consistently: a window cleaner
+                Marcus{"'"}s experience is the pattern we see consistently: a window cleaner
                 with strong work and good reviews, held back not by their service but
                 by the lack of a system bringing new customers in. Once that system
                 is in place, the growth compounds.

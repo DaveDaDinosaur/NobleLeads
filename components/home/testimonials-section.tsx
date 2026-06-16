@@ -8,10 +8,10 @@ import Link from "next/link"
 const testimonials = [
   {
     quote:
-      "We were relying on word of mouth and the odd Facebook post. Within six weeks of launching the NobleLeads system we went from 4 to 19 enquiries a week and raised our prices for the first time in three years.",
-    name: "Lee M., window cleaning business owner",
-    role: "Domestic & commercial window cleaning · Leeds",
-    result: "4 → 19 enquiries/week",
+      "Summer was manic and winter was dead — we never knew what the next month would look like. NobleLeads got our Google presence and follow-up sorted. Within two months we had steady enquiries through the quiet season and booked enough paving work to keep the team busy year-round.",
+    name: "Sarah P., landscaping business owner",
+    role: "Garden design, paving & maintenance · Bristol",
+    result: "Steady work through winter",
   },
   {
     quote:
