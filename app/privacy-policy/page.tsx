@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
                 How We Use Personal Data
               </h2>
               <ul className="mt-3 list-disc space-y-1 pl-5">
-                <li>To respond to enquiries and book strategy calls.</li>
+                <li>To respond to enquiries and book discovery calls.</li>
                 <li>To provide and improve our services.</li>
                 <li>
                   To monitor website performance and user journeys (where analytics

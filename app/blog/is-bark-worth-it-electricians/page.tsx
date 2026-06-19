@@ -221,6 +221,19 @@ export default function IsBarkWorthItElectriciansPage() {
             </section>
           </SectionReveal>
 
+          {/* Mid-article CTA */}
+          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-sm text-foreground font-medium leading-snug">
+              Spending on Bark credits and not getting the jobs? We{"'"}ll tell you honestly what would work better.
+            </p>
+            <Link
+              href="/contact"
+              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+            >
+              Free 15-min discovery call →
+            </Link>
+          </div>
+
           {/* Section 4: Emergency callouts */}
           <SectionReveal delay={80}>
             <section className="mt-12 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -401,7 +414,7 @@ export default function IsBarkWorthItElectriciansPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
                 >
-                  Book a Free Strategy Call
+                  Book a Free Discovery Call
                 </Link>
                 <Link
                   href="/electricians"

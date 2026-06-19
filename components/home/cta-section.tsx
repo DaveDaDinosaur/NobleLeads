@@ -47,7 +47,7 @@ export function CTASection() {
                   href="/contact"
                   className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-8 sm:px-10 py-4 text-base font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Book Your Strategy Call
+                  Book Your Discovery Call
                   <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" />
                 </Link>
               </div>

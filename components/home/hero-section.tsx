@@ -79,7 +79,7 @@ export function HeroSection() {
               href="/contact"
               className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-4 sm:px-8 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Book Your Free Strategy Call
+              Book a Free Discovery Call
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" />
             </Link>
             <Link
@@ -90,7 +90,7 @@ export function HeroSection() {
             </Link>
           </div>
           <p className="mt-3 text-xs text-muted-foreground/80 animate-fade-in-up" style={{ animationDelay: "850ms" }}>
-            Free 30-minute strategy call · No obligation
+            Free 15-minute discovery call · No obligation
           </p>
 
           {/* Trust indicators - horizontal strip */}

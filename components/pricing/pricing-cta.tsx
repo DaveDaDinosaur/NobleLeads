@@ -13,14 +13,14 @@ export function PricingCTA() {
             Ready To Bring In More Enquiries?
           </h2>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground">
-            Book a strategy call and we’ll recommend the right option for your business.
+            Book a discovery call and we’ll recommend the right option for your business.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
               className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98] w-full sm:w-auto"
             >
-              Book Strategy Call
+              Book Discovery Call
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <a

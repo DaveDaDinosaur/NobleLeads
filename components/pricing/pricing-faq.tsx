@@ -11,7 +11,7 @@ import {
 const FAQ = [
   {
     q: "How long does it take to go live?",
-    a: "Core websites can go live within a few days. Growth and Dominate include more setup — we’ll give you a clear timeline on the strategy call, usually 2–4 weeks depending on scope.",
+    a: "Core websites can go live within a few days. Growth and Dominate include more setup — we’ll give you a clear timeline on the discovery call, usually 2–4 weeks depending on scope.",
   },
   {
     q: "Is there a contract?",
@@ -31,11 +31,11 @@ const FAQ = [
   },
   {
     q: "What if I already have a website?",
-    a: "We can work with what you have, improve it, add the enquiry system and tracking, or rebuild if it’s holding you back. The strategy call is where we decide the best path.",
+    a: "We can work with what you have, improve it, add the enquiry system and tracking, or rebuild if it’s holding you back. The discovery call is where we decide the best path.",
   },
   {
     q: "How much should I spend on ads?",
-    a: "It depends on your trade, area and competition. We’ll recommend a sensible starting budget on the strategy call and adjust as we see what works. No guesswork: everything is tracked and optimised.",
+    a: "It depends on your trade, area and competition. We’ll recommend a sensible starting budget on the discovery call and adjust as we see what works. No guesswork: everything is tracked and optimised.",
   },
   {
     q: "Will this work in my area?",

@@ -109,7 +109,7 @@ export function Footer() {
               href="/contact"
               className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-secondary transition-colors hover:text-gold-300"
             >
-              Book a Strategy Call
+              Book a Discovery Call
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
             <p className="mt-3 text-xs text-muted-foreground lg:ml-auto lg:max-w-[220px]">

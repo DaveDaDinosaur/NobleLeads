@@ -181,6 +181,19 @@ export default function IsCheckatradeWorthIt2025Page() {
             </section>
           </SectionReveal>
 
+          {/* Mid-article CTA */}
+          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-sm text-foreground font-medium leading-snug">
+              Not sure if Checkatrade spend is holding you back? Let{"'"}s have a look together.
+            </p>
+            <Link
+              href="/contact"
+              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+            >
+              Free 15-min discovery call →
+            </Link>
+          </div>
+
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -379,7 +392,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 .
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Book a quick, no-pressure strategy call and we{"'"}ll show you what a
+                Book a quick, no-pressure discovery call and we{"'"}ll show you what a
                 conversion-ready website and Google presence could do for your trade
                 business.
               </p>
@@ -388,7 +401,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                   href="/contact"
                   className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Book Your Free Strategy Call
+                  Book a Free Discovery Call
                 </Link>
               </div>
             </section>

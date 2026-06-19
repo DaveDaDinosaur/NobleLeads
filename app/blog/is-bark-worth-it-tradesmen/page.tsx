@@ -208,6 +208,19 @@ export default function IsBarkWorthItPage() {
             </section>
           </SectionReveal>
 
+          {/* Mid-article CTA */}
+          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-sm text-foreground font-medium leading-snug">
+              Spending on Bark and not sure if it{"'"}s worth it? We{"'"}ll give you an honest answer.
+            </p>
+            <Link
+              href="/contact"
+              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+            >
+              Free 15-min discovery call →
+            </Link>
+          </div>
+
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -393,7 +406,7 @@ export default function IsBarkWorthItPage() {
                 <span className="font-semibold text-foreground">
                   your business or someone else{"'"}s platform
                 </span>
-                . Book a free strategy call and we{"'"}ll show you what owning your own
+                . Book a free discovery call and we{"'"}ll show you what owning your own
                 lead flow could look like.
               </p>
               <div className="mt-6 flex justify-center">
@@ -401,7 +414,7 @@ export default function IsBarkWorthItPage() {
                   href="/contact"
                   className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Book Your Free Strategy Call
+                  Book a Free Discovery Call
                 </Link>
               </div>
             </section>

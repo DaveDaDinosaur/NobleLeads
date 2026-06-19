@@ -97,7 +97,7 @@ export function Navigation() {
                 href="/contact"
                 className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300"
               >
-                Book a Strategy Call
+                Book a Discovery Call
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
@@ -158,7 +158,7 @@ export function Navigation() {
                 : "translateY(20px)",
             }}
           >
-            Book a Strategy Call
+            Book a Discovery Call
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

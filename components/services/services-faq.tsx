@@ -11,7 +11,7 @@ import {
 const FAQ = [
   {
     q: "What if I already have a website?",
-    a: "We work with what you have. We can audit it for conversion, add the missing pieces (CRM, alerts, SEO), or rebuild if it’s holding you back. The strategy call clarifies the best path.",
+    a: "We work with what you have. We can audit it for conversion, add the missing pieces (CRM, alerts, SEO), or rebuild if it’s holding you back. The discovery call clarifies the best path.",
   },
   {
     q: "Is this a contract?",
@@ -19,7 +19,7 @@ const FAQ = [
   },
   {
     q: "How long does it take?",
-    a: "Core systems can go live within 48 hours. Full rollout depends on scope—we’ll give you a clear timeline on the strategy call.",
+    a: "Core systems can go live within 48 hours. Full rollout depends on scope—we’ll give you a clear timeline on the discovery call.",
   },
   {
     q: "Do you guarantee results?",

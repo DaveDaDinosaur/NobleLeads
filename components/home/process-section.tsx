@@ -8,7 +8,7 @@ const steps = [
   {
     icon: PhoneCall,
     number: "01",
-    title: "Strategy Call",
+    title: "Discovery Call",
     description:
       "We diagnose your current lead flow, identify the gaps, and map out exactly what needs to happen to create predictable revenue.",
   },

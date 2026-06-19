@@ -249,6 +249,19 @@ export default function HowToGetMoreGoogleReviewsPage() {
             </section>
           </SectionReveal>
 
+          {/* Mid-article CTA */}
+          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-sm text-foreground font-medium leading-snug">
+              Want review requests automated so you never forget to ask again?
+            </p>
+            <Link
+              href="/contact"
+              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+            >
+              Free 15-min discovery call →
+            </Link>
+          </div>
+
           {/* Section 5: QR cards */}
           <SectionReveal delay={80}>
             <section className="mt-12 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -457,14 +470,14 @@ export default function HowToGetMoreGoogleReviewsPage() {
                 Stop Relying on Memory to Get Reviews
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                NobleLeads builds automated review request sequences into every client system — so every completed job triggers the ask, every time, without you having to think about it. Book a strategy call to see how the full system works.
+                NobleLeads builds automated review request sequences into every client system — so every completed job triggers the ask, every time, without you having to think about it. Book a discovery call to see how the full system works.
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
                 >
-                  Book a Free Strategy Call
+                  Book a Free Discovery Call
                 </Link>
                 <Link
                   href="/blog/google-ads-for-tradesmen-uk"

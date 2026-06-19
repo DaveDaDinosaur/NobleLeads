@@ -246,7 +246,7 @@ export function ServiceSections() {
               Not sure which modules you need?
             </p>
             <h3 className="mt-2 text-xl sm:text-2xl font-bold text-foreground">
-              Book a strategy call. We&apos;ll map your gaps and recommend the right build.
+              Book a discovery call. We&apos;ll map your gaps and recommend the right build.
             </h3>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
@@ -255,7 +255,7 @@ export function ServiceSections() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3.5 w-3.5 text-secondary" />
-                30-minute call
+                15-minute call
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3.5 w-3.5 text-secondary" />
@@ -266,7 +266,7 @@ export function ServiceSections() {
               href="/contact"
               className="mt-6 min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
             >
-              Book Your Strategy Call
+              Book Your Discovery Call
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

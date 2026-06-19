@@ -61,7 +61,7 @@ export function AboutCTA() {
               href="/contact"
               className="group min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
             >
-              Book a Strategy Call
+              Book a Discovery Call
               <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </div>

@@ -36,7 +36,7 @@ export function MobileCTABar() {
               Ready for predictable enquiries?
             </p>
             <p className="text-[10px] text-muted-foreground">
-              30-minute strategy call · No obligation
+              15-minute discovery call · No obligation
             </p>
           </div>
           <Link

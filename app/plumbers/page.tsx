@@ -96,7 +96,7 @@ export default function PlumbersPage() {
                   href="/contact"
                   className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Book Your Free Strategy Call
+                  Book a Free Discovery Call
                 </Link>
                 <p className="text-xs text-muted-foreground/80">
                   15 minutes. No pressure. A clear picture of what{"'"}s possible for
@@ -326,7 +326,7 @@ export default function PlumbersPage() {
                   href="/contact"
                   className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Book Your Free Strategy Call
+                  Book a Free Discovery Call
                 </Link>
               </div>
             </section>

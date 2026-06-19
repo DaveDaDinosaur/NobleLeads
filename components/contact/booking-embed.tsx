@@ -23,7 +23,7 @@ export function BookingEmbed() {
                     Pick a time that works
                   </p>
                   <h3 className="mt-2 text-xl font-bold text-foreground">
-                    Growth & Enquiry Strategy Call (30 Minutes)
+                    15-Minute Discovery Call
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A quick look at your online presence and how we can turn it
@@ -36,7 +36,7 @@ export function BookingEmbed() {
                     src={GHL_BOOKING_URL}
                     className="w-full border-0 min-h-[720px] sm:min-h-[780px] lg:min-h-[820px] block"
                     scrolling="auto"
-                    title="Growth & Enquiry Strategy Call - Book with Noble Leads"
+                    title="15-Minute Discovery Call - Book with Noble Leads"
                   />
                 </div>
               </div>
@@ -55,11 +55,11 @@ export function BookingEmbed() {
                       step: "1",
                       title: "Pick Your Time",
                       description:
-                        "Choose a 30-minute slot that fits your schedule. You'll get a calendar invite right away.",
+                        "Choose a 15-minute slot that fits your schedule. You'll get a calendar invite right away.",
                     },
                     {
                       step: "2",
-                      title: "Strategy Call",
+                      title: "Discovery Call",
                       description:
                         "We walk through your lead flow, your market, and identify the biggest opportunity for growth.",
                     },

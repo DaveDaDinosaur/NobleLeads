@@ -7,9 +7,9 @@ import type { Metadata } from "next"
 import { buildMetadata } from "../(shared)/seo-config"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Book a Strategy Call",
+  title: "Book a Discovery Call",
   description:
-    "Book a Growth & Enquiry Strategy Call with NobleLeads. We review your online presence and show you how to turn it into a consistent lead system.",
+    "Book a 15-Minute Discovery Call with NobleLeads. We review your online presence and show you how to turn it into a consistent lead system.",
   canonicalPath: "/contact",
 })
 

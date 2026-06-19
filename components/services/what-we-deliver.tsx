@@ -99,13 +99,13 @@ export function WhatWeDeliver() {
           </p>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
             We&apos;ll map these steps to your business and priorities on a
-            free strategy call.
+            free discovery call.
           </p>
           <Link
             href="/contact"
             className="group mt-8 min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
           >
-            Book a free strategy call
+            Book a free discovery call
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         </div>
