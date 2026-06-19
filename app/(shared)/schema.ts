@@ -31,7 +31,9 @@ type ArticleSchemaOptions = {
   description: string
   url: string
   datePublished: string
+  dateModified?: string
   authorName?: string
+  authorType?: "Organization" | "Person"
   imageUrl?: string
 }
 
@@ -40,7 +42,9 @@ export function getArticleSchema({
   description,
   url,
   datePublished,
+  dateModified,
   authorName = "NobleLeads",
+  authorType = "Organization",
   imageUrl,
 }: ArticleSchemaOptions) {
   const data: Record<string, unknown> = {
@@ -50,15 +54,20 @@ export function getArticleSchema({
     description,
     mainEntityOfPage: url,
     datePublished,
+    dateModified: dateModified ?? datePublished,
     author: {
-      "@type": "Organization",
+      "@type": authorType,
       name: authorName,
-      url: BUSINESS_URL,
+      ...(authorType === "Organization" ? { url: BUSINESS_URL } : {}),
     },
     publisher: {
       "@type": "Organization",
       name: BUSINESS_NAME,
       url: BUSINESS_URL,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".quick-answer"],
     },
   }
 

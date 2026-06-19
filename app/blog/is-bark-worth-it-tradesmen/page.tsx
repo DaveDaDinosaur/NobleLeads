@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema, getFAQPageSchema, type FAQItem } from "../../(shared)/schema"
+import { Breadcrumb } from "@/components/breadcrumb"
 
 const primaryKeyword = "is bark worth it for tradesmen UK"
 const canonicalPath = "/blog/is-bark-worth-it-tradesmen"
@@ -65,6 +66,12 @@ export default function IsBarkWorthItPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
+          <Breadcrumb
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: "Is Bark Worth It for Tradesmen?", href: "/blog/is-bark-worth-it-tradesmen" },
+            ]}
+          />
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">

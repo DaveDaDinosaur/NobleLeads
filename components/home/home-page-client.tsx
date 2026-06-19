@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
+import Script from "next/script"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -63,6 +64,7 @@ export function HomePageClient() {
 
   return (
     <>
+      <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
       {/* Deferred 3D background so LCP (hero text) isn't blocked by Three.js */}
       {showHeroScene && <HeroScene />}
 
@@ -78,6 +80,22 @@ export function HomePageClient() {
           <div className="relative py-4">
             <div className="mx-auto h-px w-16 bg-secondary/40" />
           </div>
+
+          {/* Spokesperson video */}
+          <section className="py-10 sm:py-14">
+            <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
+              <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                <iframe
+                  src="https://player.vimeo.com/video/1202920123?badge=0&autopause=0&player_id=0&app_id=58479"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                  title="Noble Leads — How It Works"
+                />
+              </div>
+            </div>
+          </section>
 
           <SolutionSection />
           <TradeGridSection />

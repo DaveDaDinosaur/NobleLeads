@@ -17,6 +17,38 @@ type BlogPostMeta = {
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "how-to-get-more-google-reviews-tradesman",
+    title: "How to Get More Google Reviews as a Tradesman UK (2026 Guide)",
+    description:
+      "When to ask, what to say, QR cards, automated SMS follow-up and how review velocity directly impacts your Google Maps ranking as a UK tradesman.",
+    primaryKeyword: "how to get more Google reviews tradesman UK",
+    readTime: "12 min read",
+  },
+  {
+    slug: "is-bark-worth-it-landscapers",
+    title: "Is Bark Worth It for Landscapers in 2026? Honest Answer",
+    description:
+      "Lead costs, the rogue trader reputation problem, why maintenance contracts rarely come from Bark, and why landscaping is a visual trade that needs its own platform.",
+    primaryKeyword: "is bark worth it for landscapers",
+    readTime: "10 min read",
+  },
+  {
+    slug: "is-bark-worth-it-plumbers",
+    title: "Is Bark Worth It for Plumbers in 2026? Honest Answer",
+    description:
+      "Credit costs per job type, Gas Safe verification gaps, emergency callouts Bark misses entirely — and what actually produces better ROI for UK plumbers.",
+    primaryKeyword: "is bark worth it for plumbers",
+    readTime: "11 min read",
+  },
+  {
+    slug: "is-bark-worth-it-electricians",
+    title: "Is Bark Worth It for Electricians in 2026? Honest Answer",
+    description:
+      "Credit costs, shared leads, unverified certifications and emergency callouts that bypass Bark entirely. We break down whether UK electricians are better off without it.",
+    primaryKeyword: "is bark worth it for electricians",
+    readTime: "10 min read",
+  },
+  {
     slug: "is-bark-worth-it-tradesmen",
     title: "Is Bark Worth It for Tradesmen in 2026? Honest Answer",
     description:
