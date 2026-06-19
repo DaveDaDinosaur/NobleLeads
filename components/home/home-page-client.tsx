@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/home/hero-section"
 import { SocialProofBar } from "@/components/home/social-proof-bar"
 import { TradeGridSection } from "@/components/home/trade-grid-section"
+import { VideoSection } from "@/components/home/video-section"
 import { HomePricingSection } from "@/components/home/home-pricing-section"
 import { HomeFAQSection } from "@/components/home/faq-section"
 
@@ -74,21 +75,7 @@ export function HomePageClient() {
         <SocialProofBar />
         {/* Slightly translucent section background so 3D globes can show through edges */}
         <div className="relative -mt-2 bg-background/80 sm:-mt-4">
-          {/* Spokesperson video */}
-          <section className="py-10 sm:py-14">
-            <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-              <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                <iframe
-                  src="https://player.vimeo.com/video/1202920123?badge=0&autopause=0&player_id=0&app_id=58479"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                  title="Noble Leads — How It Works"
-                />
-              </div>
-            </div>
-          </section>
+          <VideoSection />
 
           {/* Divider pulse */}
           <div className="relative py-4">
