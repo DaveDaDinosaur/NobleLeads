@@ -74,13 +74,6 @@ export function HomePageClient() {
         <SocialProofBar />
         {/* Slightly translucent section background so 3D globes can show through edges */}
         <div className="relative -mt-2 bg-background/80 sm:-mt-4">
-          <ProblemSection />
-
-          {/* Divider pulse */}
-          <div className="relative py-4">
-            <div className="mx-auto h-px w-16 bg-secondary/40" />
-          </div>
-
           {/* Spokesperson video */}
           <section className="py-10 sm:py-14">
             <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
@@ -97,6 +90,12 @@ export function HomePageClient() {
             </div>
           </section>
 
+          {/* Divider pulse */}
+          <div className="relative py-4">
+            <div className="mx-auto h-px w-16 bg-secondary/40" />
+          </div>
+
+          <ProblemSection />
           <SolutionSection />
           <TradeGridSection />
           <HomePricingSection />
