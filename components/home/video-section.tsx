@@ -25,12 +25,11 @@ export function VideoSection() {
         {/* Video */}
         <SectionReveal delay={80}>
           <div className="overflow-hidden rounded-2xl border border-border/30 shadow-2xl shadow-black/40">
-            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
               <iframe
-                src="https://player.vimeo.com/video/1202920123?badge=0&autopause=0&player_id=0&app_id=58479"
+                src="https://www.loom.com/embed/b89c9a4952ec4c109ce04b5401ada1d2"
                 frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
                 style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
                 title="Noble Leads — How It Works"
               />
