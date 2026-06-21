@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "is-rated-people-worth-it",
+    title: "Is Rated People Worth It for Tradespeople? Honest 2026 Review",
+    description:
+      "Real costs, the three-competitor cap advantage, what tradespeople actually say, and whether it beats Checkatrade for UK trades in 2026.",
+    readTime: "11 min read",
+    category: "Platform Reviews",
+  },
+  {
     slug: "how-much-does-checkatrade-cost",
     title: "How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown",
     description:
