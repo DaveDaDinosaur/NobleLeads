@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "how-much-do-bark-credits-cost",
+    title: "How Much Do Bark Credits Cost? Full 2026 Pricing Breakdown",
+    description:
+      "Exactly what Bark credits cost, the 3-month expiry rule, real cost per lead by job type, and how to work out if the spend is actually worth it for your trade.",
+    readTime: "9 min read",
+    category: "Platform Reviews",
+  },
+  {
     slug: "is-rated-people-worth-it",
     title: "Is Rated People Worth It for Tradespeople? Honest 2026 Review",
     description:
