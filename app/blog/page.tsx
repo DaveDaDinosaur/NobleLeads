@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "bark-vs-checkatrade",
+    title: "Bark vs Checkatrade: Which Is Better for UK Tradesmen? (2026)",
+    description:
+      "Honest comparison of costs, lead quality and which platform delivers better ROI — plus what actually works better than both for long-term lead generation.",
+    readTime: "12 min read",
+    category: "Platform Reviews",
+  },
+  {
     slug: "mybuilder-vs-checkatrade",
     title: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
     description:
