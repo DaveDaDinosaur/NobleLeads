@@ -1,10 +1,12 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { BlogGrid, type BlogPostMeta } from "@/components/blog/blog-grid"
+import { BlogHero } from "@/components/blog/blog-hero"
 import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
@@ -80,27 +82,7 @@ export default function BlogIndexPage() {
   return (
     <main className="min-h-screen overflow-x-hidden">
       <Navigation />
-
-      {/* Header */}
-      <section className="relative pt-28 sm:pt-32 pb-10 lg:pt-36 lg:pb-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionReveal>
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
-                Trade Marketing Blog · {posts.length} articles
-              </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Marketing That Makes Sense for UK Trades.
-              </h1>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-xl">
-                No fluff, no jargon — just honest guidance on how to get more of the
-                right enquiries coming direct to your business, without being
-                dependent on Checkatrade, Bark or Facebook groups.
-              </p>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
+      <BlogHero postCount={posts.length} />
 
       {/* Featured post */}
       <section className="pb-8 sm:pb-10">
@@ -148,12 +130,20 @@ export default function BlogIndexPage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 Practical trade marketing. No spam. Unsubscribe any time.
               </p>
-              {/* GHL form embed goes here */}
-              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <div className="w-full max-w-sm rounded-lg border border-border/40 bg-background/50 px-4 py-3 text-sm text-muted-foreground/50">
-                  {/* Replace this div with your GHL embed snippet */}
-                  GHL form embed
-                </div>
+              <div className="mt-6 w-full max-w-md mx-auto">
+                <iframe
+                  src="https://app.nobleleads.uk/widget/form/fPjPUS0bUZnvi86Nua0m"
+                  style={{ width: "100%", height: "220px", border: "none", borderRadius: "8px" }}
+                  id="inline-fPjPUS0bUZnvi86Nua0m"
+                  data-layout='{"id":"INLINE"}'
+                  data-trigger-type="alwaysShow"
+                  data-activation-type="alwaysActivated"
+                  data-deactivation-type="neverDeactivate"
+                  data-form-name="Mail List Form"
+                  data-form-id="fPjPUS0bUZnvi86Nua0m"
+                  data-layout-iframe-id="inline-fPjPUS0bUZnvi86Nua0m"
+                  title="Mail List Form"
+                />
               </div>
             </div>
           </SectionReveal>
@@ -162,6 +152,7 @@ export default function BlogIndexPage() {
 
       <Footer />
       <MobileCTABar />
+      <Script src="https://app.nobleleads.uk/js/form_embed.js" strategy="lazyOnload" />
     </main>
   )
 }
