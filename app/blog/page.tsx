@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "how-much-does-checkatrade-cost",
+    title: "How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown",
+    description:
+      "Membership fees, per-lead costs, real-world monthly totals and the one metric that actually tells you whether Checkatrade is worth the money.",
+    readTime: "11 min read",
+    category: "Platform Reviews",
+  },
+  {
     slug: "bark-vs-checkatrade",
     title: "Bark vs Checkatrade: Which Is Better for UK Tradesmen? (2026)",
     description:
