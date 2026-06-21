@@ -10,6 +10,8 @@ import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema, getFAQPageSchema, type FAQItem } from "../../(shared)/schema"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { PullQuote } from "@/components/blog/pull-quote"
+import { StatCallout } from "@/components/blog/stat-callout"
 
 const primaryKeyword = "is checkatrade worth it 2026 UK"
 const canonicalPath = "/blog/is-checkatrade-worth-it-2025"
@@ -128,6 +130,11 @@ export default function IsCheckatradeWorthIt2025Page() {
                 would need to run a solid Google Ads campaign and maintain a proper
                 website.
               </p>
+              <StatCallout
+                stat="£400–£1,000+"
+                label="What UK tradespeople typically spend on Checkatrade per month, once membership and pay-per-lead costs are combined."
+                accent="gold"
+              />
             </section>
           </SectionReveal>
 
@@ -178,6 +185,9 @@ export default function IsCheckatradeWorthIt2025Page() {
                 </span>{" "}
                 instead of on your own brand.
               </p>
+              <PullQuote accent="blue">
+                "You{"'"}re not paying for booked jobs — you{"'"}re paying for access to the same enquiry as everyone else."
+              </PullQuote>
             </section>
           </SectionReveal>
 
@@ -332,6 +342,11 @@ export default function IsCheckatradeWorthIt2025Page() {
                 </span>{" "}
                 instead.
               </p>
+              <StatCallout
+                stat="£6,240/year"
+                label="Typical Checkatrade spend (membership + leads) — roughly the same budget that could fund a conversion-ready website and Google Ads campaign you actually own."
+                accent="purple"
+              />
             </section>
           </SectionReveal>
 
