@@ -74,6 +74,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <script src="https://player.vimeo.com/api/player.js" async />
       </head>
       <body className="font-sans antialiased">
         <Ga4Loader />
