@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "mybuilder-vs-checkatrade",
+    title: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
+    description:
+      "An honest head-to-head on costs, lead quality and which trades each platform actually suits — plus what the best UK tradespeople do instead.",
+    readTime: "13 min read",
+    category: "Platform Reviews",
+  },
+  {
     slug: "how-to-get-more-google-reviews-tradesman",
     title: "How to Get More Google Reviews as a Tradesman UK (2026 Guide)",
     description:
