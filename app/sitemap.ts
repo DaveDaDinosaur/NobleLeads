@@ -8,7 +8,7 @@ type SitemapEntry = {
   priority: number
 }
 
-const lastModified = new Date("2026-06-13")
+const lastModified = new Date("2026-06-22")
 
 const routes: SitemapEntry[] = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
@@ -19,8 +19,17 @@ const routes: SitemapEntry[] = [
   { path: "/case-studies/focus-refurbishment", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
   { path: "/blog/is-bark-worth-it-tradesmen", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/is-bark-worth-it-plumbers", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/is-bark-worth-it-electricians", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/is-bark-worth-it-landscapers", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/google-ads-for-tradesmen-uk", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/is-checkatrade-worth-it-2025", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/how-to-get-more-google-reviews-tradesman", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/mybuilder-vs-checkatrade", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/bark-vs-checkatrade", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/how-much-does-checkatrade-cost", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/is-rated-people-worth-it", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/how-much-do-bark-credits-cost", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "monthly", priority: 0.6 },
   // Trade landing pages
   { path: "/window-cleaners", changeFrequency: "monthly", priority: 0.9 },
