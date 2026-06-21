@@ -130,11 +130,6 @@ export default function IsCheckatradeWorthIt2025Page() {
                 would need to run a solid Google Ads campaign and maintain a proper
                 website.
               </p>
-              <StatCallout
-                stat="£400–£1,000+"
-                label="What UK tradespeople typically spend on Checkatrade per month, once membership and pay-per-lead costs are combined."
-                accent="gold"
-              />
             </section>
           </SectionReveal>
 
@@ -342,11 +337,6 @@ export default function IsCheckatradeWorthIt2025Page() {
                 </span>{" "}
                 instead.
               </p>
-              <StatCallout
-                stat="£6,240/year"
-                label="Typical Checkatrade spend (membership + leads) — roughly the same budget that could fund a conversion-ready website and Google Ads campaign you actually own."
-                accent="purple"
-              />
             </section>
           </SectionReveal>
 
