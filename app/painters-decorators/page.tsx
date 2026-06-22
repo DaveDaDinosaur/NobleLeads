@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { BarChart3, Star, Shuffle, Building2 } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,16 +8,16 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
 const primaryKeyword = "marketing for painters and decorators UK"
 const canonicalPath = "/painters-decorators"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
@@ -56,6 +57,76 @@ const faqItems: FAQItem[] = [
   },
 ]
 
+const painPoints: PainPoint[] = [
+  {
+    icon: BarChart3,
+    heading: "Competing on Price Every Time",
+    body: "Customers can't tell quality apart before the job starts, so they default to the cheapest quote — regardless of your standard of work.",
+  },
+  {
+    icon: Star,
+    heading: "Outranked Locally on Reviews",
+    body: "The decorator down the road has 60+ reviews and appears above you in local searches, even if your finishes are consistently better.",
+  },
+  {
+    icon: Shuffle,
+    heading: "Enquiries Inconsistent and Patchy",
+    body: "Facebook groups and referrals keep you busy sometimes. But there's no reliable way to fill diary gaps when they appear.",
+  },
+  {
+    icon: Building2,
+    heading: "Commercial Work Feels Out of Reach",
+    body: "Landlords and property managers provide consistent, repeat volume — but without the right online presence, they simply don't find you.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Website That Shows Your Quality and Captures Enquiries",
+    body: (
+      <>
+        Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        for painters and decorators are built around before-and-after
+        photography, verified Google reviews and clear service pages for
+        interior, exterior and commercial work — with simple quote forms that
+        feed directly into your pipeline.
+      </>
+    ),
+  },
+  {
+    title: "Google Ads That Target Customers Ready to Book",
+    body: (
+      <>
+        We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for painters and decorators
+        </Link>{" "}
+        targeting people actively searching for a decorator in your area —
+        not browsing, not comparing, but searching because they have a job ready.
+        We focus on the searches that lead to real bookings, not tyre-kickers.
+      </>
+    ),
+  },
+  {
+    title: "Review Building and Quote Follow-Up Automation",
+    body: (
+      <>
+        In the decorating trade, reviews are everything. The system
+        automatically requests reviews after every completed job and follows
+        up on every quote that hasn{"'"}t responded. Your{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM pipeline
+        </Link>{" "}
+        tracks every enquiry so you always know what{"'"}s outstanding and where
+        your next jobs are coming from.
+      </>
+    ),
+  },
+]
+
 export const metadata: Metadata = buildMetadata({
   title: "Painter & Decorator Marketing Agency UK | More Leads — NobleLeads",
   description:
@@ -72,7 +143,7 @@ export default function PaintersDecoratorsPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-          {/* Section 1: Hero */}
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -106,9 +177,9 @@ export default function PaintersDecoratorsPage() {
             </header>
           </SectionReveal>
 
-          {/* Section 2: Pain Points */}
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Painters and Decorators Struggle to Stand Out and Charge More
               </h2>
@@ -120,30 +191,7 @@ export default function PaintersDecoratorsPage() {
                 </span>
                 .
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  You{"'"}re asked to quote against three or four other decorators and
-                  the customer often just picks the cheapest — regardless of the
-                  standard of your work.
-                </li>
-                <li>
-                  Your Google Business Profile has a few reviews but the decorator
-                  down the road has 60+ and ranks above you for local searches.
-                </li>
-                <li>
-                  You rely heavily on referrals and Facebook groups, which means
-                  enquiries are inconsistent and you have{" "}
-                  <span className="font-semibold text-foreground">
-                    no reliable way to fill gaps in the diary
-                  </span>
-                  .
-                </li>
-                <li>
-                  Commercial and landlord work — where volumes are higher and repeat
-                  business is common — feels out of reach because you don{"'"}t have the
-                  right online presence to attract it.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
               <p>
                 The solution isn{"'"}t undercutting the competition.{" "}
                 <span className="font-semibold text-foreground">
@@ -154,9 +202,9 @@ export default function PaintersDecoratorsPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 3: The System */}
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Painters and Decorators
               </h2>
@@ -165,48 +213,11 @@ export default function PaintersDecoratorsPage() {
                 in your area — so customers are already sold on you before they even
                 ask for a quote.
               </p>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Website That Shows Your Quality and Captures Enquiries
-              </p>
-              <p>
-                Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused trade websites
-                </Link>{" "}
-                for painters and decorators are built around before-and-after
-                photography, verified Google reviews and clear service pages for
-                interior, exterior and commercial work — with simple quote forms that
-                feed directly into your pipeline.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Google Ads That Target Customers Ready to Book
-              </p>
-              <p>
-                We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for painters and decorators
-                </Link>{" "}
-                targeting people actively searching for a decorator in your area.
-                Not browsing, not comparing — searching because they have a job ready.
-                We target the searches that lead to real bookings, not tyre-kickers.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Review Building and Quote Follow-Up Automation
-              </p>
-              <p>
-                In the decorating trade, reviews are everything. The system
-                automatically requests reviews after every completed job and follows
-                up on every quote that hasn{"'"}t responded. Your{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM pipeline
-                </Link>{" "}
-                tracks every enquiry so you always know what{"'"}s outstanding and where
-                your next jobs are coming from.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
-          {/* Section 4: ROI Example */}
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -222,14 +233,8 @@ export default function PaintersDecoratorsPage() {
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), even a conservative result
-                of:
-              </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>2 additional room repaints at £450 each, and</li>
-                <li>1 additional full interior at £2,000</li>
-              </ul>
-              <p>
-                gives you{" "}
+                of 2 additional room repaints at £450 and 1 additional full interior at
+                £2,000 gives you{" "}
                 <span className="font-semibold text-foreground">
                   £2,900 in extra revenue on a £495/month fee
                 </span>
@@ -239,16 +244,12 @@ export default function PaintersDecoratorsPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 5: Social Proof */}
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Real Results for Real Painters and Decorators
               </h2>
-              <p>
-                Here{"'"}s the pattern we see when a painter or decorator moves from
-                relying on referrals and Facebook to a proper NobleLeads system.
-              </p>
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
                 "Typical result: A painter and decorator in the South East was getting
                 most of their work from Facebook groups and a few loyal clients. Within
@@ -259,9 +260,9 @@ export default function PaintersDecoratorsPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 6: Pricing */}
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Painters and Decorators
               </h2>
@@ -269,35 +270,15 @@ export default function PaintersDecoratorsPage() {
                 We{"'"}ll match you to the right level based on where you are now and
                 the kind of work you want more of:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a credible, portfolio-led website with Google reviews integrated and
-                  every enquiry captured and tracked.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus Google Ads, review automation and quote
-                  follow-up sequences so you{"'"}re converting more of the enquiries you
-                  already get.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for decorating businesses targeting commercial clients, letting
-                  agents or expanding into multiple areas.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing is on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A credible, portfolio-led website with Google reviews integrated and every enquiry captured and tracked from day one."
+                growth="Everything in Core plus Google Ads, review automation and quote follow-up sequences — converting more of the enquiries you're already getting."
+                dominate="For decorating businesses targeting commercial clients, letting agents or expanding into multiple service areas."
+              />
             </section>
           </SectionReveal>
 
-          {/* Section 7: FAQ */}
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection
               title="Questions From Painters and Decorators Like You"
@@ -305,7 +286,7 @@ export default function PaintersDecoratorsPage() {
             />
           </SectionReveal>
 
-          {/* Section 8: Final CTA */}
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
@@ -331,7 +312,6 @@ export default function PaintersDecoratorsPage() {
 
       <Footer />
       <MobileCTABar />
-
       <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
     </main>
   )

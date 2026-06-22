@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Users, Star, Zap, PhoneCall } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,59 +8,129 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
-const primaryKeyword = "electrician marketing UK"
+const primaryKeyword = "lead generation for electricians UK"
 const canonicalPath = "/electricians"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
-    question: "Do you specialise in electricians specifically?",
+    question: "Do you work specifically with electricians?",
     answer:
-      "Yes. We understand the difference between domestic one-off jobs, rewires, EICRs and commercial contracts — and we build campaigns and copy around how electrical work actually gets sold and trusted.",
+      "Yes. We understand NICEIC and NAPIT registrations, the difference between domestic and commercial electrical work, and how to target the searches that bring in higher-value planned jobs rather than just emergency call-outs.",
   },
   {
-    question: "How long before I start getting electrical enquiries?",
+    question: "How quickly will I start seeing new electrical enquiries?",
     answer:
-      "With Google Ads running, most electricians start seeing new leads within 2–3 weeks. Local SEO and Google Business Profile work takes longer, but both are built together from day one so you get quick and long-term results.",
+      "With Google Ads running, most electricians start seeing new leads within 2–3 weeks. We also set up and optimise your Google Business Profile from day one, which drives organic enquiries alongside paid traffic.",
   },
   {
-    question: "Can you help me win more landlord and letting agent work?",
+    question: "Can you help me get more rewires and consumer unit jobs rather than just small repairs?",
     answer:
-      "Absolutely. We can target landlord compliance work — EICRs, installation certificates and periodic inspections — with dedicated landing pages and follow-up sequences designed for repeat commercial clients.",
+      "Absolutely. We build dedicated landing pages and campaigns targeting higher-value planned work — full rewires, consumer unit replacements, EICRs and commercial installations — so you attract the jobs with better margins.",
   },
   {
-    question: "My business relies on emergency call-outs. Can you help with that?",
+    question: "I miss calls while I'm on site. Can the system handle that?",
     answer:
-      "Yes. We build fast-loading, mobile-first pages for emergency electrical searches and use Google Ads to put you at the top for those high-intent searches in your area — the ones where speed of response wins the job.",
+      "Yes. When you miss a call, an automated text goes out within 60 seconds. Most customers will wait rather than try five other electricians if they feel someone has acknowledged them quickly.",
   },
   {
-    question: "Is there a minimum contract length?",
+    question: "Can you help me win landlord EICR contracts?",
     answer:
-      "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period so the system can be built and tuned properly, then roll monthly from there.",
+      "Yes. Landlord compliance work provides consistent, predictable volume. We build landing pages targeting landlords and letting agents in your area who need regular EICR certificates — often turning one-off jobs into recurring accounts.",
   },
   {
-    question: "Do you work with sole trader electricians as well as larger firms?",
+    question: "Is there a minimum contract?",
     answer:
-      "We work with sole traders and small teams. The key is that you have solid work quality, good (or buildable) reviews and want to grow in a controlled, sustainable way.",
+      "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period to build and tune the system properly, then move to a rolling monthly arrangement.",
   },
   {
-    question: "What areas of the UK do you cover?",
+    question: "Which areas of the UK do you cover?",
     answer:
-      "We work with electricians across the whole of the UK. All campaigns are targeted to your actual service area so you're not getting enquiries from the other side of the country.",
+      "We work with electricians across the UK. Campaigns are always targeted to your service area so you're not paying to advertise in postcodes you don't want to work in.",
+  },
+]
+
+const painPoints: PainPoint[] = [
+  {
+    icon: Users,
+    heading: "Competing on Shared Leads",
+    body: "On Checkatrade or Bark, you're one of five electricians quoting the same job — and the customer often picks on price alone.",
+  },
+  {
+    icon: Star,
+    heading: "Outranked on Google",
+    body: "The firm with 80 reviews gets the call. Your work is just as good — their visibility is better, and that's what's costing you.",
+  },
+  {
+    icon: Zap,
+    heading: "Only Getting Low-Value Jobs",
+    body: "Emergency call-outs fill your day. Rewires, consumer units and commercial contracts — the profitable work — rarely arrive on their own.",
+  },
+  {
+    icon: PhoneCall,
+    heading: "Enquiries Lost Mid-Job",
+    body: "Calls come in while you're on site. Miss them once and the customer moves on — they rarely call back a second time.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Website That Builds Trust and Converts",
+    body: (
+      <>
+        In the electrical trade, trust is everything. Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        are built to display your NICEIC or NAPIT registration prominently,
+        showcase completed projects, pull in Google reviews and make it
+        effortless to request a quote or call you directly on mobile.
+      </>
+    ),
+  },
+  {
+    title: "Google Ads and Local SEO That Target the Right Jobs",
+    body: (
+      <>
+        We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for electricians
+        </Link>{" "}
+        targeting the searches that signal intent and value — consumer unit
+        replacements, full rewires, EICR certificates and commercial
+        installations. You{"'"}re shown to people who are actively looking, in
+        the postcodes you want to work in.
+      </>
+    ),
+  },
+  {
+    title: "Automation That Captures Every Enquiry",
+    body: (
+      <>
+        Miss a call while you{"'"}re on site? The system sends an instant text
+        back within 60 seconds. Every form submission, every missed call and
+        every quote request is tracked in your{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM pipeline
+        </Link>{" "}
+        — so nothing falls through the cracks and you can see exactly where
+        your work is coming from.
+      </>
+    ),
   },
 ]
 
 export const metadata: Metadata = buildMetadata({
   title: "Electrician Marketing Agency UK | More Leads — NobleLeads",
   description:
-    "NobleLeads delivers electrician marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more rewires, EICRs and commercial contracts consistently.",
+    "NobleLeads delivers lead generation for electricians UK-wide using conversion websites, Google Ads and CRM automation so you can win more rewires, consumer units, EICRs and commercial contracts consistently.",
   canonicalPath,
 })
 
@@ -72,7 +143,7 @@ export default function ElectriciansPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-          {/* Section 1: Hero */}
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -105,9 +176,9 @@ export default function ElectriciansPage() {
             </header>
           </SectionReveal>
 
-          {/* Section 2: Pain Points */}
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Electricians Struggle to Get Consistent Work
               </h2>
@@ -119,29 +190,7 @@ export default function ElectriciansPage() {
                 </span>
                 , and when they do find someone first, that{"'"}s who gets the call.
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  You{"'"}re paying for leads on Checkatrade or similar platforms and
-                  competing with five other electricians on every job — often on price
-                  alone.
-                </li>
-                <li>
-                  Your Google Business Profile is underdeveloped, so the firm with 80
-                  reviews ranks above you even if your work is better.
-                </li>
-                <li>
-                  Emergency call-outs come in at random hours but{" "}
-                  <span className="font-semibold text-foreground">
-                    planned, higher-value work — rewires, consumer units, commercial
-                    contracts
-                  </span>{" "}
-                  — never comes in consistently.
-                </li>
-                <li>
-                  Enquiries arrive by phone while you{"'"}re on a job, you miss the call,
-                  and by the time you ring back they{"'"}ve already booked someone else.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
               <p>
                 None of this is a reflection of your qualifications or the quality of
                 your work.{" "}
@@ -152,9 +201,9 @@ export default function ElectriciansPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 3: The System */}
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Electricians
               </h2>
@@ -168,48 +217,11 @@ export default function ElectriciansPage() {
                   "I{"'"}ve booked this company and I{"'"}m recommending them."
                 </span>
               </p>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Website That Builds Trust and Converts
-              </p>
-              <p>
-                In the electrical trade, trust is everything. Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused trade websites
-                </Link>{" "}
-                are built to display your NICEIC or NAPIT registration prominently,
-                showcase completed projects, pull in Google reviews and make it
-                effortless to request a quote or call you directly on mobile.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Google Ads and Local SEO That Target the Right Jobs
-              </p>
-              <p>
-                We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for electricians
-                </Link>{" "}
-                targeting the searches that signal intent and value — consumer unit
-                replacements, full rewires, EICR certificates and commercial
-                installations. You{"'"}re shown to people who are actively looking, in
-                the postcodes you want to work in.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Automation That Captures Every Enquiry
-              </p>
-              <p>
-                Miss a call while you{"'"}re on site? The system sends an instant text
-                back within 60 seconds. Every form submission, every missed call and
-                every quote request is tracked in your{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM pipeline
-                </Link>{" "}
-                — so nothing falls through the cracks and you can see exactly where
-                your work is coming from.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
-          {/* Section 4: ROI Example */}
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -229,14 +241,8 @@ export default function ElectriciansPage() {
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), even a conservative outcome
-                of:
-              </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>4 additional domestic jobs at £280 average, and</li>
-                <li>1 additional rewire at £3,500</li>
-              </ul>
-              <p>
-                gives you{" "}
+                of 4 additional domestic jobs at £280 average and 1 additional rewire
+                at £3,500 gives you{" "}
                 <span className="font-semibold text-foreground">
                   £4,620 in extra revenue on a £495/month fee
                 </span>
@@ -246,7 +252,7 @@ export default function ElectriciansPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 5: Social Proof */}
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -266,45 +272,25 @@ export default function ElectriciansPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 6: Pricing */}
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Electricians
               </h2>
               <p>
-                We{"'"}ll match you to the right level based on where your business is
-                now and the kind of work you want more of:
+                We{"'"}ll match you to the right level based on the work you want and
+                where your business is now:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a professional, conversion-ready website with your certifications
-                  displayed correctly, CRM set up and every enquiry captured and logged.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus active Google Ads targeting your highest-value
-                  jobs, plus automation so missed calls are responded to instantly.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for electricians ready to expand territory, target commercial
-                  contracts or position for housing developer and facilities
-                  management work.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing is on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A professional website displaying your NICEIC or NAPIT registration, CRM set up and every enquiry captured from your Google Business Profile and website."
+                growth="Everything in Core plus Google Ads targeting high-value searches in your area, missed call text-back and automated quote follow-up."
+                dominate="For electricians expanding into commercial contracts, landlord compliance programmes or targeting new service areas."
+              />
             </section>
           </SectionReveal>
 
-          {/* Section 7: FAQ */}
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection
               title="Questions From Electricians Like You"
@@ -312,15 +298,15 @@ export default function ElectriciansPage() {
             />
           </SectionReveal>
 
-          {/* Section 8: Final CTA */}
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
-                Ready to Win More Electrical Work Without Buying Every Lead?
+                Ready to Win More of the Work That Actually Pays?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your electrical
-                business — what{"'"}s working, what{"'"}s not and what a proper lead system
+                business — what you{"'"}re doing now and what a proper lead system
                 could look like for you.
               </p>
               <div className="mt-6 flex justify-center">
@@ -338,7 +324,6 @@ export default function ElectriciansPage() {
 
       <Footer />
       <MobileCTABar />
-
       <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
     </main>
   )

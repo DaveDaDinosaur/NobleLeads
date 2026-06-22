@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { TrendingDown, Search, Users, ClipboardList } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,16 +8,16 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
 const primaryKeyword = "lead generation for roofers UK"
 const canonicalPath = "/roofers"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
@@ -56,6 +57,76 @@ const faqItems: FAQItem[] = [
   },
 ]
 
+const painPoints: PainPoint[] = [
+  {
+    icon: TrendingDown,
+    heading: "Feast or Famine Enquiries",
+    body: "Storm season floods the diary; calm weather empties it. You're at the mercy of the forecast, not in control of your own pipeline.",
+  },
+  {
+    icon: Search,
+    heading: "Not on Google's First Page",
+    body: "Homeowners search when they have a problem. If you're not visible locally when that happens, the call goes to someone who is.",
+  },
+  {
+    icon: Users,
+    heading: "Racing to the Bottom on Price",
+    body: "On Checkatrade or Bark, you're competing on speed and price before the customer has seen a single piece of your work.",
+  },
+  {
+    icon: ClipboardList,
+    heading: "Chasing Everything Manually",
+    body: "Picking up calls on site, chasing quotes by phone — admin time that should be on the roof, not in your van between jobs.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Roofer Website That Converts",
+    body: (
+      <>
+        We build{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        that highlight the things homeowners actually care about: photos of
+        completed roofs, insurance and guarantees, testimonials, financing
+        options and simple ways to request a quote or call you directly.
+      </>
+    ),
+  },
+  {
+    title: "High-Intent Traffic with Google Ads",
+    body: (
+      <>
+        Roofing is one of the strongest fits for{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads for trades
+        </Link>
+        . People rarely browse for fun — they search because they have a leak, a
+        storm-damaged roof or a planned re-roof. We target those searches in
+        your chosen areas and send people straight to your own landing pages,
+        not a directory listing.
+      </>
+    ),
+  },
+  {
+    title: "Automation and Follow-Up That Wins Jobs",
+    body: (
+      <>
+        With{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM &amp; automation for trades
+        </Link>
+        , every roofing enquiry gets an instant SMS and email response. Site
+        visits, quotes and follow-ups are tracked in one place, and you get a
+        clear view of which campaigns and keywords are generating the most
+        profitable jobs.
+      </>
+    ),
+  },
+]
+
 export const metadata: Metadata = buildMetadata({
   title: "Roofer Marketing Agency UK | More Leads, More Jobs — NobleLeads",
   description:
@@ -72,7 +143,7 @@ export default function RoofersPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-          {/* Section 1: Hero */}
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -85,11 +156,9 @@ export default function RoofersPage() {
                 Roofing work is high value but unpredictable. One month you{"'"}re flat
                 out with re-roofs and storm repairs, the next month you{"'"}re staring at
                 an empty diary. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">
-                  {primaryKeyword}
-                </span>{" "}
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
                 so you can build a steady pipeline of the right roofing jobs instead
-                of waiting for the weather—or luck—to decide.
+                of waiting for the weather — or luck — to decide.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link
@@ -106,41 +175,20 @@ export default function RoofersPage() {
             </header>
           </SectionReveal>
 
-          {/* Section 2: Pain Points */}
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Roofers Struggle to Get Consistent Work
               </h2>
               <p>
-                Most roofing businesses aren{"'"}t short of skill—they{"'"}re short of{" "}
+                Most roofing businesses aren{"'"}t short of skill — they{"'"}re short of{" "}
                 <span className="font-semibold text-foreground">
                   consistent, profitable enquiries
                 </span>
                 . You can probably relate to at least a few of these:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  Enquiries spike in bad weather, then disappear, leaving you with
-                  stop-start cashflow and awkward gaps in the schedule.
-                </li>
-                <li>
-                  You{"'"}re not on the first page of Google for key phrases in your
-                  area, so homeowners never even see your name when they need a roofer.
-                </li>
-                <li>
-                  You{"'"}re relying heavily on Checkatrade, Bark or Facebook groups,
-                  where you{"'"}re forced into{" "}
-                  <span className="font-semibold text-foreground">
-                    competing on speed and price
-                  </span>{" "}
-                  rather than quality and trust.
-                </li>
-                <li>
-                  You spend valuable site time picking up calls and chasing quotes
-                  instead of having a system that follows up for you.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
               <p>
                 The result? Busy weeks followed by quiet ones, staff you{"'"}re not sure
                 you can keep and no clear picture of where next month{"'"}s work is
@@ -149,79 +197,24 @@ export default function RoofersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 3: The System */}
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Roofers
               </h2>
               <p>
                 We build a single joined-up system so people who search{" "}
-                <span className="font-semibold text-foreground">
-                  “roofer near me”
-                </span>{" "}
+                <span className="font-semibold text-foreground">"roofer near me"</span>{" "}
                 or{" "}
-                <span className="font-semibold text-foreground">
-                  “roof repair in [your area]”
-                </span>{" "}
+                <span className="font-semibold text-foreground">"roof repair in [your area]"</span>{" "}
                 see you first, trust you and book.
               </p>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Roofer Website That Converts
-              </p>
-              <p>
-                We build{" "}
-                <Link
-                  href="/services"
-                  className="font-semibold text-secondary hover:underline"
-                >
-                  conversion-focused trade websites
-                </Link>{" "}
-                that highlight the things homeowners actually care about: photos of
-                completed roofs, insurance and guarantees, testimonials, financing
-                options and simple ways to request a quote or call you directly.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — High-Intent Traffic with Google Ads
-              </p>
-              <p>
-                Roofing is one of the strongest fits for{" "}
-                <Link
-                  href="/services"
-                  className="font-semibold text-secondary hover:underline"
-                >
-                  Google Ads for trades
-                </Link>
-                . People rarely browse for fun—they search because they have a leak, a
-                storm-damaged roof or a planned re-roof. We target those searches in
-                your chosen areas and send people straight to your own landing pages,
-                not a directory listing. For a deeper dive into paid traffic, explore
-                the articles on our{" "}
-                <Link href="/blog" className="font-semibold text-secondary hover:underline">
-                  trade marketing blog
-                </Link>
-                .
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Automation and Follow-Up That Wins Jobs
-              </p>
-              <p>
-                With{" "}
-                <Link
-                  href="/services"
-                  className="font-semibold text-secondary hover:underline"
-                >
-                  CRM &amp; automation for trades
-                </Link>
-                , every roofing enquiry gets an instant SMS and email response. Site
-                visits, quotes and follow-ups are tracked in one place, and you get a
-                clear view of which campaigns and keywords are generating the most
-                profitable jobs.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
-          {/* Section 4: ROI Example */}
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -231,58 +224,40 @@ export default function RoofersPage() {
                 For roofers, job values vary a lot. A small repair might be{" "}
                 <span className="font-semibold text-foreground">£250–£400</span>. A
                 re-roof can easily be{" "}
-                <span className="font-semibold text-foreground">
-                  £4,000–£8,000+
-                </span>
-                .
+                <span className="font-semibold text-foreground">£4,000–£8,000+</span>.
               </p>
               <p>
-                Let{"'"}s keep it conservative. Imagine the Noble Growth package at
-                £495/month plus ad spend delivers in an average month:
-              </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>3 additional repair jobs at £350 each, and</li>
-                <li>1 extra re-roof at £4,000.</li>
-              </ul>
-              <p>
-                That{"'"}s{" "}
+                At Noble Growth (£495/month plus ad spend), 3 additional repair jobs
+                at £350 each and 1 extra re-roof at £4,000 gives you{" "}
                 <span className="font-semibold text-foreground">
                   £5,050 in additional revenue
                 </span>{" "}
-                on a £495/month fee, before you factor in referrals and upsells from
-                those customers. Even if margins and real-world results are lower,
-                it{"'"}s not hard to see how a well-run system becomes{" "}
-                <span className="font-semibold text-foreground">
-                  a multiple of your monthly investment
-                </span>
-                .
+                on a £495/month fee — before you factor in referrals and upsells.
+                Even if real-world results are more conservative, a well-run system
+                becomes a multiple of your monthly investment.
               </p>
             </section>
           </SectionReveal>
 
-          {/* Section 5: Social Proof Placeholder */}
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Real Results for Real Roofers
               </h2>
-              <p>
-                Until we add named case studies, here{"'"}s the typical journey for a
-                roofer who moves away from ad-hoc marketing to a structured system.
-              </p>
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
-                “Typical result: A roofing company in the North West relied on
+                "Typical result: A roofing company in the North West relied on
                 Checkatrade and Facebook groups for most of their work. Within 8 weeks
                 of launching a NobleLeads website and Google Ads campaign, they were
                 booking 8–12 extra enquiries per month and closed two additional
-                full re-roofs—enough to comfortably pay for the system and reinvest.”
+                full re-roofs — enough to comfortably pay for the system and reinvest."
               </p>
             </section>
           </SectionReveal>
 
-          {/* Section 6: Pricing */}
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Roofers
               </h2>
@@ -290,39 +265,20 @@ export default function RoofersPage() {
                 Whether you{"'"}re a single-van roofer or running multiple teams, we{"'"}ll
                 match you to the right level of support:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> –
-                  for roofers who need a credible, conversion-ready website and basic
-                  CRM so every enquiry is captured and logged.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> –
-                  for roofers who want consistent leads from Google Ads and local SEO,
-                  plus automation so office and site teams aren{"'"}t overwhelmed.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> –
-                  for firms who want to expand territory, win larger contracts and
-                  position for tenders, not just domestic work.
-                </li>
-              </ul>
-              <p className="text-sm text-muted-foreground">
-                Full details and pricing are listed on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A credible, conversion-ready website and basic CRM so every enquiry is captured and logged — no lead slips through."
+                growth="Everything in Core plus Google Ads, local SEO and automation so you're not overwhelmed managing enquiries manually on site."
+                dominate="For firms who want to expand territory, win larger contracts and position for tenders, not just domestic work."
+              />
             </section>
           </SectionReveal>
 
-          {/* Section 7: FAQ */}
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection title="Questions From Roofers Like You" items={faqItems} />
           </SectionReveal>
 
-          {/* Section 8: Final CTA */}
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
@@ -331,7 +287,7 @@ export default function RoofersPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s talk about where your roofing business is now, what kind of
                 work you actually want and how a proper lead system could get you
-                there—without relying on storms or lead-buy sites.
+                there — without relying on storms or lead-buy sites.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
@@ -348,9 +304,7 @@ export default function RoofersPage() {
 
       <Footer />
       <MobileCTABar />
-
-      <JsonLd data={[getLocalBusinessSchema(), getFAQPageSchema(faqItems)]} />
+      <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
     </main>
   )
 }
-

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Calendar, Search, RefreshCcw, TrendingDown } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,45 +8,40 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
-const primaryKeyword = "landscaping marketing agency UK"
+const primaryKeyword = "landscaper marketing agency UK"
 const canonicalPath = "/landscapers"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
-    question: "Do you work specifically with landscaping businesses?",
+    question: "Do you work specifically with landscaping companies?",
     answer:
-      "Yes. We work with landscapers and garden services companies across the UK and understand the difference between one-off garden transformations, ongoing maintenance contracts and commercial landscaping work. Campaigns are built around what you actually want more of.",
+      "Yes. We understand the difference between hard landscaping, garden design and maintenance contracts — and the seasonal patterns that affect how enquiries come in. Campaigns are built around the work you want, not a generic trade template.",
   },
   {
-    question: "How long before I start seeing new landscaping enquiries?",
+    question: "How long before I start getting new landscaping enquiries?",
     answer:
-      "With Google Ads running, most landscapers see new enquiries within 2–4 weeks of going live. Because landscaping is often a considered purchase, we also build follow-up sequences that nurture prospects who are comparing quotes.",
+      "With Google Ads running, most landscaping businesses start seeing new leads within 2–3 weeks. We also time campaigns to peak demand — ahead of spring and early summer — so you're capturing searches when homeowners have budgets ready.",
   },
   {
-    question: "Can you help me win more ongoing maintenance contracts?",
+    question: "Can you help me build recurring maintenance revenue?",
     answer:
-      "Absolutely. Recurring maintenance contracts are some of the most valuable work for a landscaping business. We build dedicated pages and campaigns targeting homeowners and commercial clients who want regular garden care, not just one-off projects.",
-  },
-  {
-    question: "My work is very seasonal. Can a system work year-round?",
-    answer:
-      "Yes — and it becomes one of your biggest advantages. We time campaigns to peak demand periods (spring and early summer) and use the quieter months to build SEO, collect reviews and warm up enquiries so you hit the busy season with a full pipeline.",
+      "That's one of the biggest opportunities for landscaping businesses. Every project you complete is a chance to add a maintenance client. We build follow-up and upsell sequences into the system so those opportunities don't get missed.",
   },
   {
     question: "Is there a minimum contract?",
     answer:
-      "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period to build and tune the system properly, then roll monthly.",
+      "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period so we can build and refine the system properly, then move to a rolling arrangement.",
   },
   {
-    question: "Do you work with sole traders as well as larger landscaping teams?",
+    question: "Do you work with sole traders or small landscaping teams?",
     answer:
       "We work with sole traders and growing teams. What matters is that you deliver strong work, have or can build solid reviews and want to grow in a sustainable, controlled way.",
   },
@@ -53,6 +49,75 @@ const faqItems: FAQItem[] = [
     question: "Which areas of the UK do you cover?",
     answer:
       "We work with landscapers across the UK. All campaigns are targeted to your service area, whether that's a single town or a wider county radius.",
+  },
+]
+
+const painPoints: PainPoint[] = [
+  {
+    icon: Calendar,
+    heading: "Empty Diary After Big Jobs",
+    body: "Finish a large project and the scramble begins. There's no pipeline sitting ready for what comes next.",
+  },
+  {
+    icon: Search,
+    heading: "Invisible Portfolio Online",
+    body: "Your work is visually stunning but your website doesn't show it. Competitors with worse portfolios rank above you on Google.",
+  },
+  {
+    icon: RefreshCcw,
+    heading: "Maintenance Revenue Walking Out",
+    body: "Every completed project is a recurring income opportunity. Without a system to capture it, clients move on and that value goes with them.",
+  },
+  {
+    icon: TrendingDown,
+    heading: "Seasonal Cash Flow Gaps",
+    body: "Enquiries slow in autumn and winter, making staffing and equipment investment impossible to plan with any confidence.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Portfolio Website That Converts Browsers into Enquiries",
+    body: (
+      <>
+        Your best selling tool is your portfolio. Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        are built to showcase before-and-after photography, project
+        testimonials and clear service pages — with quote request forms and
+        consultation bookings that send leads directly into your CRM.
+      </>
+    ),
+  },
+  {
+    title: "Targeted Ads and SEO During Peak Demand",
+    body: (
+      <>
+        Landscaping has clear search seasons. We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for landscapers
+        </Link>{" "}
+        that ramp up ahead of spring and early summer — when homeowners are
+        actively searching and budgets are ready — and build your local SEO
+        presence so you{"'"}re ranking organically by the time the next peak arrives.
+      </>
+    ),
+  },
+  {
+    title: "Automation That Upsells Maintenance and Follows Up Quotes",
+    body: (
+      <>
+        Every project enquiry is followed up automatically. Every completed
+        job triggers a review request and a maintenance offer — turning one-off
+        clients into recurring revenue. Your{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM pipeline
+        </Link>{" "}
+        gives you a clear view of quotes, bookings and ongoing contracts all in
+        one place.
+      </>
+    ),
   },
 ]
 
@@ -72,7 +137,7 @@ export default function LandscapersPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-          {/* Section 1: Hero */}
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -106,9 +171,9 @@ export default function LandscapersPage() {
             </header>
           </SectionReveal>
 
-          {/* Section 2: Pain Points */}
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Landscapers Struggle to Get Consistent Work
               </h2>
@@ -121,29 +186,7 @@ export default function LandscapersPage() {
                 and there{"'"}s never quite enough time to sort out the marketing when
                 you{"'"}re busy on a project.
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  You finish a large project and immediately need to hustle for the
-                  next one — there{"'"}s no pipeline sitting ready.
-                </li>
-                <li>
-                  Your work is visually stunning but your online presence doesn{"'"}t
-                  reflect it — competitors with worse portfolios rank above you because
-                  they{"'"}ve invested in Google.
-                </li>
-                <li>
-                  You{"'"}re not capturing ongoing maintenance clients after project
-                  completion, which means{" "}
-                  <span className="font-semibold text-foreground">
-                    recurring revenue is walking out the door
-                  </span>{" "}
-                  with every job you finish.
-                </li>
-                <li>
-                  Enquiries slow to a trickle in autumn and winter, making it
-                  impossible to plan staffing or investment in equipment.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
               <p>
                 The answer isn{"'"}t working harder between projects. It{"'"}s having a system
                 that{" "}
@@ -156,9 +199,9 @@ export default function LandscapersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 3: The System */}
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Landscapers
               </h2>
@@ -172,47 +215,11 @@ export default function LandscapersPage() {
                   "I{"'"}ve booked this company — and I{"'"}m keeping them for maintenance."
                 </span>
               </p>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Portfolio Website That Converts Browsers into Enquiries
-              </p>
-              <p>
-                Your best selling tool is your portfolio. Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused trade websites
-                </Link>{" "}
-                are built to showcase before-and-after photography, project
-                testimonials and clear service pages — with quote request forms and
-                consultation bookings that send leads directly into your CRM.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Targeted Ads and SEO During Peak Demand
-              </p>
-              <p>
-                Landscaping has clear search seasons. We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for landscapers
-                </Link>{" "}
-                that ramp up ahead of spring and early summer — when homeowners are
-                actively searching and budgets are ready — and build your local SEO
-                presence so you{"'"}re ranking organically by the time the next peak arrives.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Automation That Upsells Maintenance and Follows Up Quotes
-              </p>
-              <p>
-                Every project enquiry is followed up automatically. Every completed
-                job triggers a review request and a maintenance offer — turning one-off
-                clients into recurring revenue. Your{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM pipeline
-                </Link>{" "}
-                gives you a clear view of quotes, bookings and ongoing contracts all in
-                one place.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
-          {/* Section 4: ROI Example */}
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -225,40 +232,27 @@ export default function LandscapersPage() {
                 full garden redesign with hard landscaping is often{" "}
                 <span className="font-semibold text-foreground">£5,000–£20,000+</span>.
                 A monthly maintenance contract is typically{" "}
-                <span className="font-semibold text-foreground">
-                  £120–£350 per visit
-                </span>
-                .
+                <span className="font-semibold text-foreground">£120–£350 per visit</span>.
               </p>
               <p>
-                At Noble Growth (£495/month plus ad spend), even a conservative
-                outcome of:
-              </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>2 additional small projects at £1,200 each, and</li>
-                <li>3 new maintenance clients at £180/month each</li>
-              </ul>
-              <p>
-                gives you{" "}
+                At Noble Growth (£495/month plus ad spend), even a conservative outcome
+                of 2 additional small projects at £1,200 each and 3 new maintenance
+                clients at £180/month gives you{" "}
                 <span className="font-semibold text-foreground">
                   £2,400 in project revenue plus £540/month in new recurring income
                 </span>
-                . The maintenance clients alone pay for the system inside three months
+                . Those maintenance clients alone pay for the system inside three months
                 — and they compound over time.
               </p>
             </section>
           </SectionReveal>
 
-          {/* Section 5: Social Proof */}
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Real Results for Real Landscapers
               </h2>
-              <p>
-                Here{"'"}s the pattern we see when a landscaping business moves from
-                relying on referrals to running a proper NobleLeads system.
-              </p>
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
                 "Typical result: A landscaping company in the Home Counties was
                 relying entirely on word of mouth and had a slow spring. Within 8
@@ -270,9 +264,9 @@ export default function LandscapersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 6: Pricing */}
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Landscapers
               </h2>
@@ -280,34 +274,15 @@ export default function LandscapersPage() {
                 We{"'"}ll match you to the right level based on the type of work you want
                 and where your business is now:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a portfolio-quality website built to convert visitors into enquiries,
-                  with CRM set up so every lead is tracked.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus seasonal Google Ads, review automation and
-                  maintenance upsell sequences.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for landscaping businesses targeting commercial contracts, new
-                  geographic areas or larger development projects.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing is on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A portfolio-quality website built to convert visitors into enquiries, with CRM set up so every lead is tracked from first contact."
+                growth="Everything in Core plus seasonal Google Ads, review automation and maintenance upsell sequences to turn projects into recurring income."
+                dominate="For landscaping businesses targeting commercial contracts, new geographic areas or larger development projects."
+              />
             </section>
           </SectionReveal>
 
-          {/* Section 7: FAQ */}
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection
               title="Questions From Landscapers Like You"
@@ -315,7 +290,7 @@ export default function LandscapersPage() {
             />
           </SectionReveal>
 
-          {/* Section 8: Final CTA */}
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
@@ -341,7 +316,6 @@ export default function LandscapersPage() {
 
       <Footer />
       <MobileCTABar />
-
       <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
     </main>
   )

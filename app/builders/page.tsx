@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { AlertTriangle, Search, Shield, Clock } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,37 +8,37 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
-const primaryKeyword = "marketing for builders UK"
+const primaryKeyword = "builder marketing agency UK"
 const canonicalPath = "/builders"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
     question: "Do you work specifically with building companies?",
     answer:
-      "Yes. We work with builders across general construction, extensions, loft conversions and refurbishments. Campaigns are built around the job types you actually want more of — not just any enquiry that comes in.",
+      "Yes. We understand the long lead cycles, high job values and the research homeowners do before they commit to extensions, loft conversions and refurbishments. Campaigns are built to attract serious enquiries, not browsers.",
   },
   {
-    question: "How long before I start getting new building enquiries?",
+    question: "How long before I start seeing qualified building enquiries?",
     answer:
-      "With Google Ads running, most builders start seeing qualified leads within 2–4 weeks. Because building projects are large purchases, we also build follow-up sequences to nurture prospects who are in the planning phase.",
+      "With Google Ads running, most builders start seeing new leads within 2–3 weeks. Because building projects have long decision cycles, we also build follow-up sequences to keep prospects warm through weeks or months of planning.",
   },
   {
-    question: "Can you help me attract extension and loft conversion work specifically?",
+    question: "Can you help me win commercial building contracts?",
     answer:
-      "Absolutely. Extension and loft conversion searches are high intent and high value. We build dedicated landing pages for each job type targeting the specific searches homeowners use when they're ready to proceed.",
+      "Yes. Commercial work — fit-outs, refurbishments, housing developers — provides high-volume, high-value pipelines. We can build dedicated pages and campaigns targeting commercial clients in your area.",
   },
   {
-    question: "I get a lot of enquiries already — I need better quality jobs, not more volume.",
+    question: "I get a lot of tyre-kicker enquiries. Can you filter those out?",
     answer:
-      "That's a common position for established builders. We can tune campaigns and landing pages to attract higher-value projects and better-qualified clients — filtering out the tyre-kickers and focusing on homeowners with realistic budgets and firm plans.",
+      "Yes. We build landing pages and quote forms that pre-qualify enquiries — asking the right questions to filter out people without genuine projects or budgets before they take up your time.",
   },
   {
     question: "Is there a minimum contract?",
@@ -45,21 +46,91 @@ const faqItems: FAQItem[] = [
       "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period to build and tune the system properly, then move to rolling monthly.",
   },
   {
-    question: "Do you work with sole traders or only larger building firms?",
+    question: "Do you work with small building firms or only larger contractors?",
     answer:
-      "We work with sole traders through to firms with multiple teams. The right package depends on your capacity and the type of work you're targeting.",
+      "We work with small teams through to more established building companies. The most important things are that your work is strong and you want to grow beyond relying on referrals and occasional Checkatrade leads.",
   },
   {
     question: "Which areas of the UK do you cover?",
     answer:
-      "We work with builders across the UK. All campaigns target your real service area — whether that's a single borough or a wider county radius.",
+      "We work with builders across the UK. Campaigns are targeted to your realistic travel radius and the job types that are most profitable for your team.",
+  },
+]
+
+const painPoints: PainPoint[] = [
+  {
+    icon: AlertTriangle,
+    heading: "Feast or Famine Pipeline",
+    body: "Flat out on a large project, then it ends and the pipeline empties. The gap between jobs is where cashflow gets tight and pressure builds.",
+  },
+  {
+    icon: Search,
+    heading: "Attracting the Wrong Enquiries",
+    body: "People fishing for ballpark figures with no real budget or timeline. Quoting these wastes time you could spend on serious buyers.",
+  },
+  {
+    icon: Shield,
+    heading: "Completed Work Isn't Visible Online",
+    body: "Your projects speak for themselves — but if they're not showcased online, customers choose competitors with slicker websites and more reviews.",
+  },
+  {
+    icon: Clock,
+    heading: "Leads Go Cold Mid-Project",
+    body: "When you're heads-down on a build, prospective clients quietly book whoever stayed in contact. Without follow-up, that's usually someone else.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Project Portfolio Website That Attracts Serious Buyers",
+    body: (
+      <>
+        Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        for builders lead with completed project photography, client
+        testimonials, accreditations (FMB, NHBC, Trustmark) and dedicated
+        service pages for extensions, loft conversions, refurbishments and
+        new builds — each built to rank and convert the right enquiries.
+      </>
+    ),
+  },
+  {
+    title: "Google Ads Targeting Homeowners Ready to Build",
+    body: (
+      <>
+        We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for builders
+        </Link>{" "}
+        targeting the searches that signal genuine intent — "extension builders
+        near me", "loft conversion quote [town]", "house refurbishment
+        contractors". High intent, your service area, landing pages built to
+        pre-qualify before they make contact.
+      </>
+    ),
+  },
+  {
+    title: "Pipeline Management and Long-Cycle Follow-Up",
+    body: (
+      <>
+        Building enquiries take weeks or months to convert. The{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM and automation system
+        </Link>{" "}
+        keeps every prospect warm with timed follow-ups — so when they{"'"}re
+        ready to commit, you{"'"}re the builder they{"'"}ve been hearing from, not
+        the one they{"'"}ve forgotten about.
+      </>
+    ),
   },
 ]
 
 export const metadata: Metadata = buildMetadata({
   title: "Builder Marketing Agency UK | More Leads, More Projects — NobleLeads",
   description:
-    "NobleLeads delivers marketing for builders UK-wide using conversion websites, Google Ads and CRM automation so you can win more extensions, loft conversions and refurbishment projects consistently.",
+    "NobleLeads delivers builder marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more extensions, loft conversions and refurbishments consistently.",
   canonicalPath,
 })
 
@@ -72,6 +143,7 @@ export default function BuildersPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -105,8 +177,9 @@ export default function BuildersPage() {
             </header>
           </SectionReveal>
 
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Builders Struggle to Get a Consistent Pipeline of Good Work
               </h2>
@@ -120,78 +193,21 @@ export default function BuildersPage() {
                 — taking on low-margin work, underpricing to win, or burning time
                 chasing quotes that were never serious.
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  Referrals carry you when they{"'"}re flowing — but there{"'"}s no tap to
-                  turn on when a large project finishes and the pipeline empties.
-                </li>
-                <li>
-                  You{"'"}re being found on Google by the wrong people — homeowners with
-                  unclear briefs, no budget or just looking for a ballpark figure they
-                  never intend to act on.
-                </li>
-                <li>
-                  Your website (if you have one) doesn{"'"}t do justice to your completed
-                  projects — so customers compare you against builders with slicker
-                  online presence and often choose them instead.
-                </li>
-                <li>
-                  Long project timelines mean{" "}
-                  <span className="font-semibold text-foreground">
-                    leads go cold while you{"'"}re heads down on a current job
-                  </span>{" "}
-                  — and without a follow-up system, they quietly book someone else.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
             </section>
           </SectionReveal>
 
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Builders
               </h2>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Project Portfolio Website That Attracts Serious Buyers
-              </p>
-              <p>
-                Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused trade websites
-                </Link>{" "}
-                for builders lead with completed project photography, client
-                testimonials, accreditations (FMB, NHBC, Trustmark) and dedicated
-                service pages for extensions, loft conversions, refurbishments and
-                new builds — each built to rank and convert.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Google Ads Targeting Homeowners Ready to Build
-              </p>
-              <p>
-                We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for builders
-                </Link>{" "}
-                targeting the searches that signal genuine intent — "extension
-                builders near me", "loft conversion quote [town]", "house
-                refurbishment contractors". High intent, your service area,
-                landing pages built to pre-qualify before they make contact.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Pipeline Management and Long-Cycle Follow-Up
-              </p>
-              <p>
-                Building enquiries take weeks or months to convert. The{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM and automation system
-                </Link>{" "}
-                keeps every prospect warm with timed follow-ups — so when they{"'"}re
-                ready to commit, you{"'"}re the builder they{"'"}ve been hearing from, not
-                the one they{"'"}ve forgotten about.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -217,6 +233,7 @@ export default function BuildersPage() {
             </section>
           </SectionReveal>
 
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -233,51 +250,35 @@ export default function BuildersPage() {
             </section>
           </SectionReveal>
 
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Builders
               </h2>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a project-led website with your completed work front and centre,
-                  CRM set up and every enquiry tracked.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus Google Ads, long-cycle lead nurturing and
-                  automated follow-up to close more of your existing quotes.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for building firms targeting commercial contracts, housing developers
-                  or expanding across multiple areas.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A project-led website with your completed work front and centre, CRM set up and every enquiry tracked from first contact."
+                growth="Everything in Core plus Google Ads, long-cycle lead nurturing and automated follow-up to close more of your existing quotes."
+                dominate="For building firms targeting commercial contracts, housing developers or expanding across multiple service areas."
+              />
             </section>
           </SectionReveal>
 
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection title="Questions From Builders Like You" items={faqItems} />
           </SectionReveal>
 
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
-                Ready to Build a Pipeline You Can Actually Plan Around?
+                Ready to Fill Your Pipeline With Projects That Are Actually Worth Winning?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Let{"'"}s have a quick conversation about your building business — the
-                projects you want more of and what a proper lead system could look like
-                for you.
+                Let{"'"}s have a quick, honest conversation about your building business
+                — what you{"'"}re winning now and what a proper lead system could look
+                like for you.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link

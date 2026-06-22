@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Clock, TrendingDown, PhoneCall, ClipboardList } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,16 +8,16 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
 const primaryKeyword = "marketing for plumbers UK"
 const canonicalPath = "/plumbers"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
@@ -56,6 +57,76 @@ const faqItems: FAQItem[] = [
   },
 ]
 
+const painPoints: PainPoint[] = [
+  {
+    icon: Clock,
+    heading: "No Pipeline, Just Calls",
+    body: "Work arrives when someone rings — not because you have a system generating the right enquiries in the background.",
+  },
+  {
+    icon: TrendingDown,
+    heading: "Missing High-Value Jobs",
+    body: "Boiler installs, bathroom fits and heating upgrades are out there. Competitors who rank higher on Google are taking them.",
+  },
+  {
+    icon: PhoneCall,
+    heading: "Missed Calls Mean Lost Jobs",
+    body: "You're on a job when a customer calls. By the time you ring back, they've already booked someone who responded faster.",
+  },
+  {
+    icon: ClipboardList,
+    heading: "Quotes Going Cold",
+    body: "Interested prospects don't book automatically. Without structured follow-up, they quietly drift to whoever stayed in touch.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Website That Earns Trust and Generates Enquiries",
+    body: (
+      <>
+        Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        are built for plumbers specifically — showcasing Gas Safe registration,
+        Trustmark accreditation, completed project photos and Google reviews,
+        with clear click-to-call on mobile and simple forms that send enquiries
+        straight into your pipeline.
+      </>
+    ),
+  },
+  {
+    title: "Google Ads That Target High-Value Searches",
+    body: (
+      <>
+        We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for plumbers
+        </Link>{" "}
+        targeting the searches with the highest intent and value in your service
+        area — boiler installs, bathroom quotes, heating repairs. Not just
+        emergency call-outs, but the planned work that{"'"}s easier to price and
+        more profitable to do.
+      </>
+    ),
+  },
+  {
+    title: "Missed Call Text-Back and Quote Follow-Up",
+    body: (
+      <>
+        When you miss a call on site, the system texts the customer back within
+        60 seconds. Every quote is followed up automatically. Your{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM pipeline
+        </Link>{" "}
+        shows you every enquiry, quote and booking in one place — so you{"'"}re
+        never guessing where your next job is coming from.
+      </>
+    ),
+  },
+]
+
 export const metadata: Metadata = buildMetadata({
   title: "Plumber Marketing Agency UK | More Leads, More Jobs — NobleLeads",
   description:
@@ -72,7 +143,7 @@ export default function PlumbersPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-          {/* Section 1: Hero */}
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -106,9 +177,9 @@ export default function PlumbersPage() {
             </header>
           </SectionReveal>
 
-          {/* Section 2: Pain Points */}
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Plumbers Struggle to Get the Right Work Consistently
               </h2>
@@ -120,28 +191,7 @@ export default function PlumbersPage() {
                 </span>
                 . Sound familiar?
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  You{"'"}re reactive — most of your work comes from whoever rings first,
-                  not from a system you{"'"}re in control of.
-                </li>
-                <li>
-                  You{"'"}re losing higher-value planned jobs — boiler replacements,
-                  bathroom fits, heating upgrades — to competitors who show up first on
-                  Google or have more visible reviews.
-                </li>
-                <li>
-                  You miss calls while you{"'"}re on a job, and by the time you ring back,{" "}
-                  <span className="font-semibold text-foreground">
-                    they{"'"}ve already booked someone else
-                  </span>
-                  .
-                </li>
-                <li>
-                  There{"'"}s no system to follow up quotes or win back customers who
-                  haven{"'"}t booked yet — so good prospects just quietly disappear.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
               <p>
                 The fix isn{"'"}t working harder. It{"'"}s having{" "}
                 <span className="font-semibold text-foreground">
@@ -153,9 +203,9 @@ export default function PlumbersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 3: The System */}
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Plumbers
               </h2>
@@ -170,48 +220,11 @@ export default function PlumbersPage() {
                 </span>
                 , they find you, trust you and book — not the next person on the list.
               </p>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Website That Earns Trust and Generates Enquiries
-              </p>
-              <p>
-                Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused trade websites
-                </Link>{" "}
-                are built for plumbers specifically — showcasing Gas Safe registration,
-                Trustmark accreditation, completed project photos and Google reviews,
-                with clear click-to-call on mobile and simple forms that send enquiries
-                straight into your pipeline.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Google Ads That Target High-Value Searches
-              </p>
-              <p>
-                We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for plumbers
-                </Link>{" "}
-                targeting the searches with the highest intent and value in your service
-                area — boiler installs, bathroom quotes, heating repairs. Not just
-                emergency call-outs, but the planned work that{"'"}s easier to price and
-                more profitable to do.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Missed Call Text-Back and Quote Follow-Up
-              </p>
-              <p>
-                When you miss a call on site, the system texts the customer back within
-                60 seconds. Every quote is followed up automatically. Your{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM pipeline
-                </Link>{" "}
-                shows you every enquiry, quote and booking in one place — so you{"'"}re
-                never guessing where your next job is coming from.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
-          {/* Section 4: ROI Example */}
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -226,14 +239,9 @@ export default function PlumbersPage() {
                 <span className="font-semibold text-foreground">£4,000–£12,000+</span>.
               </p>
               <p>
-                At Noble Growth (£495/month plus ad spend), even a modest result of:
-              </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>3 additional service visits at £180 average, and</li>
-                <li>1 additional boiler install at £2,500</li>
-              </ul>
-              <p>
-                gives you{" "}
+                At Noble Growth (£495/month plus ad spend), even a modest result of
+                3 additional service visits at £180 average and 1 additional boiler
+                install at £2,500 gives you{" "}
                 <span className="font-semibold text-foreground">
                   £3,040 in additional revenue on a £495/month fee
                 </span>
@@ -243,7 +251,7 @@ export default function PlumbersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 5: Social Proof */}
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -264,9 +272,9 @@ export default function PlumbersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 6: Pricing */}
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Plumbers
               </h2>
@@ -274,35 +282,15 @@ export default function PlumbersPage() {
                 We{"'"}ll match you to the right level based on your current setup and
                 the work you want more of:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a professional website displaying your accreditations correctly,
-                  CRM set up and every enquiry captured from your Google Business
-                  Profile and website.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus Google Ads targeting your highest-value
-                  searches, missed call text-back and automated quote follow-up.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for plumbers expanding into new areas or targeting commercial
-                  maintenance contracts and property management work.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing is on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A professional website displaying your accreditations correctly, CRM set up and every enquiry captured from your Google Business Profile and website."
+                growth="Everything in Core plus Google Ads targeting your highest-value searches, missed call text-back and automated quote follow-up."
+                dominate="For plumbers expanding into new areas or targeting commercial maintenance contracts and property management work."
+              />
             </section>
           </SectionReveal>
 
-          {/* Section 7: FAQ */}
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection
               title="Questions From Plumbers Like You"
@@ -310,7 +298,7 @@ export default function PlumbersPage() {
             />
           </SectionReveal>
 
-          {/* Section 8: Final CTA */}
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
@@ -336,7 +324,6 @@ export default function PlumbersPage() {
 
       <Footer />
       <MobileCTABar />
-
       <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
     </main>
   )

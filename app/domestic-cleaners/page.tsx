@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { BarChart3, Building2, UserMinus, Timer } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,16 +8,16 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
 const primaryKeyword = "marketing for domestic cleaning companies UK"
 const canonicalPath = "/domestic-cleaners"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
@@ -35,7 +36,7 @@ const faqItems: FAQItem[] = [
       "That's the primary focus. We build campaigns and landing pages targeting the search intent that signals ongoing cleaning need — not just one-off jobs — and use follow-up sequences to convert enquiries into regular clients.",
   },
   {
-    question: "I'm losing clients to cheaper cleaners. Can you help with that?",
+    question: "I'm losing clients to cheaper cleaners. Can that be fixed?",
     answer:
       "Yes. Price competition is almost always a trust and visibility problem. When clients genuinely trust you — backed by strong reviews, a professional online presence and consistent communication — they stay and they pay your price.",
   },
@@ -56,6 +57,77 @@ const faqItems: FAQItem[] = [
   },
 ]
 
+const painPoints: PainPoint[] = [
+  {
+    icon: BarChart3,
+    heading: "Growth Is Slow and Unpredictable",
+    body: "Word of mouth trickles in. There's no system generating new regular client enquiries on demand, so growth depends on who recommends you this month.",
+  },
+  {
+    icon: Building2,
+    heading: "Losing to Bigger Agencies Online",
+    body: "Large cleaning agencies spend heavily on Google and dominate local search results. Individual operators struggle to get a look-in against that spend.",
+  },
+  {
+    icon: UserMinus,
+    heading: "Clients Leave for Cheaper Options",
+    body: "Without built-in trust and loyalty, a slightly cheaper alternative is enough to lose a client you spent months building a relationship with.",
+  },
+  {
+    icon: Timer,
+    heading: "Slow Response Costs Bookings",
+    body: "In domestic cleaning, the first company to respond usually gets the job. Without automation, you're too slow — and that slot goes to whoever replied first.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Website Built Around Trust and Recurring Bookings",
+    body: (
+      <>
+        Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused websites for cleaning businesses
+        </Link>{" "}
+        are built around the signals that build trust: DBS checks, insurance
+        confirmation, Google reviews, staff profiles and clear service
+        descriptions — with booking forms and online consultations that make
+        it easy for clients to commit to a regular slot.
+      </>
+    ),
+  },
+  {
+    title: "Google Ads Targeting Clients Ready for a Regular Clean",
+    body: (
+      <>
+        We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for cleaning businesses
+        </Link>{" "}
+        targeting searches that signal intent to hire a regular cleaner, not
+        just a one-off. People searching "weekly cleaner [your area]" or
+        "regular house cleaning near me" are exactly your ideal client — and
+        we put you in front of them before the agencies do.
+      </>
+    ),
+  },
+  {
+    title: "Fast Response, Follow-Up and Loyalty Automation",
+    body: (
+      <>
+        Every new enquiry gets an instant response. Every quote that hasn{"'"}t
+        booked is followed up automatically. The{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM system
+        </Link>{" "}
+        also tracks existing clients, flags anyone who{"'"}s missed a clean and
+        triggers review requests and referral prompts at the right moment —
+        turning your best clients into your best marketing.
+      </>
+    ),
+  },
+]
+
 export const metadata: Metadata = buildMetadata({
   title: "Domestic Cleaning Marketing Agency UK | More Regular Clients — NobleLeads",
   description:
@@ -72,7 +144,7 @@ export default function DomesticCleanersPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
-          {/* Section 1: Hero */}
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -106,9 +178,9 @@ export default function DomesticCleanersPage() {
             </header>
           </SectionReveal>
 
-          {/* Section 2: Pain Points */}
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Why Domestic Cleaning Businesses Struggle to Grow Consistently
               </h2>
@@ -121,29 +193,7 @@ export default function DomesticCleanersPage() {
                   faster than you lose old ones.
                 </span>
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  You{"'"}re relying on word of mouth and the occasional Facebook post,
-                  which means growth is slow and unpredictable.
-                </li>
-                <li>
-                  You{"'"}re losing enquiries to larger cleaning agencies or platforms
-                  like Bark who spend heavily on Google and dominate your local search
-                  results.
-                </li>
-                <li>
-                  Clients leave when a slightly cheaper option arrives — because{" "}
-                  <span className="font-semibold text-foreground">
-                    you haven{"'"}t built the kind of loyalty and trust that makes them
-                    stay regardless
-                  </span>
-                  .
-                </li>
-                <li>
-                  You don{"'"}t have a proper system for responding to enquiries quickly
-                  — and in cleaning, the first person to respond usually gets the job.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
               <p>
                 None of this is about your cleaning standard. It{"'"}s about{" "}
                 <span className="font-semibold text-foreground">
@@ -155,9 +205,9 @@ export default function DomesticCleanersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 3: The System */}
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Domestic Cleaners
               </h2>
@@ -172,49 +222,11 @@ export default function DomesticCleanersPage() {
                   everyone."
                 </span>
               </p>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Website Built Around Trust and Recurring Bookings
-              </p>
-              <p>
-                Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused websites for cleaning businesses
-                </Link>{" "}
-                are built around the signals that build trust: DBS checks, insurance
-                confirmation, Google reviews, staff profiles and clear service
-                descriptions — with booking forms and online consultations that make
-                it easy for clients to commit to a regular slot.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Google Ads Targeting Clients Ready for a Regular Clean
-              </p>
-              <p>
-                We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for cleaning businesses
-                </Link>{" "}
-                targeting searches that signal intent to hire a regular cleaner, not
-                just a one-off. People searching "weekly cleaner [your area]" or
-                "regular house cleaning near me" are exactly your ideal client — and
-                we put you in front of them before the agencies do.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Fast Response, Follow-Up and Loyalty Automation
-              </p>
-              <p>
-                Every new enquiry gets an instant response. Every quote that hasn{"'"}t
-                booked is followed up automatically. The{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM system
-                </Link>{" "}
-                also tracks existing clients, flags anyone who{"'"}s missed a clean and
-                triggers review requests and referral prompts at the right moment —
-                turning your best clients into your best marketing.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
-          {/* Section 4: ROI Example */}
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -231,14 +243,8 @@ export default function DomesticCleanersPage() {
                 in recurring revenue.
               </p>
               <p>
-                At Noble Growth (£495/month plus ad spend), even a conservative result
-                of:
-              </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>5 new regular fortnightly clients at £80/visit</li>
-              </ul>
-              <p>
-                gives you{" "}
+                At Noble Growth (£495/month plus ad spend), adding just 5 new regular
+                fortnightly clients at £80/visit gives you{" "}
                 <span className="font-semibold text-foreground">
                   £800/month in new recurring revenue — from just 5 clients
                 </span>
@@ -248,16 +254,12 @@ export default function DomesticCleanersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 5: Social Proof */}
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Real Results for Real Cleaning Businesses
               </h2>
-              <p>
-                Here{"'"}s the pattern we see when a domestic cleaning business moves
-                from referrals and Facebook to a structured NobleLeads system.
-              </p>
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
                 "Typical result: A domestic cleaning company in Cambridge was relying
                 on word of mouth and a small Facebook following. Within 8 weeks of
@@ -268,9 +270,9 @@ export default function DomesticCleanersPage() {
             </section>
           </SectionReveal>
 
-          {/* Section 6: Pricing */}
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Domestic Cleaners
               </h2>
@@ -278,35 +280,15 @@ export default function DomesticCleanersPage() {
                 We{"'"}ll match you to the right level based on where your business is
                 now and how fast you want to grow:
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a trust-focused website, online booking and every enquiry captured
-                  and tracked. Perfect if you{"'"}re building your client base from scratch.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus Google Ads targeting regular-clean searches,
-                  automated follow-up and review generation to build your reputation
-                  quickly.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for cleaning businesses expanding into commercial or office cleaning
-                  contracts alongside domestic work.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing is on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A trust-focused website, online booking and every enquiry captured and tracked. Perfect if you're building your regular client base from scratch."
+                growth="Everything in Core plus Google Ads targeting regular-clean searches, automated follow-up and review generation to build your reputation quickly."
+                dominate="For cleaning businesses expanding into commercial or office cleaning contracts alongside domestic work."
+              />
             </section>
           </SectionReveal>
 
-          {/* Section 7: FAQ */}
+          {/* FAQ */}
           <SectionReveal delay={180}>
             <FAQAccordionSection
               title="Questions From Cleaning Business Owners Like You"
@@ -314,7 +296,7 @@ export default function DomesticCleanersPage() {
             />
           </SectionReveal>
 
-          {/* Section 8: Final CTA */}
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
@@ -340,7 +322,6 @@ export default function DomesticCleanersPage() {
 
       <Footer />
       <MobileCTABar />
-
       <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
     </main>
   )

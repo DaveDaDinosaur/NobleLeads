@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Hammer, Search, Clock, AlertTriangle } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -7,59 +8,129 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
+import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
+import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
 import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
 
-const primaryKeyword = "bathroom fitter marketing UK"
+const primaryKeyword = "marketing for bathroom fitters UK"
 const canonicalPath = "/bathroom-fitters"
 
-type FAQItem = {
-  question: string
-  answer: string
-}
+type FAQItem = { question: string; answer: string }
 
 const faqItems: FAQItem[] = [
   {
-    question: "Do you work specifically with bathroom fitting companies?",
+    question: "Do you work specifically with bathroom fitting businesses?",
     answer:
-      "Yes. We understand the bathroom installation market — the considered purchase cycle, the importance of showing finished work and the difference between budget-conscious domestic clients and premium renovation customers.",
+      "Yes. We understand the long consideration cycle of bathroom purchases, the importance of portfolio photography and how to attract clients who have a real budget rather than people just browsing ideas.",
   },
   {
-    question: "How long before I start getting bathroom enquiries?",
+    question: "How quickly will I start seeing new bathroom enquiries?",
     answer:
-      "With Google Ads running, most bathroom fitters start seeing qualified leads within 2–4 weeks. Bathroom installations are a considered purchase, so we also build follow-up sequences for prospects who are in the planning and budgeting phase.",
+      "With Google Ads running, most bathroom fitters start seeing new leads within 2–3 weeks. Because bathroom renovations are considered purchases, we also build follow-up sequences to keep prospects warm through a longer decision process.",
   },
   {
-    question: "Can you help me attract higher-end bathroom renovation clients?",
+    question: "Can you help me attract higher-budget bathroom jobs?",
     answer:
-      "Yes. Premium clients exist in every area — they just need to find you and trust that you can deliver. We build the website, reviews and positioning to attract customers who have a real budget and want quality, not just the lowest price.",
+      "Absolutely. We build portfolio-led websites and campaigns that position you for £8,000–£25,000+ bathroom renovations rather than low-budget refits. The right photography, reviews and credibility signals are what attract serious buyers.",
   },
   {
-    question: "I lose a lot of quotes to cheaper fitters. Can that be fixed?",
+    question: "I miss enquiries when I'm on site. Can the system help?",
     answer:
-      "Often the issue is that customers can't differentiate quality before the job starts — so they go on price. We fix that by making your completed work, reviews and credentials impossible to ignore online. When clients trust you before they meet you, price becomes less of the deciding factor.",
+      "Yes. Every missed call gets an instant text response, and every web form submission gets an automated reply within seconds. Prospects stay engaged rather than moving on to the next fitter they find.",
   },
   {
     question: "Is there a minimum contract?",
     answer:
-      "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period to build and tune the system, then move to rolling monthly.",
+      "Noble Core is month-to-month. Noble Growth and Noble Dominate have an initial optimisation period to build and tune the system properly, then move to rolling monthly.",
   },
   {
-    question: "Do you work with sole traders or only larger companies?",
+    question: "Do you work with sole traders as well as larger bathroom fitting teams?",
     answer:
-      "We work with both. Whether you're a sole trader doing one bathroom at a time or a team handling multiple installations simultaneously, we'll match the right package to your capacity.",
+      "We work with both. Whether you're a one-man band or a team of fitters, the system is built around the volume and job types that match your capacity.",
   },
   {
-    question: "What areas of the UK do you cover?",
+    question: "Which areas of the UK do you cover?",
     answer:
-      "We work with bathroom fitters across the UK. Campaigns are always targeted to your service area.",
+      "We work with bathroom fitters across the UK. Campaigns are targeted to your realistic service area and the job values that make sense for your pricing.",
+  },
+]
+
+const painPoints: PainPoint[] = [
+  {
+    icon: Hammer,
+    heading: "Portfolio Invisible Online",
+    body: "You've completed stunning bathroom transformations but they're not being seen. Without a strong portfolio online, prospects have no reason to choose you over someone cheaper.",
+  },
+  {
+    icon: Search,
+    heading: "Missing High-Intent Searches",
+    body: "People searching 'bathroom fitters near me' are ready to spend. If you're not on page one of Google when they search, that job goes straight to whoever is.",
+  },
+  {
+    icon: Clock,
+    heading: "Warm Prospects Going Cold",
+    body: "A bathroom renovation takes weeks to plan. Without structured follow-up, prospects who were interested three weeks ago have quietly booked someone else.",
+  },
+  {
+    icon: AlertTriangle,
+    heading: "Low-Quality or Mismatched Enquiries",
+    body: "Enquiries from people with no realistic budget waste your quoting time. Better positioning online filters in serious buyers and filters out the rest.",
+  },
+]
+
+const steps: HowItWorksStep[] = [
+  {
+    title: "A Portfolio Website Built Around High-Value Bathroom Work",
+    body: (
+      <>
+        Our{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          conversion-focused trade websites
+        </Link>{" "}
+        for bathroom fitters lead with before-and-after photography, client
+        testimonials and clear service pages covering full bathroom renovations,
+        en suites and wet rooms — structured to attract buyers with serious
+        budgets, not just enquiries.
+      </>
+    ),
+  },
+  {
+    title: "Google Ads Targeting Ready-to-Buy Searches",
+    body: (
+      <>
+        We run{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          Google Ads campaigns for bathroom fitters
+        </Link>{" "}
+        targeting searches that signal real buying intent — "bathroom
+        installation [your area]", "new bathroom quote", "bathroom fitter near
+        me". Each click lands on a page built to convert interest into an
+        enquiry, not just browse.
+      </>
+    ),
+  },
+  {
+    title: "Follow-Up That Nurtures Long Decision Cycles",
+    body: (
+      <>
+        Bathroom decisions take time. The{" "}
+        <Link href="/services" className="font-semibold text-secondary hover:underline">
+          CRM and automation system
+        </Link>{" "}
+        keeps every prospect warm with timed follow-up messages — so when
+        they{"'"}re finally ready to commit, you{"'"}re the fitter they{"'"}ve been
+        hearing from, not one they{"'"}ve forgotten.
+      </>
+    ),
   },
 ]
 
 export const metadata: Metadata = buildMetadata({
   title: "Bathroom Fitter Marketing Agency UK | More Leads — NobleLeads",
   description:
-    "NobleLeads delivers bathroom fitter marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more bathroom installations and renovation projects consistently.",
+    "NobleLeads delivers marketing for bathroom fitters UK-wide using conversion websites, Google Ads and CRM automation so you can attract more serious bathroom renovation enquiries consistently.",
   canonicalPath,
 })
 
@@ -72,6 +143,7 @@ export default function BathroomFittersPage() {
 
       <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
+          {/* Hero */}
           <SectionReveal>
             <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
@@ -81,13 +153,13 @@ export default function BathroomFittersPage() {
                 Bathroom Fitter Marketing Agency UK | More Leads — NobleLeads
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Bathroom fitting is high-ticket, high-trust work. Customers spend weeks
-                or months planning their renovation, get multiple quotes and choose the
-                fitter they feel most confident in — not necessarily the cheapest.
+                Bathroom fitting is one of the highest-value domestic trades in the UK —
+                but the jobs don{"'"}t just land in your inbox. Customers spend weeks
+                researching, comparing and second-guessing before they pick up the phone.
                 NobleLeads focuses on{" "}
                 <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                so you{"'"}re the fitter they find first, trust most and choose — without
-                needing to be the lowest price in the room.
+                — so you{"'"}re visible when they start searching, credible when they
+                compare and first in line when they{"'"}re finally ready to book.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link
@@ -97,99 +169,52 @@ export default function BathroomFittersPage() {
                   Book a Free Discovery Call
                 </Link>
                 <p className="text-xs text-muted-foreground/80">
-                  15 minutes. No pressure. A straightforward look at what{"'"}s possible
-                  for your bathroom fitting business.
+                  15 minutes. No pressure. A clear look at what{"'"}s possible for your
+                  bathroom fitting business.
                 </p>
               </div>
             </header>
           </SectionReveal>
 
+          {/* Pain Points */}
           <SectionReveal delay={80}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Why Bathroom Fitters Struggle to Win Consistently at Their Price
+                Why Bathroom Fitters Struggle to Win Consistent High-Value Work
               </h2>
               <p>
-                Bathroom renovations are one of the most searched home improvement
-                projects in the UK — but the competition is fierce and customers are
-                cautious.{" "}
+                Bathroom renovation is a considered purchase — which means the fitter
+                who{" "}
                 <span className="font-semibold text-foreground">
-                  When they can{"'"}t tell quality apart online, they default to price
+                  stays visible and credible throughout a long research phase
                 </span>{" "}
-                — and you end up in a race to the bottom you didn{"'"}t need to be in.
+                wins, not just the one who quotes first.
               </p>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  You have strong completed projects but your online portfolio doesn{"'"}t
-                  show them — so customers compare you against fitters with glossy
-                  websites and 80+ reviews.
-                </li>
-                <li>
-                  You{"'"}re not ranking on Google for bathroom fitting searches in your
-                  area, which means paying for leads on directories or relying solely
-                  on referrals.
-                </li>
-                <li>
-                  Enquiries often take weeks to convert — and without a follow-up
-                  system, prospects who were genuinely interested{" "}
-                  <span className="font-semibold text-foreground">
-                    go cold and book someone who stayed in touch
-                  </span>
-                  .
-                </li>
-                <li>
-                  You{"'"}re getting enquiries but too many are poorly scoped or
-                  unrealistic — time-wasters who have no real budget or intent.
-                </li>
-              </ul>
+              <PainPointsGrid items={painPoints} />
             </section>
           </SectionReveal>
 
+          {/* The System */}
           <SectionReveal delay={100}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 The NobleLeads System for Bathroom Fitters
               </h2>
-              <p className="font-semibold text-foreground">
-                Step 1 — A Portfolio Website That Sells Your Work Before You Quote
-              </p>
               <p>
-                Our{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  conversion-focused trade websites
-                </Link>{" "}
-                for bathroom fitters lead with high-quality finished project photography,
-                detailed before-and-after galleries, verified customer reviews and
-                clear service descriptions — with quote forms that pre-qualify
-                enquiries so you spend time on serious prospects.
+                We build a system that takes a homeowner from{" "}
+                <span className="font-semibold text-foreground">
+                  "I think I want a new bathroom"
+                </span>{" "}
+                to{" "}
+                <span className="font-semibold text-foreground">
+                  "I{"'"}ve booked this company and I{"'"}m telling everyone about them."
+                </span>
               </p>
-              <p className="font-semibold text-foreground">
-                Step 2 — Google Ads Reaching Homeowners Ready to Renovate
-              </p>
-              <p>
-                We run{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  Google Ads campaigns for bathroom fitters
-                </Link>{" "}
-                targeting searches like "bathroom installation quote [your area]" and
-                "bathroom renovation company near me" — capturing homeowners who are
-                past the browsing phase and ready to book someone.
-              </p>
-              <p className="font-semibold text-foreground">
-                Step 3 — Follow-Up That Wins the Long Decision
-              </p>
-              <p>
-                Bathroom customers take time. The{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
-                  CRM and automation system
-                </Link>{" "}
-                sends timed follow-up messages after every quote — keeping you in
-                front of the customer without chasing manually. Missed calls get a
-                text-back within 60 seconds so you never lose a warm lead mid-planning.
-              </p>
+              <HowItWorksSteps steps={steps} />
             </section>
           </SectionReveal>
 
+          {/* ROI */}
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -197,82 +222,69 @@ export default function BathroomFittersPage() {
               </h2>
               <p>
                 A mid-range bathroom renovation typically runs{" "}
-                <span className="font-semibold text-foreground">£4,000–£8,000</span>.
-                A premium bathroom transformation can be{" "}
-                <span className="font-semibold text-foreground">£10,000–£25,000+</span>.
+                <span className="font-semibold text-foreground">£6,000–£12,000</span>.
+                A high-end master bathroom or full en suite can reach{" "}
+                <span className="font-semibold text-foreground">£15,000–£30,000+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), winning just{" "}
                 <span className="font-semibold text-foreground">
-                  one additional bathroom installation per month at £5,500
+                  one additional bathroom renovation per month at £8,000
                 </span>{" "}
-                delivers an 11x return on your fee. Most bathroom fitters on the system
-                convert two to four additional jobs per month.
+                returns 16x your monthly fee. Most bathroom fitters on the system see
+                significantly more than one additional job per month within 60 days.
               </p>
             </section>
           </SectionReveal>
 
+          {/* Social Proof */}
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Real Results for Real Bathroom Fitters
               </h2>
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
-                "Typical result: A bathroom fitting company in the South East was
-                winning work almost entirely through referrals and had no consistent
-                online presence. Within 6 weeks of launching their NobleLeads system,
-                they had 11 qualified bathroom enquiries in the first month, converted
-                5 and raised their average job value by 20% because the website
-                positioned them as a premium fitter rather than a general tradesman."
+                "Typical result: A bathroom fitter in the Midlands was relying on
+                Checkatrade and referrals. Within 6 weeks of launching their NobleLeads
+                system, they had 9 new bathroom enquiries in the pipeline, closed 4
+                and their average job value increased by £1,800 because the website
+                positioned them at a higher tier than before."
               </p>
             </section>
           </SectionReveal>
 
+          {/* Packages */}
           <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 NobleLeads Packages for Bathroom Fitters
               </h2>
-              <ul className="ml-5 list-disc space-y-2">
-                <li>
-                  <span className="font-semibold text-foreground">Noble Core</span> —
-                  a portfolio-led website showcasing your best projects, CRM and
-                  enquiry capture set up properly.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Growth</span> —
-                  everything in Core plus Google Ads, automated follow-up and missed
-                  call text-back to close more of the enquiries you{"'"}re already getting.
-                </li>
-                <li>
-                  <span className="font-semibold text-foreground">Noble Dominate</span> —
-                  for bathroom companies expanding into kitchen fitting, full
-                  refurbishments or commercial contracts.
-                </li>
-              </ul>
-              <p className="text-xs text-muted-foreground/80">
-                Full pricing on our{" "}
-                <Link href="/pricing" className="font-semibold text-secondary hover:underline">
-                  pricing page
-                </Link>
-                .
-              </p>
+              <TradePackages
+                core="A portfolio website built around your completed work and every enquiry tracked from first click to booked job."
+                growth="Everything in Core plus Google Ads targeting high-intent searches, missed call response and long-cycle follow-up to close warm prospects."
+                dominate="For bathroom fitting businesses expanding into luxury fit-outs, developer contracts or new service areas."
+              />
             </section>
           </SectionReveal>
 
+          {/* FAQ */}
           <SectionReveal delay={180}>
-            <FAQAccordionSection title="Questions From Bathroom Fitters Like You" items={faqItems} />
+            <FAQAccordionSection
+              title="Questions From Bathroom Fitters Like You"
+              items={faqItems}
+            />
           </SectionReveal>
 
+          {/* Final CTA */}
           <SectionReveal delay={200}>
             <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
-                Ready to Win More Bathrooms at Your Price?
+                Ready to Win More Bathroom Projects Worth Winning?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Let{"'"}s have a quick conversation about your bathroom fitting business
-                — what you{"'"}re winning now and what a proper lead system could look
-                like for you.
+                Let{"'"}s have a quick, honest conversation about your bathroom fitting
+                business — what you{"'"}re closing now and how a proper lead system could
+                change those numbers.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
