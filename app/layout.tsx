@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 
 import { CookieConsentBanner } from "@/components/consent/CookieConsentBanner"
+import { CtaClickTracker } from "@/components/consent/CtaClickTracker"
 import { Ga4Loader } from "@/components/consent/Ga4Loader"
 
 import { getSiteUrl } from "./(shared)/seo-config"
@@ -78,6 +79,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <Ga4Loader />
+        <CtaClickTracker />
         <CookieConsentBanner />
         {children}
       </body>
