@@ -127,7 +127,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Driveway & Paving Marketing Agency UK | More Leads — NobleLeads",
+  title: "Driveway & Paving Marketing Agency UK | More Leads",
   description:
     "NobleLeads delivers marketing for driveway and paving companies UK-wide using conversion websites, Google Ads and CRM automation so you can win more block paving, resin and tarmac jobs consistently.",
   canonicalPath,
@@ -149,7 +149,7 @@ export default function DrivewayPavingPage() {
                 Trade Landing Page · Driveway &amp; Paving
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Driveway &amp; Paving Marketing Agency UK | More Leads — NobleLeads
+                Marketing for Driveway &amp; Paving Companies That Wins Bigger Jobs
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Driveway and paving work is high-value, highly visual and often the

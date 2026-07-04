@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Painter & Decorator Marketing Agency UK | More Leads — NobleLeads",
+  title: "Painter & Decorator Marketing Agency UK | More Leads",
   description:
     "NobleLeads delivers marketing for painters and decorators UK-wide using conversion websites, Google Ads and CRM automation so you can attract better-paying clients and fill your diary consistently.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function PaintersDecoratorsPage() {
                 Trade Landing Page · Painters &amp; Decorators
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Painter &amp; Decorator Marketing Agency UK | More Leads — NobleLeads
+                Marketing for Painters &amp; Decorators That Attracts Better-Paying Clients
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Painting and decorating is one of the most competitive trades to market

@@ -129,7 +129,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Window Cleaner Marketing Agency UK | More Clients — NobleLeads",
+  title: "Window Cleaner Marketing Agency UK | More Clients",
   description:
     "NobleLeads delivers marketing for window cleaners UK-wide using conversion websites, Google Ads and CRM automation so you can grow your round, build a dominant review presence and win commercial contracts.",
   canonicalPath,
@@ -151,7 +151,7 @@ export default function WindowCleanersPage() {
                 Trade Landing Page · Window Cleaners
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Window Cleaner Marketing Agency UK | More Clients — NobleLeads
+                Window Cleaner Marketing That Grows Your Round
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 A window cleaning business built on a strong round is one of the most

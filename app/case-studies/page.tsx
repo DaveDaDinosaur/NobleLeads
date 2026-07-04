@@ -22,7 +22,7 @@ const caseStudies = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Client Case Studies | NobleLeads",
+  title: "Client Case Studies",
   description:
     "Real results for real UK trade businesses. See how NobleLeads builds lead generation systems, ad campaigns and operational infrastructure that helps trades grow consistently.",
   canonicalPath: "/case-studies",

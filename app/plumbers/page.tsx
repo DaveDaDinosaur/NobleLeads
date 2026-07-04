@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Plumber Marketing Agency UK | More Leads, More Jobs — NobleLeads",
+  title: "Plumber Marketing Agency UK | More Leads, More Jobs",
   description:
     "NobleLeads delivers marketing for plumbers UK-wide using conversion websites, Google Ads and CRM automation so you can win consistent work — from emergency call-outs to planned boiler installs and bathroom fits.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function PlumbersPage() {
                 Trade Landing Page · Plumbers
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Plumber Marketing Agency UK | More Leads, More Jobs — NobleLeads
+                Marketing for Plumbers That Wins Consistent Work
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Plumbers in the UK are rarely short of work — but too much of it

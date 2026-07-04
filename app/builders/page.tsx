@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Builder Marketing Agency UK | More Leads, More Projects — NobleLeads",
+  title: "Builder Marketing Agency UK | More Leads, More Projects",
   description:
     "NobleLeads delivers builder marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more extensions, loft conversions and refurbishments consistently.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function BuildersPage() {
                 Trade Landing Page · Builders
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Builder Marketing Agency UK | More Leads, More Projects — NobleLeads
+                Builder Marketing That Wins More Extensions and Refurbishments
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Building work is some of the highest-value trade work available — but

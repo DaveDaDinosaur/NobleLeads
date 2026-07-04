@@ -129,7 +129,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Domestic Cleaning Marketing Agency UK | More Regular Clients — NobleLeads",
+  title: "Domestic Cleaning Marketing Agency UK | More Regular Clients",
   description:
     "NobleLeads delivers marketing for domestic cleaning companies UK-wide using conversion websites, Google Ads and CRM automation so you can build a full book of loyal regular cleaning clients.",
   canonicalPath,
@@ -151,7 +151,7 @@ export default function DomesticCleanersPage() {
                 Trade Landing Page · Domestic Cleaners
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Domestic Cleaning Marketing Agency UK | More Regular Clients — NobleLeads
+                Marketing for Domestic Cleaning Companies That Builds a Loyal Client Book
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 A domestic cleaning business lives or dies on recurring revenue.

@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Roofer Marketing Agency UK | More Leads, More Jobs — NobleLeads",
+  title: "Roofer Marketing Agency UK | More Leads, More Jobs",
   description:
     "NobleLeads delivers lead generation for roofers UK-wide using conversion websites, Google Ads and CRM automation so you can win more profitable roofing jobs consistently.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function RoofersPage() {
                 Trade Landing Page · Roofers
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Roofer Marketing Agency UK | More Leads, More Jobs — NobleLeads
+                Lead Generation for Roofers That Keeps Your Diary Full
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Roofing work is high value but unpredictable. One month you{"'"}re flat

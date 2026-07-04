@@ -122,7 +122,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Landscaper Marketing Agency UK | More Leads — NobleLeads",
+  title: "Landscaper Marketing Agency UK | More Leads",
   description:
     "NobleLeads delivers landscaping marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more garden projects and maintenance contracts consistently.",
   canonicalPath,
@@ -144,7 +144,7 @@ export default function LandscapersPage() {
                 Trade Landing Page · Landscapers
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Landscaper Marketing Agency UK | More Leads — NobleLeads
+                Landscaper Marketing That Fills Your Season
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Most landscaping businesses are brilliant at transforming outdoor

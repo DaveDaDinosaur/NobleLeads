@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "EV Charger Installer Marketing UK | More Leads — NobleLeads",
+  title: "EV Charger Installer Marketing UK | More Leads",
   description:
     "NobleLeads delivers marketing for EV charger installers UK-wide using conversion websites, Google Ads and CRM automation so you can win more domestic and commercial EV charging installations consistently.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function EVChargerInstallersPage() {
                 Trade Landing Page · EV Charger Installers
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                EV Charger Installer Marketing UK | More Leads — NobleLeads
+                EV Charger Installer Marketing That Wins More Installations
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 EV charger installation is one of the fastest-growing trades in the UK.

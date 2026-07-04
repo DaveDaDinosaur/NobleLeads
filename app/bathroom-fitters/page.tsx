@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bathroom Fitter Marketing Agency UK | More Leads — NobleLeads",
+  title: "Bathroom Fitter Marketing Agency UK | More Leads",
   description:
     "NobleLeads delivers marketing for bathroom fitters UK-wide using conversion websites, Google Ads and CRM automation so you can attract more serious bathroom renovation enquiries consistently.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function BathroomFittersPage() {
                 Trade Landing Page · Bathroom Fitters
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bathroom Fitter Marketing Agency UK | More Leads — NobleLeads
+                Marketing for Bathroom Fitters That Attracts Serious Enquiries
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bathroom fitting is one of the highest-value domestic trades in the UK —

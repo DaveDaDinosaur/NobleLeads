@@ -129,7 +129,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Tree Surgeon Marketing Agency UK | More Leads — NobleLeads",
+  title: "Tree Surgeon Marketing Agency UK | More Leads",
   description:
     "NobleLeads delivers marketing for tree surgeons UK-wide using conversion websites, Google Ads and CRM automation so you can win more residential, emergency and commercial tree surgery work consistently.",
   canonicalPath,
@@ -151,7 +151,7 @@ export default function TreeSurgeonsPage() {
                 Trade Landing Page · Tree Surgeons
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Tree Surgeon Marketing Agency UK | More Leads — NobleLeads
+                Tree Surgeon Marketing for Residential, Emergency and Commercial Work
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Tree surgery is a specialist, high-value trade — but for most tree

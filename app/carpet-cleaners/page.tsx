@@ -128,7 +128,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Carpet Cleaner Marketing Agency UK | More Bookings — NobleLeads",
+  title: "Carpet Cleaner Marketing Agency UK | More Bookings",
   description:
     "NobleLeads delivers marketing for carpet cleaners UK-wide using conversion websites, Google Ads and CRM automation so you can grow domestic, end-of-tenancy and commercial cleaning revenue consistently.",
   canonicalPath,
@@ -150,7 +150,7 @@ export default function CarpetCleanersPage() {
                 Trade Landing Page · Carpet Cleaners
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Carpet Cleaner Marketing Agency UK | More Bookings — NobleLeads
+                Marketing for Carpet Cleaners That Keeps Bookings Coming In
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Carpet cleaning has three distinct revenue streams — domestic regular
