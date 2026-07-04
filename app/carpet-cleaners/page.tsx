@@ -8,6 +8,7 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { FAQAccordionSection } from "@/components/faq/faq-accordion-section"
+import { RelatedTrades } from "@/components/trades/related-trades"
 import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-grid"
 import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
 import { TradePackages } from "@/components/trades/trade-packages"
@@ -275,6 +276,8 @@ export default function CarpetCleanersPage() {
               items={faqItems}
             />
           </SectionReveal>
+
+          <RelatedTrades currentHref="/carpet-cleaners" />
 
           {/* Final CTA */}
           <SectionReveal delay={200}>
