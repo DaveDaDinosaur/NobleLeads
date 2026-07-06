@@ -40,7 +40,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me move upmarket and attract better-paying clients?",
     answer:
-      "Absolutely. A lot of painters get stuck competing on price with less experienced operators. We build the website, reviews and positioning to attract clients who value quality and are willing to pay for it — not just whoever is cheapest.",
+      "Absolutely. A lot of painters get stuck competing on price with less experienced operators. We build the website, reviews and positioning to attract clients who value quality and are willing to pay for it, not just whoever is cheapest.",
   },
   {
     question: "Can you help me get commercial or property management work?",
@@ -68,7 +68,7 @@ const painPoints: PainPoint[] = [
   {
     icon: BarChart3,
     heading: "Competing on Price Every Time",
-    body: "Customers can't tell quality apart before the job starts, so they default to the cheapest quote — regardless of your standard of work.",
+    body: "Customers can't tell quality apart before the job starts, so they default to the cheapest quote, regardless of your standard of work.",
   },
   {
     icon: Star,
@@ -83,7 +83,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Building2,
     heading: "Commercial Work Feels Out of Reach",
-    body: "Landlords and property managers provide consistent, repeat volume — but without the right online presence, they simply don't find you.",
+    body: "Landlords and property managers provide consistent, repeat volume, but without the right online presence, they simply don't find you.",
   },
 ]
 
@@ -98,7 +98,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         for painters and decorators are built around before-and-after
         photography, verified Google reviews and clear service pages for
-        interior, exterior and commercial work — with simple quote forms that
+        interior, exterior and commercial work, with simple quote forms that
         feed directly into your pipeline.
       </>
     ),
@@ -111,8 +111,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for painters and decorators
         </Link>{" "}
-        targeting people actively searching for a decorator in your area —
-        not browsing, not comparing, but searching because they have a job ready.
+        targeting people actively searching for a decorator in your area, not browsing, not comparing, but searching because they have a job ready.
         We focus on the searches that lead to real bookings, not tyre-kickers.
       </>
     ),
@@ -174,8 +173,7 @@ export default function PaintersDecoratorsPage() {
                 online. There are a lot of operators, prices vary wildly and most
                 customers can{"'"}t tell quality apart until the job is done. NobleLeads
                 focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — building you the online credibility and lead system that attracts
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: building you the online credibility and lead system that attracts
                 customers who value good work and are prepared to pay for it, so you
                 stop competing for the cheapest price on every job.
               </p>
@@ -227,7 +225,7 @@ export default function PaintersDecoratorsPage() {
               </h2>
               <p>
                 We build a system that positions you as the credible, trustworthy choice
-                in your area — so customers are already sold on you before they even
+                in your area, so customers are already sold on you before they even
                 ask for a quote.
               </p>
               <HowItWorksSteps steps={steps} />
@@ -289,7 +287,7 @@ export default function PaintersDecoratorsPage() {
               </p>
               <TradePackages
                 core="A credible, portfolio-led website with Google reviews integrated and every enquiry captured and tracked from day one."
-                growth="Everything in Core plus Google Ads, review automation and quote follow-up sequences — converting more of the enquiries you're already getting."
+                growth="Everything in Core plus Google Ads, review automation and quote follow-up sequences, converting more of the enquiries you're already getting."
                 dominate="For decorating businesses targeting commercial clients, letting agents or expanding into multiple service areas."
               />
             </section>
@@ -313,7 +311,7 @@ export default function PaintersDecoratorsPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your decorating
-                business — what you{"'"}re doing now and what a proper lead system could
+                business, what you{"'"}re doing now and what a proper lead system could
                 look like for you.
               </p>
               <div className="mt-6 flex justify-center">

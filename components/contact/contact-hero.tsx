@@ -45,7 +45,7 @@ export function ContactHero() {
 
   return (
     <>
-      {/* Fixed orbs — same as about/services, hidden when hero is out of view */}
+      {/* Fixed orbs, same as about/services, hidden when hero is out of view */}
       <div
         className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-500"
         style={{ opacity: orbsVisible ? 1 : 0 }}

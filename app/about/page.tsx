@@ -14,7 +14,7 @@ import { buildMetadata } from "../(shared)/seo-config"
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "UK performance partner for property service trades. We build predictable revenue systems for cleaners, roofers, landscapers and more — not just websites.",
+    "UK performance partner for property service trades. We build predictable revenue systems for cleaners, roofers, landscapers and more, not just websites.",
   canonicalPath: "/about",
 })
 

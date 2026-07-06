@@ -12,7 +12,7 @@ export function AboutCTA() {
 
   return (
     <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden border-t border-border/40">
-      {/* Orbs sit behind this section only — scroll with the section */}
+      {/* Orbs sit behind this section only, scroll with the section */}
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden>
         <div className="absolute inset-0 bg-muted/40" />
         <div className="absolute inset-0 about-orb-parallax-wrapper overflow-hidden">
@@ -53,7 +53,7 @@ export function AboutCTA() {
           </h2>
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
             The best trade businesses run on structured systems that generate
-            enquiries consistently—not referrals and hope. Ready to operate at
+            enquiries consistently, not referrals and hope. Ready to operate at
             that level? Let&apos;s talk.
           </p>
           <div className="mt-10">

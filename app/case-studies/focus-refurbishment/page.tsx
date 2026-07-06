@@ -15,14 +15,14 @@ const canonicalPath = "/case-studies/focus-refurbishment"
 export const metadata: Metadata = buildMetadata({
   title: "Focus Refurbishment Case Study",
   description:
-    "How NobleLeads helped Focus Refurbishment — a commercial refurbishment company operating across the M25 and Kent — go from referral-only to a full lead and operations system.",
+    "How NobleLeads helped Focus Refurbishment, a commercial refurbishment company operating across the M25 and Kent, go from referral-only to a full lead and operations system.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Focus Refurbishment — From Referrals and a Broken Website to a Full Growth System",
+  headline: "Focus Refurbishment, From Referrals and a Broken Website to a Full Growth System",
   description:
-    "How NobleLeads rebuilt Focus Refurbishment's digital presence, launched targeted ad campaigns and automated their operations — helping a 25-year-old commercial refurbishment company modernise for growth.",
+    "How NobleLeads rebuilt Focus Refurbishment's digital presence, launched targeted ad campaigns and automated their operations, helping a 25-year-old commercial refurbishment company modernise for growth.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-04",
 })
@@ -48,12 +48,12 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 Case Study · Commercial Refurbishment
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-                Focus Refurbishment — From Referrals and a Broken Website to a Full Growth System
+                Focus Refurbishment, From Referrals and a Broken Website to a Full Growth System
               </h1>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Focus Refurbishment have been delivering commercial and domestic
                 refurbishment work across the M25 and Kent since 2000. Twenty-five
-                years of strong work, a solid reputation — and until recently, almost
+                years of strong work, a solid reputation, and until recently, almost
                 no digital presence to show for it. This is how that changed.
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
@@ -129,7 +129,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               </h2>
               <p>
                 Craig, owner of Focus Refurbishment, had built a genuinely strong
-                business over 25 years — quality work, repeat commercial clients and
+                business over 25 years, quality work, repeat commercial clients and
                 a reputation that spoke for itself in the right circles. But the
                 business had hit a ceiling that referrals alone couldn{"'"}t break through.
               </p>
@@ -140,8 +140,8 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 all manually.
               </p>
               <p>
-                Craig had a clear ambition — consistent commercial contracts, less
-                feast and famine — but the infrastructure wasn{"'"}t there to support it.
+                Craig had a clear ambition, consistent commercial contracts, less
+                feast and famine, but the infrastructure wasn{"'"}t there to support it.
                 The website had three pages, loaded slowly and felt, in Craig{"'"}s own
                 words, like a word document. The Google Business Profile had a wrong
                 address listed, almost no photos and no reviews. The lead enquiry form
@@ -151,8 +151,8 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p>
                 Craig had tried Facebook ads at some point, but without a proper
                 landing page or follow-up system behind them, nothing stuck. Admin was
-                piling up. His mum — who had been handling a lot of the back-office
-                work — was ready to retire, and Craig knew the business needed to
+                piling up. His mum, who had been handling a lot of the back-office
+                work, was ready to retire, and Craig knew the business needed to
                 modernise.
               </p>
               <p>
@@ -169,20 +169,19 @@ export default function FocusRefurbishmentCaseStudyPage() {
               </h2>
               <p>
                 We visited Craig and the team in Sidcup to understand the business
-                properly — the work they do, the clients they want more of and the
+                properly, the work they do, the clients they want more of and the
                 day-to-day that was taking up too much time.
               </p>
               <p>
                 The picture was clear: Focus Refurbishment had everything a strong
-                commercial contractor needs — experience, quality, range of services —
-                but none of it was visible online. A potential client Googling them
+                commercial contractor needs, experience, quality, range of services, but none of it was visible online. A potential client Googling them
                 would find a slow, sparse website with a wrong address and no social
                 proof. Compared to competitors with polished digital presences, the
                 gap was significant.
               </p>
               <p>
                 Beyond the front end, there was no system behind the business. Quotes
-                went out and were followed up manually — or not at all. Invoicing was
+                went out and were followed up manually, or not at all. Invoicing was
                 a manual process. Reviews weren{"'"}t being collected. There was no CRM,
                 no pipeline visibility and no way to see at a glance where the
                 business stood on any given week.
@@ -199,12 +198,12 @@ export default function FocusRefurbishmentCaseStudyPage() {
 
               <p className="font-semibold text-foreground">A Website That Actually Works</p>
               <p>
-                We rebuilt their online presence from the ground up — a properly
+                We rebuilt their online presence from the ground up, a properly
                 structured, fast-loading website with dedicated service pages for
                 fire door installation, painting and decorating, roofing and
                 refurbishment. The Google Business Profile was corrected, populated
                 with real project photography and optimised for local search across
-                their service area —{" "}
+                their service area, {" "}
                 <a
                   href="https://focusrefurbishmentltd.com"
                   target="_blank"
@@ -219,11 +218,11 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p className="font-semibold text-foreground">Targeted Ad Campaigns With Dedicated Landing Pages</p>
               <p>
                 Rather than driving ad traffic to a generic homepage, we built
-                dedicated landing pages for each service — each one written and
+                dedicated landing pages for each service, each one written and
                 designed to convert a visitor who had just searched for that specific
                 work. The first campaign to launch was fire doors, targeting commercial
                 clients across the M25 and Kent. Within two weeks of going live,
-                Focus had received three serious fire door enquiries — a service that
+                Focus had received three serious fire door enquiries, a service that
                 had previously generated zero inbound interest online.
               </p>
               <p>
@@ -235,7 +234,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p className="font-semibold text-foreground">A Full Operations System</p>
               <p>
                 This is where the real transformation happened. We implemented a
-                complete client management system — CRM with full pipeline visibility,
+                complete client management system, CRM with full pipeline visibility,
                 tracked phone numbers so every call is attributed to the right campaign,
                 and an AI-powered chatbot handling out-of-hours enquiries so no lead
                 goes unresponded to overnight.
@@ -244,7 +243,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 Automations were built for review collection after every job, missed
                 call text-back within 60 seconds and a fast follow-up sequence for
                 every campaign form submission. Quoting, invoicing and client
-                communications — previously manual and time-consuming — are now
+                communications, previously manual and time-consuming, are now
                 streamlined through the system. Social media management was also
                 brought under the same roof.
               </p>
@@ -264,14 +263,13 @@ export default function FocusRefurbishmentCaseStudyPage() {
               </h2>
               <p>
                 During our visit to Sidcup, we filmed a walkthrough of a completed
-                refurbishment project — giving potential clients a genuine look at
+                refurbishment project, giving potential clients a genuine look at
                 the standard of work Focus delivers. That content is live on their
                 website and will be used as part of their ongoing ad campaigns.
               </p>
               <p>
                 A full case study video is also in production, which will give Focus
-                Refurbishment a piece of content that no competitor can replicate —
-                real work, real team, real results, told on camera.
+                Refurbishment a piece of content that no competitor can replicate, real work, real team, real results, told on camera.
               </p>
             </section>
           </SectionReveal>
@@ -284,22 +282,22 @@ export default function FocusRefurbishmentCaseStudyPage() {
               </h2>
               <p>
                 Focus Refurbishment are on the Noble Growth package and the campaigns
-                are in their optimisation phase — building data, refining targeting
+                are in their optimisation phase, building data, refining targeting
                 and gathering the early enquiries that show the system is working.
                 Three qualified fire door enquiries in the first fortnight of a brand
                 new campaign, with zero previous online lead generation, is a strong
                 signal.
               </p>
               <p>
-                Craig is also working towards BM TRADA certification — a requirement
-                for certain commercial fire door contracts — which will unlock a wider
+                Craig is also working towards BM TRADA certification, a requirement
+                for certain commercial fire door contracts, which will unlock a wider
                 tier of contract opportunities the system is already being built to
                 support. The move to Noble Dominate, and with it a full commercial
                 contract positioning strategy, is the natural next step.
               </p>
               <p>
-                The ambition Craig came to us with — consistent commercial contracts,
-                a business that doesn{"'"}t rely on who happened to call this week — is
+                The ambition Craig came to us with, consistent commercial contracts,
+                a business that doesn{"'"}t rely on who happened to call this week, is
                 well within reach. The infrastructure is in place. Now it compounds.
               </p>
             </section>
@@ -314,7 +312,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Whether you{"'"}re starting from scratch or looking to scale what{"'"}s
                 already working, we{"'"}ll build you the infrastructure to grow
-                consistently — leads, operations and everything in between.
+                consistently, leads, operations and everything in between.
               </p>
               <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link

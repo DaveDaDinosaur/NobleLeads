@@ -25,7 +25,7 @@ export const metadata: Metadata = buildMetadata({
 const articleSchema = getArticleSchema({
   headline: "How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown",
   description:
-    "A full breakdown of what Checkatrade costs UK tradespeople in 2026 — membership fees, per-lead charges, real-world monthly totals and how to work out whether it is worth it.",
+    "A full breakdown of what Checkatrade costs UK tradespeople in 2026, membership fees, per-lead charges, real-world monthly totals and how to work out whether it is worth it.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -52,14 +52,14 @@ const faqItems: FAQItem[] = [
       "Checkatrade advertising costs are quoted individually through a sales process. Membership fees range from approximately £60 to £500+ per month depending on trade, region and the level of lead volume you opt into. Additional per-lead costs of £5–£40 are charged on top of membership in most cases. Annual subscriptions are typically cheaper than paying month-to-month.",
   },
   {
-    question: "Which is better — Checkatrade or TrustaTrader?",
+    question: "Which is better, Checkatrade or TrustaTrader?",
     answer:
-      "Checkatrade has significantly higher brand recognition and more homeowner traffic than TrustaTrader. TrustaTrader tends to cost more annually (£600–£1,000+) and has a smaller audience, but some tradespeople find less competition per lead. For most UK tradespeople, Checkatrade will generate more enquiries — but at a higher and less predictable cost.",
+      "Checkatrade has significantly higher brand recognition and more homeowner traffic than TrustaTrader. TrustaTrader tends to cost more annually (£600–£1,000+) and has a smaller audience, but some tradespeople find less competition per lead. For most UK tradespeople, Checkatrade will generate more enquiries, but at a higher and less predictable cost.",
   },
   {
     question: "Can I cancel Checkatrade at any time?",
     answer:
-      "Checkatrade memberships are typically sold on a 12-month contract, though promotional offers sometimes include shorter terms. Cancelling early may result in an early termination fee. Many tradespeople report difficulty cancelling and being locked into renewals they did not intend to authorise — it is worth reading the contract terms carefully before signing up.",
+      "Checkatrade memberships are typically sold on a 12-month contract, though promotional offers sometimes include shorter terms. Cancelling early may result in an early termination fee. Many tradespeople report difficulty cancelling and being locked into renewals they did not intend to authorise, it is worth reading the contract terms carefully before signing up.",
   },
 ]
 
@@ -94,7 +94,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 are additional costs on top.{" "}
                 <span className="font-semibold text-foreground">
                   This article pulls together what UK tradespeople are actually
-                  paying in 2026 — membership fees, per-lead costs and what the
+                  paying in 2026, membership fees, per-lead costs and what the
                   total really looks like month to month.
                 </span>
               </p>
@@ -125,7 +125,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
               <p>
                 Checkatrade{"'"}s pricing is not listed anywhere on its public-facing
                 website. To get a quote, you have to book a call with their sales
-                team — who will then tailor a package based on your trade, your
+                team, who will then tailor a package based on your trade, your
                 location and how aggressively you want to generate leads.
               </p>
               <p>
@@ -137,7 +137,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
               </p>
               <PullQuote accent="blue">
                 "You can{"'"}t look up what Checkatrade costs. You have to go through
-                a sales call first — which is the point. By then you{"'"}re already in
+                a sales call first, which is the point. By then you{"'"}re already in
                 the funnel."
               </PullQuote>
             </section>
@@ -161,7 +161,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Basic listing:</span>{" "}
-                  from around £60 per month — gets you a profile on the platform but
+                  from around £60 per month, gets you a profile on the platform but
                   limited lead volume and visibility
                 </li>
                 <li>
@@ -175,7 +175,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Annual vs monthly:</span>{" "}
-                  paying annually is cheaper — the widely cited annual rate is around
+                  paying annually is cheaper, the widely cited annual rate is around
                   £600 for a standard membership, versus £60–£80/month if paying monthly
                 </li>
               </ul>
@@ -235,7 +235,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
 
               <StatCallout
                 stat="£400/month"
-                label="What a typical plumber or electrician pays on Checkatrade in an average month — before counting the time spent chasing leads that don't convert."
+                label="What a typical plumber or electrician pays on Checkatrade in an average month, before counting the time spent chasing leads that don't convert."
                 accent="gold"
               />
             </section>
@@ -267,8 +267,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
               </p>
               <p>
                 Tradespeople across forums and review sites report receiving renewal
-                quotes that are meaningfully higher than their original rate —
-                sometimes 20 to 40 percent more. The contract is often auto-renewed
+                quotes that are meaningfully higher than their original rate, sometimes 20 to 40 percent more. The contract is often auto-renewed
                 unless you actively cancel, and cancelling partway through a term
                 typically carries an early exit fee.
               </p>
@@ -300,8 +299,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                   The{" "}
                   <span className="font-semibold text-foreground">
                     Checkatrade badge
-                  </span>{" "}
-                  — the logo you can display on your van, website and marketing
+                  </span>: the logo you can display on your van, website and marketing
                   materials. For certain trades this carries real consumer trust.
                 </li>
                 <li>
@@ -309,12 +307,12 @@ export default function HowMuchDoesCheckatradeCostPage() {
                   in your credentials
                 </li>
                 <li>
-                  Inclusion in Checkatrade{"'"}s own marketing — they spend significantly
+                  Inclusion in Checkatrade{"'"}s own marketing, they spend significantly
                   on TV advertising, which drives homeowner traffic to the platform
                 </li>
               </ul>
               <p>
-                These things have genuine value — particularly for newer trade
+                These things have genuine value, particularly for newer trade
                 businesses that have not yet built their own review profile or online
                 presence. The question is whether they are worth{" "}
                 <span className="font-semibold text-foreground">
@@ -370,7 +368,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 </Link>{" "}
                 delivers for your trade in your area. Many tradespeople find they
                 can acquire a paying customer for £30–£80 through well-managed Google
-                Ads campaigns — half the cost, and the traffic goes to a website
+                Ads campaigns, half the cost, and the traffic goes to a website
                 you own rather than a marketplace full of competitors.
               </p>
             </section>
@@ -387,8 +385,8 @@ export default function HowMuchDoesCheckatradeCostPage() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  You are in an emergency or reactive trade — plumber, electrician,
-                  boiler engineer — where Checkatrade{"'"}s brand recognition drives
+                  You are in an emergency or reactive trade, plumber, electrician,
+                  boiler engineer, where Checkatrade{"'"}s brand recognition drives
                   urgent homeowner searches
                 </li>
                 <li>
@@ -447,21 +445,20 @@ export default function HowMuchDoesCheckatradeCostPage() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  Homeowners who find you on Google are looking at your site only —
-                  not comparing you to four competitors simultaneously
+                  Homeowners who find you on Google are looking at your site only, not comparing you to four competitors simultaneously
                 </li>
                 <li>
-                  Every review you collect goes to your Google profile — building
+                  Every review you collect goes to your Google profile, building
                   your own ranking and reputation, not Checkatrade{"'"}s
                 </li>
                 <li>
                   Your website, your reviews and your Google presence belong to you
-                  permanently — stopping Google Ads pauses lead flow; stopping
+                  permanently, stopping Google Ads pauses lead flow; stopping
                   Checkatrade erases your presence entirely
                 </li>
                 <li>
                   Over twelve to eighteen months, organic search and review velocity
-                  compound — your cost per lead typically falls over time rather than
+                  compound, your cost per lead typically falls over time rather than
                   increasing at renewal
                 </li>
               </ul>
@@ -470,8 +467,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 saying it should never be your{" "}
                 <span className="font-semibold text-foreground">
                   only choice
-                </span>{" "}
-                — and for many established UK tradespeople, the maths stops working
+                </span>: and for many established UK tradespeople, the maths stops working
                 long before they realise it.
               </p>
             </section>
@@ -486,7 +482,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 In 15 minutes we can look at what you{"'"}re spending, calculate your
                 actual cost per job won, and show you what the same budget could
-                do invested in a lead system you own. No pressure — just clarity.
+                do invested in a lead system you own. No pressure, just clarity.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
@@ -504,7 +500,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
 
           <SectionReveal delay={190}>
             <FAQAccordionSection
-              title="Checkatrade Cost — Common Questions"
+              title="Checkatrade Cost, Common Questions"
               items={faqItems}
             />
           </SectionReveal>

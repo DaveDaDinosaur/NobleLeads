@@ -18,7 +18,7 @@ export function PositioningSection() {
             <SectionReveal delay={60}>
               <p>
                 We saw talented tradespeople losing work to competitors with
-                better systems — not better standards, reviews or service. Just
+                better systems, not better standards, reviews or service. Just
                 better positioning, messaging and lead generation. That gap
                 compounds.
               </p>

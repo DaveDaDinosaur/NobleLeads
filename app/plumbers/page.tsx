@@ -30,7 +30,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work specifically with plumbing businesses?",
     answer:
-      "Yes. We understand the difference between emergency call-out work, planned bathroom installations, boiler replacements and commercial contracts — and we build your campaigns around the jobs that are most profitable for you.",
+      "Yes. We understand the difference between emergency call-out work, planned bathroom installations, boiler replacements and commercial contracts, and we build your campaigns around the jobs that are most profitable for you.",
   },
   {
     question: "How quickly will I start seeing new plumbing enquiries?",
@@ -40,7 +40,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me get more boiler installation and bathroom fit work instead of just call-outs?",
     answer:
-      "Absolutely. We build dedicated landing pages and campaigns targeting higher-value planned work — boiler installs, bathroom renovations and heating system upgrades — so you get the mix of work that suits your business.",
+      "Absolutely. We build dedicated landing pages and campaigns targeting higher-value planned work, boiler installs, bathroom renovations and heating system upgrades, so you get the mix of work that suits your business.",
   },
   {
     question: "I miss calls when I'm on jobs. Can the system handle that?",
@@ -55,7 +55,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work with Gas Safe registered plumbers only?",
     answer:
-      "Not exclusively — we work with all plumbers, whether your focus is heating, gas, general plumbing or a mix. We'll make sure your registrations and qualifications are displayed correctly on everything we build.",
+      "Not exclusively, we work with all plumbers, whether your focus is heating, gas, general plumbing or a mix. We'll make sure your registrations and qualifications are displayed correctly on everything we build.",
   },
   {
     question: "Which areas of the UK do you cover?",
@@ -68,7 +68,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Clock,
     heading: "No Pipeline, Just Calls",
-    body: "Work arrives when someone rings — not because you have a system generating the right enquiries in the background.",
+    body: "Work arrives when someone rings, not because you have a system generating the right enquiries in the background.",
   },
   {
     icon: TrendingDown,
@@ -96,7 +96,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           conversion-focused trade websites
         </Link>{" "}
-        are built for plumbers specifically — showcasing Gas Safe registration,
+        are built for plumbers specifically, showcasing Gas Safe registration,
         Trustmark accreditation, completed project photos and Google reviews,
         with clear click-to-call on mobile and simple forms that send enquiries
         straight into your pipeline.
@@ -112,7 +112,7 @@ const steps: HowItWorksStep[] = [
           Google Ads campaigns for plumbers
         </Link>{" "}
         targeting the searches with the highest intent and value in your service
-        area — boiler installs, bathroom quotes, heating repairs. Not just
+        area, boiler installs, bathroom quotes, heating repairs. Not just
         emergency call-outs, but the planned work that{"'"}s easier to price and
         more profitable to do.
       </>
@@ -127,7 +127,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM pipeline
         </Link>{" "}
-        shows you every enquiry, quote and booking in one place — so you{"'"}re
+        shows you every enquiry, quote and booking in one place, so you{"'"}re
         never guessing where your next job is coming from.
       </>
     ),
@@ -137,7 +137,7 @@ const steps: HowItWorksStep[] = [
 export const metadata: Metadata = buildMetadata({
   title: "Plumber Marketing Agency UK | More Leads, More Jobs",
   description:
-    "NobleLeads delivers marketing for plumbers UK-wide using conversion websites, Google Ads and CRM automation so you can win consistent work — from emergency call-outs to planned boiler installs and bathroom fits.",
+    "NobleLeads delivers marketing for plumbers UK-wide using conversion websites, Google Ads and CRM automation so you can win consistent work, from emergency call-outs to planned boiler installs and bathroom fits.",
   canonicalPath,
 })
 
@@ -146,7 +146,7 @@ export default function PlumbersPage() {
   const serviceSchema = getServiceSchema({
     name: "Plumber Marketing",
     description:
-      "NobleLeads delivers marketing for plumbers UK-wide using conversion websites, Google Ads and CRM automation so you can win consistent work — from emergency call-outs to planned boiler installs and bathroom fits.",
+      "NobleLeads delivers marketing for plumbers UK-wide using conversion websites, Google Ads and CRM automation so you can win consistent work, from emergency call-outs to planned boiler installs and bathroom fits.",
     url: `${BUSINESS_URL}${canonicalPath}`,
   })
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -170,14 +170,14 @@ export default function PlumbersPage() {
                 Marketing for Plumbers That Wins Consistent Work
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Plumbers in the UK are rarely short of work — but too much of it
+                Plumbers in the UK are rarely short of work, but too much of it
                 arrives unpredictably, at the wrong price or as low-value emergency
                 call-outs that fill the diary without building the business. NobleLeads
                 focuses on{" "}
                 <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                so you can get a consistent pipeline of the right jobs — whether
+                so you can get a consistent pipeline of the right jobs, whether
                 that{"'"}s boiler installs, bathroom renovations or commercial maintenance
-                contracts — without relying on directories or whoever rings first.
+                contracts, without relying on directories or whoever rings first.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link
@@ -201,7 +201,7 @@ export default function PlumbersPage() {
                 Why Plumbers Struggle to Get the Right Work Consistently
               </h2>
               <p>
-                The problem most plumbers face isn{"'"}t a shortage of calls — it{"'"}s a
+                The problem most plumbers face isn{"'"}t a shortage of calls, it{"'"}s a
                 shortage of{" "}
                 <span className="font-semibold text-foreground">
                   the right calls at the right price
@@ -235,7 +235,7 @@ export default function PlumbersPage() {
                 <span className="font-semibold text-foreground">
                   "boiler installation in [your area]"
                 </span>
-                , they find you, trust you and book — not the next person on the list.
+                , they find you, trust you and book, not the next person on the list.
               </p>
               <HowItWorksSteps steps={steps} />
             </section>
@@ -325,7 +325,7 @@ export default function PlumbersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your plumbing
-                business — what you{"'"}re doing now, what{"'"}s working and what a proper
+                business, what you{"'"}re doing now, what{"'"}s working and what a proper
                 lead system could look like for you.
               </p>
               <div className="mt-6 flex justify-center">

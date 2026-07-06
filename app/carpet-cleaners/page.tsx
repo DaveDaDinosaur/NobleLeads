@@ -30,7 +30,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work specifically with carpet cleaning businesses?",
     answer:
-      "Yes. We understand the three revenue streams available to carpet cleaners — domestic regular cleans, end-of-tenancy cleans and commercial contracts — and build campaigns to help you grow whichever mix is most profitable for you.",
+      "Yes. We understand the three revenue streams available to carpet cleaners, domestic regular cleans, end-of-tenancy cleans and commercial contracts, and build campaigns to help you grow whichever mix is most profitable for you.",
   },
   {
     question: "How quickly will I start seeing new carpet cleaning enquiries?",
@@ -40,12 +40,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me land commercial carpet cleaning contracts?",
     answer:
-      "Yes. Commercial clients — offices, hotels, letting agents — provide high-volume, high-value repeat work. We build dedicated pages and campaigns targeting businesses in your area that need regular or contract cleaning.",
+      "Yes. Commercial clients, offices, hotels, letting agents, provide high-volume, high-value repeat work. We build dedicated pages and campaigns targeting businesses in your area that need regular or contract cleaning.",
   },
   {
     question: "Can you help me grow recurring domestic clients rather than one-offs?",
     answer:
-      "Absolutely. We build review and re-booking systems that turn one-off cleans into regular 6-monthly or annual clients — significantly increasing lifetime value per customer.",
+      "Absolutely. We build review and re-booking systems that turn one-off cleans into regular 6-monthly or annual clients, significantly increasing lifetime value per customer.",
   },
   {
     question: "Is there a minimum contract?",
@@ -55,7 +55,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work with sole traders as well as larger carpet cleaning firms?",
     answer:
-      "We work with both. The right package depends on your current capacity and how aggressively you want to grow — we'll match you to what makes sense.",
+      "We work with both. The right package depends on your current capacity and how aggressively you want to grow, we'll match you to what makes sense.",
   },
   {
     question: "Which areas of the UK do you cover?",
@@ -73,12 +73,12 @@ const painPoints: PainPoint[] = [
   {
     icon: Search,
     heading: "Invisible in Local Search",
-    body: "Carpet cleaning is almost always searched on Google. If you're not ranking locally, the calls go to whoever is — often larger national chains with bigger ad budgets.",
+    body: "Carpet cleaning is almost always searched on Google. If you're not ranking locally, the calls go to whoever is, often larger national chains with bigger ad budgets.",
   },
   {
     icon: Building2,
     heading: "Missing Commercial Opportunities",
-    body: "Offices, hotels, letting agents — commercial clients offer volume and repeat bookings. Most carpet cleaners never reach them because they have no commercial-focused online presence.",
+    body: "Offices, hotels, letting agents, commercial clients offer volume and repeat bookings. Most carpet cleaners never reach them because they have no commercial-focused online presence.",
   },
   {
     icon: RefreshCcw,
@@ -97,7 +97,7 @@ const steps: HowItWorksStep[] = [
           conversion-focused trade websites
         </Link>{" "}
         for carpet cleaners include separate pages for domestic cleaning,
-        end-of-tenancy deep cleans and commercial contracts — each with the
+        end-of-tenancy deep cleans and commercial contracts, each with the
         relevant trust signals, before-and-after photos and enquiry forms
         optimised for that specific client type.
       </>
@@ -112,7 +112,7 @@ const steps: HowItWorksStep[] = [
           Google Ads campaigns for carpet cleaners
         </Link>{" "}
         targeting searches like "carpet cleaning near me", "end of tenancy
-        carpet clean [town]" and "office carpet cleaning [area]" — so your
+        carpet clean [town]" and "office carpet cleaning [area]", so your
         ads appear to people who are actively looking, not just browsing.
       </>
     ),
@@ -127,7 +127,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         re-engages domestic clients at the right interval to prompt a repeat
         booking, follows up with commercial prospects who haven{"'"}t responded and
-        sends review requests after every clean — building a compounding
+        sends review requests after every clean, building a compounding
         base of recurring revenue and 5-star reviews.
       </>
     ),
@@ -170,8 +170,8 @@ export default function CarpetCleanersPage() {
                 Marketing for Carpet Cleaners That Keeps Bookings Coming In
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Carpet cleaning has three distinct revenue streams — domestic regular
-                cleans, end-of-tenancy cleans and commercial contracts — and most
+                Carpet cleaning has three distinct revenue streams, domestic regular
+                cleans, end-of-tenancy cleans and commercial contracts, and most
                 carpet cleaning businesses are only fully tapping one of them.
                 NobleLeads focuses on{" "}
                 <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
@@ -200,8 +200,7 @@ export default function CarpetCleanersPage() {
                 Why Carpet Cleaners Struggle to Build Consistent Revenue
               </h2>
               <p>
-                Carpet cleaning is one of the most search-driven trades there is —
-                almost every customer goes to Google when they need it. That means{" "}
+                Carpet cleaning is one of the most search-driven trades there is, almost every customer goes to Google when they need it. That means{" "}
                 <span className="font-semibold text-foreground">
                   your online visibility directly determines your booking volume
                 </span>
@@ -219,8 +218,7 @@ export default function CarpetCleanersPage() {
               </h2>
               <p>
                 We build one system that generates new domestic bookings, captures
-                end-of-tenancy enquiries and opens the door to commercial contracts —
-                while simultaneously re-engaging past clients to book again.
+                end-of-tenancy enquiries and opens the door to commercial contracts, while simultaneously re-engaging past clients to book again.
               </p>
               <HowItWorksSteps steps={steps} />
             </section>
@@ -303,7 +301,7 @@ export default function CarpetCleanersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your carpet cleaning
-                business — what{"'"}s working, what{"'"}s missing and how a proper system
+                business, what{"'"}s working, what{"'"}s missing and how a proper system
                 could close the gap.
               </p>
               <div className="mt-6 flex justify-center">

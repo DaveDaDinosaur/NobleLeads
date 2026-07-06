@@ -18,7 +18,7 @@ const canonicalPath = "/blog/mybuilder-vs-checkatrade"
 export const metadata: Metadata = buildMetadata({
   title: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
   description:
-    "MyBuilder vs Checkatrade — an honest breakdown of costs, lead quality, which trades each suits, and whether either platform is actually worth your money in 2026.",
+    "MyBuilder vs Checkatrade, an honest breakdown of costs, lead quality, which trades each suits, and whether either platform is actually worth your money in 2026.",
   canonicalPath,
 })
 
@@ -34,7 +34,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is Checkatrade better than MyBuilder?",
     answer:
-      "It depends on your trade. Checkatrade tends to work better for emergency and reactive trades — plumbers, electricians, locksmiths — where homeowners search urgently and brand recognition matters. MyBuilder tends to work better for planned home improvement work like bathrooms, kitchens and extensions, where the job description is detailed and you can decide whether it's worth pursuing before you spend anything. Neither is objectively better. Both carry the same fundamental problem: you're renting access to someone else's audience.",
+      "It depends on your trade. Checkatrade tends to work better for emergency and reactive trades, plumbers, electricians, locksmiths, where homeowners search urgently and brand recognition matters. MyBuilder tends to work better for planned home improvement work like bathrooms, kitchens and extensions, where the job description is detailed and you can decide whether it's worth pursuing before you spend anything. Neither is objectively better. Both carry the same fundamental problem: you're renting access to someone else's audience.",
   },
   {
     question: "Is MyBuilder any good for tradesmen?",
@@ -49,7 +49,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What is the best tradesman platform in 2026?",
     answer:
-      "No lead platform — Checkatrade, MyBuilder, Bark or Rated People — is the best long-term strategy for a UK trade business. The best platform is one you own: a conversion-ready website, a properly optimised Google Business Profile and targeted Google Ads campaigns. These assets build momentum over time and send leads directly to you without competing on price against other tradespeople every time.",
+      "No lead platform, Checkatrade, MyBuilder, Bark or Rated People, is the best long-term strategy for a UK trade business. The best platform is one you own: a conversion-ready website, a properly optimised Google Business Profile and targeted Google Ads campaigns. These assets build momentum over time and send leads directly to you without competing on price against other tradespeople every time.",
   },
   {
     question: "Can I use both MyBuilder and Checkatrade at the same time?",
@@ -94,8 +94,7 @@ export default function MyBuilderVsCheckatradePage() {
                 different trades, and carry very different risks.{" "}
                 <span className="font-semibold text-foreground">
                   This is an honest breakdown of what each platform actually costs,
-                  what the leads are like in practice, and which one — if either —
-                  is worth your money in 2026.
+                  what the leads are like in practice, and which one, if either, is worth your money in 2026.
                 </span>
               </p>
             </header>
@@ -121,7 +120,7 @@ export default function MyBuilderVsCheckatradePage() {
               <p>
                 Before comparing costs and lead quality, it{"'"}s worth understanding
                 that MyBuilder and Checkatrade are not the same type of product.
-                They have fundamentally different business models — and that
+                They have fundamentally different business models, and that
                 difference matters.
               </p>
               <h3 className="text-base font-semibold text-foreground sm:text-lg">
@@ -130,8 +129,8 @@ export default function MyBuilderVsCheckatradePage() {
               <p>
                 On MyBuilder, homeowners post a job description and tradespeople
                 browse available work. You send a free introduction message to jobs
-                that interest you. If the homeowner shortlists you — meaning they
-                want to see your contact details and have a conversation — you pay a
+                that interest you. If the homeowner shortlists you, meaning they
+                want to see your contact details and have a conversation, you pay a
                 shortlist fee. You do{" "}
                 <span className="font-semibold text-foreground">
                   not pay to simply express interest
@@ -145,8 +144,7 @@ export default function MyBuilderVsCheckatradePage() {
               <p>
                 Checkatrade works the other way around. You pay a monthly membership
                 to be listed in their directory. Homeowners browse profiles, read
-                your reviews and contact you directly. There is no job-posting system
-                — leads come to you, or they don{"'"}t. You pay the membership whether
+                your reviews and contact you directly. There is no job-posting system, leads come to you, or they don{"'"}t. You pay the membership whether
                 you receive ten enquiries that month or zero.
               </p>
               <PullQuote accent="blue">
@@ -195,7 +193,7 @@ export default function MyBuilderVsCheckatradePage() {
                 </li>
               </ul>
               <p>
-                All fees are non-refundable — even if the homeowner stops responding
+                All fees are non-refundable, even if the homeowner stops responding
                 after you{"'"}ve paid. If you pursue 20 jobs in a month and half of them
                 shortlist you, you could easily spend £100–£300 before winning a
                 single piece of work.
@@ -205,8 +203,8 @@ export default function MyBuilderVsCheckatradePage() {
                 Checkatrade Pricing
               </h3>
               <p>
-                Checkatrade doesn{"'"}t publish its prices publicly — you go through a
-                sales call to get a quote — but real-world data from tradespeople puts
+                Checkatrade doesn{"'"}t publish its prices publicly, you go through a
+                sales call to get a quote, but real-world data from tradespeople puts
                 the costs in a clear range:
               </p>
               <ul className="ml-5 list-disc space-y-2">
@@ -287,7 +285,7 @@ export default function MyBuilderVsCheckatradePage() {
               <p>
                 The drawback is{" "}
                 <span className="font-semibold text-foreground">ghost enquiries</span>
-                {" "}— homeowners who shortlist you, trigger the shortlist fee, and then
+                : homeowners who shortlist you, trigger the shortlist fee, and then
                 never respond to calls or messages. There is no refund. Tradespeople
                 across Trustpilot, Reviews.io and trade forums consistently flag this
                 as the biggest frustration with the platform.
@@ -318,7 +316,7 @@ export default function MyBuilderVsCheckatradePage() {
               </p>
               <PullQuote accent="purple">
                 "The leads are real. The problem is that five other tradespeople got
-                the same enquiry at the same time — and the one who calls back first
+                the same enquiry at the same time, and the one who calls back first
                 and quotes lowest usually wins."
               </PullQuote>
             </section>
@@ -331,8 +329,7 @@ export default function MyBuilderVsCheckatradePage() {
                 Which Trades Does Each Platform Actually Suit?
               </h2>
               <p>
-                This is where a genuine difference between the two platforms exists
-                — and it matters more than the cost comparison.
+                This is where a genuine difference between the two platforms exists, and it matters more than the cost comparison.
               </p>
 
               <h3 className="text-base font-semibold text-foreground sm:text-lg">
@@ -340,8 +337,7 @@ export default function MyBuilderVsCheckatradePage() {
               </h3>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  <span className="font-semibold text-foreground">Emergency and reactive trades</span>{" "}
-                  — plumbers, electricians, locksmiths, boiler engineers. Homeowners
+                  <span className="font-semibold text-foreground">Emergency and reactive trades</span>: plumbers, electricians, locksmiths, boiler engineers. Homeowners
                   in a crisis search Checkatrade by name because they trust the brand.
                 </li>
                 <li>
@@ -359,8 +355,7 @@ export default function MyBuilderVsCheckatradePage() {
               </h3>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  <span className="font-semibold text-foreground">Planned home improvement trades</span>{" "}
-                  — builders, kitchen fitters, bathroom installers, landscapers,{" "}
+                  <span className="font-semibold text-foreground">Planned home improvement trades</span>: builders, kitchen fitters, bathroom installers, landscapers,{" "}
                   <Link href="/driveway-paving" className="font-semibold text-secondary hover:underline">
                     driveway specialists
                   </Link>
@@ -387,7 +382,7 @@ export default function MyBuilderVsCheckatradePage() {
                 Vetting and Trust: Does It Make a Difference?
               </h2>
               <p>
-                Checkatrade has a more thorough vetting process — background checks,
+                Checkatrade has a more thorough vetting process, background checks,
                 insurance verification, proof of qualifications and references. That
                 vetting is part of what homeowners are paying for when they use the
                 platform, and it does carry real weight for certain trades (Gas Safe
@@ -444,7 +439,7 @@ export default function MyBuilderVsCheckatradePage() {
               </PullQuote>
               <p>
                 The strongest UK trade businesses we work with use platforms like
-                these as a supplement — a short-term traffic source while their own
+                these as a supplement, a short-term traffic source while their own
                 website, Google Business Profile and review base build momentum. Not
                 as the foundation of their marketing.
               </p>
@@ -455,15 +450,14 @@ export default function MyBuilderVsCheckatradePage() {
           <SectionReveal delay={160}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                So, MyBuilder vs Checkatrade — What{"'"}s the Verdict?
+                So, MyBuilder vs Checkatrade, What{"'"}s the Verdict?
               </h2>
               <p>
                 If you are an emergency or reactive trade and you need leads quickly
                 while you build your own assets,{" "}
                 <span className="font-semibold text-foreground">
                   Checkatrade{"'"}s brand recognition gives it an edge
-                </span>{" "}
-                — but only if the numbers make sense. Run the maths on what you
+                </span>: but only if the numbers make sense. Run the maths on what you
                 actually spend versus what you win. If the cost per job won is above
                 what Google Ads would deliver, it{"'"}s time to switch.
               </p>
@@ -488,7 +482,7 @@ export default function MyBuilderVsCheckatradePage() {
                   conversion-ready website
                 </Link>{" "}
                 and Google presence will typically outperform both within six to
-                twelve months — and the asset is yours permanently.
+                twelve months, and the asset is yours permanently.
               </p>
             </section>
           </SectionReveal>
@@ -514,7 +508,7 @@ export default function MyBuilderVsCheckatradePage() {
                 </li>
                 <li>
                   A properly optimised Google Business Profile so you appear
-                  prominently in local searches — including the map pack — for your
+                  prominently in local searches, including the map pack, for your
                   trade and your area.
                 </li>
                 <li>
@@ -535,7 +529,7 @@ export default function MyBuilderVsCheckatradePage() {
                   >
                     Google Ads
                   </Link>{" "}
-                  sending high-intent searchers directly to your own site — not a
+                  sending high-intent searchers directly to your own site, not a
                   marketplace where they also see your competitors.
                 </li>
               </ul>
@@ -547,7 +541,7 @@ export default function MyBuilderVsCheckatradePage() {
                 </span>
                 . Every review adds to your ranking. Every blog post builds your
                 authority. Every job that comes through your own site is a customer
-                who found you — not one who compared you to five others on a
+                who found you, not one who compared you to five others on a
                 marketplace.
               </p>
             </section>
@@ -561,7 +555,7 @@ export default function MyBuilderVsCheckatradePage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 If you{"'"}re spending money on Checkatrade, MyBuilder or Bark and
-                wondering whether there{"'"}s a better way — there is. Book a free
+                wondering whether there{"'"}s a better way, there is. Book a free
                 discovery call and we{"'"}ll show you what a lead system built around
                 your own brand could look like for your trade.
               </p>
@@ -581,7 +575,7 @@ export default function MyBuilderVsCheckatradePage() {
 
           <SectionReveal delay={200}>
             <FAQAccordionSection
-              title="MyBuilder vs Checkatrade — Common Questions"
+              title="MyBuilder vs Checkatrade, Common Questions"
               items={faqItems}
             />
           </SectionReveal>

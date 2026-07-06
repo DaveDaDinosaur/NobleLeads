@@ -35,12 +35,12 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new tree surgery enquiries?",
     answer:
-      "With Google Ads running, most tree surgeons start seeing new leads within 2–3 weeks. Emergency and storm-season campaigns can generate leads even faster — particularly after bad weather events in your area.",
+      "With Google Ads running, most tree surgeons start seeing new leads within 2–3 weeks. Emergency and storm-season campaigns can generate leads even faster, particularly after bad weather events in your area.",
   },
   {
     question: "Can you help me win commercial tree surgery contracts?",
     answer:
-      "Yes. Commercial clients — local authorities, estate managers, housing associations and schools — provide high-volume, repeat work. We build dedicated pages and campaigns targeting commercial clients in your service area.",
+      "Yes. Commercial clients, local authorities, estate managers, housing associations and schools, provide high-volume, repeat work. We build dedicated pages and campaigns targeting commercial clients in your service area.",
   },
   {
     question: "I miss calls on site. Can the system help?",
@@ -78,7 +78,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Building2,
     heading: "Commercial Work Untapped",
-    body: "Local authorities, estate managers and housing associations need regular arboricultural work — but they never find you without the right online presence.",
+    body: "Local authorities, estate managers and housing associations need regular arboricultural work, but they never find you without the right online presence.",
   },
   {
     icon: PhoneCall,
@@ -99,7 +99,7 @@ const steps: HowItWorksStep[] = [
         for tree surgeons display NPTC or Arboricultural Association credentials
         prominently, showcase completed work with before-and-after photos, pull
         in Google reviews and include separate pages for residential, emergency
-        and commercial tree surgery — each designed to convert for that specific
+        and commercial tree surgery, each designed to convert for that specific
         client type.
       </>
     ),
@@ -114,7 +114,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         targeting both emergency storm searches and planned tree removal or
         maintenance. Urgent and planned enquiries are separated so your campaigns
-        attract both — and your response system handles the different pacing
+        attract both, and your response system handles the different pacing
         each type of enquiry requires.
       </>
     ),
@@ -127,8 +127,7 @@ const steps: HowItWorksStep[] = [
         quote and survey request is tracked in your{" "}
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM pipeline
-        </Link>{" "}
-        — so no job slips through after a busy storm day when the phone
+        </Link>: so no job slips through after a busy storm day when the phone
         doesn{"'"}t stop ringing.
       </>
     ),
@@ -171,12 +170,11 @@ export default function TreeSurgeonsPage() {
                 Tree Surgeon Marketing for Residential, Emergency and Commercial Work
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Tree surgery is a specialist, high-value trade — but for most tree
+                Tree surgery is a specialist, high-value trade, but for most tree
                 surgeons, enquiries are either feast or famine. Storm season is
                 frantic; summer can be quiet. Emergency calls are unpredictable;
                 planned work needs to be actively generated. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — building the online presence and automated systems that bring in
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: building the online presence and automated systems that bring in
                 a steady mix of residential, emergency and commercial enquiries all
                 year round.
               </p>
@@ -205,7 +203,7 @@ export default function TreeSurgeonsPage() {
                 Most tree surgery businesses run fine in peak season and feel the
                 pinch outside it.{" "}
                 <span className="font-semibold text-foreground">
-                  The ones with a full diary year-round aren{"'"}t just lucky — they{"'"}ve
+                  The ones with a full diary year-round aren{"'"}t just lucky, they{"'"}ve
                   built a system that generates enquiries independently of the weather.
                 </span>
               </p>
@@ -263,7 +261,7 @@ export default function TreeSurgeonsPage() {
                 on word of mouth and storm-season spikes. Within 8 weeks of launching
                 their NobleLeads system, they had 12 new residential enquiries, 3
                 large removal jobs booked and their first serious commercial enquiry
-                from a local estate management firm — work they had never had access
+                from a local estate management firm, work they had never had access
                 to before."
               </p>
             </section>
@@ -277,7 +275,7 @@ export default function TreeSurgeonsPage() {
               </h2>
               <TradePackages
                 core="A professional website displaying your credentials and showcasing completed work, with CRM set up and every enquiry captured."
-                growth="Everything in Core plus Google Ads, missed call text-back and automated follow-up — so no enquiry is lost while you're on site."
+                growth="Everything in Core plus Google Ads, missed call text-back and automated follow-up, so no enquiry is lost while you're on site."
                 dominate="For tree surgery businesses targeting commercial contracts, local authority frameworks or expanding into new service areas."
               />
             </section>
@@ -301,7 +299,7 @@ export default function TreeSurgeonsPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your tree surgery
-                business — what{"'"}s working now, what{"'"}s missing and how a proper
+                business, what{"'"}s working now, what{"'"}s missing and how a proper
                 lead system could change the picture.
               </p>
               <div className="mt-6 flex justify-center">

@@ -31,7 +31,7 @@ export function WhatWeDeliver() {
         <div className="mx-auto mt-10 h-px w-16 rounded-full bg-secondary/40" />
       </SectionReveal>
 
-      {/* Journey steps — clear cards with spacing */}
+      {/* Journey steps, clear cards with spacing */}
       <div className="mt-16 sm:mt-20 lg:mt-24 space-y-6 sm:space-y-8">
         {WHAT_WE_DELIVER_JOURNEY.map((step, index) => {
           const PillarIcon = getPillarIcon(step.id)

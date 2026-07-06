@@ -23,7 +23,7 @@ export const metadata: Metadata = buildMetadata({
 const articleSchema = getArticleSchema({
   headline: "Is Bark Worth It for Electricians in 2026? Honest Answer",
   description:
-    "An honest breakdown of whether Bark.com is worth it for UK electricians in 2026 — covering real credit costs, lead quality, competition, and better alternatives for growing your electrical business.",
+    "An honest breakdown of whether Bark.com is worth it for UK electricians in 2026, covering real credit costs, lead quality, competition, and better alternatives for growing your electrical business.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
   dateModified: "2026-06-19",
@@ -34,27 +34,27 @@ const faqItems: FAQItem[] = [
   {
     question: "Is Bark.com worth it for electricians?",
     answer:
-      "For most established electricians, no. The credit costs are high relative to the lead quality, you're competing with up to five other electricians for every enquiry, and you have no way to verify whether the customer is serious before spending. For a brand-new electrician with zero reviews and no Google presence, it can generate early enquiries — but even then, treat it as a bridge rather than a strategy.",
+      "For most established electricians, no. The credit costs are high relative to the lead quality, you're competing with up to five other electricians for every enquiry, and you have no way to verify whether the customer is serious before spending. For a brand-new electrician with zero reviews and no Google presence, it can generate early enquiries, but even then, treat it as a bridge rather than a strategy.",
   },
   {
     question: "How much does Bark cost for electricians?",
     answer:
-      "Bark operates on a credit system. A pack of around 70 credits costs approximately £130–£140. Individual electrical leads cost 7–15+ credits depending on the job type, meaning a realistic cost per lead is £13–£30+. If you're converting one in three leads (optimistic), you're paying £40–£90 per job won — before doing any work. On a £75 socket job, that erases the margin entirely.",
+      "Bark operates on a credit system. A pack of around 70 credits costs approximately £130–£140. Individual electrical leads cost 7–15+ credits depending on the job type, meaning a realistic cost per lead is £13–£30+. If you're converting one in three leads (optimistic), you're paying £40–£90 per job won, before doing any work. On a £75 socket job, that erases the margin entirely.",
   },
   {
     question: "How many electricians get the same Bark lead?",
     answer:
-      "Up to five. All five pay credits to unlock the same enquiry. The customer may contact one, all five, or none. You have no advantage over the other four — no priority, no placement, no visibility into who else has bought the lead.",
+      "Up to five. All five pay credits to unlock the same enquiry. The customer may contact one, all five, or none. You have no advantage over the other four, no priority, no placement, no visibility into who else has bought the lead.",
   },
   {
     question: "Can Bark verify NICEIC or Part P certification?",
     answer:
-      "No. Bark does not verify trade certifications. Anyone can list themselves as an electrician on Bark regardless of whether they hold NICEIC, NAPIT or equivalent accreditation. This undercuts genuine tradesmen who've invested in certification — you're presented as equal to someone who may not be qualified to legally complete the same work.",
+      "No. Bark does not verify trade certifications. Anyone can list themselves as an electrician on Bark regardless of whether they hold NICEIC, NAPIT or equivalent accreditation. This undercuts genuine tradesmen who've invested in certification, you're presented as equal to someone who may not be qualified to legally complete the same work.",
   },
   {
     question: "What's better than Bark for electricians?",
     answer:
-      "Google Ads captures high-intent searches ('emergency electrician near me', 'fuse board replacement [town]') from people who are ready to book. An optimised Google Business Profile generates free enquiries from people searching locally. Both produce exclusive leads — no competitors sharing the same click. The initial setup takes longer, but the cost per converted job is typically 40–60% lower than Bark within six months.",
+      "Google Ads captures high-intent searches ('emergency electrician near me', 'fuse board replacement [town]') from people who are ready to book. An optimised Google Business Profile generates free enquiries from people searching locally. Both produce exclusive leads, no competitors sharing the same click. The initial setup takes longer, but the cost per converted job is typically 40–60% lower than Bark within six months.",
   },
   {
     question: "Is Bark useful for getting Google reviews?",
@@ -93,11 +93,11 @@ export default function IsBarkWorthItElectriciansPage() {
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
-              {/* Quick Answer — extracted by AI Overviews */}
+              {/* Quick Answer, extracted by AI Overviews */}
               <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
-                  For most UK electricians, Bark is not worth it in 2026. Credit costs of £13–£30 per lead, shared with up to five competitors, make the maths difficult — especially on smaller domestic jobs. It can be useful when you{"'"}re brand new with no reviews, but established electricians consistently report better ROI from Google Ads and an optimised Google Business Profile.
+                  For most UK electricians, Bark is not worth it in 2026. Credit costs of £13–£30 per lead, shared with up to five competitors, make the maths difficult, especially on smaller domestic jobs. It can be useful when you{"'"}re brand new with no reviews, but established electricians consistently report better ROI from Google Ads and an optimised Google Business Profile.
                 </p>
               </div>
             </header>
@@ -113,7 +113,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 </em>
               </p>
               <p>
-                The replies weren{"'"}t encouraging. And that experience — spending a chunk of money upfront, then watching credits disappear on enquiries that go nowhere — is one of the most common complaints from electricians who{"'"}ve tried Bark.
+                The replies weren{"'"}t encouraging. And that experience, spending a chunk of money upfront, then watching credits disappear on enquiries that go nowhere, is one of the most common complaints from electricians who{"'"}ve tried Bark.
               </p>
               <p>
                 This article breaks down exactly why: what Bark actually costs per electrical lead, how the competition dynamics work, where it fails electricians specifically, and what actually produces better results.
@@ -125,10 +125,10 @@ export default function IsBarkWorthItElectriciansPage() {
           <SectionReveal delay={80}>
             <section className="mt-12 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                How Bark Works — and Why the Model Suits Bark More Than You
+                How Bark Works, and Why the Model Suits Bark More Than You
               </h2>
               <p>
-                Bark is a lead marketplace. Someone fills in a form — &ldquo;I need a fuse board replacement in Coventry&rdquo; — and Bark sells that enquiry to up to five electricians simultaneously. You don{"'"}t see the customer{"'"}s contact details until you spend credits. Once you spend, there{"'"}s no refund if the lead doesn{"'"}t respond.
+                Bark is a lead marketplace. Someone fills in a form, &ldquo;I need a fuse board replacement in Coventry&rdquo;, and Bark sells that enquiry to up to five electricians simultaneously. You don{"'"}t see the customer{"'"}s contact details until you spend credits. Once you spend, there{"'"}s no refund if the lead doesn{"'"}t respond.
               </p>
               <p>
                 Credits are sold in bundles. Based on current pricing, a pack works out at roughly £2 per credit. Individual electrical leads cost 7–15+ credits depending on the job type and estimated value:
@@ -156,7 +156,7 @@ export default function IsBarkWorthItElectriciansPage() {
           <SectionReveal delay={80}>
             <section className="mt-12 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                The Maths on Electrical Jobs — Where Bark Breaks Down
+                The Maths on Electrical Jobs, Where Bark Breaks Down
               </h2>
               <p>
                 Bark can make commercial sense for high-ticket, infrequent jobs. It makes much less sense for the bread-and-butter electrical work that fills most sparks{"'"} week.
@@ -176,8 +176,8 @@ export default function IsBarkWorthItElectriciansPage() {
                     {[
                       ["Socket replacement", "£75–120", "£14–20", "Often unviable"],
                       ["Consumer unit replacement", "£400–700", "£20–30", "Possible, but competitive"],
-                      ["Full rewire (3-bed)", "£3,000–6,000", "£24–36", "Viable — but 1 in 5 convert?"],
-                      ["EV charger install", "£800–1,400", "£20–28", "Viable — high competition"],
+                      ["Full rewire (3-bed)", "£3,000–6,000", "£24–36", "Viable, but 1 in 5 convert?"],
+                      ["EV charger install", "£800–1,400", "£20–28", "Viable, high competition"],
                       ["Inspection & testing", "£150–300", "£14–22", "Tight"],
                     ].map(([job, value, cost, margin]) => (
                       <tr key={job} className="text-muted-foreground">
@@ -192,7 +192,7 @@ export default function IsBarkWorthItElectriciansPage() {
               </div>
 
               <p>
-                The conversion issue compounds the problem. Most electricians who{"'"}ve tracked their Bark spend report converting roughly 1 in 3 to 1 in 5 leads into booked jobs — and that{"'"}s after responding quickly and professionally. On a 1-in-4 conversion rate, your true cost per job won is £56–£144 before you{"'"}ve picked up a screwdriver.
+                The conversion issue compounds the problem. Most electricians who{"'"}ve tracked their Bark spend report converting roughly 1 in 3 to 1 in 5 leads into booked jobs, and that{"'"}s after responding quickly and professionally. On a 1-in-4 conversion rate, your true cost per job won is £56–£144 before you{"'"}ve picked up a screwdriver.
               </p>
               <p>
                 On rewires and larger installs, that number is absorbable. On small domestic callouts, it{"'"}s not.
@@ -204,19 +204,19 @@ export default function IsBarkWorthItElectriciansPage() {
           <SectionReveal delay={80}>
             <section className="mt-12 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Bark Doesn{"'"}t Verify Your NICEIC or Part P — and That Costs You
+                Bark Doesn{"'"}t Verify Your NICEIC or Part P, and That Costs You
               </h2>
               <p>
-                This is the issue that doesn{"'"}t get talked about enough. Electrical work in the UK is Part P regulated — most domestic electrical installation work legally requires the person carrying it out to be registered with a competent person scheme (NICEIC, NAPIT, ELECSA and so on) or to notify the local authority.
+                This is the issue that doesn{"'"}t get talked about enough. Electrical work in the UK is Part P regulated, most domestic electrical installation work legally requires the person carrying it out to be registered with a competent person scheme (NICEIC, NAPIT, ELECSA and so on) or to notify the local authority.
               </p>
               <p>
-                Bark does not verify this. Anyone can create a Bark profile and list themselves as an electrician. When a customer sees five responses to their enquiry, they have no way of knowing which of those five are properly certified — and price often becomes the deciding factor by default.
+                Bark does not verify this. Anyone can create a Bark profile and list themselves as an electrician. When a customer sees five responses to their enquiry, they have no way of knowing which of those five are properly certified, and price often becomes the deciding factor by default.
               </p>
               <p>
                 You{"'"}ve invested time and money in NICEIC registration, ongoing CPD and proper insurance. On Bark, that{"'"}s invisible. You{"'"}re competing on price against people who may not carry the same compliance overhead, and the platform doesn{"'"}t surface the difference.
               </p>
               <p>
-                On your own website and Google Business Profile, your accreditations are front and centre. On Google Ads, the person clicking your ad lands on a page that leads with your certifications, your photos, your reviews. That differentiation is yours to own — and Bark strips it away.
+                On your own website and Google Business Profile, your accreditations are front and centre. On Google Ads, the person clicking your ad lands on a page that leads with your certifications, your photos, your reviews. That differentiation is yours to own, and Bark strips it away.
               </p>
             </section>
           </SectionReveal>
@@ -238,13 +238,13 @@ export default function IsBarkWorthItElectriciansPage() {
           <SectionReveal delay={80}>
             <section className="mt-12 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Emergency Callouts — Where Google Beats Bark Every Time
+                Emergency Callouts, Where Google Beats Bark Every Time
               </h2>
               <p>
                 Electrical emergencies don{"'"}t go to Bark. When someone{"'"}s tripped their fuse board at 6pm on a Thursday and they need an electrician tonight, they{"'"}re searching Google: &ldquo;emergency electrician [town]&rdquo; or &ldquo;electrician near me&rdquo;. They{"'"}re not filling in a form on a lead marketplace and waiting for five quotes.
               </p>
               <p>
-                Emergency callouts are often your highest-margin work — premium rate, same day, no negotiation. And they{"'"}re almost entirely captured through Google Search and Google Maps, not through Bark.
+                Emergency callouts are often your highest-margin work, premium rate, same day, no negotiation. And they{"'"}re almost entirely captured through Google Search and Google Maps, not through Bark.
               </p>
               <p>
                 An electrician with a well-optimised Google Business Profile appearing in the local 3-pack for &ldquo;emergency electrician [town]&rdquo; is getting those calls. An electrician spending the same money on Bark credits is not.
@@ -259,10 +259,10 @@ export default function IsBarkWorthItElectriciansPage() {
                 What UK Electricians Actually Say About Bark
               </h2>
               <p>
-                The forums and subreddits tell a consistent story. A thread on ElectriciansForums.net described Bark as a &ldquo;race to the bottom on price&rdquo; — the platform attracts customers looking for the cheapest quote, not the best electrician. ElectricianTalk users described contacting leads that &ldquo;probably weren{"'"}t worth the powder to blow it up&rdquo;.
+                The forums and subreddits tell a consistent story. A thread on ElectriciansForums.net described Bark as a &ldquo;race to the bottom on price&rdquo;, the platform attracts customers looking for the cheapest quote, not the best electrician. ElectricianTalk users described contacting leads that &ldquo;probably weren{"'"}t worth the powder to blow it up&rdquo;.
               </p>
               <p>
-                On r/ukelectricians, the sentiment is largely the same: credits spent, low-quality responses, customers who don{"'"}t reply or are already booked by the time you follow up. A common complaint is that by the time you respond — within minutes of the lead posting — two or three other electricians have already contacted the customer.
+                On r/ukelectricians, the sentiment is largely the same: credits spent, low-quality responses, customers who don{"'"}t reply or are already booked by the time you follow up. A common complaint is that by the time you respond, within minutes of the lead posting, two or three other electricians have already contacted the customer.
               </p>
               <p>
                 There are exceptions. Electricians in rural areas with less competition sometimes find Bark more viable. Newer electricians building their first few reviews have used it to get early jobs. But the pattern for established tradespeople with a decent review count is consistent: Bark spend goes up, ROI goes down, and most eventually redirect the budget elsewhere.
@@ -281,30 +281,30 @@ export default function IsBarkWorthItElectriciansPage() {
               </p>
 
               <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
-                1. Google Ads — exclusive, high-intent leads
+                1. Google Ads, exclusive, high-intent leads
               </h3>
               <p>
-                Someone searching &ldquo;fuse board replacement Cambridge&rdquo; or &ldquo;NICEIC electrician near me&rdquo; is ready to book. Your ad is the first thing they see. When they click, they land on your site — not a marketplace where they{"'"}re immediately shown four other electricians. The lead is yours and yours alone.
+                Someone searching &ldquo;fuse board replacement Cambridge&rdquo; or &ldquo;NICEIC electrician near me&rdquo; is ready to book. Your ad is the first thing they see. When they click, they land on your site, not a marketplace where they{"'"}re immediately shown four other electricians. The lead is yours and yours alone.
               </p>
               <p>
-                Cost per click for electrical keywords is typically £5–£15 in UK markets. At a 30–40% conversion rate from click to enquiry (for a well-built landing page), your cost per enquiry is £12–£50 — comparable to Bark, but with exclusive intent and no competition at the point of contact.
+                Cost per click for electrical keywords is typically £5–£15 in UK markets. At a 30–40% conversion rate from click to enquiry (for a well-built landing page), your cost per enquiry is £12–£50, comparable to Bark, but with exclusive intent and no competition at the point of contact.
               </p>
 
               <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
-                2. Google Business Profile — free enquiries, compounding value
+                2. Google Business Profile, free enquiries, compounding value
               </h3>
               <p>
                 For local electricians, the Google Maps 3-pack is the most valuable property on the internet. It{"'"}s free, it captures emergency searches, and the enquiries increase as your review count grows. An electrician with 50+ Google reviews appearing for &ldquo;electrician [town]&rdquo; is generating enquiries at zero marginal cost per lead.
               </p>
               <p>
-                Every five-star review you earn from a Bark job is building this asset. The irony is that the best use of Bark (if you use it at all) is to win early jobs, deliver great work and use those customers to build your Google review count — at which point you need Bark less and less.
+                Every five-star review you earn from a Bark job is building this asset. The irony is that the best use of Bark (if you use it at all) is to win early jobs, deliver great work and use those customers to build your Google review count, at which point you need Bark less and less.
               </p>
 
               <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
                 3. A website that converts
               </h3>
               <p>
-                Most electricians who rely on Bark have a weak or non-existent website. A properly built site — clear services, local keywords, visible certifications (NICEIC logo, Part P badge), real photos and a fast booking path — is the foundation that makes everything else work. It{"'"}s where Google Ads traffic lands. It{"'"}s what a GBP visitor checks before calling. It{"'"}s what turns a click into an enquiry.
+                Most electricians who rely on Bark have a weak or non-existent website. A properly built site, clear services, local keywords, visible certifications (NICEIC logo, Part P badge), real photos and a fast booking path, is the foundation that makes everything else work. It{"'"}s where Google Ads traffic lands. It{"'"}s what a GBP visitor checks before calling. It{"'"}s what turns a click into an enquiry.
               </p>
               <p>
                 Without it, you{"'"}re always at the mercy of someone else{"'"}s platform.
@@ -346,7 +346,7 @@ export default function IsBarkWorthItElectriciansPage() {
                   },
                   {
                     title: "You only want specific high-value job types.",
-                    body: "Some electricians use Bark selectively — only purchasing rewire or commercial enquiries, ignoring small domestic jobs. If you're disciplined about which leads you buy, you can make it work on the high end.",
+                    body: "Some electricians use Bark selectively, only purchasing rewire or commercial enquiries, ignoring small domestic jobs. If you're disciplined about which leads you buy, you can make it work on the high end.",
                   },
                 ].map(({ title, body }) => (
                   <li key={title} className="flex gap-2">
@@ -359,7 +359,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 ))}
               </ul>
               <p>
-                If none of those apply to you — if you{"'"}re an established electrician with a decent review count, working in a competitive area — then Bark is almost certainly not the best use of your marketing budget.
+                If none of those apply to you, if you{"'"}re an established electrician with a decent review count, working in a competitive area, then Bark is almost certainly not the best use of your marketing budget.
               </p>
             </section>
           </SectionReveal>
@@ -374,7 +374,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 Bark is not a scam. But for most electricians in 2026, it{"'"}s a poor use of marketing spend compared to the alternatives.
               </p>
               <p>
-                The shared-lead model means you{"'"}re paying to compete, not paying to win. Your certifications — the thing that actually differentiates a qualified spark from an unqualified one — are invisible on the platform. And the high-value work that makes the maths work (emergency callouts, same-day bookings) bypasses Bark entirely in favour of Google.
+                The shared-lead model means you{"'"}re paying to compete, not paying to win. Your certifications, the thing that actually differentiates a qualified spark from an unqualified one, are invisible on the platform. And the high-value work that makes the maths work (emergency callouts, same-day bookings) bypasses Bark entirely in favour of Google.
               </p>
               <p>
                 If you{"'"}re spending £200–£400 a month on Bark credits and getting inconsistent results, that budget redirected into Google Ads and a properly built website will almost certainly perform better within three to six months.
@@ -407,7 +407,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 Ready to Stop Competing for the Same Lead?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                NobleLeads builds the systems that bring electrical enquiries directly to you — your own website, Google Ads campaigns targeting your area, and automation that follows up with every lead within 60 seconds. No shared leads. No credits. No competing with four other electricians.
+                NobleLeads builds the systems that bring electrical enquiries directly to you, your own website, Google Ads campaigns targeting your area, and automation that follows up with every lead within 60 seconds. No shared leads. No credits. No competing with four other electricians.
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
                 <Link

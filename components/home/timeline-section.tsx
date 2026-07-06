@@ -9,7 +9,7 @@ const STEPS = [
     label: "Discovery",
     icon: Search,
     description:
-      "We map your current lead flow, audience, and goals so the system is built for your business—not a template.",
+      "We map your current lead flow, audience, and goals so the system is built for your business, not a template.",
     credibility: "Strategy call in 48hr",
   },
   {
@@ -103,7 +103,7 @@ export function TimelineSection() {
             <span className="text-secondary">live system.</span>
           </h2>
           <p className="mt-4 text-sm text-muted-foreground">
-            A clear, proven path—Discovery → Design → Build → Launch
+            A clear, proven path, Discovery → Design → Build → Launch
           </p>
         </div>
 
@@ -233,7 +233,7 @@ export function TimelineSection() {
                   }}
                 >
                   <span className="text-[10px] font-mono font-bold text-secondary/70 uppercase tracking-wider">
-                    {String(i + 1).padStart(2, "0")} — {step.label}
+                    {String(i + 1).padStart(2, "0")}, {step.label}
                   </span>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {step.description}

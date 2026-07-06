@@ -26,7 +26,7 @@ export const homepageFAQs: FAQItem[] = [
   {
     question: "What makes NobleLeads different from other agencies?",
     answer:
-      "We only work with UK property service trades, so everything—from the copy to the follow-up flows—is built around how your world actually works. No generic funnels, no vanity metrics—just jobs booked.",
+      "We only work with UK property service trades, so everything, from the copy to the follow-up flows, is built around how your world actually works. No generic funnels, no vanity metrics, just jobs booked.",
   },
   {
     question: "Are there long contracts or lock-ins?",
@@ -54,7 +54,7 @@ export function HomeFAQSection({ items = homepageFAQs }: HomeFAQSectionProps) {
               Common Questions
             </h2>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-xl">
-              Things we get asked a lot—and how we answer them. So you can see
+              Things we get asked a lot, and how we answer them. So you can see
               if we’re a good fit before you get in touch.
             </p>
           </div>

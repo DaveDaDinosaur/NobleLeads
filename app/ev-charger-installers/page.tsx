@@ -40,7 +40,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me win commercial EV charging contracts?",
     answer:
-      "Yes. Commercial installations — car parks, fleet depots, hospitality venues, housing developers — are high-value and recurring. We build dedicated pages and campaigns targeting commercial clients who need multiple charger installations.",
+      "Yes. Commercial installations, car parks, fleet depots, hospitality venues, housing developers, are high-value and recurring. We build dedicated pages and campaigns targeting commercial clients who need multiple charger installations.",
   },
   {
     question: "How do I compete with large national EV charger companies?",
@@ -97,8 +97,7 @@ const steps: HowItWorksStep[] = [
           conversion-focused trade websites
         </Link>{" "}
         for EV charger installers clearly display OZEV approval, completed
-        installation photos, charger brand partnerships and testimonials —
-        with dedicated pages for home charger installation and commercial
+        installation photos, charger brand partnerships and testimonials, with dedicated pages for home charger installation and commercial
         charging projects, each built to convert the right type of enquiry.
       </>
     ),
@@ -111,7 +110,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for EV charger installers
         </Link>{" "}
-        that send buyers directly to your own website — not to a comparison
+        that send buyers directly to your own website, not to a comparison
         site that resells them to five other installers. Home charger searches
         and commercial installation searches are targeted separately, with
         landing pages built for each.
@@ -126,8 +125,8 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM and automation system
         </Link>{" "}
-        handles both — instant response for home charger enquiries, timed
-        follow-up sequences for commercial prospects — so no opportunity is
+        handles both, instant response for home charger enquiries, timed
+        follow-up sequences for commercial prospects, so no opportunity is
         lost regardless of how long the decision cycle takes.
       </>
     ),
@@ -176,8 +175,7 @@ export default function EVChargerInstallersPage() {
                 infrastructure. The problem is that aggregator sites and national
                 comparison platforms are intercepting most of that demand before it
                 reaches local installers. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — so you capture that demand directly, before it gets resold.
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: so you capture that demand directly, before it gets resold.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link
@@ -201,7 +199,7 @@ export default function EVChargerInstallersPage() {
                 Why EV Charger Installers Struggle to Own Their Local Market
               </h2>
               <p>
-                The EV charger market is growing fast — but so is the infrastructure
+                The EV charger market is growing fast, but so is the infrastructure
                 built to intercept buyers before they reach local installers.{" "}
                 <span className="font-semibold text-foreground">
                   The window to build a dominant local position is now, not in three
@@ -224,7 +222,7 @@ export default function EVChargerInstallersPage() {
                 <span className="font-semibold text-foreground">
                   "I need an EV charger installed"
                 </span>{" "}
-                to booking your company directly — without going through a
+                to booking your company directly, without going through a
                 comparison site or reseller.
               </p>
               <HowItWorksSteps steps={steps} />
@@ -267,7 +265,7 @@ export default function EVChargerInstallersPage() {
                 added EV charger installation to their services was relying entirely
                 on Zapmap listings and word of mouth. Within 6 weeks of launching
                 their NobleLeads system, they had 14 new domestic enquiries and
-                their first commercial enquiry from a local hotel group — more EV
+                their first commercial enquiry from a local hotel group, more EV
                 business in 6 weeks than in the previous six months combined."
               </p>
             </section>
@@ -280,7 +278,7 @@ export default function EVChargerInstallersPage() {
                 NobleLeads Packages for EV Charger Installers
               </h2>
               <TradePackages
-                core="A professional website displaying your OZEV approval, completed installs and both domestic and commercial service pages — with every enquiry tracked."
+                core="A professional website displaying your OZEV approval, completed installs and both domestic and commercial service pages, with every enquiry tracked."
                 growth="Everything in Core plus Google Ads across both domestic and commercial searches, instant response and long-cycle commercial follow-up automation."
                 dominate="For EV installation companies targeting large commercial contracts, fleet depot programmes or property developer partnerships."
               />
@@ -305,7 +303,7 @@ export default function EVChargerInstallersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your EV installation
-                business — what you{"'"}re doing now and what owning your local market
+                business, what you{"'"}re doing now and what owning your local market
                 could look like.
               </p>
               <div className="mt-6 flex justify-center">

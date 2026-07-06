@@ -30,7 +30,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work specifically with domestic cleaning businesses?",
     answer:
-      "Yes. We understand the recurring-revenue model of domestic cleaning — the importance of low churn, high lifetime value clients and the difference between one-off deep cleans and regular weekly or fortnightly visits.",
+      "Yes. We understand the recurring-revenue model of domestic cleaning, the importance of low churn, high lifetime value clients and the difference between one-off deep cleans and regular weekly or fortnightly visits.",
   },
   {
     question: "How long before I start getting new cleaning enquiries?",
@@ -40,12 +40,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me attract clients who want regular weekly cleans rather than one-offs?",
     answer:
-      "That's the primary focus. We build campaigns and landing pages targeting the search intent that signals ongoing cleaning need — not just one-off jobs — and use follow-up sequences to convert enquiries into regular clients.",
+      "That's the primary focus. We build campaigns and landing pages targeting the search intent that signals ongoing cleaning need, not just one-off jobs, and use follow-up sequences to convert enquiries into regular clients.",
   },
   {
     question: "I'm losing clients to cheaper cleaners. Can that be fixed?",
     answer:
-      "Yes. Price competition is almost always a trust and visibility problem. When clients genuinely trust you — backed by strong reviews, a professional online presence and consistent communication — they stay and they pay your price.",
+      "Yes. Price competition is almost always a trust and visibility problem. When clients genuinely trust you, backed by strong reviews, a professional online presence and consistent communication, they stay and they pay your price.",
   },
   {
     question: "Is there a minimum contract?",
@@ -83,7 +83,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Timer,
     heading: "Slow Response Costs Bookings",
-    body: "In domestic cleaning, the first company to respond usually gets the job. Without automation, you're too slow — and that slot goes to whoever replied first.",
+    body: "In domestic cleaning, the first company to respond usually gets the job. Without automation, you're too slow, and that slot goes to whoever replied first.",
   },
 ]
 
@@ -98,7 +98,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         are built around the signals that build trust: DBS checks, insurance
         confirmation, Google reviews, staff profiles and clear service
-        descriptions — with booking forms and online consultations that make
+        descriptions, with booking forms and online consultations that make
         it easy for clients to commit to a regular slot.
       </>
     ),
@@ -113,7 +113,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         targeting searches that signal intent to hire a regular cleaner, not
         just a one-off. People searching "weekly cleaner [your area]" or
-        "regular house cleaning near me" are exactly your ideal client — and
+        "regular house cleaning near me" are exactly your ideal client, and
         we put you in front of them before the agencies do.
       </>
     ),
@@ -128,8 +128,7 @@ const steps: HowItWorksStep[] = [
           CRM system
         </Link>{" "}
         also tracks existing clients, flags anyone who{"'"}s missed a clean and
-        triggers review requests and referral prompts at the right moment —
-        turning your best clients into your best marketing.
+        triggers review requests and referral prompts at the right moment, turning your best clients into your best marketing.
       </>
     ),
   },
@@ -176,8 +175,7 @@ export default function DomesticCleanersPage() {
                 stability. The challenge is finding clients who are ready to commit,
                 trust you enough to let you into their home every week and stick around
                 long-term. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — attracting the loyal, recurring clients who build a cleaning business
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: attracting the loyal, recurring clients who build a cleaning business
                 you can actually depend on.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -203,7 +201,7 @@ export default function DomesticCleanersPage() {
               </h2>
               <p>
                 Domestic cleaning has one of the highest client lifetime values of any
-                service trade — but also one of the highest churn rates if clients
+                service trade, but also one of the highest churn rates if clients
                 don{"'"}t feel properly looked after or if a cheaper option appears.{" "}
                 <span className="font-semibold text-foreground">
                   The business is only as strong as your ability to attract new clients
@@ -263,7 +261,7 @@ export default function DomesticCleanersPage() {
                 At Noble Growth (£495/month plus ad spend), adding just 5 new regular
                 fortnightly clients at £80/visit gives you{" "}
                 <span className="font-semibold text-foreground">
-                  £800/month in new recurring revenue — from just 5 clients
+                  £800/month in new recurring revenue, from just 5 clients
                 </span>
                 . Those clients stay for years. The lifetime value of 5 loyal cleaning
                 clients easily exceeds £10,000.
@@ -323,7 +321,7 @@ export default function DomesticCleanersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your cleaning
-                business — how many regular clients you have now, what you want and
+                business, how many regular clients you have now, what you want and
                 what a proper lead system could deliver.
               </p>
               <div className="mt-6 flex justify-center">

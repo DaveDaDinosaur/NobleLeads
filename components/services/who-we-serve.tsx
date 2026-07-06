@@ -65,14 +65,14 @@ export function WhoWeServe() {
             </h2>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
               We specialise in UK property service businesses. We understand the
-              market, your clients and how you get paid—so the system we build
+              market, your clients and how you get paid, so the system we build
               fits how you work.
             </p>
           </div>
         </SectionReveal>
       </div>
 
-      {/* Looping carousel — edge to edge */}
+      {/* Looping carousel, edge to edge */}
       <div className="mt-10 sm:mt-14 relative w-full min-w-0">
         <div className="w-full min-w-0 overflow-hidden mask-fade-both">
           <div className="flex w-max gap-4 carousel-scroll-loop">

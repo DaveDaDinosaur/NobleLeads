@@ -175,11 +175,11 @@ export function ServiceSections() {
               <span className="text-secondary">Build what you need.</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-              We don&apos;t sell one-size-fits-all packages. You choose the modules that match your stage—from first website to full growth engine and contract tenders.
+              We don&apos;t sell one-size-fits-all packages. You choose the modules that match your stage, from first website to full growth engine and contract tenders.
             </p>
             <p className="mt-2 text-xs text-muted-foreground/80">
-              <span className="hidden lg:inline">Scroll to explore—the guide on the left tracks your journey through each pillar.</span>
-              <span className="lg:hidden">Scroll to explore—your progress through the pillars is shown as you go.</span>
+              <span className="hidden lg:inline">Scroll to explore, the guide on the left tracks your journey through each pillar.</span>
+              <span className="lg:hidden">Scroll to explore, your progress through the pillars is shown as you go.</span>
             </p>
           </div>
         </SectionReveal>

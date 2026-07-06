@@ -30,22 +30,22 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work specifically with end-of-tenancy cleaning businesses?",
     answer:
-      "Yes. We understand that EOT cleaning has two distinct customer types — tenants trying to secure their deposit and letting agents needing a reliable contractor — and we build campaigns and positioning for both.",
+      "Yes. We understand that EOT cleaning has two distinct customer types, tenants trying to secure their deposit and letting agents needing a reliable contractor, and we build campaigns and positioning for both.",
   },
   {
     question: "How quickly will I start seeing new EOT cleaning enquiries?",
     answer:
-      "With Google Ads running, most end-of-tenancy cleaners start seeing new leads within 2–3 weeks. EOT searches are highly intent-driven — people search when they're about to move — so conversion rates are typically strong.",
+      "With Google Ads running, most end-of-tenancy cleaners start seeing new leads within 2–3 weeks. EOT searches are highly intent-driven, people search when they're about to move, so conversion rates are typically strong.",
   },
   {
     question: "Can you help me build relationships with letting agents?",
     answer:
-      "Yes. Letting agent relationships are the highest-value asset in this industry — one good relationship can generate dozens of jobs per year. We build dedicated pages, professional credentials and outreach systems to open those doors.",
+      "Yes. Letting agent relationships are the highest-value asset in this industry, one good relationship can generate dozens of jobs per year. We build dedicated pages, professional credentials and outreach systems to open those doors.",
   },
   {
     question: "I miss overnight and weekend enquiries. Can the system help?",
     answer:
-      "Yes. Tenants often book late in the evening when they've just received a move-out notice. The system sends an instant automated response to every enquiry regardless of time — so they feel confirmed and don't go looking elsewhere.",
+      "Yes. Tenants often book late in the evening when they've just received a move-out notice. The system sends an instant automated response to every enquiry regardless of time, so they feel confirmed and don't go looking elsewhere.",
   },
   {
     question: "Is there a minimum contract?",
@@ -83,7 +83,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Clock,
     heading: "Overnight Enquiries Going Unanswered",
-    body: "Tenants often search in the evening after receiving notice. Without an instant response, they book the first company that replies — usually a competitor.",
+    body: "Tenants often search in the evening after receiving notice. Without an instant response, they book the first company that replies, usually a competitor.",
   },
 ]
 
@@ -98,7 +98,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         for EOT cleaners include dedicated pages for tenants (deposit-protection
         focus, fixed pricing, guarantees) and letting agents (reliability,
-        volume capacity, account management) — with booking forms and
+        volume capacity, account management), with booking forms and
         quote requests that route to your CRM automatically.
       </>
     ),
@@ -111,8 +111,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for end-of-tenancy cleaners
         </Link>{" "}
-        targeting the searches tenants make when they{"'"}re about to move —
-        high intent, urgent, ready to book. Your ads appear above comparison
+        targeting the searches tenants make when they{"'"}re about to move, high intent, urgent, ready to book. Your ads appear above comparison
         sites so customers can reach you directly without the lead being
         resold to four competitors.
       </>
@@ -122,13 +121,12 @@ const steps: HowItWorksStep[] = [
     title: "Instant Response and Letting Agent Follow-Up",
     body: (
       <>
-        Every enquiry — day or night — gets an instant automated response to
+        Every enquiry, day or night, gets an instant automated response to
         confirm receipt and set expectations. Letting agent prospects are
         tracked through a longer nurture sequence in your{" "}
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM pipeline
-        </Link>{" "}
-        — so a one-off job from an agent becomes the start of an ongoing
+        </Link>: so a one-off job from an agent becomes the start of an ongoing
         relationship, not a forgotten contact.
       </>
     ),
@@ -175,8 +173,7 @@ export default function EndOfTenancyCleanersPage() {
                 Google almost every time. The problem is that most of that search
                 traffic hits comparison sites and lead resellers before it reaches
                 local cleaners. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — so you capture those searches directly, build letting agent
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: so you capture those searches directly, build letting agent
                 relationships that provide consistent repeat volume and never miss
                 a booking because someone enquired outside business hours.
               </p>
@@ -202,7 +199,7 @@ export default function EndOfTenancyCleanersPage() {
                 Why End-of-Tenancy Cleaners Struggle to Fill Their Calendars
               </h2>
               <p>
-                EOT cleaning demand is constant and predictable — people move all year
+                EOT cleaning demand is constant and predictable, people move all year
                 round. The challenge is that{" "}
                 <span className="font-semibold text-foreground">
                   most of that demand is being captured by aggregators before it reaches
@@ -222,7 +219,7 @@ export default function EndOfTenancyCleanersPage() {
               </h2>
               <p>
                 We build one system that captures both urgent tenant bookings and
-                high-value letting agent relationships — so you{"'"}re never dependent
+                high-value letting agent relationships, so you{"'"}re never dependent
                 on one source of work.
               </p>
               <HowItWorksSteps steps={steps} />
@@ -251,8 +248,7 @@ export default function EndOfTenancyCleanersPage() {
                 <span className="font-semibold text-foreground">
                   £1,760 in additional monthly revenue
                 </span>
-                . Land one letting agent relationship and the number grows significantly
-                — month after month.
+                . Land one letting agent relationship and the number grows significantly, month after month.
               </p>
             </section>
           </SectionReveal>
@@ -305,7 +301,7 @@ export default function EndOfTenancyCleanersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your EOT cleaning
-                business — how bookings come in now and what a proper direct lead
+                business, how bookings come in now and what a proper direct lead
                 system could change.
               </p>
               <div className="mt-6 flex justify-center">

@@ -30,12 +30,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you work specifically with landscaping companies?",
     answer:
-      "Yes. We understand the difference between hard landscaping, garden design and maintenance contracts — and the seasonal patterns that affect how enquiries come in. Campaigns are built around the work you want, not a generic trade template.",
+      "Yes. We understand the difference between hard landscaping, garden design and maintenance contracts, and the seasonal patterns that affect how enquiries come in. Campaigns are built around the work you want, not a generic trade template.",
   },
   {
     question: "How long before I start getting new landscaping enquiries?",
     answer:
-      "With Google Ads running, most landscaping businesses start seeing new leads within 2–3 weeks. We also time campaigns to peak demand — ahead of spring and early summer — so you're capturing searches when homeowners have budgets ready.",
+      "With Google Ads running, most landscaping businesses start seeing new leads within 2–3 weeks. We also time campaigns to peak demand, ahead of spring and early summer, so you're capturing searches when homeowners have budgets ready.",
   },
   {
     question: "Can you help me build recurring maintenance revenue?",
@@ -92,7 +92,7 @@ const steps: HowItWorksStep[] = [
           conversion-focused trade websites
         </Link>{" "}
         are built to showcase before-and-after photography, project
-        testimonials and clear service pages — with quote request forms and
+        testimonials and clear service pages, with quote request forms and
         consultation bookings that send leads directly into your CRM.
       </>
     ),
@@ -105,8 +105,8 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for landscapers
         </Link>{" "}
-        that ramp up ahead of spring and early summer — when homeowners are
-        actively searching and budgets are ready — and build your local SEO
+        that ramp up ahead of spring and early summer, when homeowners are
+        actively searching and budgets are ready, and build your local SEO
         presence so you{"'"}re ranking organically by the time the next peak arrives.
       </>
     ),
@@ -116,7 +116,7 @@ const steps: HowItWorksStep[] = [
     body: (
       <>
         Every project enquiry is followed up automatically. Every completed
-        job triggers a review request and a maintenance offer — turning one-off
+        job triggers a review request and a maintenance offer, turning one-off
         clients into recurring revenue. Your{" "}
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM pipeline
@@ -168,8 +168,7 @@ export default function LandscapersPage() {
                 spaces but struggle to keep the enquiries flowing in between projects.
                 One big job ends, and there{"'"}s suddenly a scramble for the next one.
                 NobleLeads works with UK landscapers as a{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — building the lead system that keeps your diary full with the right
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: building the lead system that keeps your diary full with the right
                 projects at the right prices, whether that{"'"}s full garden redesigns,
                 hard landscaping or ongoing maintenance contracts.
               </p>
@@ -195,7 +194,7 @@ export default function LandscapersPage() {
                 Why Landscapers Struggle to Get Consistent Work
               </h2>
               <p>
-                Landscaping is a high-skill, high-value trade — but the business
+                Landscaping is a high-skill, high-value trade, but the business
                 side often feels like feast or famine.{" "}
                 <span className="font-semibold text-foreground">
                   Referrals come in waves, the seasons dictate your cashflow
@@ -208,7 +207,7 @@ export default function LandscapersPage() {
                 The answer isn{"'"}t working harder between projects. It{"'"}s having a system
                 that{" "}
                 <span className="font-semibold text-foreground">
-                  generates qualified enquiries for you — even when you{"'"}re heads-down
+                  generates qualified enquiries for you, even when you{"'"}re heads-down
                   on a large garden
                 </span>
                 .
@@ -229,7 +228,7 @@ export default function LandscapersPage() {
                 </span>{" "}
                 to{" "}
                 <span className="font-semibold text-foreground">
-                  "I{"'"}ve booked this company — and I{"'"}m keeping them for maintenance."
+                  "I{"'"}ve booked this company, and I{"'"}m keeping them for maintenance."
                 </span>
               </p>
               <HowItWorksSteps steps={steps} />
@@ -258,8 +257,7 @@ export default function LandscapersPage() {
                 <span className="font-semibold text-foreground">
                   £2,400 in project revenue plus £540/month in new recurring income
                 </span>
-                . Those maintenance clients alone pay for the system inside three months
-                — and they compound over time.
+                . Those maintenance clients alone pay for the system inside three months, and they compound over time.
               </p>
             </section>
           </SectionReveal>
@@ -275,7 +273,7 @@ export default function LandscapersPage() {
                 relying entirely on word of mouth and had a slow spring. Within 8
                 weeks of launching their NobleLeads system, they had 14 new project
                 enquiries in the first month, converted 6 and captured 4 ongoing
-                maintenance clients — turning a seasonal dip into their best
+                maintenance clients, turning a seasonal dip into their best
                 quarter on record."
               </p>
             </section>
@@ -317,7 +315,7 @@ export default function LandscapersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your landscaping
-                business — where the work comes from now, what you want more of and
+                business, where the work comes from now, what you want more of and
                 how a proper lead system could get you there.
               </p>
               <div className="mt-6 flex justify-center">

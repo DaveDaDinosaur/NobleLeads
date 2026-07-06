@@ -25,7 +25,7 @@ export function ServicesHero() {
 
   return (
     <>
-      {/* Fixed orbs — same as about page, stay in place while scrolling */}
+      {/* Fixed orbs, same as about page, stay in place while scrolling */}
       <div
         className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-500"
         style={{ opacity: orbsVisible ? 1 : 0 }}

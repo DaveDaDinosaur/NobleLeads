@@ -40,7 +40,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me get more rewires and consumer unit jobs rather than just small repairs?",
     answer:
-      "Absolutely. We build dedicated landing pages and campaigns targeting higher-value planned work — full rewires, consumer unit replacements, EICRs and commercial installations — so you attract the jobs with better margins.",
+      "Absolutely. We build dedicated landing pages and campaigns targeting higher-value planned work, full rewires, consumer unit replacements, EICRs and commercial installations, so you attract the jobs with better margins.",
   },
   {
     question: "I miss calls while I'm on site. Can the system handle that?",
@@ -50,7 +50,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me win landlord EICR contracts?",
     answer:
-      "Yes. Landlord compliance work provides consistent, predictable volume. We build landing pages targeting landlords and letting agents in your area who need regular EICR certificates — often turning one-off jobs into recurring accounts.",
+      "Yes. Landlord compliance work provides consistent, predictable volume. We build landing pages targeting landlords and letting agents in your area who need regular EICR certificates, often turning one-off jobs into recurring accounts.",
   },
   {
     question: "Is there a minimum contract?",
@@ -68,22 +68,22 @@ const painPoints: PainPoint[] = [
   {
     icon: Users,
     heading: "Competing on Shared Leads",
-    body: "On Checkatrade or Bark, you're one of five electricians quoting the same job — and the customer often picks on price alone.",
+    body: "On Checkatrade or Bark, you're one of five electricians quoting the same job, and the customer often picks on price alone.",
   },
   {
     icon: Star,
     heading: "Outranked on Google",
-    body: "The firm with 80 reviews gets the call. Your work is just as good — their visibility is better, and that's what's costing you.",
+    body: "The firm with 80 reviews gets the call. Your work is just as good, their visibility is better, and that's what's costing you.",
   },
   {
     icon: Zap,
     heading: "Only Getting Low-Value Jobs",
-    body: "Emergency call-outs fill your day. Rewires, consumer units and commercial contracts — the profitable work — rarely arrive on their own.",
+    body: "Emergency call-outs fill your day. Rewires, consumer units and commercial contracts, the profitable work, rarely arrive on their own.",
   },
   {
     icon: PhoneCall,
     heading: "Enquiries Lost Mid-Job",
-    body: "Calls come in while you're on site. Miss them once and the customer moves on — they rarely call back a second time.",
+    body: "Calls come in while you're on site. Miss them once and the customer moves on, they rarely call back a second time.",
   },
 ]
 
@@ -110,7 +110,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for electricians
         </Link>{" "}
-        targeting the searches that signal intent and value — consumer unit
+        targeting the searches that signal intent and value, consumer unit
         replacements, full rewires, EICR certificates and commercial
         installations. You{"'"}re shown to people who are actively looking, in
         the postcodes you want to work in.
@@ -126,8 +126,7 @@ const steps: HowItWorksStep[] = [
         every quote request is tracked in your{" "}
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM pipeline
-        </Link>{" "}
-        — so nothing falls through the cracks and you can see exactly where
+        </Link>: so nothing falls through the cracks and you can see exactly where
         your work is coming from.
       </>
     ),
@@ -172,10 +171,10 @@ export default function ElectriciansPage() {
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Most electricians in the UK win work through word of mouth, a handful
                 of referrals and the odd job from a lead-buy site. That keeps you busy
-                enough — but it never gives you control. NobleLeads focuses on{" "}
+                enough, but it never gives you control. NobleLeads focuses on{" "}
                 <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                so you can build a steady flow of higher-value jobs — rewires, full
-                installs, commercial contracts and EICRs — without depending on
+                so you can build a steady flow of higher-value jobs, rewires, full
+                installs, commercial contracts and EICRs, without depending on
                 directories or whoever happens to recommend you this month.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -201,7 +200,7 @@ export default function ElectriciansPage() {
               </h2>
               <p>
                 The electrical trade has a visibility problem. Homeowners and
-                landlords need qualified, trustworthy electricians — but{" "}
+                landlords need qualified, trustworthy electricians, but{" "}
                 <span className="font-semibold text-foreground">
                   finding you on Google is harder than it should be
                 </span>
@@ -212,7 +211,7 @@ export default function ElectriciansPage() {
                 None of this is a reflection of your qualifications or the quality of
                 your work.{" "}
                 <span className="font-semibold text-foreground">
-                  It{"'"}s a marketing and systems problem — and it{"'"}s fixable.
+                  It{"'"}s a marketing and systems problem, and it{"'"}s fixable.
                 </span>
               </p>
             </section>
@@ -325,7 +324,7 @@ export default function ElectriciansPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your electrical
-                business — what you{"'"}re doing now and what a proper lead system
+                business, what you{"'"}re doing now and what a proper lead system
                 could look like for you.
               </p>
               <div className="mt-6 flex justify-center">

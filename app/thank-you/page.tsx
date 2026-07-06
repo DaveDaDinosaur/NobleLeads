@@ -31,7 +31,7 @@ const nextSteps = [
     step: "2",
     title: "Have Your Details Handy",
     description:
-      "Have your website, current marketing spend and enquiry volume in mind — it'll help us give you sharper advice on the call.",
+      "Have your website, current marketing spend and enquiry volume in mind, it'll help us give you sharper advice on the call.",
   },
   {
     step: "3",

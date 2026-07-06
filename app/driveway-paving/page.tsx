@@ -45,7 +45,7 @@ const faqItems: FAQItem[] = [
   {
     question: "I lose quotes to much cheaper competitors. Can that be fixed?",
     answer:
-      "Better positioning online — stronger portfolio, more reviews, clearer trust signals — lets you attract clients who are buying on quality and value, not just the lowest price. We build that credibility into your website and online presence.",
+      "Better positioning online, stronger portfolio, more reviews, clearer trust signals, lets you attract clients who are buying on quality and value, not just the lowest price. We build that credibility into your website and online presence.",
   },
   {
     question: "Is there a minimum contract?",
@@ -83,7 +83,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Users,
     heading: "Referrals Aren't Scalable",
-    body: "Word of mouth built your business — but it can't be turned up when you need more work. You need a system that generates enquiries on demand.",
+    body: "Word of mouth built your business, but it can't be turned up when you need more work. You need a system that generates enquiries on demand.",
   },
 ]
 
@@ -98,7 +98,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         for driveway and paving companies lead with before-and-after photography,
         material options, client testimonials and clear service pages for block
-        paving, tarmac, resin and pattern-imprinted concrete — with quote forms
+        paving, tarmac, resin and pattern-imprinted concrete, with quote forms
         that pre-qualify enquiries and send them straight into your pipeline.
       </>
     ),
@@ -111,7 +111,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for driveway and paving companies
         </Link>{" "}
-        that are built to outperform bigger budgets in your local area — targeting
+        that are built to outperform bigger budgets in your local area, targeting
         high-intent searches and landing on dedicated pages that convert interest
         into a quote request, not just a click.
       </>
@@ -125,7 +125,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM and automation system
         </Link>{" "}
-        keeps every prospect engaged with timed follow-up — so when they{"'"}re
+        keeps every prospect engaged with timed follow-up, so when they{"'"}re
         finally ready to commit, you{"'"}re the company they{"'"}ve been speaking to,
         not one they{"'"}ve forgotten about.
       </>
@@ -171,7 +171,7 @@ export default function DrivewayPavingPage() {
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Driveway and paving work is high-value, highly visual and often the
                 result of months of consideration by the homeowner. The companies that
-                win consistently aren{"'"}t always the cheapest or the closest — they{"'"}re
+                win consistently aren{"'"}t always the cheapest or the closest, they{"'"}re
                 the ones that appear first, look most credible and stay in contact
                 until the customer is ready. NobleLeads focuses on{" "}
                 <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
@@ -201,7 +201,7 @@ export default function DrivewayPavingPage() {
               </h2>
               <p>
                 The driveway and paving market is competitive, and most companies are
-                competing with the same tools — word of mouth, leaflets and whatever
+                competing with the same tools, word of mouth, leaflets and whatever
                 Checkatrade throws at them.{" "}
                 <span className="font-semibold text-foreground">
                   The ones winning consistently have built their own lead systems.
@@ -258,7 +258,7 @@ export default function DrivewayPavingPage() {
                 relying on leaflet drops and Checkatrade for most of their work.
                 Within 10 weeks of launching their NobleLeads system, they had 11
                 new driveway enquiries through the website, closed 7 and had their
-                first commercial car park enquiry from a landlord — a first for
+                first commercial car park enquiry from a landlord, a first for
                 the business."
               </p>
             </section>
@@ -295,8 +295,7 @@ export default function DrivewayPavingPage() {
                 Ready to Build a Steady Pipeline of Driveway Enquiries?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Let{"'"}s have a straight conversation about your driveway business —
-                what you{"'"}re winning now and how a proper lead system could change
+                Let{"'"}s have a straight conversation about your driveway business, what you{"'"}re winning now and how a proper lead system could change
                 those numbers.
               </p>
               <div className="mt-6 flex justify-center">

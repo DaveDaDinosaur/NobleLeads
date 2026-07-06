@@ -20,7 +20,7 @@ const blocks = [
     icon: Zap,
     title: "Lead Generation Engines",
     description:
-      "Scalable acquisition that creates demand when you need it — not just when referrals happen.",
+      "Scalable acquisition that creates demand when you need it, not just when referrals happen.",
   },
   {
     icon: Shield,
@@ -32,7 +32,7 @@ const blocks = [
     icon: BarChart3,
     title: "Performance Tracking",
     description:
-      "Reporting tied to commercial metrics — not vanity numbers.",
+      "Reporting tied to commercial metrics, not vanity numbers.",
   },
   {
     icon: FileCheck,

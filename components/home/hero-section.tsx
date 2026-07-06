@@ -66,7 +66,7 @@ export function HeroSection() {
           >
             We build the lead machine behind UK trades who{"'"}ve stopped chasing work
             and started choosing it. No Checkatrade dependency. No Bark fees.
-            A system that brings enquiries to you — and follows up automatically
+            A system that brings enquiries to you, and follows up automatically
             while you{"'"}re on the tools.
           </p>
 

@@ -8,22 +8,22 @@ import Link from "next/link"
 const testimonials = [
   {
     quote:
-      "Summer was manic and winter was dead — we never knew what the next month would look like. NobleLeads got our Google presence and follow-up sorted. Within two months we had steady enquiries through the quiet season and booked enough paving work to keep the team busy year-round.",
-    name: "Sarah P., landscaping business owner",
+      "Summer was manic and winter was dead, we never knew what the next month would look like. NobleLeads got our Google presence and follow-up sorted. Within two months we had steady enquiries through the quiet season and booked enough paving work to keep the team busy year-round.",
+    name: "Sarah P. landscaping business owner",
     role: "Garden design, paving & maintenance · Bristol",
     result: "Steady work through winter",
   },
   {
     quote:
       "Before this, every storm meant a mad scramble on Checkatrade. Now people find us directly on Google, the phone rings steadily and we can choose the roofing jobs that actually make sense for the team.",
-    name: "Amir K., roofing contractor",
+    name: "Amir K. roofing contractor",
     role: "Owner, 4-man roofing team · Birmingham",
     result: "Off Checkatrade in 3 months",
   },
   {
     quote:
-      "The missed call text-back alone paid for the first month. Missed calls get a reply within seconds, quotes are followed up automatically and I can see exactly what came from which campaign — no more guessing.",
-    name: "Craig H., owner",
+      "The missed call text-back alone paid for the first month. Missed calls get a reply within seconds, quotes are followed up automatically and I can see exactly what came from which campaign, no more guessing.",
+    name: "Craig H. owner",
     role: "Focus Refurbishment · Commercial refurbishment · Kent",
     result: "First month ROI covered by text-back",
   },

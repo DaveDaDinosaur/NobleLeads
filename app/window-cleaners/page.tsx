@@ -45,12 +45,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me win commercial window cleaning contracts?",
     answer:
-      "Absolutely. Commercial clients — offices, schools, retail units — provide consistent volume at higher job values. We build dedicated pages and outreach campaigns targeting commercial clients in your area.",
+      "Absolutely. Commercial clients, offices, schools, retail units, provide consistent volume at higher job values. We build dedicated pages and outreach campaigns targeting commercial clients in your area.",
   },
   {
     question: "What makes NobleLeads different from Bark or Checkatrade for window cleaners?",
     answer:
-      "With Bark or Checkatrade, you're one of several cleaners competing for the same lead at the same time. With NobleLeads, you own your website, your Google rankings and your data — and every enquiry comes directly to you without being sold to competitors.",
+      "With Bark or Checkatrade, you're one of several cleaners competing for the same lead at the same time. With NobleLeads, you own your website, your Google rankings and your data, and every enquiry comes directly to you without being sold to competitors.",
   },
   {
     question: "Is there a minimum contract?",
@@ -97,7 +97,7 @@ const steps: HowItWorksStep[] = [
           conversion-focused trade websites
         </Link>{" "}
         for window cleaners display insurance, Google reviews, service
-        coverage maps and clear pricing information — with online booking
+        coverage maps and clear pricing information, with online booking
         forms and quote requests that send new client enquiries directly into
         your pipeline, not to a directory that resells them.
       </>
@@ -111,8 +111,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for window cleaners
         </Link>{" "}
-        targeted to the specific areas where you want to grow your round —
-        not a broad catchment that sends you enquiries from places you don{"'"}t
+        targeted to the specific areas where you want to grow your round, not a broad catchment that sends you enquiries from places you don{"'"}t
         want to drive to. Local SEO builds your ranking so the paid results
         are backed by organic authority over time.
       </>
@@ -122,13 +121,13 @@ const steps: HowItWorksStep[] = [
     title: "Automation That Captures Enquiries and Builds Reviews",
     body: (
       <>
-        Every evening enquiry gets an instant automated response — so the
+        Every evening enquiry gets an instant automated response, so the
         customer feels looked after and doesn{"'"}t move on. The{" "}
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM system
         </Link>{" "}
         also automatically requests Google reviews from clients after each
-        clean — compounding your review count every month and strengthening
+        clean, compounding your review count every month and strengthening
         your local search position.
       </>
     ),
@@ -173,11 +172,10 @@ export default function WindowCleanersPage() {
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 A window cleaning business built on a strong round is one of the most
                 predictable, recurring-revenue service businesses there is. The challenge
-                is building that round efficiently — in the right areas, with the right
+                is building that round efficiently, in the right areas, with the right
                 clients, without paying for shared leads or wasting time on scattered
                 enquiries. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — so you can grow your round deliberately, dominate your local Google
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: so you can grow your round deliberately, dominate your local Google
                 presence and capture every enquiry that comes in, day or night.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -202,7 +200,7 @@ export default function WindowCleanersPage() {
                 Why Window Cleaners Struggle to Grow Their Round Efficiently
               </h2>
               <p>
-                Most window cleaners grow slowly — a referral here, a flyer there.{" "}
+                Most window cleaners grow slowly, a referral here, a flyer there.{" "}
                 <span className="font-semibold text-foreground">
                   The ones who build a full, geographically tight round quickly are
                   using a system, not just hoping.
@@ -241,7 +239,7 @@ export default function WindowCleanersPage() {
               <p>
                 A regular domestic window cleaning client is typically worth{" "}
                 <span className="font-semibold text-foreground">£20–£60 per visit</span>{" "}
-                on a monthly or bimonthly schedule — that{"'"}s{" "}
+                on a monthly or bimonthly schedule, that{"'"}s{" "}
                 <span className="font-semibold text-foreground">
                   £240–£720 per year per client
                 </span>
@@ -283,7 +281,7 @@ export default function WindowCleanersPage() {
                 NobleLeads Packages for Window Cleaners
               </h2>
               <TradePackages
-                core="A professional website with online booking, CRM set up and every enquiry captured and responded to automatically — even overnight."
+                core="A professional website with online booking, CRM set up and every enquiry captured and responded to automatically, even overnight."
                 growth="Everything in Core plus Google Ads targeting your growth postcodes, review automation and commercial outreach sequences."
                 dominate="For window cleaning businesses expanding into commercial contracts, new service areas or additional specialist services like solar panel cleaning."
               />
@@ -308,7 +306,7 @@ export default function WindowCleanersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your window cleaning
-                business — how big your round is now, where you want it to be and
+                business, how big your round is now, where you want it to be and
                 how a proper lead system could get you there.
               </p>
               <div className="mt-6 flex justify-center">

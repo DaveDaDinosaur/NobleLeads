@@ -15,16 +15,16 @@ const primaryKeyword = "Google Ads for tradesmen UK"
 const canonicalPath = "/blog/google-ads-for-tradesmen-uk"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Google Ads for Tradesmen UK — What Works and What to Avoid",
+  title: "Google Ads for Tradesmen UK, What Works and What to Avoid",
   description:
     "A straight guide to Google Ads for UK tradesmen. What works, what wastes money, how much to spend and how to tell if your campaigns are actually generating profitable jobs.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Google Ads for Tradesmen UK — What Works and What to Avoid",
+  headline: "Google Ads for Tradesmen UK, What Works and What to Avoid",
   description:
-    "A practical guide to running Google Ads as a UK tradesman — covering campaign structure, budgets, common mistakes and how to measure whether it's actually working.",
+    "A practical guide to running Google Ads as a UK tradesman, covering campaign structure, budgets, common mistakes and how to measure whether it's actually working.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-04",
 })
@@ -38,22 +38,22 @@ const faqItems: FAQItem[] = [
   {
     question: "Do Google Ads work for all trades?",
     answer:
-      "Most trades see strong results — especially roofers, plumbers, electricians, driveway companies and bathroom fitters where job values are high and searches are intent-driven. Trades with very low average job values (under £100) need to run tighter campaigns to stay profitable, but it can still work with the right setup.",
+      "Most trades see strong results, especially roofers, plumbers, electricians, driveway companies and bathroom fitters where job values are high and searches are intent-driven. Trades with very low average job values (under £100) need to run tighter campaigns to stay profitable, but it can still work with the right setup.",
   },
   {
     question: "Should I run Google Ads myself or use an agency?",
     answer:
-      "You can set up a basic campaign yourself using Google's Smart campaigns, but you'll likely overspend and undertarget. A properly managed campaign — with the right keywords, negative keyword lists, ad copy tested for your trade and landing pages built to convert — consistently outperforms DIY. The question is whether the agency fee is worth it versus the extra return. For most trades, it is.",
+      "You can set up a basic campaign yourself using Google's Smart campaigns, but you'll likely overspend and undertarget. A properly managed campaign, with the right keywords, negative keyword lists, ad copy tested for your trade and landing pages built to convert, consistently outperforms DIY. The question is whether the agency fee is worth it versus the extra return. For most trades, it is.",
   },
   {
     question: "How do I know if my Google Ads are actually working?",
     answer:
-      "Track calls and form submissions from your ads directly — not just clicks or impressions. If you can't tell which jobs came from Google Ads, the tracking is broken. A properly set up campaign will show you cost per enquiry, conversion rate and ideally cost per booked job so you can calculate real ROI.",
+      "Track calls and form submissions from your ads directly, not just clicks or impressions. If you can't tell which jobs came from Google Ads, the tracking is broken. A properly set up campaign will show you cost per enquiry, conversion rate and ideally cost per booked job so you can calculate real ROI.",
   },
   {
     question: "What's the biggest mistake tradesmen make with Google Ads?",
     answer:
-      "Sending ad traffic to a homepage that wasn't built to convert. You can have perfect targeting and still waste every penny if the page people land on doesn't clearly show who you are, what you do, where you work and how to get in touch. The ad gets you the click — the landing page wins the job.",
+      "Sending ad traffic to a homepage that wasn't built to convert. You can have perfect targeting and still waste every penny if the page people land on doesn't clearly show who you are, what you do, where you work and how to get in touch. The ad gets you the click, the landing page wins the job.",
   },
 ]
 
@@ -78,7 +78,7 @@ export default function GoogleAdsForTradessmenPage() {
                 Blog · Lead Generation
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Google Ads for Tradesmen UK — What Works and What to Avoid
+                Google Ads for Tradesmen UK, What Works and What to Avoid
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Google Ads can be one of the most effective ways for a UK tradesman to
@@ -109,18 +109,18 @@ export default function GoogleAdsForTradessmenPage() {
                   You only show up when someone is actively searching for what you do.
                 </span>{" "}
                 Someone typing "emergency plumber Cambridge" or "roofer near me" isn{"'"}t
-                browsing — they have a real problem and they{"'"}re ready to book someone
+                browsing, they have a real problem and they{"'"}re ready to book someone
                 today.
               </p>
               <p>
                 That intent is what makes Google Ads so effective for trades. The search
                 is the signal. You don{"'"}t need to persuade someone they need a new
-                bathroom — they{"'"}ve already decided. You just need to be the one they
+                bathroom, they{"'"}ve already decided. You just need to be the one they
                 call.
               </p>
               <p>
-                And because most trade searches are local — "roofer in Leeds", "window
-                cleaner Birmingham", "driveway company near me" — you{"'"}re not competing
+                And because most trade searches are local, "roofer in Leeds", "window
+                cleaner Birmingham", "driveway company near me", you{"'"}re not competing
                 against the whole country. You{"'"}re competing against a handful of local
                 businesses in your service area. That{"'"}s a winnable fight.
               </p>
@@ -134,35 +134,31 @@ export default function GoogleAdsForTradessmenPage() {
               </h2>
               <p>
                 Google Ads works best when job values are high enough to justify the cost
-                per click — and when customers are searching with clear intent rather
+                per click, and when customers are searching with clear intent rather
                 than just browsing. In practice, the strongest fit trades are:
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <Link href="/roofers" className="font-semibold text-secondary hover:underline">
                     Roofers
-                  </Link>{" "}
-                  — storm damage, repairs and re-roofs are high intent and high value.
+                  </Link>: storm damage, repairs and re-roofs are high intent and high value.
                   People don{"'"}t browse for roofers. They need one urgently.
                 </li>
                 <li>
                   <Link href="/plumbers" className="font-semibold text-secondary hover:underline">
                     Plumbers
-                  </Link>{" "}
-                  — emergency call-outs, boiler installs and bathroom quotes all come
+                  </Link>: emergency call-outs, boiler installs and bathroom quotes all come
                   with strong search intent.
                 </li>
                 <li>
                   <Link href="/electricians" className="font-semibold text-secondary hover:underline">
                     Electricians
-                  </Link>{" "}
-                  — rewires, consumer units, EICRs. High value, clear search terms.
+                  </Link>: rewires, consumer units, EICRs. High value, clear search terms.
                 </li>
                 <li>
                   <Link href="/driveway-paving" className="font-semibold text-secondary hover:underline">
                     Driveway and paving companies
-                  </Link>{" "}
-                  — large ticket purchases. Someone searching "block paving driveway
+                  </Link>: large ticket purchases. Someone searching "block paving driveway
                   quote" is ready to spend £5,000+.
                 </li>
                 <li>
@@ -172,8 +168,7 @@ export default function GoogleAdsForTradessmenPage() {
                   and{" "}
                   <Link href="/builders" className="font-semibold text-secondary hover:underline">
                     builders
-                  </Link>{" "}
-                  — considered purchases with long decision cycles, but strong search
+                  </Link>: considered purchases with long decision cycles, but strong search
                   intent when the customer is ready.
                 </li>
                 <li>
@@ -187,8 +182,7 @@ export default function GoogleAdsForTradessmenPage() {
                   and{" "}
                   <Link href="/carpet-cleaners" className="font-semibold text-secondary hover:underline">
                     carpet cleaners
-                  </Link>{" "}
-                  — lower individual job values but recurring revenue and high search
+                  </Link>: lower individual job values but recurring revenue and high search
                   volume make the numbers work.
                 </li>
               </ul>
@@ -203,10 +197,10 @@ export default function GoogleAdsForTradessmenPage() {
           <SectionReveal delay={120}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                How Google Ads Actually Works — The Basics
+                How Google Ads Actually Works, The Basics
               </h2>
               <p>
-                You don{"'"}t pay to appear — you pay when someone clicks. That{"'"}s the
+                You don{"'"}t pay to appear, you pay when someone clicks. That{"'"}s the
                 core of the pay-per-click (PPC) model. You set a budget, choose the
                 keywords you want to show up for, write your ads and decide which page
                 people land on when they click.
@@ -214,7 +208,7 @@ export default function GoogleAdsForTradessmenPage() {
               <p>
                 Google runs an auction every time someone searches. Your ad{"'"}s position
                 depends on two things: your bid (how much you{"'"}re willing to pay per
-                click) and your Quality Score — which Google uses to judge how relevant
+                click) and your Quality Score, which Google uses to judge how relevant
                 your ad and landing page are to the search. A more relevant, better-
                 built campaign can outrank a competitor who{"'"}s spending more.
               </p>
@@ -269,8 +263,8 @@ export default function GoogleAdsForTradessmenPage() {
                 <span className="font-semibold text-foreground">
                   The ad gets you the click. The landing page wins the job.
                 </span>{" "}
-                A proper trade landing page — with your service, location, reviews and
-                a clear way to get in touch — can double or triple your conversion rate
+                A proper trade landing page, with your service, location, reviews and
+                a clear way to get in touch, can double or triple your conversion rate
                 compared to a generic homepage.
               </p>
 
@@ -279,7 +273,7 @@ export default function GoogleAdsForTradessmenPage() {
               </p>
               <p>
                 Bidding on "plumber" or "cleaning" puts you in front of people who
-                might be searching for anything — plumbing supplies, cleaning products,
+                might be searching for anything, plumbing supplies, cleaning products,
                 jobs in the industry. You want searches that signal intent to hire:{" "}
                 <span className="font-semibold text-foreground">
                   "plumber near me", "emergency plumber [town]", "boiler installation
@@ -310,8 +304,7 @@ export default function GoogleAdsForTradessmenPage() {
               <p>
                 If you can{"'"}t tell which jobs came from Google Ads, you{"'"}re flying
                 blind. You need call tracking and form submission tracking set up
-                correctly so Google knows when a click results in a real enquiry —
-                not just a page visit. Without this, Google{"'"}s automated bidding is
+                correctly so Google knows when a click results in a real enquiry, not just a page visit. Without this, Google{"'"}s automated bidding is
                 optimising for the wrong thing and you have no idea what{"'"}s actually
                 working.
               </p>
@@ -323,7 +316,7 @@ export default function GoogleAdsForTradessmenPage() {
                 Google Ads campaigns take time to learn. The first 2–4 weeks are
                 typically spent gathering data and adjusting. If you run a campaign for
                 10 days, spend £150 and don{"'"}t get any jobs, that{"'"}s not necessarily
-                because it doesn{"'"}t work — it{"'"}s because it hasn{"'"}t had time to optimise.
+                because it doesn{"'"}t work, it{"'"}s because it hasn{"'"}t had time to optimise.
                 Give a well-structured campaign at least 4–6 weeks before making
                 significant judgements on performance.
               </p>
@@ -371,7 +364,7 @@ export default function GoogleAdsForTradessmenPage() {
                 </span>
                 . If a booked job is worth £3,000 to you, spending £200 to acquire it
                 through ads is an easy decision. If your average job is £150, the
-                same £200 might only represent one job{"'"}s worth of margin — so
+                same £200 might only represent one job{"'"}s worth of margin, so
                 targeting needs to be tighter and conversion rates need to be higher.
               </p>
             </section>
@@ -380,14 +373,14 @@ export default function GoogleAdsForTradessmenPage() {
           <SectionReveal delay={180}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Google Ads vs SEO — Do You Need Both?
+                Google Ads vs SEO, Do You Need Both?
               </h2>
               <p>
                 Google Ads and SEO do different jobs and work best together.
               </p>
               <p>
                 <span className="font-semibold text-foreground">Google Ads</span> gets
-                you to the top of search results immediately — the day your campaign
+                you to the top of search results immediately, the day your campaign
                 goes live, you can be the first result for "roofer in Manchester" or
                 "electrician near me". You pay for every click, but you{"'"}re visible
                 right away.
@@ -410,7 +403,7 @@ export default function GoogleAdsForTradessmenPage() {
                 doing the heavy lifting.
               </p>
               <p>
-                The worst position to be in is having no ads and no SEO — which is
+                The worst position to be in is having no ads and no SEO, which is
                 where a lot of UK tradespeople are right now, relying entirely on
                 referrals and{" "}
                 <Link
@@ -430,7 +423,7 @@ export default function GoogleAdsForTradessmenPage() {
                 What a Well-Run Google Ads Campaign Looks Like for a Trade Business
               </h2>
               <p>
-                Here{"'"}s what good actually looks like — versus what most DIY or
+                Here{"'"}s what good actually looks like, versus what most DIY or
                 poorly-managed campaigns look like in practice.
               </p>
 
@@ -441,11 +434,11 @@ export default function GoogleAdsForTradessmenPage() {
                 <ul className="ml-5 list-disc space-y-2 text-sm">
                   <li>
                     Separate ad groups for each service type (e.g. emergency repairs,
-                    planned installations, commercial work) — not one campaign trying
+                    planned installations, commercial work), not one campaign trying
                     to do everything.
                   </li>
                   <li>
-                    Tightly matched keywords — phrase match and exact match for
+                    Tightly matched keywords, phrase match and exact match for
                     high-intent local searches, not broad match that wastes budget on
                     irrelevant clicks.
                   </li>
@@ -454,7 +447,7 @@ export default function GoogleAdsForTradessmenPage() {
                     seekers, suppliers and competitors{"'"} brand terms.
                   </li>
                   <li>
-                    Dedicated landing pages for each service — not a homepage — with
+                    Dedicated landing pages for each service, not a homepage, with
                     a clear headline, your service area, reviews and a visible phone
                     number and quote form.
                   </li>
@@ -463,7 +456,7 @@ export default function GoogleAdsForTradessmenPage() {
                     the right campaign and Google can optimise for real conversions.
                   </li>
                   <li>
-                    Location targeting set to your actual service area — not the default
+                    Location targeting set to your actual service area, not the default
                     region Google suggests, which is often too wide.
                   </li>
                   <li>
@@ -505,7 +498,7 @@ export default function GoogleAdsForTradessmenPage() {
                   </span>{" "}
                   what percentage of your enquiries become actual paid jobs? If this
                   is low, the problem might be your follow-up speed or your quoting
-                  process — not the ads.
+                  process, not the ads.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
@@ -541,7 +534,7 @@ export default function GoogleAdsForTradessmenPage() {
               <p>
                 Google Ads works for trades. The intent-based nature of search makes
                 it one of the most effective channels available for generating local,
-                high-quality enquiries — when it{"'"}s set up correctly.
+                high-quality enquiries, when it{"'"}s set up correctly.
               </p>
               <p>
                 The trades that struggle with it are almost always making the same
@@ -549,7 +542,7 @@ export default function GoogleAdsForTradessmenPage() {
                 pages and no proper tracking.
               </p>
               <p>
-                Done right, it{"'"}s not just a source of leads — it{"'"}s the backbone of
+                Done right, it{"'"}s not just a source of leads, it{"'"}s the backbone of
                 a lead system that works around the clock, responds faster than any
                 competitor and gives you a clear view of exactly what{"'"}s working and
                 what isn{"'"}t.
@@ -558,8 +551,7 @@ export default function GoogleAdsForTradessmenPage() {
                 At NobleLeads, we build{" "}
                 <Link href="/services" className="font-semibold text-secondary hover:underline">
                   the full system
-                </Link>{" "}
-                — the campaign, the landing pages, the tracking and the automation that
+                </Link>: the campaign, the landing pages, the tracking and the automation that
                 follows up every lead the moment it comes in. Across{" "}
                 <Link href="/roofers" className="font-semibold text-secondary hover:underline">
                   roofers
@@ -583,7 +575,7 @@ export default function GoogleAdsForTradessmenPage() {
                 Want Google Ads That Actually Generate Jobs?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                We set up and manage Google Ads campaigns for UK trades — built around
+                We set up and manage Google Ads campaigns for UK trades, built around
                 your specific trade, your service area and the jobs you actually want
                 more of. Book a free discovery call and we{"'"}ll show you exactly what a
                 campaign could look like for your business.
@@ -601,7 +593,7 @@ export default function GoogleAdsForTradessmenPage() {
 
           <SectionReveal delay={280}>
             <FAQAccordionSection
-              title="Google Ads for Tradesmen — Common Questions"
+              title="Google Ads for Tradesmen, Common Questions"
               items={faqItems}
             />
           </SectionReveal>

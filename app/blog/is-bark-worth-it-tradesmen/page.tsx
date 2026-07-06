@@ -24,7 +24,7 @@ export const metadata: Metadata = buildMetadata({
 const articleSchema = getArticleSchema({
   headline: "Is Bark Worth It for Tradesmen in 2026? Honest Answer",
   description:
-    "An honest breakdown of whether Bark.com is worth it for UK tradesmen in 2026 — covering real costs, lead quality, what other tradesmen say and the alternatives.",
+    "An honest breakdown of whether Bark.com is worth it for UK tradesmen in 2026, covering real costs, lead quality, what other tradesmen say and the alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-13",
 })
@@ -33,7 +33,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is Bark.com legitimate?",
     answer:
-      "Bark is a real, established platform — it's not a scam in the legal sense. The issue most tradesmen report isn't fraud, it's poor lead quality. Enquiries are often unqualified, shared with multiple tradesmen and submitted by people who are browsing rather than ready to buy. Whether it's worth paying for is a different question to whether it's legitimate.",
+      "Bark is a real, established platform, it's not a scam in the legal sense. The issue most tradesmen report isn't fraud, it's poor lead quality. Enquiries are often unqualified, shared with multiple tradesmen and submitted by people who are browsing rather than ready to buy. Whether it's worth paying for is a different question to whether it's legitimate.",
   },
   {
     question: "How much does Bark cost for tradesmen?",
@@ -43,17 +43,17 @@ const faqItems: FAQItem[] = [
   {
     question: "How many tradesmen get the same Bark lead?",
     answer:
-      "Bark typically sends each enquiry to up to five tradesmen simultaneously. All five pay credits to reveal the lead. The customer then decides who to contact — or contacts none of them. You're competing from the moment you spend the credit.",
+      "Bark typically sends each enquiry to up to five tradesmen simultaneously. All five pay credits to reveal the lead. The customer then decides who to contact, or contacts none of them. You're competing from the moment you spend the credit.",
   },
   {
     question: "What's the difference between Bark and Google Ads for tradesmen?",
     answer:
-      "With Bark, you pay to compete for a lead alongside multiple competitors — and the customer may not even be serious. With Google Ads, you pay for a click from someone who searched for your specific service in your area and landed on your own website. The intent is higher, the lead is exclusive and everything you build compounds over time rather than stopping the moment you stop paying.",
+      "With Bark, you pay to compete for a lead alongside multiple competitors, and the customer may not even be serious. With Google Ads, you pay for a click from someone who searched for your specific service in your area and landed on your own website. The intent is higher, the lead is exclusive and everything you build compounds over time rather than stopping the moment you stop paying.",
   },
   {
     question: "Should I use Bark when I'm just starting out?",
     answer:
-      "It can generate early enquiries quickly, which is valuable when you have no reviews and no online presence. But treat it as a temporary bridge — not a long-term strategy. Use any early Bark jobs to collect reviews, then redirect that spend into building your own website and Google presence as quickly as possible.",
+      "It can generate early enquiries quickly, which is valuable when you have no reviews and no online presence. But treat it as a temporary bridge, not a long-term strategy. Use any early Bark jobs to collect reviews, then redirect that spend into building your own website and Google presence as quickly as possible.",
   },
 ]
 
@@ -82,12 +82,10 @@ export default function IsBarkWorthItPage() {
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark.com has been around long enough that most UK tradesmen have
-                either tried it or seriously considered it. The promise is simple —
-                pay for leads, get jobs. The reality, as thousands of tradesmen have
+                either tried it or seriously considered it. The promise is simple, pay for leads, get jobs. The reality, as thousands of tradesmen have
                 found, is more complicated.{" "}
                 <span className="font-semibold text-foreground">
-                  Here{"'"}s an honest answer to whether Bark is worth it in 2026 —
-                  and what the numbers actually look like.
+                  Here{"'"}s an honest answer to whether Bark is worth it in 2026, and what the numbers actually look like.
                 </span>
               </p>
             </header>
@@ -100,8 +98,8 @@ export default function IsBarkWorthItPage() {
               </h2>
               <p>
                 Bark operates as a marketplace. A customer fills in a form describing
-                the job they need done. Bark then notifies multiple tradesmen — usually
-                up to five — that a relevant lead is available in their area. To see
+                the job they need done. Bark then notifies multiple tradesmen, usually
+                up to five, that a relevant lead is available in their area. To see
                 the customer{"'"}s contact details, you spend credits.
               </p>
               <p>
@@ -114,13 +112,13 @@ export default function IsBarkWorthItPage() {
                 In practice, a realistic monthly spend for an active tradesman using
                 Bark properly is{" "}
                 <span className="font-semibold text-foreground">£150–£400 per month</span>
-                {" "}— and that{"'"}s before factoring in the time spent responding, quoting
+                : and that{"'"}s before factoring in the time spent responding, quoting
                 and chasing.
               </p>
               <p>
                 The critical thing to understand:{" "}
                 <span className="font-semibold text-foreground">
-                  you pay the credit the moment you reveal the lead — not when you
+                  you pay the credit the moment you reveal the lead, not when you
                   win the job.
                 </span>{" "}
                 If the customer doesn{"'"}t respond, the job was already filled or the
@@ -158,7 +156,7 @@ export default function IsBarkWorthItPage() {
                 </span>
               </p>
               <p>
-                That{"'"}s an extreme case — but the underlying issue is structural. Bark{"'"}s
+                That{"'"}s an extreme case, but the underlying issue is structural. Bark{"'"}s
                 business model is built around selling lead reveals to tradesmen. The
                 incentive is to generate a high volume of enquiry forms, not to ensure
                 every one of them is a genuine, ready-to-buy customer. Those two things
@@ -167,7 +165,7 @@ export default function IsBarkWorthItPage() {
               <p>
                 Even when the lead is real, you{"'"}re one of five tradesmen who has paid
                 to contact the same person. The customer is comparing you on profile,
-                price and response speed simultaneously — before they{"'"}ve even spoken
+                price and response speed simultaneously, before they{"'"}ve even spoken
                 to you.
               </p>
             </section>
@@ -185,15 +183,14 @@ export default function IsBarkWorthItPage() {
                 per month.
               </p>
               <p>
-                If 40% of those leads are unresponsive or fake — a conservative
-                estimate based on what tradesmen report — you{"'"}re left with 15 genuine
+                If 40% of those leads are unresponsive or fake, a conservative
+                estimate based on what tradesmen report, you{"'"}re left with 15 genuine
                 contacts. Of those, if you convert 1 in 3 into a booked job, that{"'"}s{" "}
                 <span className="font-semibold text-foreground">5 jobs from £200 spend</span>
-                {" "}— a cost of £40 per booked job.
+                : a cost of £40 per booked job.
               </p>
               <p>
-                For high-value trades — roofers, bathroom fitters, driveway companies
-                — £40 per job is perfectly acceptable. For lower-value trades or
+                For high-value trades, roofers, bathroom fitters, driveway companies, £40 per job is perfectly acceptable. For lower-value trades or
                 anyone not converting well, it gets expensive quickly.
               </p>
               <p>
@@ -201,7 +198,7 @@ export default function IsBarkWorthItPage() {
                 <span className="font-semibold text-foreground">
                   none of that £200 builds anything lasting
                 </span>
-                . Stop paying and the leads stop immediately. You own nothing — no
+                . Stop paying and the leads stop immediately. You own nothing, no
                 rankings, no website traffic, no customer data, no brand presence in
                 Google. You{"'"}re renting access to an audience that Bark owns.
               </p>
@@ -224,11 +221,11 @@ export default function IsBarkWorthItPage() {
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Bark vs Checkatrade — What{"'"}s the Difference?
+                Bark vs Checkatrade, What{"'"}s the Difference?
               </h2>
               <p>
                 The two platforms get compared constantly, and they share the same
-                fundamental flaw — you{"'"}re building on someone else{"'"}s platform rather
+                fundamental flaw, you{"'"}re building on someone else{"'"}s platform rather
                 than your own. But they work differently.
               </p>
               <p>
@@ -239,7 +236,7 @@ export default function IsBarkWorthItPage() {
               </p>
               <p>
                 <span className="font-semibold text-foreground">Bark</span> is more
-                aggressive — leads are pushed to you, and you pay per reveal. In theory
+                aggressive, leads are pushed to you, and you pay per reveal. In theory
                 this means you only pay when there{"'"}s an opportunity. In practice, the
                 lead quality issues mean you often pay for nothing.
               </p>
@@ -251,7 +248,7 @@ export default function IsBarkWorthItPage() {
                 >
                   whether Checkatrade is worth it in 2026
                 </Link>
-                {" "}— the verdict there is similar. Both platforms can generate early
+                : the verdict there is similar. Both platforms can generate early
                 enquiries. Neither is a sustainable foundation for a growing trade
                 business.
               </p>
@@ -273,7 +270,7 @@ export default function IsBarkWorthItPage() {
                     You{"'"}re brand new with zero reviews and no website.
                   </span>{" "}
                   Getting your first handful of jobs and reviews through Bark is a
-                  legitimate strategy — just treat it as a bridge, not a destination.
+                  legitimate strategy, just treat it as a bridge, not a destination.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
@@ -287,15 +284,14 @@ export default function IsBarkWorthItPage() {
                   <span className="font-semibold text-foreground">
                     You{"'"}re disciplined about tracking every penny.
                   </span>{" "}
-                  If you know your Bark cost per booked job and it{"'"}s profitable —
-                  keep going. Most tradesmen don{"'"}t track it properly and end up
+                  If you know your Bark cost per booked job and it{"'"}s profitable, keep going. Most tradesmen don{"'"}t track it properly and end up
                   spending far more than they realise.
                 </li>
               </ul>
               <p>
                 The key word is <em>bridge</em>. Use Bark to get started, then redirect
-                that spend into building assets you own — a website, Google rankings,
-                a review profile — as fast as you can.
+                that spend into building assets you own, a website, Google rankings,
+                a review profile, as fast as you can.
               </p>
             </section>
           </SectionReveal>
@@ -313,7 +309,7 @@ export default function IsBarkWorthItPage() {
               <div className="rounded-xl border border-border/40 bg-card/40 p-5 sm:p-6 space-y-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-secondary/80 mb-2">
-                    Scenario A — £200/month on Bark
+                    Scenario A, £200/month on Bark
                   </p>
                   <ul className="ml-4 list-disc space-y-1.5 text-sm">
                     <li>~25 lead reveals per month</li>
@@ -325,12 +321,12 @@ export default function IsBarkWorthItPage() {
                 </div>
                 <div className="border-t border-border/30 pt-4">
                   <p className="text-xs font-semibold uppercase tracking-widest text-secondary/80 mb-2">
-                    Scenario B — £200/month into your own system
+                    Scenario B, £200/month into your own system
                   </p>
                   <ul className="ml-4 list-disc space-y-1.5 text-sm">
                     <li>A conversion-focused website built for your trade</li>
                     <li>Google Ads targeting your specific service area</li>
-                    <li>Leads that come exclusively to you — no competition</li>
+                    <li>Leads that come exclusively to you, no competition</li>
                     <li>SEO building in the background, reducing ad dependency over time</li>
                     <li>
                       After 12 months:{" "}
@@ -346,7 +342,7 @@ export default function IsBarkWorthItPage() {
                 The same monthly spend that keeps you on Bark could be building
                 something that compounds.{" "}
                 <span className="font-semibold text-foreground">
-                  That{"'"}s the real cost of staying on Bark long term — not just the
+                  That{"'"}s the real cost of staying on Bark long term, not just the
                   credits, but the opportunity cost of not building your own lead flow.
                 </span>
               </p>
@@ -359,7 +355,7 @@ export default function IsBarkWorthItPage() {
                 So, Is Bark Worth It in 2026?
               </h2>
               <p>
-                For most established UK tradesmen — no. Not as a core strategy.
+                For most established UK tradesmen, no. Not as a core strategy.
               </p>
               <p>
                 The lead quality is inconsistent, the cost per reveal adds up fast,
@@ -368,13 +364,13 @@ export default function IsBarkWorthItPage() {
                 that builds nothing. Stop paying and you{"'"}re back to zero.
               </p>
               <p>
-                If you{"'"}re brand new and need your first few jobs quickly — it can
+                If you{"'"}re brand new and need your first few jobs quickly, it can
                 bridge that gap. But the moment you have a handful of reviews and
                 some cashflow, redirect that spend into a website and Google presence
                 that works for you around the clock without charging you per lead.
               </p>
               <p>
-                That{"'"}s what we build for UK trades at NobleLeads — across{" "}
+                That{"'"}s what we build for UK trades at NobleLeads, across{" "}
                 <Link href="/roofers" className="font-semibold text-secondary hover:underline">
                   roofers
                 </Link>
@@ -390,7 +386,7 @@ export default function IsBarkWorthItPage() {
                 <Link href="/window-cleaners" className="font-semibold text-secondary hover:underline">
                   window cleaners
                 </Link>{" "}
-                and every trade in between. A lead system you own — not one you rent.
+                and every trade in between. A lead system you own, not one you rent.
               </p>
             </section>
           </SectionReveal>

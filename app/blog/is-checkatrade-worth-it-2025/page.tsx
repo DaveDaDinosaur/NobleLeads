@@ -140,7 +140,7 @@ export default function IsCheckatradeWorthIt2025Page() {
               </h2>
               <p>
                 On paper, paying per lead sounds tidy. You only pay when the phone
-                should ring. In reality, you{"'"}re not paying for booked jobs—you{"'"}re
+                should ring. In reality, you{"'"}re not paying for booked jobs, you{"'"}re
                 paying for{" "}
                 <span className="font-semibold text-foreground">
                   access to the same enquiry as everyone else
@@ -181,7 +181,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 instead of on your own brand.
               </p>
               <PullQuote accent="blue">
-                "You{"'"}re not paying for booked jobs — you{"'"}re paying for access to the same enquiry as everyone else."
+                "You{"'"}re not paying for booked jobs, you{"'"}re paying for access to the same enquiry as everyone else."
               </PullQuote>
             </section>
           </SectionReveal>
@@ -282,7 +282,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 </li>
               </ul>
               <p>
-                Yes, there{"'"}s still a cost—but now you{"'"}re investing in assets that{" "}
+                Yes, there{"'"}s still a cost, but now you{"'"}re investing in assets that{" "}
                 <span className="font-semibold text-foreground">
                   you control and can improve over time
                 </span>
@@ -318,7 +318,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 </li>
                 <li>
                   A realistic Google Ads budget similar to what you{"'"}re already
-                  spending on leads—but now{" "}
+                  spending on leads, but now{" "}
                   <span className="font-semibold text-foreground">
                     sending traffic to your own site
                   </span>
@@ -377,7 +377,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 >
                   roofers
                 </Link>{" "}
-                and other property services—using conversion-focused websites, Google
+                and other property services, using conversion-focused websites, Google
                 Ads and CRM automation instead of rented lead platforms.
               </p>
             </section>

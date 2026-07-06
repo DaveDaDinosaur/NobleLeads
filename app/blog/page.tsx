@@ -38,7 +38,7 @@ const posts: BlogPostMeta[] = [
     slug: "bark-vs-checkatrade",
     title: "Bark vs Checkatrade: Which Is Better for UK Tradesmen? (2026)",
     description:
-      "Honest comparison of costs, lead quality and which platform delivers better ROI — plus what actually works better than both for long-term lead generation.",
+      "Honest comparison of costs, lead quality and which platform delivers better ROI, plus what actually works better than both for long-term lead generation.",
     readTime: "12 min read",
     category: "Platform Reviews",
   },
@@ -46,7 +46,7 @@ const posts: BlogPostMeta[] = [
     slug: "mybuilder-vs-checkatrade",
     title: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
     description:
-      "An honest head-to-head on costs, lead quality and which trades each platform actually suits — plus what the best UK tradespeople do instead.",
+      "An honest head-to-head on costs, lead quality and which trades each platform actually suits, plus what the best UK tradespeople do instead.",
     readTime: "13 min read",
     category: "Platform Reviews",
   },
@@ -70,7 +70,7 @@ const posts: BlogPostMeta[] = [
     slug: "is-bark-worth-it-plumbers",
     title: "Is Bark Worth It for Plumbers in 2026? Honest Answer",
     description:
-      "Credit costs per job type, Gas Safe verification gaps, emergency callouts Bark misses entirely — and what actually produces better ROI for UK plumbers.",
+      "Credit costs per job type, Gas Safe verification gaps, emergency callouts Bark misses entirely, and what actually produces better ROI for UK plumbers.",
     readTime: "11 min read",
     category: "Platform Reviews",
   },
@@ -92,7 +92,7 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "google-ads-for-tradesmen-uk",
-    title: "Google Ads for Tradesmen UK — What Works and What to Avoid",
+    title: "Google Ads for Tradesmen UK, What Works and What to Avoid",
     description:
       "A straight guide to Google Ads for UK tradesmen. What works, what wastes money, how much to spend and how to tell if your campaigns are actually generating profitable jobs.",
     readTime: "14 min read",
@@ -109,7 +109,7 @@ const posts: BlogPostMeta[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Trade Marketing Blog — Tips, Guides & Insights",
+  title: "Trade Marketing Blog, Tips, Guides & Insights",
   description:
     "Practical trade marketing advice for UK tradespeople on getting more leads, building a website that works and growing without relying only on referrals or lead-buying sites.",
   canonicalPath: "/blog",

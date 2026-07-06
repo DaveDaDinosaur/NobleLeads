@@ -18,7 +18,7 @@ const canonicalPath = "/blog/bark-vs-checkatrade"
 export const metadata: Metadata = buildMetadata({
   title: "Bark vs Checkatrade: Which Is Better for UK Tradesmen? (2026)",
   description:
-    "Bark vs Checkatrade — honest comparison of costs, lead quality and which platform actually delivers better ROI for UK tradespeople in 2026.",
+    "Bark vs Checkatrade: honest comparison of costs, lead quality and which platform actually delivers better ROI for UK tradespeople in 2026.",
   canonicalPath,
 })
 
@@ -34,7 +34,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is Checkatrade better than Bark?",
     answer:
-      "For most established UK tradespeople, Checkatrade has an edge over Bark because homeowners use Checkatrade with specific and often urgent intent — they are looking for a tradesperson rather than getting quotes matched to them. Bark leads tend to be less qualified and shared with more competitors. That said, Checkatrade costs significantly more and the monthly fee is a fixed overhead regardless of lead volume. Neither is a substitute for owning your own lead flow.",
+      "For most established UK tradespeople, Checkatrade has an edge over Bark because homeowners use Checkatrade with specific and often urgent intent, they are looking for a tradesperson rather than getting quotes matched to them. Bark leads tend to be less qualified and shared with more competitors. That said, Checkatrade costs significantly more and the monthly fee is a fixed overhead regardless of lead volume. Neither is a substitute for owning your own lead flow.",
   },
   {
     question: "Is it worth joining Bark as a tradesman?",
@@ -44,12 +44,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Is Bark better than MyBuilder?",
     answer:
-      "MyBuilder is generally considered better value than Bark for most UK tradespeople. On MyBuilder, you only pay when the homeowner actively shortlists you — meaning they have shown genuine intent before money changes hands. On Bark, you pay to contact customers who have been matched to you automatically, with no guarantee they are ready to hire. MyBuilder also tends to attract higher-value planned work. Bark has a wider range of service categories but lead quality is more inconsistent.",
+      "MyBuilder is generally considered better value than Bark for most UK tradespeople. On MyBuilder, you only pay when the homeowner actively shortlists you, meaning they have shown genuine intent before money changes hands. On Bark, you pay to contact customers who have been matched to you automatically, with no guarantee they are ready to hire. MyBuilder also tends to attract higher-value planned work. Bark has a wider range of service categories but lead quality is more inconsistent.",
   },
   {
     question: "What is the best tradesman platform in 2026?",
     answer:
-      "No single lead platform outperforms a well-built combination of your own conversion-ready website, a strong Google Business Profile and consistent Google reviews. These assets compound over time and send leads directly to you — not to a marketplace where homeowners can compare you against five competitors simultaneously. Platforms like Bark and Checkatrade are best used as a short-term supplement while you build those owned assets.",
+      "No single lead platform outperforms a well-built combination of your own conversion-ready website, a strong Google Business Profile and consistent Google reviews. These assets compound over time and send leads directly to you, not to a marketplace where homeowners can compare you against five competitors simultaneously. Platforms like Bark and Checkatrade are best used as a short-term supplement while you build those owned assets.",
   },
   {
     question: "How much does Bark cost compared to Checkatrade?",
@@ -59,7 +59,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do Bark leads actually convert into jobs?",
     answer:
-      "Some do, but the conversion rate on Bark is notably lower than on Checkatrade or MyBuilder because the platform matches customers to multiple tradespeople simultaneously and many customers are in early research mode rather than ready to hire. The most common complaint from tradespeople is paying credits for customers who never respond. Disciplined filtering — only contacting jobs where you can genuinely compete on quality, not just price — improves conversion rates significantly.",
+      "Some do, but the conversion rate on Bark is notably lower than on Checkatrade or MyBuilder because the platform matches customers to multiple tradespeople simultaneously and many customers are in early research mode rather than ready to hire. The most common complaint from tradespeople is paying credits for customers who never respond. Disciplined filtering, only contacting jobs where you can genuinely compete on quality, not just price, improves conversion rates significantly.",
   },
 ]
 
@@ -90,7 +90,7 @@ export default function BarkVsCheckatradePage() {
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark and Checkatrade are two of the most widely used lead platforms
-                for UK tradespeople — but they work completely differently, attract
+                for UK tradespeople, but they work completely differently, attract
                 different types of customer and carry very different cost structures.{" "}
                 <span className="font-semibold text-foreground">
                   Here{"'"}s an honest breakdown of both so you can decide where your
@@ -119,7 +119,7 @@ export default function BarkVsCheckatradePage() {
               </h2>
               <p>
                 The most important thing to understand before comparing costs is that
-                Bark and Checkatrade use different models entirely — and that changes
+                Bark and Checkatrade use different models entirely, and that changes
                 everything about what you get for your money.
               </p>
 
@@ -132,7 +132,7 @@ export default function BarkVsCheckatradePage() {
                 area and notifies them. You then pay credits to contact the customer
                 and submit your details. Bark is a{" "}
                 <span className="font-semibold text-foreground">lead-matching platform</span>
-                {" "}— the customer is pushed to you rather than actively searching for you.
+                : the customer is pushed to you rather than actively searching for you.
               </p>
               <p>
                 The key issue with this model is intent. A customer who fills in a
@@ -152,7 +152,7 @@ export default function BarkVsCheckatradePage() {
                 <span className="font-semibold text-foreground">
                   already looking for a tradesperson
                 </span>{" "}
-                when they find you — which is fundamentally different from being
+                when they find you, which is fundamentally different from being
                 matched to someone who filled in a form.
               </p>
               <PullQuote accent="blue">
@@ -207,8 +207,7 @@ export default function BarkVsCheckatradePage() {
               <p>
                 Credits are{" "}
                 <span className="font-semibold text-foreground">non-refundable</span>
-                {" "}even if the customer never responds. If your response rate is poor
-                — which many tradespeople report — the cost per job won can climb
+                {" "}even if the customer never responds. If your response rate is poor, which many tradespeople report, the cost per job won can climb
                 quickly.
               </p>
 
@@ -242,7 +241,7 @@ export default function BarkVsCheckatradePage() {
 
               <StatCallout
                 stat="£9–£40"
-                label="What a single Bark lead costs in credits — before you know if the customer will respond. Checkatrade adds this cost on top of a monthly membership you're already paying regardless."
+                label="What a single Bark lead costs in credits, before you know if the customer will respond. Checkatrade adds this cost on top of a monthly membership you're already paying regardless."
                 accent="gold"
               />
             </section>
@@ -284,11 +283,11 @@ export default function BarkVsCheckatradePage() {
                 <span className="font-semibold text-foreground">
                   paying for customers who never respond
                 </span>
-                {" "}— and getting no refund.
+                : and getting no refund.
               </p>
               <p>
-                Multiple tradespeople can contact the same customer — typically three
-                to five — so even when a customer is serious, you are competing
+                Multiple tradespeople can contact the same customer, typically three
+                to five, so even when a customer is serious, you are competing
                 immediately on price and speed.
               </p>
 
@@ -303,8 +302,8 @@ export default function BarkVsCheckatradePage() {
                 phone.
               </p>
               <p>
-                The competition issue is similar — typically three to four tradespeople
-                are visible in the same category — but the homeowner{"'"}s starting
+                The competition issue is similar, typically three to four tradespeople
+                are visible in the same category, but the homeowner{"'"}s starting
                 position is more committed. That said, Checkatrade{"'"}s platform is not
                 immune to tyre-kickers, and in popular trade categories the sheer
                 number of listed businesses means many profiles rarely get seen at all.
@@ -336,8 +335,7 @@ export default function BarkVsCheckatradePage() {
                 <li>
                   <span className="font-semibold text-foreground">
                     Trades with wide service ranges
-                  </span>{" "}
-                  — Bark covers a broader category of services than Checkatrade, so
+                  </span>: Bark covers a broader category of services than Checkatrade, so
                   trades like{" "}
                   <Link href="/carpet-cleaners" className="font-semibold text-secondary hover:underline">
                     carpet cleaners
@@ -352,7 +350,7 @@ export default function BarkVsCheckatradePage() {
                   <span className="font-semibold text-foreground">
                     Businesses with fast response systems
                   </span>{" "}
-                  that can call a new Bark lead within minutes — the faster you respond,
+                  that can call a new Bark lead within minutes, the faster you respond,
                   the higher your conversion rate.
                 </li>
               </ul>
@@ -364,8 +362,7 @@ export default function BarkVsCheckatradePage() {
                 <li>
                   <span className="font-semibold text-foreground">
                     Emergency and reactive trades
-                  </span>{" "}
-                  — plumbers, electricians, boiler engineers, roofers. The Checkatrade
+                  </span>: plumbers, electricians, boiler engineers, roofers. The Checkatrade
                   brand is well known to homeowners with an urgent need.
                 </li>
                 <li>
@@ -407,7 +404,7 @@ export default function BarkVsCheckatradePage() {
                 better or pricing lower.
               </p>
               <p>
-                And when you stop paying — the leads stop. The reviews you{"'"}ve built
+                And when you stop paying, the leads stop. The reviews you{"'"}ve built
                 on Checkatrade belong to Checkatrade. The profile you{"'"}ve built on
                 Bark lives on Bark. You own none of it.
               </p>
@@ -417,8 +414,8 @@ export default function BarkVsCheckatradePage() {
                 <span className="font-semibold text-foreground">
                   "plumber in [town]"
                 </span>{" "}
-                and your website appears — with your own reviews, your own branding and
-                a direct call button — you are the only option they{"'"}re looking at.
+                and your website appears, with your own reviews, your own branding and
+                a direct call button, you are the only option they{"'"}re looking at.
                 No competitors. No price race. No platform taking a cut.
               </p>
               <PullQuote accent="gold">
@@ -432,15 +429,14 @@ export default function BarkVsCheckatradePage() {
           <SectionReveal delay={160}>
             <section className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Bark vs Checkatrade — The Honest Verdict
+                Bark vs Checkatrade, The Honest Verdict
               </h2>
               <p>
                 If you had to choose one:{" "}
                 <span className="font-semibold text-foreground">
                   Checkatrade{"'"}s higher-intent model generally delivers better lead
                   quality
-                </span>{" "}
-                — but only if the monthly cost makes sense for your trade and area.
+                </span>: but only if the monthly cost makes sense for your trade and area.
                 Run the numbers. If your cost per customer won is above £150, it is
                 almost certainly cheaper to achieve the same through Google Ads
                 pointing to your own site.
@@ -450,7 +446,7 @@ export default function BarkVsCheckatradePage() {
                 <span className="font-semibold text-foreground">
                   Bark{"'"}s no-membership model makes it the lower-risk starting point
                 </span>
-                . Treat it as a tap to turn on while you build your own assets — not
+                . Treat it as a tap to turn on while you build your own assets, not
                 a permanent strategy.
               </p>
               <p>
@@ -489,11 +485,11 @@ export default function BarkVsCheckatradePage() {
                   <Link href="/services" className="font-semibold text-secondary hover:underline">
                     conversion-ready trade website
                   </Link>{" "}
-                  built to turn visitors into enquiries — not just an online brochure.
+                  built to turn visitors into enquiries, not just an online brochure.
                 </li>
                 <li>
                   A Google Business Profile that shows up prominently in local map
-                  searches — the first thing most homeowners see when they search for
+                  searches, the first thing most homeowners see when they search for
                   a trade.
                 </li>
                 <li>
@@ -508,7 +504,7 @@ export default function BarkVsCheckatradePage() {
                 </li>
                 <li>
                   Optional Google Ads campaigns sending high-intent searchers to your
-                  own site — where you are the only option, not one of several.
+                  own site, where you are the only option, not one of several.
                 </li>
               </ul>
               <p>
@@ -547,7 +543,7 @@ export default function BarkVsCheckatradePage() {
 
           <SectionReveal delay={200}>
             <FAQAccordionSection
-              title="Bark vs Checkatrade — Common Questions"
+              title="Bark vs Checkatrade, Common Questions"
               items={faqItems}
             />
           </SectionReveal>

@@ -18,7 +18,7 @@ const systemParts = [
     icon: Globe,
     title: "Conversion-Focused Website",
     description:
-      "Built to turn visitors into phone calls and form submissions. Not a brochure—a tool that brings in enquiries.",
+      "Built to turn visitors into phone calls and form submissions. Not a brochure, a tool that brings in enquiries.",
   },
   {
     icon: Target,
@@ -30,7 +30,7 @@ const systemParts = [
     icon: Bot,
     title: "Missed Call Text-Back",
     description:
-      "Miss a call while on the tools? The system texts them back within 60 seconds — so you never lose a lead to a competitor who answered faster.",
+      "Miss a call while on the tools? The system texts them back within 60 seconds, so you never lose a lead to a competitor who answered faster.",
   },
   {
     icon: MessageSquare,
@@ -48,7 +48,7 @@ const systemParts = [
     icon: BarChart3,
     title: "Your Own Lead Dashboard",
     description:
-      "A branded client dashboard on your phone — see every lead, conversation and pipeline value in real time. No black box, no spreadsheets.",
+      "A branded client dashboard on your phone, see every lead, conversation and pipeline value in real time. No black box, no spreadsheets.",
   },
 ]
 
@@ -71,7 +71,7 @@ export function SolutionSection() {
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 We don{"'"}t sell one-off websites or ad campaigns. We build a
                 three-part system: a website that converts, paid traffic that targets
-                your area, and automation that follows up every lead—so you can focus
+                your area, and automation that follows up every lead, so you can focus
                 on the work.
               </p>
 

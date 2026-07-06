@@ -25,7 +25,7 @@ export const metadata: Metadata = buildMetadata({
 const articleSchema = getArticleSchema({
   headline: "Is Rated People Worth It for Tradespeople? Honest 2026 Review",
   description:
-    "An honest review of Rated People for UK tradespeople in 2026 — covering subscription costs, per-lead pricing, lead quality, platform changes and whether there are better alternatives.",
+    "An honest review of Rated People for UK tradespeople in 2026, covering subscription costs, per-lead pricing, lead quality, platform changes and whether there are better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -37,19 +37,19 @@ const faqItems: FAQItem[] = [
       "Rated People can generate work for established tradespeople with strong profiles, particularly in popular trades like plumbing, electrical work and building. The platform has around 700,000 monthly visitors and a maximum of three tradespeople per job, which limits competition more than some alternatives. However, tradespeople report inconsistent lead quality, difficulty cancelling contracts, and price increases at renewal. Most negative reviews on Trustpilot and trade forums come from tradespeople rather than homeowners.",
   },
   {
-    question: "Which is better — Checkatrade or Rated People?",
+    question: "Which is better, Checkatrade or Rated People?",
     answer:
       "Checkatrade has stronger brand recognition and more homeowner traffic than Rated People, but costs more and does not cap the number of tradespeople competing for an enquiry as strictly. Rated People limits job responses to three tradespeople, which improves your odds. For most UK trades, Checkatrade will generate more enquiries in absolute terms; Rated People may generate better conversion rates per lead due to lower competition. Neither is a substitute for owning your own website and Google presence.",
   },
   {
     question: "How much does Rated People charge?",
     answer:
-      "Rated People charges a subscription fee of approximately £35 + VAT per month, paid annually (so committed upfront for 12 months). On top of this, you spend credits to contact customers, with leads typically costing around £15 + VAT per contact. The platform has raised prices significantly — reports indicate the subscription roughly doubled in 2025. Total monthly costs for an active member typically range from £50 to £150+ depending on how many leads you pursue.",
+      "Rated People charges a subscription fee of approximately £35 + VAT per month, paid annually (so committed upfront for 12 months). On top of this, you spend credits to contact customers, with leads typically costing around £15 + VAT per contact. The platform has raised prices significantly, reports indicate the subscription roughly doubled in 2025. Total monthly costs for an active member typically range from £50 to £150+ depending on how many leads you pursue.",
   },
   {
     question: "Does Checkatrade actually work?",
     answer:
-      "Yes — Checkatrade generates real enquiries for many UK tradespeople, particularly in emergency trades like plumbing and electrical work where brand recognition matters. Whether it works for your specific business depends on your trade, your area, the competition in your category and whether you track your cost per job won carefully. The platform works best as a supplement to your own website and Google Business Profile, not as your only source of leads.",
+      "Yes, Checkatrade generates real enquiries for many UK tradespeople, particularly in emergency trades like plumbing and electrical work where brand recognition matters. Whether it works for your specific business depends on your trade, your area, the competition in your category and whether you track your cost per job won carefully. The platform works best as a supplement to your own website and Google Business Profile, not as your only source of leads.",
   },
   {
     question: "Can I cancel Rated People easily?",
@@ -90,7 +90,7 @@ export default function IsRatedPeopleWorthItPage() {
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Rated People sits in a slightly different position to Bark and
-                Checkatrade — less well known to homeowners but with some structural
+                Checkatrade, less well known to homeowners but with some structural
                 advantages that make it worth understanding properly.{" "}
                 <span className="font-semibold text-foreground">
                   Here{"'"}s an honest look at what it costs, how it compares, and
@@ -122,8 +122,8 @@ export default function IsRatedPeopleWorthItPage() {
               <p>
                 Rated People operates on a hybrid subscription and pay-per-lead
                 model. Homeowners post a job on the platform and are matched with
-                tradespeople in their area. Unlike Bark — where an unlimited number
-                of tradespeople can potentially contact a customer — Rated People
+                tradespeople in their area. Unlike Bark, where an unlimited number
+                of tradespeople can potentially contact a customer, Rated People
                 caps responses at{" "}
                 <span className="font-semibold text-foreground">
                   three tradespeople per job
@@ -148,8 +148,7 @@ export default function IsRatedPeopleWorthItPage() {
                 The platform has around{" "}
                 <span className="font-semibold text-foreground">
                   700,000 homeowner visitors per month
-                </span>{" "}
-                — smaller than Checkatrade{"'"}s audience but enough to generate
+                </span>: smaller than Checkatrade{"'"}s audience but enough to generate
                 meaningful lead volume in most trade categories across most parts of
                 the UK.
               </p>
@@ -177,7 +176,7 @@ export default function IsRatedPeopleWorthItPage() {
               </p>
               <p>
                 It is worth noting that Rated People significantly raised its
-                subscription prices — reports from UK tradespeople indicate the cost
+                subscription prices, reports from UK tradespeople indicate the cost
                 roughly doubled in 2025. If you joined on an older rate, your renewal
                 may be considerably higher than you expect.
               </p>
@@ -213,7 +212,7 @@ export default function IsRatedPeopleWorthItPage() {
 
               <StatCallout
                 stat="~£15/lead"
-                label="Typical Rated People credit cost per customer contact — before you know if they'll respond. Maximum three tradespeople compete per job, which is better odds than most platforms."
+                label="Typical Rated People credit cost per customer contact, before you know if they'll respond. Maximum three tradespeople compete per job, which is better odds than most platforms."
                 accent="blue"
               />
             </section>
@@ -240,7 +239,7 @@ export default function IsRatedPeopleWorthItPage() {
               </h2>
               <p>
                 Rated People has a 4-star rating on Trustpilot with over 19,000
-                reviews — but there is an important nuance. The majority of positive
+                reviews, but there is an important nuance. The majority of positive
                 reviews come from homeowners, not tradespeople. When you filter
                 for tradesperson feedback, the picture is noticeably different.
               </p>
@@ -249,35 +248,31 @@ export default function IsRatedPeopleWorthItPage() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  <span className="font-semibold text-foreground">No refund on non-responsive leads</span>{" "}
-                  — you pay to contact a customer who never replies and the credits
+                  <span className="font-semibold text-foreground">No refund on non-responsive leads</span>: you pay to contact a customer who never replies and the credits
                   are gone. This policy has not changed despite repeated complaints.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
                     Difficult to cancel
-                  </span>{" "}
-                  — multiple reports of accounts being difficult to close and
+                  </span>: multiple reports of accounts being difficult to close and
                   renewals going through without clear warning.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
                     Customer service is hard to reach
-                  </span>{" "}
-                  — contact details are not prominently listed and response times
+                  </span>: contact details are not prominently listed and response times
                   draw consistent criticism in negative reviews.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
                     Price increases at renewal
-                  </span>{" "}
-                  — the cost roughly doubled in 2025 and existing members were
+                  </span>: the cost roughly doubled in 2025 and existing members were
                   caught off guard by the scale of the increase.
                 </li>
               </ul>
               <PullQuote accent="gold">
                 "The leads can be good. The problem is what happens when things go
-                wrong — getting a refund, changing your plan, or cancelling. That
+                wrong, getting a refund, changing your plan, or cancelling. That
                 is where Rated People consistently lets tradespeople down."
               </PullQuote>
             </section>
@@ -295,17 +290,17 @@ export default function IsRatedPeopleWorthItPage() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  You are in a popular trade category — plumbing, electrical, building,
-                  decorating, landscaping — where the platform{"'"}s 700,000 monthly
+                  You are in a popular trade category, plumbing, electrical, building,
+                  decorating, landscaping, where the platform{"'"}s 700,000 monthly
                   visitors generate consistent job postings
                 </li>
                 <li>
                   You have a strong completed profile with genuine reviews and
-                  qualifications displayed — the three-competitor cap means your
+                  qualifications displayed, the three-competitor cap means your
                   profile actually gets read before a homeowner decides who to call
                 </li>
                 <li>
-                  You are selective about which leads you contact — only pursuing
+                  You are selective about which leads you contact, only pursuing
                   jobs that genuinely suit your trade, location and pricing means
                   your credits go further and your conversion rate improves
                 </li>
@@ -327,8 +322,7 @@ export default function IsRatedPeopleWorthItPage() {
                 <Link href="/landscapers" className="font-semibold text-secondary hover:underline">
                   landscapers
                 </Link>{" "}
-                with good profiles, Rated People can be a worthwhile supplement —
-                particularly in areas where Checkatrade is heavily saturated.
+                with good profiles, Rated People can be a worthwhile supplement, particularly in areas where Checkatrade is heavily saturated.
               </p>
             </section>
           </SectionReveal>
@@ -345,28 +339,28 @@ export default function IsRatedPeopleWorthItPage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Audience size:</span>{" "}
-                  Checkatrade wins — significantly more homeowner traffic
+                  Checkatrade wins, significantly more homeowner traffic
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Competition per lead:</span>{" "}
-                  Rated People wins — three competitors maximum versus no cap on
+                  Rated People wins, three competitors maximum versus no cap on
                   Checkatrade
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Brand recognition:</span>{" "}
-                  Checkatrade wins — homeowners know and trust the name more
+                  Checkatrade wins, homeowners know and trust the name more
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Monthly cost:</span>{" "}
-                  Rated People wins — typically lower all-in cost for active members
+                  Rated People wins, typically lower all-in cost for active members
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Contract flexibility:</span>{" "}
-                  broadly similar — both use 12-month commitments
+                  broadly similar, both use 12-month commitments
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Customer service:</span>{" "}
-                  Checkatrade wins — Rated People{"'"}s support track record is weaker
+                  Checkatrade wins, Rated People{"'"}s support track record is weaker
                 </li>
               </ul>
               <p>
@@ -395,7 +389,7 @@ export default function IsRatedPeopleWorthItPage() {
               <p>
                 The most successful UK tradespeople use platforms like these as a
                 short-term supplement, not a long-term strategy. The goal is to use
-                the leads to build a customer base and a review profile — then make
+                the leads to build a customer base and a review profile, then make
                 sure those reviews are on Google where they compound over time and
                 help homeowners find you directly, without going through a platform
                 at all.
@@ -409,8 +403,7 @@ export default function IsRatedPeopleWorthItPage() {
                 We help UK trade businesses build{" "}
                 <Link href="/services" className="font-semibold text-secondary hover:underline">
                   lead systems they own
-                </Link>{" "}
-                — websites that convert, Google profiles that rank, and review
+                </Link>: websites that convert, Google profiles that rank, and review
                 systems that run automatically after every job. The result is a
                 pipeline that does not depend on renewing a subscription or hoping
                 a platform{"'"}s algorithm favours your listing this month.
@@ -426,7 +419,7 @@ export default function IsRatedPeopleWorthItPage() {
               </h2>
               <p>
                 For an established tradesperson with a strong profile, a popular
-                trade category and a disciplined approach to filtering leads —{" "}
+                trade category and a disciplined approach to filtering leads, {" "}
                 <span className="font-semibold text-foreground">
                   yes, it can be worth it
                 </span>
@@ -437,7 +430,7 @@ export default function IsRatedPeopleWorthItPage() {
                 But go in with clear expectations. Track your cost per job won from
                 day one. Read the cancellation terms before you sign. And treat it
                 as a tap to supplement your pipeline while you build the assets you
-                actually own — not as the foundation of your marketing.
+                actually own, not as the foundation of your marketing.
               </p>
               <p>
                 If you cannot say after six months whether Rated People is generating
@@ -475,7 +468,7 @@ export default function IsRatedPeopleWorthItPage() {
 
           <SectionReveal delay={190}>
             <FAQAccordionSection
-              title="Rated People — Common Questions"
+              title="Rated People, Common Questions"
               items={faqItems}
             />
           </SectionReveal>

@@ -70,7 +70,7 @@ export function PricingWhySetup() {
             <PhaseCard icon={Rocket} title="Launch" items={LAUNCH_ITEMS} />
           </div>
           <p className="mt-10 text-center text-sm sm:text-base text-foreground/90 font-medium max-w-2xl mx-auto leading-relaxed">
-            The setup investment covers the full build and launch of your enquiry system. Built once — built properly.
+            The setup investment covers the full build and launch of your enquiry system. Built once, built properly.
           </p>
         </SectionReveal>
       </div>

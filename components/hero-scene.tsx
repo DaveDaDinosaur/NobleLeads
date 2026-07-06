@@ -56,7 +56,7 @@ function useSharedMaterials() {
   return { matBlue, matGold, matRing }
 }
 
-/* Wireframe orb — no Float wrapper; single useFrame; delta for frame-rate independence */
+/* Wireframe orb, no Float wrapper; single useFrame; delta for frame-rate independence */
 function WireframeOrb({
   position,
   material,
@@ -96,7 +96,7 @@ function WireframeOrb({
   )
 }
 
-/* Floating ring — shared material; reduced segments for fewer triangles */
+/* Floating ring, shared material; reduced segments for fewer triangles */
 function FloatingRing({
   radius,
   tubeRadius,
@@ -134,7 +134,7 @@ function FloatingRing({
   )
 }
 
-/* Camera rig — delta-based for frame-rate independence */
+/* Camera rig, delta-based for frame-rate independence */
 function CameraRig() {
   const { camera } = useThree()
   const timeRef = useRef(0)
@@ -151,7 +151,7 @@ function CameraRig() {
   return null
 }
 
-/* Scene — limit lights to 3 (ambient + 2 point); shared materials */
+/* Scene, limit lights to 3 (ambient + 2 point); shared materials */
 function Scene() {
   const { matBlue, matGold, matRing } = useSharedMaterials()
 

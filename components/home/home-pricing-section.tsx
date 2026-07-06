@@ -12,7 +12,7 @@ export function HomePricingSection() {
             </h2>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-xl">
               Three clear packages built for where your business is now. No hidden
-              retainers, no confusing add-ons—just a marketing system you can
+              retainers, no confusing add-ons, just a marketing system you can
               budget for.
             </p>
           </div>

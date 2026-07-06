@@ -11,7 +11,7 @@ import {
 const FAQ = [
   {
     q: "How long does it take to go live?",
-    a: "Core websites can go live within a few days. Growth and Dominate include more setup — we’ll give you a clear timeline on the discovery call, usually 2–4 weeks depending on scope.",
+    a: "Core websites can go live within a few days. Growth and Dominate include more setup, we’ll give you a clear timeline on the discovery call, usually 2–4 weeks depending on scope.",
   },
   {
     q: "Is there a contract?",
@@ -19,7 +19,7 @@ const FAQ = [
   },
   {
     q: "Do I have to run ads?",
-    a: "Only if you choose Growth or Dominate. Core is just the website and management — no ads. If you want more enquiries and are ready to invest in paid lead generation, that’s when Growth or Dominate make sense.",
+    a: "Only if you choose Growth or Dominate. Core is just the website and management, no ads. If you want more enquiries and are ready to invest in paid lead generation, that’s when Growth or Dominate make sense.",
   },
   {
     q: "What’s included in the monthly management?",

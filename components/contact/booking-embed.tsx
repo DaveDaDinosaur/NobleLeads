@@ -27,7 +27,7 @@ export function BookingEmbed() {
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A quick look at your online presence and how we can turn it
-                    into a consistent enquiry system. No pressure — just
+                    into a consistent enquiry system. No pressure, just
                     clarity.
                   </p>
                 </div>

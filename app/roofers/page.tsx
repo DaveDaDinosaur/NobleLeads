@@ -83,7 +83,7 @@ const painPoints: PainPoint[] = [
   {
     icon: ClipboardList,
     heading: "Chasing Everything Manually",
-    body: "Picking up calls on site, chasing quotes by phone — admin time that should be on the roof, not in your van between jobs.",
+    body: "Picking up calls on site, chasing quotes by phone, admin time that should be on the roof, not in your van between jobs.",
   },
 ]
 
@@ -110,7 +110,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads for trades
         </Link>
-        . People rarely browse for fun — they search because they have a leak, a
+        . People rarely browse for fun, they search because they have a leak, a
         storm-damaged roof or a planned re-roof. We target those searches in
         your chosen areas and send people straight to your own landing pages,
         not a directory listing.
@@ -175,7 +175,7 @@ export default function RoofersPage() {
                 an empty diary. NobleLeads focuses on{" "}
                 <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
                 so you can build a steady pipeline of the right roofing jobs instead
-                of waiting for the weather — or luck — to decide.
+                of waiting for the weather, or luck, to decide.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link
@@ -199,7 +199,7 @@ export default function RoofersPage() {
                 Why Roofers Struggle to Get Consistent Work
               </h2>
               <p>
-                Most roofing businesses aren{"'"}t short of skill — they{"'"}re short of{" "}
+                Most roofing businesses aren{"'"}t short of skill, they{"'"}re short of{" "}
                 <span className="font-semibold text-foreground">
                   consistent, profitable enquiries
                 </span>
@@ -249,7 +249,7 @@ export default function RoofersPage() {
                 <span className="font-semibold text-foreground">
                   £5,050 in additional revenue
                 </span>{" "}
-                on a £495/month fee — before you factor in referrals and upsells.
+                on a £495/month fee, before you factor in referrals and upsells.
                 Even if real-world results are more conservative, a well-run system
                 becomes a multiple of your monthly investment.
               </p>
@@ -267,7 +267,7 @@ export default function RoofersPage() {
                 Checkatrade and Facebook groups for most of their work. Within 8 weeks
                 of launching a NobleLeads website and Google Ads campaign, they were
                 booking 8–12 extra enquiries per month and closed two additional
-                full re-roofs — enough to comfortably pay for the system and reinvest."
+                full re-roofs, enough to comfortably pay for the system and reinvest."
               </p>
             </section>
           </SectionReveal>
@@ -283,7 +283,7 @@ export default function RoofersPage() {
                 match you to the right level of support:
               </p>
               <TradePackages
-                core="A credible, conversion-ready website and basic CRM so every enquiry is captured and logged — no lead slips through."
+                core="A credible, conversion-ready website and basic CRM so every enquiry is captured and logged, no lead slips through."
                 growth="Everything in Core plus Google Ads, local SEO and automation so you're not overwhelmed managing enquiries manually on site."
                 dominate="For firms who want to expand territory, win larger contracts and position for tenders, not just domestic work."
               />
@@ -306,7 +306,7 @@ export default function RoofersPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s talk about where your roofing business is now, what kind of
                 work you actually want and how a proper lead system could get you
-                there — without relying on storms or lead-buy sites.
+                there, without relying on storms or lead-buy sites.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link

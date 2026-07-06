@@ -25,7 +25,7 @@ export function AboutHero() {
 
   return (
     <>
-      {/* Fixed orbs — stay in place while scrolling, hidden when hero is out of view */}
+      {/* Fixed orbs, stay in place while scrolling, hidden when hero is out of view */}
       <div
         className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-500"
         style={{ opacity: orbsVisible ? 1 : 0 }}
@@ -101,7 +101,7 @@ export function AboutHero() {
               style={{ animationDelay: "450ms", animationFillMode: "both" }}
             >
               <p>
-                Most trade businesses don&apos;t have a skill problem—they have a
+                Most trade businesses don&apos;t have a skill problem, they have a
                 predictability problem. Strong work and solid reputations, but
                 inconsistent lead flow and heavy reliance on referrals.
               </p>

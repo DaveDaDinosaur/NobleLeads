@@ -98,7 +98,7 @@ const steps: HowItWorksStep[] = [
         </Link>{" "}
         for bathroom fitters lead with before-and-after photography, client
         testimonials and clear service pages covering full bathroom renovations,
-        en suites and wet rooms — structured to attract buyers with serious
+        en suites and wet rooms, structured to attract buyers with serious
         budgets, not just enquiries.
       </>
     ),
@@ -111,7 +111,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for bathroom fitters
         </Link>{" "}
-        targeting searches that signal real buying intent — "bathroom
+        targeting searches that signal real buying intent, "bathroom
         installation [your area]", "new bathroom quote", "bathroom fitter near
         me". Each click lands on a page built to convert interest into an
         enquiry, not just browse.
@@ -126,7 +126,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM and automation system
         </Link>{" "}
-        keeps every prospect warm with timed follow-up messages — so when
+        keeps every prospect warm with timed follow-up messages, so when
         they{"'"}re finally ready to commit, you{"'"}re the fitter they{"'"}ve been
         hearing from, not one they{"'"}ve forgotten.
       </>
@@ -170,12 +170,10 @@ export default function BathroomFittersPage() {
                 Marketing for Bathroom Fitters That Attracts Serious Enquiries
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Bathroom fitting is one of the highest-value domestic trades in the UK —
-                but the jobs don{"'"}t just land in your inbox. Customers spend weeks
+                Bathroom fitting is one of the highest-value domestic trades in the UK, but the jobs don{"'"}t just land in your inbox. Customers spend weeks
                 researching, comparing and second-guessing before they pick up the phone.
                 NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — so you{"'"}re visible when they start searching, credible when they
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: so you{"'"}re visible when they start searching, credible when they
                 compare and first in line when they{"'"}re finally ready to book.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -200,7 +198,7 @@ export default function BathroomFittersPage() {
                 Why Bathroom Fitters Struggle to Win Consistent High-Value Work
               </h2>
               <p>
-                Bathroom renovation is a considered purchase — which means the fitter
+                Bathroom renovation is a considered purchase, which means the fitter
                 who{" "}
                 <span className="font-semibold text-foreground">
                   stays visible and credible throughout a long research phase
@@ -302,7 +300,7 @@ export default function BathroomFittersPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Let{"'"}s have a quick, honest conversation about your bathroom fitting
-                business — what you{"'"}re closing now and how a proper lead system could
+                business, what you{"'"}re closing now and how a proper lead system could
                 change those numbers.
               </p>
               <div className="mt-6 flex justify-center">

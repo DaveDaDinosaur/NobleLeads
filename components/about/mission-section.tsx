@@ -25,7 +25,7 @@ const pillars = [
     number: "04",
     title: "Long-Term Growth",
     description:
-      "We build infrastructure that compounds over time — not quick wins.",
+      "We build infrastructure that compounds over time, not quick wins.",
   },
 ]
 

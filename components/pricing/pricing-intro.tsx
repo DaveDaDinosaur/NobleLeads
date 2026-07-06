@@ -14,7 +14,7 @@ export function PricingIntro() {
             We help trade businesses win more enquiries and present themselves professionally online.
           </p>
           <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Each option includes the initial build and ongoing management. No hidden layers—you see what you get.
+            Each option includes the initial build and ongoing management. No hidden layers, you see what you get.
           </p>
           <div className="mt-6 mx-auto h-px w-12 rounded-full bg-secondary/40" aria-hidden />
         </div>

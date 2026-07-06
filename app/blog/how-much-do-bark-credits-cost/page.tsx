@@ -44,17 +44,17 @@ const faqItems: FAQItem[] = [
   {
     question: "How to get Bark credits for free?",
     answer:
-      "Bark occasionally offers free credits as part of promotions for new sign-ups or as rewards for completing your profile fully. Discount codes are sometimes available through third-party voucher sites. However, sustained free credits are not a feature of the platform — the business model is credit sales, and there is no free tier for tradespeople beyond initial promotional offers.",
+      "Bark occasionally offers free credits as part of promotions for new sign-ups or as rewards for completing your profile fully. Discount codes are sometimes available through third-party voucher sites. However, sustained free credits are not a feature of the platform, the business model is credit sales, and there is no free tier for tradespeople beyond initial promotional offers.",
   },
   {
     question: "Is Bark worth the money for UK tradespeople?",
     answer:
-      "Bark can generate work for tradespeople who are disciplined about which leads they contact and who have a fast response system in place. The main risks are the non-refundable credit model, inconsistent lead quality, multiple competing tradespeople per customer and the 3-month credit expiry. Most tradespeople find the cost per job won higher than they expected. Used as a short-term volume tool alongside your own website and Google presence, it can be worthwhile — as a permanent strategy, the maths rarely holds up long-term.",
+      "Bark can generate work for tradespeople who are disciplined about which leads they contact and who have a fast response system in place. The main risks are the non-refundable credit model, inconsistent lead quality, multiple competing tradespeople per customer and the 3-month credit expiry. Most tradespeople find the cost per job won higher than they expected. Used as a short-term volume tool alongside your own website and Google presence, it can be worthwhile, as a permanent strategy, the maths rarely holds up long-term.",
   },
   {
     question: "What is the real cost of a Bark lead for a tradesperson?",
     answer:
-      "The headline credit cost per lead (£7–£40) is only the first layer. The real cost per paying customer depends on your response rate and conversion rate. If you contact 10 leads at an average of £15 each (£150 in credits) and win 2 jobs, your actual cost per customer won is £75 — before accounting for time spent chasing non-responsive customers. Many tradespeople report real costs per job won of £80–£200+ when tracked carefully.",
+      "The headline credit cost per lead (£7–£40) is only the first layer. The real cost per paying customer depends on your response rate and conversion rate. If you contact 10 leads at an average of £15 each (£150 in credits) and win 2 jobs, your actual cost per customer won is £75, before accounting for time spent chasing non-responsive customers. Many tradespeople report real costs per job won of £80–£200+ when tracked carefully.",
   },
 ]
 
@@ -86,7 +86,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark{"'"}s credit system looks simple until you try to work out what
                 a lead is actually costing you. The headline price per credit is one
-                number — the real cost per job won is usually a very different one.{" "}
+                number, the real cost per job won is usually a very different one.{" "}
                 <span className="font-semibold text-foreground">
                   Here is exactly what Bark credits cost in 2026, what changed with
                   the new expiry policy, and how to calculate whether the spend
@@ -120,7 +120,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 Bark operates on a credit-based system with no monthly membership
                 fee. You buy a pack of credits upfront and spend them to contact
                 customers who have been matched to your trade category and location.
-                Every lead on Bark shows the credit cost before you commit — so you
+                Every lead on Bark shows the credit cost before you commit, so you
                 can see what contacting that specific customer will cost before
                 spending anything.
               </p>
@@ -133,7 +133,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 Unlike Checkatrade, where you pay a monthly fee regardless of
                 activity, Bark only costs you money when you actively choose to
                 contact a customer. That makes it lower risk in terms of fixed
-                overhead — but the non-refundable credit model means a poor
+                overhead, but the non-refundable credit model means a poor
                 response rate can still cost you significantly.
               </p>
             </section>
@@ -152,8 +152,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
               <p>
                 The standard Bark credit price for UK tradespeople is approximately{" "}
                 <span className="font-semibold text-foreground">£1.20 + VAT per credit</span>{" "}
-                at the basic rate. Volume discounts apply when you buy larger packs
-                — the more you buy, the lower your cost per credit. Promotional
+                at the basic rate. Volume discounts apply when you buy larger packs, the more you buy, the lower your cost per credit. Promotional
                 rates and discount codes can bring this down further.
               </p>
 
@@ -168,32 +167,30 @@ export default function HowMuchDoBarkCreditsCostPage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Small jobs</span>{" "}
-                  (minor repairs, one-off cleaning, small garden jobs): 5–8 credits
-                  — roughly{" "}
+                  (minor repairs, one-off cleaning, small garden jobs): 5–8 credits, roughly{" "}
                   <span className="font-semibold text-foreground">£7–£12</span>
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Mid-size jobs</span>{" "}
                   (bathroom repairs, electrical work, fence installation): 10–15
-                  credits — roughly{" "}
+                  credits, roughly{" "}
                   <span className="font-semibold text-foreground">£14–£22</span>
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Larger projects</span>{" "}
                   (full bathroom refits, rewires, extensions, driveways): 15–20+
-                  credits — roughly{" "}
+                  credits, roughly{" "}
                   <span className="font-semibold text-foreground">£22–£40+</span>
                 </li>
               </ul>
               <p>
                 Between three and five tradespeople typically contact the same
-                customer on Bark. You are paying to join that competition —
-                not to be the only option.
+                customer on Bark. You are paying to join that competition, not to be the only option.
               </p>
 
               <StatCallout
                 stat="£7–£40+"
-                label="What it costs in Bark credits to contact a single customer in 2026 — before knowing if they'll respond. Credits are non-refundable if they don't."
+                label="What it costs in Bark credits to contact a single customer in 2026, before knowing if they'll respond. Credits are non-refundable if they don't."
                 accent="gold"
               />
             </section>
@@ -212,7 +209,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 </span>
                 , Bark changed its credit policy significantly. All newly purchased
                 credits now expire three months after the date of purchase. Previously,
-                credits had no expiry date — you could buy a pack and use them at
+                credits had no expiry date, you could buy a pack and use them at
                 whatever pace suited your business.
               </p>
               <p>
@@ -237,7 +234,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 </li>
               </ul>
               <PullQuote accent="blue">
-                "The expiry change effectively forces more regular purchasing — even
+                "The expiry change effectively forces more regular purchasing, even
                 if you have credits sitting there. It{"'"}s a commercial decision that
                 benefits Bark more than the tradesperson."
               </PullQuote>
@@ -272,7 +269,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 The headline credit cost is not the number that matters. The number
                 that matters is your{" "}
                 <span className="font-semibold text-foreground">cost per job won</span>
-                {" "}— how much you spend in credits for every customer who actually
+                : how much you spend in credits for every customer who actually
                 hires you.
               </p>
               <p>
@@ -283,7 +280,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 <li>Track the total credits spent contacting them</li>
                 <li>Count how many of those became paying jobs</li>
                 <li>
-                  Divide total credit spend by jobs won — that is your real cost
+                  Divide total credit spend by jobs won, that is your real cost
                   per customer acquired
                 </li>
               </ul>
@@ -322,13 +319,13 @@ export default function HowMuchDoBarkCreditsCostPage() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  You respond to new matches quickly — ideally within minutes.
+                  You respond to new matches quickly, ideally within minutes.
                   Speed of response is the single biggest factor in Bark conversion
                   rates because multiple tradespeople are contacting the same
                   customer simultaneously.
                 </li>
                 <li>
-                  You are selective — only spending credits on leads where you can
+                  You are selective, only spending credits on leads where you can
                   genuinely compete on quality rather than just being one of several
                   quotes.
                 </li>
@@ -345,11 +342,11 @@ export default function HowMuchDoBarkCreditsCostPage() {
                     strong Google reviews
                   </Link>{" "}
                   that customers find when they look you up after getting your Bark
-                  response — because they will look you up.
+                  response, because they will look you up.
                 </li>
                 <li>
                   You treat it as a volume supplement while your organic reputation
-                  and direct enquiries build — not as your core strategy.
+                  and direct enquiries build, not as your core strategy.
                 </li>
               </ul>
               <p>
@@ -368,7 +365,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 >
                   Google Ads
                 </Link>{" "}
-                sends high-intent homeowners directly to your site — where you are
+                sends high-intent homeowners directly to your site, where you are
                 the only tradesperson they are looking at, not one of five who
                 responded to a Bark match.
               </p>
@@ -404,7 +401,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
 
           <SectionReveal delay={170}>
             <FAQAccordionSection
-              title="Bark Credits — Common Questions"
+              title="Bark Credits, Common Questions"
               items={faqItems}
             />
           </SectionReveal>

@@ -40,12 +40,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Can you help me win commercial building contracts?",
     answer:
-      "Yes. Commercial work — fit-outs, refurbishments, housing developers — provides high-volume, high-value pipelines. We can build dedicated pages and campaigns targeting commercial clients in your area.",
+      "Yes. Commercial work, fit-outs, refurbishments, housing developers, provides high-volume, high-value pipelines. We can build dedicated pages and campaigns targeting commercial clients in your area.",
   },
   {
     question: "I get a lot of tyre-kicker enquiries. Can you filter those out?",
     answer:
-      "Yes. We build landing pages and quote forms that pre-qualify enquiries — asking the right questions to filter out people without genuine projects or budgets before they take up your time.",
+      "Yes. We build landing pages and quote forms that pre-qualify enquiries, asking the right questions to filter out people without genuine projects or budgets before they take up your time.",
   },
   {
     question: "Is there a minimum contract?",
@@ -78,7 +78,7 @@ const painPoints: PainPoint[] = [
   {
     icon: Shield,
     heading: "Completed Work Isn't Visible Online",
-    body: "Your projects speak for themselves — but if they're not showcased online, customers choose competitors with slicker websites and more reviews.",
+    body: "Your projects speak for themselves, but if they're not showcased online, customers choose competitors with slicker websites and more reviews.",
   },
   {
     icon: Clock,
@@ -99,7 +99,7 @@ const steps: HowItWorksStep[] = [
         for builders lead with completed project photography, client
         testimonials, accreditations (FMB, NHBC, Trustmark) and dedicated
         service pages for extensions, loft conversions, refurbishments and
-        new builds — each built to rank and convert the right enquiries.
+        new builds, each built to rank and convert the right enquiries.
       </>
     ),
   },
@@ -111,7 +111,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           Google Ads campaigns for builders
         </Link>{" "}
-        targeting the searches that signal genuine intent — "extension builders
+        targeting the searches that signal genuine intent, "extension builders
         near me", "loft conversion quote [town]", "house refurbishment
         contractors". High intent, your service area, landing pages built to
         pre-qualify before they make contact.
@@ -126,7 +126,7 @@ const steps: HowItWorksStep[] = [
         <Link href="/services" className="font-semibold text-secondary hover:underline">
           CRM and automation system
         </Link>{" "}
-        keeps every prospect warm with timed follow-ups — so when they{"'"}re
+        keeps every prospect warm with timed follow-ups, so when they{"'"}re
         ready to commit, you{"'"}re the builder they{"'"}ve been hearing from, not
         the one they{"'"}ve forgotten about.
       </>
@@ -170,12 +170,11 @@ export default function BuildersPage() {
                 Builder Marketing That Wins More Extensions and Refurbishments
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Building work is some of the highest-value trade work available — but
+                Building work is some of the highest-value trade work available, but
                 winning the right projects consistently is harder than it looks.
                 Competition is fierce, job cycles are long and customers do serious
                 research before they commit. NobleLeads focuses on{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
-                — building you the online presence and lead system that attracts
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>: building you the online presence and lead system that attracts
                 homeowners with real projects and real budgets, not just people
                 fishing for the cheapest quote.
               </p>
@@ -206,8 +205,7 @@ export default function BuildersPage() {
                 <span className="font-semibold text-foreground">
                   The gap between projects is where cash gets tight and bad decisions
                   get made
-                </span>{" "}
-                — taking on low-margin work, underpricing to win, or burning time
+                </span>: taking on low-margin work, underpricing to win, or burning time
                 chasing quotes that were never serious.
               </p>
               <PainPointsGrid items={painPoints} />
@@ -295,8 +293,7 @@ export default function BuildersPage() {
                 Ready to Fill Your Pipeline With Projects That Are Actually Worth Winning?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Let{"'"}s have a quick, honest conversation about your building business
-                — what you{"'"}re winning now and what a proper lead system could look
+                Let{"'"}s have a quick, honest conversation about your building business, what you{"'"}re winning now and what a proper lead system could look
                 like for you.
               </p>
               <div className="mt-6 flex justify-center">

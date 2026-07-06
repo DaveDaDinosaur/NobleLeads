@@ -90,7 +90,7 @@ export function BlogHero({ postCount }: { postCount: number }) {
             <span className="text-muted-foreground"> for UK Trades.</span>
           </h1>
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-xl">
-            No fluff, no jargon — just honest guidance on how to get more of the
+            No fluff, no jargon, just honest guidance on how to get more of the
             right enquiries coming direct to your business, without being
             dependent on Checkatrade, Bark or Facebook groups.
           </p>

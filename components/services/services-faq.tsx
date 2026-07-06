@@ -19,7 +19,7 @@ const FAQ = [
   },
   {
     q: "How long does it take?",
-    a: "Core systems can go live within 48 hours. Full rollout depends on scope—we’ll give you a clear timeline on the discovery call.",
+    a: "Core systems can go live within 48 hours. Full rollout depends on scope, we’ll give you a clear timeline on the discovery call.",
   },
   {
     q: "Do you guarantee results?",
@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: "Who is this for?",
-    a: "UK trade businesses that want consistent enquiries—commercial cleaners, fire & security, electrical, facilities, roofing, plumbing, landscaping and related trades. If you have strong reviews and want to grow without relying on word of mouth, we want to talk.",
+    a: "UK trade businesses that want consistent enquiries, commercial cleaners, fire & security, electrical, facilities, roofing, plumbing, landscaping and related trades. If you have strong reviews and want to grow without relying on word of mouth, we want to talk.",
   },
 ]
 
