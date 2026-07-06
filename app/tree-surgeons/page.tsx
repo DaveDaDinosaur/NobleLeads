@@ -13,7 +13,13 @@ import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-
 import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
 import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
-import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
+import {
+  BUSINESS_URL,
+  getFAQPageSchema,
+  getLocalBusinessSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from "../(shared)/schema"
 
 const primaryKeyword = "tree surgeon marketing agency UK"
 const canonicalPath = "/tree-surgeons"
@@ -138,6 +144,16 @@ export const metadata: Metadata = buildMetadata({
 
 export default function TreeSurgeonsPage() {
   const faqSchema = getFAQPageSchema(faqItems)
+  const serviceSchema = getServiceSchema({
+    name: "Tree Surgeon Marketing",
+    description:
+      "NobleLeads delivers marketing for tree surgeons UK-wide using conversion websites, Google Ads and CRM automation so you can win more residential, emergency and commercial tree surgery work consistently.",
+    url: `${BUSINESS_URL}${canonicalPath}`,
+  })
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: BUSINESS_URL },
+    { name: "Tree Surgeon Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+  ])
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -303,7 +319,7 @@ export default function TreeSurgeonsPage() {
 
       <Footer />
       <MobileCTABar />
-      <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
+      <JsonLd data={[getLocalBusinessSchema(), faqSchema, serviceSchema, breadcrumbSchema]} />
     </main>
   )
 }

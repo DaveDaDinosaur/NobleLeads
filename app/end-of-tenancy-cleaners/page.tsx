@@ -13,7 +13,13 @@ import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-
 import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
 import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
-import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
+import {
+  BUSINESS_URL,
+  getFAQPageSchema,
+  getLocalBusinessSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from "../(shared)/schema"
 
 const primaryKeyword = "end of tenancy cleaning marketing UK"
 const canonicalPath = "/end-of-tenancy-cleaners"
@@ -138,6 +144,16 @@ export const metadata: Metadata = buildMetadata({
 
 export default function EndOfTenancyCleanersPage() {
   const faqSchema = getFAQPageSchema(faqItems)
+  const serviceSchema = getServiceSchema({
+    name: "End of Tenancy Cleaning Marketing",
+    description:
+      "NobleLeads delivers marketing for end-of-tenancy cleaning companies UK-wide using conversion websites, Google Ads and CRM automation so you can win more direct bookings and letting agent relationships.",
+    url: `${BUSINESS_URL}${canonicalPath}`,
+  })
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: BUSINESS_URL },
+    { name: "End of Tenancy Cleaning Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+  ])
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -307,7 +323,7 @@ export default function EndOfTenancyCleanersPage() {
 
       <Footer />
       <MobileCTABar />
-      <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
+      <JsonLd data={[getLocalBusinessSchema(), faqSchema, serviceSchema, breadcrumbSchema]} />
     </main>
   )
 }

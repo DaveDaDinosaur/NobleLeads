@@ -13,7 +13,13 @@ import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-
 import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
 import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
-import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
+import {
+  BUSINESS_URL,
+  getFAQPageSchema,
+  getLocalBusinessSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from "../(shared)/schema"
 
 const primaryKeyword = "EV charger installer marketing UK"
 const canonicalPath = "/ev-charger-installers"
@@ -137,6 +143,16 @@ export const metadata: Metadata = buildMetadata({
 
 export default function EVChargerInstallersPage() {
   const faqSchema = getFAQPageSchema(faqItems)
+  const serviceSchema = getServiceSchema({
+    name: "EV Charger Installer Marketing",
+    description:
+      "NobleLeads delivers marketing for EV charger installers UK-wide using conversion websites, Google Ads and CRM automation so you can win more domestic and commercial EV charging installations consistently.",
+    url: `${BUSINESS_URL}${canonicalPath}`,
+  })
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: BUSINESS_URL },
+    { name: "EV Charger Installer Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+  ])
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -307,7 +323,7 @@ export default function EVChargerInstallersPage() {
 
       <Footer />
       <MobileCTABar />
-      <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
+      <JsonLd data={[getLocalBusinessSchema(), faqSchema, serviceSchema, breadcrumbSchema]} />
     </main>
   )
 }

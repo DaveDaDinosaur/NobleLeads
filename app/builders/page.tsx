@@ -13,7 +13,13 @@ import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-
 import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
 import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
-import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
+import {
+  BUSINESS_URL,
+  getFAQPageSchema,
+  getLocalBusinessSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from "../(shared)/schema"
 
 const primaryKeyword = "builder marketing agency UK"
 const canonicalPath = "/builders"
@@ -137,6 +143,16 @@ export const metadata: Metadata = buildMetadata({
 
 export default function BuildersPage() {
   const faqSchema = getFAQPageSchema(faqItems)
+  const serviceSchema = getServiceSchema({
+    name: "Builder Marketing",
+    description:
+      "NobleLeads delivers builder marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more extensions, loft conversions and refurbishments consistently.",
+    url: `${BUSINESS_URL}${canonicalPath}`,
+  })
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: BUSINESS_URL },
+    { name: "Builder Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+  ])
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -298,7 +314,7 @@ export default function BuildersPage() {
 
       <Footer />
       <MobileCTABar />
-      <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
+      <JsonLd data={[getLocalBusinessSchema(), faqSchema, serviceSchema, breadcrumbSchema]} />
     </main>
   )
 }

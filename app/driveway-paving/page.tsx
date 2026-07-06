@@ -13,7 +13,13 @@ import { PainPointsGrid, type PainPoint } from "@/components/trades/pain-points-
 import { HowItWorksSteps, type HowItWorksStep } from "@/components/trades/how-it-works-steps"
 import { TradePackages } from "@/components/trades/trade-packages"
 import { buildMetadata } from "../(shared)/seo-config"
-import { getFAQPageSchema, getLocalBusinessSchema } from "../(shared)/schema"
+import {
+  BUSINESS_URL,
+  getFAQPageSchema,
+  getLocalBusinessSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from "../(shared)/schema"
 
 const primaryKeyword = "marketing for driveway and paving companies UK"
 const canonicalPath = "/driveway-paving"
@@ -136,6 +142,16 @@ export const metadata: Metadata = buildMetadata({
 
 export default function DrivewayPavingPage() {
   const faqSchema = getFAQPageSchema(faqItems)
+  const serviceSchema = getServiceSchema({
+    name: "Driveway & Paving Marketing",
+    description:
+      "NobleLeads delivers marketing for driveway and paving companies UK-wide using conversion websites, Google Ads and CRM automation so you can win more block paving, resin and tarmac jobs consistently.",
+    url: `${BUSINESS_URL}${canonicalPath}`,
+  })
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: BUSINESS_URL },
+    { name: "Driveway & Paving Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+  ])
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -298,7 +314,7 @@ export default function DrivewayPavingPage() {
 
       <Footer />
       <MobileCTABar />
-      <JsonLd data={[getLocalBusinessSchema(), faqSchema]} />
+      <JsonLd data={[getLocalBusinessSchema(), faqSchema, serviceSchema, breadcrumbSchema]} />
     </main>
   )
 }

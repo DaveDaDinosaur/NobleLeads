@@ -13,12 +13,6 @@ export function getLocalBusinessSchema() {
     name: BUSINESS_NAME,
     url: BUSINESS_URL,
     telephone: "+441223679988",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Cambridge",
-      addressRegion: "England",
-      addressCountry: "GB",
-    },
     areaServed: "United Kingdom",
     description:
       "Digital marketing agency for UK property service trades. Websites, Google Ads, CRM automation and lead generation for cleaners, roofers, landscapers and tradespeople.",
@@ -89,6 +83,53 @@ export function getFAQPageSchema(items: FAQItem[]) {
         "@type": "Answer",
         text: item.answer,
       },
+    })),
+  }
+}
+
+type ServiceSchemaOptions = {
+  name: string
+  description: string
+  url: string
+  areaServed?: string
+}
+
+export function getServiceSchema({
+  name,
+  description,
+  url,
+  areaServed = "United Kingdom",
+}: ServiceSchemaOptions) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: name,
+    name,
+    description,
+    url,
+    areaServed,
+    provider: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+      url: BUSINESS_URL,
+    },
+  }
+}
+
+type BreadcrumbItem = {
+  name: string
+  url: string
+}
+
+export function getBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
     })),
   }
 }
