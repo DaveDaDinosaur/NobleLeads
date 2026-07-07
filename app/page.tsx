@@ -7,9 +7,9 @@ import { getFAQPageSchema, getLocalBusinessSchema } from "./(shared)/schema"
 import { homepageFAQs } from "@/components/home/faq-section"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Lead Generation & Marketing for UK Trades",
+  title: "Lead Generation Agency for UK Trades",
   description:
-    "NobleLeads is a marketing agency for tradesmen in the UK, helping cleaners, roofers, landscapers and more get consistent leads with conversion websites, Google Ads and CRM automation.",
+    "NobleLeads is a lead generation agency for UK trades, helping cleaners, roofers, landscapers and more get consistent leads with conversion websites, Google Ads and CRM automation.",
   canonicalPath: "/",
 })
 

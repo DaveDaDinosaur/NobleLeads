@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "best-checkatrade-alternative",
+    title: "Best Checkatrade Alternative for UK Trades in 2026",
+    description:
+      "How TrustaTrader, Rated People, MyBuilder and Bark compare as Checkatrade alternatives, and why the real fix most trades need isn't another directory at all.",
+    readTime: "9 min read",
+    category: "Platform Reviews",
+  },
+  {
     slug: "how-much-do-bark-credits-cost",
     title: "How Much Do Bark Credits Cost? Full 2026 Pricing Breakdown",
     description:

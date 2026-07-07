@@ -43,8 +43,8 @@ export function HeroSection() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary" />
             </span>
-            <span className="sm:hidden">UK Growth Agency</span>
-            <span className="hidden sm:inline">UK Growth Agency for Property Service Businesses</span>
+            <span className="sm:hidden">UK Lead Generation Agency</span>
+            <span className="hidden sm:inline">UK Lead Generation Agency for Property Service Businesses</span>
           </div>
 
           {/* Main headline */}
