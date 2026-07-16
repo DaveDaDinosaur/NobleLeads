@@ -26,8 +26,12 @@ function initGtag() {
   }
 
   if (typeof window.gtag !== "function") {
-    window.gtag = function gtag(...args: unknown[]) {
-      window.dataLayer?.push(args)
+    // gtag.js only processes commands pushed as the raw `arguments` object.
+    // Pushing a spread array instead makes it silently ignore config/events,
+    // so no page_view or events are ever sent to GA4.
+    window.gtag = function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer?.push(arguments)
     }
   }
 
