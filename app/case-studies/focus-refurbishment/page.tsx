@@ -12,12 +12,18 @@ import { getArticleSchema } from "../../(shared)/schema"
 
 const canonicalPath = "/case-studies/focus-refurbishment"
 
-export const metadata: Metadata = buildMetadata({
-  title: "Focus Refurbishment Case Study",
-  description:
-    "How NobleLeads helped Focus Refurbishment, a commercial refurbishment company operating across the M25 and Kent, go from referral-only to a full lead and operations system.",
-  canonicalPath,
-})
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: "Focus Refurbishment Case Study",
+    description:
+      "How NobleLeads helped Focus Refurbishment, a commercial refurbishment company operating across the M25 and Kent, go from referral-only to a full lead and operations system.",
+    canonicalPath,
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 const articleSchema = getArticleSchema({
   headline: "Focus Refurbishment, From Referrals and a Broken Website to a Full Growth System",

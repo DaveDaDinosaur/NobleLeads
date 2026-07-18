@@ -16,8 +16,6 @@ const routes: SitemapEntry[] = [
   { path: "/services", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-02-27" },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-02-27" },
   { path: "/contact", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-06" },
-  { path: "/case-studies", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-06" },
-  { path: "/case-studies/focus-refurbishment", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-06" },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8, lastModified: "2026-07-07" },
   { path: "/blog/best-checkatrade-alternative", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-07" },
   { path: "/blog/is-bark-worth-it-tradesmen", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-06-13" },

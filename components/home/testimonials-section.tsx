@@ -3,7 +3,6 @@
 import { SectionReveal } from "@/components/section-reveal"
 import { ParallaxSection } from "@/components/parallax-section"
 import { Star, Quote } from "lucide-react"
-import Link from "next/link"
 
 const testimonials = [
   {
@@ -19,13 +18,6 @@ const testimonials = [
     name: "Amir K. roofing contractor",
     role: "Owner, 4-man roofing team · Birmingham",
     result: "Off Checkatrade in 3 months",
-  },
-  {
-    quote:
-      "The missed call text-back alone paid for the first month. Missed calls get a reply within seconds, quotes are followed up automatically and I can see exactly what came from which campaign, no more guessing.",
-    name: "Craig H. owner",
-    role: "Focus Refurbishment · Commercial refurbishment · Kent",
-    result: "First month ROI covered by text-back",
   },
 ]
 
@@ -88,17 +80,6 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        <SectionReveal delay={500}>
-          <div className="mt-8 sm:mt-10 text-center">
-            <Link
-              href="/case-studies/focus-refurbishment"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
-            >
-              See how we helped Focus Refurbishment go from referrals to a full growth system
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
-          </div>
-        </SectionReveal>
       </div>
     </section>
   )
