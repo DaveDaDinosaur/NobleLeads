@@ -12,11 +12,11 @@ type SitemapEntry = {
 // lastModified reflects when each page's content was actually last changed,
 // not a single blanket date for the whole site.
 const routes: SitemapEntry[] = [
-  { path: "/", changeFrequency: "weekly", priority: 1.0, lastModified: "2026-02-27" },
+  { path: "/", changeFrequency: "weekly", priority: 1.0, lastModified: "2026-07-06" },
   { path: "/services", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-02-27" },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-02-27" },
   { path: "/contact", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-06" },
-  { path: "/blog", changeFrequency: "weekly", priority: 0.8, lastModified: "2026-07-07" },
+  { path: "/blog", changeFrequency: "weekly", priority: 0.8, lastModified: "2026-07-26" },
   { path: "/blog/best-checkatrade-alternative", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-07" },
   { path: "/blog/how-to-get-roofing-leads-without-checkatrade", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-26" },
   { path: "/blog/is-bark-worth-it-tradesmen", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-06-13" },
@@ -34,10 +34,10 @@ const routes: SitemapEntry[] = [
   { path: "/about", changeFrequency: "monthly", priority: 0.6, lastModified: "2026-07-06" },
   // Trade landing pages
   { path: "/window-cleaners", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
-  { path: "/roofers", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
+  { path: "/roofers", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-26" },
   { path: "/electricians", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
   { path: "/plumbers", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
-  { path: "/landscapers", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
+  { path: "/landscapers", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-26" },
   { path: "/painters-decorators", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
   { path: "/domestic-cleaners", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
   { path: "/driveway-paving", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-07-06" },
