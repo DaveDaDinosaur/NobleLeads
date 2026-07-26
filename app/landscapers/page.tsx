@@ -21,7 +21,7 @@ import {
   getBreadcrumbSchema,
 } from "../(shared)/schema"
 
-const primaryKeyword = "landscaper marketing agency UK"
+const primaryKeyword = "landscaping lead generation"
 const canonicalPath = "/landscapers"
 
 type FAQItem = { question: string; answer: string }
@@ -36,6 +36,16 @@ const faqItems: FAQItem[] = [
     question: "How long before I start getting new landscaping enquiries?",
     answer:
       "With Google Ads running, most landscaping businesses start seeing new leads within 2–3 weeks. We also time campaigns to peak demand, ahead of spring and early summer, so you're capturing searches when homeowners have budgets ready.",
+  },
+  {
+    question: "How do I get more landscaping leads without buying them?",
+    answer:
+      "Rather than paying per lead on Checkatrade or Bark, we build a landscaping lead generation system you own: a portfolio website that converts, Google Ads targeting people searching for landscapers and garden designers in your area, and local SEO so you rank over time. The leads come to you directly and don't stop when you pause a subscription.",
+  },
+  {
+    question: "Do you do SEO for landscaping companies?",
+    answer:
+      "Yes. SEO for landscaping companies is part of what we do — optimising your website and Google Business Profile so you rank for landscaping and garden design searches in your service area. Paid ads bring leads in quickly while your rankings build.",
   },
   {
     question: "Can you help me build recurring maintenance revenue?",
@@ -129,23 +139,23 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Landscaper Marketing Agency UK | More Leads",
+  title: "Landscaping Lead Generation & Marketing Agency UK",
   description:
-    "NobleLeads delivers landscaping marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more garden projects and maintenance contracts consistently.",
+    "NobleLeads is a landscaping lead generation agency helping UK landscapers and garden designers get more landscaping leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
   canonicalPath,
 })
 
 export default function LandscapersPage() {
   const faqSchema = getFAQPageSchema(faqItems)
   const serviceSchema = getServiceSchema({
-    name: "Landscaper Marketing",
+    name: "Landscaping Lead Generation & Marketing",
     description:
-      "NobleLeads delivers landscaping marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more garden projects and maintenance contracts consistently.",
+      "NobleLeads is a landscaping lead generation agency helping UK landscapers and garden designers get more landscaping leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
     url: `${BUSINESS_URL}${canonicalPath}`,
   })
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: BUSINESS_URL },
-    { name: "Landscaper Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+    { name: "Landscaping Lead Generation", url: `${BUSINESS_URL}${canonicalPath}` },
   ])
 
   return (
@@ -161,16 +171,18 @@ export default function LandscapersPage() {
                 Trade Landing Page · Landscapers
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Landscaper Marketing That Fills Your Season
+                Landscaping Lead Generation That Fills Your Season
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Most landscaping businesses are brilliant at transforming outdoor
                 spaces but struggle to keep the enquiries flowing in between projects.
                 One big job ends, and there{"'"}s suddenly a scramble for the next one.
-                NobleLeads works with UK landscapers as a{" "}
-                <span className="font-semibold text-foreground">{primaryKeyword}</span>: building the lead system that keeps your diary full with the right
-                projects at the right prices, whether that{"'"}s full garden redesigns,
-                hard landscaping or ongoing maintenance contracts.
+                NobleLeads focuses on{" "}
+                <span className="font-semibold text-foreground">{primaryKeyword}</span>{" "}
+                for UK landscapers, building the lead system that keeps your diary
+                full with the right projects at the right prices, whether that{"'"}s
+                full garden redesigns, hard landscaping or ongoing maintenance
+                contracts.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Link

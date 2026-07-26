@@ -11,6 +11,14 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const posts: BlogPostMeta[] = [
   {
+    slug: "how-to-get-roofing-leads-without-checkatrade",
+    title: "How to Get Roofing Leads Without Checkatrade (2026)",
+    description:
+      "What Checkatrade, Bark and pay-per-lead platforms really cost roofers in 2026, and how to build a roofing lead system you own with a website, Google Ads, local SEO and follow-up.",
+    readTime: "8 min read",
+    category: "Lead Generation",
+  },
+  {
     slug: "best-checkatrade-alternative",
     title: "Best Checkatrade Alternative for UK Trades in 2026",
     description:

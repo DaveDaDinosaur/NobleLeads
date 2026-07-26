@@ -18,6 +18,7 @@ const routes: SitemapEntry[] = [
   { path: "/contact", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-06" },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8, lastModified: "2026-07-07" },
   { path: "/blog/best-checkatrade-alternative", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-07" },
+  { path: "/blog/how-to-get-roofing-leads-without-checkatrade", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-07-26" },
   { path: "/blog/is-bark-worth-it-tradesmen", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-06-13" },
   { path: "/blog/is-bark-worth-it-plumbers", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-06-19" },
   { path: "/blog/is-bark-worth-it-electricians", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-06-19" },
