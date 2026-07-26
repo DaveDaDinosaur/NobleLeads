@@ -21,7 +21,7 @@ import {
   getBreadcrumbSchema,
 } from "../(shared)/schema"
 
-const primaryKeyword = "lead generation for roofers UK"
+const primaryKeyword = "roofing lead generation"
 const canonicalPath = "/roofers"
 
 type FAQItem = { question: string; answer: string }
@@ -36,6 +36,16 @@ const faqItems: FAQItem[] = [
     question: "How long before I start getting roofing enquiries?",
     answer:
       "With well-set-up Google Ads, most roofers start seeing new leads in the first 2–3 weeks. SEO takes longer, but your paid campaigns and website work together from day one to bring in enquiries while rankings build.",
+  },
+  {
+    question: "How do I get more roofing leads without buying them?",
+    answer:
+      "Instead of paying per lead on Checkatrade or Bark, we build a roofing lead generation system you own: a conversion-focused website, Google Ads targeting people searching for roofers in your area, and local SEO so you rank for roofing searches over time. The leads come to you directly and don't stop the moment you pause a subscription.",
+  },
+  {
+    question: "Do you do SEO for roofing companies?",
+    answer:
+      "Yes. SEO for roofing companies is a core part of what we do — optimising your site and Google Business Profile so you rank for roofing searches in your service area. Paid ads bring leads in quickly while your rankings build, so you're not waiting months for results.",
   },
   {
     question: "Can you help during storm season and emergency spikes?",
@@ -135,23 +145,23 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Roofer Marketing Agency UK | More Leads, More Jobs",
+  title: "Roofing Lead Generation & Marketing Agency UK",
   description:
-    "NobleLeads delivers lead generation for roofers UK-wide using conversion websites, Google Ads and CRM automation so you can win more profitable roofing jobs consistently.",
+    "NobleLeads is a roofing lead generation agency helping UK roofers get more roofing leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
   canonicalPath,
 })
 
 export default function RoofersPage() {
   const faqSchema = getFAQPageSchema(faqItems)
   const serviceSchema = getServiceSchema({
-    name: "Roofer Marketing",
+    name: "Roofing Lead Generation & Marketing",
     description:
-      "NobleLeads delivers lead generation for roofers UK-wide using conversion websites, Google Ads and CRM automation so you can win more profitable roofing jobs consistently.",
+      "NobleLeads is a roofing lead generation agency helping UK roofers get more roofing leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
     url: `${BUSINESS_URL}${canonicalPath}`,
   })
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: BUSINESS_URL },
-    { name: "Roofer Marketing", url: `${BUSINESS_URL}${canonicalPath}` },
+    { name: "Roofing Lead Generation", url: `${BUSINESS_URL}${canonicalPath}` },
   ])
 
   return (
