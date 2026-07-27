@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/bark-vs-checkatrade"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bark vs Checkatrade: Which Is Better for UK Tradesmen? (2026)",
+  title: "Bark vs Checkatrade 2026: Costs, Leads & Which Wins",
   description:
-    "Bark vs Checkatrade: honest comparison of costs, lead quality and which platform actually delivers better ROI for UK tradespeople in 2026.",
+    "Bark: pay £9–£40 per lead, no monthly fee. Checkatrade: £60–£500+/month plus lead fees. Side-by-side costs and which UK trades each suits.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Bark vs Checkatrade: Which Is Better for UK Tradesmen? (2026)",
+  headline: "Bark vs Checkatrade 2026: Costs, Leads & Which Wins",
   description:
-    "An honest head-to-head comparison of Bark and Checkatrade for UK tradespeople in 2026, covering real costs, lead quality, platform models and what to do instead.",
+    "Bark vs Checkatrade for UK trades in 2026: pay-per-lead credits vs £60–£500+/month membership, lead quality, and which platform wins for your trade.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -86,7 +86,7 @@ export default function BarkVsCheckatradePage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bark vs Checkatrade: Which Is Better for UK Tradesmen in 2026?
+                Bark vs Checkatrade 2026: Costs, Leads & Which Wins
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark and Checkatrade are two of the most widely used lead platforms

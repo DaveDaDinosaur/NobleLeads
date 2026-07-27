@@ -15,16 +15,16 @@ const primaryKeyword = "is bark worth it for tradesmen UK"
 const canonicalPath = "/blog/is-bark-worth-it-tradesmen"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Is Bark Worth It for Tradesmen in 2026? Honest Answer",
+  title: "Bark for Tradesmen 2026: £150–£400/Month — Worth It?",
   description:
-    "Is Bark.com worth it for UK tradesmen in 2026? We break down the real cost per lead, the quality problem, what tradesmen actually say and what to do instead.",
+    "Active Bark users often spend £150–£400/month on credits. See real cost per job, why lead quality fails, and when UK tradesmen should stop paying.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Is Bark Worth It for Tradesmen in 2026? Honest Answer",
+  headline: "Bark for Tradesmen 2026: £150–£400/Month — Worth It?",
   description:
-    "An honest breakdown of whether Bark.com is worth it for UK tradesmen in 2026, covering real costs, lead quality, what other tradesmen say and the alternatives.",
+    "Bark.com for UK tradesmen in 2026: typical £150–£400/month spend, shared leads, real cost per booked job, and better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-13",
 })
@@ -78,7 +78,7 @@ export default function IsBarkWorthItPage() {
                 Blog · Lead Generation
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Is Bark Worth It for Tradesmen in 2026? Honest Answer
+                Bark for Tradesmen 2026: £150–£400/Month — Worth It?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark.com has been around long enough that most UK tradesmen have

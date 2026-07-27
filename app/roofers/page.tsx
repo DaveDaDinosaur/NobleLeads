@@ -145,9 +145,9 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Roofing Lead Generation & Marketing Agency UK",
+  title: "Roofing Leads Without Checkatrade or Bark",
   description:
-    "NobleLeads is a roofing lead generation agency helping UK roofers get more roofing leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
+    "Get exclusive roofing leads you own — website, Google Ads and local SEO for UK roofers. Stop renting enquiries from Checkatrade and Bark.",
   canonicalPath,
 })
 

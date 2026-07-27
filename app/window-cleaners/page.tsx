@@ -135,9 +135,9 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Window Cleaner Marketing Agency UK | More Clients",
+  title: "Window Cleaning Leads Without Buying Rounds",
   description:
-    "NobleLeads delivers marketing for window cleaners UK-wide using conversion websites, Google Ads and CRM automation so you can grow your round, build a dominant review presence and win commercial contracts.",
+    "Grow your window cleaning round with a site, Google Ads and reviews that win domestic and commercial work — without buying leads or cold canvassing only.",
   canonicalPath,
 })
 

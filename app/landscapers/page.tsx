@@ -139,9 +139,9 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Landscaping Lead Generation & Marketing Agency UK",
+  title: "Landscaping Leads Without Checkatrade or Bark",
   description:
-    "NobleLeads is a landscaping lead generation agency helping UK landscapers and garden designers get more landscaping leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
+    "Win landscaping leads you own — portfolio site, Google Ads and local SEO for UK landscapers. Stop paying directories for shared garden enquiries.",
   canonicalPath,
 })
 

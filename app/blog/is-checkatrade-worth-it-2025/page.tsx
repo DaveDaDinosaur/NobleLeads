@@ -17,16 +17,16 @@ const primaryKeyword = "is checkatrade worth it 2026 UK"
 const canonicalPath = "/blog/is-checkatrade-worth-it-2025"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Is Checkatrade Worth It in 2026? Honest Answer for UK Trades",
+  title: "Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month",
   description:
-    "Thinking about Checkatrade in 2026? We break down the real costs, where it still works, where it doesn’t, and how to build a lead system you own as a UK tradesperson.",
+    "Membership plus per-lead fees often hits £400–£1,000+/month. See when Checkatrade still works for UK trades — and when you should own your leads instead.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Is Checkatrade Worth It in 2026? Honest Answer for UK Trades",
+  headline: "Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month",
   description:
-    "An honest breakdown of whether Checkatrade is still worth it for UK trades in 2026, the real costs and what you can do instead.",
+    "Whether Checkatrade is worth it for UK trades in 2026: real all-in monthly costs of £400–£1,000+, where it still works, and owned alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-01-01",
 })
@@ -70,7 +70,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 Blog · Lead Generation
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Is Checkatrade Worth It in 2026? Honest Answer for UK Trades
+                Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Checkatrade has been the default option for a lot of UK tradespeople

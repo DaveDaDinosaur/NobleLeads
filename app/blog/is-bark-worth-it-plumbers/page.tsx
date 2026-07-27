@@ -14,19 +14,19 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const canonicalPath = "/blog/is-bark-worth-it-plumbers"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Is Bark Worth It for Plumbers in 2026? Honest Answer",
+  title: "Bark for Plumbers 2026: £16–£36 Leads — Worth It?",
   description:
-    "Is Bark.com worth it for UK plumbers in 2026? We break down real credit costs per job type, the Gas Safe problem, emergency callouts Bark misses, and what actually works instead.",
+    "Bark plumbing leads cost £16–£36 and are shared with up to 4 others. See the Gas Safe gap, why emergencies bypass Bark, and what works better.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Is Bark Worth It for Plumbers in 2026? Honest Answer",
+  headline: "Bark for Plumbers 2026: £16–£36 Leads — Worth It?",
   description:
-    "An honest breakdown of whether Bark.com is worth it for UK plumbers in 2026, covering credit costs by job type, Gas Safe verification gaps, emergency search intent and better alternatives.",
+    "Bark.com for UK plumbers in 2026: £16–£36 per lead, shared competition, Gas Safe gaps, emergency callouts Bark misses, and better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
-  dateModified: "2026-06-19",
+  dateModified: "2026-07-28",
   authorType: "Organization",
 })
 
@@ -89,7 +89,7 @@ export default function IsBarkWorthItPlumbersPage() {
                 Blog · 11 min read
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Is Bark Worth It for Plumbers in 2026? Honest Answer
+                Bark for Plumbers 2026: £16–£36 Leads — Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 

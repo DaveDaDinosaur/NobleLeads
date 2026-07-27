@@ -14,19 +14,19 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const canonicalPath = "/blog/is-bark-worth-it-electricians"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Is Bark Worth It for Electricians in 2026? Honest Answer",
+  title: "Bark for Electricians 2026: £13–£30 Leads — Worth It?",
   description:
-    "Is Bark.com worth it for UK electricians in 2026? We break down real credit costs, lead quality, what electricians on Reddit and forums actually say, and what to do instead.",
+    "Bark electrical leads cost £13–£30+ and go to up to 5 electricians. See real credit maths, when it fails on small jobs, and what beats it.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Is Bark Worth It for Electricians in 2026? Honest Answer",
+  headline: "Bark for Electricians 2026: £13–£30 Leads — Worth It?",
   description:
-    "An honest breakdown of whether Bark.com is worth it for UK electricians in 2026, covering real credit costs, lead quality, competition, and better alternatives for growing your electrical business.",
+    "Bark.com for UK electricians in 2026: £13–£30+ per lead, shared with up to five competitors, and better ROI from Google Ads and GBP.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
-  dateModified: "2026-06-19",
+  dateModified: "2026-07-28",
   authorType: "Organization",
 })
 
@@ -89,7 +89,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 Blog · 10 min read
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Is Bark Worth It for Electricians in 2026? Honest Answer
+                Bark for Electricians 2026: £13–£30 Leads — Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
