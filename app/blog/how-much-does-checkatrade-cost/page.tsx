@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/how-much-does-checkatrade-cost"
 
 export const metadata: Metadata = buildMetadata({
-  title: "How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown",
+  title: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
   description:
-    "How much does Checkatrade really cost in 2026? Membership fees, per-lead costs, real-world monthly totals and whether it's actually worth the money for UK tradespeople.",
+    "Checkatrade doesn't publish prices. Here's what UK trades actually pay in 2026: £60–£500+/month membership, £5–£40 per lead, and what a typical month really costs all-in.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown",
+  headline: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
   description:
-    "A full breakdown of what Checkatrade costs UK tradespeople in 2026, membership fees, per-lead charges, real-world monthly totals and how to work out whether it is worth it.",
+    "Real Checkatrade pricing for UK trades in 2026: membership from £60–£500+/month, per-lead fees of £5–£40, and typical all-in monthly totals.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -86,7 +86,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown
+                Checkatrade Cost 2026: Real Prices From £60–£500/Month
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Checkatrade does not publish its pricing on its website. You go

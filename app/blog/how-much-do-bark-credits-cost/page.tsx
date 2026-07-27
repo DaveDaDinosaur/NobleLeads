@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/how-much-do-bark-credits-cost"
 
 export const metadata: Metadata = buildMetadata({
-  title: "How Much Do Bark Credits Cost? Full 2026 Pricing Breakdown",
+  title: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
   description:
-    "Exactly how much Bark credits cost in 2026, what they expire, what a real lead costs per trade, and whether the credit model is actually worth it for UK tradespeople.",
+    "Bark credits cost ~£1.20 + VAT each in 2026. See real lead prices by job type (£7–£40), the 3-month expiry rule, and what UK trades actually pay per job won.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "How Much Do Bark Credits Cost? Full 2026 Pricing Breakdown",
+  headline: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
   description:
-    "A full breakdown of Bark credit costs for UK tradespeople in 2026, including per-credit price, cost per lead by job type, the 3-month expiry rule and whether it is worth the spend.",
+    "Bark credit prices for UK tradespeople in 2026: ~£1.20 + VAT per credit, £7–£40 per lead by job type, the 3-month expiry rule, and real cost per job won.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -81,7 +81,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                How Much Do Bark Credits Cost? Full 2026 Pricing Breakdown
+                Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark{"'"}s credit system looks simple until you try to work out what

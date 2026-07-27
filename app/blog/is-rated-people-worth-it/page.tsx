@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/is-rated-people-worth-it"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Is Rated People Worth It for Tradespeople? Honest 2026 Review",
+  title: "Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?",
   description:
-    "Is Rated People worth it for UK tradespeople in 2026? Real costs, how the platform works, what tradespeople actually say, and whether there are better alternatives.",
+    "Rated People costs ~£35 + VAT/month plus ~£15 per lead. See real pricing, the 3-competitor cap advantage, and whether it beats Checkatrade for UK trades in 2026.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Is Rated People Worth It for Tradespeople? Honest 2026 Review",
+  headline: "Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?",
   description:
-    "An honest review of Rated People for UK tradespeople in 2026, covering subscription costs, per-lead pricing, lead quality, platform changes and whether there are better alternatives.",
+    "Rated People pricing and review for UK trades in 2026: ~£35 + VAT/month subscription, ~£15 per lead, three-competitor cap, and how it compares to Checkatrade.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -86,7 +86,7 @@ export default function IsRatedPeopleWorthItPage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Is Rated People Worth It for Tradespeople in 2026?
+                Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Rated People sits in a slightly different position to Bark and

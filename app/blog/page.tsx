@@ -28,25 +28,25 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "how-much-do-bark-credits-cost",
-    title: "How Much Do Bark Credits Cost? Full 2026 Pricing Breakdown",
+    title: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
     description:
-      "Exactly what Bark credits cost, the 3-month expiry rule, real cost per lead by job type, and how to work out if the spend is actually worth it for your trade.",
+      "Bark credits cost ~£1.20 + VAT each. Real lead prices by job type (£7–£40), the 3-month expiry rule, and what UK trades actually pay per job won.",
     readTime: "9 min read",
     category: "Platform Reviews",
   },
   {
     slug: "is-rated-people-worth-it",
-    title: "Is Rated People Worth It for Tradespeople? Honest 2026 Review",
+    title: "Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?",
     description:
-      "Real costs, the three-competitor cap advantage, what tradespeople actually say, and whether it beats Checkatrade for UK trades in 2026.",
+      "Rated People costs ~£35 + VAT/month plus ~£15 per lead. Real pricing, the 3-competitor cap, and whether it beats Checkatrade for UK trades.",
     readTime: "11 min read",
     category: "Platform Reviews",
   },
   {
     slug: "how-much-does-checkatrade-cost",
-    title: "How Much Does Checkatrade Cost Per Month? Full 2026 Breakdown",
+    title: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
     description:
-      "Membership fees, per-lead costs, real-world monthly totals and the one metric that actually tells you whether Checkatrade is worth the money.",
+      "Checkatrade doesn't publish prices. What UK trades actually pay: £60–£500+/month membership, £5–£40 per lead, and typical all-in monthly totals.",
     readTime: "11 min read",
     category: "Platform Reviews",
   },
@@ -60,9 +60,9 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "mybuilder-vs-checkatrade",
-    title: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
+    title: "MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?",
     description:
-      "An honest head-to-head on costs, lead quality and which trades each platform actually suits, plus what the best UK tradespeople do instead.",
+      "MyBuilder has no monthly fee. Checkatrade runs £100–£500+/month. Side-by-side costs, lead quality, and which platform suits your trade.",
     readTime: "13 min read",
     category: "Platform Reviews",
   },
@@ -76,9 +76,9 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "is-bark-worth-it-landscapers",
-    title: "Is Bark Worth It for Landscapers in 2026? Honest Answer",
+    title: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
     description:
-      "Lead costs, the rogue trader reputation problem, why maintenance contracts rarely come from Bark, and why landscaping is a visual trade that needs its own platform.",
+      "Bark landscaping leads cost £16–£28 and are shared. Real credit maths, why maintenance rarely comes from Bark, and what works better.",
     readTime: "10 min read",
     category: "Platform Reviews",
   },

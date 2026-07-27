@@ -48,7 +48,9 @@ export function buildMetadata({
     : `${getSiteUrl()}${canonical}`
 
   return {
-    title: fullTitle,
+    // absolute: prevents root layout template ("%s | Noble Leads") from
+    // stacking a second brand suffix on top of "| NobleLeads"
+    title: { absolute: fullTitle },
     description: finalDescription,
     alternates: {
       canonical: canonicalUrl,

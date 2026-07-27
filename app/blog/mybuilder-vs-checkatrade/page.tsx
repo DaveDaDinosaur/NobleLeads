@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/mybuilder-vs-checkatrade"
 
 export const metadata: Metadata = buildMetadata({
-  title: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
+  title: "MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?",
   description:
-    "MyBuilder vs Checkatrade, an honest breakdown of costs, lead quality, which trades each suits, and whether either platform is actually worth your money in 2026.",
+    "MyBuilder has no monthly fee. Checkatrade runs £100–£500+/month. Side-by-side costs, lead quality, and which platform suits your trade — plus when neither is worth it.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "MyBuilder vs Checkatrade: Which Is Worth It for UK Trades? (2026)",
+  headline: "MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?",
   description:
-    "An honest head-to-head comparison of MyBuilder and Checkatrade for UK tradespeople in 2026, covering real costs, lead quality, and what to do instead.",
+    "MyBuilder vs Checkatrade cost and lead-quality comparison for UK trades in 2026: pay-per-shortlist vs £100–£500+/month membership, and which wins for your trade.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -86,7 +86,7 @@ export default function MyBuilderVsCheckatradePage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                MyBuilder vs Checkatrade: Which Is Worth It for UK Trades in 2026?
+                MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Both platforms promise a steadier flow of work. Both charge you for

@@ -14,19 +14,19 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const canonicalPath = "/blog/is-bark-worth-it-landscapers"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Is Bark Worth It for Landscapers in 2026? Honest Answer",
+  title: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
   description:
-    "Is Bark.com worth it for UK landscapers in 2026? We cover real lead costs, rogue trader reputational damage, why maintenance contracts rarely come from Bark, and what works better.",
+    "Bark landscaping leads cost £16–£28 and are shared with competitors. See real credit maths, why maintenance contracts rarely come from Bark, and what works better.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Is Bark Worth It for Landscapers in 2026? Honest Answer",
+  headline: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
   description:
-    "An honest assessment of Bark.com for UK landscapers in 2026, covering credit costs, lead quality, the rogue trader problem, maintenance contract acquisition and better alternatives.",
+    "Bark.com for UK landscapers in 2026: £16–£28 per lead, shared competition, maintenance-contract gaps, and better alternatives via Google Ads and your own website.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
-  dateModified: "2026-06-19",
+  dateModified: "2026-07-28",
   authorType: "Organization",
 })
 
@@ -89,7 +89,7 @@ export default function IsBarkWorthItLandscapersPage() {
                 Blog · 10 min read
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Is Bark Worth It for Landscapers in 2026? Honest Answer
+                Bark for Landscapers 2026: £16–£28 Leads — Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
