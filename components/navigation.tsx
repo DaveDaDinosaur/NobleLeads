@@ -35,16 +35,9 @@ export function Navigation() {
   }, [pathname])
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden"
-      document.body.style.touchAction = "none"
-    } else {
-      document.body.style.overflow = ""
-      document.body.style.touchAction = ""
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : ""
     return () => {
       document.body.style.overflow = ""
-      document.body.style.touchAction = ""
     }
   }, [isMobileMenuOpen])
 
@@ -132,6 +125,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
               className={`min-touch flex items-center justify-center text-2xl sm:text-3xl font-semibold transition-all duration-300 py-2 ${
                 pathname === link.href
                   ? "text-secondary"
@@ -150,6 +144,7 @@ export function Navigation() {
           ))}
           <Link
             href="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
             className="mt-4 min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300 active:scale-[0.98]"
             style={{
               transitionDelay: isMobileMenuOpen ? "300ms" : "0ms",
