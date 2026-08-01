@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Navigation } from "@/components/navigation"
@@ -27,10 +28,10 @@ const articleSchema = getArticleSchema({
 })
 
 const stats = [
-  { value: "Top 3", label: "Render search rankings", sub: "Dozens of terms within weeks of launch" },
-  { value: "374", label: "Search impressions", sub: "In the first 10 days indexed" },
+  { value: "0→Page 1", label: "From no website to page one", sub: "In weeks, not months" },
+  { value: "Top 3", label: "For dozens of render searches", sub: "#1 for several core terms" },
   { value: "5.0★", label: "Google rating", sub: "Across 19 reviews" },
-  { value: "0→live", label: "Full system from scratch", sub: "Site, branding, GBP, ads & analytics" },
+  { value: "Day 1", label: "Ads & tracking live from launch", sub: "Measurable from the first visitor" },
 ]
 
 export default function ThermalRenderSpecialistsCaseStudyPage() {
@@ -53,8 +54,9 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                 Dan runs Thermal Render Specialists, an external wall insulation and
                 silicone render firm based in Gravesend, serving South East London and
                 the surrounding counties. Genuinely skilled, manufacturer-approved
-                work, and until we stepped in, no website at all. This is how we took
-                the business from invisible to ranking on page one in a matter of weeks.
+                work, and until we stepped in, no website at all. This is how NobleLeads
+                took him from completely invisible to dominating render searches across
+                the South East, in a matter of weeks.
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
@@ -79,6 +81,25 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                 </a>
               </div>
             </header>
+          </SectionReveal>
+
+          <SectionReveal delay={60}>
+            <div className="relative mt-8 overflow-hidden rounded-xl border border-border/30 sm:mt-10">
+              <div className="relative aspect-[16/9]">
+                <Image
+                  src="/images/case-studies/thermal-render-specialists-website.png"
+                  alt="Thermal Render Specialists homepage with branded EWI and silicone render hero and approved-installer trust bar"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 48rem"
+                  className="object-cover object-top"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"
+                  aria-hidden
+                />
+              </div>
+            </div>
           </SectionReveal>
         </div>
       </section>
@@ -212,31 +233,31 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
           <SectionReveal delay={140}>
             <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                The Early Results
+                The Results
               </h2>
               <p>
-                Because everything was measured from day one, the traction is not a
-                guess, it is in the data. Within the first ten days of the site being
-                indexed, Thermal Render Specialists was already pulling{" "}
-                <span className="font-semibold text-foreground">374 search impressions</span>{" "}
-                and climbing fast, moving from position 69 to the top of page one in a
-                single week.
+                Because everything was measured from day one, the traction isn{"'"}t a
+                guess, it{"'"}s in the data. Within the first week of going live the
+                site rocketed from position 69 to the top of page one, and it hasn{"'"}t
+                looked back.
               </p>
               <p>
-                More importantly, the rankings are for the right searches. The site is
-                now ranking in the{" "}
-                <span className="font-semibold text-foreground">top three</span> for
-                dozens of render terms, sitting at or near number one for searches like
-                &quot;external rendering&quot;, &quot;render specialists&quot;,
-                &quot;commercial rendering london&quot; and &quot;thermal render
-                specialists&quot;, alongside a long list of location-specific render
-                searches across the South East and beyond.
+                Thermal Render Specialists now ranks in the{" "}
+                <span className="font-semibold text-foreground">top three for dozens
+                of render searches</span>, sitting at{" "}
+                <span className="font-semibold text-foreground">number one</span> for
+                terms like &quot;external rendering&quot;, &quot;render
+                specialists&quot; and &quot;commercial rendering london&quot;, plus a
+                long list of location searches right across the South East. For the
+                exact service Dan sells, he is now one of the first names a homeowner
+                sees, backed by a 5.0 star rating and the photos to prove the work.
               </p>
               <p>
-                Visitors are engaging too, spending an average of nearly two minutes on
-                the site, with paid and organic traffic both building week on week. For
-                a business that had zero online presence a few weeks earlier, that is a
-                standing start turned into genuine momentum.
+                Paid and organic traffic are both climbing week on week, visitors are
+                spending nearly two minutes on the site, and the Google Ads are
+                converting searches into enquiries from day one. A business that was
+                completely invisible a few weeks earlier is now dominating its local
+                search results, exactly the outcome NobleLeads is built to deliver.
               </p>
             </section>
           </SectionReveal>
