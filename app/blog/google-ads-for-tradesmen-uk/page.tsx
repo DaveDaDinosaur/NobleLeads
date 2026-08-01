@@ -187,7 +187,7 @@ export default function GoogleAdsForTradessmenPage() {
                 </li>
               </ul>
               <p>
-                Trades with very small average job values (under £80–100) need to be
+                Trades with very small average job values (under £80-100) need to be
                 more careful with their cost-per-click tolerance, but the model still
                 works with tight targeting.
               </p>
@@ -313,11 +313,11 @@ export default function GoogleAdsForTradessmenPage() {
                 5. Stopping campaigns too early
               </p>
               <p>
-                Google Ads campaigns take time to learn. The first 2–4 weeks are
+                Google Ads campaigns take time to learn. The first 2-4 weeks are
                 typically spent gathering data and adjusting. If you run a campaign for
                 10 days, spend £150 and don{"'"}t get any jobs, that{"'"}s not necessarily
                 because it doesn{"'"}t work, it{"'"}s because it hasn{"'"}t had time to optimise.
-                Give a well-structured campaign at least 4–6 weeks before making
+                Give a well-structured campaign at least 4-6 weeks before making
                 significant judgements on performance.
               </p>
             </section>
@@ -343,14 +343,14 @@ export default function GoogleAdsForTradessmenPage() {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
-                    £300–£600/month:
+                    £300-£600/month:
                   </span>{" "}
                   a solid starting point for most local trade campaigns. Enough volume
                   to get real data, generate consistent leads and begin optimising.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
-                    £600–£1,500/month:
+                    £600-£1,500/month:
                   </span>{" "}
                   for trades with high job values (roofers, builders, driveway companies)
                   or those covering a larger service area. More budget means more
@@ -387,7 +387,7 @@ export default function GoogleAdsForTradessmenPage() {
               </p>
               <p>
                 <span className="font-semibold text-foreground">SEO</span> builds your
-                organic (unpaid) rankings over time. It takes 3–6 months to see
+                organic (unpaid) rankings over time. It takes 3-6 months to see
                 meaningful movement, but once you{"'"}re ranking well, the traffic is
                 essentially free. A well-ranked trade website generates enquiries every
                 day without paying for each click.
@@ -398,7 +398,7 @@ export default function GoogleAdsForTradessmenPage() {
                   run ads while SEO builds
                 </span>
                 . Ads bring in leads from day one. SEO reduces your dependence on ad
-                spend over the following 6–12 months. Eventually, many trades find they
+                spend over the following 6-12 months. Eventually, many trades find they
                 can reduce their ad budget significantly because organic enquiries are
                 doing the heavy lifting.
               </p>
@@ -511,7 +511,7 @@ export default function GoogleAdsForTradessmenPage() {
                   <span className="font-semibold text-foreground">ROI:</span>{" "}
                   average job value divided by cost per booked job. If you{"'"}re spending
                   £150 to win a job worth £2,000, that{"'"}s a 13x return. The target is
-                  a minimum of 3–5x on most trade campaigns.
+                  a minimum of 3-5x on most trade campaigns.
                 </li>
               </ul>
               <p>

@@ -207,7 +207,7 @@ export function ServiceSections() {
                       </div>
                     </div>
                     <span className="text-[10px] font-mono text-secondary/60 uppercase tracking-wider">
-                      {globalIndex + 1}–{globalIndex + block.services.length} of 18
+                      {globalIndex + 1}-{globalIndex + block.services.length} of 18
                     </span>
                   </div>
 

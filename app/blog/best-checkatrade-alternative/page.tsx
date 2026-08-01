@@ -224,7 +224,7 @@ export default function BestCheckatradeAlternativePage() {
                 </li>
               </ul>
               <StatCallout
-                stat="£30–£80"
+                stat="£30-£80"
                 label="Typical cost per paying customer through a well-managed Google Ads campaign, often half of what tradespeople report paying per job won through Checkatrade."
                 accent="gold"
               />

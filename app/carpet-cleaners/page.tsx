@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new carpet cleaning enquiries?",
     answer:
-      "With Google Ads running, most carpet cleaners start seeing new leads within 2–3 weeks. Because carpet cleaning is often a search-driven, intention-led purchase, Google Ads convert particularly well in this trade.",
+      "With Google Ads running, most carpet cleaners start seeing new leads within 2-3 weeks. Because carpet cleaning is often a search-driven, intention-led purchase, Google Ads convert particularly well in this trade.",
   },
   {
     question: "Can you help me land commercial carpet cleaning contracts?",
@@ -232,12 +232,12 @@ export default function CarpetCleanersPage() {
               </h2>
               <p>
                 A domestic carpet clean typically earns{" "}
-                <span className="font-semibold text-foreground">£80–£180</span>.
+                <span className="font-semibold text-foreground">£80-£180</span>.
                 An end-of-tenancy deep clean is usually{" "}
-                <span className="font-semibold text-foreground">£150–£350</span>.
+                <span className="font-semibold text-foreground">£150-£350</span>.
                 A commercial contract could be worth{" "}
                 <span className="font-semibold text-foreground">
-                  £300–£1,500+ per month
+                  £300-£1,500+ per month
                 </span>{" "}
                 in recurring work.
               </p>

@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new electrical enquiries?",
     answer:
-      "With Google Ads running, most electricians start seeing new leads within 2–3 weeks. We also set up and optimise your Google Business Profile from day one, which drives organic enquiries alongside paid traffic.",
+      "With Google Ads running, most electricians start seeing new leads within 2-3 weeks. We also set up and optimise your Google Business Profile from day one, which drives organic enquiries alongside paid traffic.",
   },
   {
     question: "Can you help me get more rewires and consumer unit jobs rather than just small repairs?",
@@ -246,12 +246,12 @@ export default function ElectriciansPage() {
               <p>
                 Electrical job values vary widely. A small fault or consumer unit
                 swap might be{" "}
-                <span className="font-semibold text-foreground">£150–£400</span>. A
+                <span className="font-semibold text-foreground">£150-£400</span>. A
                 full rewire can be{" "}
-                <span className="font-semibold text-foreground">£3,000–£6,000+</span>.
+                <span className="font-semibold text-foreground">£3,000-£6,000+</span>.
                 An ongoing landlord EICR contract could be worth{" "}
                 <span className="font-semibold text-foreground">
-                  £500–£2,000 per month
+                  £500-£2,000 per month
                 </span>{" "}
                 in recurring work.
               </p>
@@ -281,7 +281,7 @@ export default function ElectriciansPage() {
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
                 "Typical result: A domestic electrician in the East Midlands was
                 relying on Checkatrade and word of mouth. Within 6 weeks of launching
-                their NobleLeads system, they were receiving 10–15 qualified enquiries
+                their NobleLeads system, they were receiving 10-15 qualified enquiries
                 per month, closed two consumer unit jobs in the first week and landed
                 an ongoing EICR contract with a local letting agent."
               </p>

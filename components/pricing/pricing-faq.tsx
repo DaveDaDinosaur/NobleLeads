@@ -11,7 +11,7 @@ import {
 const FAQ = [
   {
     q: "How long does it take to go live?",
-    a: "Core websites can go live within a few days. Growth and Dominate include more setup, we’ll give you a clear timeline on the discovery call, usually 2–4 weeks depending on scope.",
+    a: "Core websites can go live within a few days. Growth and Dominate include more setup, we’ll give you a clear timeline on the discovery call, usually 2-4 weeks depending on scope.",
   },
   {
     q: "Is there a contract?",

@@ -49,7 +49,7 @@ export function ServicesScrollGuide() {
       }
       setActiveIndex(idx)
 
-      // Fill progress 0–1 through the pillar range
+      // Fill progress 0-1 through the pillar range
       const range = end - start
       const through = viewportMid - start
       const progress = range > 0 ? Math.min(1, Math.max(0, through / range)) : 0

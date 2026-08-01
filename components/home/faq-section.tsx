@@ -16,7 +16,7 @@ export const homepageFAQs: FAQItem[] = [
   {
     question: "How long before I see results?",
     answer:
-      "For paid traffic, most clients start seeing new enquiries within the first 2–4 weeks. For SEO, meaningful movement typically takes 3–6 months. We’ll be clear about timelines before we recommend anything.",
+      "For paid traffic, most clients start seeing new enquiries within the first 2-4 weeks. For SEO, meaningful movement typically takes 3-6 months. We’ll be clear about timelines before we recommend anything.",
   },
   {
     question: "Do you work with sole traders as well as larger teams?",

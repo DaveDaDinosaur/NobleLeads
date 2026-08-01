@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new driveway enquiries?",
     answer:
-      "With Google Ads running, most driveway and paving companies start seeing new leads within 2–3 weeks. Driveways are often a considered purchase, so we also build follow-up sequences to keep prospects warm through a longer decision cycle.",
+      "With Google Ads running, most driveway and paving companies start seeing new leads within 2-3 weeks. Driveways are often a considered purchase, so we also build follow-up sequences to keep prospects warm through a longer decision cycle.",
   },
   {
     question: "Can you help me get commercial or developer paving work?",
@@ -229,11 +229,11 @@ export default function DrivewayPavingPage() {
               </h2>
               <p>
                 A standard block paving driveway is typically{" "}
-                <span className="font-semibold text-foreground">£3,000–£8,000</span>.
+                <span className="font-semibold text-foreground">£3,000-£8,000</span>.
                 A resin-bound driveway can be{" "}
-                <span className="font-semibold text-foreground">£4,000–£12,000+</span>.
+                <span className="font-semibold text-foreground">£4,000-£12,000+</span>.
                 A larger commercial project could run to{" "}
-                <span className="font-semibold text-foreground">£20,000–£60,000+</span>.
+                <span className="font-semibold text-foreground">£20,000-£60,000+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend),{" "}

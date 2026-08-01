@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long before I start getting new landscaping enquiries?",
     answer:
-      "With Google Ads running, most landscaping businesses start seeing new leads within 2–3 weeks. We also time campaigns to peak demand, ahead of spring and early summer, so you're capturing searches when homeowners have budgets ready.",
+      "With Google Ads running, most landscaping businesses start seeing new leads within 2-3 weeks. We also time campaigns to peak demand, ahead of spring and early summer, so you're capturing searches when homeowners have budgets ready.",
   },
   {
     question: "How do I get more landscaping leads without buying them?",
@@ -45,7 +45,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you do SEO for landscaping companies?",
     answer:
-      "Yes. SEO for landscaping companies is part of what we do — optimising your website and Google Business Profile so you rank for landscaping and garden design searches in your service area. Paid ads bring leads in quickly while your rankings build.",
+      "Yes. SEO for landscaping companies is part of what we do, optimising your website and Google Business Profile so you rank for landscaping and garden design searches in your service area. Paid ads bring leads in quickly while your rankings build.",
   },
   {
     question: "Can you help me build recurring maintenance revenue?",
@@ -141,7 +141,7 @@ const steps: HowItWorksStep[] = [
 export const metadata: Metadata = buildMetadata({
   title: "Landscaping Leads Without Checkatrade or Bark",
   description:
-    "Win landscaping leads you own — portfolio site, Google Ads and local SEO for UK landscapers. Stop paying directories for shared garden enquiries.",
+    "Win landscaping leads you own, portfolio site, Google Ads and local SEO for UK landscapers. Stop paying directories for shared garden enquiries.",
   canonicalPath,
 })
 
@@ -150,7 +150,7 @@ export default function LandscapersPage() {
   const serviceSchema = getServiceSchema({
     name: "Landscaping Lead Generation & Marketing",
     description:
-      "NobleLeads is a landscaping lead generation agency helping UK landscapers and garden designers get more landscaping leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
+      "NobleLeads is a landscaping lead generation agency helping UK landscapers and garden designers get more landscaping leads through conversion websites, Google Ads, SEO and CRM automation, without renting leads from Checkatrade or Bark.",
     url: `${BUSINESS_URL}${canonicalPath}`,
   })
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -256,11 +256,11 @@ export default function LandscapersPage() {
               <p>
                 Landscaping job values vary significantly. A garden tidy or small
                 patio might be{" "}
-                <span className="font-semibold text-foreground">£500–£1,500</span>. A
+                <span className="font-semibold text-foreground">£500-£1,500</span>. A
                 full garden redesign with hard landscaping is often{" "}
-                <span className="font-semibold text-foreground">£5,000–£20,000+</span>.
+                <span className="font-semibold text-foreground">£5,000-£20,000+</span>.
                 A monthly maintenance contract is typically{" "}
-                <span className="font-semibold text-foreground">£120–£350 per visit</span>.
+                <span className="font-semibold text-foreground">£120-£350 per visit</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), even a conservative outcome

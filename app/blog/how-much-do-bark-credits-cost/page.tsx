@@ -23,7 +23,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
+  headline: "Bark Credits Cost 2026: £1.20 Each, £7-£40 Per Lead",
   description:
     "Bark credit prices for UK tradespeople in 2026: ~£1.20 + VAT per credit, £7-£40 per lead by job type, the 3-month expiry rule, and real cost per job won.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -81,7 +81,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead
+                Bark Credits Cost 2026: £1.20 Each, £7-£40 Per Lead
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark{"'"}s credit system looks simple until you try to work out what
@@ -103,8 +103,8 @@ export default function HowMuchDoBarkCreditsCostPage() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Bark credits cost around{" "}
                 <span className="font-semibold text-foreground">£1.20 + VAT per credit</span>{" "}
-                in the UK, with discounts on larger packs. A single lead costs 5–20 credits (roughly{" "}
-                <span className="font-semibold text-foreground">£7–£40</span>) depending on trade and job size. Since November 2025, all credits expire{" "}
+                in the UK, with discounts on larger packs. A single lead costs 5-20 credits (roughly{" "}
+                <span className="font-semibold text-foreground">£7-£40</span>) depending on trade and job size. Since November 2025, all credits expire{" "}
                 <span className="font-semibold text-foreground">3 months after purchase</span>.
               </p>
             </div>
@@ -167,20 +167,20 @@ export default function HowMuchDoBarkCreditsCostPage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Small jobs</span>{" "}
-                  (minor repairs, one-off cleaning, small garden jobs): 5–8 credits, roughly{" "}
-                  <span className="font-semibold text-foreground">£7–£12</span>
+                  (minor repairs, one-off cleaning, small garden jobs): 5-8 credits, roughly{" "}
+                  <span className="font-semibold text-foreground">£7-£12</span>
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Mid-size jobs</span>{" "}
-                  (bathroom repairs, electrical work, fence installation): 10–15
+                  (bathroom repairs, electrical work, fence installation): 10-15
                   credits, roughly{" "}
-                  <span className="font-semibold text-foreground">£14–£22</span>
+                  <span className="font-semibold text-foreground">£14-£22</span>
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Larger projects</span>{" "}
-                  (full bathroom refits, rewires, extensions, driveways): 15–20+
+                  (full bathroom refits, rewires, extensions, driveways): 15-20+
                   credits, roughly{" "}
-                  <span className="font-semibold text-foreground">£22–£40+</span>
+                  <span className="font-semibold text-foreground">£22-£40+</span>
                 </li>
               </ul>
               <p>
@@ -189,7 +189,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
               </p>
 
               <StatCallout
-                stat="£7–£40+"
+                stat="£7-£40+"
                 label="What it costs in Bark credits to contact a single customer in 2026, before knowing if they'll respond. Credits are non-refundable if they don't."
                 accent="gold"
               />
@@ -298,7 +298,7 @@ export default function HowMuchDoBarkCreditsCostPage() {
               <p>
                 That is a best-case scenario with a reasonable conversion rate. Many
                 tradespeople report worse response rates, pushing their real cost per
-                job won above £80–£150.
+                job won above £80-£150.
               </p>
               <p>
                 For high-value jobs (a full bathroom refit, a new driveway, a boiler

@@ -21,7 +21,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
+  headline: "Bark for Landscapers 2026: £16-£28 Leads, Worth It?",
   description:
     "Bark.com for UK landscapers in 2026: £16-£28 per lead, shared competition, maintenance-contract gaps, and better alternatives via Google Ads and your own website.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -89,7 +89,7 @@ export default function IsBarkWorthItLandscapersPage() {
                 Blog · 10 min read
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bark for Landscapers 2026: £16–£28 Leads — Worth It?
+                Bark for Landscapers 2026: £16-£28 Leads, Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
@@ -97,7 +97,7 @@ export default function IsBarkWorthItLandscapersPage() {
               <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
-                  Bark can work for landscapers in low-competition areas targeting one-off redesign jobs. But maintenance contracts, the most valuable work in landscaping, almost never come from Bark. Lead costs of £16–£28, shared with multiple competitors, make the economics difficult on smaller jobs. And the platform{"'"}s rogue trader problem drags down customer trust across the board.
+                  Bark can work for landscapers in low-competition areas targeting one-off redesign jobs. But maintenance contracts, the most valuable work in landscaping, almost never come from Bark. Lead costs of £16-£28, shared with multiple competitors, make the economics difficult on smaller jobs. And the platform{"'"}s rogue trader problem drags down customer trust across the board.
                 </p>
               </div>
             </header>
@@ -125,7 +125,7 @@ export default function IsBarkWorthItLandscapersPage() {
                 What Bark Actually Costs a Landscaper
               </h2>
               <p>
-                Like all trades on Bark, landscapers buy credits and spend them to unlock customer contact details. Credits run at roughly £2 each. Landscaping enquiries cost 8–14 credits depending on scope, a garden tidy costs fewer credits than a full redesign with hard landscaping.
+                Like all trades on Bark, landscapers buy credits and spend them to unlock customer contact details. Credits run at roughly £2 each. Landscaping enquiries cost 8-14 credits depending on scope, a garden tidy costs fewer credits than a full redesign with hard landscaping.
               </p>
 
               <div className="overflow-x-auto">
@@ -140,12 +140,12 @@ export default function IsBarkWorthItLandscapersPage() {
                   </thead>
                   <tbody className="divide-y divide-border/20">
                     {[
-                      ["Garden tidy / clearance", "£120–300", "£16–20", "£64–80, tight"],
-                      ["Lawn care / treatment", "£80–200", "£16–22", "£64–88, often unviable"],
-                      ["Planting & borders", "£200–600", "£18–24", "£72–96, marginal"],
-                      ["Patio / decking install", "£1,500–5,000", "£22–28", "£88–112, viable"],
-                      ["Full garden redesign", "£3,000–15,000+", "£24–28", "£96–112, viable"],
-                      ["Commercial maintenance", "£500–3,000/mo", "£20–26", "£80–104, but rarely sourced here"],
+                      ["Garden tidy / clearance", "£120-300", "£16-20", "£64-80, tight"],
+                      ["Lawn care / treatment", "£80-200", "£16-22", "£64-88, often unviable"],
+                      ["Planting & borders", "£200-600", "£18-24", "£72-96, marginal"],
+                      ["Patio / decking install", "£1,500-5,000", "£22-28", "£88-112, viable"],
+                      ["Full garden redesign", "£3,000-15,000+", "£24-28", "£96-112, viable"],
+                      ["Commercial maintenance", "£500-3,000/mo", "£20-26", "£80-104, but rarely sourced here"],
                     ].map(([job, value, cost, real]) => (
                       <tr key={job} className="text-muted-foreground">
                         <td className="py-2.5 pr-4">{job}</td>
@@ -299,7 +299,7 @@ export default function IsBarkWorthItLandscapersPage() {
                   },
                   {
                     title: "New businesses with no portfolio yet.",
-                    body: "If you're starting out and have no website, no Google reviews and no gallery to show, Bark can get you your first 5–10 jobs. Use those jobs to photograph everything, build your portfolio and collect Google reviews. Then redirect the budget.",
+                    body: "If you're starting out and have no website, no Google reviews and no gallery to show, Bark can get you your first 5-10 jobs. Use those jobs to photograph everything, build your portfolio and collect Google reviews. Then redirect the budget.",
                   },
                   {
                     title: "Targeting only high-value project work.",
@@ -343,7 +343,7 @@ export default function IsBarkWorthItLandscapersPage() {
                 2. Google Ads with seasonal budget adjustments
               </h3>
               <p>
-                Landscaping keywords have lower CPCs than plumbing or electrical, typically £3–£10 per click, making Google Ads very cost-effective for the trade. Target job-specific terms (&ldquo;garden landscaping [town]&rdquo;, &ldquo;patio installation near me&rdquo;, &ldquo;garden makeover [county]&rdquo;) and ramp spend in February–May to capture the spring planning surge. Leads are exclusive, intent is high.
+                Landscaping keywords have lower CPCs than plumbing or electrical, typically £3-£10 per click, making Google Ads very cost-effective for the trade. Target job-specific terms (&ldquo;garden landscaping [town]&rdquo;, &ldquo;patio installation near me&rdquo;, &ldquo;garden makeover [county]&rdquo;) and ramp spend in February-May to capture the spring planning surge. Leads are exclusive, intent is high.
               </p>
 
               <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">

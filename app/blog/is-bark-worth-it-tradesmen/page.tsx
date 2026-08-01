@@ -22,7 +22,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Bark for Tradesmen 2026: £150–£400/Month — Worth It?",
+  headline: "Bark for Tradesmen 2026: £150-£400/Month, Worth It?",
   description:
     "Bark.com for UK tradesmen in 2026: typical £150-£400/month spend, shared leads, real cost per booked job, and better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -78,7 +78,7 @@ export default function IsBarkWorthItPage() {
                 Blog · Lead Generation
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bark for Tradesmen 2026: £150–£400/Month — Worth It?
+                Bark for Tradesmen 2026: £150-£400/Month, Worth It?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Bark.com has been around long enough that most UK tradesmen have
@@ -111,7 +111,7 @@ export default function IsBarkWorthItPage() {
               <p>
                 In practice, a realistic monthly spend for an active tradesman using
                 Bark properly is{" "}
-                <span className="font-semibold text-foreground">£150–£400 per month</span>
+                <span className="font-semibold text-foreground">£150-£400 per month</span>
                 : and that{"'"}s before factoring in the time spent responding, quoting
                 and chasing.
               </p>

@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new EV charger enquiries?",
     answer:
-      "With Google Ads running, most EV charger installers start seeing new leads within 2–3 weeks. The market is growing rapidly, and well-targeted campaigns convert well because demand consistently outstrips supply of trusted, local installers.",
+      "With Google Ads running, most EV charger installers start seeing new leads within 2-3 weeks. The market is growing rapidly, and well-targeted campaigns convert well because demand consistently outstrips supply of trusted, local installers.",
   },
   {
     question: "Can you help me win commercial EV charging contracts?",
@@ -237,9 +237,9 @@ export default function EVChargerInstallersPage() {
               </h2>
               <p>
                 A standard home EV charger installation is typically{" "}
-                <span className="font-semibold text-foreground">£800–£1,200</span>. A
+                <span className="font-semibold text-foreground">£800-£1,200</span>. A
                 commercial installation with multiple chargers can be{" "}
-                <span className="font-semibold text-foreground">£5,000–£50,000+</span>{" "}
+                <span className="font-semibold text-foreground">£5,000-£50,000+</span>{" "}
                 depending on scale.
               </p>
               <p>

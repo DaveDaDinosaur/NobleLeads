@@ -2,8 +2,10 @@ export const BUSINESS_NAME = "NobleLeads"
 export const BUSINESS_URL = "https://nobleleads.uk"
 
 // Official social / external profiles for brand-entity recognition.
-// Add real profile URLs here (LinkedIn, Instagram, etc.) as they go live.
-const SAME_AS: string[] = []
+// Add real profile URLs here (LinkedIn, etc.) as they go live.
+const SAME_AS: string[] = [
+  "https://www.instagram.com/nobleleads.uk/",
+]
 
 export function getOrganizationSchema() {
   const data: Record<string, unknown> = {

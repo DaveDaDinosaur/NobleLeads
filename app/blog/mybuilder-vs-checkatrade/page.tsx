@@ -106,7 +106,7 @@ export default function MyBuilderVsCheckatradePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick answer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 <span className="font-semibold text-foreground">MyBuilder</span> has no monthly fee and suits planned home improvement trades (builders, kitchen fitters, bathroom installers). You pay only when shortlisted.{" "}
-                <span className="font-semibold text-foreground">Checkatrade</span> charges £60–£500+ per month and suits emergency trades (plumbers, electricians) where brand recognition matters. Neither replaces owning your own lead flow.
+                <span className="font-semibold text-foreground">Checkatrade</span> charges £60-£500+ per month and suits emergency trades (plumbers, electricians) where brand recognition matters. Neither replaces owning your own lead flow.
               </p>
             </div>
           </SectionReveal>
@@ -177,25 +177,25 @@ export default function MyBuilderVsCheckatradePage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Small jobs (under £75):</span>{" "}
-                  £2–£3 per shortlist
+                  £2-£3 per shortlist
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">Mid-size jobs (£500–£1,000):</span>{" "}
-                  £8–£15 per shortlist
+                  <span className="font-semibold text-foreground">Mid-size jobs (£500-£1,000):</span>{" "}
+                  £8-£15 per shortlist
                 </li>
                 <li>
-                  <span className="font-semibold text-foreground">Larger jobs (£1,000–£3,000):</span>{" "}
-                  £20–£35 per shortlist
+                  <span className="font-semibold text-foreground">Larger jobs (£1,000-£3,000):</span>{" "}
+                  £20-£35 per shortlist
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Major projects (extensions, rewires, full fits):</span>{" "}
-                  £50–£100+
+                  £50-£100+
                 </li>
               </ul>
               <p>
                 All fees are non-refundable, even if the homeowner stops responding
                 after you{"'"}ve paid. If you pursue 20 jobs in a month and half of them
-                shortlist you, you could easily spend £100–£300 before winning a
+                shortlist you, you could easily spend £100-£300 before winning a
                 single piece of work.
               </p>
 
@@ -214,11 +214,11 @@ export default function MyBuilderVsCheckatradePage() {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Active membership with lead volume:</span>{" "}
-                  typically £100–£500+ per month depending on trade and region
+                  typically £100-£500+ per month depending on trade and region
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Per-lead fees on top:</span>{" "}
-                  £5–£15 for small jobs, £20–£40 for larger projects
+                  £5-£15 for small jobs, £20-£40 for larger projects
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">London and South East:</span>{" "}
@@ -242,7 +242,7 @@ export default function MyBuilderVsCheckatradePage() {
               </p>
 
               <StatCallout
-                stat="£80–£200"
+                stat="£80-£200"
                 label="Typical cost to acquire one paying customer through Checkatrade, once membership and per-lead fees are combined. MyBuilder's equivalent depends entirely on how selective you are about which jobs you pursue."
                 accent="gold"
               />

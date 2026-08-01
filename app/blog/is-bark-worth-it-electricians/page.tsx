@@ -21,7 +21,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Bark for Electricians 2026: £13–£30 Leads — Worth It?",
+  headline: "Bark for Electricians 2026: £13-£30 Leads, Worth It?",
   description:
     "Bark.com for UK electricians in 2026: £13-£30+ per lead, shared with up to five competitors, and better ROI from Google Ads and GBP.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -89,7 +89,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 Blog · 10 min read
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bark for Electricians 2026: £13–£30 Leads — Worth It?
+                Bark for Electricians 2026: £13-£30 Leads, Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
@@ -97,7 +97,7 @@ export default function IsBarkWorthItElectriciansPage() {
               <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
-                  For most UK electricians, Bark is not worth it in 2026. Credit costs of £13–£30 per lead, shared with up to five competitors, make the maths difficult, especially on smaller domestic jobs. It can be useful when you{"'"}re brand new with no reviews, but established electricians consistently report better ROI from Google Ads and an optimised Google Business Profile.
+                  For most UK electricians, Bark is not worth it in 2026. Credit costs of £13-£30 per lead, shared with up to five competitors, make the maths difficult, especially on smaller domestic jobs. It can be useful when you{"'"}re brand new with no reviews, but established electricians consistently report better ROI from Google Ads and an optimised Google Business Profile.
                 </p>
               </div>
             </header>
@@ -131,7 +131,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 Bark is a lead marketplace. Someone fills in a form, &ldquo;I need a fuse board replacement in Coventry&rdquo;, and Bark sells that enquiry to up to five electricians simultaneously. You don{"'"}t see the customer{"'"}s contact details until you spend credits. Once you spend, there{"'"}s no refund if the lead doesn{"'"}t respond.
               </p>
               <p>
-                Credits are sold in bundles. Based on current pricing, a pack works out at roughly £2 per credit. Individual electrical leads cost 7–15+ credits depending on the job type and estimated value:
+                Credits are sold in bundles. Based on current pricing, a pack works out at roughly £2 per credit. Individual electrical leads cost 7-15+ credits depending on the job type and estimated value:
               </p>
               <ul className="mt-3 space-y-2 pl-4">
                 {[
@@ -174,11 +174,11 @@ export default function IsBarkWorthItElectriciansPage() {
                   </thead>
                   <tbody className="divide-y divide-border/20">
                     {[
-                      ["Socket replacement", "£75–120", "£14–20", "Often unviable"],
-                      ["Consumer unit replacement", "£400–700", "£20–30", "Possible, but competitive"],
-                      ["Full rewire (3-bed)", "£3,000–6,000", "£24–36", "Viable, but 1 in 5 convert?"],
-                      ["EV charger install", "£800–1,400", "£20–28", "Viable, high competition"],
-                      ["Inspection & testing", "£150–300", "£14–22", "Tight"],
+                      ["Socket replacement", "£75-120", "£14-20", "Often unviable"],
+                      ["Consumer unit replacement", "£400-700", "£20-30", "Possible, but competitive"],
+                      ["Full rewire (3-bed)", "£3,000-6,000", "£24-36", "Viable, but 1 in 5 convert?"],
+                      ["EV charger install", "£800-1,400", "£20-28", "Viable, high competition"],
+                      ["Inspection & testing", "£150-300", "£14-22", "Tight"],
                     ].map(([job, value, cost, margin]) => (
                       <tr key={job} className="text-muted-foreground">
                         <td className="py-2.5 pr-4">{job}</td>
@@ -192,7 +192,7 @@ export default function IsBarkWorthItElectriciansPage() {
               </div>
 
               <p>
-                The conversion issue compounds the problem. Most electricians who{"'"}ve tracked their Bark spend report converting roughly 1 in 3 to 1 in 5 leads into booked jobs, and that{"'"}s after responding quickly and professionally. On a 1-in-4 conversion rate, your true cost per job won is £56–£144 before you{"'"}ve picked up a screwdriver.
+                The conversion issue compounds the problem. Most electricians who{"'"}ve tracked their Bark spend report converting roughly 1 in 3 to 1 in 5 leads into booked jobs, and that{"'"}s after responding quickly and professionally. On a 1-in-4 conversion rate, your true cost per job won is £56-£144 before you{"'"}ve picked up a screwdriver.
               </p>
               <p>
                 On rewires and larger installs, that number is absorbable. On small domestic callouts, it{"'"}s not.
@@ -287,7 +287,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 Someone searching &ldquo;fuse board replacement Cambridge&rdquo; or &ldquo;NICEIC electrician near me&rdquo; is ready to book. Your ad is the first thing they see. When they click, they land on your site, not a marketplace where they{"'"}re immediately shown four other electricians. The lead is yours and yours alone.
               </p>
               <p>
-                Cost per click for electrical keywords is typically £5–£15 in UK markets. At a 30–40% conversion rate from click to enquiry (for a well-built landing page), your cost per enquiry is £12–£50, comparable to Bark, but with exclusive intent and no competition at the point of contact.
+                Cost per click for electrical keywords is typically £5-£15 in UK markets. At a 30-40% conversion rate from click to enquiry (for a well-built landing page), your cost per enquiry is £12-£50, comparable to Bark, but with exclusive intent and no competition at the point of contact.
               </p>
 
               <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
@@ -334,7 +334,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 {[
                   {
                     title: "You're newly qualified with zero reviews.",
-                    body: "Bark can get you your first 5–10 jobs quickly. Use those jobs to earn Google reviews and build your profile. Then reduce your Bark spend as organic enquiries grow.",
+                    body: "Bark can get you your first 5-10 jobs quickly. Use those jobs to earn Google reviews and build your profile. Then reduce your Bark spend as organic enquiries grow.",
                   },
                   {
                     title: "You've just moved into a new area.",
@@ -377,7 +377,7 @@ export default function IsBarkWorthItElectriciansPage() {
                 The shared-lead model means you{"'"}re paying to compete, not paying to win. Your certifications, the thing that actually differentiates a qualified spark from an unqualified one, are invisible on the platform. And the high-value work that makes the maths work (emergency callouts, same-day bookings) bypasses Bark entirely in favour of Google.
               </p>
               <p>
-                If you{"'"}re spending £200–£400 a month on Bark credits and getting inconsistent results, that budget redirected into Google Ads and a properly built website will almost certainly perform better within three to six months.
+                If you{"'"}re spending £200-£400 a month on Bark credits and getting inconsistent results, that budget redirected into Google Ads and a properly built website will almost certainly perform better within three to six months.
               </p>
               <p>
                 Read the broader guide:{" "}

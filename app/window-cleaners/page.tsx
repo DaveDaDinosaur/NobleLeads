@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new window cleaning enquiries?",
     answer:
-      "With Google Ads running, most window cleaners start seeing new leads within 2–3 weeks. We also target local SEO to build your organic rankings and Google Business Profile so you receive enquiries from both paid and organic channels.",
+      "With Google Ads running, most window cleaners start seeing new leads within 2-3 weeks. We also target local SEO to build your organic rankings and Google Business Profile so you receive enquiries from both paid and organic channels.",
   },
   {
     question: "Can you help me grow my round faster?",
@@ -137,7 +137,7 @@ const steps: HowItWorksStep[] = [
 export const metadata: Metadata = buildMetadata({
   title: "Window Cleaning Leads Without Buying Rounds",
   description:
-    "Grow your window cleaning round with a site, Google Ads and reviews that win domestic and commercial work — without buying leads or cold canvassing only.",
+    "Grow your window cleaning round with a site, Google Ads and reviews that win domestic and commercial work, without buying leads or cold canvassing only.",
   canonicalPath,
 })
 
@@ -238,10 +238,10 @@ export default function WindowCleanersPage() {
               </h2>
               <p>
                 A regular domestic window cleaning client is typically worth{" "}
-                <span className="font-semibold text-foreground">£20–£60 per visit</span>{" "}
+                <span className="font-semibold text-foreground">£20-£60 per visit</span>{" "}
                 on a monthly or bimonthly schedule, that{"'"}s{" "}
                 <span className="font-semibold text-foreground">
-                  £240–£720 per year per client
+                  £240-£720 per year per client
                 </span>
                 , with near-zero acquisition cost after the first booking.
               </p>

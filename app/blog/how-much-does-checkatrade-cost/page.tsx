@@ -23,7 +23,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
+  headline: "Checkatrade Cost 2026: Real Prices From £60-£500/Month",
   description:
     "Real Checkatrade pricing for UK trades in 2026: membership from £60-£500+/month, per-lead fees of £5-£40, and typical all-in monthly totals.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -86,7 +86,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Checkatrade Cost 2026: Real Prices From £60–£500/Month
+                Checkatrade Cost 2026: Real Prices From £60-£500/Month
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Checkatrade does not publish its pricing on its website. You go
@@ -107,7 +107,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick answer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Checkatrade costs most UK tradespeople{" "}
-                <span className="font-semibold text-foreground">£100–£500+ per month</span>{" "}
+                <span className="font-semibold text-foreground">£100-£500+ per month</span>{" "}
                 for an active membership, plus additional per-lead fees. A typical plumber or electrician
                 on an average month pays around{" "}
                 <span className="font-semibold text-foreground">£400 all-in</span>.
@@ -166,17 +166,17 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Active membership:</span>{" "}
-                  typically £100–£300 per month for most trades in most areas
+                  typically £100-£300 per month for most trades in most areas
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">High-volume or urban areas:</span>{" "}
-                  £300–£500+ per month, particularly in London, the South East and
+                  £300-£500+ per month, particularly in London, the South East and
                   large cities
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Annual vs monthly:</span>{" "}
                   paying annually is cheaper, the widely cited annual rate is around
-                  £600 for a standard membership, versus £60–£80/month if paying monthly
+                  £600 for a standard membership, versus £60-£80/month if paying monthly
                 </li>
               </ul>
 
@@ -189,15 +189,15 @@ export default function HowMuchDoesCheckatradeCostPage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Small jobs</span>{" "}
-                  (dripping tap, single socket): £5–£15 per lead
+                  (dripping tap, single socket): £5-£15 per lead
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Mid-size jobs</span>{" "}
-                  (bathroom repair, boiler service): £15–£25 per lead
+                  (bathroom repair, boiler service): £15-£25 per lead
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Larger projects</span>{" "}
-                  (boiler replacement, bathroom refit, rewire): £25–£40 per lead
+                  (boiler replacement, bathroom refit, rewire): £25-£40 per lead
                 </li>
               </ul>
               <p>
@@ -229,7 +229,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                 <li>
                   <span className="font-semibold text-foreground">Busy period:</span>{" "}
                   membership + higher lead volume ={" "}
-                  <span className="font-semibold text-foreground">£600–£775+</span>
+                  <span className="font-semibold text-foreground">£600-£775+</span>
                 </li>
               </ul>
 
@@ -367,7 +367,7 @@ export default function HowMuchDoesCheckatradeCostPage() {
                   Google Ads
                 </Link>{" "}
                 delivers for your trade in your area. Many tradespeople find they
-                can acquire a paying customer for £30–£80 through well-managed Google
+                can acquire a paying customer for £30-£80 through well-managed Google
                 Ads campaigns, half the cost, and the traffic goes to a website
                 you own rather than a marketplace full of competitors.
               </p>

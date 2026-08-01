@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long before I start getting new painting enquiries?",
     answer:
-      "With Google Ads running, most painters and decorators start seeing new leads within 2–3 weeks. Because decorating is often a considered purchase, we also use follow-up sequences to nurture prospects who are getting multiple quotes.",
+      "With Google Ads running, most painters and decorators start seeing new leads within 2-3 weeks. Because decorating is often a considered purchase, we also use follow-up sequences to nurture prospects who are getting multiple quotes.",
   },
   {
     question: "Can you help me move upmarket and attract better-paying clients?",
@@ -240,11 +240,11 @@ export default function PaintersDecoratorsPage() {
               </h2>
               <p>
                 Decorating job values depend on the scope. A room repaint might be{" "}
-                <span className="font-semibold text-foreground">£300–£600</span>. A
+                <span className="font-semibold text-foreground">£300-£600</span>. A
                 full interior of a three-bed house is typically{" "}
-                <span className="font-semibold text-foreground">£1,500–£3,000</span>.
+                <span className="font-semibold text-foreground">£1,500-£3,000</span>.
                 An exterior house repaint can be{" "}
-                <span className="font-semibold text-foreground">£800–£2,500+</span>.
+                <span className="font-semibold text-foreground">£800-£2,500+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), even a conservative result
@@ -268,7 +268,7 @@ export default function PaintersDecoratorsPage() {
               <p className="rounded-xl border border-border/50 bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
                 "Typical result: A painter and decorator in the South East was getting
                 most of their work from Facebook groups and a few loyal clients. Within
-                6 weeks of launching their NobleLeads system, they were receiving 8–10
+                6 weeks of launching their NobleLeads system, they were receiving 8-10
                 new enquiries per month from Google, had their highest-ever review count
                 and raised their day rate for the first time in two years."
               </p>

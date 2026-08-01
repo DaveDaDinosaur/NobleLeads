@@ -24,7 +24,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month",
+  headline: "Checkatrade Worth It 2026? Real Cost £400-£1,000+/Month",
   description:
     "Whether Checkatrade is worth it for UK trades in 2026: real all-in monthly costs of £400-£1,000+, where it still works, and owned alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -70,7 +70,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 Blog · Lead Generation
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month
+                Checkatrade Worth It 2026? Real Cost £400-£1,000+/Month
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Checkatrade has been the default option for a lot of UK tradespeople
@@ -102,20 +102,20 @@ export default function IsCheckatradeWorthIt2025Page() {
                   <span className="font-semibold text-foreground">
                     Membership fee:
                   </span>{" "}
-                  usually £80–£150+ per month, locked in on a contract.
+                  usually £80-£150+ per month, locked in on a contract.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
                     Pay-per-lead costs:
                   </span>{" "}
-                  you{"'"}re often paying £10–£50+ for each enquiry, whether or not it
+                  you{"'"}re often paying £10-£50+ for each enquiry, whether or not it
                   turns into a job.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">
                     Time cost:
                   </span>{" "}
-                  you{"'"}re competing against 10–20 other trades for the same job, so
+                  you{"'"}re competing against 10-20 other trades for the same job, so
                   you{"'"}re stuck racing to call back first and dropping your price to
                   win work.
                 </li>
@@ -124,7 +124,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 By the time you add membership plus a realistic number of paid leads,
                 it{"'"}s common for trades to be spending{" "}
                 <span className="font-semibold text-foreground">
-                  £400–£1,000+ per month
+                  £400-£1,000+ per month
                 </span>{" "}
                 on Checkatrade alone. For many businesses, that{"'"}s more than they
                 would need to run a solid Google Ads campaign and maintain a proper

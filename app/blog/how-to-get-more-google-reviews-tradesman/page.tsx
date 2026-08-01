@@ -374,7 +374,7 @@ export default function HowToGetMoreGoogleReviewsPage() {
                 Google{"'"}s local ranking algorithm treats review velocity, the rate at which new reviews arrive, as an active signal of business health. A business receiving five reviews a month looks more active than one that received fifty reviews two years ago and hasn{"'"}t had one since.
               </p>
               <p>
-                The target for most local trades is 3–5 new reviews per month, consistently. At that rate:
+                The target for most local trades is 3-5 new reviews per month, consistently. At that rate:
               </p>
               <ul className="mt-3 space-y-2 pl-4">
                 {[

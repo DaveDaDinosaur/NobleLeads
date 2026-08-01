@@ -105,7 +105,7 @@ export default function BarkVsCheckatradePage() {
             <div className="mt-8 rounded-xl border border-border/40 bg-card/40 px-5 py-4 sm:px-6">
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick answer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                <span className="font-semibold text-foreground">Checkatrade</span> has stronger brand recognition and tends to attract higher-intent homeowners, but costs £60–£500+ per month with no lead volume guarantee.{" "}
+                <span className="font-semibold text-foreground">Checkatrade</span> has stronger brand recognition and tends to attract higher-intent homeowners, but costs £60-£500+ per month with no lead volume guarantee.{" "}
                 <span className="font-semibold text-foreground">Bark</span> has no monthly fee and suits businesses that want volume quickly, but lead quality is the most inconsistent of any major platform. For long-term growth, neither replaces owning your own lead flow.
               </p>
             </div>
@@ -184,15 +184,15 @@ export default function BarkVsCheckatradePage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Small jobs:</span>{" "}
-                  5–8 credits to contact (roughly £7–£12)
+                  5-8 credits to contact (roughly £7-£12)
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Mid-size jobs:</span>{" "}
-                  10–15 credits (roughly £14–£22)
+                  10-15 credits (roughly £14-£22)
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Larger projects:</span>{" "}
-                  15–20+ credits (roughly £22–£40+)
+                  15-20+ credits (roughly £22-£40+)
                 </li>
               </ul>
               <p>
@@ -226,11 +226,11 @@ export default function BarkVsCheckatradePage() {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Active membership with leads:</span>{" "}
-                  typically £100–£500+ per month depending on trade and region
+                  typically £100-£500+ per month depending on trade and region
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Per-lead fees on top:</span>{" "}
-                  £5–£40 per enquiry depending on job size
+                  £5-£40 per enquiry depending on job size
                 </li>
               </ul>
               <p>
@@ -240,7 +240,7 @@ export default function BarkVsCheckatradePage() {
               </p>
 
               <StatCallout
-                stat="£9–£40"
+                stat="£9-£40"
                 label="What a single Bark lead costs in credits, before you know if the customer will respond. Checkatrade adds this cost on top of a monthly membership you're already paying regardless."
                 accent="gold"
               />

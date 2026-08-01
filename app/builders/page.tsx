@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long before I start seeing qualified building enquiries?",
     answer:
-      "With Google Ads running, most builders start seeing new leads within 2–3 weeks. Because building projects have long decision cycles, we also build follow-up sequences to keep prospects warm through weeks or months of planning.",
+      "With Google Ads running, most builders start seeing new leads within 2-3 weeks. Because building projects have long decision cycles, we also build follow-up sequences to keep prospects warm through weeks or months of planning.",
   },
   {
     question: "Can you help me win commercial building contracts?",
@@ -230,11 +230,11 @@ export default function BuildersPage() {
               </h2>
               <p>
                 A single-storey extension typically runs{" "}
-                <span className="font-semibold text-foreground">£25,000–£60,000</span>.
+                <span className="font-semibold text-foreground">£25,000-£60,000</span>.
                 A loft conversion is commonly{" "}
-                <span className="font-semibold text-foreground">£30,000–£55,000</span>.
+                <span className="font-semibold text-foreground">£30,000-£55,000</span>.
                 A full house refurbishment can be{" "}
-                <span className="font-semibold text-foreground">£40,000–£150,000+</span>.
+                <span className="font-semibold text-foreground">£40,000-£150,000+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), you only need the system
@@ -242,7 +242,7 @@ export default function BuildersPage() {
                 <span className="font-semibold text-foreground">
                   one additional extension per quarter
                 </span>{" "}
-                to return 15–20x your annual investment. Most builders on the system
+                to return 15-20x your annual investment. Most builders on the system
                 see returns far beyond that.
               </p>
             </section>

@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new tree surgery enquiries?",
     answer:
-      "With Google Ads running, most tree surgeons start seeing new leads within 2–3 weeks. Emergency and storm-season campaigns can generate leads even faster, particularly after bad weather events in your area.",
+      "With Google Ads running, most tree surgeons start seeing new leads within 2-3 weeks. Emergency and storm-season campaigns can generate leads even faster, particularly after bad weather events in your area.",
   },
   {
     question: "Can you help me win commercial tree surgery contracts?",
@@ -230,12 +230,12 @@ export default function TreeSurgeonsPage() {
               <p>
                 Tree surgery job values vary widely. A hedge cut or small removal
                 might be{" "}
-                <span className="font-semibold text-foreground">£150–£400</span>. A
+                <span className="font-semibold text-foreground">£150-£400</span>. A
                 large tree removal can be{" "}
-                <span className="font-semibold text-foreground">£800–£3,000+</span>.
+                <span className="font-semibold text-foreground">£800-£3,000+</span>.
                 A commercial site management contract could be worth{" "}
                 <span className="font-semibold text-foreground">
-                  £500–£5,000+ per visit
+                  £500-£5,000+ per visit
                 </span>
                 .
               </p>

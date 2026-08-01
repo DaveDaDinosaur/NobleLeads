@@ -35,12 +35,12 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new bathroom enquiries?",
     answer:
-      "With Google Ads running, most bathroom fitters start seeing new leads within 2–3 weeks. Because bathroom renovations are considered purchases, we also build follow-up sequences to keep prospects warm through a longer decision process.",
+      "With Google Ads running, most bathroom fitters start seeing new leads within 2-3 weeks. Because bathroom renovations are considered purchases, we also build follow-up sequences to keep prospects warm through a longer decision process.",
   },
   {
     question: "Can you help me attract higher-budget bathroom jobs?",
     answer:
-      "Absolutely. We build portfolio-led websites and campaigns that position you for £8,000–£25,000+ bathroom renovations rather than low-budget refits. The right photography, reviews and credibility signals are what attract serious buyers.",
+      "Absolutely. We build portfolio-led websites and campaigns that position you for £8,000-£25,000+ bathroom renovations rather than low-budget refits. The right photography, reviews and credibility signals are what attract serious buyers.",
   },
   {
     question: "I miss enquiries when I'm on site. Can the system help?",
@@ -237,9 +237,9 @@ export default function BathroomFittersPage() {
               </h2>
               <p>
                 A mid-range bathroom renovation typically runs{" "}
-                <span className="font-semibold text-foreground">£6,000–£12,000</span>.
+                <span className="font-semibold text-foreground">£6,000-£12,000</span>.
                 A high-end master bathroom or full en suite can reach{" "}
-                <span className="font-semibold text-foreground">£15,000–£30,000+</span>.
+                <span className="font-semibold text-foreground">£15,000-£30,000+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), winning just{" "}

@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new plumbing enquiries?",
     answer:
-      "With Google Ads running, most plumbers see new leads within 2–3 weeks of going live. We also set up your Google Business Profile properly from day one, which starts generating organic enquiries alongside paid traffic.",
+      "With Google Ads running, most plumbers see new leads within 2-3 weeks of going live. We also set up your Google Business Profile properly from day one, which starts generating organic enquiries alongside paid traffic.",
   },
   {
     question: "Can you help me get more boiler installation and bathroom fit work instead of just call-outs?",
@@ -249,11 +249,11 @@ export default function PlumbersPage() {
               </h2>
               <p>
                 Plumbing job values span a wide range. An emergency call-out might be{" "}
-                <span className="font-semibold text-foreground">£120–£250</span>. A
+                <span className="font-semibold text-foreground">£120-£250</span>. A
                 boiler replacement is typically{" "}
-                <span className="font-semibold text-foreground">£2,000–£3,500</span>.
+                <span className="font-semibold text-foreground">£2,000-£3,500</span>.
                 A bathroom renovation can be{" "}
-                <span className="font-semibold text-foreground">£4,000–£12,000+</span>.
+                <span className="font-semibold text-foreground">£4,000-£12,000+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), even a modest result of

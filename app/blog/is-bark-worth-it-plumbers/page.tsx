@@ -21,7 +21,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Bark for Plumbers 2026: £16–£36 Leads — Worth It?",
+  headline: "Bark for Plumbers 2026: £16-£36 Leads, Worth It?",
   description:
     "Bark.com for UK plumbers in 2026: £16-£36 per lead, shared competition, Gas Safe gaps, emergency callouts Bark misses, and better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -89,7 +89,7 @@ export default function IsBarkWorthItPlumbersPage() {
                 Blog · 11 min read
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Bark for Plumbers 2026: £16–£36 Leads — Worth It?
+                Bark for Plumbers 2026: £16-£36 Leads, Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
@@ -97,7 +97,7 @@ export default function IsBarkWorthItPlumbersPage() {
               <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
-                  For most UK plumbers, Bark is not worth it in 2026. Leads cost £15–£35 each and are shared with up to four other plumbers simultaneously. Gas Safe registration isn{"'"}t verified. Emergency callouts, your most profitable work, don{"'"}t come through Bark at all. Established plumbers consistently get better ROI from Google Ads and an optimised Google Business Profile.
+                  For most UK plumbers, Bark is not worth it in 2026. Leads cost £15-£35 each and are shared with up to four other plumbers simultaneously. Gas Safe registration isn{"'"}t verified. Emergency callouts, your most profitable work, don{"'"}t come through Bark at all. Established plumbers consistently get better ROI from Google Ads and an optimised Google Business Profile.
                 </p>
               </div>
             </header>
@@ -173,12 +173,12 @@ export default function IsBarkWorthItPlumbersPage() {
                   </thead>
                   <tbody className="divide-y divide-border/20">
                     {[
-                      ["Dripping tap / repair", "£75–120", "£16–20", "£64–80, unviable"],
-                      ["Blocked drain", "£90–200", "£18–24", "£72–96, tight"],
-                      ["Boiler service", "£80–150", "£20–26", "£80–104, marginal"],
-                      ["Boiler replacement", "£2,000–4,000", "£28–36", "£112–144, viable"],
-                      ["Bathroom fit", "£2,500–6,000", "£24–32", "£96–128, viable"],
-                      ["Central heating", "£4,000–8,000", "£28–36", "£112–144, viable"],
+                      ["Dripping tap / repair", "£75-120", "£16-20", "£64-80, unviable"],
+                      ["Blocked drain", "£90-200", "£18-24", "£72-96, tight"],
+                      ["Boiler service", "£80-150", "£20-26", "£80-104, marginal"],
+                      ["Boiler replacement", "£2,000-4,000", "£28-36", "£112-144, viable"],
+                      ["Bathroom fit", "£2,500-6,000", "£24-32", "£96-128, viable"],
+                      ["Central heating", "£4,000-8,000", "£28-36", "£112-144, viable"],
                     ].map(([job, value, cost, real]) => (
                       <tr key={job} className="text-muted-foreground">
                         <td className="py-2.5 pr-4">{job}</td>
@@ -263,7 +263,7 @@ export default function IsBarkWorthItPlumbersPage() {
                 The plumber who appears at the top of Google Maps for those searches gets the call. There{"'"}s no competition at the point of contact, it{"'"}s just you, the customer and an urgent need.
               </p>
               <p>
-                Emergency callout rates are typically 30–50% higher than standard rates. There{"'"}s no negotiation. The customer isn{"'"}t comparing quotes. And this entire category of work, often several jobs a week in winter, is invisible to Bark.
+                Emergency callout rates are typically 30-50% higher than standard rates. There{"'"}s no negotiation. The customer isn{"'"}t comparing quotes. And this entire category of work, often several jobs a week in winter, is invisible to Bark.
               </p>
               <p>
                 This is the single most compelling reason for a plumber to prioritise Google over Bark. The highest-value, lowest-friction work in your week doesn{"'"}t come through lead marketplaces.
@@ -341,7 +341,7 @@ export default function IsBarkWorthItPlumbersPage() {
                 Someone searching &ldquo;boiler replacement [town]&rdquo; or &ldquo;emergency plumber near me&rdquo; is ready to book. Your ad shows first. They click and land on your website, not a marketplace with four competitors listed alongside you. The lead is exclusive from the moment of the click.
               </p>
               <p>
-                Cost per click for plumbing keywords in UK markets typically runs £8–£18. At a 30–40% conversion rate from click to enquiry (on a well-built landing page), your cost per enquiry is £20–£60. For boiler replacements and bathroom installs, that{"'"}s extremely viable. For emergency work, it{"'"}s often even better, high urgency means higher conversion rates.
+                Cost per click for plumbing keywords in UK markets typically runs £8-£18. At a 30-40% conversion rate from click to enquiry (on a well-built landing page), your cost per enquiry is £20-£60. For boiler replacements and bathroom installs, that{"'"}s extremely viable. For emergency work, it{"'"}s often even better, high urgency means higher conversion rates.
               </p>
 
               <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
@@ -385,7 +385,7 @@ export default function IsBarkWorthItPlumbersPage() {
                 {[
                   {
                     title: "You're newly qualified with no reviews.",
-                    body: "Bark can get you your first 5–10 jobs faster than waiting for organic search to kick in. Use those jobs to earn Google reviews, then redirect spend to Google Ads.",
+                    body: "Bark can get you your first 5-10 jobs faster than waiting for organic search to kick in. Use those jobs to earn Google reviews, then redirect spend to Google Ads.",
                   },
                   {
                     title: "You only quote large installations.",

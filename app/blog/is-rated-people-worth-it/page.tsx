@@ -23,7 +23,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?",
+  headline: "Rated People Cost 2026: £35/Month + £15 Per Lead, Worth It?",
   description:
     "Rated People pricing and review for UK trades in 2026: ~£35 + VAT/month subscription, ~£15 per lead, three-competitor cap, and how it compares to Checkatrade.",
   url: `https://nobleleads.uk${canonicalPath}`,
@@ -86,7 +86,7 @@ export default function IsRatedPeopleWorthItPage() {
                 Blog · Platform Reviews
               </p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?
+                Rated People Cost 2026: £35/Month + £15 Per Lead, Worth It?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Rated People sits in a slightly different position to Bark and
@@ -198,15 +198,15 @@ export default function IsRatedPeopleWorthItPage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Light usage:</span>{" "}
-                  ~£50–£70/month (subscription + minimal additional credits)
+                  ~£50-£70/month (subscription + minimal additional credits)
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Active usage:</span>{" "}
-                  ~£100–£150/month (subscription + consistent lead purchasing)
+                  ~£100-£150/month (subscription + consistent lead purchasing)
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">High volume:</span>{" "}
-                  £150–£250+/month for tradespeople chasing significant lead flow
+                  £150-£250+/month for tradespeople chasing significant lead flow
                 </li>
               </ul>
 

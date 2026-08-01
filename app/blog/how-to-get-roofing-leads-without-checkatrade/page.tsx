@@ -107,7 +107,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
                   Business Profile, and automated follow-up
                 </span>
                 . Paid ads bring enquiries in within weeks while local SEO lowers
-                your cost per lead over time — and every lead comes straight to
+                your cost per lead over time, and every lead comes straight to
                 you, not shared with four other roofers.
               </p>
             </div>
@@ -127,32 +127,32 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   <span className="font-semibold text-foreground">Checkatrade:</span>{" "}
-                  a monthly membership of roughly £60–£120+ per month (commonly
-                  £1,000–£1,800 a year), plus optional per-lead and featured-listing
-                  fees on top. Pricing isn&apos;t published — it&apos;s quoted per
+                  a monthly membership of roughly £60-£120+ per month (commonly
+                  £1,000-£1,800 a year), plus optional per-lead and featured-listing
+                  fees on top. Pricing isn&apos;t published, it&apos;s quoted per
                   trade and postcode.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Bark:</span>{" "}
-                  pay-as-you-go credits, roughly £6–£30 per connection depending on
+                  pay-as-you-go credits, roughly £6-£30 per connection depending on
                   the job, with leads sent to several tradespeople at once.
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">MyBuilder &amp; Rated People:</span>{" "}
-                  typically £15–£60 per roofing lead, again shared with competitors.
+                  typically £15-£60 per roofing lead, again shared with competitors.
                 </li>
               </ul>
               <p>
                 The headline price is only half the story. Because these leads are
                 shared and roofers typically win around{" "}
-                <span className="font-semibold text-foreground">15–20%</span> of
+                <span className="font-semibold text-foreground">15-20%</span> of
                 them, the true cost per job actually won often lands anywhere
                 between{" "}
                 <span className="font-semibold text-foreground">£150 and £1,000</span>.
               </p>
               <StatCallout
-                stat="£150–£1,000"
-                label="Realistic true cost per roofing job won through shared pay-per-lead platforms in 2026, once you account for typical 15–20% win rates."
+                stat="£150-£1,000"
+                label="Realistic true cost per roofing job won through shared pay-per-lead platforms in 2026, once you account for typical 15-20% win rates."
                 accent="gold"
               />
               <PullQuote accent="blue">
@@ -171,7 +171,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
               </h2>
               <p>
                 Getting roofing leads without Checkatrade isn&apos;t about one
-                magic channel — it&apos;s four pieces working together, all of
+                magic channel, it&apos;s four pieces working together, all of
                 which belong to you rather than a platform.
               </p>
 
@@ -179,7 +179,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
                 1. A conversion-focused website
               </h3>
               <p>
-                Not a digital brochure — a site built to turn a visitor into an
+                Not a digital brochure, a site built to turn a visitor into an
                 enquiry. Clear service pages, real photos of your work, visible
                 reviews, and an obvious way to get a quote on every page. This is
                 where every other channel sends people, so it does the heavy
@@ -193,7 +193,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
                 When someone searches &quot;roofer near me&quot; or &quot;roof
                 repair [town]&quot;, they have a job and a budget right now.
                 Well-managed Google Ads put you in front of that person directly,
-                and the enquiry is yours alone — not shared. This is what produces
+                and the enquiry is yours alone, not shared. This is what produces
                 roofing leads in the first few weeks while your organic presence
                 builds.
               </p>
@@ -211,7 +211,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
                   Google Business Profile with a steady flow of reviews
                 </Link>{" "}
                 plus SEO for roofing searches in your area brings in leads that cost
-                you nothing per click — and it compounds over time instead of
+                you nothing per click, and it compounds over time instead of
                 resetting each month.
               </p>
 
@@ -266,13 +266,13 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
                   matches or beats it
                 </li>
                 <li>
-                  Keep a lighter directory presence if it still pays for itself —
+                  Keep a lighter directory presence if it still pays for itself , 
                   this doesn&apos;t have to be all or nothing
                 </li>
               </ul>
               <PullQuote accent="purple">
                 &quot;The goal isn&apos;t to hate Checkatrade. It&apos;s to stop
-                being dependent on it — so a price rise at renewal is an
+                being dependent on it, so a price rise at renewal is an
                 inconvenience, not a crisis.&quot;
               </PullQuote>
               <p>
@@ -305,7 +305,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 In 15 minutes we can look at what you&apos;re spending on
                 directories now and show you what a roofing lead system you own
-                would look like for your area. No pressure — just clarity.
+                would look like for your area. No pressure, just clarity.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link

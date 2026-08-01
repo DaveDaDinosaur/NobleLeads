@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long before I start getting roofing enquiries?",
     answer:
-      "With well-set-up Google Ads, most roofers start seeing new leads in the first 2–3 weeks. SEO takes longer, but your paid campaigns and website work together from day one to bring in enquiries while rankings build.",
+      "With well-set-up Google Ads, most roofers start seeing new leads in the first 2-3 weeks. SEO takes longer, but your paid campaigns and website work together from day one to bring in enquiries while rankings build.",
   },
   {
     question: "How do I get more roofing leads without buying them?",
@@ -45,7 +45,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Do you do SEO for roofing companies?",
     answer:
-      "Yes. SEO for roofing companies is a core part of what we do — optimising your site and Google Business Profile so you rank for roofing searches in your service area. Paid ads bring leads in quickly while your rankings build, so you're not waiting months for results.",
+      "Yes. SEO for roofing companies is a core part of what we do, optimising your site and Google Business Profile so you rank for roofing searches in your service area. Paid ads bring leads in quickly while your rankings build, so you're not waiting months for results.",
   },
   {
     question: "Can you help during storm season and emergency spikes?",
@@ -147,7 +147,7 @@ const steps: HowItWorksStep[] = [
 export const metadata: Metadata = buildMetadata({
   title: "Roofing Leads Without Checkatrade or Bark",
   description:
-    "Get exclusive roofing leads you own — website, Google Ads and local SEO for UK roofers. Stop renting enquiries from Checkatrade and Bark.",
+    "Get exclusive roofing leads you own, website, Google Ads and local SEO for UK roofers. Stop renting enquiries from Checkatrade and Bark.",
   canonicalPath,
 })
 
@@ -156,7 +156,7 @@ export default function RoofersPage() {
   const serviceSchema = getServiceSchema({
     name: "Roofing Lead Generation & Marketing",
     description:
-      "NobleLeads is a roofing lead generation agency helping UK roofers get more roofing leads through conversion websites, Google Ads, SEO and CRM automation — without renting leads from Checkatrade or Bark.",
+      "NobleLeads is a roofing lead generation agency helping UK roofers get more roofing leads through conversion websites, Google Ads, SEO and CRM automation, without renting leads from Checkatrade or Bark.",
     url: `${BUSINESS_URL}${canonicalPath}`,
   })
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -249,9 +249,9 @@ export default function RoofersPage() {
               </h2>
               <p>
                 For roofers, job values vary a lot. A small repair might be{" "}
-                <span className="font-semibold text-foreground">£250–£400</span>. A
+                <span className="font-semibold text-foreground">£250-£400</span>. A
                 re-roof can easily be{" "}
-                <span className="font-semibold text-foreground">£4,000–£8,000+</span>.
+                <span className="font-semibold text-foreground">£4,000-£8,000+</span>.
               </p>
               <p>
                 At Noble Growth (£495/month plus ad spend), 3 additional repair jobs
@@ -276,7 +276,7 @@ export default function RoofersPage() {
                 "Typical result: A roofing company in the North West relied on
                 Checkatrade and Facebook groups for most of their work. Within 8 weeks
                 of launching a NobleLeads website and Google Ads campaign, they were
-                booking 8–12 extra enquiries per month and closed two additional
+                booking 8-12 extra enquiries per month and closed two additional
                 full re-roofs, enough to comfortably pay for the system and reinvest."
               </p>
             </section>

@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long before I start getting new cleaning enquiries?",
     answer:
-      "With Google Ads running, most cleaning businesses start seeing new leads within 2–3 weeks. Because domestic cleaning is a trust-based recurring purchase, we also build review and referral systems that compound over time.",
+      "With Google Ads running, most cleaning businesses start seeing new leads within 2-3 weeks. Because domestic cleaning is a trust-based recurring purchase, we also build review and referral systems that compound over time.",
   },
   {
     question: "Can you help me attract clients who want regular weekly cleans rather than one-offs?",
@@ -249,11 +249,11 @@ export default function DomesticCleanersPage() {
               </h2>
               <p>
                 A regular fortnightly domestic clean typically earns{" "}
-                <span className="font-semibold text-foreground">£60–£120 per visit</span>,
+                <span className="font-semibold text-foreground">£60-£120 per visit</span>,
                 depending on property size and location. A loyal client on a fortnightly
                 schedule is worth{" "}
                 <span className="font-semibold text-foreground">
-                  £1,500–£3,000+ per year
+                  £1,500-£3,000+ per year
                 </span>{" "}
                 in recurring revenue.
               </p>

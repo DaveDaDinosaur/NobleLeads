@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How quickly will I start seeing new EOT cleaning enquiries?",
     answer:
-      "With Google Ads running, most end-of-tenancy cleaners start seeing new leads within 2–3 weeks. EOT searches are highly intent-driven, people search when they're about to move, so conversion rates are typically strong.",
+      "With Google Ads running, most end-of-tenancy cleaners start seeing new leads within 2-3 weeks. EOT searches are highly intent-driven, people search when they're about to move, so conversion rates are typically strong.",
   },
   {
     question: "Can you help me build relationships with letting agents?",
@@ -234,11 +234,11 @@ export default function EndOfTenancyCleanersPage() {
               </h2>
               <p>
                 A standard end-of-tenancy clean is typically{" "}
-                <span className="font-semibold text-foreground">£150–£400</span>{" "}
+                <span className="font-semibold text-foreground">£150-£400</span>{" "}
                 depending on property size. A letting agent who refers you regularly
                 could be worth{" "}
                 <span className="font-semibold text-foreground">
-                  £2,000–£8,000+ per year
+                  £2,000-£8,000+ per year
                 </span>{" "}
                 in consistent, predictable bookings.
               </p>
