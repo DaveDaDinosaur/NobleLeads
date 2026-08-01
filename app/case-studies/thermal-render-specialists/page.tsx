@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+import { BeforeAfterSlider } from "@/components/before-after-slider"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
@@ -226,6 +227,34 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                 actually searching for that week. Instagram content and social ads are
                 next in the pipeline.
               </p>
+            </section>
+          </SectionReveal>
+
+          {/* Interactive showcase */}
+          <SectionReveal delay={130}>
+            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                An Interactive Site That Sells the Work
+              </h2>
+              <p>
+                Render is a visual sell, so we didn{"'"}t just post static photos, we
+                built the transformation into the page. Drag the slider below to see
+                the same wall before and after. This is a live example of the kind of
+                interactive, conversion-focused detail we build into every site, the
+                sort of thing that keeps a homeowner on the page and turns a browse
+                into an enquiry.
+              </p>
+              <div className="not-prose">
+                <BeforeAfterSlider
+                  beforeSrc="/images/case-studies/trs-entrance-before.webp"
+                  afterSrc="/images/case-studies/trs-entrance-after.webp"
+                  beforeAlt="Boundary wall with dull, weathered render before Thermal Render Specialists"
+                  afterAlt="The same wall with a crisp bright white silicone render finish after"
+                />
+                <p className="mt-2 text-center text-xs text-muted-foreground/70">
+                  Drag to reveal, real Thermal Render Specialists project, South East London.
+                </p>
+              </div>
             </section>
           </SectionReveal>
 
