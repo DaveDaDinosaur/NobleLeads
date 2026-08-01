@@ -26,7 +26,7 @@ const caseStudies = [
     location: "Sidcup, South East London & Kent",
     package: "Noble Growth",
     headline: "From referrals and a broken website to a full growth and operations system.",
-    result: "3 serious fire door enquiries within 2 weeks of first campaign launch.",
+    result: "6 fire door conversions and 8 more leads across services after the campaign relaunch.",
     href: "/case-studies/focus-refurbishment",
     externalHref: "https://focusrefurbishmentltd.com",
   },

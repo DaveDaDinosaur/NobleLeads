@@ -25,12 +25,13 @@ const articleSchema = getArticleSchema({
     "How NobleLeads rebuilt Focus Refurbishment's digital presence, launched targeted ad campaigns and automated their operations, helping a 25-year-old commercial refurbishment company modernise for growth.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-04",
+  dateModified: "2026-08-01",
 })
 
 const stats = [
-  { value: "3", label: "Serious fire door enquiries", sub: "Within 2 weeks of launch" },
+  { value: "14", label: "Enquiries from the relaunch", sub: "6 fire door conversions + 8 more leads" },
+  { value: "6", label: "Fire door conversions", sub: "Since the campaign relaunch" },
   { value: "25+", label: "Years in business", sub: "Trading since 2000" },
-  { value: "4", label: "Ad campaigns live", sub: "Fire doors, painting, roofing & refurb" },
   { value: "0→∞", label: "Lead system", sub: "Built from scratch" },
 ]
 
@@ -281,12 +282,23 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 Where They Are Now
               </h2>
               <p>
-                Focus Refurbishment are on the Noble Growth package and the campaigns
-                are in their optimisation phase, building data, refining targeting
-                and gathering the early enquiries that show the system is working.
-                Three qualified fire door enquiries in the first fortnight of a brand
-                new campaign, with zero previous online lead generation, is a strong
-                signal.
+                The early signal, three fire door enquiries in the first fortnight,
+                has turned into a proper pipeline. After we relaunched and refined the
+                campaign, Focus landed a further{" "}
+                <span className="font-semibold text-foreground">
+                  six fire door conversions and eight more leads
+                </span>{" "}
+                across refurbishment, extensions, rubbish removal and bathroom
+                remodels, from a business that had zero online lead generation before
+                us.
+              </p>
+              <p>
+                The search visibility is compounding alongside the ads. The site now
+                pulls over a thousand impressions for fire door installation in London
+                and ranks for refurbishment, renovation and loft conversion searches
+                across Sidcup and Kent, the exact work Craig wants more of. Paid brings
+                the enquiries in today while the rankings build the free pipeline
+                underneath.
               </p>
               <p>
                 Craig is also working towards BM TRADA certification, a requirement
@@ -298,7 +310,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p>
                 The ambition Craig came to us with, consistent commercial contracts,
                 a business that doesn{"'"}t rely on who happened to call this week, is
-                well within reach. The infrastructure is in place. Now it compounds.
+                already happening. The infrastructure is in place. Now it compounds.
               </p>
             </section>
           </SectionReveal>
