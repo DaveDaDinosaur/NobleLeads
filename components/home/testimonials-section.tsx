@@ -19,6 +19,13 @@ const testimonials = [
     role: "Owner, 4-man roofing team · Birmingham",
     result: "Off Checkatrade in 3 months",
   },
+  {
+    quote:
+      "The missed call text-back alone paid for the first month. Missed calls get a reply within seconds, quotes are followed up automatically and I can see exactly what came from which campaign, no more guessing.",
+    name: "Craig H. owner",
+    role: "Focus Refurbishment · Commercial refurbishment · Kent",
+    result: "First month ROI covered by text-back",
+  },
 ]
 
 export function TestimonialsSection() {
