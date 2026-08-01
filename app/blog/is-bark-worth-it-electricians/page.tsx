@@ -14,16 +14,16 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const canonicalPath = "/blog/is-bark-worth-it-electricians"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bark for Electricians 2026: £13–£30 Leads — Worth It?",
+  title: "Bark for Electricians 2026: £13-£30 Leads: Worth It?",
   description:
-    "Bark electrical leads cost £13–£30+ and go to up to 5 electricians. See real credit maths, when it fails on small jobs, and what beats it.",
+    "Bark electrical leads cost £13-£30+ and go to up to 5 electricians. See real credit maths, when it fails on small jobs, and what beats it.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Bark for Electricians 2026: £13–£30 Leads — Worth It?",
   description:
-    "Bark.com for UK electricians in 2026: £13–£30+ per lead, shared with up to five competitors, and better ROI from Google Ads and GBP.",
+    "Bark.com for UK electricians in 2026: £13-£30+ per lead, shared with up to five competitors, and better ROI from Google Ads and GBP.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
   dateModified: "2026-07-28",
@@ -39,7 +39,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much does Bark cost for electricians?",
     answer:
-      "Bark operates on a credit system. A pack of around 70 credits costs approximately £130–£140. Individual electrical leads cost 7–15+ credits depending on the job type, meaning a realistic cost per lead is £13–£30+. If you're converting one in three leads (optimistic), you're paying £40–£90 per job won, before doing any work. On a £75 socket job, that erases the margin entirely.",
+      "Bark operates on a credit system. A pack of around 70 credits costs approximately £130-£140. Individual electrical leads cost 7-15+ credits depending on the job type, meaning a realistic cost per lead is £13-£30+. If you're converting one in three leads (optimistic), you're paying £40-£90 per job won, before doing any work. On a £75 socket job, that erases the margin entirely.",
   },
   {
     question: "How many electricians get the same Bark lead?",
@@ -54,7 +54,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What's better than Bark for electricians?",
     answer:
-      "Google Ads captures high-intent searches ('emergency electrician near me', 'fuse board replacement [town]') from people who are ready to book. An optimised Google Business Profile generates free enquiries from people searching locally. Both produce exclusive leads, no competitors sharing the same click. The initial setup takes longer, but the cost per converted job is typically 40–60% lower than Bark within six months.",
+      "Google Ads captures high-intent searches ('emergency electrician near me', 'fuse board replacement [town]') from people who are ready to book. An optimised Google Business Profile generates free enquiries from people searching locally. Both produce exclusive leads, no competitors sharing the same click. The initial setup takes longer, but the cost per converted job is typically 40-60% lower than Bark within six months.",
   },
   {
     question: "Is Bark useful for getting Google reviews?",
@@ -135,10 +135,10 @@ export default function IsBarkWorthItElectriciansPage() {
               </p>
               <ul className="mt-3 space-y-2 pl-4">
                 {[
-                  "Socket or switch fault: 7–10 credits (~£14–20)",
-                  "Fuse board replacement: 10–15 credits (~£20–30)",
-                  "Full rewire enquiry: 12–18 credits (~£24–36)",
-                  "EV charger installation: 10–14 credits (~£20–28)",
+                  "Socket or switch fault: 7-10 credits (~£14-20)",
+                  "Fuse board replacement: 10-15 credits (~£20-30)",
+                  "Full rewire enquiry: 12-18 credits (~£24-36)",
+                  "EV charger installation: 10-14 credits (~£20-28)",
                 ].map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary/60" />

@@ -14,16 +14,16 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const canonicalPath = "/blog/is-bark-worth-it-plumbers"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bark for Plumbers 2026: £16–£36 Leads — Worth It?",
+  title: "Bark for Plumbers 2026: £16-£36 Leads: Worth It?",
   description:
-    "Bark plumbing leads cost £16–£36 and are shared with up to 4 others. See the Gas Safe gap, why emergencies bypass Bark, and what works better.",
+    "Bark plumbing leads cost £16-£36 and are shared with up to 4 others. See the Gas Safe gap, why emergencies bypass Bark, and what works better.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Bark for Plumbers 2026: £16–£36 Leads — Worth It?",
   description:
-    "Bark.com for UK plumbers in 2026: £16–£36 per lead, shared competition, Gas Safe gaps, emergency callouts Bark misses, and better alternatives.",
+    "Bark.com for UK plumbers in 2026: £16-£36 per lead, shared competition, Gas Safe gaps, emergency callouts Bark misses, and better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
   dateModified: "2026-07-28",
@@ -34,12 +34,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Is Bark worth it for plumbers in 2026?",
     answer:
-      "For most established UK plumbers, no. Shared leads, unverified qualifications and credit costs of £15–£35 per enquiry make the maths difficult, especially on smaller jobs. Emergency callouts, which are often a plumber's highest-margin work, bypass Bark entirely in favour of Google. It can be useful for a newly qualified plumber with no reviews, but as a long-term strategy it underperforms Google Ads and an optimised Google Business Profile.",
+      "For most established UK plumbers, no. Shared leads, unverified qualifications and credit costs of £15-£35 per enquiry make the maths difficult, especially on smaller jobs. Emergency callouts, which are often a plumber's highest-margin work, bypass Bark entirely in favour of Google. It can be useful for a newly qualified plumber with no reviews, but as a long-term strategy it underperforms Google Ads and an optimised Google Business Profile.",
   },
   {
     question: "How much does Bark cost for plumbers?",
     answer:
-      "Bark sells credits in bundles of roughly £2 per credit. Plumbing leads cost 8–18 credits depending on job type and estimated value, making a realistic cost per lead £16–£36. If you convert one in three or four leads (typical), your true cost per booked job is £48–£144. On a £90 dripping tap callout, the numbers don't stack up. On a boiler replacement, they're more defensible, but you're still competing with up to four other plumbers for the same enquiry.",
+      "Bark sells credits in bundles of roughly £2 per credit. Plumbing leads cost 8-18 credits depending on job type and estimated value, making a realistic cost per lead £16-£36. If you convert one in three or four leads (typical), your true cost per booked job is £48-£144. On a £90 dripping tap callout, the numbers don't stack up. On a boiler replacement, they're more defensible, but you're still competing with up to four other plumbers for the same enquiry.",
   },
   {
     question: "Does Bark verify Gas Safe registration?",
@@ -59,7 +59,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Should a newly qualified plumber use Bark?",
     answer:
-      "It can help in the very early stages, when you have no reviews and no Google presence. Bark can get your first 5–10 jobs quickly. The key is to use those jobs to earn Google reviews and build your GBP, then reduce Bark spend as organic enquiries grow. Treat it as a temporary bridge to get you through the first few months, not a strategy to build a business on.",
+      "It can help in the very early stages, when you have no reviews and no Google presence. Bark can get your first 5-10 jobs quickly. The key is to use those jobs to earn Google reviews and build your GBP, then reduce Bark spend as organic enquiries grow. Treat it as a temporary bridge to get you through the first few months, not a strategy to build a business on.",
   },
 ]
 
@@ -132,12 +132,12 @@ export default function IsBarkWorthItPlumbersPage() {
               </p>
               <ul className="mt-3 space-y-2 pl-4">
                 {[
-                  "Dripping tap / minor repair: 8–10 credits (~£16–20)",
-                  "Blocked drain: 9–12 credits (~£18–24)",
-                  "Boiler service: 10–13 credits (~£20–26)",
-                  "Boiler replacement: 14–18 credits (~£28–36)",
-                  "Bathroom installation: 12–16 credits (~£24–32)",
-                  "Full central heating install: 14–18 credits (~£28–36)",
+                  "Dripping tap / minor repair: 8-10 credits (~£16-20)",
+                  "Blocked drain: 9-12 credits (~£18-24)",
+                  "Boiler service: 10-13 credits (~£20-26)",
+                  "Boiler replacement: 14-18 credits (~£28-36)",
+                  "Bathroom installation: 12-16 credits (~£24-32)",
+                  "Full central heating install: 14-18 credits (~£28-36)",
                 ].map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary/60" />

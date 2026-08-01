@@ -18,14 +18,14 @@ const canonicalPath = "/blog/bark-vs-checkatrade"
 export const metadata: Metadata = buildMetadata({
   title: "Bark vs Checkatrade 2026: Costs, Leads & Which Wins",
   description:
-    "Bark: pay £9–£40 per lead, no monthly fee. Checkatrade: £60–£500+/month plus lead fees. Side-by-side costs and which UK trades each suits.",
+    "Bark: pay £9-£40 per lead, no monthly fee. Checkatrade: £60-£500+/month plus lead fees. Side-by-side costs and which UK trades each suits.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Bark vs Checkatrade 2026: Costs, Leads & Which Wins",
   description:
-    "Bark vs Checkatrade for UK trades in 2026: pay-per-lead credits vs £60–£500+/month membership, lead quality, and which platform wins for your trade.",
+    "Bark vs Checkatrade for UK trades in 2026: pay-per-lead credits vs £60-£500+/month membership, lead quality, and which platform wins for your trade.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -54,7 +54,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much does Bark cost compared to Checkatrade?",
     answer:
-      "Bark has no monthly membership fee. You buy credits (around £1.20 + VAT each) and spend them to contact customers, with leads typically costing 5–20 credits (£9–£40 + VAT) depending on job value. Credits expire after 3 months from purchase. Checkatrade charges a monthly membership of £60–£500+ depending on trade and region, plus additional per-lead fees. Bark is lower risk upfront but costs can add up quickly if response rates are poor.",
+      "Bark has no monthly membership fee. You buy credits (around £1.20 + VAT each) and spend them to contact customers, with leads typically costing 5-20 credits (£9-£40 + VAT) depending on job value. Credits expire after 3 months from purchase. Checkatrade charges a monthly membership of £60-£500+ depending on trade and region, plus additional per-lead fees. Bark is lower risk upfront but costs can add up quickly if response rates are poor.",
   },
   {
     question: "Do Bark leads actually convert into jobs?",

@@ -18,14 +18,14 @@ const canonicalPath = "/blog/mybuilder-vs-checkatrade"
 export const metadata: Metadata = buildMetadata({
   title: "MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?",
   description:
-    "MyBuilder has no monthly fee. Checkatrade runs £100–£500+/month. Side-by-side costs, lead quality, and which platform suits your trade — plus when neither is worth it.",
+    "MyBuilder has no monthly fee. Checkatrade runs £100-£500+/month. Side-by-side costs, lead quality, and which platform suits your trade - plus when neither is worth it.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?",
   description:
-    "MyBuilder vs Checkatrade cost and lead-quality comparison for UK trades in 2026: pay-per-shortlist vs £100–£500+/month membership, and which wins for your trade.",
+    "MyBuilder vs Checkatrade cost and lead-quality comparison for UK trades in 2026: pay-per-shortlist vs £100-£500+/month membership, and which wins for your trade.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -39,12 +39,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Is MyBuilder any good for tradesmen?",
     answer:
-      "MyBuilder can work well for established tradespeople with strong profiles and positive reviews who are selective about which jobs they pursue. The pay-when-shortlisted model means you don't spend money until a homeowner has expressed genuine interest, which is a real advantage over Bark. The problems are the competition per job (3–6 tradespeople), non-refundable fees when customers go quiet, and inconsistent lead quality in some trade categories.",
+      "MyBuilder can work well for established tradespeople with strong profiles and positive reviews who are selective about which jobs they pursue. The pay-when-shortlisted model means you don't spend money until a homeowner has expressed genuine interest, which is a real advantage over Bark. The problems are the competition per job (3-6 tradespeople), non-refundable fees when customers go quiet, and inconsistent lead quality in some trade categories.",
   },
   {
     question: "How much does MyBuilder charge for tradesmen?",
     answer:
-      "MyBuilder has no monthly membership fee. You only pay a shortlist fee when a homeowner shortlists you and contact details are exchanged. Fees range from £2–£3 for small jobs under £75, £8–£15 for mid-size jobs between £500 and £1,000, £20–£35 for larger work between £1,000 and £3,000, and £50–£100 or more for major projects like extensions or full rewires. All fees are non-refundable.",
+      "MyBuilder has no monthly membership fee. You only pay a shortlist fee when a homeowner shortlists you and contact details are exchanged. Fees range from £2-£3 for small jobs under £75, £8-£15 for mid-size jobs between £500 and £1,000, £20-£35 for larger work between £1,000 and £3,000, and £50-£100 or more for major projects like extensions or full rewires. All fees are non-refundable.",
   },
   {
     question: "What is the best tradesman platform in 2026?",

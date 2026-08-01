@@ -15,16 +15,16 @@ const primaryKeyword = "is bark worth it for tradesmen UK"
 const canonicalPath = "/blog/is-bark-worth-it-tradesmen"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bark for Tradesmen 2026: £150–£400/Month — Worth It?",
+  title: "Bark for Tradesmen 2026: £150-£400/Month: Worth It?",
   description:
-    "Active Bark users often spend £150–£400/month on credits. See real cost per job, why lead quality fails, and when UK tradesmen should stop paying.",
+    "Active Bark users often spend £150-£400/month on credits. See real cost per job, why lead quality fails, and when UK tradesmen should stop paying.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Bark for Tradesmen 2026: £150–£400/Month — Worth It?",
   description:
-    "Bark.com for UK tradesmen in 2026: typical £150–£400/month spend, shared leads, real cost per booked job, and better alternatives.",
+    "Bark.com for UK tradesmen in 2026: typical £150-£400/month spend, shared leads, real cost per booked job, and better alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-13",
 })
@@ -38,7 +38,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much does Bark cost for tradesmen?",
     answer:
-      "Bark operates on a credit system. You buy credits and spend them to reveal contact details for each lead. Credit packs typically cost £30–£100+ depending on volume, and individual leads cost anywhere from 2 to 15+ credits depending on the job type and size. A realistic monthly spend for an active tradesman is £150–£400+, with no guarantee of conversion.",
+      "Bark operates on a credit system. You buy credits and spend them to reveal contact details for each lead. Credit packs typically cost £30-£100+ depending on volume, and individual leads cost anywhere from 2 to 15+ credits depending on the job type and size. A realistic monthly spend for an active tradesman is £150-£400+, with no guarantee of conversion.",
   },
   {
     question: "How many tradesmen get the same Bark lead?",

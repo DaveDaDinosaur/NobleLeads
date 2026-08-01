@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/how-much-does-checkatrade-cost"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
+  title: "Checkatrade Cost 2026: Real Prices From £60-£500/Month",
   description:
-    "Checkatrade doesn't publish prices. Here's what UK trades actually pay in 2026: £60–£500+/month membership, £5–£40 per lead, and what a typical month really costs all-in.",
+    "Checkatrade doesn't publish prices. Here's what UK trades actually pay in 2026: £60-£500+/month membership, £5-£40 per lead, and what a typical month really costs all-in.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
   description:
-    "Real Checkatrade pricing for UK trades in 2026: membership from £60–£500+/month, per-lead fees of £5–£40, and typical all-in monthly totals.",
+    "Real Checkatrade pricing for UK trades in 2026: membership from £60-£500+/month, per-lead fees of £5-£40, and typical all-in monthly totals.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -34,7 +34,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much does Checkatrade cost per month in 2026?",
     answer:
-      "Checkatrade does not publish its prices publicly. Based on real-world reports from UK tradespeople, basic listings start from around £60 per month. Active memberships with meaningful lead volume typically cost £100–£500 per month depending on your trade and location. London and the South East consistently sit at the top of that range. On top of membership, most plans also charge per-lead fees of £5–£40 per enquiry.",
+      "Checkatrade does not publish its prices publicly. Based on real-world reports from UK tradespeople, basic listings start from around £60 per month. Active memberships with meaningful lead volume typically cost £100-£500 per month depending on your trade and location. London and the South East consistently sit at the top of that range. On top of membership, most plans also charge per-lead fees of £5-£40 per enquiry.",
   },
   {
     question: "Is Checkatrade worth the money?",
@@ -49,12 +49,12 @@ const faqItems: FAQItem[] = [
   {
     question: "How much does it cost to advertise on Checkatrade in the UK?",
     answer:
-      "Checkatrade advertising costs are quoted individually through a sales process. Membership fees range from approximately £60 to £500+ per month depending on trade, region and the level of lead volume you opt into. Additional per-lead costs of £5–£40 are charged on top of membership in most cases. Annual subscriptions are typically cheaper than paying month-to-month.",
+      "Checkatrade advertising costs are quoted individually through a sales process. Membership fees range from approximately £60 to £500+ per month depending on trade, region and the level of lead volume you opt into. Additional per-lead costs of £5-£40 are charged on top of membership in most cases. Annual subscriptions are typically cheaper than paying month-to-month.",
   },
   {
     question: "Which is better, Checkatrade or TrustaTrader?",
     answer:
-      "Checkatrade has significantly higher brand recognition and more homeowner traffic than TrustaTrader. TrustaTrader tends to cost more annually (£600–£1,000+) and has a smaller audience, but some tradespeople find less competition per lead. For most UK tradespeople, Checkatrade will generate more enquiries, but at a higher and less predictable cost.",
+      "Checkatrade has significantly higher brand recognition and more homeowner traffic than TrustaTrader. TrustaTrader tends to cost more annually (£600-£1,000+) and has a smaller audience, but some tradespeople find less competition per lead. For most UK tradespeople, Checkatrade will generate more enquiries, but at a higher and less predictable cost.",
   },
   {
     question: "Can I cancel Checkatrade at any time?",

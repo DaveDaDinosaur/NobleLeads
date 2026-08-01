@@ -18,7 +18,7 @@ const canonicalPath = "/blog/how-to-get-roofing-leads-without-checkatrade"
 export const metadata: Metadata = buildMetadata({
   title: "How to Get Roofing Leads Without Checkatrade (2026)",
   description:
-    "A practical 2026 guide to generating roofing leads without Checkatrade, Bark or paying per lead — what these platforms really cost roofers, and the owned system that replaces them.",
+    "A practical 2026 guide to generating roofing leads without Checkatrade, Bark or paying per lead - what these platforms really cost roofers, and the owned system that replaces them.",
   canonicalPath,
 })
 
@@ -39,12 +39,12 @@ const faqItems: FAQItem[] = [
   {
     question: "How much do roofing leads cost in 2026?",
     answer:
-      "On pay-per-lead platforms in 2026, roofing leads typically cost £15–£60 each on MyBuilder and Rated People, and £6–£30 per connection on Bark, while Checkatrade runs on a monthly membership of roughly £60–£120+ (often £1,000–£1,800 a year) plus optional lead and featured-listing fees. Because leads are shared and win rates sit around 15–20%, the true cost per job won often lands between £150 and £1,000.",
+      "On pay-per-lead platforms in 2026, roofing leads typically cost £15-£60 each on MyBuilder and Rated People, and £6-£30 per connection on Bark, while Checkatrade runs on a monthly membership of roughly £60-£120+ (often £1,000-£1,800 a year) plus optional lead and featured-listing fees. Because leads are shared and win rates sit around 15-20%, the true cost per job won often lands between £150 and £1,000.",
   },
   {
     question: "Is it cheaper to generate your own roofing leads?",
     answer:
-      "Over time, yes. Paid ads and directories both cost money up front, but with your own website, Google Ads and SEO the cost per lead usually falls as your rankings and reviews compound — whereas directory fees tend to rise at renewal. More importantly, the website, reviews and Google presence become assets you own, so you're not starting from zero the day you stop paying.",
+      "Over time, yes. Paid ads and directories both cost money up front, but with your own website, Google Ads and SEO the cost per lead usually falls as your rankings and reviews compound - whereas directory fees tend to rise at renewal. More importantly, the website, reviews and Google presence become assets you own, so you're not starting from zero the day you stop paying.",
   },
   {
     question: "Should I quit Checkatrade completely?",
@@ -54,7 +54,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long does it take to get roofing leads from Google Ads and SEO?",
     answer:
-      "Google Ads can start producing roofing enquiries within the first 2–3 weeks because you're paying to appear immediately for people searching for a roofer. Local SEO and organic rankings take longer — usually a few months — but they lower your cost per lead over time. Running both together means paid ads carry you while your rankings build.",
+      "Google Ads can start producing roofing enquiries within the first 2-3 weeks because you're paying to appear immediately for people searching for a roofer. Local SEO and organic rankings take longer - usually a few months - but they lower your cost per lead over time. Running both together means paid ads carry you while your rankings build.",
   },
 ]
 

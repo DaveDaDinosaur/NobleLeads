@@ -134,7 +134,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electrician Marketing Agency UK | More Leads",
+  title: "Electrician Leads Without Checkatrade or Bark",
   description:
     "NobleLeads delivers lead generation for electricians UK-wide using conversion websites, Google Ads and CRM automation so you can win more rewires, consumer units, EICRs and commercial contracts consistently.",
   canonicalPath,

@@ -134,7 +134,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Driveway & Paving Marketing Agency UK | More Leads",
+  title: "Driveway & Paving Leads Without Checkatrade",
   description:
     "NobleLeads delivers marketing for driveway and paving companies UK-wide using conversion websites, Google Ads and CRM automation so you can win more block paving, resin and tarmac jobs consistently.",
   canonicalPath,

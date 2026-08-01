@@ -16,16 +16,16 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/how-much-do-bark-credits-cost"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
+  title: "Bark Credits Cost 2026: £1.20 Each, £7-£40 Per Lead",
   description:
-    "Bark credits cost ~£1.20 + VAT each in 2026. See real lead prices by job type (£7–£40), the 3-month expiry rule, and what UK trades actually pay per job won.",
+    "Bark credits cost ~£1.20 + VAT each in 2026. See real lead prices by job type (£7-£40), the 3-month expiry rule, and what UK trades actually pay per job won.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
   description:
-    "Bark credit prices for UK tradespeople in 2026: ~£1.20 + VAT per credit, £7–£40 per lead by job type, the 3-month expiry rule, and real cost per job won.",
+    "Bark credit prices for UK tradespeople in 2026: ~£1.20 + VAT per credit, £7-£40 per lead by job type, the 3-month expiry rule, and real cost per job won.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-01",
 })
@@ -54,7 +54,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What is the real cost of a Bark lead for a tradesperson?",
     answer:
-      "The headline credit cost per lead (£7–£40) is only the first layer. The real cost per paying customer depends on your response rate and conversion rate. If you contact 10 leads at an average of £15 each (£150 in credits) and win 2 jobs, your actual cost per customer won is £75, before accounting for time spent chasing non-responsive customers. Many tradespeople report real costs per job won of £80–£200+ when tracked carefully.",
+      "The headline credit cost per lead (£7-£40) is only the first layer. The real cost per paying customer depends on your response rate and conversion rate. If you contact 10 leads at an average of £15 each (£150 in credits) and win 2 jobs, your actual cost per customer won is £75, before accounting for time spent chasing non-responsive customers. Many tradespeople report real costs per job won of £80-£200+ when tracked carefully.",
   },
 ]
 

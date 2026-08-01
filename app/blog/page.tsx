@@ -28,15 +28,15 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "how-much-do-bark-credits-cost",
-    title: "Bark Credits Cost 2026: £1.20 Each, £7–£40 Per Lead",
+    title: "Bark Credits Cost 2026: £1.20 Each, £7-£40 Per Lead",
     description:
-      "Bark credits cost ~£1.20 + VAT each. Real lead prices by job type (£7–£40), the 3-month expiry rule, and what UK trades actually pay per job won.",
+      "Bark credits cost ~£1.20 + VAT each. Real lead prices by job type (£7-£40), the 3-month expiry rule, and what UK trades actually pay per job won.",
     readTime: "9 min read",
     category: "Platform Reviews",
   },
   {
     slug: "is-rated-people-worth-it",
-    title: "Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?",
+    title: "Rated People Cost 2026: £35/Month + £15 Per Lead: Worth It?",
     description:
       "Rated People costs ~£35 + VAT/month plus ~£15 per lead. Real pricing, the 3-competitor cap, and whether it beats Checkatrade for UK trades.",
     readTime: "11 min read",
@@ -44,9 +44,9 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "how-much-does-checkatrade-cost",
-    title: "Checkatrade Cost 2026: Real Prices From £60–£500/Month",
+    title: "Checkatrade Cost 2026: Real Prices From £60-£500/Month",
     description:
-      "Checkatrade doesn't publish prices. What UK trades actually pay: £60–£500+/month membership, £5–£40 per lead, and typical all-in monthly totals.",
+      "Checkatrade doesn't publish prices. What UK trades actually pay: £60-£500+/month membership, £5-£40 per lead, and typical all-in monthly totals.",
     readTime: "11 min read",
     category: "Platform Reviews",
   },
@@ -54,7 +54,7 @@ const posts: BlogPostMeta[] = [
     slug: "bark-vs-checkatrade",
     title: "Bark vs Checkatrade 2026: Costs, Leads & Which Wins",
     description:
-      "Bark: pay £9–£40 per lead, no monthly fee. Checkatrade: £60–£500+/month plus lead fees. Which suits your trade?",
+      "Bark: pay £9-£40 per lead, no monthly fee. Checkatrade: £60-£500+/month plus lead fees. Which suits your trade?",
     readTime: "12 min read",
     category: "Platform Reviews",
   },
@@ -62,7 +62,7 @@ const posts: BlogPostMeta[] = [
     slug: "mybuilder-vs-checkatrade",
     title: "MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?",
     description:
-      "MyBuilder has no monthly fee. Checkatrade runs £100–£500+/month. Side-by-side costs, lead quality, and which platform suits your trade.",
+      "MyBuilder has no monthly fee. Checkatrade runs £100-£500+/month. Side-by-side costs, lead quality, and which platform suits your trade.",
     readTime: "13 min read",
     category: "Platform Reviews",
   },
@@ -76,33 +76,33 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "is-bark-worth-it-landscapers",
-    title: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
+    title: "Bark for Landscapers 2026: £16-£28 Leads: Worth It?",
     description:
-      "Bark landscaping leads cost £16–£28 and are shared. Real credit maths, why maintenance rarely comes from Bark, and what works better.",
+      "Bark landscaping leads cost £16-£28 and are shared. Real credit maths, why maintenance rarely comes from Bark, and what works better.",
     readTime: "10 min read",
     category: "Platform Reviews",
   },
   {
     slug: "is-bark-worth-it-plumbers",
-    title: "Bark for Plumbers 2026: £16–£36 Leads — Worth It?",
+    title: "Bark for Plumbers 2026: £16-£36 Leads: Worth It?",
     description:
-      "Bark plumbing leads cost £16–£36 and are shared. Gas Safe gaps, emergencies Bark misses, and what works better.",
+      "Bark plumbing leads cost £16-£36 and are shared. Gas Safe gaps, emergencies Bark misses, and what works better.",
     readTime: "11 min read",
     category: "Platform Reviews",
   },
   {
     slug: "is-bark-worth-it-electricians",
-    title: "Bark for Electricians 2026: £13–£30 Leads — Worth It?",
+    title: "Bark for Electricians 2026: £13-£30 Leads: Worth It?",
     description:
-      "Bark electrical leads cost £13–£30+ and go to up to 5 competitors. Real credit maths and what beats it.",
+      "Bark electrical leads cost £13-£30+ and go to up to 5 competitors. Real credit maths and what beats it.",
     readTime: "10 min read",
     category: "Platform Reviews",
   },
   {
     slug: "is-bark-worth-it-tradesmen",
-    title: "Bark for Tradesmen 2026: £150–£400/Month — Worth It?",
+    title: "Bark for Tradesmen 2026: £150-£400/Month: Worth It?",
     description:
-      "Active Bark users often spend £150–£400/month. Real cost per job, lead quality problems, and when to stop.",
+      "Active Bark users often spend £150-£400/month. Real cost per job, lead quality problems, and when to stop.",
     readTime: "11 min read",
     category: "Platform Reviews",
   },
@@ -116,9 +116,9 @@ const posts: BlogPostMeta[] = [
   },
   {
     slug: "is-checkatrade-worth-it-2025",
-    title: "Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month",
+    title: "Checkatrade Worth It 2026? Real Cost £400-£1,000+/Month",
     description:
-      "Membership plus leads often hits £400–£1,000+/month. When Checkatrade still works — and when to own your leads.",
+      "Membership plus leads often hits £400-£1,000+/month. When Checkatrade still works - and when to own your leads.",
     readTime: "12 min read",
     category: "Platform Reviews",
   },

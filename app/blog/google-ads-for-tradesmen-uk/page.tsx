@@ -33,7 +33,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much should a tradesman spend on Google Ads in the UK?",
     answer:
-      "A realistic starting budget for most trades is £300–£600 per month in ad spend. That's enough to generate meaningful data and consistent leads in most local markets. Start modest, prove the return, then scale. Spending less than £200/month in a competitive trade makes it very hard to get enough volume to optimise properly.",
+      "A realistic starting budget for most trades is £300-£600 per month in ad spend. That's enough to generate meaningful data and consistent leads in most local markets. Start modest, prove the return, then scale. Spending less than £200/month in a competitive trade makes it very hard to get enough volume to optimise properly.",
   },
   {
     question: "Do Google Ads work for all trades?",

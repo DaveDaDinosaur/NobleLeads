@@ -34,7 +34,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How many Google reviews does a tradesman need to rank in the local 3-pack?",
     answer:
-      "There's no fixed number, but in most local markets, 20–40 reviews with a 4.8+ rating is enough to compete for the Google Maps 3-pack. In more competitive areas (major cities, high-demand trades), you may need 60–100+ to hold a top-three position. The key is consistent velocity, a regular flow of new reviews signals to Google that your business is active.",
+      "There's no fixed number, but in most local markets, 20-40 reviews with a 4.8+ rating is enough to compete for the Google Maps 3-pack. In more competitive areas (major cities, high-demand trades), you may need 60-100+ to hold a top-three position. The key is consistent velocity, a regular flow of new reviews signals to Google that your business is active.",
   },
   {
     question: "Is it against Google's rules to ask customers for reviews?",
@@ -44,7 +44,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What's the best way to send a review request to a customer?",
     answer:
-      "SMS outperforms email significantly for review requests, open rates are typically 90%+ vs 20–30% for email. A short, personalised message sent within a few hours of job completion, with a direct link to your Google review page, converts best. Keep it brief: 'Hi [name], really glad we could sort that for you today, would you mind leaving us a quick Google review? It really helps. [link]'",
+      "SMS outperforms email significantly for review requests, open rates are typically 90%+ vs 20-30% for email. A short, personalised message sent within a few hours of job completion, with a direct link to your Google review page, converts best. Keep it brief: 'Hi [name], really glad we could sort that for you today, would you mind leaving us a quick Google review? It really helps. [link]'",
   },
   {
     question: "What if I get a bad Google review?",
@@ -378,9 +378,9 @@ export default function HowToGetMoreGoogleReviewsPage() {
               </p>
               <ul className="mt-3 space-y-2 pl-4">
                 {[
-                  "6 months: 18–30 reviews (enough to compete in most local markets)",
-                  "12 months: 36–60 reviews (top-3 contender in most UK towns)",
-                  "24 months: 72–120 reviews (dominant local position, very hard to displace)",
+                  "6 months: 18-30 reviews (enough to compete in most local markets)",
+                  "12 months: 36-60 reviews (top-3 contender in most UK towns)",
+                  "24 months: 72-120 reviews (dominant local position, very hard to displace)",
                 ].map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary/60" />

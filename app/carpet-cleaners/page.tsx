@@ -135,7 +135,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Carpet Cleaner Marketing Agency UK | More Bookings",
+  title: "Carpet Cleaning Leads Without Buying Them",
   description:
     "NobleLeads delivers marketing for carpet cleaners UK-wide using conversion websites, Google Ads and CRM automation so you can grow domestic, end-of-tenancy and commercial cleaning revenue consistently.",
   canonicalPath,

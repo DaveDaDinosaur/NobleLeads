@@ -135,7 +135,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Plumber Marketing Agency UK | More Leads, More Jobs",
+  title: "Plumbing Leads Without Checkatrade or Bark",
   description:
     "NobleLeads delivers marketing for plumbers UK-wide using conversion websites, Google Ads and CRM automation so you can win consistent work, from emergency call-outs to planned boiler installs and bathroom fits.",
   canonicalPath,

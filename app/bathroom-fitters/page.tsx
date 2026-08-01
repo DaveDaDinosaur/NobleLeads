@@ -135,7 +135,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bathroom Fitter Marketing Agency UK | More Leads",
+  title: "Bathroom Fitting Leads Without Checkatrade",
   description:
     "NobleLeads delivers marketing for bathroom fitters UK-wide using conversion websites, Google Ads and CRM automation so you can attract more serious bathroom renovation enquiries consistently.",
   canonicalPath,

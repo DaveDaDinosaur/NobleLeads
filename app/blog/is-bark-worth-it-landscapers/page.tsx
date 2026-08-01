@@ -14,16 +14,16 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const canonicalPath = "/blog/is-bark-worth-it-landscapers"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
+  title: "Bark for Landscapers 2026: £16-£28 Leads: Worth It?",
   description:
-    "Bark landscaping leads cost £16–£28 and are shared with competitors. See real credit maths, why maintenance contracts rarely come from Bark, and what works better.",
+    "Bark landscaping leads cost £16-£28 and are shared with competitors. See real credit maths, why maintenance contracts rarely come from Bark, and what works better.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Bark for Landscapers 2026: £16–£28 Leads — Worth It?",
   description:
-    "Bark.com for UK landscapers in 2026: £16–£28 per lead, shared competition, maintenance-contract gaps, and better alternatives via Google Ads and your own website.",
+    "Bark.com for UK landscapers in 2026: £16-£28 per lead, shared competition, maintenance-contract gaps, and better alternatives via Google Ads and your own website.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-19",
   dateModified: "2026-07-28",
@@ -39,7 +39,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much does Bark cost for landscapers?",
     answer:
-      "Credits cost roughly £2 each. Landscaping leads typically cost 8–14 credits, putting the cost per enquiry at £16–£28. With a realistic conversion rate of 1 in 3 to 1 in 5, your true cost per booked job is £48–£140. For a small maintenance tidy-up, that wipes the margin. For a £4,000 garden redesign, it's workable, but you're still competing with multiple other landscapers for the same job.",
+      "Credits cost roughly £2 each. Landscaping leads typically cost 8-14 credits, putting the cost per enquiry at £16-£28. With a realistic conversion rate of 1 in 3 to 1 in 5, your true cost per booked job is £48-£140. For a small maintenance tidy-up, that wipes the margin. For a £4,000 garden redesign, it's workable, but you're still competing with multiple other landscapers for the same job.",
   },
   {
     question: "Can Bark help me win maintenance contracts?",

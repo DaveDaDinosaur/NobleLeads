@@ -3,7 +3,12 @@ import type { Metadata } from "next"
 import { HomePageClient } from "@/components/home/home-page-client"
 import { JsonLd } from "@/components/json-ld"
 import { buildMetadata } from "./(shared)/seo-config"
-import { getFAQPageSchema, getLocalBusinessSchema } from "./(shared)/schema"
+import {
+  getFAQPageSchema,
+  getLocalBusinessSchema,
+  getOrganizationSchema,
+  getWebsiteSchema,
+} from "./(shared)/schema"
 import { homepageFAQs } from "@/components/home/faq-section"
 
 export const metadata: Metadata = buildMetadata({
@@ -17,7 +22,14 @@ export default function HomePage() {
   return (
     <>
       <HomePageClient />
-      <JsonLd data={[getLocalBusinessSchema(), getFAQPageSchema(homepageFAQs)]} />
+      <JsonLd
+        data={[
+          getOrganizationSchema(),
+          getWebsiteSchema(),
+          getLocalBusinessSchema(),
+          getFAQPageSchema(homepageFAQs),
+        ]}
+      />
     </>
   )
 }

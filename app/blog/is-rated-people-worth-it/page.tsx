@@ -16,7 +16,7 @@ import { StatCallout } from "@/components/blog/stat-callout"
 const canonicalPath = "/blog/is-rated-people-worth-it"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Rated People Cost 2026: £35/Month + £15 Per Lead — Worth It?",
+  title: "Rated People Cost 2026: £35/Month + £15 Per Lead: Worth It?",
   description:
     "Rated People costs ~£35 + VAT/month plus ~£15 per lead. See real pricing, the 3-competitor cap advantage, and whether it beats Checkatrade for UK trades in 2026.",
   canonicalPath,

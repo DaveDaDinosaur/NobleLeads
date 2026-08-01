@@ -134,7 +134,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Painter & Decorator Marketing Agency UK | More Leads",
+  title: "Decorating Leads Without Checkatrade or Bark",
   description:
     "NobleLeads delivers marketing for painters and decorators UK-wide using conversion websites, Google Ads and CRM automation so you can attract better-paying clients and fill your diary consistently.",
   canonicalPath,

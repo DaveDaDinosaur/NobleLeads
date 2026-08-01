@@ -1,6 +1,47 @@
 export const BUSINESS_NAME = "NobleLeads"
 export const BUSINESS_URL = "https://nobleleads.uk"
 
+// Official social / external profiles for brand-entity recognition.
+// Add real profile URLs here (LinkedIn, Instagram, etc.) as they go live.
+const SAME_AS: string[] = []
+
+export function getOrganizationSchema() {
+  const data: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: BUSINESS_NAME,
+    alternateName: "Noble Leads",
+    url: BUSINESS_URL,
+    logo: `${BUSINESS_URL}/images/noble-leads-logo.png`,
+    description:
+      "NobleLeads is a UK lead generation agency for property service trades, building owned lead systems with conversion websites, Google Ads, SEO and CRM automation.",
+    email: "hello@nobleleads.uk",
+    telephone: "+441223679988",
+    areaServed: "United Kingdom",
+  }
+
+  if (SAME_AS.length > 0) {
+    data.sameAs = SAME_AS
+  }
+
+  return data
+}
+
+export function getWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BUSINESS_NAME,
+    alternateName: "Noble Leads",
+    url: BUSINESS_URL,
+    publisher: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+      url: BUSINESS_URL,
+    },
+  }
+}
+
 export type FAQItem = {
   question: string
   answer: string

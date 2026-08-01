@@ -135,7 +135,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Tree Surgeon Marketing Agency UK | More Leads",
+  title: "Tree Surgery Leads Without Checkatrade",
   description:
     "NobleLeads delivers marketing for tree surgeons UK-wide using conversion websites, Google Ads and CRM automation so you can win more residential, emergency and commercial tree surgery work consistently.",
   canonicalPath,

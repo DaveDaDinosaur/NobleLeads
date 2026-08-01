@@ -134,7 +134,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "End of Tenancy Cleaning Marketing UK | More Bookings",
+  title: "End of Tenancy Leads Without Buying Them",
   description:
     "NobleLeads delivers marketing for end-of-tenancy cleaning companies UK-wide using conversion websites, Google Ads and CRM automation so you can win more direct bookings and letting agent relationships.",
   canonicalPath,

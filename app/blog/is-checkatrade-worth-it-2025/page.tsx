@@ -17,16 +17,16 @@ const primaryKeyword = "is checkatrade worth it 2026 UK"
 const canonicalPath = "/blog/is-checkatrade-worth-it-2025"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month",
+  title: "Checkatrade Worth It 2026? Real Cost £400-£1,000+/Month",
   description:
-    "Membership plus per-lead fees often hits £400–£1,000+/month. See when Checkatrade still works for UK trades — and when you should own your leads instead.",
+    "Membership plus per-lead fees often hits £400-£1,000+/month. See when Checkatrade still works for UK trades - and when you should own your leads instead.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
   headline: "Checkatrade Worth It 2026? Real Cost £400–£1,000+/Month",
   description:
-    "Whether Checkatrade is worth it for UK trades in 2026: real all-in monthly costs of £400–£1,000+, where it still works, and owned alternatives.",
+    "Whether Checkatrade is worth it for UK trades in 2026: real all-in monthly costs of £400-£1,000+, where it still works, and owned alternatives.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-01-01",
 })

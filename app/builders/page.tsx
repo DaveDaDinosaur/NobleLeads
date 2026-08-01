@@ -135,7 +135,7 @@ const steps: HowItWorksStep[] = [
 ]
 
 export const metadata: Metadata = buildMetadata({
-  title: "Builder Marketing Agency UK | More Leads, More Projects",
+  title: "Builder Leads Without Checkatrade or Bark",
   description:
     "NobleLeads delivers builder marketing UK-wide using conversion websites, Google Ads and CRM automation so you can win more extensions, loft conversions and refurbishments consistently.",
   canonicalPath,
