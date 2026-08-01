@@ -5,6 +5,7 @@ import { ArrowUpRight, Mail, Phone } from "lucide-react"
 const companyLinks = [
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

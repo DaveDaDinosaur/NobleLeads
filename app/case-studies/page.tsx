@@ -9,6 +9,17 @@ import { buildMetadata } from "../(shared)/seo-config"
 
 const caseStudies = [
   {
+    slug: "thermal-render-specialists",
+    client: "Thermal Render Specialists",
+    sector: "Render & External Wall Insulation",
+    location: "Gravesend & South East London",
+    package: "Noble Growth",
+    headline: "From no website at all to ranking on page one for render searches in weeks.",
+    result: "Top 3 for dozens of render searches within weeks of launch, with Google Ads and tracking live from day one.",
+    href: "/case-studies/thermal-render-specialists",
+    externalHref: "https://thermalrenderspecialists.co.uk",
+  },
+  {
     slug: "focus-refurbishment",
     client: "Focus Refurbishment",
     sector: "Commercial Refurbishment",
@@ -21,18 +32,12 @@ const caseStudies = [
   },
 ]
 
-export const metadata: Metadata = {
-  ...buildMetadata({
-    title: "Client Case Studies",
-    description:
-      "Real results for real UK trade businesses. See how NobleLeads builds lead generation systems, ad campaigns and operational infrastructure that helps trades grow consistently.",
-    canonicalPath: "/case-studies",
-  }),
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Client Case Studies",
+  description:
+    "Real results for real UK trade businesses. See how NobleLeads builds lead generation systems, ad campaigns and operational infrastructure that helps trades grow consistently.",
+  canonicalPath: "/case-studies",
+})
 
 export default function CaseStudiesPage() {
   return (
