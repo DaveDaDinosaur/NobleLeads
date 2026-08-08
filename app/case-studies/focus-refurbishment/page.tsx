@@ -25,14 +25,14 @@ const articleSchema = getArticleSchema({
     "How NobleLeads rebuilt Focus Refurbishment's digital presence, launched targeted ad campaigns and automated their operations, helping a 25-year-old commercial refurbishment company modernise for growth.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-04",
-  dateModified: "2026-08-01",
+  dateModified: "2026-08-08",
 })
 
 const stats = [
-  { value: "14", label: "Enquiries from the relaunch", sub: "6 fire door conversions + 8 more leads" },
-  { value: "6", label: "Fire door conversions", sub: "Since the campaign relaunch" },
+  { value: "24", label: "Leads in the latest fortnight", sub: "14 website + 10 phone" },
+  { value: "9.49%", label: "Fire door ad CTR", sub: "2-3x the search benchmark" },
+  { value: "~£21", label: "Cost per website lead", sub: "About a third of the market average" },
   { value: "25+", label: "Years in business", sub: "Trading since 2000" },
-  { value: "0→∞", label: "Lead system", sub: "Built from scratch" },
 ]
 
 export default function FocusRefurbishmentCaseStudyPage() {
@@ -263,15 +263,26 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 On-Site Video Content
               </h2>
               <p>
-                During our visit to Sidcup, we filmed a walkthrough of a completed
-                refurbishment project, giving potential clients a genuine look at
-                the standard of work Focus delivers. That content is live on their
-                website and will be used as part of their ongoing ad campaigns.
+                We filmed on site with Focus to capture the standard of their work on
+                camera, content no competitor can replicate: real projects, real team,
+                real results. Below is a walkthrough of a Grade II listed building
+                refurbishment, the kind of high-value, specialist job the whole system
+                is built to attract. It runs on their website and inside their ad
+                campaigns, giving prospective clients proof before they ever pick up
+                the phone.
               </p>
-              <p>
-                A full case study video is also in production, which will give Focus
-                Refurbishment a piece of content that no competitor can replicate, real work, real team, real results, told on camera.
-              </p>
+              <div className="mx-auto w-full max-w-xs sm:max-w-sm">
+                <div className="relative overflow-hidden rounded-xl border border-border/40" style={{ aspectRatio: "9 / 16" }}>
+                  <iframe
+                    src="https://player.vimeo.com/video/1198024690?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                    className="absolute inset-0 h-full w-full"
+                    loading="lazy"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    title="Focus Refurbishment, Grade II listed building refurbishment"
+                  />
+                </div>
+              </div>
             </section>
           </SectionReveal>
 
@@ -291,6 +302,21 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 across refurbishment, extensions, rubbish removal and bathroom
                 remodels, from a business that had zero online lead generation before
                 us.
+              </p>
+              <p>
+                And it keeps accelerating. In the most recent fortnight the system
+                produced{" "}
+                <span className="font-semibold text-foreground">
+                  24 leads, 14 through the website and 10 by phone
+                </span>
+                , with volume nearly quadrupling from the first week to the second.
+                The Fire Doors campaign is running at a{" "}
+                <span className="font-semibold text-foreground">9.49% click-through rate</span>,
+                two to three times the typical search benchmark, at around{" "}
+                <span className="font-semibold text-foreground">£21 per website lead</span>,
+                roughly a third of the fire door market average. On ad placement,
+                Focus now lands at the top of the page as often as the two biggest
+                names in the space.
               </p>
               <p>
                 The search visibility is compounding alongside the ads. The site now
