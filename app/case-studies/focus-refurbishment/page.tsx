@@ -278,13 +278,17 @@ export default function FocusRefurbishmentCaseStudyPage() {
             </section>
           </SectionReveal>
 
-          <SectionReveal delay={160}>
-            <section className="mt-12 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <div className="grid items-center gap-8 sm:grid-cols-2 sm:gap-10">
-                <div className="grid grid-cols-2 gap-3 order-2 sm:order-1">
+        </div>
+
+        {/* Full-width break — videos as the visual pause mid-story */}
+        <SectionReveal delay={160}>
+          <section className="mt-16 border-y border-border/40 bg-card/30">
+            <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+              <div className="grid items-center gap-10 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
+                <div className="order-2 grid grid-cols-2 gap-3 sm:gap-4 md:order-1">
                   <figure>
                     <div
-                      className="relative overflow-hidden rounded-xl border border-border/40"
+                      className="relative overflow-hidden rounded-xl border border-border/50 bg-background shadow-lg shadow-black/20"
                       style={{ aspectRatio: "9 / 16" }}
                     >
                       <iframe
@@ -296,13 +300,13 @@ export default function FocusRefurbishmentCaseStudyPage() {
                         title="Focus Refurbishment, Grade II listed building refurbishment"
                       />
                     </div>
-                    <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
+                    <figcaption className="mt-2.5 text-center text-[11px] leading-snug text-muted-foreground/70">
                       Grade II listed walkthrough
                     </figcaption>
                   </figure>
                   <figure>
                     <div
-                      className="relative overflow-hidden rounded-xl border border-border/40"
+                      className="relative overflow-hidden rounded-xl border border-border/50 bg-background shadow-lg shadow-black/20"
                       style={{ aspectRatio: "9 / 16" }}
                     >
                       <iframe
@@ -314,28 +318,33 @@ export default function FocusRefurbishmentCaseStudyPage() {
                         title="Focus Refurbishment, A Full Room Refurb with Mural"
                       />
                     </div>
-                    <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
+                    <figcaption className="mt-2.5 text-center text-[11px] leading-snug text-muted-foreground/70">
                       Full room refurb with mural
                     </figcaption>
                   </figure>
                 </div>
-                <div className="space-y-4 order-1 sm:order-2">
-                  <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                    On-Site Video Content
+
+                <div className="order-1 space-y-4 md:order-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+                    On camera
+                  </p>
+                  <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                    Proof no competitor can copy
                   </h2>
-                  <p>
-                    We filmed on site with Focus to capture the standard of their work
-                    on camera — content no competitor can replicate: real projects,
-                    real team, real results. One is a Grade II listed building
-                    walkthrough; the other a full room refurb with mural. Both run on
-                    their website and inside their ad campaigns, giving prospective
-                    clients proof before they ever pick up the phone.
+                  <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    We filmed on site with Focus — real projects, real team, real
+                    results. A Grade II listed walkthrough and a full room refurb with
+                    mural. Both run on their website and in their ad campaigns, so
+                    prospective clients see the standard of work before they ever pick
+                    up the phone.
                   </p>
                 </div>
               </div>
-            </section>
-          </SectionReveal>
+            </div>
+          </section>
+        </SectionReveal>
 
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
           <SectionReveal delay={180}>
             <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
