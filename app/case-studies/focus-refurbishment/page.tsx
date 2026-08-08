@@ -279,37 +279,60 @@ export default function FocusRefurbishmentCaseStudyPage() {
           </SectionReveal>
 
           <SectionReveal delay={160}>
-            <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                On-Site Video Content
-              </h2>
-              <p>
-                We filmed on site with Focus to capture the standard of their work on
-                camera — content no competitor can replicate: real projects, real team,
-                real results. Below is a walkthrough of a Grade II listed building
-                refurbishment, the kind of high-value, specialist job the whole system
-                is built to attract. It runs on their website and inside their ad
-                campaigns, giving prospective clients proof before they ever pick up
-                the phone.
-              </p>
-              <figure className="mx-auto w-full max-w-xs sm:max-w-sm">
-                <div
-                  className="relative overflow-hidden rounded-xl border border-border/40"
-                  style={{ aspectRatio: "9 / 16" }}
-                >
-                  <iframe
-                    src="https://player.vimeo.com/video/1198024690?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                    className="absolute inset-0 h-full w-full"
-                    loading="lazy"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    title="Focus Refurbishment, Grade II listed building refurbishment"
-                  />
+            <section className="mt-12 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <div className="grid items-center gap-8 sm:grid-cols-2 sm:gap-10">
+                <div className="grid grid-cols-2 gap-3 order-2 sm:order-1">
+                  <figure>
+                    <div
+                      className="relative overflow-hidden rounded-xl border border-border/40"
+                      style={{ aspectRatio: "9 / 16" }}
+                    >
+                      <iframe
+                        src="https://player.vimeo.com/video/1198024690?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        className="absolute inset-0 h-full w-full"
+                        loading="lazy"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        title="Focus Refurbishment, Grade II listed building refurbishment"
+                      />
+                    </div>
+                    <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
+                      Grade II listed walkthrough
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <div
+                      className="relative overflow-hidden rounded-xl border border-border/40"
+                      style={{ aspectRatio: "9 / 16" }}
+                    >
+                      <iframe
+                        src="https://player.vimeo.com/video/1198381228?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                        className="absolute inset-0 h-full w-full"
+                        loading="lazy"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        title="Focus Refurbishment, A Full Room Refurb with Mural"
+                      />
+                    </div>
+                    <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
+                      Full room refurb with mural
+                    </figcaption>
+                  </figure>
                 </div>
-                <figcaption className="mt-2.5 text-center text-xs text-muted-foreground/70">
-                  Grade II listed building refurbishment walkthrough
-                </figcaption>
-              </figure>
+                <div className="space-y-4 order-1 sm:order-2">
+                  <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                    On-Site Video Content
+                  </h2>
+                  <p>
+                    We filmed on site with Focus to capture the standard of their work
+                    on camera — content no competitor can replicate: real projects,
+                    real team, real results. One is a Grade II listed building
+                    walkthrough; the other a full room refurb with mural. Both run on
+                    their website and inside their ad campaigns, giving prospective
+                    clients proof before they ever pick up the phone.
+                  </p>
+                </div>
+              </div>
             </section>
           </SectionReveal>
 
