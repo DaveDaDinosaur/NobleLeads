@@ -321,14 +321,14 @@ export default function FocusRefurbishmentCaseStudyPage() {
           </section>
         </SectionReveal>
 
-        {/* Video 2×2 break */}
+        {/* Video 2×2 break — compact diagonal */}
         <SectionReveal delay={160}>
           <section className="border-b border-border/40 bg-card/30">
-            <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-10">
-                <figure className="order-2 mx-auto w-full max-w-[280px] sm:order-1 sm:mx-0 sm:max-w-[320px] sm:justify-self-start">
+            <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-10 lg:px-0">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <figure className="max-w-[200px] justify-self-start sm:max-w-[220px]">
                   <div
-                    className="relative overflow-hidden rounded-xl border border-border/50 bg-background shadow-lg shadow-black/20"
+                    className="relative overflow-hidden rounded-lg border border-border/50 bg-background shadow-md shadow-black/20"
                     style={{ aspectRatio: "9 / 16" }}
                   >
                     <iframe
@@ -340,34 +340,33 @@ export default function FocusRefurbishmentCaseStudyPage() {
                       title="Focus Refurbishment, Grade II listed building refurbishment"
                     />
                   </div>
-                  <figcaption className="mt-2.5 text-center text-[11px] leading-snug text-muted-foreground/70 sm:text-left">
+                  <figcaption className="mt-1.5 text-[10px] leading-snug text-muted-foreground/70">
                     Grade II listed walkthrough
                   </figcaption>
                 </figure>
 
-                <div className="order-1 flex flex-col justify-center space-y-3 sm:order-2 sm:pl-2 lg:pl-4">
+                <div className="flex flex-col justify-end space-y-2 pb-1 pl-1 sm:pl-2">
                   <SectionLabel>On camera</SectionLabel>
-                  <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                  <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
                     Proof no competitor can copy
                   </h2>
-                  <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
                     We filmed on site with Focus — real projects, real team, real
                     results. Content that lives on their website and in their ads.
                   </p>
                 </div>
 
-                <div className="order-4 flex flex-col justify-center space-y-3 sm:order-3 sm:pr-2 lg:pr-4">
-                  <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <div className="flex flex-col justify-start space-y-2 pr-1 pt-1 sm:pr-2">
+                  <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
                     A Grade II listed walkthrough and a full room refurb with mural.
-                    Prospective clients see the standard of work before they ever pick
-                    up the phone — the kind of proof directories and stock footage can{"'"}t
-                    fake.
+                    Prospective clients see the standard of work before they pick up
+                    the phone — proof directories can{"'"}t fake.
                   </p>
                 </div>
 
-                <figure className="order-3 mx-auto w-full max-w-[280px] sm:order-4 sm:mx-0 sm:max-w-[320px] sm:justify-self-end">
+                <figure className="max-w-[200px] justify-self-end sm:max-w-[220px]">
                   <div
-                    className="relative overflow-hidden rounded-xl border border-border/50 bg-background shadow-lg shadow-black/20"
+                    className="relative overflow-hidden rounded-lg border border-border/50 bg-background shadow-md shadow-black/20"
                     style={{ aspectRatio: "9 / 16" }}
                   >
                     <iframe
@@ -379,7 +378,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                       title="Focus Refurbishment, A Full Room Refurb with Mural"
                     />
                   </div>
-                  <figcaption className="mt-2.5 text-center text-[11px] leading-snug text-muted-foreground/70 sm:text-right">
+                  <figcaption className="mt-1.5 text-right text-[10px] leading-snug text-muted-foreground/70">
                     Full room refurb with mural
                   </figcaption>
                 </figure>
