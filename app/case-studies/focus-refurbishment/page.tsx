@@ -321,12 +321,36 @@ export default function FocusRefurbishmentCaseStudyPage() {
           </section>
         </SectionReveal>
 
-        {/* Video 2×2 break — compact diagonal */}
+        {/* On-site video production */}
         <SectionReveal delay={160}>
-          <section className="border-b border-border/40 bg-card/30">
-            <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-10 lg:px-0">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <figure className="max-w-[200px] justify-self-start sm:max-w-[220px]">
+          <section className="border-y border-border/40 bg-card/30">
+            <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12 lg:px-0">
+              <SectionLabel>On-site production</SectionLabel>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-[1.75rem]">
+                Scripted, filmed and edited in person
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                We met Focus on site, scripted the pieces with them, recorded on real
+                jobs and edited the final cuts ourselves. A Grade II listed walkthrough
+                and a full room refurb with mural — content that now runs on their
+                website and in their ads, so prospective clients see the standard of
+                work before they pick up the phone.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                {["Scripted", "Recorded on site", "Edited in-house"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-background/40 px-3 py-1"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mx-auto mt-8 grid max-w-md grid-cols-2 gap-3 sm:gap-4">
+                <figure>
                   <div
                     className="relative overflow-hidden rounded-lg border border-border/50 bg-background shadow-md shadow-black/20"
                     style={{ aspectRatio: "9 / 16" }}
@@ -340,31 +364,11 @@ export default function FocusRefurbishmentCaseStudyPage() {
                       title="Focus Refurbishment, Grade II listed building refurbishment"
                     />
                   </div>
-                  <figcaption className="mt-1.5 text-[10px] leading-snug text-muted-foreground/70">
+                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
                     Grade II listed walkthrough
                   </figcaption>
                 </figure>
-
-                <div className="flex flex-col justify-end space-y-2 pb-1 pl-1 sm:pl-2">
-                  <SectionLabel>On camera</SectionLabel>
-                  <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-                    Proof no competitor can copy
-                  </h2>
-                  <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                    We filmed on site with Focus — real projects, real team, real
-                    results. Content that lives on their website and in their ads.
-                  </p>
-                </div>
-
-                <div className="flex flex-col justify-start space-y-2 pr-1 pt-1 sm:pr-2">
-                  <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                    A Grade II listed walkthrough and a full room refurb with mural.
-                    Prospective clients see the standard of work before they pick up
-                    the phone — proof directories can{"'"}t fake.
-                  </p>
-                </div>
-
-                <figure className="max-w-[200px] justify-self-end sm:max-w-[220px]">
+                <figure>
                   <div
                     className="relative overflow-hidden rounded-lg border border-border/50 bg-background shadow-md shadow-black/20"
                     style={{ aspectRatio: "9 / 16" }}
@@ -378,7 +382,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                       title="Focus Refurbishment, A Full Room Refurb with Mural"
                     />
                   </div>
-                  <figcaption className="mt-1.5 text-right text-[10px] leading-snug text-muted-foreground/70">
+                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
                     Full room refurb with mural
                   </figcaption>
                 </figure>
