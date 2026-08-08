@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ExternalLink } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -8,9 +8,6 @@ import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
 import { PullQuote } from "@/components/blog/pull-quote"
-import { BrowserFrame } from "@/components/case-studies/browser-frame"
-import { CaseStudyResults } from "@/components/case-studies/case-study-results"
-import { CaseStudyCta } from "@/components/case-studies/case-study-cta"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema } from "../../(shared)/schema"
 
@@ -19,39 +16,24 @@ const canonicalPath = "/case-studies/focus-refurbishment"
 export const metadata: Metadata = buildMetadata({
   title: "Focus Refurbishment Case Study",
   description:
-    "How NobleLeads helped Focus Refurbishment go from referral-only and a broken website to 24 leads a fortnight, 9.49% fire-door CTR and a full growth system.",
+    "How NobleLeads helped Focus Refurbishment, a commercial refurbishment company operating across the M25 and Kent, go from referral-only to a full lead and operations system.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Focus Refurbishment: From Referrals to a Full Growth System",
+  headline: "Focus Refurbishment, From Referrals and a Broken Website to a Full Growth System",
   description:
-    "How NobleLeads rebuilt Focus Refurbishment's digital presence, launched targeted ad campaigns and automated operations for a 25-year commercial refurbishment company.",
+    "How NobleLeads rebuilt Focus Refurbishment's digital presence, launched targeted ad campaigns and automated their operations, helping a 25-year-old commercial refurbishment company modernise for growth.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-06-04",
   dateModified: "2026-08-08",
 })
 
 const stats = [
-  { value: "24", label: "Leads in latest fortnight", sub: "14 website + 10 phone" },
-  { value: "9.49%", label: "Fire door ad CTR", sub: "2–3× search benchmark" },
-  { value: "~£21", label: "Cost per website lead", sub: "~⅓ of market average" },
+  { value: "24", label: "Leads in the latest fortnight", sub: "14 website + 10 phone" },
+  { value: "9.49%", label: "Fire door ad CTR", sub: "2–3× the search benchmark" },
+  { value: "~£21", label: "Cost per website lead", sub: "About a third of the market average" },
   { value: "25+", label: "Years in business", sub: "Trading since 2000" },
-]
-
-const built = [
-  {
-    title: "Website that converts",
-    body: "Fast, structured site with dedicated pages for fire doors, painting, roofing and refurbishment — plus a corrected, photo-rich Google Business Profile.",
-  },
-  {
-    title: "Ads with landing pages",
-    body: "Service-specific campaigns and landing pages. Fire doors alone produced three serious enquiries in two weeks — from a service that previously had zero inbound.",
-  },
-  {
-    title: "Full operations system",
-    body: "CRM, call tracking, out-of-hours chatbot, missed-call text-back, review automation and streamlined quoting — admin that used to need a person, now largely automatic.",
-  },
 ]
 
 export default function FocusRefurbishmentCaseStudyPage() {
@@ -59,192 +41,260 @@ export default function FocusRefurbishmentCaseStudyPage() {
     <main className="min-h-screen overflow-x-hidden">
       <Navigation />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden
-        >
-          <div className="absolute -top-32 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,hsl(215_52%_35%/0.35)_0%,transparent_70%)] blur-[80px]" />
-          <div className="absolute bottom-0 left-[-8%] h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle,hsl(42_45%_55%/0.18)_0%,transparent_70%)] blur-[90px]" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <article className="pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
           <SectionReveal>
-            <div className="max-w-3xl">
+            <header>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
                 Case Study · Commercial Refurbishment
               </p>
               <h1 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                From referrals and a broken site to{" "}
-                <span className="text-secondary">24 leads a fortnight</span>
+                Focus Refurbishment, From Referrals and a Broken Website to a Full
+                Growth System
               </h1>
-              <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Focus Refurbishment had 25 years of quality work across the M25 and
-                Kent — and almost no digital presence. We built the website, ads and
-                ops system that turned that reputation into a measurable pipeline.
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Focus Refurbishment have been delivering commercial and domestic
+                refurbishment work across the M25 and Kent since 2000. Twenty-five
+                years of strong work, a solid reputation, and until recently, almost
+                no digital presence to show for it. This is how that changed.
               </p>
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link
-                  href="/contact"
-                  className="group inline-flex min-touch items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
-                >
-                  Book a Discovery Call
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  Noble Growth Package
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  Sidcup, South East London &amp; Kent
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  Commercial &amp; Domestic
+                </span>
                 <a
                   href="https://focusrefurbishmentltd.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-touch items-center justify-center gap-2 rounded-lg border border-border/50 bg-card/40 px-6 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-secondary/40"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-secondary/30 bg-secondary/5 px-3 py-1 text-secondary transition-colors hover:bg-secondary/10"
                 >
-                  Visit live site
-                  <ExternalLink className="h-3.5 w-3.5" />
+                  focusrefurbishmentltd.com ↗
                 </a>
               </div>
+            </header>
+          </SectionReveal>
 
-              <div className="mt-6 flex flex-wrap gap-2 text-xs text-muted-foreground">
-                {["Noble Growth", "Sidcup · SE London & Kent", "Commercial & Domestic"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1"
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                      {tag}
-                    </span>
-                  )
-                )}
+          <SectionReveal delay={60}>
+            <figure className="mt-8 sm:mt-10">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border/30">
+                <Image
+                  src="/images/case-studies/focus-refurbishment-website.png"
+                  alt="Focus Refurbishment homepage with branded fleet and commercial contractor positioning"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 48rem"
+                  className="object-cover object-[70%_center]"
+                />
               </div>
-            </div>
+              <figcaption className="mt-2.5 text-center text-xs text-muted-foreground/70">
+                The rebuilt Focus Refurbishment website
+              </figcaption>
+            </figure>
           </SectionReveal>
 
+          {/* Results — one quiet strip, not four separate cards */}
           <SectionReveal delay={80}>
-            <div className="mt-10 sm:mt-12">
-              <BrowserFrame
-                src="/images/case-studies/focus-refurbishment-website.png"
-                alt="Focus Refurbishment website homepage showing branded fleet and commercial contractor positioning"
-                url="focusrefurbishmentltd.com"
-                priority
-                objectPosition="object-[70%_center]"
-              />
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Results */}
-      <section className="relative py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <SectionReveal direction="scale">
-            <CaseStudyResults stats={stats} />
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Challenge */}
-      <section className="pb-4 sm:pb-6">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <SectionReveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
-              The challenge
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Strong work. Invisible online.
-            </h2>
-            <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <p>
-                Craig had built Focus over 25 years on quality and referrals — but
-                feast-and-famine months kept hitting. The website felt like a Word
-                document, the Google listing had a wrong address and almost no photos,
-                and the enquiry form emailed an inbox nobody monitored properly.
-              </p>
-              <p>
-                Facebook ads had been tried. Without a landing page or follow-up
-                system, nothing stuck. Admin was piling up, and the back-office person
-                who held it together was ready to retire.
-              </p>
-            </div>
-            <PullQuote>
-              The missed call text-back alone paid for the first month… I can see
-              exactly what came from which campaign, no more guessing.
-            </PullQuote>
-            <p className="text-xs text-muted-foreground/80">
-              — Craig H., Owner, Focus Refurbishment
-            </p>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* What we built */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <SectionReveal>
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
-                What we built
-              </p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Website. Ads. Operations. One system.
-              </h2>
-            </div>
-          </SectionReveal>
-
-          <div className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-3">
-            {built.map((item, i) => (
-              <SectionReveal key={item.title} delay={60 + i * 70}>
-                <div className="h-full border-t border-secondary/30 pt-5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-secondary/40 bg-secondary/10 text-xs font-bold text-secondary">
-                    {i + 1}
-                  </div>
-                  <h3 className="mt-4 text-base font-semibold text-foreground sm:text-lg">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {item.body}
+            <div className="mt-10 grid grid-cols-2 border-y border-border/40 sm:grid-cols-4">
+              {stats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`px-3 py-5 text-center sm:px-4 sm:py-6 ${
+                    i > 0 ? "border-l border-border/30" : ""
+                  } ${i >= 2 ? "border-t border-border/30 sm:border-t-0" : ""}`}
+                >
+                  <p className="text-xl font-bold tabular-nums text-secondary sm:text-2xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-[11px] font-medium leading-snug text-foreground sm:text-xs">
+                    {stat.label}
+                  </p>
+                  <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground">
+                    {stat.sub}
                   </p>
                 </div>
-              </SectionReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+              ))}
+            </div>
+          </SectionReveal>
 
-      {/* Video + proof */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
-            <SectionReveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
-                On-site proof
-              </p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Content competitors can{"'"}t copy
+          <SectionReveal delay={100}>
+            <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                The Situation
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                We filmed on site — real projects, real team. This Grade II listed
-                walkthrough runs on the website and in ads, so prospects see the
-                standard of work before they call.
+              <p>
+                Craig, owner of Focus Refurbishment, had built a genuinely strong
+                business over 25 years — quality work, repeat commercial clients and a
+                reputation that spoke for itself in the right circles. But the business
+                had hit a ceiling that referrals alone couldn{"'"}t break through.
               </p>
-              <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
-                {[
-                  "6 fire door conversions after campaign relaunch",
-                  "8 more leads across refurb, extensions & bathrooms",
-                  "1,000+ impressions for fire door installs in London",
-                ].map((line) => (
-                  <li key={line} className="flex gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-            </SectionReveal>
+              <p>
+                Work came in waves. Good months were great. Quiet months were
+                stressful. There was no way to turn the tap on when the pipeline
+                emptied, and no system in place to chase the next contract opportunity
+                without doing it all manually.
+              </p>
+              <p>
+                Craig had a clear ambition: consistent commercial contracts, less feast
+                and famine. But the infrastructure wasn{"'"}t there. The website had
+                three pages, loaded slowly and felt, in Craig{"'"}s own words, like a
+                Word document. The Google Business Profile had a wrong address, almost
+                no photos and no reviews. The enquiry form emailed an inbox that
+                wasn{"'"}t being monitored properly.
+              </p>
+              <p>
+                Craig had tried Facebook ads at some point, but without a proper
+                landing page or follow-up system, nothing stuck. Admin was piling up.
+                His mum, who had been handling a lot of the back-office work, was ready
+                to retire, and Craig knew the business needed to modernise.
+              </p>
+              <p>That{"'"}s when he got in touch with NobleLeads.</p>
+            </section>
+          </SectionReveal>
 
-            <SectionReveal delay={100} direction="right">
-              <div className="mx-auto w-full max-w-[280px] sm:max-w-[320px] lg:mx-0 lg:max-w-none lg:justify-self-end">
+          <SectionReveal delay={110}>
+            <PullQuote>
+              The missed call text-back alone paid for the first month. Missed calls
+              get a reply within seconds, quotes are followed up automatically and I
+              can see exactly what came from which campaign — no more guessing.
+            </PullQuote>
+            <p className="-mt-4 text-xs text-muted-foreground/75">
+              Craig H., Owner, Focus Refurbishment
+            </p>
+          </SectionReveal>
+
+          <SectionReveal delay={120}>
+            <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                What We Found
+              </h2>
+              <p>
+                We visited Craig and the team in Sidcup to understand the business
+                properly — the work they do, the clients they want more of, and the
+                day-to-day that was taking up too much time.
+              </p>
+              <p>
+                The picture was clear: Focus had everything a strong commercial
+                contractor needs — experience, quality, range of services — but none of
+                it was visible online. A potential client Googling them would find a
+                slow, sparse website with a wrong address and no social proof. Compared
+                to competitors with polished digital presences, the gap was significant.
+              </p>
+              <p>
+                Beyond the front end, there was no system behind the business. Quotes
+                went out and were followed up manually, or not at all. Invoicing was
+                manual. Reviews weren{"'"}t being collected. There was no CRM, no
+                pipeline visibility, and no way to see at a glance where the business
+                stood on any given week.
+              </p>
+            </section>
+          </SectionReveal>
+
+          <SectionReveal delay={140}>
+            <section className="mt-12 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                What We Built
+              </h2>
+
+              <div className="mt-6 space-y-8">
+                <div className="space-y-3 border-l border-secondary/25 pl-5">
+                  <h3 className="text-base font-semibold text-foreground">
+                    A website that actually works
+                  </h3>
+                  <p>
+                    We rebuilt their online presence from the ground up — a properly
+                    structured, fast-loading website with dedicated service pages for
+                    fire door installation, painting and decorating, roofing and
+                    refurbishment. The Google Business Profile was corrected, populated
+                    with real project photography and optimised for local search across
+                    their service area,{" "}
+                    <a
+                      href="https://focusrefurbishmentltd.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-secondary/80 transition-colors hover:text-secondary"
+                    >
+                      live at focusrefurbishmentltd.com
+                    </a>
+                    .
+                  </p>
+                </div>
+
+                <div className="space-y-3 border-l border-secondary/25 pl-5">
+                  <h3 className="text-base font-semibold text-foreground">
+                    Targeted ads with dedicated landing pages
+                  </h3>
+                  <p>
+                    Rather than driving ad traffic to a generic homepage, we built
+                    dedicated landing pages for each service — each one written and
+                    designed to convert a visitor who had just searched for that
+                    specific work. The first campaign to launch was fire doors,
+                    targeting commercial clients across the M25 and Kent. Within two
+                    weeks of going live, Focus had received three serious fire door
+                    enquiries — a service that had previously generated zero inbound
+                    interest online.
+                  </p>
+                  <p>
+                    Painting and decorating and roofing campaigns followed, with the
+                    full refurbishment campaign in production alongside case study video
+                    content filmed on site.
+                  </p>
+                </div>
+
+                <div className="space-y-3 border-l border-secondary/25 pl-5">
+                  <h3 className="text-base font-semibold text-foreground">
+                    A full operations system
+                  </h3>
+                  <p>
+                    This is where the real transformation happened. We implemented a
+                    complete client management system — CRM with full pipeline
+                    visibility, tracked phone numbers so every call is attributed to the
+                    right campaign, and an AI-powered chatbot handling out-of-hours
+                    enquiries so no lead goes unresponded to overnight.
+                  </p>
+                  <p>
+                    Automations were built for review collection after every job,
+                    missed-call text-back within 60 seconds, and a fast follow-up
+                    sequence for every campaign form submission. Quoting, invoicing and
+                    client communications — previously manual and time-consuming — are
+                    now streamlined through the system. Social media management was also
+                    brought under the same roof.
+                  </p>
+                  <p>
+                    Craig now has a clear view of every enquiry, every quote and every
+                    active job in one place, accessible on his phone. The admin that
+                    previously required a dedicated person is now largely automated.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </SectionReveal>
+
+          <SectionReveal delay={160}>
+            <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                On-Site Video Content
+              </h2>
+              <p>
+                We filmed on site with Focus to capture the standard of their work on
+                camera — content no competitor can replicate: real projects, real team,
+                real results. Below is a walkthrough of a Grade II listed building
+                refurbishment, the kind of high-value, specialist job the whole system
+                is built to attract. It runs on their website and inside their ad
+                campaigns, giving prospective clients proof before they ever pick up
+                the phone.
+              </p>
+              <figure className="mx-auto w-full max-w-xs sm:max-w-sm">
                 <div
-                  className="relative overflow-hidden rounded-2xl border border-border/40 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.7)]"
+                  className="relative overflow-hidden rounded-xl border border-border/40"
                   style={{ aspectRatio: "9 / 16" }}
                 >
                   <iframe
@@ -256,89 +306,99 @@ export default function FocusRefurbishmentCaseStudyPage() {
                     title="Focus Refurbishment, Grade II listed building refurbishment"
                   />
                 </div>
-                <p className="mt-3 text-center text-xs text-muted-foreground/70 lg:text-left">
-                  Grade II listed refurbishment walkthrough
-                </p>
-              </div>
-            </SectionReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Results narrative */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <SectionReveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
-              The outcome
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              A pipeline that compounds
-            </h2>
-            <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <p>
-                Paid brings enquiries in today. Organic rankings for fire doors,
-                refurbishment and loft conversions across Sidcup and Kent build the
-                free pipeline underneath. Focus now sits at the top of the page for
-                fire door ads as often as the two biggest names in the space.
-              </p>
-              <p>
-                Craig is working toward BM TRADA certification for higher-tier
-                commercial fire door contracts — and the system is already being built
-                to support that next step on Noble Dominate.
-              </p>
-            </div>
+                <figcaption className="mt-2.5 text-center text-xs text-muted-foreground/70">
+                  Grade II listed building refurbishment walkthrough
+                </figcaption>
+              </figure>
+            </section>
           </SectionReveal>
 
-          <SectionReveal delay={80}>
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {[
-                { value: "24", label: "Leads / fortnight" },
-                { value: "9.49%", label: "Fire door CTR" },
-                { value: "~£21", label: "Per website lead" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-xl border border-secondary/20 bg-secondary/5 px-4 py-5 text-center"
+          <SectionReveal delay={180}>
+            <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+                Where They Are Now
+              </h2>
+              <p>
+                The early signal — three fire door enquiries in the first fortnight —
+                has turned into a proper pipeline. After we relaunched and refined the
+                campaign, Focus landed a further{" "}
+                <span className="font-semibold text-foreground">
+                  six fire door conversions and eight more leads
+                </span>{" "}
+                across refurbishment, extensions, rubbish removal and bathroom
+                remodels, from a business that had zero online lead generation before
+                us.
+              </p>
+              <p>
+                And it keeps accelerating. In the most recent fortnight the system
+                produced{" "}
+                <span className="font-semibold text-foreground">
+                  24 leads, 14 through the website and 10 by phone
+                </span>
+                , with volume nearly quadrupling from the first week to the second.
+                The Fire Doors campaign is running at a{" "}
+                <span className="font-semibold text-foreground">
+                  9.49% click-through rate
+                </span>
+                , two to three times the typical search benchmark, at around{" "}
+                <span className="font-semibold text-foreground">
+                  £21 per website lead
+                </span>
+                , roughly a third of the fire door market average. On ad placement,
+                Focus now lands at the top of the page as often as the two biggest
+                names in the space.
+              </p>
+              <p>
+                The search visibility is compounding alongside the ads. The site now
+                pulls over a thousand impressions for fire door installation in London
+                and ranks for refurbishment, renovation and loft conversion searches
+                across Sidcup and Kent — the exact work Craig wants more of. Paid
+                brings the enquiries in today while the rankings build the free
+                pipeline underneath.
+              </p>
+              <p>
+                Craig is also working towards BM TRADA certification, a requirement for
+                certain commercial fire door contracts, which will unlock a wider tier
+                of contract opportunities the system is already being built to support.
+                The move to Noble Dominate, and with it a full commercial contract
+                positioning strategy, is the natural next step.
+              </p>
+              <p>
+                The ambition Craig came to us with — consistent commercial contracts, a
+                business that doesn{"'"}t rely on who happened to call this week — is
+                already happening. The infrastructure is in place. Now it compounds.
+              </p>
+            </section>
+          </SectionReveal>
+
+          <SectionReveal delay={200}>
+            <section className="mt-14 border-t border-border/40 pt-10 text-center">
+              <h2 className="text-lg font-semibold text-foreground sm:text-xl">
+                Want a system like this for your business?
+              </h2>
+              <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Whether you{"'"}re starting from scratch or looking to scale what{"'"}s
+                already working, we{"'"}ll build the infrastructure to grow
+                consistently — leads, operations and everything in between.
+              </p>
+              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  <p className="text-2xl font-bold text-secondary">{item.value}</p>
-                  <p className="mt-1 text-xs font-medium text-muted-foreground">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+                  Book a Free Discovery Call
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="inline-flex min-touch items-center justify-center rounded-lg border border-border/50 bg-card/40 px-6 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-secondary/40"
+                >
+                  More case studies
+                </Link>
+              </div>
+            </section>
           </SectionReveal>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="pb-16 pt-4 sm:pb-20 lg:pb-24">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <SectionReveal direction="scale">
-            <CaseStudyCta
-              headline="Ready to stop relying on who happens to call this week?"
-              body="We'll map your situation in a free discovery call — and show you what a system like Focus's would look like for your trade."
-            />
-          </SectionReveal>
-
-          <SectionReveal delay={80}>
-            <p className="mt-8 text-center text-sm text-muted-foreground">
-              Also see{" "}
-              <Link
-                href="/case-studies/thermal-render-specialists"
-                className="font-semibold text-secondary hover:underline"
-              >
-                Thermal Render Specialists
-              </Link>{" "}
-              ·{" "}
-              <Link href="/case-studies" className="font-semibold text-secondary hover:underline">
-                All case studies
-              </Link>
-            </p>
-          </SectionReveal>
-        </div>
-      </section>
+      </article>
 
       <Footer />
       <MobileCTABar />
