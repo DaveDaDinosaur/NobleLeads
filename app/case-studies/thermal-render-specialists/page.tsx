@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
+import { ArrowRight, ExternalLink } from "lucide-react"
 
 import { BeforeAfterSlider } from "@/components/before-after-slider"
 import { Navigation } from "@/components/navigation"
@@ -8,6 +8,9 @@ import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
+import { BrowserFrame } from "@/components/case-studies/browser-frame"
+import { CaseStudyResults } from "@/components/case-studies/case-study-results"
+import { CaseStudyCta } from "@/components/case-studies/case-study-cta"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema } from "../../(shared)/schema"
 
@@ -16,23 +19,39 @@ const canonicalPath = "/case-studies/thermal-render-specialists"
 export const metadata: Metadata = buildMetadata({
   title: "Thermal Render Specialists Case Study",
   description:
-    "How NobleLeads took Thermal Render Specialists, an EWI and silicone render firm in South East London, from no website at all to ranking top 3 for render searches within weeks of launch.",
+    "How NobleLeads took Thermal Render Specialists from no website to top 3 for dozens of render searches within weeks — with ads and tracking live from day one.",
   canonicalPath,
 })
 
 const articleSchema = getArticleSchema({
-  headline: "Thermal Render Specialists, From No Online Presence to Page One for Render Searches",
+  headline: "Thermal Render Specialists: From Invisible to Page One",
   description:
-    "How NobleLeads built Thermal Render Specialists a full online presence from scratch, website, branding, Google Business Profile, Google Ads and tracking, and had them ranking top 3 for render searches across the South East within weeks.",
+    "How NobleLeads built Thermal Render Specialists a full online presence from scratch and had them ranking top 3 for render searches across the South East within weeks.",
   url: `https://nobleleads.uk${canonicalPath}`,
   datePublished: "2026-08-01",
+  dateModified: "2026-08-08",
 })
 
 const stats = [
-  { value: "0→Page 1", label: "From no website to page one", sub: "In weeks, not months" },
-  { value: "Top 3", label: "For dozens of render searches", sub: "#1 for several core terms" },
+  { value: "0→P1", label: "No website to page one", sub: "In weeks, not months" },
+  { value: "Top 3", label: "Dozens of render searches", sub: "#1 for several core terms" },
   { value: "5.0★", label: "Google rating", sub: "Across 19 reviews" },
-  { value: "Day 1", label: "Ads & tracking live from launch", sub: "Measurable from the first visitor" },
+  { value: "Day 1", label: "Ads & tracking live", sub: "Measurable from launch" },
+]
+
+const built = [
+  {
+    title: "Website from scratch",
+    body: "First-ever site with dedicated EWI, silicone render and commercial pages, clear guarantees, and conversion tracking on every quote form.",
+  },
+  {
+    title: "Brand + visual proof",
+    body: "Logo and brand identity plus interactive before-and-after sliders — the most persuasive thing a render specialist can show a cautious homeowner.",
+  },
+  {
+    title: "GBP, ads & analytics",
+    body: "Optimised Google Business Profile, Google Ads from day one (6.3% CTR), and Analytics + Search Console wired in so every result is measurable.",
+  },
 ]
 
 export default function ThermalRenderSpecialistsCaseStudyPage() {
@@ -41,309 +60,253 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-28 sm:pt-32 lg:pt-36">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
+      <section className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          <div className="absolute -top-32 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,hsl(215_52%_35%/0.35)_0%,transparent_70%)] blur-[80px]" />
+          <div className="absolute bottom-0 left-[-8%] h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle,hsl(42_45%_55%/0.18)_0%,transparent_70%)] blur-[90px]" />
+        </div>
+
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionReveal>
-            <header>
+            <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
                 Case Study · Render &amp; External Wall Insulation
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-                Thermal Render Specialists, From No Online Presence to Page One for Render Searches
+              <h1 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                From no website to{" "}
+                <span className="text-secondary">page one for render searches</span>
               </h1>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Dan runs Thermal Render Specialists, an external wall insulation and
-                silicone render firm based in Gravesend, serving South East London and
-                the surrounding counties. Genuinely skilled, manufacturer-approved
-                work, and until we stepped in, no website at all. This is how NobleLeads
-                took him from completely invisible to dominating render searches across
-                the South East, in a matter of weeks.
+              <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Dan runs an approved Baumit, K Rend and Licata installer in Gravesend —
+                skilled work, long guarantees, and until we stepped in, zero online
+                presence. Within weeks he was dominating South East render searches.
               </p>
-              <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  Noble Growth Package
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  Gravesend &amp; South East London
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  EWI &amp; Silicone Render
-                </span>
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link
+                  href="/contact"
+                  className="group inline-flex min-touch items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
+                >
+                  Book a Discovery Call
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
                 <a
                   href="https://thermalrenderspecialists.co.uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-secondary/30 bg-secondary/5 px-3 py-1 text-secondary transition-colors hover:bg-secondary/10"
+                  className="inline-flex min-touch items-center justify-center gap-2 rounded-lg border border-border/50 bg-card/40 px-6 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-secondary/40"
                 >
-                  thermalrenderspecialists.co.uk ↗
+                  Visit live site
+                  <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>
-            </header>
+
+              <div className="mt-6 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                {["Noble Growth", "Gravesend · SE London", "EWI & Silicone Render"].map(
+                  (tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                      {tag}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
           </SectionReveal>
 
-          <SectionReveal delay={60}>
-            <div className="relative mt-8 overflow-hidden rounded-xl border border-border/30 sm:mt-10">
-              <div className="relative aspect-[16/9]">
-                <Image
-                  src="/images/case-studies/thermal-render-specialists-website.png"
-                  alt="Thermal Render Specialists homepage with branded EWI and silicone render hero and approved-installer trust bar"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 48rem"
-                  className="object-cover object-top"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"
-                  aria-hidden
-                />
-              </div>
+          <SectionReveal delay={80}>
+            <div className="mt-10 sm:mt-12">
+              <BrowserFrame
+                src="/images/case-studies/thermal-render-specialists-website.png"
+                alt="Thermal Render Specialists homepage with EWI and silicone render positioning"
+                url="thermalrenderspecialists.co.uk"
+                priority
+                objectPosition="object-top"
+              />
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      <article className="pb-16 sm:pb-20 lg:pb-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
+      {/* Results */}
+      <section className="relative py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <SectionReveal direction="scale">
+            <CaseStudyResults stats={stats} />
+          </SectionReveal>
+        </div>
+      </section>
 
-          {/* Stats bar */}
+      {/* Challenge */}
+      <section className="pb-4 sm:pb-6">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <SectionReveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              The challenge
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              The work was there. The website wasn{"'"}t.
+            </h2>
+            <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p>
+                Thermal Render Specialists had manufacturer approvals and guarantees up
+                to 25 years — but no website at all. Every enquiry came through word of
+                mouth, so the pipeline rose and fell with whoever passed Dan{"'"}s name on.
+              </p>
+              <p>
+                For a visual trade where homeowners are cautious about who they trust
+                with the outside of their house, being invisible on Google is a serious
+                handbrake on growth.
+              </p>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* What we built */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <SectionReveal>
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+                What we built
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Presence, proof and paid traffic — from day one
+              </h2>
+            </div>
+          </SectionReveal>
+
+          <div className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-3">
+            {built.map((item, i) => (
+              <SectionReveal key={item.title} delay={60 + i * 70}>
+                <div className="h-full border-t border-secondary/30 pt-5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-secondary/40 bg-secondary/10 text-xs font-bold text-secondary">
+                    {i + 1}
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-foreground sm:text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.body}
+                  </p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before / after showcase */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <SectionReveal>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+                Visual proof
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Let the transformation sell the job
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Render is a visual sell — so we made the results the hero. Drag the
+                slider to watch a tired exterior become a clean, insulated finish.
+                That{"'"}s the kind of detail that turns a browse into an enquiry.
+              </p>
+            </SectionReveal>
+
+            <SectionReveal delay={80} direction="right">
+              <BeforeAfterSlider
+                beforeSrc="/images/case-studies/trs-entrance-before.webp"
+                afterSrc="/images/case-studies/trs-entrance-after.webp"
+                beforeAlt="Boundary wall with dull, weathered render before Thermal Render Specialists"
+                afterAlt="The same wall with a crisp bright white silicone render finish after"
+              />
+              <p className="mt-2 text-center text-xs text-muted-foreground/70">
+                Drag to reveal — real Thermal Render Specialists project
+              </p>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Outcome */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <SectionReveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              The outcome
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Invisible one week. Dominating the next.
+            </h2>
+            <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p>
+                Within the first week the site moved from position 69 to the top of
+                page one. Thermal Render Specialists now ranks top three for dozens of
+                render searches — including #1 for terms like &quot;external
+                rendering&quot; and &quot;commercial rendering london&quot;.
+              </p>
+              <p>
+                Paid and organic traffic are climbing week on week. A business that
+                homeowners couldn{"'"}t find a few weeks earlier is now one of the first
+                names they see — with the reviews and photos to back it up.
+              </p>
+            </div>
+          </SectionReveal>
+
           <SectionReveal delay={80}>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-4">
-              {stats.map((stat) => (
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {[
+                { value: "0→P1", label: "In the first week" },
+                { value: "Top 3", label: "Dozens of terms" },
+                { value: "6.3%", label: "Ads CTR" },
+              ].map((item) => (
                 <div
-                  key={stat.label}
-                  className="rounded-xl border border-border/40 bg-card/60 p-4 text-center backdrop-blur-sm"
+                  key={item.label}
+                  className="rounded-xl border border-secondary/20 bg-secondary/5 px-4 py-5 text-center"
                 >
-                  <p className="text-2xl font-bold text-secondary sm:text-3xl">{stat.value}</p>
-                  <p className="mt-1 text-xs font-semibold text-foreground leading-snug">{stat.label}</p>
-                  <p className="mt-0.5 text-[10px] text-muted-foreground">{stat.sub}</p>
+                  <p className="text-2xl font-bold text-secondary">{item.value}</p>
+                  <p className="mt-1 text-xs font-medium text-muted-foreground">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </div>
           </SectionReveal>
-
-          {/* The situation */}
-          <SectionReveal delay={100}>
-            <section className="mt-12 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                The Situation
-              </h2>
-              <p>
-                Dan is an approved installer for Baumit, K Rend and Licata, offering
-                external wall insulation and silicone render systems with guarantees
-                of up to 25 years. The workmanship was there. The accreditations were
-                there. What wasn{"'"}t there was any way for a homeowner to find him.
-              </p>
-              <p>
-                Thermal Render Specialists had no website. None. Every enquiry came
-                through word of mouth and repeat contacts, which meant the pipeline
-                rose and fell with whoever happened to pass his name on that month.
-                Meanwhile, the people who most wanted his service, homeowners typing
-                {" "}&quot;external wall insulation&quot; and &quot;render specialists&quot;
-                into Google every day, had no way of reaching him at all.
-              </p>
-              <p>
-                For a trade where the buying decision is highly visual, and where
-                homeowners are cautious about who they trust with the outside of their
-                house, being invisible online is a serious handbrake on growth.
-              </p>
-            </section>
-          </SectionReveal>
-
-          {/* What we built */}
-          <SectionReveal delay={120}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                What We Built
-              </h2>
-
-              <p className="font-semibold text-foreground">A Complete Website From Scratch</p>
-              <p>
-                We built Thermal Render Specialists their first ever website, {" "}
-                <a
-                  href="https://thermalrenderspecialists.co.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary/80 transition-colors hover:text-secondary"
-                >
-                  live at thermalrenderspecialists.co.uk
-                </a>
-                . A fast, properly structured site with dedicated pages for external
-                wall insulation, silicone render and commercial work, clear
-                explanations of the systems and guarantees, and free quote forms with
-                conversion tracking wired in so every enquiry is captured and measured.
-              </p>
-
-              <p className="font-semibold text-foreground">Branding and a Logo That Fits the Work</p>
-              <p>
-                We designed the Thermal Render Specialists logo and brand look, giving
-                a skilled operator a professional identity that matches the standard
-                of the work and reassures cautious homeowners before they{"'"}ve even
-                made contact.
-              </p>
-
-              <p className="font-semibold text-foreground">Before-and-After Sliders That Sell the Transformation</p>
-              <p>
-                Render and EWI is a visual sell, so we made the results the hero.
-                Interactive before-and-after sliders let a homeowner drag across a
-                real project and watch a tired, dated exterior become a clean, insulated,
-                modern finish. It is the single most persuasive thing a render
-                specialist can show, and it does the convincing before Dan ever picks
-                up the phone.
-              </p>
-
-              <p className="font-semibold text-foreground">Google Business Profile and Reviews</p>
-              <p>
-                We set up and optimised the Google Business Profile so Thermal Render
-                Specialists shows up in local and map results, backed by a 5.0 star
-                rating across 19 reviews, the kind of social proof that turns a search
-                into a booked survey.
-              </p>
-
-              <p className="font-semibold text-foreground">Google Ads From Day One</p>
-              <p>
-                Rather than wait months for organic rankings, we launched Google Ads
-                targeting external wall insulation searches across South East London,
-                sending that traffic straight to purpose-built pages. Early campaigns
-                are running at a 6.3% click-through rate, well above the search
-                benchmark for the sector.
-              </p>
-
-              <p className="font-semibold text-foreground">Analytics and Search Console From Launch</p>
-              <p>
-                Crucially, the site launched with Google Analytics and Search Console
-                configured from day one, so every click, enquiry and ranking movement
-                has been measurable from the very first visitor. There is no guessing
-                what is working, the data has been there since launch.
-              </p>
-
-              <p className="font-semibold text-foreground">Content That Rode the Heatwave</p>
-              <p>
-                During the summer heatwave we published blog content on how to cool a
-                room and a house down, tying Dan{"'"}s core service, insulation that
-                keeps homes cooler in summer and warmer in winter, to what people were
-                actually searching for that week. Instagram content and social ads are
-                next in the pipeline.
-              </p>
-            </section>
-          </SectionReveal>
-
-          {/* Interactive showcase */}
-          <SectionReveal delay={130}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                An Interactive Site That Sells the Work
-              </h2>
-              <p>
-                Render is a visual sell, so we didn{"'"}t just post static photos, we
-                built the transformation into the page. Drag the slider below to see
-                the same wall before and after. This is a live example of the kind of
-                interactive, conversion-focused detail we build into every site, the
-                sort of thing that keeps a homeowner on the page and turns a browse
-                into an enquiry.
-              </p>
-              <div className="not-prose">
-                <BeforeAfterSlider
-                  beforeSrc="/images/case-studies/trs-entrance-before.webp"
-                  afterSrc="/images/case-studies/trs-entrance-after.webp"
-                  beforeAlt="Boundary wall with dull, weathered render before Thermal Render Specialists"
-                  afterAlt="The same wall with a crisp bright white silicone render finish after"
-                />
-                <p className="mt-2 text-center text-xs text-muted-foreground/70">
-                  Drag to reveal, real Thermal Render Specialists project, South East London.
-                </p>
-              </div>
-            </section>
-          </SectionReveal>
-
-          {/* Early results */}
-          <SectionReveal delay={140}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                The Results
-              </h2>
-              <p>
-                Because everything was measured from day one, the traction isn{"'"}t a
-                guess, it{"'"}s in the data. Within the first week of going live the
-                site rocketed from position 69 to the top of page one, and it hasn{"'"}t
-                looked back.
-              </p>
-              <p>
-                Thermal Render Specialists now ranks in the{" "}
-                <span className="font-semibold text-foreground">top three for dozens
-                of render searches</span>, sitting at{" "}
-                <span className="font-semibold text-foreground">number one</span> for
-                terms like &quot;external rendering&quot;, &quot;render
-                specialists&quot; and &quot;commercial rendering london&quot;, plus a
-                long list of location searches right across the South East. For the
-                exact service Dan sells, he is now one of the first names a homeowner
-                sees, backed by a 5.0 star rating and the photos to prove the work.
-              </p>
-              <p>
-                Paid and organic traffic are both climbing week on week, visitors are
-                spending nearly two minutes on the site, and the Google Ads are
-                converting searches into enquiries from day one. A business that was
-                completely invisible a few weeks earlier is now dominating its local
-                search results, exactly the outcome NobleLeads is built to deliver.
-              </p>
-            </section>
-          </SectionReveal>
-
-          {/* Where they are now */}
-          <SectionReveal delay={160}>
-            <section className="mt-10 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                Where They Are Now
-              </h2>
-              <p>
-                Thermal Render Specialists are on the Noble Growth package, with the
-                foundations now firmly in place: a website that converts, a Google
-                presence that ranks, paid campaigns that bring in enquiries immediately
-                and a full analytics setup showing exactly what is working. Instagram
-                content and social ads are the next layer being added.
-              </p>
-              <p>
-                The difference is simple. A few weeks ago, a homeowner searching for
-                external wall insulation in South East London would never have found
-                Dan. Now he is one of the first names they see, with the reviews, the
-                photos and the proof to back it up. The infrastructure is built. From
-                here, it compounds.
-              </p>
-            </section>
-          </SectionReveal>
-
-          {/* CTA */}
-          <SectionReveal delay={200}>
-            <section className="mt-12 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
-              <h2 className="text-lg font-semibold text-foreground sm:text-xl">
-                Want a System Like This for Your Business?
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Whether you{"'"}re starting from nothing like Dan or looking to scale
-                what{"'"}s already working, we{"'"}ll build you the infrastructure to
-                grow consistently, leads, operations and everything in between.
-              </p>
-              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Book a Free Discovery Call
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="inline-flex min-touch items-center justify-center rounded-lg border border-border/50 bg-card/40 px-6 py-3.5 text-sm font-medium text-foreground hover:border-secondary/40 transition-all duration-300"
-                >
-                  See Our Packages
-                </Link>
-              </div>
-            </section>
-          </SectionReveal>
-
         </div>
-      </article>
+      </section>
+
+      {/* CTA */}
+      <section className="pb-16 pt-4 sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <SectionReveal direction="scale">
+            <CaseStudyCta
+              headline="Starting from nothing — or ready to scale?"
+              body="Whether you're invisible online like Dan was, or looking to grow what's already working, we'll build the infrastructure that compounds."
+            />
+          </SectionReveal>
+
+          <SectionReveal delay={80}>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Also see{" "}
+              <Link
+                href="/case-studies/focus-refurbishment"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Focus Refurbishment
+              </Link>{" "}
+              ·{" "}
+              <Link href="/case-studies" className="font-semibold text-secondary hover:underline">
+                All case studies
+              </Link>
+            </p>
+          </SectionReveal>
+        </div>
+      </section>
 
       <Footer />
       <MobileCTABar />
