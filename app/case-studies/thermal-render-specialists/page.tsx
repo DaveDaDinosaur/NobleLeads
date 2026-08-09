@@ -328,7 +328,7 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Whether you{"'"}re starting from nothing like Dan or looking to scale
                 what{"'"}s already working, we{"'"}ll build the infrastructure to grow
-                consistently — leads, operations and everything in between.
+                consistently, leads, operations and everything in between.
               </p>
               <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link

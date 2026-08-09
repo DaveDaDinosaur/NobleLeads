@@ -41,7 +41,7 @@ const built = [
     title: "A website that actually works",
     body: (
       <>
-        We rebuilt their online presence from the ground up — a properly structured,
+        We rebuilt their online presence from the ground up, a properly structured,
         fast-loading website with dedicated service pages for fire door installation,
         painting and decorating, roofing and refurbishment. The Google Business Profile
         was corrected, populated with real project photography and optimised for local
@@ -64,11 +64,11 @@ const built = [
       <>
         <p>
           Rather than driving ad traffic to a generic homepage, we built dedicated
-          landing pages for each service — each one written and designed to convert a
+          landing pages for each service, each one written and designed to convert a
           visitor who had just searched for that specific work. The first campaign to
           launch was fire doors, targeting commercial clients across the M25 and Kent.
           Within two weeks of going live, Focus had received three serious fire door
-          enquiries — a service that had previously generated zero inbound interest
+          enquiries, a service that had previously generated zero inbound interest
           online.
         </p>
         <p className="mt-3">
@@ -85,7 +85,7 @@ const built = [
       <>
         <p>
           This is where the real transformation happened. We implemented a complete
-          client management system — CRM with full pipeline visibility, tracked phone
+          client management system, CRM with full pipeline visibility, tracked phone
           numbers so every call is attributed to the right campaign, and an AI-powered
           chatbot handling out-of-hours enquiries so no lead goes unresponded to
           overnight.
@@ -93,8 +93,8 @@ const built = [
         <p className="mt-3">
           Automations were built for review collection after every job, missed-call
           text-back within 60 seconds, and a fast follow-up sequence for every campaign
-          form submission. Quoting, invoicing and client communications — previously
-          manual and time-consuming — are now streamlined through the system. Social
+          form submission. Quoting, invoicing and client communications (previously
+          manual and time-consuming) are now streamlined through the system. Social
           media management was also brought under the same roof.
         </p>
         <p className="mt-3">
@@ -222,7 +222,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               </h2>
               <p>
                 Craig, owner of Focus Refurbishment, had built a genuinely strong
-                business over 25 years — quality work, repeat commercial clients and a
+                business over 25 years, quality work, repeat commercial clients and a
                 reputation that spoke for itself in the right circles. But the business
                 had hit a ceiling that referrals alone couldn{"'"}t break through.
               </p>
@@ -255,7 +255,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <blockquote className="border-l-4 border-l-[#C9A84C] pl-5 text-base font-medium italic leading-relaxed text-[#C9A84C]/90 sm:text-lg">
                 The missed call text-back alone paid for the first month. Missed calls
                 get a reply within seconds, quotes are followed up automatically and I
-                can see exactly what came from which campaign — no more guessing.
+                can see exactly what came from which campaign, no more guessing.
               </blockquote>
               <p className="mt-4 text-xs text-muted-foreground/75">
                 Craig H., Owner, Focus Refurbishment
@@ -272,12 +272,12 @@ export default function FocusRefurbishmentCaseStudyPage() {
               </h2>
               <p>
                 We visited Craig and the team in Sidcup to understand the business
-                properly — the work they do, the clients they want more of, and the
+                properly, the work they do, the clients they want more of, and the
                 day-to-day that was taking up too much time.
               </p>
               <p>
                 The picture was clear: Focus had everything a strong commercial
-                contractor needs — experience, quality, range of services — but none of
+                contractor needs (experience, quality, range of services), but none of
                 it was visible online. A potential client Googling them would find a
                 slow, sparse website with a wrong address and no social proof. Compared
                 to competitors with polished digital presences, the gap was significant.
@@ -293,7 +293,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
           </SectionReveal>
         </div>
 
-        {/* What we built — soft band for rhythm */}
+        {/* What we built, soft band for rhythm */}
         <SectionReveal delay={140}>
           <section className="mt-14 border-y border-border/30 bg-card/20 sm:mt-16">
             <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-14 lg:px-0">
@@ -334,8 +334,8 @@ export default function FocusRefurbishmentCaseStudyPage() {
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                     We met Focus on site, scripted the pieces with them, recorded on
                     real jobs and edited the final cuts ourselves. We{"'"}ve produced
-                    three videos so far — including a Grade II listed walkthrough and a
-                    full room refurb with mural — now running on their website and in
+                    three videos so far, including a Grade II listed walkthrough and a
+                    full room refurb with mural, now running on their website and in
                     their ads.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2 text-xs text-muted-foreground">
@@ -368,7 +368,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                     />
                   </div>
                   <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70 sm:text-left">
-                    Grade II listed walkthrough — one of three
+                    Grade II listed walkthrough, one of three
                   </figcaption>
                 </figure>
               </div>
@@ -385,7 +385,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 Where They Are Now
               </h2>
               <p>
-                The early signal — three fire door enquiries in the first fortnight —
+                The early signal (three fire door enquiries in the first fortnight)
                 has turned into a proper pipeline. After we relaunched and refined the
                 campaign, Focus landed a further{" "}
                 <span className="font-semibold text-foreground">
@@ -436,7 +436,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 The search visibility is compounding alongside the ads. The site now
                 pulls over a thousand impressions for fire door installation in London
                 and ranks for refurbishment, renovation and loft conversion searches
-                across Sidcup and Kent — the exact work Craig wants more of. Paid brings
+                across Sidcup and Kent, the exact work Craig wants more of. Paid brings
                 the enquiries in today while the rankings build the free pipeline
                 underneath.
               </p>
@@ -448,8 +448,8 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 positioning strategy, is the natural next step.
               </p>
               <p>
-                The ambition Craig came to us with — consistent commercial contracts, a
-                business that doesn{"'"}t rely on who happened to call this week — is
+                The ambition Craig came to us with (consistent commercial contracts, a
+                business that doesn{"'"}t rely on who happened to call this week) is
                 already happening. The infrastructure is in place. Now it compounds.
               </p>
             </section>
@@ -467,7 +467,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Whether you{"'"}re starting from scratch or looking to scale what{"'"}s
                 already working, we{"'"}ll build the infrastructure to grow consistently
-                — leads, operations and everything in between.
+               , leads, operations and everything in between.
               </p>
               <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link

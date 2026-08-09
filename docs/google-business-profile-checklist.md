@@ -1,4 +1,4 @@
-## NobleLeads — Google Business Profile Checklist
+## NobleLeads Google Business Profile Checklist
 
 Use this when setting up or optimising the Google Business Profile for **NobleLeads** (and as a template for trade clients).
 
@@ -17,7 +17,7 @@ Use this when setting up or optimising the Google Business Profile for **NobleLe
 ### 3. Service area
 - **Core focus**: Cambridge and surrounding areas
 - **Wider coverage**: Major UK cities where NobleLeads actively serves trades (e.g. Manchester, Leeds, Birmingham, London)
-- Avoid listing every town individually—define sensible service regions.
+- Avoid listing every town individually. Define sensible service regions.
 
 ### 4. Profile content
 - **Description**:

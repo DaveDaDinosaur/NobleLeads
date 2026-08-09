@@ -1,5 +1,5 @@
 /**
- * What we deliver — six-step journey. Section names and copy as per NobleLeads.
+ * What we deliver: six-step journey. Section names and copy as per NobleLeads.
  */
 
 export type ServiceItem = {

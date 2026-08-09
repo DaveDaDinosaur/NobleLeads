@@ -63,7 +63,7 @@ export default function CaseStudiesPage() {
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Every case study here is a genuine account of what we built, why we
-                built it and what happened. No vanity metrics — just honest results
+                built it and what happened. No vanity metrics, just honest results
                 from UK trade businesses who decided to stop relying on referrals and
                 build something that works.
               </p>
