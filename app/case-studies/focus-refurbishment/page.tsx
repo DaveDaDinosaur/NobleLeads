@@ -325,32 +325,35 @@ export default function FocusRefurbishmentCaseStudyPage() {
         <SectionReveal delay={160}>
           <section className="border-y border-border/40 bg-card/30">
             <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12 lg:px-0">
-              <SectionLabel>On-site production</SectionLabel>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-[1.75rem]">
-                Scripted, filmed and edited in person
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                We met Focus on site, scripted the pieces with them, recorded on real
-                jobs and edited the final cuts ourselves. A Grade II listed walkthrough
-                and a full room refurb with mural — content that now runs on their
-                website and in their ads, so prospective clients see the standard of
-                work before they pick up the phone.
-              </p>
+              <div className="grid items-center gap-8 sm:grid-cols-2 sm:gap-10">
+                <div>
+                  <SectionLabel>On-site production</SectionLabel>
+                  <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-[1.75rem]">
+                    Scripted, filmed and edited in person
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    We met Focus on site, scripted the pieces with them, recorded on
+                    real jobs and edited the final cuts ourselves. We{"'"}ve produced
+                    three videos so far — including a Grade II listed walkthrough and a
+                    full room refurb with mural — now running on their website and in
+                    their ads.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                    {["Scripted", "Recorded on site", "Edited in-house", "3 videos"].map(
+                      (tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-background/40 px-3 py-1"
+                        >
+                          <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                          {tag}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
 
-              <div className="mt-5 flex flex-wrap gap-2 text-xs text-muted-foreground">
-                {["Scripted", "Recorded on site", "Edited in-house"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-background/40 px-3 py-1"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mx-auto mt-8 grid max-w-md grid-cols-2 gap-3 sm:gap-4">
-                <figure>
+                <figure className="mx-auto w-full max-w-[220px] sm:mx-0 sm:max-w-[240px] sm:justify-self-end">
                   <div
                     className="relative overflow-hidden rounded-lg border border-border/50 bg-background shadow-md shadow-black/20"
                     style={{ aspectRatio: "9 / 16" }}
@@ -364,26 +367,8 @@ export default function FocusRefurbishmentCaseStudyPage() {
                       title="Focus Refurbishment, Grade II listed building refurbishment"
                     />
                   </div>
-                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
-                    Grade II listed walkthrough
-                  </figcaption>
-                </figure>
-                <figure>
-                  <div
-                    className="relative overflow-hidden rounded-lg border border-border/50 bg-background shadow-md shadow-black/20"
-                    style={{ aspectRatio: "9 / 16" }}
-                  >
-                    <iframe
-                      src="https://player.vimeo.com/video/1198381228?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                      className="absolute inset-0 h-full w-full"
-                      loading="lazy"
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      title="Focus Refurbishment, A Full Room Refurb with Mural"
-                    />
-                  </div>
-                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70">
-                    Full room refurb with mural
+                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70 sm:text-left">
+                    Grade II listed walkthrough — one of three
                   </figcaption>
                 </figure>
               </div>
