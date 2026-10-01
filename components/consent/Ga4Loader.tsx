@@ -7,82 +7,60 @@ import {
   COOKIE_CONSENT_UPDATED_EVENT,
   readCookieConsent,
 } from "@/lib/cookie-consent"
+import { GA_MEASUREMENT_ID, GOOGLE_ADS_ID, ensureGtagStub } from "@/lib/analytics"
 
-const GA_MEASUREMENT_ID = "G-3HHVV0V655"
 const GA_SCRIPT_ID = "ga4-script"
 
-declare global {
-  interface Window {
-    dataLayer?: unknown[]
-    gtag?: (...args: unknown[]) => void
+let configured = false
+
+// Consent Mode v2 (basic): nothing loads until the visitor accepts. On accept we
+// queue the consent signals Google Ads requires for UK/EEA traffic, then config,
+// all synchronously so any events fired before gtag.js downloads are kept.
+function loadGtagIfConsented() {
+  if (typeof window === "undefined" || configured) return
+  if (!readCookieConsent()?.analytics) return
+
+  ensureGtagStub()
+  const gtag = window.gtag!
+
+  gtag("consent", "default", {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  })
+  gtag("consent", "update", {
+    analytics_storage: "granted",
+    ad_storage: "granted",
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+  })
+  gtag("js", new Date())
+  gtag("config", GA_MEASUREMENT_ID)
+  if (GOOGLE_ADS_ID) gtag("config", GOOGLE_ADS_ID)
+  configured = true
+
+  if (!document.getElementById(GA_SCRIPT_ID)) {
+    const script = document.createElement("script")
+    script.id = GA_SCRIPT_ID
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+    document.head.appendChild(script)
   }
-}
-
-function initGtag() {
-  if (typeof window === "undefined") return
-
-  if (!window.dataLayer) {
-    window.dataLayer = []
-  }
-
-  if (typeof window.gtag !== "function") {
-    // gtag.js only processes commands pushed as the raw `arguments` object.
-    // Pushing a spread array instead makes it silently ignore config/events,
-    // so no page_view or events are ever sent to GA4.
-    window.gtag = function gtag() {
-      // eslint-disable-next-line prefer-rest-params
-      window.dataLayer?.push(arguments)
-    }
-  }
-
-  window.gtag("js", new Date())
-  window.gtag("config", GA_MEASUREMENT_ID)
-}
-
-function loadGaIfConsented() {
-  if (typeof window === "undefined") return
-  const consent = readCookieConsent()
-  if (!consent?.analytics) return
-
-  const existing = document.getElementById(GA_SCRIPT_ID) as
-    | HTMLScriptElement
-    | null
-
-  if (existing) {
-    initGtag()
-    return
-  }
-
-  const script = document.createElement("script")
-  script.id = GA_SCRIPT_ID
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  script.onload = () => initGtag()
-  document.head.appendChild(script)
 }
 
 export function Ga4Loader() {
   useEffect(() => {
-    loadGaIfConsented()
-
-    const handleConsentUpdate = () => {
-      loadGaIfConsented()
-    }
+    loadGtagIfConsented()
 
     const handleStorage = (event: StorageEvent) => {
-      if (event.key === COOKIE_CONSENT_STORAGE_KEY) {
-        loadGaIfConsented()
-      }
+      if (event.key === COOKIE_CONSENT_STORAGE_KEY) loadGtagIfConsented()
     }
 
-    window.addEventListener(COOKIE_CONSENT_UPDATED_EVENT, handleConsentUpdate)
+    window.addEventListener(COOKIE_CONSENT_UPDATED_EVENT, loadGtagIfConsented)
     window.addEventListener("storage", handleStorage)
-
     return () => {
-      window.removeEventListener(
-        COOKIE_CONSENT_UPDATED_EVENT,
-        handleConsentUpdate
-      )
+      window.removeEventListener(COOKIE_CONSENT_UPDATED_EVENT, loadGtagIfConsented)
       window.removeEventListener("storage", handleStorage)
     }
   }, [])

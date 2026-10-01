@@ -3,7 +3,7 @@
 import Script from "next/script"
 import { SectionReveal } from "@/components/section-reveal"
 
-const GHL_BOOKING_URL =
+export const GHL_BOOKING_URL =
   "https://api.leadconnectorhq.com/widget/booking/qqSY7tgsOrKlt7yubct6"
 
 export function BookingEmbed() {
