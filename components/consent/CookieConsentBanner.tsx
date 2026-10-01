@@ -55,8 +55,7 @@ export function CookieConsentBanner() {
             </p>
             <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
               Essential cookies keep this site working. We only enable analytics
-              and advertising cookies (Google Analytics and Google Ads) if you
-              consent. Read our{" "}
+              cookies if you consent. Read our{" "}
               <Link
                 href="/privacy-policy"
                 className="text-secondary underline-offset-4 hover:underline"
@@ -79,10 +78,10 @@ export function CookieConsentBanner() {
               <div className="flex items-center justify-between gap-3">
                 <div>
                   <p className="text-sm font-medium text-foreground">
-                    Analytics &amp; advertising cookies
+                    Analytics cookies
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    Help us understand site usage and measure how our ads perform.
+                    Help us understand site usage and improve performance.
                   </p>
                 </div>
                 <label className="inline-flex items-center gap-2 text-xs text-foreground">
@@ -121,7 +120,7 @@ export function CookieConsentBanner() {
               onClick={acceptAnalytics}
               className="rounded-md bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground transition-colors hover:bg-gold-300"
             >
-              Accept
+              Accept analytics
             </button>
             <button
               type="button"

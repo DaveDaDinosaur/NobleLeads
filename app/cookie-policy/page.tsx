@@ -7,7 +7,7 @@ import { buildMetadata } from "../(shared)/seo-config"
 export const metadata: Metadata = buildMetadata({
   title: "Cookie Policy",
   description:
-    "How Noble Leads uses essential, analytics and advertising cookies, and how you can manage your consent preferences.",
+    "How Noble Leads uses essential and analytics cookies, and how you can manage your consent preferences.",
   canonicalPath: "/cookie-policy",
 })
 
@@ -49,9 +49,6 @@ export default function CookiePolicyPage() {
                   Analytics cookies: help us understand site performance and improve
                   user experience.
                 </li>
-                <li>
-                  Advertising cookies: help us measure how our Google Ads perform.
-                </li>
               </ul>
             </section>
 
@@ -63,19 +60,6 @@ export default function CookiePolicyPage() {
                 We use Google Analytics 4 (GA4) only when you provide analytics
                 consent. GA4 may collect information such as pages visited, time on
                 site, device/browser information, and approximate location data.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl font-semibold text-foreground">
-                Advertising Cookies
-              </h2>
-              <p className="mt-3">
-                If you consent, we use the Google Ads tag to measure whether people
-                who clicked one of our ads went on to submit an enquiry or book a
-                call. This helps us understand which ads work. It is not loaded
-                unless you accept, and we send Google your consent choice using
-                Google Consent Mode.
               </p>
             </section>
 
