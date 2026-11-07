@@ -1,38 +1,81 @@
+"use client"
+
+import Link from "next/link"
+import { useRef } from "react"
+
+import { gsap, prefersReducedMotion, useGSAP } from "@/components/motion/gsap"
+import { formatGBP, GO_LIVE_WORKING_DAYS, MIN_JOB_VALUE } from "@/lib/offer"
+
+const markers = [
+  { label: "Exclusive leads" },
+  { label: "Built in-house", href: "/growth-system" },
+  { label: "You keep the website" },
+  { label: "Focus Refurbishment", href: "/case-studies/focus-refurbishment" },
+  { label: "Thermal Render", href: "/case-studies/thermal-render-specialists" },
+  { label: `Live in ${GO_LIVE_WORKING_DAYS} working days`, href: "/how-it-works" },
+  { label: `Jobs from ${formatGBP(MIN_JOB_VALUE)}` },
+  { label: "Cambridge · UK" },
+]
+
 export function SocialProofBar() {
-  const trades = [
-    "Window cleaners",
-    "Roofers",
-    "Landscapers",
-    "Driveway & paving",
-    "Domestic & commercial cleaners",
-    "Plumbers",
-    "Electricians",
-    "Painters & decorators",
-  ]
+  const track = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      const el = track.current
+      if (!el || prefersReducedMotion()) return
+      const loop = gsap.to(el, { xPercent: -50, duration: 48, ease: "none", repeat: -1 })
+      const onEnter = () => gsap.to(loop, { timeScale: 0.2, duration: 0.6 })
+      const onLeave = () => gsap.to(loop, { timeScale: 1, duration: 0.6 })
+      el.addEventListener("pointerenter", onEnter)
+      el.addEventListener("pointerleave", onLeave)
+      return () => {
+        el.removeEventListener("pointerenter", onEnter)
+        el.removeEventListener("pointerleave", onLeave)
+      }
+    },
+    { scope: track }
+  )
+
+  const items = [...markers, ...markers]
 
   return (
-    <section className="relative border-b border-border/40 bg-background/80 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 text-xs sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8 sm:text-sm">
-        <p className="font-medium text-muted-foreground">
-          Trusted by{" "}
-          <span className="text-secondary">
-            cleaners, roofers, landscapers &amp; more across the UK
-          </span>
-          .
-        </p>
-        <div className="flex flex-wrap gap-2 text-[11px] sm:text-xs text-muted-foreground/80">
-          {trades.map((trade) => (
+    <section className="relative overflow-hidden border-y border-border/60 bg-background py-6 sm:py-8">
+      <p className="label-mono mb-4 px-4 text-muted-foreground sm:px-6 lg:px-10">
+        Owned, not rented
+      </p>
+      <div ref={track} className="flex w-max items-center">
+        {items.map((marker, i) => {
+          const cloned = i >= markers.length
+          const inner = (
+            <>
+              <span className="display px-6 text-4xl text-foreground/85 transition-colors duration-300 group-hover:text-secondary sm:px-10 sm:text-6xl">
+                {marker.label}
+              </span>
+              <span className="accent-mono text-3xl text-secondary/60 sm:text-5xl">*</span>
+            </>
+          )
+          const className = "group flex items-center whitespace-nowrap"
+
+          if (marker.href && !cloned) {
+            return (
+              <Link key={`${marker.label}-${i}`} href={marker.href} className={className}>
+                {inner}
+              </Link>
+            )
+          }
+
+          return (
             <span
-              key={trade}
-              className="inline-flex items-center gap-1 rounded-full border border-border/60 bg-card/60 px-3 py-1"
+              key={`${marker.label}-${i}`}
+              className={className}
+              aria-hidden={cloned || undefined}
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-              {trade}
+              {inner}
             </span>
-          ))}
-        </div>
+          )
+        })}
       </div>
     </section>
   )
 }
-

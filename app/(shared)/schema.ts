@@ -16,7 +16,7 @@ export function getOrganizationSchema() {
     url: BUSINESS_URL,
     logo: `${BUSINESS_URL}/images/noble-leads-logo.png`,
     description:
-      "NobleLeads is a UK lead generation agency for property service trades, building owned lead systems with conversion websites, Google Ads, SEO and CRM automation.",
+      "NobleLeads is a UK lead generation agency for trades with high-value jobs, building lead systems the client owns: conversion websites, Google Ads and automated follow-up, built in-house.",
     email: "hello@nobleleads.uk",
     telephone: "+441223679988",
     areaServed: "United Kingdom",
@@ -58,8 +58,8 @@ export function getLocalBusinessSchema() {
     telephone: "+441223679988",
     areaServed: "United Kingdom",
     description:
-      "Digital marketing agency for UK property service trades. Websites, Google Ads, CRM automation and lead generation for cleaners, roofers, landscapers and tradespeople.",
-    priceRange: "££",
+      "Lead generation agency for UK trades with high-value jobs: fire doors, EWI and render, roofing, extensions, loft conversions, kitchens, driveways, solar and stairlifts.",
+    priceRange: "£1,495 setup, £695/month",
   }
 }
 

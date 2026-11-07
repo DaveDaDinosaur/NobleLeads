@@ -11,7 +11,7 @@ import { buildMetadata } from "../(shared)/seo-config"
 export const metadata: Metadata = {
   ...buildMetadata({
     title: "Call Booked",
-    description: "Your discovery call with Noble Leads is booked.",
+    description: "Your call with NobleLeads is booked.",
     canonicalPath: "/thank-you",
   }),
   robots: {
@@ -31,7 +31,7 @@ const nextSteps = [
     step: "2",
     title: "Have Your Details Handy",
     description:
-      "Have your website, current marketing spend and enquiry volume in mind, it'll help us give you sharper advice on the call.",
+      "Know your average job value, what you spend on directories or ads now, and roughly how many enquiries you get a month. It makes the call far more useful.",
   },
   {
     step: "3",
@@ -53,7 +53,7 @@ export default function ThankYouPage() {
               <CheckCircle2 className="h-7 w-7 text-secondary" />
             </div>
             <h1 className="mt-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Your Discovery Call Is Booked
+              Your Call Is Booked
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               Thanks for booking a time with us. Here's what happens next.
@@ -63,13 +63,9 @@ export default function ThankYouPage() {
           <div className="mt-12 grid grid-cols-1 gap-6 text-left sm:grid-cols-3">
             {nextSteps.map((item, index) => (
               <SectionReveal key={item.step} delay={index * 150}>
-                <div className="h-full rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary/20">
-                    <span className="text-xs font-bold text-secondary">
-                      {item.step}
-                    </span>
-                  </div>
-                  <h3 className="mt-4 text-sm font-semibold text-foreground">
+                <div className="h-full border-t border-border pt-5">
+                  <p className="label-mono text-secondary">0{item.step}</p>
+                  <h3 className="mt-4 text-base font-medium text-foreground">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
@@ -82,7 +78,7 @@ export default function ThankYouPage() {
 
           <SectionReveal delay={450}>
             <p className="mt-12 text-sm text-muted-foreground">
-              Need to make changes before the call?{" "}
+              Need to change the time?{" "}
               <a
                 href="mailto:hello@nobleleads.uk"
                 className="font-medium text-secondary hover:underline"

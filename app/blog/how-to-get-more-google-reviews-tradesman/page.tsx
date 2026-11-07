@@ -83,17 +83,17 @@ export default function HowToGetMoreGoogleReviewsPage() {
 
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · 12 min read
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 How to Get More Google Reviews as a Tradesman UK (2026 Guide)
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
               {/* Quick Answer */}
-              <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
+              <div className="quick-answer mt-6 border-l-2 border-secondary pl-5">
+                <p className="label-mono text-muted-foreground">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
                   Ask within two hours of finishing a job, send via SMS with a direct link, keep the message short and personal. Consistency matters more than volume, five reviews a month every month beats fifty in January and none the rest of the year. Automated follow-up removes the need to remember to ask.
                 </p>
@@ -185,17 +185,17 @@ export default function HowToGetMoreGoogleReviewsPage() {
               </p>
 
               <h3 className="mt-5 text-base font-semibold text-foreground">SMS (best channel, 90%+ open rate)</h3>
-              <div className="mt-3 rounded-lg border border-border/40 bg-card/40 p-4 font-mono text-xs sm:text-sm text-muted-foreground">
+              <div className="mt-3 rounded-lg border border-border p-4 font-mono text-xs sm:text-sm text-muted-foreground">
                 Hi [first name], thanks for having us today, really glad we could get that sorted. If you{"'"}re happy with the work, would you mind leaving us a quick Google review? It only takes a minute and it really helps: [link]
               </div>
 
               <h3 className="mt-5 text-base font-semibold text-foreground">Shorter variation</h3>
-              <div className="mt-3 rounded-lg border border-border/40 bg-card/40 p-4 font-mono text-xs sm:text-sm text-muted-foreground">
+              <div className="mt-3 rounded-lg border border-border p-4 font-mono text-xs sm:text-sm text-muted-foreground">
                 Hi [name], hope you{"'"}re pleased with the work today. A Google review would mean a lot if you get a moment: [link] Thanks, [your name]
               </div>
 
               <h3 className="mt-5 text-base font-semibold text-foreground">WhatsApp (works well for existing customers)</h3>
-              <div className="mt-3 rounded-lg border border-border/40 bg-card/40 p-4 font-mono text-xs sm:text-sm text-muted-foreground">
+              <div className="mt-3 rounded-lg border border-border p-4 font-mono text-xs sm:text-sm text-muted-foreground">
                 Hi [name], great to see you today. If you{"'"}re happy with how the [job] turned out, a quick Google review would help us loads. Here{"'"}s the link: [link] No worries if not! 👍
               </div>
 
@@ -250,15 +250,15 @@ export default function HowToGetMoreGoogleReviewsPage() {
           </SectionReveal>
 
           {/* Mid-article CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Want review requests automated so you never forget to ask again?
             </p>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              href="/survey"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
-              Free 15-min discovery call →
+              Get your growth plan →
             </Link>
           </div>
 
@@ -316,7 +316,7 @@ export default function HowToGetMoreGoogleReviewsPage() {
               </p>
               <p>
                 This is part of the NobleLeads system, review requests are built into the post-job automation so every completed job triggers the ask.{" "}
-                <Link href="/contact" className="text-secondary hover:underline">
+                <Link href="/survey" className="text-secondary hover:underline">
                   See how it works →
                 </Link>
               </p>
@@ -335,7 +335,7 @@ export default function HowToGetMoreGoogleReviewsPage() {
               <p>
                 Responding to positive reviews doesn{"'"}t need to be long. A few lines is enough:
               </p>
-              <div className="mt-3 rounded-lg border border-border/40 bg-card/40 p-4 font-mono text-xs sm:text-sm text-muted-foreground">
+              <div className="mt-3 rounded-lg border border-border p-4 font-mono text-xs sm:text-sm text-muted-foreground">
                 Thanks so much [name], really glad we could get your boiler sorted before the cold snap. It was a pleasure, and we{"'"}re here whenever you need us. [Your name], [Business name]
               </div>
               <p className="mt-4">
@@ -409,7 +409,7 @@ export default function HowToGetMoreGoogleReviewsPage() {
               <p>
                 Go through your job history, invoices, WhatsApp threads, previous texts, and identify customers who gave you positive verbal feedback, repeat customers, referrers. Message them directly:
               </p>
-              <div className="mt-3 rounded-lg border border-border/40 bg-card/40 p-4 font-mono text-xs sm:text-sm text-muted-foreground">
+              <div className="mt-3 rounded-lg border border-border p-4 font-mono text-xs sm:text-sm text-muted-foreground">
                 Hi [name], hope you{"'"}re well. We{"'"}re trying to build up our Google reviews, would you mind leaving us one if you were happy with the work we did? Here{"'"}s the link: [link] Really appreciate it.
               </div>
               <p className="mt-4">
@@ -423,7 +423,7 @@ export default function HowToGetMoreGoogleReviewsPage() {
 
           {/* Section 10: Internal links to trade pages */}
           <SectionReveal delay={80}>
-            <section className="mt-12 rounded-xl border border-border/40 bg-card/30 p-5 sm:p-6">
+            <section className="mt-12 border-t border-border pt-8">
               <h2 className="text-base font-semibold text-foreground sm:text-lg">
                 Review Building Is Built Into the NobleLeads System
               </h2>
@@ -442,7 +442,7 @@ export default function HowToGetMoreGoogleReviewsPage() {
                   <Link
                     key={href}
                     href={href}
-                    className="inline-flex items-center rounded-lg border border-border/40 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-secondary/40 hover:text-secondary"
+                    className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-secondary/40 hover:text-secondary"
                   >
                     {label}
                   </Link>
@@ -465,23 +465,23 @@ export default function HowToGetMoreGoogleReviewsPage() {
 
           {/* CTA */}
           <SectionReveal delay={80}>
-            <section className="mt-14 rounded-2xl border border-secondary/30 bg-secondary/5 p-6 sm:p-8">
+            <section className="mt-14 border-t border-border pt-10">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Stop Relying on Memory to Get Reviews
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                NobleLeads builds automated review request sequences into every client system, so every completed job triggers the ask, every time, without you having to think about it. Book a discovery call to see how the full system works.
+                NobleLeads builds automated review request sequences into every client system, so every completed job triggers the ask, every time, without you having to think about it. Answer a few quick questions and book a call to see how the full system works.
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
                 <Link
                   href="/blog/google-ads-for-tradesmen-uk"
-                  className="inline-flex items-center justify-center rounded-lg border border-secondary/40 px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-secondary/70 hover:bg-secondary/10"
+                  className="min-touch inline-flex items-center justify-center rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-secondary/60"
                 >
                   Google Ads guide for tradesmen →
                 </Link>

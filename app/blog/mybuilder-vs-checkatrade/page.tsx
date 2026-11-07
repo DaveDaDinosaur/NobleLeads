@@ -82,10 +82,10 @@ export default function MyBuilderVsCheckatradePage() {
 
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · Platform Reviews
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 MyBuilder vs Checkatrade 2026: Which Is Better (And Cheaper)?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
@@ -102,8 +102,8 @@ export default function MyBuilderVsCheckatradePage() {
 
           {/* Quick answer box */}
           <SectionReveal delay={60}>
-            <div className="mt-8 rounded-xl border border-border/40 bg-card/40 px-5 py-4 sm:px-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick answer</p>
+            <div className="mt-8 border-l-2 border-border pl-5 sm:pl-6">
+              <p className="label-mono text-muted-foreground">Quick answer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 <span className="font-semibold text-foreground">MyBuilder</span> has no monthly fee and suits planned home improvement trades (builders, kitchen fitters, bathroom installers). You pay only when shortlisted.{" "}
                 <span className="font-semibold text-foreground">Checkatrade</span> charges £60-£500+ per month and suits emergency trades (plumbers, electricians) where brand recognition matters. Neither replaces owning your own lead flow.
@@ -250,15 +250,15 @@ export default function MyBuilderVsCheckatradePage() {
           </SectionReveal>
 
           {/* Mid-article CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Spending money on Checkatrade or MyBuilder and not sure if it{"'"}s working? Let{"'"}s look at it together.
             </p>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              href="/survey"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
-              Free 15-min call →
+              Get your growth plan →
             </Link>
           </div>
 
@@ -478,7 +478,7 @@ export default function MyBuilderVsCheckatradePage() {
                   the platform is probably not the answer
                 </span>
                 . The same budget invested into a{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
+                <Link href="/growth-system" className="font-semibold text-secondary hover:underline">
                   conversion-ready website
                 </Link>{" "}
                 and Google presence will typically outperform both within six to
@@ -500,7 +500,7 @@ export default function MyBuilderVsCheckatradePage() {
               <ul className="ml-5 list-disc space-y-2">
                 <li>
                   A{" "}
-                  <Link href="/services" className="font-semibold text-secondary hover:underline">
+                  <Link href="/growth-system" className="font-semibold text-secondary hover:underline">
                     conversion-ready trade website
                   </Link>{" "}
                   that makes it easy for homeowners to call, book and trust you before
@@ -549,22 +549,22 @@ export default function MyBuilderVsCheckatradePage() {
 
           {/* Final CTA */}
           <SectionReveal delay={180}>
-            <section className="mt-10 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
+            <section className="mt-14 border-t border-border pt-10 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
                 Ready to Build Something You Actually Own?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 If you{"'"}re spending money on Checkatrade, MyBuilder or Bark and
-                wondering whether there{"'"}s a better way, there is. Book a free
-                discovery call and we{"'"}ll show you what a lead system built around
+                wondering whether there{"'"}s a better way, there is. Take our short
+                survey, book a call, and we{"'"}ll show you what a lead system built around
                 your own brand could look like for your trade.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
               </div>
               <p className="mt-3 text-xs text-muted-foreground/70">

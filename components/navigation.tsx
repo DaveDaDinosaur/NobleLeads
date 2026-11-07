@@ -6,14 +6,14 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, ArrowRight } from "lucide-react"
 
+import { CTA_LABEL, SURVEY_PATH } from "@/lib/offer"
+
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/growth-system", label: "Growth System" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/trades", label: "Trades" },
   { href: "/case-studies", label: "Case Studies" },
-  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ]
 
 export function Navigation() {
@@ -41,6 +41,9 @@ export function Navigation() {
     }
   }, [isMobileMenuOpen])
 
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`))
+
   return (
     <>
       <nav
@@ -50,7 +53,7 @@ export function Navigation() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
           <div className="flex h-16 sm:h-20 items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group min-touch">
               <Image
@@ -67,46 +70,42 @@ export function Navigation() {
               </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg ${
-                    pathname === link.href
+                    isActive(link.href)
                       ? "text-secondary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {link.label}
-                  {pathname === link.href && (
+                  {isActive(link.href) && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-secondary" />
                   )}
                 </Link>
               ))}
             </div>
 
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4">
               <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300"
+                href={SURVEY_PATH}
+                className="group inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300"
               >
-                Book a Discovery Call
+                {CTA_LABEL}
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden min-touch inline-flex items-center justify-center p-3 -m-1 text-foreground rounded-lg hover:bg-muted/50 active:bg-muted transition-colors"
+              className="lg:hidden min-touch inline-flex items-center justify-center p-3 -m-1 text-foreground rounded-lg hover:bg-muted/50 active:bg-muted transition-colors"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -114,19 +113,17 @@ export function Navigation() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 bg-background/98 backdrop-blur-xl transition-all duration-500 md:hidden ${
-          isMobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 bg-background/98 backdrop-blur-xl transition-all duration-500 lg:hidden ${
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-6 px-6 pb-safe">
-          {navLinks.map((link, i) => (
+        <div className="flex flex-col items-start justify-center h-full gap-2 px-6 pb-safe">
+          {[{ href: "/", label: "Home" }, ...navLinks].map((link, i) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`min-touch flex items-center justify-center text-2xl sm:text-3xl font-semibold transition-all duration-300 py-2 ${
+              className={`display min-touch flex items-baseline gap-4 text-5xl sm:text-6xl transition-all duration-500 py-1 ${
                 pathname === link.href
                   ? "text-secondary"
                   : "text-foreground hover:text-secondary active:text-secondary"
@@ -134,27 +131,24 @@ export function Navigation() {
               style={{
                 transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms",
                 opacity: isMobileMenuOpen ? 1 : 0,
-                transform: isMobileMenuOpen
-                  ? "translateY(0)"
-                  : "translateY(20px)",
+                transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
               }}
             >
+              <span className="label-mono text-xs text-secondary">{String(i + 1).padStart(2, "0")}</span>
               {link.label}
             </Link>
           ))}
           <Link
-            href="/contact"
+            href={SURVEY_PATH}
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 min-touch inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300 active:scale-[0.98]"
+            className="mt-8 min-touch inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground transition-all duration-300 hover:bg-gold-300 active:scale-[0.98]"
             style={{
-              transitionDelay: isMobileMenuOpen ? "300ms" : "0ms",
+              transitionDelay: isMobileMenuOpen ? "450ms" : "0ms",
               opacity: isMobileMenuOpen ? 1 : 0,
-              transform: isMobileMenuOpen
-                ? "translateY(0)"
-                : "translateY(20px)",
+              transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
             }}
           >
-            Book a Discovery Call
+            {CTA_LABEL}
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

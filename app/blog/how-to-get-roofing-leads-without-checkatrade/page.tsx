@@ -77,10 +77,10 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
 
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · Lead Generation
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 How to Get Roofing Leads Without Checkatrade
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
@@ -97,8 +97,8 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
 
           {/* Quick answer */}
           <SectionReveal delay={60}>
-            <div className="mt-8 rounded-xl border border-border/40 bg-card/40 px-5 py-4 sm:px-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick answer</p>
+            <div className="mt-8 border-l-2 border-border pl-5 sm:pl-6">
+              <p className="label-mono text-muted-foreground">Quick answer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 To get roofing leads without Checkatrade, build a lead system you
                 own:{" "}
@@ -229,13 +229,13 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
           </SectionReveal>
 
           {/* Mid CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Want a roofing lead system that belongs to you, not a directory?
             </p>
             <Link
               href="/roofers"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
               See how it works for roofers →
             </Link>
@@ -298,7 +298,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
 
           {/* Final CTA */}
           <SectionReveal delay={170}>
-            <section className="mt-10 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
+            <section className="mt-14 border-t border-border pt-10 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
                 Ready to Generate Your Own Roofing Leads?
               </h2>
@@ -309,10 +309,10 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
               </div>
               <p className="mt-3 text-xs text-muted-foreground/70">

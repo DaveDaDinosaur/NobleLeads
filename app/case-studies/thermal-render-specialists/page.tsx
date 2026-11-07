@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
+import { SurveyCTA } from "@/components/growth/survey-cta"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema } from "../../(shared)/schema"
 
@@ -45,10 +46,10 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-0">
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Case Study · Render &amp; External Wall Insulation
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 Thermal Render Specialists, From No Online Presence to Page One for Render Searches
               </h1>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -60,10 +61,6 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                 the South East, in a matter of weeks.
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  Noble Growth Package
-                </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
                   Gravesend &amp; South East London
@@ -86,7 +83,7 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
 
           <SectionReveal delay={60}>
             <figure className="mt-8 sm:mt-10">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border/30">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-border">
                 <Image
                   src="/images/case-studies/thermal-render-specialists-website.png"
                   alt="Thermal Render Specialists homepage with branded EWI and silicone render hero and approved-installer trust bar"
@@ -167,7 +164,7 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
 
               <p className="font-semibold text-foreground">A Complete Website From Scratch</p>
               <p>
-                We built Thermal Render Specialists their first ever website, {" "}
+                We built Thermal Render Specialists their first ever website,{" "}
                 <a
                   href="https://thermalrenderspecialists.co.uk"
                   target="_blank"
@@ -304,8 +301,7 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                 Where They Are Now
               </h2>
               <p>
-                Thermal Render Specialists are on the Noble Growth package, with the
-                foundations now firmly in place: a website that converts, a Google
+                Thermal Render Specialists now have the foundations firmly in place: a website that converts, a Google
                 presence that ranks, paid campaigns that bring in enquiries immediately
                 and a full analytics setup showing exactly what is working. Instagram
                 content and social ads are the next layer being added.
@@ -326,24 +322,16 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                 Want a system like this for your business?
               </h2>
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Whether you{"'"}re starting from nothing like Dan or looking to scale
-                what{"'"}s already working, we{"'"}ll build the infrastructure to grow
-                consistently, leads, operations and everything in between.
+                Tell us about your business and pick a time to talk. We{"'"}ll show you
+                what it would look like for you.
               </p>
-              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Book a Free Discovery Call
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="inline-flex min-touch items-center justify-center rounded-lg border border-border/50 bg-card/40 px-6 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-secondary/40"
-                >
-                  More case studies
-                </Link>
-              </div>
+              <SurveyCTA align="center" className="mt-6" />
+              <Link
+                href="/case-studies"
+                className="mt-4 inline-flex text-xs font-medium text-muted-foreground transition-colors hover:text-secondary"
+              >
+                More case studies
+              </Link>
             </section>
           </SectionReveal>
 

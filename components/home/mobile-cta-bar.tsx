@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+import { CTA_LABEL, CTA_SUBTEXT, SURVEY_PATH } from "@/lib/offer"
+
 export function MobileCTABar() {
   const [visible, setVisible] = useState(false)
 
@@ -30,20 +32,18 @@ export function MobileCTABar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 md:hidden pb-safe">
       <div className="mx-auto max-w-7xl px-4 pb-3">
-        <div className="rounded-xl border border-secondary/40 bg-background/95 backdrop-blur-lg shadow-lg shadow-secondary/20 px-4 py-3 flex items-center gap-3">
+        <div className="flex items-center gap-3 rounded-xl border border-secondary/40 bg-background/95 px-4 py-3 shadow-lg shadow-secondary/20 backdrop-blur-lg">
           <div className="flex-1">
             <p className="text-[11px] font-medium text-foreground/90">
-              Ready for predictable enquiries?
+              More booked jobs, all yours.
             </p>
-            <p className="text-[10px] text-muted-foreground">
-              15-minute discovery call · No obligation
-            </p>
+            <p className="text-[10px] text-muted-foreground">{CTA_SUBTEXT}</p>
           </div>
           <Link
-            href="/contact"
-            className="min-touch inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2 text-[11px] font-semibold text-secondary-foreground whitespace-nowrap transition-all duration-200 hover:bg-gold-300 active:scale-[0.97]"
+            href={SURVEY_PATH}
+            className="min-touch inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-secondary px-4 py-2 text-[11px] font-semibold text-secondary-foreground transition-all duration-200 hover:bg-gold-300 active:scale-[0.97]"
           >
-            Book call
+            {CTA_LABEL}
             <ArrowRight className="ml-1 h-3 w-3" />
           </Link>
         </div>
@@ -51,4 +51,3 @@ export function MobileCTABar() {
     </div>
   )
 }
-

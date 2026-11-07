@@ -66,10 +66,10 @@ export default function IsCheckatradeWorthIt2025Page() {
           />
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · Lead Generation
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 Checkatrade Worth It 2026? Real Cost £400-£1,000+/Month
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
@@ -187,15 +187,15 @@ export default function IsCheckatradeWorthIt2025Page() {
           </SectionReveal>
 
           {/* Mid-article CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Not sure if Checkatrade spend is holding you back? Let{"'"}s have a look together.
             </p>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              href="/survey"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
-              Free 15-min discovery call →
+              Get your growth plan →
             </Link>
           </div>
 
@@ -262,7 +262,7 @@ export default function IsCheckatradeWorthIt2025Page() {
                 <li>
                 A conversion-ready{" "}
                 <Link
-                  href="/services"
+                  href="/growth-system"
                   className="font-semibold text-secondary hover:underline"
                 >
                   website built for trades
@@ -314,7 +314,7 @@ export default function IsCheckatradeWorthIt2025Page() {
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>
-                  Noble Core website build (one-off) + low ongoing hosting/maintenance.
+                  Your own website, built once, that you keep whether you stay with us or not.
                 </li>
                 <li>
                   A realistic Google Ads budget similar to what you{"'"}re already
@@ -364,12 +364,7 @@ export default function IsCheckatradeWorthIt2025Page() {
               </p>
               <p className="mt-4">
                 That{"'"}s exactly what we help UK trades with:{" "}
-                <Link
-                  href="/window-cleaners"
-                  className="font-semibold text-secondary hover:underline"
-                >
-                  lead generation for window cleaners
-                </Link>
+                lead generation for window cleaners
                 ,{" "}
                 <Link
                   href="/roofers"
@@ -384,7 +379,7 @@ export default function IsCheckatradeWorthIt2025Page() {
           </SectionReveal>
 
           <SectionReveal delay={220}>
-            <section className="mt-10 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
+            <section className="mt-14 border-t border-border pt-10 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
                 Want to Stop Paying for Every Lead?
               </h2>
@@ -397,16 +392,16 @@ export default function IsCheckatradeWorthIt2025Page() {
                 .
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Book a quick, no-pressure discovery call and we{"'"}ll show you what a
+                Answer a few quick questions and book a call. We{"'"}ll show you what a
                 conversion-ready website and Google presence could do for your trade
                 business.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
-                  href="/contact"
-                  className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
               </div>
             </section>

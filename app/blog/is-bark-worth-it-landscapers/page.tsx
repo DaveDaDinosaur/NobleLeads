@@ -85,17 +85,17 @@ export default function IsBarkWorthItLandscapersPage() {
           {/* Header */}
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · 10 min read
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 Bark for Landscapers 2026: £16-£28 Leads, Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
               {/* Quick Answer */}
-              <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
+              <div className="quick-answer mt-6 border-l-2 border-secondary pl-5">
+                <p className="label-mono text-muted-foreground">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
                   Bark can work for landscapers in low-competition areas targeting one-off redesign jobs. But maintenance contracts, the most valuable work in landscaping, almost never come from Bark. Lead costs of £16-£28, shared with multiple competitors, make the economics difficult on smaller jobs. And the platform{"'"}s rogue trader problem drags down customer trust across the board.
                 </p>
@@ -228,15 +228,15 @@ export default function IsBarkWorthItLandscapersPage() {
           </SectionReveal>
 
           {/* Mid-article CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Want more landscaping enquiries without competing on price? Let{"'"}s talk.
             </p>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              href="/survey"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
-              Free 15-min discovery call →
+              Get your growth plan →
             </Link>
           </div>
 
@@ -360,11 +360,11 @@ export default function IsBarkWorthItLandscapersPage() {
                 Every completed job should trigger an automated request for a Google review. A landscaper with 60 five-star reviews showing completed garden transformations in local areas is nearly impossible to dislodge from the top of local search results. That review count is an asset you own, not a credit balance you{"'"}re renting.
               </p>
 
-              <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
+              <div className="mt-6 border-l-2 border-secondary pl-5">
                 <p className="text-sm font-semibold text-foreground">
                   See how the NobleLeads system works for landscapers →{" "}
-                  <Link href="/landscapers" className="text-secondary hover:underline">
-                    Lead generation for landscapers
+                  <Link href="/trades" className="text-secondary hover:underline">
+                    Trades we work with
                   </Link>
                 </p>
               </div>
@@ -417,7 +417,7 @@ export default function IsBarkWorthItLandscapersPage() {
 
           {/* CTA */}
           <SectionReveal delay={80}>
-            <section className="mt-14 rounded-2xl border border-secondary/30 bg-secondary/5 p-6 sm:p-8">
+            <section className="mt-14 border-t border-border pt-10">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Win the Landscaping Jobs You Actually Want
               </h2>
@@ -426,16 +426,16 @@ export default function IsBarkWorthItLandscapersPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
                 <Link
-                  href="/landscapers"
-                  className="inline-flex items-center justify-center rounded-lg border border-secondary/40 px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-secondary/70 hover:bg-secondary/10"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-secondary/60"
                 >
-                  How it works for landscapers →
+                  Get your growth plan →
                 </Link>
               </div>
             </section>

@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer"
 import { MobileCTABar } from "@/components/home/mobile-cta-bar"
 import { SectionReveal } from "@/components/section-reveal"
 import { JsonLd } from "@/components/json-ld"
+import { SurveyCTA } from "@/components/growth/survey-cta"
+import { testimonials } from "@/lib/proof"
 import { buildMetadata } from "../../(shared)/seo-config"
 import { getArticleSchema } from "../../(shared)/schema"
 
@@ -31,7 +33,7 @@ const articleSchema = getArticleSchema({
 
 const stats = [
   { value: "24", label: "Leads in the latest fortnight", sub: "14 website + 10 phone" },
-  { value: "9.49%", label: "Fire door ad CTR", sub: "2–3× the search benchmark" },
+  { value: "9.49%", label: "Fire door ad CTR", sub: "2 to 3× the search benchmark" },
   { value: "~£21", label: "Cost per website lead", sub: "About a third of the market average" },
   { value: "25+", label: "Years in business", sub: "Trading since 2000" },
 ]
@@ -109,7 +111,7 @@ const built = [
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+    <p className="label-mono text-muted-foreground">
       {children}
     </p>
   )
@@ -126,7 +128,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
           <SectionReveal>
             <header>
               <SectionLabel>Case Study · Commercial Refurbishment</SectionLabel>
-              <h1 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 Focus Refurbishment, From Referrals and a Broken Website to a Full
                 Growth System
               </h1>
@@ -141,10 +143,6 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 presence to show for it. This is how that changed.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/50 px-3 py-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  Noble Growth Package
-                </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/50 px-3 py-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
                   Sidcup, South East London &amp; Kent
@@ -167,7 +165,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
 
           <SectionReveal delay={60}>
             <figure className="mt-10 sm:mt-12">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border/40 shadow-[0_20px_60px_-28px_rgba(0,0,0,0.55)]">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-border">
                 <Image
                   src="/images/case-studies/focus-refurbishment-website.png"
                   alt="Focus Refurbishment homepage with branded fleet and commercial contractor positioning"
@@ -185,11 +183,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
 
           {/* Results */}
           <SectionReveal delay={80}>
-            <div className="relative mt-10 overflow-hidden rounded-2xl border border-border/40 bg-card/40 sm:mt-12">
-              <div
-                className="absolute top-0 left-1/2 h-px w-40 -translate-x-1/2 bg-gradient-to-r from-transparent via-secondary/40 to-transparent"
-                aria-hidden
-              />
+            <div className="relative mt-10 border-y border-border sm:mt-12">
               <div className="grid grid-cols-2 sm:grid-cols-4">
                 {stats.map((stat, i) => (
                   <div
@@ -250,18 +244,22 @@ export default function FocusRefurbishmentCaseStudyPage() {
             </section>
           </SectionReveal>
 
-          <SectionReveal delay={110}>
-            <div className="mt-10 rounded-2xl border border-secondary/15 bg-secondary/[0.04] px-5 py-6 sm:px-7 sm:py-7">
-              <blockquote className="border-l-4 border-l-[#C9A84C] pl-5 text-base font-medium italic leading-relaxed text-[#C9A84C]/90 sm:text-lg">
-                The missed call text-back alone paid for the first month. Missed calls
-                get a reply within seconds, quotes are followed up automatically and I
-                can see exactly what came from which campaign, no more guessing.
-              </blockquote>
-              <p className="mt-4 text-xs text-muted-foreground/75">
-                Craig H., Owner, Focus Refurbishment
-              </p>
-            </div>
-          </SectionReveal>
+          {testimonials
+            .filter((t) => t.business === "Focus Refurbishment")
+            .map((t) => (
+              <figure
+                key={t.name}
+                className="mt-10 border-l-2 border-secondary pl-6 sm:pl-8"
+              >
+                <blockquote className="text-xl leading-snug text-foreground sm:text-2xl">
+                  {`"${t.quote}"`}
+                </blockquote>
+                <figcaption className="mt-5">
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.business}</p>
+                </figcaption>
+              </figure>
+            ))}
 
           {/* What we found */}
           <SectionReveal delay={120}>
@@ -412,7 +410,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 in the space.
               </p>
 
-              <div className="grid grid-cols-3 gap-3 py-2">
+              <div className="grid grid-cols-3 border-y border-border">
                 {[
                   { value: "24", label: "Leads / fortnight" },
                   { value: "9.49%", label: "Fire door CTR" },
@@ -420,7 +418,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-xl border border-secondary/20 bg-secondary/[0.05] px-3 py-4 text-center"
+                    className="border-l border-border px-3 py-5 first:border-l-0"
                   >
                     <p className="text-xl font-bold text-secondary sm:text-2xl">
                       {item.value}
@@ -443,9 +441,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
               <p>
                 Craig is also working towards BM TRADA certification, a requirement for
                 certain commercial fire door contracts, which will unlock a wider tier of
-                contract opportunities the system is already being built to support. The
-                move to Noble Dominate, and with it a full commercial contract
-                positioning strategy, is the natural next step.
+                contract opportunities the system is already being built to support.
               </p>
               <p>
                 The ambition Craig came to us with (consistent commercial contracts, a
@@ -456,33 +452,21 @@ export default function FocusRefurbishmentCaseStudyPage() {
           </SectionReveal>
 
           <SectionReveal delay={200}>
-            <section className="relative mt-14 overflow-hidden rounded-2xl border border-secondary/25 bg-card/40 px-6 py-10 text-center sm:mt-16 sm:px-8 sm:py-12">
-              <div
-                className="absolute top-0 left-1/2 h-px w-24 -translate-x-1/2 bg-secondary/45"
-                aria-hidden
-              />
+            <section className="mt-14 border-t border-border pt-10 text-center sm:mt-16 sm:pt-12">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
                 Want a system like this for your business?
               </h2>
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Whether you{"'"}re starting from scratch or looking to scale what{"'"}s
-                already working, we{"'"}ll build the infrastructure to grow consistently
-               , leads, operations and everything in between.
+                Tell us about your business and pick a time to talk. We{"'"}ll show you
+                what it would look like for you.
               </p>
-              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-touch items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
-                >
-                  Book a Free Discovery Call
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="inline-flex min-touch items-center justify-center rounded-lg border border-border/50 bg-card/40 px-6 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-secondary/40"
-                >
-                  More case studies
-                </Link>
-              </div>
+              <SurveyCTA align="center" className="mt-6" />
+              <Link
+                href="/case-studies"
+                className="mt-4 inline-flex text-xs font-medium text-muted-foreground transition-colors hover:text-secondary"
+              >
+                More case studies
+              </Link>
             </section>
           </SectionReveal>
         </div>

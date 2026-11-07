@@ -142,23 +142,20 @@ export default function BlogIndexPage() {
 
       {/* Featured post */}
       <section className="pb-8 sm:pb-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
           <SectionReveal>
             <a
               href={`/blog/${featuredPost.slug}`}
-              className="group block rounded-2xl border border-secondary/30 bg-card/40 p-6 sm:p-8 transition-all duration-300 hover:border-secondary/60 hover:bg-card/70 hover:shadow-xl hover:shadow-secondary/10"
+              className="group block border-y border-border py-8 sm:py-10"
             >
-              <p className="text-[11px] font-mono uppercase tracking-[0.18em] text-secondary/80">
+              <p className="label-mono text-secondary">
                 Featured · {featuredPost.category} · {featuredPost.readTime}
               </p>
-              <h2 className="mt-3 text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl group-hover:text-secondary transition-colors duration-200">
+              <h2 className="display mt-5 max-w-5xl text-balance text-4xl text-foreground transition-colors duration-500 group-hover:text-secondary sm:text-5xl">
                 {featuredPost.title}
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 {featuredPost.description}
-              </p>
-              <p className="mt-5 text-xs font-semibold text-secondary">
-                Read article →
               </p>
             </a>
           </SectionReveal>
@@ -167,20 +164,18 @@ export default function BlogIndexPage() {
 
       {/* Filtered grid */}
       <section className="pb-16 sm:pb-20 lg:pb-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
           <BlogGrid posts={remainingPosts} />
         </div>
       </section>
 
       {/* Newsletter CTA */}
       <section className="pb-16 sm:pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
           <SectionReveal>
-            <div className="rounded-2xl border border-border/40 bg-card/30 px-6 py-10 sm:px-10 text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
-                Stay Sharp
-              </p>
-              <h2 className="mt-3 text-xl font-bold text-foreground sm:text-2xl">
+            <div className="border-t border-border pt-10 text-center">
+              <p className="label-mono text-muted-foreground">Stay sharp</p>
+              <h2 className="display mt-4 text-balance text-3xl text-foreground sm:text-4xl">
                 Get articles like this straight to your inbox.
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">

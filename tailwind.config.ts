@@ -94,6 +94,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
+        display: ['var(--font-display)', 'var(--font-inter)'],
         mono: ['var(--font-geist-mono)'],
       },
       borderRadius: {

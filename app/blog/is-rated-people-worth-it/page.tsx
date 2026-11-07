@@ -82,10 +82,10 @@ export default function IsRatedPeopleWorthItPage() {
 
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · Platform Reviews
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 Rated People Cost 2026: £35/Month + £15 Per Lead, Worth It?
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
@@ -102,8 +102,8 @@ export default function IsRatedPeopleWorthItPage() {
 
           {/* Quick answer */}
           <SectionReveal delay={60}>
-            <div className="mt-8 rounded-xl border border-border/40 bg-card/40 px-5 py-4 sm:px-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick answer</p>
+            <div className="mt-8 border-l-2 border-border pl-5 sm:pl-6">
+              <p className="label-mono text-muted-foreground">Quick answer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Rated People can work for established tradespeople who are selective about the leads they contact. The three-competitor cap per job is a genuine advantage. But the{" "}
                 <span className="font-semibold text-foreground">12-month contract</span>,{" "}
@@ -219,15 +219,15 @@ export default function IsRatedPeopleWorthItPage() {
           </SectionReveal>
 
           {/* Mid CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Paying for Rated People and not sure if it{"'"}s delivering? Let{"'"}s look at your numbers.
             </p>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              href="/survey"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
-              Free 15-min call →
+              Get your growth plan →
             </Link>
           </div>
 
@@ -311,17 +311,13 @@ export default function IsRatedPeopleWorthItPage() {
               </ul>
               <p>
                 For{" "}
-                <Link href="/plumbers" className="font-semibold text-secondary hover:underline">
-                  plumbers
-                </Link>
+                plumbers
                 ,{" "}
-                <Link href="/builders" className="font-semibold text-secondary hover:underline">
+                <Link href="/refurbishments-extensions" className="font-semibold text-secondary hover:underline">
                   builders
                 </Link>{" "}
                 and{" "}
-                <Link href="/landscapers" className="font-semibold text-secondary hover:underline">
-                  landscapers
-                </Link>{" "}
+                landscapers{" "}
                 with good profiles, Rated People can be a worthwhile supplement, particularly in areas where Checkatrade is heavily saturated.
               </p>
             </section>
@@ -401,7 +397,7 @@ export default function IsRatedPeopleWorthItPage() {
               </PullQuote>
               <p>
                 We help UK trade businesses build{" "}
-                <Link href="/services" className="font-semibold text-secondary hover:underline">
+                <Link href="/growth-system" className="font-semibold text-secondary hover:underline">
                   lead systems they own
                 </Link>: websites that convert, Google profiles that rank, and review
                 systems that run automatically after every job. The result is a
@@ -443,21 +439,21 @@ export default function IsRatedPeopleWorthItPage() {
 
           {/* Final CTA */}
           <SectionReveal delay={170}>
-            <section className="mt-10 rounded-2xl border border-secondary/30 bg-card/30 p-6 sm:p-8 text-center">
+            <section className="mt-14 border-t border-border pt-10 text-center">
               <h2 className="text-lg font-semibold text-foreground sm:text-xl">
                 Want Leads That Don{"'"}t Depend on a Monthly Subscription?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Book a free discovery call. We{"'"}ll look at where your current
+                Answer a few quick questions and book a call. We{"'"}ll look at where your current
                 enquiries are coming from, what they{"'"}re costing you, and what a
                 lead system you own could look like for your trade and your area.
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
               </div>
               <p className="mt-3 text-xs text-muted-foreground/70">

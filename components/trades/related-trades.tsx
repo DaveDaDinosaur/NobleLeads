@@ -2,47 +2,40 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 import { SectionReveal } from "@/components/section-reveal"
-import { trades } from "@/lib/trades"
+import { tradeHref, trades } from "@/lib/trades"
 
 const RELATED_COUNT = 3
 
-export function RelatedTrades({ currentHref }: { currentHref: string }) {
-  const currentIndex = trades.findIndex((trade) => trade.href === currentHref)
+export function RelatedTrades({ currentSlug }: { currentSlug: string }) {
+  const currentIndex = trades.findIndex((trade) => trade.slug === currentSlug)
   const related = Array.from({ length: RELATED_COUNT }, (_, i) => {
     const index = (currentIndex + 1 + i) % trades.length
     return trades[index]
   })
 
   return (
-    <SectionReveal delay={220}>
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-foreground sm:text-xl">
-          Marketing for Other Trades
-        </h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          NobleLeads works with UK property service businesses across the board.{" "}
-          <Link href="/#trades" className="font-medium text-secondary hover:underline">
-            See all the trades we work with
+    <SectionReveal delay={120}>
+      <section className="mt-14">
+        <div className="flex items-baseline justify-between gap-4">
+          <h2 className="label-mono text-muted-foreground">Other trades we work with</h2>
+          <Link href="/trades" className="label-mono text-secondary hover:underline">
+            All trades
           </Link>
-          .
-        </p>
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        </div>
+        <div className="mt-5 border-t border-border">
           {related.map((trade) => (
             <Link
-              key={trade.href}
-              href={trade.href}
-              className="group flex flex-col justify-between rounded-xl border border-border/40 bg-card/50 p-5 transition-all duration-300 hover:border-secondary/40 hover:bg-card"
+              key={trade.slug}
+              href={tradeHref(trade)}
+              className="group flex items-center justify-between gap-6 border-b border-border py-4 transition-colors hover:text-secondary"
             >
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary/80">
+              <span>
+                <span className="block text-base font-medium text-foreground transition-colors group-hover:text-secondary">
                   {trade.name}
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">{trade.benefit}</p>
-              </div>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-secondary transition-transform group-hover:translate-x-0.5">
-                View trade page
-                <ArrowRight className="ml-1 h-3 w-3" />
+                </span>
+                <span className="mt-1 block text-sm text-muted-foreground">{trade.benefit}</span>
               </span>
+              <ArrowRight className="h-4 w-4 flex-shrink-0 text-secondary transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
           ))}
         </div>

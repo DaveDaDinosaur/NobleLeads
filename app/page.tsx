@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import { HomePageClient } from "@/components/home/home-page-client"
 import { JsonLd } from "@/components/json-ld"
+import { coreFAQs } from "@/lib/offer"
 import { buildMetadata } from "./(shared)/seo-config"
 import {
   getFAQPageSchema,
@@ -9,12 +10,11 @@ import {
   getOrganizationSchema,
   getWebsiteSchema,
 } from "./(shared)/schema"
-import { homepageFAQs } from "@/components/home/faq-section"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Lead Generation Agency for UK Trades",
+  title: "Lead Generation for High-Value UK Trades",
   description:
-    "NobleLeads is a lead generation agency for UK trades, helping cleaners, roofers, landscapers and more get consistent leads with conversion websites, Google Ads and CRM automation.",
+    "Own your leads, don't rent them. NobleLeads builds and runs your website, Google Ads and automatic follow-up. More enquiries, more booked jobs, all of them yours.",
   canonicalPath: "/",
 })
 
@@ -27,10 +27,9 @@ export default function HomePage() {
           getOrganizationSchema(),
           getWebsiteSchema(),
           getLocalBusinessSchema(),
-          getFAQPageSchema(homepageFAQs),
+          getFAQPageSchema(coreFAQs),
         ]}
       />
     </>
   )
 }
-

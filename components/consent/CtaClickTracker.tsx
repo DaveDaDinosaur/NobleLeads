@@ -3,12 +3,14 @@
 import { useEffect } from "react"
 
 import { trackEvent } from "@/lib/analytics"
+import { captureAttribution } from "@/lib/attribution"
+import { COOKIE_CONSENT_UPDATED_EVENT } from "@/lib/cookie-consent"
 
 export function CtaClickTracker() {
   useEffect(() => {
     function onClick(event: MouseEvent) {
       const target = event.target as HTMLElement | null
-      const link = target?.closest('a[href="/contact"], a[href^="/contact#"], a[href^="/contact?"]')
+      const link = target?.closest('a[href="/survey"], a[href^="/survey#"], a[href^="/survey?"]')
       if (!link) return
 
       trackEvent("book_call_click", {
@@ -17,8 +19,13 @@ export function CtaClickTracker() {
       })
     }
 
+    captureAttribution()
     document.addEventListener("click", onClick)
-    return () => document.removeEventListener("click", onClick)
+    window.addEventListener(COOKIE_CONSENT_UPDATED_EVENT, captureAttribution)
+    return () => {
+      document.removeEventListener("click", onClick)
+      window.removeEventListener(COOKIE_CONSENT_UPDATED_EVENT, captureAttribution)
+    }
   }, [])
 
   return null

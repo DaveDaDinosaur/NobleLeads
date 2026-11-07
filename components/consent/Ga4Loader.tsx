@@ -2,42 +2,14 @@
 
 import { useEffect } from "react"
 
+import { ensureGtag, GA_MEASUREMENT_ID } from "@/lib/analytics"
 import {
   COOKIE_CONSENT_STORAGE_KEY,
   COOKIE_CONSENT_UPDATED_EVENT,
   readCookieConsent,
 } from "@/lib/cookie-consent"
 
-const GA_MEASUREMENT_ID = "G-3HHVV0V655"
 const GA_SCRIPT_ID = "ga4-script"
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[]
-    gtag?: (...args: unknown[]) => void
-  }
-}
-
-function initGtag() {
-  if (typeof window === "undefined") return
-
-  if (!window.dataLayer) {
-    window.dataLayer = []
-  }
-
-  if (typeof window.gtag !== "function") {
-    // gtag.js only processes commands pushed as the raw `arguments` object.
-    // Pushing a spread array instead makes it silently ignore config/events,
-    // so no page_view or events are ever sent to GA4.
-    window.gtag = function gtag() {
-      // eslint-disable-next-line prefer-rest-params
-      window.dataLayer?.push(arguments)
-    }
-  }
-
-  window.gtag("js", new Date())
-  window.gtag("config", GA_MEASUREMENT_ID)
-}
 
 function loadGaIfConsented() {
   if (typeof window === "undefined") return
@@ -48,16 +20,13 @@ function loadGaIfConsented() {
     | HTMLScriptElement
     | null
 
-  if (existing) {
-    initGtag()
-    return
-  }
+  ensureGtag()
+  if (existing) return
 
   const script = document.createElement("script")
   script.id = GA_SCRIPT_ID
   script.async = true
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  script.onload = () => initGtag()
   document.head.appendChild(script)
 }
 

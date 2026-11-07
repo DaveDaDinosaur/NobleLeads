@@ -13,11 +13,14 @@ type FAQItem = {
 }
 
 type FAQAccordionSectionProps = {
-  title: string
+  title?: string
   items: FAQItem[]
 }
 
-export function FAQAccordionSection({ title, items }: FAQAccordionSectionProps) {
+export function FAQAccordionSection({
+  title = "Frequently Asked Questions",
+  items,
+}: FAQAccordionSectionProps) {
   return (
     <section className="mt-10 space-y-5">
       <h2 className="text-xl font-semibold text-foreground sm:text-2xl">

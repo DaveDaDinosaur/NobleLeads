@@ -85,17 +85,17 @@ export default function IsBarkWorthItPlumbersPage() {
           {/* Header */}
           <SectionReveal>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary/80">
+              <p className="label-mono text-muted-foreground">
                 Blog · 11 min read
               </p>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h1 className="display mt-5 text-balance text-4xl text-foreground sm:text-5xl lg:text-6xl">
                 Bark for Plumbers 2026: £16-£36 Leads, Worth It?
               </h1>
               <p className="mt-4 text-sm text-muted-foreground">Published June 2026 · By NobleLeads</p>
 
               {/* Quick Answer, AI Overview extraction target */}
-              <div className="quick-answer mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/80">Quick Answer</p>
+              <div className="quick-answer mt-6 border-l-2 border-secondary pl-5">
+                <p className="label-mono text-muted-foreground">Quick Answer</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">
                   For most UK plumbers, Bark is not worth it in 2026. Leads cost £15-£35 each and are shared with up to four other plumbers simultaneously. Gas Safe registration isn{"'"}t verified. Emergency callouts, your most profitable work, don{"'"}t come through Bark at all. Established plumbers consistently get better ROI from Google Ads and an optimised Google Business Profile.
                 </p>
@@ -222,15 +222,15 @@ export default function IsBarkWorthItPlumbersPage() {
           </SectionReveal>
 
           {/* Mid-article CTA */}
-          <div className="my-8 rounded-xl border border-secondary/30 bg-secondary/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="my-10 flex flex-col gap-4 border-y border-border py-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-foreground font-medium leading-snug">
               Spending on Bark and not winning the jobs you want? We{"'"}ll give you a straight answer on what{"'"}s worth doing instead.
             </p>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center rounded-lg bg-secondary px-4 py-2.5 text-xs font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20"
+              href="/survey"
+              className="min-touch inline-flex shrink-0 items-center justify-center rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
             >
-              Free 15-min discovery call →
+              Get your growth plan →
             </Link>
           </div>
 
@@ -361,11 +361,11 @@ export default function IsBarkWorthItPlumbersPage() {
                 Most plumbers who rely on Bark don{"'"}t have a website that earns trust quickly. A site with clear services, Gas Safe credentials front-and-centre, real photos of your work, local area pages and a fast booking path converts Google traffic efficiently. Without it, you{"'"}re renting visibility from platforms that can change their pricing or terms at any point.
               </p>
 
-              <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-5">
+              <div className="mt-6 border-l-2 border-secondary pl-5">
                 <p className="text-sm font-semibold text-foreground">
                   See how the NobleLeads system works for plumbers →{" "}
-                  <Link href="/plumbers" className="text-secondary hover:underline">
-                    Lead generation for plumbers
+                  <Link href="/trades" className="text-secondary hover:underline">
+                    Trades we work with
                   </Link>
                 </p>
               </div>
@@ -457,7 +457,7 @@ export default function IsBarkWorthItPlumbersPage() {
 
           {/* CTA */}
           <SectionReveal delay={80}>
-            <section className="mt-14 rounded-2xl border border-secondary/30 bg-secondary/5 p-6 sm:p-8">
+            <section className="mt-14 border-t border-border pt-10">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Stop Competing for Shared Leads
               </h2>
@@ -466,16 +466,16 @@ export default function IsBarkWorthItPlumbersPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 active:scale-[0.98]"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a Free Discovery Call
+                  Get your growth plan
                 </Link>
                 <Link
-                  href="/plumbers"
-                  className="inline-flex items-center justify-center rounded-lg border border-secondary/40 px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-secondary/70 hover:bg-secondary/10"
+                  href="/survey"
+                  className="min-touch inline-flex items-center justify-center rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-secondary/60"
                 >
-                  How it works for plumbers →
+                  Get your growth plan →
                 </Link>
               </div>
             </section>
