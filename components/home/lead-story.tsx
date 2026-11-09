@@ -674,7 +674,7 @@ export function LeadStory() {
               </button>
             ))}
           </div>
-          <p className="hidden text-[11px] text-muted-foreground/70 sm:block">Scroll to move through each stage.</p>
+          <p className="hidden text-[11px] text-muted-foreground sm:block">Scroll to move through each stage.</p>
         </div>
       </div>
       </div>

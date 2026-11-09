@@ -93,7 +93,7 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                   className="object-cover object-top"
                 />
               </div>
-              <figcaption className="mt-2.5 text-center text-xs text-muted-foreground/70">
+              <figcaption className="mt-2.5 text-center text-xs text-muted-foreground">
                 The Thermal Render Specialists website
               </figcaption>
             </figure>
@@ -254,7 +254,7 @@ export default function ThermalRenderSpecialistsCaseStudyPage() {
                   beforeAlt="Boundary wall with dull, weathered render before Thermal Render Specialists"
                   afterAlt="The same wall with a crisp bright white silicone render finish after"
                 />
-                <p className="mt-2 text-center text-xs text-muted-foreground/70">
+                <p className="mt-2 text-center text-xs text-muted-foreground">
                   Drag to reveal, real Thermal Render Specialists project, South East London.
                 </p>
               </div>

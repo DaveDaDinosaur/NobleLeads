@@ -128,7 +128,7 @@ function SplitVisual() {
           </div>
         </div>
 
-        <p className="mt-5 text-center text-[10px] text-muted-foreground/70">
+        <p className="mt-5 text-center text-[10px] text-muted-foreground">
           Illustration of a shared directory lead versus a lead you own.
         </p>
       </div>

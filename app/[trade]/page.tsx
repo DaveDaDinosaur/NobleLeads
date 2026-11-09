@@ -7,13 +7,14 @@ import { JsonLd } from "@/components/json-ld"
 import { SectionReveal } from "@/components/section-reveal"
 import { PageHero, PageSection, PageShell } from "@/components/growth/page-shell"
 import { SectionHeading } from "@/components/growth/section-heading"
-import { BuildRun } from "@/components/growth/build-run"
+import { PricingCard } from "@/components/growth/pricing-card"
+import { Testimonials } from "@/components/growth/proof-section"
+import { caseStudies } from "@/lib/proof"
 import { PaybackExample } from "@/components/growth/payback"
 import { RuleColumns, RuleList } from "@/components/growth/rules"
 import { Showcase } from "@/components/growth/showcase"
 import { FAQList } from "@/components/growth/faq-list"
 import { FinalCTA } from "@/components/growth/final-cta"
-import { ProofPlaceholder } from "@/components/proof-placeholder"
 import { RelatedTrades } from "@/components/trades/related-trades"
 import { coreFAQs } from "@/lib/offer"
 import { getTrade, tradeHref, trades } from "@/lib/trades"
@@ -125,9 +126,9 @@ export default async function TradePage({ params }: { params: Promise<Params> })
         </div>
       </PageSection>
 
-      <PageSection id="proof" narrow={!trade.caseStudy}>
+      <PageSection id="proof">
         <SectionReveal>
-          <SectionHeading eyebrow="Proof" title={trade.caseStudy ? "Real results in this trade." : "Real results."} />
+          <SectionHeading eyebrow="Proof" title={trade.caseStudy ? "Real results in this trade." : "Already working for other trades."} />
         </SectionReveal>
         <SectionReveal delay={100}>
           {trade.caseStudy ? (
@@ -147,18 +148,29 @@ export default async function TradePage({ params }: { params: Promise<Params> })
               </div>
             </Link>
           ) : (
-            <div className="mt-8 space-y-4">
-              <ProofPlaceholder
-                label={`${trade.name} case study or testimonial`}
-                note={`No real ${trade.plural} result yet. Add one to the caseStudy field for "${trade.slug}" in lib/trades.ts once you have it.`}
-              />
-              <p className="text-sm text-muted-foreground">
-                See what we{"'"}ve built for other trades in our{" "}
-                <Link href="/case-studies" className="font-semibold text-secondary hover:underline">
-                  case studies
-                </Link>
-                .
-              </p>
+            <div className="mt-12 space-y-12">
+              <Testimonials />
+              <div className="border-t border-border">
+                {caseStudies.map((cs) => (
+                  <Link
+                    key={cs.slug}
+                    href={cs.href}
+                    className="group grid grid-cols-1 gap-2 border-b border-border py-6 sm:grid-cols-12 sm:gap-8"
+                  >
+                    <p className="sm:col-span-4">
+                      <span className="label-mono block text-muted-foreground">{cs.sector}</span>
+                      <span className="display mt-2 block text-2xl text-foreground transition-colors duration-500 group-hover:text-secondary">
+                        {cs.client}
+                      </span>
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-foreground sm:col-span-6 sm:text-base">{cs.result}</p>
+                    <span className="label-mono inline-flex items-center gap-2 text-secondary sm:col-span-2 sm:justify-end">
+                      Read
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
         </SectionReveal>
@@ -177,20 +189,17 @@ export default async function TradePage({ params }: { params: Promise<Params> })
             <PaybackExample trade={trade} />
           </div>
         </SectionReveal>
-      </PageSection>
-
-      <PageSection id="system">
-        <SectionReveal>
-          <SectionHeading
-            eyebrow="The Growth System"
-            title="Everything that's included."
-            intro="The same system for every trade, set up around your jobs and your area."
-          />
-        </SectionReveal>
         <SectionReveal delay={100}>
-          <div className="mt-10">
-            <BuildRun />
+          <div className="mt-16">
+            <PricingCard />
           </div>
+          <Link
+            href="/growth-system#included"
+            className="label-mono mt-6 inline-flex items-center gap-2 py-2 text-secondary"
+          >
+            See everything that's included
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </SectionReveal>
       </PageSection>
 

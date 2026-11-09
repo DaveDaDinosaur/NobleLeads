@@ -22,7 +22,7 @@ const legalLinks = [
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <span className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground/80">
+    <span className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
       {children}
     </span>
   )

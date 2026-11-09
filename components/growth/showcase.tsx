@@ -8,7 +8,7 @@ function Frame({ caption, children }: { caption: string; children: ReactNode }) 
   return (
     <figure>
       <div className="overflow-hidden rounded-lg border border-border bg-card">{children}</div>
-      <figcaption className="label-mono mt-3 text-[10px] text-muted-foreground/80">{caption}</figcaption>
+      <figcaption className="label-mono mt-3 text-[10px] text-muted-foreground">{caption}</figcaption>
     </figure>
   )
 }

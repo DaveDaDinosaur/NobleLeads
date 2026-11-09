@@ -40,7 +40,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                   </span>
                 )}
                 {isLast ? (
-                  <span className="text-muted-foreground/80" aria-current="page">
+                  <span className="text-muted-foreground" aria-current="page">
                     {item.label}
                   </span>
                 ) : (

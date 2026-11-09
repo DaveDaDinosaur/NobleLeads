@@ -7,25 +7,14 @@ import { SectionHeading } from "@/components/growth/section-heading"
 import { PricingCard } from "@/components/growth/pricing-card"
 import { PaybackTable } from "@/components/growth/payback"
 import { CaseStudyCards, Testimonials } from "@/components/growth/proof-section"
-import { RuleColumns, RuleList, RuleRows } from "@/components/growth/rules"
+import { RuleColumns, RuleRows } from "@/components/growth/rules"
+import { IncludedDetail } from "@/components/growth/included-detail"
 import { Showcase } from "@/components/growth/showcase"
-import { FAQList } from "@/components/growth/faq-list"
 import { FinalCTA } from "@/components/growth/final-cta"
-import {
-  addOns,
-  buildDetail,
-  coreFAQs,
-  formatGBP,
-  leavingTerms,
-  MONTHLY_FEE,
-  runDetail,
-  SETUP_FEE,
-  terms,
-  type OfferGroup,
-} from "@/lib/offer"
+import { addOns, formatGBP, leavingTerms, MONTHLY_FEE, SETUP_FEE, terms } from "@/lib/offer"
 import { getTrade, type Trade } from "@/lib/trades"
 import { buildMetadata } from "../(shared)/seo-config"
-import { BUSINESS_URL, getFAQPageSchema, getServiceSchema } from "../(shared)/schema"
+import { BUSINESS_URL, getServiceSchema } from "../(shared)/schema"
 
 const canonicalPath = "/growth-system"
 
@@ -35,36 +24,9 @@ export const metadata: Metadata = buildMetadata({
   canonicalPath,
 })
 
-const pricingFAQs = coreFAQs.filter((faq) =>
-  [
-    "What budget do I need?",
-    "How long is the contract?",
-    "What happens if I leave?",
-    "Do I own the website?",
-    "Can you guarantee a number of leads?",
-  ].includes(faq.question)
-)
-
 const paybackTrades = ["stairlifts-mobility", "roofers", "ewi-render", "refurbishments-extensions"]
   .map(getTrade)
   .filter((trade): trade is Trade => Boolean(trade))
-
-function DetailGroups({ groups }: { groups: OfferGroup[] }) {
-  return (
-    <div>
-      {groups.map((group) => (
-        <SectionReveal key={group.title}>
-          <div className="grid grid-cols-1 gap-5 border-t border-border py-8 lg:grid-cols-12 lg:gap-16">
-            <h3 className="display text-3xl text-foreground lg:col-span-4">{group.title}</h3>
-            <div className="lg:col-span-8">
-              <RuleList items={group.items} columns={2} />
-            </div>
-          </div>
-        </SectionReveal>
-      ))}
-    </div>
-  )
-}
 
 export default function GrowthSystemPage() {
   return (
@@ -108,50 +70,40 @@ export default function GrowthSystemPage() {
         </SectionReveal>
       </PageSection>
 
-      <PageSection id="build">
-        <SectionReveal>
-          <SectionHeading
-            eyebrow={`The Build · ${formatGBP(SETUP_FEE)} one-off`}
-            title="Everything set up, tested and handed over."
-            intro="A complete lead system you own, built once by our in-house team and live within days of us getting your assets."
-          />
-        </SectionReveal>
-        <div className="mt-12">
-          <DetailGroups groups={buildDetail} />
-        </div>
-      </PageSection>
-
-      <PageSection id="run">
-        <SectionReveal>
-          <SectionHeading
-            eyebrow={`The Run · ${formatGBP(MONTHLY_FEE)} a month`}
-            title="Run, watched and improved every month."
-            intro="So the enquiries keep coming and none slip through."
-          />
-        </SectionReveal>
-        <div className="mt-12">
-          <DetailGroups groups={runDetail} />
-        </div>
-      </PageSection>
-
       <PageSection id="pricing">
         <SectionReveal>
-          <SectionHeading eyebrow="Pricing" title="One price. Nothing hidden." />
+          <SectionHeading
+            eyebrow="Pricing"
+            title="One price. Nothing hidden."
+            intro="Ad spend is paid on top, so every pound of it goes on your ads and you can see where it went."
+          />
         </SectionReveal>
         <SectionReveal delay={100}>
           <div className="mt-12">
             <PricingCard />
           </div>
         </SectionReveal>
+        <SectionReveal delay={100}>
+          <div className="mt-16 sm:mt-20">
+            <h3 className="display text-3xl text-foreground sm:text-4xl">What it takes to pay for itself.</h3>
+            <div className="mt-8">
+              <PaybackTable trades={paybackTrades} />
+            </div>
+          </div>
+        </SectionReveal>
       </PageSection>
 
-      <PageSection id="payback">
+      <PageSection id="included">
         <SectionReveal>
-          <SectionHeading eyebrow="The maths" title="What it takes to pay for itself." />
+          <SectionHeading
+            eyebrow="Everything included"
+            title="The full list, line by line."
+            intro="Built once by our in-house team, then run, watched and improved every month. Tap a heading to see what's in it."
+          />
         </SectionReveal>
         <SectionReveal delay={100}>
-          <div className="mt-8">
-            <PaybackTable trades={paybackTrades} />
+          <div className="mt-12">
+            <IncludedDetail />
           </div>
         </SectionReveal>
       </PageSection>
@@ -195,17 +147,6 @@ export default function GrowthSystemPage() {
         </div>
       </PageSection>
 
-      <PageSection id="faq" narrow>
-        <SectionReveal>
-          <SectionHeading eyebrow="FAQ" title="Questions about the price." />
-        </SectionReveal>
-        <SectionReveal delay={100}>
-          <div className="mt-8">
-            <FAQList items={pricingFAQs} />
-          </div>
-        </SectionReveal>
-      </PageSection>
-
       <FinalCTA />
 
       <JsonLd
@@ -216,7 +157,6 @@ export default function GrowthSystemPage() {
               "A done-for-you lead system for UK trades: website, Google Ads, Google Business Profile, call tracking and automated follow-up, built and run in-house.",
             url: `${BUSINESS_URL}${canonicalPath}`,
           }),
-          getFAQPageSchema(pricingFAQs),
         ]}
       />
     </PageShell>

@@ -16,7 +16,7 @@ const jobCount = (trade: Trade, count: number) => `${count} extra ${jobName(trad
 
 function Disclaimer() {
   return (
-    <p className="mt-6 max-w-2xl text-xs leading-relaxed text-muted-foreground/80">
+    <p className="mt-6 max-w-2xl text-xs leading-relaxed text-muted-foreground">
       An example using a {DEFAULT_MARGIN}% margin and the minimum ad spend, so yours will differ. It
       isn{"'"}t a forecast, and we don{"'"}t promise a number of leads or jobs.
     </p>

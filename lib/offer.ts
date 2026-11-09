@@ -37,24 +37,6 @@ export type OfferGroup = {
   items: string[]
 }
 
-export const buildSummary = [
-  "Website built in-house: a new build, a refresh, or new pages added to what you have",
-  "Google Ads set up for your area (Meta where search volume is low)",
-  "Google Business Profile set up and optimised",
-  "Call and conversion tracking",
-  "Noble Leads Portal: missed call text-back, instant lead alerts, SMS and email follow-up, pipeline, reminders and review requests",
-  "The Portal app set up on your phone, plus an onboarding course",
-]
-
-export const runSummary = [
-  "Ads managed and optimised weekly, checked daily",
-  "Website hosting, maintenance and updates, with new pages within fair use",
-  "30 days of social posts a month from your own job photos and videos",
-  "Follow-up and review automations kept running",
-  "A monthly results report in plain English, with a video walkthrough",
-  "A direct line to your account manager, with a same working day response",
-]
-
 export const buildDetail: OfferGroup[] = [
   {
     title: "Attract",

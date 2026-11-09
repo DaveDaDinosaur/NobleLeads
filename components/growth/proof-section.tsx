@@ -35,10 +35,10 @@ export function CaseStudyCards() {
             <div className="mt-6 border-l-2 border-secondary pl-4">
               <p className="text-base text-foreground">{cs.result}</p>
             </div>
-            <p className="mt-3 text-[11px] text-muted-foreground/70">{cs.location}</p>
+            <p className="mt-3 text-[11px] text-muted-foreground">{cs.location}</p>
             <Link
               href={cs.href}
-              className="label-mono mt-8 inline-flex items-center gap-2 text-secondary"
+              className="label-mono mt-6 inline-flex items-center gap-2 py-2 text-secondary"
             >
               Read the case study
               <ArrowRight className="h-3 w-3" />

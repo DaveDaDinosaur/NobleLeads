@@ -45,99 +45,63 @@ export function CookieConsentBanner() {
     setShowSettings(false)
   }
 
+  const button =
+    "rounded-full px-4 py-2.5 text-xs font-semibold transition-colors sm:py-2"
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-border/60 bg-background/95 backdrop-blur-lg">
-      <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold text-foreground">
-              We use cookies
-            </p>
-            <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-              Essential cookies keep this site working. We only enable analytics
-              cookies if you consent. Read our{" "}
-              <Link
-                href="/privacy-policy"
-                className="text-secondary underline-offset-4 hover:underline"
-              >
-                Privacy Policy
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/cookie-policy"
-                className="text-secondary underline-offset-4 hover:underline"
-              >
-                Cookie Policy
-              </Link>
-              .
-            </p>
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6 sm:py-4 lg:px-8">
+        <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          We only use analytics cookies if you say yes.{" "}
+          <Link href="/cookie-policy" className="text-secondary underline underline-offset-4">
+            Cookie Policy
+          </Link>
+        </p>
+
+        {showSettings ? (
+          <div className="flex items-center justify-between gap-3 rounded-lg border border-border/60 bg-card/70 px-4 py-3">
+            <label className="flex items-center gap-3 text-xs text-foreground">
+              <input
+                type="checkbox"
+                checked={analyticsEnabled}
+                onChange={(event) => setAnalyticsEnabled(event.target.checked)}
+                className="h-4 w-4 accent-secondary"
+              />
+              Analytics cookies
+            </label>
+            <button
+              type="button"
+              onClick={saveSettings}
+              className={`${button} bg-secondary text-secondary-foreground hover:bg-gold-300`}
+            >
+              Save
+            </button>
           </div>
-
-          {showSettings ? (
-            <div className="rounded-lg border border-border/60 bg-card/70 p-4">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-sm font-medium text-foreground">
-                    Analytics cookies
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Help us understand site usage and improve performance.
-                  </p>
-                </div>
-                <label className="inline-flex items-center gap-2 text-xs text-foreground">
-                  <input
-                    type="checkbox"
-                    checked={analyticsEnabled}
-                    onChange={(event) => setAnalyticsEnabled(event.target.checked)}
-                    className="h-4 w-4 accent-secondary"
-                  />
-                  Enabled
-                </label>
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={saveSettings}
-                  className="rounded-md bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground transition-colors hover:bg-gold-300"
-                >
-                  Save settings
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowSettings(false)}
-                  className="rounded-md border border-border px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted/60"
-                >
-                  Back
-                </button>
-              </div>
-            </div>
-          ) : null}
-
-          <div className="flex flex-wrap gap-2">
+        ) : (
+          <div className="flex flex-shrink-0 items-center gap-2">
             <button
               type="button"
               onClick={acceptAnalytics}
-              className="rounded-md bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground transition-colors hover:bg-gold-300"
+              className={`${button} bg-secondary text-secondary-foreground hover:bg-gold-300`}
             >
-              Accept analytics
+              Accept
             </button>
             <button
               type="button"
               onClick={rejectNonEssential}
-              className="rounded-md border border-border px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted/60"
+              className={`${button} border border-border text-foreground hover:bg-muted/60`}
             >
-              Reject non-essential
+              Reject
             </button>
             <button
               type="button"
-              onClick={() => setShowSettings((prev) => !prev)}
-              className="rounded-md border border-border px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted/60"
+              onClick={() => setShowSettings(true)}
+              className="px-2 py-2.5 text-xs font-semibold text-muted-foreground underline underline-offset-4 hover:text-foreground"
             >
-              Cookie settings
+              Settings
             </button>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )

@@ -567,7 +567,7 @@ export default function MyBuilderVsCheckatradePage() {
                   Get your growth plan
                 </Link>
               </div>
-              <p className="mt-3 text-xs text-muted-foreground/70">
+              <p className="mt-3 text-xs text-muted-foreground">
                 15 minutes · No pressure · Just clarity on what{"'"}s possible
               </p>
             </section>

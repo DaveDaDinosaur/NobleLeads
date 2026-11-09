@@ -315,7 +315,7 @@ export default function HowToGetRoofingLeadsWithoutCheckatradePage() {
                   Get your growth plan
                 </Link>
               </div>
-              <p className="mt-3 text-xs text-muted-foreground/70">
+              <p className="mt-3 text-xs text-muted-foreground">
                 15 minutes · No pressure · Just clarity on what&apos;s possible
               </p>
             </section>

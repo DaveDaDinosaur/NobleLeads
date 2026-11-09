@@ -175,7 +175,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                   className="object-cover object-[70%_center]"
                 />
               </div>
-              <figcaption className="mt-3 text-center text-xs text-muted-foreground/70">
+              <figcaption className="mt-3 text-center text-xs text-muted-foreground">
                 The rebuilt Focus Refurbishment website
               </figcaption>
             </figure>
@@ -365,7 +365,7 @@ export default function FocusRefurbishmentCaseStudyPage() {
                       title="Focus Refurbishment, Grade II listed building refurbishment"
                     />
                   </div>
-                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground/70 sm:text-left">
+                  <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted-foreground sm:text-left">
                     Grade II listed walkthrough, one of three
                   </figcaption>
                 </figure>

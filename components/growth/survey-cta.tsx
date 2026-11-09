@@ -41,7 +41,7 @@ export function SurveyCTA({
         </span>
       </Link>
       {subtext ? (
-        <p className="label-mono text-[10px] text-muted-foreground/80">{subtext}</p>
+        <p className="label-mono text-[10px] text-muted-foreground">{subtext}</p>
       ) : null}
     </div>
   )
