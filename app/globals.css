@@ -435,3 +435,21 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .precall-shimmer, .precall-ring-pulse { animation: none; }
 }
+
+/* Pre-call flow: a highlight travelling along the lines in the lead sources drawing */
+@keyframes precall-flow {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+.precall-flow { animation: precall-flow 1.6s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .precall-flow { animation: none; opacity: 0; }
+}
+@keyframes precall-svg-pulse {
+  0%, 100% { stroke-opacity: 1; stroke-width: 1; }
+  50% { stroke-opacity: 0.35; stroke-width: 3; }
+}
+.precall-svg-pulse { animation: precall-svg-pulse 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .precall-svg-pulse { animation: none; }
+}

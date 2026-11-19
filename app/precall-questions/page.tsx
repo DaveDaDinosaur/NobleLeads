@@ -2,7 +2,13 @@ import type { Metadata } from "next"
 
 import { PrecallExperience } from "@/components/precall/precall-experience"
 import { getFieldIds, ghl, ghlToken, isContactId, LOCATION_ID } from "@/lib/ghl"
-import { DEFAULT_CALL_MINUTES, type PrecallContext } from "@/lib/precall"
+import {
+  cleanBusinessName,
+  cleanFirstName,
+  cleanTown,
+  DEFAULT_CALL_MINUTES,
+  type PrecallContext,
+} from "@/lib/precall"
 
 export const metadata: Metadata = {
   title: { absolute: "Before your call | NobleLeads" },
@@ -56,12 +62,17 @@ async function loadContext(params: Record<string, string | string[] | undefined>
   }
 
   const token = ghlToken()
-  if (!context.contactId || !token) return context
+  if (!context.contactId || !token) {
+    context.businessName = cleanBusinessName(context.businessName)
+    context.firstName = cleanFirstName(context.firstName, context.businessName)
+    context.town = cleanTown(context.town)
+    return context
+  }
 
   // Anything that fails here just falls back to the URL values, so the page always loads.
   const [contactResult, eventsResult, idsResult] = await Promise.allSettled([
-    ghl(`/contacts/${context.contactId}`, token, "GET", undefined, 3000),
-    ghl(`/contacts/${context.contactId}/appointments`, token, "GET", undefined, 3000),
+    ghl(`/contacts/${context.contactId}`, token, "GET", undefined, 1500),
+    ghl(`/contacts/${context.contactId}/appointments`, token, "GET", undefined, 1500),
     getFieldIds(token),
   ])
 
@@ -73,8 +84,9 @@ async function loadContext(params: Record<string, string | string[] | undefined>
       tags?: string[]
       customFields?: { id: string; value?: unknown }[]
     }
-    context.firstName = context.firstName ?? contact.firstName ?? undefined
     context.businessName = context.businessName ?? contact.companyName ?? undefined
+    // Use the link's name if it's a real name, otherwise try the contact's.
+    if (!cleanFirstName(context.firstName, context.businessName)) context.firstName = contact.firstName ?? undefined
     context.fromSurvey = Boolean(contact.tags?.some((tag) => tag.toLowerCase() === "survey complete"))
 
     // Pull in anything the survey (or a rep) already saved, so we don't ask it again.
@@ -111,6 +123,10 @@ async function loadContext(params: Record<string, string | string[] | undefined>
     }
   }
 
+  // CRM records get messy, so everything shown on screen goes through a sanity check first.
+  context.businessName = cleanBusinessName(context.businessName)
+  context.firstName = cleanFirstName(context.firstName, context.businessName)
+  context.town = cleanTown(context.town)
   return context
 }
 

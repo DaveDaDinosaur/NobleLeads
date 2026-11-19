@@ -36,6 +36,7 @@ function sanitise(raw: PrecallAnswers = {}): PrecallAnswers {
     jobValue: Number.isFinite(jobValue) && jobValue > 0 && jobValue < 10_000_000 ? Math.round(jobValue) : undefined,
     capacity: clean(raw.capacity, 40) || undefined,
     sources: cleanList(raw.sources),
+    businessName: clean(raw.businessName, 80) || undefined,
     triedNote: clean(raw.triedNote, 600) || undefined,
     agenda: clean(raw.agenda, 1500) || undefined,
     skipped: cleanList(raw.skipped).filter((id): id is QuestionId => questionIds.includes(id as QuestionId)),
@@ -57,6 +58,7 @@ function answersNote(a: PrecallAnswers, stage: Stage) {
     `${label}: ${value || (skipped.has(id) ? "skipped, ask on the call" : "-")}`
   return [
     stage === "complete" ? "Pre-call questions, finished" : "Pre-call questions, left part way",
+    ...(a.businessName ? [`Business (corrected by them): ${a.businessName}`] : []),
     row("Trade", "trade", a.trade),
     row("Jobs wanted", "jobs", j.jobs),
     row("Area", "area", [a.town, a.radius].filter(Boolean).join(", ")),

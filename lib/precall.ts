@@ -30,6 +30,8 @@ export type PrecallAnswers = {
   jobValue?: number
   capacity?: string
   sources?: string[]
+  /** Set when they correct the business name on the check screen. */
+  businessName?: string
   /** How their own ads or an agency went, if they use either. */
   triedNote?: string
   agenda?: string
@@ -85,10 +87,148 @@ export const jobValueStops = [
 
 const genericJobs = ["Bigger, higher value jobs", "Repairs and smaller jobs", "Commercial work", "Emergency call-outs"]
 
+/** Other ways people (and messy CRM records) name each trade. Matched as whole words after cleaning. */
+const tradeAliases: Record<string, string[]> = {
+  "fire-doors": ["fire door", "fire doors", "fire door installer", "fire door installers", "fire safety doors"],
+  "ewi-render": [
+    "ewi",
+    "render",
+    "rendering",
+    "renderer",
+    "renderers",
+    "external wall insulation",
+    "thermal render",
+    "k rend",
+    "wall insulation",
+  ],
+  roofers: ["roofer", "roofers", "roofing", "roof", "roofs", "flat roofing", "flat roofs", "roofing contractor", "slater"],
+  "refurbishments-extensions": [
+    "builder",
+    "builders",
+    "building",
+    "extension",
+    "extensions",
+    "refurbishment",
+    "refurbishments",
+    "refurb",
+    "refurbs",
+    "renovation",
+    "renovations",
+    "general builder",
+  ],
+  "loft-conversions": ["loft", "lofts", "loft conversion", "loft conversions", "dormer", "dormers"],
+  "kitchen-fitters": ["kitchen", "kitchens", "kitchen fitter", "kitchen fitters", "kitchen fitting", "kitchen installer"],
+  "driveway-paving": ["driveway", "driveways", "paving", "block paving", "resin driveway", "resin driveways", "patio", "patios"],
+  "solar-heat-pumps": ["solar", "solar panels", "heat pump", "heat pumps", "air source", "renewables", "solar pv"],
+  "stairlifts-mobility": ["stairlift", "stairlifts", "stair lift", "stair lifts", "mobility", "mobility aids"],
+}
+
+const fillerWords = /\b(ltd|limited|llp|plc|uk|the|services?|specialists?|contractors?|company|co|solutions|group|installers?|installations?)\b/g
+
+function normalise(text: string) {
+  return ` ${text
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z\s]/g, " ")
+    .replace(fillerWords, " ")
+    .replace(/\s+/g, " ")
+    .trim()} `
+}
+
+function editDistance(a: string, b: string) {
+  const row = Array.from({ length: b.length + 1 }, (_, i) => i)
+  for (let i = 1; i <= a.length; i++) {
+    let prev = row[0]
+    row[0] = i
+    for (let j = 1; j <= b.length; j++) {
+      const temp = row[j]
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1))
+      prev = temp
+    }
+  }
+  return row[b.length]
+}
+
+/**
+ * Finds one of our trades from whatever was typed or saved: "Roofer", "rofing", "Smith Roofing Ltd" all find Roofing.
+ * Niche trades we don't have a page for ("Thatcher") return undefined and are shown as typed.
+ */
 export function findTrade(name?: string): Trade | undefined {
-  if (!name) return undefined
-  const needle = name.trim().toLowerCase()
-  return trades.find((trade) => trade.name.toLowerCase() === needle || trade.slug === needle)
+  if (!name?.trim()) return undefined
+  const raw = name.trim().toLowerCase()
+  const exact = trades.find((trade) => trade.name.toLowerCase() === raw || trade.slug === raw)
+  if (exact) return exact
+
+  const text = normalise(name)
+  if (!text.trim()) return undefined
+  const phrases = trades.flatMap((trade) =>
+    [trade.name, ...(tradeAliases[trade.slug] ?? [])].map((phrase) => ({ trade, phrase: normalise(phrase).trim() }))
+  )
+  // Whole-word match, longest phrase first so "flat roofing" beats "roof".
+  const contained = phrases
+    .filter(({ phrase }) => phrase && text.includes(` ${phrase} `))
+    .sort((a, b) => b.phrase.length - a.phrase.length)[0]
+  if (contained) return contained.trade
+
+  // Typos: compare each word, and the whole thing, allowing about one slip in five letters.
+  const words = [text.trim(), ...text.trim().split(" ")]
+  let best: { trade: Trade; distance: number } | undefined
+  for (const { trade, phrase } of phrases) {
+    if (phrase.length < 4) continue
+    for (const word of words) {
+      const distance = editDistance(word, phrase)
+      if (distance <= Math.max(1, Math.floor(phrase.length / 5)) && (!best || distance < best.distance)) {
+        best = { trade, distance }
+      }
+    }
+  }
+  return best?.trade
+}
+
+/** What to call their trade on screen: our name for it, or what they typed, tidied up. */
+export function tradeLabel(name?: string) {
+  if (!name?.trim()) return undefined
+  return findTrade(name)?.name ?? titleCase(name.trim().slice(0, 60))
+}
+
+function titleCase(text: string) {
+  if (text !== text.toLowerCase() && text !== text.toUpperCase()) return text
+  return text.toLowerCase().replace(/\b([a-z])/g, (letter) => letter.toUpperCase())
+}
+
+const businessish =
+  /\b(ltd|limited|llp|plc|services?|roofing|roofers?|building|builders?|construction|contractors?|solutions|group|company|sons|electrical|plumbing|heating|kitchens?|lofts?|paving|driveways?|render(ing)?|solar|homes?|propert(y|ies)|maintenance|installations?|uk)\b|[&@\d/]/i
+
+/**
+ * A first name we're happy to greet them with, or nothing. CRMs get messy: business names in the
+ * first name field, all caps, "Mr", emails. A plain "Thanks." beats "Thanks, SMITH ROOFING LTD."
+ */
+export function cleanFirstName(raw?: string, business?: string) {
+  const text = raw?.trim().replace(/^(mr|mrs|ms|miss|dr)\.?\s+/i, "")
+  if (!text) return undefined
+  if (business && text.toLowerCase() === business.trim().toLowerCase()) return undefined
+  if (businessish.test(text) || text.split(/\s+/).length > 3) return undefined
+  const first = text.split(/\s+/)[0]
+  if (!/^[a-z][a-z'-]{1,19}$/i.test(first)) return undefined
+  return first.toLowerCase().replace(/(^|[-'])([a-z])/g, (_, mark: string, letter: string) => mark + letter.toUpperCase())
+}
+
+/** The business name, tidied, or nothing if it's clearly not one (an email, a phone number). */
+export function cleanBusinessName(raw?: string) {
+  const text = raw?.trim().replace(/\s+/g, " ")
+  if (!text || text.length < 2 || /@|^\+?[\d\s()-]{7,}$/.test(text)) return undefined
+  return titleCase(text.slice(0, 60))
+}
+
+/** A town to show. Takes the town out of a full address and leaves postcodes as they are. */
+export function cleanTown(raw?: string) {
+  const text = raw?.trim().replace(/\s+/g, " ")
+  if (!text) return undefined
+  const parts = text.split(",").map((part) => part.trim()).filter(Boolean)
+  const postcode = /^[a-z]{1,2}\d[a-z\d]?\s*\d[a-z]{2}$/i
+  const town = [...parts].reverse().find((part) => /[a-z]{3}/i.test(part) && !postcode.test(part) && !/\d/.test(part))
+  if (!town && postcode.test(parts[0])) return parts[0].toUpperCase()
+  return titleCase((town ?? parts[0]).slice(0, 40))
 }
 
 export function jobOptionsFor(tradeName?: string) {
@@ -113,7 +253,8 @@ export function formatJobValue(value: number) {
  */
 export function buildQuestions(context: PrecallContext): Question[] {
   const list: Question[] = []
-  if (!findTrade(context.tradeName)) {
+  // A niche trade we don't recognise still counts as known. They can correct it on the check screen.
+  if (!context.tradeName?.trim()) {
     list.push({ id: "trade", question: "First up, what's your trade?", hint: "So the plan speaks your language." })
   }
   list.push(
@@ -197,8 +338,19 @@ function midSentence(text: string) {
   return /^[A-Z][A-Z]/.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1)
 }
 
-/** A one-line response shown after each answer, written as George. */
+/** "on Thursday", "tomorrow", or "on the call". For George's lines. */
+export function onTheCall(context: PrecallContext) {
+  const day = callDayLabel(context.callStart)
+  if (!day) return "on the call"
+  return day === "today" || day === "tomorrow" ? `on the call ${day}` : `on ${day}`
+}
+
+/**
+ * A one-line response shown after each answer, written as George. Each one says what the answer
+ * gets them on the call, so every tap feels like it's building something for them.
+ */
 export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallContext): string | undefined {
+  const when = onTheCall(context)
   switch (id) {
     case "trade": {
       const trade = findTrade(a.trade)
@@ -209,28 +361,28 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
     case "jobs": {
       const first = a.jobs?.[0] ?? a.jobsOther
       return first
-        ? `Noted. We'd build the ads around ${midSentence(first)}, and keep out searches for work you don't want.`
+        ? `Noted. ${when.charAt(0).toUpperCase() + when.slice(1)} I'll show you how many people near you search for ${midSentence(first)} every month.`
         : undefined
     }
     case "area": {
       const town = a.town ?? context.town
       return town
-        ? `${town}${a.radius ? ` and ${a.radius} around` : ""} it is. You never pay for clicks from outside it.`
+        ? `${town}${a.radius ? `, ${a.radius}` : ""}. I'll look at who's winning work there before we speak.`
         : undefined
     }
     case "jobValue": {
       if (typeof a.jobValue !== "number") return undefined
       const jobs = jobsToCoverFirstTerm(a.jobValue)
-      return `At ${formatJobValue(a.jobValue)} a job, about ${jobs} extra ${jobs === 1 ? "job covers" : "jobs cover"} your first ${MIN_TERM_MONTHS} months.`
+      return `At ${formatJobValue(a.jobValue)} a job, about ${jobs} extra ${jobs === 1 ? "job covers" : "jobs cover"} your first ${MIN_TERM_MONTHS} months. I'll show you the real numbers ${when}.`
     }
     case "capacity":
-      return a.capacity ? "That's the target, then. Everything on the call works back from it." : undefined
+      return a.capacity ? `That's the target. I'll work out what it takes to hit it, and what it would cost.` : undefined
     case "sources": {
       const s = a.sources ?? []
       if (s.includes(AGENCY_SOURCE)) {
         return "Thanks for being straight. I'll show you what we'd do differently, and you can judge for yourself."
       }
-      if (s.includes(ADS_SOURCE)) return "Then you'll like the numbers part of the call."
+      if (s.includes(ADS_SOURCE)) return `Then you'll like the numbers part. Bring your questions ${when}.`
       if (s.includes("Checkatrade, MyBuilder or Bark")) {
         return "Then you know what shared leads cost. Everything we build is yours to keep."
       }
@@ -242,6 +394,46 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
     case "agenda":
       return a.agenda ? "Got it. That's top of the list." : undefined
   }
+}
+
+/** What they'll walk away with from the call. Personalised as answers come in. */
+export function callDeliverables(a: PrecallAnswers, context: PrecallContext) {
+  const town = a.town ?? context.town
+  const jobs = [...(a.jobs ?? []), ...(a.jobsOther ? [a.jobsOther] : [])]
+  const trade = findTrade(a.trade ?? context.tradeName)
+  const value = effectiveJobValue(a, context)
+  const what = jobs[0] ? midSentence(jobs[0]) : trade ? `${trade.plural.split(" and ")[0]} work` : "your work"
+  return [
+    {
+      id: "searches",
+      title: "Your local search numbers",
+      body: `How many people${town ? ` around ${town}` : " near you"} search for ${what} each month, and what each click costs.`,
+      ready: Boolean(jobs.length || town),
+    },
+    {
+      id: "competitors",
+      title: "Who you're up against",
+      body: `Who's winning those jobs${town ? ` in ${town}` : ""} right now, and the gaps you could take.`,
+      ready: Boolean(town || a.radius),
+    },
+    {
+      id: "numbers",
+      title: "Your numbers",
+      body:
+        typeof value === "number"
+          ? `What it would cost, and why about ${jobsToCoverFirstTerm(value)} extra jobs pays back your first ${MIN_TERM_MONTHS} months.`
+          : "What it would cost, and how many jobs it takes to pay for itself.",
+      ready: typeof value === "number",
+    },
+    {
+      id: "plan",
+      title: "A plan built for you",
+      body: a.capacity
+        ? `Built to bring in ${a.capacity} extra jobs a month. Yours to keep, whatever you decide.`
+        : "The ads, the website and the follow-up, built around your business. Yours to keep, whatever you decide.",
+      ready: Boolean(a.capacity || a.sources?.length),
+    },
+  ]
 }
 
 export type PlanLine = {
@@ -262,8 +454,8 @@ function payback(value: number) {
 export function planLines(a: PrecallAnswers, context: PrecallContext, questions: Question[]): PlanLine[] {
   const skipped = (id: QuestionId) => Boolean(a.skipped?.includes(id))
   const asks = new Set(questions.map((q) => q.id))
-  const knownTrade = findTrade(context.tradeName)?.name
-  const tradeName = knownTrade ?? findTrade(a.trade)?.name ?? a.trade
+  const knownTrade = tradeLabel(context.tradeName)
+  const tradeName = knownTrade ?? tradeLabel(a.trade)
   const jobs = [...(a.jobs ?? []), ...(a.jobsOther ? [a.jobsOther] : [])]
   const town = a.town ?? context.town
   const jobValue = effectiveJobValue(a, context)

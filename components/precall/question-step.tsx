@@ -1,9 +1,10 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Check, Pencil } from "lucide-react"
 
 import { gsap, prefersReducedMotion } from "@/components/motion/gsap"
+import { BlueprintArt, CalendarArt, CoinStackArt, dotsInside, MapArt, NetworkArt } from "@/components/precall/precall-art"
 import { jobsToCoverFirstTerm, MIN_TERM_MONTHS } from "@/lib/offer"
 import {
   capacityOptions,
@@ -14,6 +15,7 @@ import {
   nearestStopIndex,
   radiusOptions,
   sourceOptions,
+  tradeLabel,
   usesPaidHelp,
   type PrecallAnswers,
   type PrecallContext,
@@ -30,8 +32,11 @@ type StepProps = {
   onSkip: () => void
 }
 
-const inputClass =
-  "min-touch w-full min-w-0 rounded-xl border border-border bg-background/40 px-4 py-3.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary sm:text-sm"
+export const inputClass =
+  "min-touch w-full min-w-0 rounded-2xl border border-border bg-card px-4 py-3.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary sm:text-sm"
+
+/** How long a single tap shows its tick before moving on. Long enough to register, short enough to feel quick. */
+const AUTO_ADVANCE_MS = 260
 
 function Chip({
   label,
@@ -51,20 +56,20 @@ function Chip({
       aria-checked={selected}
       onClick={onClick}
       data-anim
-      className={`group min-touch flex w-full items-center justify-between gap-3 rounded-xl border px-4 py-3.5 text-left text-[15px] font-medium transition-all duration-300 active:scale-[0.98] sm:text-sm ${
+      className={`group min-touch flex w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3.5 text-left text-[15px] font-medium transition-all duration-200 active:scale-[0.97] sm:text-sm ${
         selected
           ? "border-secondary bg-secondary/10 text-foreground"
-          : "border-border text-foreground/85 hover:border-secondary/50 hover:bg-muted/40"
+          : "border-border bg-card text-foreground/85 hover:border-secondary/50"
       }`}
     >
       <span>{label}</span>
       <span
-        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center border transition-all duration-300 ${
+        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center border transition-all duration-200 ${
           multi ? "rounded-md" : "rounded-full"
         } ${selected ? "scale-100 border-secondary bg-secondary" : "scale-90 border-border"}`}
       >
         <Check
-          className={`h-3 w-3 text-secondary-foreground transition-transform duration-300 ${selected ? "scale-100" : "scale-0"}`}
+          className={`h-3 w-3 text-secondary-foreground transition-transform duration-200 ${selected ? "scale-100" : "scale-0"}`}
           strokeWidth={3}
         />
       </span>
@@ -72,39 +77,50 @@ function Chip({
   )
 }
 
-function Footer({
+/** The action bar. Stays pinned to the bottom of the screen, in thumb reach, like an app. */
+export function Footer({
   onSkip,
   onNext,
   canNext,
   isLast,
   showNext = true,
+  nextLabel,
+  skipLabel = "Skip",
 }: {
-  onSkip: () => void
+  onSkip?: () => void
   onNext?: () => void
   canNext?: boolean
-  isLast: boolean
+  isLast?: boolean
   showNext?: boolean
+  nextLabel?: string
+  skipLabel?: string
 }) {
   return (
-    <div className="mt-8 flex items-center justify-between gap-4" data-anim>
-      <button
-        type="button"
-        onClick={onSkip}
-        className="min-touch px-1 text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-      >
-        Skip this one
-      </button>
-      {showNext ? (
-        <button
-          type={onNext ? "button" : "submit"}
-          onClick={onNext}
-          disabled={!canNext}
-          className="group min-touch inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground transition-all disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          {isLast ? "Finish my plan" : "Next"}
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </button>
-      ) : null}
+    <div className="pb-safe sticky bottom-0 z-10 -mx-5 mt-auto bg-gradient-to-t from-background from-70% to-transparent px-5 pt-8 sm:-mx-8 sm:px-8">
+      <div className="flex items-center gap-3 pb-3">
+        {onSkip ? (
+          <button
+            type="button"
+            onClick={onSkip}
+            className="min-touch flex-shrink-0 rounded-full px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {skipLabel}
+          </button>
+        ) : null}
+        {showNext ? (
+          <button
+            type={onNext ? "button" : "submit"}
+            onClick={onNext}
+            disabled={!canNext}
+            className="group min-touch inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-secondary px-6 py-4 text-[15px] font-semibold text-secondary-foreground transition-all active:scale-[0.98] disabled:opacity-35 sm:ml-auto sm:min-w-[11rem] sm:flex-none"
+          >
+            {nextLabel ?? (isLast ? "Finish my plan" : "Next")}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
+        ) : (
+          <span className="flex-1 text-right text-xs text-muted-foreground">Tap one to carry on</span>
+        )}
+      </div>
     </div>
   )
 }
@@ -119,17 +135,48 @@ function useAutoAdvance(onAnswer: StepProps["onAnswer"]) {
     pick(value: string, patch: Partial<PrecallAnswers>) {
       setPicked(value)
       window.clearTimeout(timer.current)
-      timer.current = window.setTimeout(() => onAnswer(patch), prefersReducedMotion() ? 0 : 380)
+      timer.current = window.setTimeout(() => onAnswer(patch), prefersReducedMotion() ? 0 : AUTO_ADVANCE_MS)
     },
   }
 }
 
-function TradeStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
+function Art({ children, className = "h-32" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`mx-auto mt-6 w-full max-w-xs ${className}`} data-anim>
+      {children}
+    </div>
+  )
+}
+
+/** Shows what a typed trade will be treated as, so typos are caught gently. */
+function TradeMatch({ value }: { value: string }) {
+  const match = findTrade(value)
+  if (!value.trim()) return null
+  return (
+    <p className="mt-2 text-xs text-muted-foreground" aria-live="polite">
+      {match && match.name.toLowerCase() !== value.trim().toLowerCase() ? (
+        <>
+          Got it, <span className="text-secondary">{match.name}</span>.
+        </>
+      ) : match ? null : (
+        <>We{"'"}ll use {tradeLabel(value)}. No problem if it{"'"}s not in the list.</>
+      )}
+    </p>
+  )
+}
+
+function TradeStep({ answers, onAnswer, onSkip }: StepProps) {
   const { picked, pick } = useAutoAdvance(onAnswer)
   const [other, setOther] = useState(findTrade(answers.trade) ? "" : (answers.trade ?? ""))
   return (
-    <>
-      <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2" role="radiogroup">
+    <form
+      className="flex flex-1 flex-col"
+      onSubmit={(e) => {
+        e.preventDefault()
+        if (other.trim()) onAnswer({ trade: findTrade(other)?.name ?? other.trim() })
+      }}
+    >
+      <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup">
         {trades.map((trade) => (
           <Chip
             key={trade.slug}
@@ -139,32 +186,19 @@ function TradeStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
           />
         ))}
       </div>
-      <form
-        className="mt-2.5 flex gap-2.5"
-        data-anim
-        onSubmit={(e) => {
-          e.preventDefault()
-          if (other.trim()) onAnswer({ trade: other.trim() })
-        }}
-      >
+      <div className="mt-3" data-anim>
         <input
           type="text"
           aria-label="Your trade, if it isn't listed"
-          placeholder="Something else"
+          placeholder="Something else? Type it here"
           value={other}
           onChange={(e) => setOther(e.target.value)}
-          className={`${inputClass} flex-1`}
+          className={inputClass}
         />
-        <button
-          type="submit"
-          disabled={!other.trim()}
-          className="min-touch flex-shrink-0 rounded-xl bg-secondary px-5 text-sm font-semibold text-secondary-foreground disabled:opacity-40"
-        >
-          Next
-        </button>
-      </form>
-      <Footer onSkip={onSkip} isLast={isLast} showNext={false} />
-    </>
+        <TradeMatch value={other} />
+      </div>
+      <Footer onSkip={onSkip} canNext={other.trim().length > 1} showNext={other.trim().length > 0} />
+    </form>
   )
 }
 
@@ -174,11 +208,14 @@ function JobsStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
   const [otherOpen, setOtherOpen] = useState(Boolean(answers.jobsOther))
   const [other, setOther] = useState(answers.jobsOther ?? "")
   const toggle = (job: string) => setJobs((list) => (list.includes(job) ? list.filter((j) => j !== job) : [...list, job]))
-  const canNext = jobs.length > 0 || other.trim().length > 0
+  const count = jobs.length + (otherOpen && other.trim() ? 1 : 0)
 
   return (
     <>
-      <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+      <Art className="h-28">
+        <BlueprintArt count={Math.min(count, 5)} />
+      </Art>
+      <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
         {options.map((job) => (
           <Chip key={job} label={job} multi selected={jobs.includes(job)} onClick={() => toggle(job)} />
         ))}
@@ -192,56 +229,36 @@ function JobsStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
           placeholder="Which jobs?"
           value={other}
           onChange={(e) => setOther(e.target.value)}
-          className={`${inputClass} mt-2.5`}
+          className={`${inputClass} mt-2`}
         />
       ) : null}
       <Footer
         onSkip={onSkip}
         isLast={isLast}
-        canNext={canNext}
+        canNext={count > 0}
         onNext={() => onAnswer({ jobs, jobsOther: otherOpen && other.trim() ? other.trim() : undefined })}
       />
     </>
   )
 }
 
-function RadiusRings({ town, radius }: { town: string; radius?: string }) {
-  const index = radius ? radiusOptions.indexOf(radius) : -1
-  return (
-    <div className="relative mx-auto mt-6 aspect-square w-full max-w-[11rem] sm:max-w-[15rem]" aria-hidden data-anim>
-      {radiusOptions.map((option, i) => {
-        const size = 28 + i * 18
-        const active = i <= index
-        return (
-          <span
-            key={option}
-            className={`absolute left-1/2 top-1/2 rounded-full border transition-all duration-700 ease-out ${
-              active ? "border-secondary/60 bg-secondary/[0.05]" : "border-border/70"
-            } ${i === index ? "precall-ring-pulse" : ""}`}
-            style={{ width: `${size}%`, height: `${size}%`, transform: "translate(-50%, -50%)" }}
-          />
-        )
-      })}
-      <span className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-        <span className="h-2.5 w-2.5 rounded-full bg-secondary shadow-[0_0_0_6px_hsl(42_40%_56%/0.18)]" />
-        <span className="label-mono mt-2 max-w-[8rem] truncate text-[10px] text-foreground">{town || "Your base"}</span>
-      </span>
-    </div>
-  )
-}
-
 function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
   // When we already know their base, only the radius is asked. They can still correct the town.
-  const [editingTown, setEditingTown] = useState(!context.town || Boolean(answers.town))
+  const [editingTown, setEditingTown] = useState(!context.town)
   const [town, setTown] = useState(answers.town ?? "")
   const [radius, setRadius] = useState(answers.radius)
   const shownTown = editingTown ? town.trim() : (context.town ?? "")
-  const canNext = editingTown ? town.trim().length > 0 : Boolean(radius)
+  const ringIndex = radius ? radiusOptions.indexOf(radius) : -1
+  const canNext = editingTown ? town.trim().length > 1 : Boolean(radius)
+  const lit = dotsInside(ringIndex)
+
   return (
     <form
+      className="flex flex-1 flex-col"
       onSubmit={(e) => {
         e.preventDefault()
-        if (canNext) onAnswer({ town: editingTown ? town.trim() : undefined, radius })
+        if (!canNext) return
+        onAnswer(editingTown ? { town: town.trim(), radius } : { radius })
       }}
     >
       {editingTown ? (
@@ -251,30 +268,19 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
           autoFocus={Boolean(context.town)}
           aria-label="Town or postcode"
           autoComplete="address-level2"
-          placeholder="Town or postcode"
+          placeholder="Your town or postcode"
           value={town}
           onChange={(e) => setTown(e.target.value)}
-          className={`${inputClass} mt-8`}
+          className={`${inputClass} mt-6`}
         />
       ) : null}
-      <RadiusRings town={shownTown} radius={radius} />
-      {editingTown ? (
-        <p className="label-mono mt-4 text-center text-[10px] text-muted-foreground" data-anim>
-          How far would you travel?
-        </p>
-      ) : (
-        <p className="mt-3 text-center text-xs text-muted-foreground" data-anim>
-          Not based in {context.town}?{" "}
-          <button
-            type="button"
-            onClick={() => setEditingTown(true)}
-            className="min-touch text-foreground underline underline-offset-4"
-          >
-            Change it
-          </button>
-        </p>
-      )}
-      <div className="mt-3 flex flex-wrap justify-center gap-2" data-anim role="radiogroup">
+      <Art className="h-52 sm:h-60">
+        <MapArt town={shownTown || undefined} ringIndex={ringIndex} />
+      </Art>
+      <p className="mt-1 min-h-4 text-center text-xs text-muted-foreground" aria-live="polite" data-anim>
+        {ringIndex >= 0 ? `Ads show to everyone in the gold area. Outside it, you never pay a penny.` : "Pick how far you'll go."}
+      </p>
+      <div className="mt-4 flex flex-wrap justify-center gap-2" data-anim role="radiogroup" aria-label="How far you'll travel">
         {radiusOptions.map((option) => (
           <button
             key={option}
@@ -282,16 +288,25 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
             role="radio"
             aria-checked={radius === option}
             onClick={() => setRadius(option)}
-            className={`min-touch rounded-full border px-4 py-2 text-sm transition-all duration-300 active:scale-95 ${
+            className={`min-touch rounded-full border px-4 py-2 text-sm transition-all duration-200 active:scale-95 ${
               radius === option
                 ? "border-secondary bg-secondary/10 text-foreground"
-                : "border-border text-foreground/80 hover:border-secondary/50"
+                : "border-border bg-card text-foreground/80 hover:border-secondary/50"
             }`}
           >
             {option}
           </button>
         ))}
       </div>
+      {!editingTown ? (
+        <p className="mt-4 text-center text-xs text-muted-foreground" data-anim>
+          Not based in {context.town}?{" "}
+          <button type="button" onClick={() => setEditingTown(true)} className="text-foreground underline underline-offset-4">
+            Change it
+          </button>
+        </p>
+      ) : null}
+      <span className="sr-only">{lit}</span>
       <Footer onSkip={onSkip} isLast={isLast} canNext={canNext} />
     </form>
   )
@@ -300,7 +315,6 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
 function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
   const start = answers.jobValue ?? findTrade(answers.trade ?? context.tradeName)?.typicalJob.value ?? 5000
   const [index, setIndex] = useState(nearestStopIndex(start))
-  const [touched, setTouched] = useState(typeof answers.jobValue === "number")
   const value = jobValueStops[index]
   const jobs = jobsToCoverFirstTerm(value)
   const numberRef = useRef<HTMLSpanElement>(null)
@@ -316,7 +330,7 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
     }
     const tween = gsap.to(shown.current, {
       v: value,
-      duration: 0.45,
+      duration: 0.35,
       ease: "power3.out",
       onUpdate: () => {
         const rounded = Math.round(shown.current.v / 50) * 50
@@ -332,13 +346,18 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
 
   return (
     <>
-      <div className="mt-10 text-center" data-anim>
-        <span ref={numberRef} className="display block text-6xl tabular-nums text-foreground sm:text-7xl">
-          {formatJobValue(value)}
-        </span>
-        <span className="label-mono mt-3 block text-muted-foreground">a typical job</span>
+      <div className="mt-6 flex items-end justify-center gap-5" data-anim>
+        <div className="h-28 w-24 flex-shrink-0">
+          <CoinStackArt level={1 + Math.round((index / (jobValueStops.length - 1)) * 11)} />
+        </div>
+        <div className="pb-2">
+          <span ref={numberRef} className="display block text-5xl tabular-nums text-foreground sm:text-6xl">
+            {formatJobValue(value)}
+          </span>
+          <span className="label-mono mt-2 block text-muted-foreground">a typical job</span>
+        </div>
       </div>
-      <div className="mt-8" data-anim>
+      <div className="mt-6" data-anim>
         <input
           type="range"
           min={0}
@@ -347,24 +366,19 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
           value={index}
           aria-label="Typical job value"
           aria-valuetext={formatJobValue(value)}
-          onChange={(e) => {
-            setIndex(Number(e.target.value))
-            setTouched(true)
-          }}
+          onChange={(e) => setIndex(Number(e.target.value))}
           className="precall-range w-full"
           style={{ ["--fill" as string]: `${percent}%` }}
         />
-        <div className="label-mono mt-2 flex justify-between text-[10px] text-muted-foreground">
+        <div className="label-mono mt-1 flex justify-between text-[10px] text-muted-foreground">
           <span>£500</span>
           <span>£50k+</span>
         </div>
       </div>
-      <div
-        className={`mt-8 border-l-2 border-secondary pl-4 transition-opacity duration-500 ${touched ? "opacity-100" : "opacity-60"}`}
-        data-anim
-      >
-        <p className="text-base leading-snug text-foreground">
-          About {jobs} extra {jobs === 1 ? "job" : "jobs"} would cover your first {MIN_TERM_MONTHS} months.
+      <div className="mt-6 rounded-2xl border border-secondary/25 bg-secondary/[0.06] p-4" data-anim>
+        <p className="text-[15px] leading-snug text-foreground">
+          About <span className="tabular-nums text-secondary">{jobs}</span> extra {jobs === 1 ? "job" : "jobs"} would cover your
+          first {MIN_TERM_MONTHS} months.
         </p>
         <p className="mt-1 text-xs text-muted-foreground">At a 30% margin. A rough guide, we{"'"}ll do it properly on the call.</p>
       </div>
@@ -373,46 +387,42 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
   )
 }
 
-function SingleStep({
-  options,
-  field,
-  answers,
-  onAnswer,
-  onSkip,
-  isLast,
-}: StepProps & { options: string[]; field: "capacity" }) {
+function CapacityStep({ answers, onAnswer, onSkip }: StepProps) {
   const { picked, pick } = useAutoAdvance(onAnswer)
+  const current = picked ?? answers.capacity
   return (
     <>
-      <div className="mt-8 grid grid-cols-2 gap-2.5" role="radiogroup">
-        {options.map((option) => (
-          <Chip
-            key={option}
-            label={option}
-            selected={(picked ?? answers[field]) === option}
-            onClick={() => pick(option, { [field]: option })}
-          />
+      <div className="mx-auto mt-6 w-full max-w-xs" data-anim>
+        <CalendarArt capacity={current} />
+        <p className="label-mono mt-2 text-center text-[10px] text-muted-foreground">Next month</p>
+      </div>
+      <div className="mt-6 grid grid-cols-2 gap-2" role="radiogroup">
+        {capacityOptions.map((option) => (
+          <Chip key={option} label={option} selected={current === option} onClick={() => pick(option, { capacity: option })} />
         ))}
       </div>
-      <Footer onSkip={onSkip} isLast={isLast} showNext={false} />
+      <Footer onSkip={onSkip} showNext={false} />
     </>
   )
 }
 
-function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
+function SourcesStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
   const [sources, setSources] = useState<string[]>(answers.sources ?? [])
   const [note, setNote] = useState(answers.triedNote ?? "")
   const toggle = (s: string) => setSources((list) => (list.includes(s) ? list.filter((x) => x !== s) : [...list, s]))
   const followUp = usesPaidHelp(sources)
   return (
     <>
-      <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+      <Art className="h-24">
+        <NetworkArt options={sourceOptions} active={sources} label={context.businessName} />
+      </Art>
+      <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
         {sourceOptions.map((source) => (
           <Chip key={source} label={source} multi selected={sources.includes(source)} onClick={() => toggle(source)} />
         ))}
       </div>
       {followUp ? (
-        <label className="mt-5 block">
+        <label className="mt-4 block">
           <span className="text-sm text-muted-foreground">How has that gone? Optional, but it helps.</span>
           <textarea
             rows={3}
@@ -433,22 +443,48 @@ function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
   )
 }
 
+const agendaPrompts = [
+  "How quickly could I be live?",
+  "What if I get too busy?",
+  "Do I own the website?",
+  "How much would I spend on ads?",
+]
+
 function AgendaStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
   const [agenda, setAgenda] = useState(answers.agenda ?? "")
+  const add = (prompt: string) =>
+    setAgenda((text) => (text.includes(prompt) ? text : `${text.trim() ? `${text.trim()} ` : ""}${prompt}`))
   return (
     <form
+      className="flex flex-1 flex-col"
       onSubmit={(e) => {
         e.preventDefault()
         onAnswer({ agenda: agenda.trim() || undefined })
       }}
     >
+      <div className="mt-6 flex flex-wrap gap-2" data-anim>
+        {agendaPrompts.map((prompt) => (
+          <button
+            key={prompt}
+            type="button"
+            onClick={() => add(prompt)}
+            className={`min-touch rounded-full border px-3.5 py-2 text-left text-sm transition-colors ${
+              agenda.includes(prompt)
+                ? "border-secondary bg-secondary/10 text-foreground"
+                : "border-border bg-card text-foreground/80 hover:border-secondary/50"
+            }`}
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
       <textarea
         rows={4}
         data-anim
         value={agenda}
         onChange={(e) => setAgenda(e.target.value)}
-        placeholder="How quickly could I be live? What happens if I get too busy?"
-        className={`${inputClass} mt-8 resize-none`}
+        placeholder="Or type anything you like"
+        className={`${inputClass} mt-3 resize-none`}
       />
       <Footer onSkip={onSkip} isLast={isLast} canNext />
     </form>
@@ -466,10 +502,90 @@ export function QuestionStep(props: StepProps) {
     case "jobValue":
       return <JobValueStep {...props} />
     case "capacity":
-      return <SingleStep {...props} options={capacityOptions} field="capacity" />
+      return <CapacityStep {...props} />
     case "sources":
       return <SourcesStep {...props} />
     case "agenda":
       return <AgendaStep {...props} />
   }
+}
+
+export type Profile = { businessName?: string; trade?: string; town?: string }
+
+/**
+ * "Have I got this right?" Shows what we hold on them, one tap to confirm, tap a row to fix it.
+ * Catches messy CRM data before it ends up in the plan.
+ */
+export function ProfileCheck({ context, onDone }: { context: PrecallContext; onDone: (changes: Profile) => void }) {
+  const original: Profile = { businessName: context.businessName, trade: tradeLabel(context.tradeName), town: context.town }
+  const [values, setValues] = useState<Profile>(original)
+  const [editing, setEditing] = useState<keyof Profile>()
+  const rows = (
+    [
+      { key: "businessName", label: "Business", placeholder: "Business name" },
+      { key: "trade", label: "Trade", placeholder: "What you do" },
+      { key: "town", label: "Based in", placeholder: "Town or postcode" },
+    ] as const
+  ).filter((row) => Boolean(original[row.key]))
+
+  const changes: Profile = {}
+  for (const row of rows) {
+    const value = values[row.key]?.trim()
+    if (value && value !== original[row.key]) changes[row.key] = row.key === "trade" ? (findTrade(value)?.name ?? value) : value
+  }
+  const changed = Object.keys(changes).length > 0
+  const valid = rows.every((row) => (values[row.key]?.trim().length ?? 0) > 1)
+
+  return (
+    <>
+      <ul className="mt-6 overflow-hidden rounded-3xl border border-border bg-card" data-anim>
+        {rows.map((row) => (
+          <li key={row.key} className="border-b border-border last:border-b-0">
+            {editing === row.key ? (
+              <div className="p-4">
+                <label className="label-mono text-[10px] text-muted-foreground" htmlFor={`profile-${row.key}`}>
+                  {row.label}
+                </label>
+                <input
+                  id={`profile-${row.key}`}
+                  autoFocus
+                  type="text"
+                  value={values[row.key] ?? ""}
+                  placeholder={row.placeholder}
+                  onChange={(e) => setValues((v) => ({ ...v, [row.key]: e.target.value }))}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault()
+                      setEditing(undefined)
+                    }
+                  }}
+                  className={`${inputClass} mt-2 bg-background`}
+                />
+                {row.key === "trade" ? <TradeMatch value={values.trade ?? ""} /> : null}
+                <button type="button" onClick={() => setEditing(undefined)} className="min-touch mt-1 text-sm font-medium text-secondary">
+                  Done
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setEditing(row.key)}
+                className="min-touch flex w-full items-center gap-4 px-4 py-4 text-left transition-colors hover:bg-muted/30"
+              >
+                <span className="label-mono w-20 flex-shrink-0 text-[10px] text-muted-foreground">{row.label}</span>
+                <span className="min-w-0 flex-1 truncate text-[15px] text-foreground">
+                  {row.key === "trade" ? tradeLabel(values.trade) : values[row.key]}
+                </span>
+                <Pencil className="h-3.5 w-3.5 flex-shrink-0 text-muted-foreground" />
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-3 text-xs text-muted-foreground" data-anim>
+        Tap anything that{"'"}s wrong and I{"'"}ll update it.
+      </p>
+      <Footer canNext={valid} nextLabel={changed ? "Save and carry on" : "Yes, that's right"} onNext={() => onDone(changes)} />
+    </>
+  )
 }
