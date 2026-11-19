@@ -1,5 +1,5 @@
 import { clean, getFieldIds, ghl, ghlToken, isContactId, LOCATION_ID, toCustomFields, toE164 } from "@/lib/ghl"
-import { formatJobValue, type PrecallAnswers, type QuestionId } from "@/lib/precall"
+import { findTrade, formatJobValue, type PrecallAnswers, type QuestionId } from "@/lib/precall"
 
 type Stage = "progress" | "partial" | "complete"
 
@@ -131,7 +131,8 @@ export async function POST(request: Request) {
     const customFields = toCustomFields(
       ids,
       {
-        Trade: answers.trade,
+        // The survey's Trade field is a dropdown, so only send names it knows. Typed trades go in the note.
+        Trade: findTrade(answers.trade)?.name,
         Area: answers.town,
         "Jobs wanted": j.jobs,
         "Service radius": answers.radius,
