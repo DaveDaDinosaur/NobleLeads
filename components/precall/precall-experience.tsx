@@ -29,6 +29,11 @@ import {
 import { caseStudies, testimonials } from "@/lib/proof"
 
 type Phase = "intro" | "questions" | "done"
+
+const numberWords = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+function countWord(n: number) {
+  return numberWords[n] ?? String(n)
+}
 type Saved = { v: 1; phase: Phase; step: number; answers: PrecallAnswers; sent?: boolean }
 
 function readSaved(key: string): Saved | null {
@@ -316,12 +321,14 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
                           Want me to come prepared?
                         </h2>
                         <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-base" data-anim>
-                          Tap through a few quick questions and I{"'"}ll turn up with a plan built around{" "}
+                          {context.fromSurvey
+                            ? `You've already told me the basics, so there are just ${countWord(questions.length)} quick ones left. Then I'll turn up with a plan built around `
+                            : `Following on from our chat, tap through ${countWord(questions.length)} quick questions and I'll turn up with a plan built around `}
                           {businessName ? <span className="text-foreground">{businessName}</span> : "your business"}. That way we
                           spend the call on your plan, not on me asking questions.
                         </p>
                         <ul className="mt-6 flex flex-wrap gap-2" data-anim>
-                          {["About 2 minutes", "Mostly taps", "Skip anything"].map((tag) => (
+                          {[questions.length <= 5 ? "About a minute" : "About 2 minutes", "Mostly taps", "Skip anything"].map((tag) => (
                             <li key={tag} className="label-mono rounded-full border border-border px-3 py-1.5 text-[10px] text-foreground/80">
                               {tag}
                             </li>

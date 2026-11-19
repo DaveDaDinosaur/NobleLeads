@@ -50,6 +50,7 @@ async function loadContext(params: Record<string, string | string[] | undefined>
     firstName: param(params, "fn"),
     businessName: param(params, "bn"),
     tradeName: param(params, "tr"),
+    town: param(params, "tw"),
     callStart: toIso(param(params, "t")),
     callMinutes: DEFAULT_CALL_MINUTES,
   }
@@ -68,17 +69,26 @@ async function loadContext(params: Record<string, string | string[] | undefined>
     const contact = contactResult.value.contact as {
       firstName?: string
       companyName?: string
-      website?: string
+      city?: string
+      tags?: string[]
       customFields?: { id: string; value?: unknown }[]
     }
     context.firstName = context.firstName ?? contact.firstName ?? undefined
     context.businessName = context.businessName ?? contact.companyName ?? undefined
-    context.website = contact.website ?? undefined
-    if (!context.tradeName && idsResult.status === "fulfilled") {
-      const tradeId = idsResult.value.get("trade")
-      const trade = contact.customFields?.find((field) => field.id === tradeId)?.value
-      if (typeof trade === "string" && trade !== "Other") context.tradeName = trade
+    context.fromSurvey = Boolean(contact.tags?.some((tag) => tag.toLowerCase() === "survey complete"))
+
+    // Pull in anything the survey (or a rep) already saved, so we don't ask it again.
+    const ids = idsResult.status === "fulfilled" ? idsResult.value : new Map<string, string>()
+    const field = (name: string) => {
+      const id = ids.get(name)
+      const value = id ? contact.customFields?.find((f) => f.id === id)?.value : undefined
+      return typeof value === "string" && value.trim() ? value.trim().slice(0, 120) : undefined
     }
+    const trade = field("trade")
+    if (!context.tradeName && trade && trade !== "Other") context.tradeName = trade
+    context.town = context.town ?? field("area") ?? (contact.city?.trim() || undefined)
+    context.jobValueBand = field("average job value")
+    context.frustration = field("biggest frustration")
   } else {
     // The id didn't check out, so don't save answers against it.
     context.contactId = undefined

@@ -1,4 +1,5 @@
 import { formatGBP, jobsToCoverFirstTerm, MIN_TERM_MONTHS } from "@/lib/offer"
+import { jobValueExample } from "@/lib/survey"
 import { trades, type Trade } from "@/lib/trades"
 
 /** What the page knows about the lead before they answer anything. Every field can be missing. */
@@ -7,7 +8,14 @@ export type PrecallContext = {
   firstName?: string
   businessName?: string
   tradeName?: string
-  website?: string
+  /** Their base, from the survey's Area field or the contact's city. */
+  town?: string
+  /** The survey's "Average job value" band, e.g. "£2,000 to £5,000". */
+  jobValueBand?: string
+  /** The survey's "Biggest frustration" answer. */
+  frustration?: string
+  /** They finished the website survey, so they've already answered the basics. */
+  fromSurvey?: boolean
   /** ISO start time of their call. */
   callStart?: string
   callMinutes: number
@@ -22,9 +30,8 @@ export type PrecallAnswers = {
   jobValue?: number
   capacity?: string
   sources?: string[]
-  triedBefore?: string
+  /** How their own ads or an agency went, if they use either. */
   triedNote?: string
-  website?: string
   agenda?: string
   skipped?: QuestionId[]
 }
@@ -36,8 +43,6 @@ export type QuestionId =
   | "jobValue"
   | "capacity"
   | "sources"
-  | "triedBefore"
-  | "website"
   | "agenda"
 
 export type Question = {
@@ -54,23 +59,23 @@ export const radiusOptions = ["5 miles", "10 miles", "20 miles", "30 miles", "40
 
 export const capacityOptions = ["1 or 2", "3 to 5", "6 to 10", "More than 10"]
 
+export const ADS_SOURCE = "Running my own ads"
+export const AGENCY_SOURCE = "An agency, now or before"
+
 export const sourceOptions = [
   "Word of mouth",
   "Repeat customers",
   "Checkatrade, MyBuilder or Bark",
   "My own website",
-  "Google Ads",
   "Social media",
+  ADS_SOURCE,
+  AGENCY_SOURCE,
 ]
 
-export const triedOptions = [
-  "No, never",
-  "Yes, and it worked",
-  "Yes, and it didn't work",
-  "I run my own ads",
-]
-
-export const websiteShortcuts = ["No website yet", "Just a Google listing"]
+/** Ads or an agency get a short "how did that go?" follow-up. */
+export function usesPaidHelp(sources?: string[]) {
+  return Boolean(sources?.some((s) => s === ADS_SOURCE || s === AGENCY_SOURCE))
+}
 
 /** Slider stops for a typical job, in pounds. Uneven so small and large trades both get useful steps. */
 export const jobValueStops = [
@@ -102,7 +107,10 @@ export function formatJobValue(value: number) {
   return value >= jobValueStops[jobValueStops.length - 1] ? `${formatGBP(value)}+` : formatGBP(value)
 }
 
-/** The questions in order. Trade is only asked when we don't already know it. */
+/**
+ * The questions in order. Anything we already know, from the survey or the GHL contact, isn't asked again.
+ * Survey leads get 4 or 5 questions, cold-call leads up to 7.
+ */
 export function buildQuestions(context: PrecallContext): Question[] {
   const list: Question[] = []
   if (!findTrade(context.tradeName)) {
@@ -114,16 +122,26 @@ export function buildQuestions(context: PrecallContext): Question[] {
       question: "Which jobs do you want more of?",
       hint: "Pick as many as you like. The ads get built around these.",
     },
-    {
-      id: "area",
-      question: "Where do you want them?",
-      hint: "Your base, and how far you'll travel for the right job.",
-    },
-    {
+    context.town
+      ? {
+          id: "area",
+          question: `How far from ${context.town} will you travel?`,
+          hint: "For the right job. Your ads only show inside this area.",
+        }
+      : {
+          id: "area",
+          question: "Where do you want them?",
+          hint: "Your base, and how far you'll travel for the right job.",
+        }
+  )
+  if (!context.jobValueBand) {
+    list.push({
       id: "jobValue",
       question: "What's a typical job worth?",
       hint: "A rough figure is perfect. Slide to the nearest.",
-    },
+    })
+  }
+  list.push(
     {
       id: "capacity",
       question: "How many more jobs a month could you take on?",
@@ -132,17 +150,7 @@ export function buildQuestions(context: PrecallContext): Question[] {
     {
       id: "sources",
       question: "Where does your work come from now?",
-      hint: "Pick all that apply.",
-    },
-    {
-      id: "triedBefore",
-      question: "Have you tried ads or an agency before?",
-      hint: "Good or bad, it helps to know.",
-    },
-    {
-      id: "website",
-      question: "Got a website I can look at?",
-      hint: "I'll have a look at it before we speak.",
+      hint: "Pick all that apply, including anything you've tried.",
     },
     {
       id: "agenda",
@@ -153,6 +161,13 @@ export function buildQuestions(context: PrecallContext): Question[] {
   return list
 }
 
+/** The job value to do the payback maths with: their slider answer, or a typical figure for their survey band. */
+export function effectiveJobValue(a: PrecallAnswers, context: PrecallContext) {
+  if (typeof a.jobValue === "number") return a.jobValue
+  if (!context.jobValueBand) return undefined
+  return jobValueExample[context.jobValueBand] ?? 1500
+}
+
 export function isAnswered(id: QuestionId, a: PrecallAnswers) {
   switch (id) {
     case "trade":
@@ -160,17 +175,13 @@ export function isAnswered(id: QuestionId, a: PrecallAnswers) {
     case "jobs":
       return Boolean(a.jobs?.length || a.jobsOther)
     case "area":
-      return Boolean(a.town)
+      return Boolean(a.town || a.radius)
     case "jobValue":
       return typeof a.jobValue === "number"
     case "capacity":
       return Boolean(a.capacity)
     case "sources":
       return Boolean(a.sources?.length)
-    case "triedBefore":
-      return Boolean(a.triedBefore)
-    case "website":
-      return Boolean(a.website)
     case "agenda":
       return Boolean(a.agenda)
   }
@@ -201,10 +212,12 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
         ? `Noted. We'd build the ads around ${midSentence(first)}, and keep out searches for work you don't want.`
         : undefined
     }
-    case "area":
-      return a.town
-        ? `${a.town} it is. Your ads only show inside that area, so you never pay for clicks you can't serve.`
+    case "area": {
+      const town = a.town ?? context.town
+      return town
+        ? `${town}${a.radius ? ` and ${a.radius} around` : ""} it is. You never pay for clicks from outside it.`
         : undefined
+    }
     case "jobValue": {
       if (typeof a.jobValue !== "number") return undefined
       const jobs = jobsToCoverFirstTerm(a.jobValue)
@@ -214,6 +227,10 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
       return a.capacity ? "That's the target, then. Everything on the call works back from it." : undefined
     case "sources": {
       const s = a.sources ?? []
+      if (s.includes(AGENCY_SOURCE)) {
+        return "Thanks for being straight. I'll show you what we'd do differently, and you can judge for yourself."
+      }
+      if (s.includes(ADS_SOURCE)) return "Then you'll like the numbers part of the call."
       if (s.includes("Checkatrade, MyBuilder or Bark")) {
         return "Then you know what shared leads cost. Everything we build is yours to keep."
       }
@@ -222,23 +239,6 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
       }
       return s.length ? "Good to know. We'll build on what's already working." : undefined
     }
-    case "triedBefore":
-      switch (a.triedBefore) {
-        case "Yes, and it didn't work":
-          return "Thanks for being straight. I'll show you what we'd do differently, and you can judge for yourself."
-        case "Yes, and it worked":
-          return "Good. We'll look at what worked and build on it."
-        case "I run my own ads":
-          return "Then you'll like the numbers part of the call."
-        case "No, never":
-          return "No problem. I'll keep it simple and show you how it all fits together."
-      }
-      return undefined
-    case "website":
-      if (!a.website) return undefined
-      return websiteShortcuts.includes(a.website)
-        ? "That's fine. A website that wins jobs is part of the build."
-        : `I'll have a look at it before ${callDayLabel(context.callStart) ?? "we speak"}.`
     case "agenda":
       return a.agenda ? "Got it. That's top of the list." : undefined
   }
@@ -249,40 +249,47 @@ export type PlanLine = {
   label: string
   value?: string
   skipped?: boolean
+  /** Filled in from what they already told us, before this page. */
+  known?: boolean
 }
 
-/** The plan card, built up from whatever has been answered so far. */
+function payback(value: number) {
+  const jobs = jobsToCoverFirstTerm(value)
+  return `${jobs} extra ${jobs === 1 ? "job covers" : "jobs cover"} ${MIN_TERM_MONTHS} months`
+}
+
+/** The plan card, built up from what we knew already plus whatever has been answered so far. */
 export function planLines(a: PrecallAnswers, context: PrecallContext, questions: Question[]): PlanLine[] {
   const skipped = (id: QuestionId) => Boolean(a.skipped?.includes(id))
   const asks = new Set(questions.map((q) => q.id))
-  const tradeName = findTrade(a.trade ?? context.tradeName)?.name ?? (a.trade || context.tradeName)
+  const knownTrade = findTrade(context.tradeName)?.name
+  const tradeName = knownTrade ?? findTrade(a.trade)?.name ?? a.trade
   const jobs = [...(a.jobs ?? []), ...(a.jobsOther ? [a.jobsOther] : [])]
+  const town = a.town ?? context.town
+  const jobValue = effectiveJobValue(a, context)
+  const bandOnly = typeof a.jobValue !== "number" && Boolean(context.jobValueBand)
 
-  const lines: PlanLine[] = []
-  if (asks.has("trade") || tradeName) {
-    lines.push({ id: "trade", label: "Trade", value: tradeName, skipped: skipped("trade") })
-  }
-  lines.push(
+  const lines: PlanLine[] = [
+    { id: "trade", label: "Trade", value: tradeName, skipped: skipped("trade"), known: Boolean(knownTrade) },
     { id: "jobs", label: "Jobs to win", value: jobs.length ? listText(jobs) : undefined, skipped: skipped("jobs") },
     {
       id: "area",
       label: "Area",
-      value: a.town ? `${a.town}${a.radius ? `, ${a.radius}` : ""}` : undefined,
+      value: town ? `${town}${a.radius ? `, ${a.radius}` : ""}` : undefined,
       skipped: skipped("area"),
+      known: Boolean(context.town && !a.radius && !a.town),
     },
     {
       id: "jobValue",
       label: "Typical job",
-      value: typeof a.jobValue === "number" ? formatJobValue(a.jobValue) : undefined,
+      value: bandOnly ? context.jobValueBand : typeof a.jobValue === "number" ? formatJobValue(a.jobValue) : undefined,
       skipped: skipped("jobValue"),
+      known: bandOnly,
     },
     {
       id: "payback",
       label: "Pays back",
-      value:
-        typeof a.jobValue === "number"
-          ? `${jobsToCoverFirstTerm(a.jobValue)} extra ${jobsToCoverFirstTerm(a.jobValue) === 1 ? "job covers" : "jobs cover"} ${MIN_TERM_MONTHS} months`
-          : undefined,
+      value: typeof jobValue === "number" ? `${bandOnly ? "About " : ""}${payback(jobValue)}` : undefined,
       skipped: skipped("jobValue"),
     },
     {
@@ -297,11 +304,13 @@ export function planLines(a: PrecallAnswers, context: PrecallContext, questions:
       value: a.sources?.length ? listText(a.sources) : undefined,
       skipped: skipped("sources"),
     },
-    { id: "triedBefore", label: "Ads before", value: a.triedBefore, skipped: skipped("triedBefore") },
-    { id: "website", label: "Website", value: a.website ?? context.website, skipped: skipped("website") }
-  )
+  ]
+  if (context.frustration && context.frustration !== "Something else") {
+    lines.push({ id: "frustration", label: "To fix", value: context.frustration, known: true })
+  }
   if (a.agenda) lines.push({ id: "agenda", label: "You asked", value: a.agenda })
-  return lines
+  // Only show the trade row when there's something to put in it or we're asking.
+  return asks.has("trade") || tradeName ? lines : lines.slice(1)
 }
 
 export function callDate(iso?: string) {

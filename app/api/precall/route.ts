@@ -18,8 +18,6 @@ const questionIds: QuestionId[] = [
   "jobValue",
   "capacity",
   "sources",
-  "triedBefore",
-  "website",
   "agenda",
 ]
 
@@ -38,9 +36,7 @@ function sanitise(raw: PrecallAnswers = {}): PrecallAnswers {
     jobValue: Number.isFinite(jobValue) && jobValue > 0 && jobValue < 10_000_000 ? Math.round(jobValue) : undefined,
     capacity: clean(raw.capacity, 40) || undefined,
     sources: cleanList(raw.sources),
-    triedBefore: clean(raw.triedBefore, 60) || undefined,
     triedNote: clean(raw.triedNote, 600) || undefined,
-    website: clean(raw.website, 200) || undefined,
     agenda: clean(raw.agenda, 1500) || undefined,
     skipped: cleanList(raw.skipped).filter((id): id is QuestionId => questionIds.includes(id as QuestionId)),
   }
@@ -49,14 +45,9 @@ function sanitise(raw: PrecallAnswers = {}): PrecallAnswers {
 function joined(a: PrecallAnswers) {
   return {
     jobs: [...(a.jobs ?? []), ...(a.jobsOther ? [a.jobsOther] : [])].join(", "),
-    sources: (a.sources ?? []).join(", "),
+    sources: `${(a.sources ?? []).join(", ")}${a.triedNote ? `. How it went: ${a.triedNote}` : ""}`,
     jobValue: typeof a.jobValue === "number" ? formatJobValue(a.jobValue) : "",
-    tried: a.triedBefore ? `${a.triedBefore}${a.triedNote ? `. ${a.triedNote}` : ""}` : "",
   }
-}
-
-function looksLikeUrl(value?: string) {
-  return Boolean(value && /^(https?:\/\/)?[\w-]+(\.[\w-]+)+(\/\S*)?$/i.test(value))
 }
 
 function answersNote(a: PrecallAnswers, stage: Stage) {
@@ -68,12 +59,10 @@ function answersNote(a: PrecallAnswers, stage: Stage) {
     stage === "complete" ? "Pre-call questions, finished" : "Pre-call questions, left part way",
     row("Trade", "trade", a.trade),
     row("Jobs wanted", "jobs", j.jobs),
-    row("Area", "area", a.town ? `${a.town}${a.radius ? `, ${a.radius}` : ""}` : ""),
+    row("Area", "area", [a.town, a.radius].filter(Boolean).join(", ")),
     row("Typical job", "jobValue", j.jobValue),
     row("Extra jobs a month", "capacity", a.capacity),
     row("Work comes from", "sources", j.sources),
-    row("Ads before", "triedBefore", j.tried),
-    row("Website", "website", a.website),
     row("Wants to cover", "agenda", a.agenda),
   ].join("\n")
 }
@@ -139,16 +128,12 @@ export async function POST(request: Request) {
         "Typical job value": j.jobValue,
         "Extra jobs a month": answers.capacity,
         "Lead sources": j.sources,
-        "Tried ads before": j.tried,
         "Call agenda": answers.agenda,
       },
       "Precall"
     )
 
-    const update: Record<string, unknown> = {}
-    if (customFields.length) update.customFields = customFields
-    if (looksLikeUrl(answers.website)) update.website = answers.website
-    if (Object.keys(update).length) await ghl(`/contacts/${contactId}`, token, "PUT", update)
+    if (customFields.length) await ghl(`/contacts/${contactId}`, token, "PUT", { customFields })
 
     const tags =
       stage === "complete" ? ["Precall complete"] : stage === "partial" ? ["Precall partial"] : ["Precall started"]

@@ -14,7 +14,7 @@ type PlanCardProps = {
   className?: string
 }
 
-const placeholderWidths = ["w-3/5", "w-4/5", "w-2/5", "w-1/2", "w-3/4", "w-2/3", "w-1/3", "w-3/5", "w-1/2"]
+const placeholderWidths = ["w-3/5", "w-4/5", "w-2/5", "w-1/2", "w-3/4", "w-2/3", "w-1/3"]
 
 export function planProgress(lines: PlanLine[]) {
   return lines.filter((line) => line.value || line.skipped).length
@@ -140,6 +140,11 @@ export function PlanCard({ lines, businessName, ready, dayLabel, className = "" 
               {line.value ? (
                 <span data-value className="block break-words text-foreground">
                   {line.value}
+                  {line.known ? (
+                    <span className="label-mono ml-2 inline-block whitespace-nowrap align-middle text-[9px] text-secondary/80">
+                      You told us
+                    </span>
+                  ) : null}
                 </span>
               ) : line.skipped ? (
                 <span className="block text-muted-foreground">We{"'"}ll cover this on the call</span>

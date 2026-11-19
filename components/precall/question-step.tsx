@@ -14,8 +14,7 @@ import {
   nearestStopIndex,
   radiusOptions,
   sourceOptions,
-  triedOptions,
-  websiteShortcuts,
+  usesPaidHelp,
   type PrecallAnswers,
   type PrecallContext,
   type Question,
@@ -231,30 +230,50 @@ function RadiusRings({ town, radius }: { town: string; radius?: string }) {
   )
 }
 
-function AreaStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
+function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
+  // When we already know their base, only the radius is asked. They can still correct the town.
+  const [editingTown, setEditingTown] = useState(!context.town || Boolean(answers.town))
   const [town, setTown] = useState(answers.town ?? "")
   const [radius, setRadius] = useState(answers.radius)
+  const shownTown = editingTown ? town.trim() : (context.town ?? "")
+  const canNext = editingTown ? town.trim().length > 0 : Boolean(radius)
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault()
-        if (town.trim()) onAnswer({ town: town.trim(), radius })
+        if (canNext) onAnswer({ town: editingTown ? town.trim() : undefined, radius })
       }}
     >
-      <input
-        type="text"
-        data-anim
-        aria-label="Town or postcode"
-        autoComplete="address-level2"
-        placeholder="Town or postcode"
-        value={town}
-        onChange={(e) => setTown(e.target.value)}
-        className={`${inputClass} mt-8`}
-      />
-      <RadiusRings town={town.trim()} radius={radius} />
-      <p className="label-mono mt-4 text-center text-[10px] text-muted-foreground" data-anim>
-        How far would you travel?
-      </p>
+      {editingTown ? (
+        <input
+          type="text"
+          data-anim
+          autoFocus={Boolean(context.town)}
+          aria-label="Town or postcode"
+          autoComplete="address-level2"
+          placeholder="Town or postcode"
+          value={town}
+          onChange={(e) => setTown(e.target.value)}
+          className={`${inputClass} mt-8`}
+        />
+      ) : null}
+      <RadiusRings town={shownTown} radius={radius} />
+      {editingTown ? (
+        <p className="label-mono mt-4 text-center text-[10px] text-muted-foreground" data-anim>
+          How far would you travel?
+        </p>
+      ) : (
+        <p className="mt-3 text-center text-xs text-muted-foreground" data-anim>
+          Not based in {context.town}?{" "}
+          <button
+            type="button"
+            onClick={() => setEditingTown(true)}
+            className="min-touch text-foreground underline underline-offset-4"
+          >
+            Change it
+          </button>
+        </p>
+      )}
       <div className="mt-3 flex flex-wrap justify-center gap-2" data-anim role="radiogroup">
         {radiusOptions.map((option) => (
           <button
@@ -273,7 +292,7 @@ function AreaStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
           </button>
         ))}
       </div>
-      <Footer onSkip={onSkip} isLast={isLast} canNext={town.trim().length > 0} />
+      <Footer onSkip={onSkip} isLast={isLast} canNext={canNext} />
     </form>
   )
 }
@@ -382,7 +401,9 @@ function SingleStep({
 
 function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
   const [sources, setSources] = useState<string[]>(answers.sources ?? [])
+  const [note, setNote] = useState(answers.triedNote ?? "")
   const toggle = (s: string) => setSources((list) => (list.includes(s) ? list.filter((x) => x !== s) : [...list, s]))
+  const followUp = usesPaidHelp(sources)
   return (
     <>
       <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -390,40 +411,14 @@ function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
           <Chip key={source} label={source} multi selected={sources.includes(source)} onClick={() => toggle(source)} />
         ))}
       </div>
-      <Footer onSkip={onSkip} isLast={isLast} canNext={sources.length > 0} onNext={() => onAnswer({ sources })} />
-    </>
-  )
-}
-
-function TriedStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
-  const { picked, pick } = useAutoAdvance(onAnswer)
-  const [choice, setChoice] = useState(answers.triedBefore)
-  const [note, setNote] = useState(answers.triedNote ?? "")
-  const followUp = choice === "Yes, and it didn't work"
-  return (
-    <>
-      <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2" role="radiogroup">
-        {triedOptions.map((option) => (
-          <Chip
-            key={option}
-            label={option}
-            selected={(picked ?? choice) === option}
-            onClick={() => {
-              setChoice(option)
-              if (option !== "Yes, and it didn't work") pick(option, { triedBefore: option, triedNote: undefined })
-            }}
-          />
-        ))}
-      </div>
       {followUp ? (
         <label className="mt-5 block">
-          <span className="text-sm text-muted-foreground">What went wrong? Optional, but it helps.</span>
+          <span className="text-sm text-muted-foreground">How has that gone? Optional, but it helps.</span>
           <textarea
-            autoFocus
             rows={3}
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="Leads were rubbish, cost too much, never heard from them..."
+            placeholder="Leads were rubbish, cost too much, it works but I want more..."
             className={`${inputClass} mt-2 resize-none`}
           />
         </label>
@@ -431,50 +426,10 @@ function TriedStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
       <Footer
         onSkip={onSkip}
         isLast={isLast}
-        showNext={followUp}
-        canNext
-        onNext={() => onAnswer({ triedBefore: choice, triedNote: note.trim() || undefined })}
+        canNext={sources.length > 0}
+        onNext={() => onAnswer({ sources, triedNote: followUp && note.trim() ? note.trim() : undefined })}
       />
     </>
-  )
-}
-
-function WebsiteStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
-  const initial = answers.website ?? context.website ?? ""
-  const [site, setSite] = useState(websiteShortcuts.includes(initial) ? "" : initial)
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        if (site.trim()) onAnswer({ website: site.trim() })
-      }}
-    >
-      <input
-        type="text"
-        inputMode="url"
-        autoComplete="url"
-        autoCapitalize="none"
-        data-anim
-        aria-label="Your website address"
-        placeholder="yourbusiness.co.uk"
-        value={site}
-        onChange={(e) => setSite(e.target.value)}
-        className={`${inputClass} mt-8`}
-      />
-      <div className="mt-3 flex flex-wrap gap-2" data-anim>
-        {websiteShortcuts.map((option) => (
-          <button
-            key={option}
-            type="button"
-            onClick={() => onAnswer({ website: option })}
-            className="min-touch rounded-full border border-border px-4 py-2 text-sm text-foreground/80 transition-colors hover:border-secondary/50"
-          >
-            {option}
-          </button>
-        ))}
-      </div>
-      <Footer onSkip={onSkip} isLast={isLast} canNext={site.trim().length > 0} />
-    </form>
   )
 }
 
@@ -514,10 +469,6 @@ export function QuestionStep(props: StepProps) {
       return <SingleStep {...props} options={capacityOptions} field="capacity" />
     case "sources":
       return <SourcesStep {...props} />
-    case "triedBefore":
-      return <TriedStep {...props} />
-    case "website":
-      return <WebsiteStep {...props} />
     case "agenda":
       return <AgendaStep {...props} />
   }
