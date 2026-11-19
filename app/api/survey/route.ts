@@ -2,6 +2,7 @@ import {
   CONSENT_TEXT,
   LEAD_TIERS,
   leadOutcome,
+  splitName,
   type Attribution,
   type SurveyAnswers,
   type SurveyDetails,
@@ -116,7 +117,7 @@ export async function POST(request: Request) {
   if (clean(payload.company)) return Response.json({ saved: true })
 
   const details = payload.details ?? {}
-  const firstName = clean(details.firstName)
+  const { firstName, lastName } = splitName(clean(details.name))
   const email = clean(details.email)
   const phone = toE164(clean(details.phone))
   const validContact = firstName && /^\S+@\S+\.\S+$/.test(email) && phone.replace(/\D/g, "").length >= 10
@@ -146,6 +147,7 @@ export async function POST(request: Request) {
     const upsert = await ghl("/contacts/upsert", token, "POST", {
       locationId: LOCATION_ID,
       firstName,
+      lastName: lastName || undefined,
       email,
       phone,
       country: "GB",

@@ -5,7 +5,6 @@ import Link from "next/link"
 import Script from "next/script"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
-import { RuleList } from "@/components/growth/rules"
 import { trackEvent } from "@/lib/analytics"
 import { readAttribution } from "@/lib/attribution"
 import {
@@ -25,7 +24,7 @@ import {
   CONSENT_TEXT,
   decisionMakerOptions,
   frustrationOptions,
-  jobValueFloor,
+  jobValueExample,
   jobValueOptions,
   leadOutcome,
   priceReactionOptions,
@@ -34,6 +33,7 @@ import {
   type SurveyAnswers,
   type SurveyDetails,
   type SurveyOption,
+  splitName,
 } from "@/lib/survey"
 import { trades } from "@/lib/trades"
 
@@ -96,18 +96,12 @@ const screens: Screen[] = [
   {
     id: "priceReaction",
     type: "choice",
-    question: "Is that something you could invest to win more work?",
+    question: "Would you invest that to win more work?",
     options: priceReactionOptions,
   },
 ]
 
-const valueItems = [
-  "A website built to turn visitors into enquiries",
-  "Google Ads managed for you, aimed at people searching for your trade in your area",
-  "Instant follow-up, so every missed call gets a text back",
-  "Tracking and reporting, so you see what each lead costs",
-  "It's all yours, including the website if you ever leave",
-]
+const valueTags = ["Website", "Google Ads", "Instant follow-up", "Monthly report", "You own it"]
 
 const notYetCopy: Record<NotYetReason, { title: string; body: string }> = {
   price: {
@@ -128,10 +122,17 @@ const notYetCopy: Record<NotYetReason, { title: string; body: string }> = {
   },
 }
 
-const emptyDetails: SurveyDetails = { firstName: "", businessName: "", phone: "", email: "", website: "" }
+const emptyDetails: SurveyDetails = { name: "", businessName: "", phone: "", email: "", website: "" }
 
-const detailFields: { key: keyof SurveyDetails; label: string; type: string; autoComplete: string; optional?: boolean }[] = [
-  { key: "firstName", label: "First name", type: "text", autoComplete: "given-name" },
+const detailFields: {
+  key: keyof SurveyDetails
+  label: string
+  type: string
+  autoComplete: string
+  placeholder?: string
+  optional?: boolean
+}[] = [
+  { key: "name", label: "Full name", type: "text", autoComplete: "name", placeholder: "First and last name" },
   { key: "businessName", label: "Business name", type: "text", autoComplete: "organization" },
   { key: "phone", label: "Mobile number", type: "tel", autoComplete: "tel" },
   { key: "email", label: "Email", type: "email", autoComplete: "email" },
@@ -140,7 +141,8 @@ const detailFields: { key: keyof SurveyDetails; label: string; type: string; aut
 
 function detailsValid(d: SurveyDetails) {
   return (
-    d.firstName.trim().length > 1 &&
+    splitName(d.name).firstName.length > 0 &&
+    splitName(d.name).lastName.length > 0 &&
     d.businessName.trim().length > 1 &&
     d.phone.replace(/\D/g, "").length >= 10 &&
     /^\S+@\S+\.\S+$/.test(d.email.trim())
@@ -151,24 +153,49 @@ const inputClass =
   "min-touch w-full min-w-0 rounded-lg border border-border bg-transparent px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary"
 
 function PriceBlock({ jobValue }: { jobValue?: string }) {
-  const floor = jobValue ? jobValueFloor[jobValue] : undefined
+  const example = jobValue ? jobValueExample[jobValue] : undefined
+  const jobs = example ? jobsToCoverFirstTerm(example) : 0
 
   return (
     <div className="mt-6">
-      <p className="label-mono mb-4 text-muted-foreground">Here{"'"}s what you{"'"}d get</p>
-      <RuleList items={valueItems} tone="strong" />
-      <p className="mt-5 border-l-2 border-secondary pl-4 text-sm text-foreground">
-        Focus Refurbishment: 24 leads in a fortnight.
-      </p>
-      <p className="mt-6 text-base leading-relaxed text-foreground">
-        The Growth System is {formatGBP(SETUP_FEE)} one-off setup, then {formatGBP(MONTHLY_FEE)} a month plus ad
-        spend, which starts at around {formatGBP(MIN_AD_SPEND)} a month.
-      </p>
-      {floor ? (
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          That{"'"}s {formatGBP(FIRST_TERM_COST)} for your first {MIN_TERM_MONTHS} months. At {formatGBP(floor)} a job
-          and a {DEFAULT_MARGIN}% margin, {jobsToCoverFirstTerm(floor)} extra{" "}
-          {jobsToCoverFirstTerm(floor) === 1 ? "job covers" : "jobs cover"} it. That{"'"}s an example, not a forecast.
+      <p className="label-mono text-muted-foreground">Your investment</p>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {valueTags.map((tag) => (
+          <li key={tag} className="rounded-full border border-border px-2.5 py-1 text-[11px] text-foreground/90 sm:text-xs">
+            {tag}
+          </li>
+        ))}
+      </ul>
+
+      <dl className="mt-6 grid grid-cols-3 border-y border-border">
+        {[
+          [formatGBP(SETUP_FEE), "one-off"],
+          [formatGBP(MONTHLY_FEE), "a month"],
+          [`+${formatGBP(MIN_AD_SPEND)}`, "ads, min"],
+        ].map(([value, label]) => (
+          <div key={label} className="border-r border-border py-4 pr-3 last:border-r-0 [&:not(:first-child)]:pl-3">
+            <dt className="display text-2xl tabular-nums text-foreground sm:text-3xl">{value}</dt>
+            <dd className="label-mono mt-1 text-[10px] text-muted-foreground">{label}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="mt-6 space-y-2 border-l-2 border-secondary pl-4">
+        {example ? (
+          <>
+            <p className="text-base leading-snug text-foreground">
+              Pays for itself with {jobs} extra {formatGBP(example)} {jobs === 1 ? "job" : "jobs"}.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              That covers your first {MIN_TERM_MONTHS} months, {formatGBP(FIRST_TERM_COST)} all in.
+            </p>
+          </>
+        ) : null}
+        <p className="text-sm text-muted-foreground">Focus Refurbishment got 24 leads in a fortnight.</p>
+      </div>
+      {example ? (
+        <p className="mt-3 text-[11px] text-muted-foreground">
+          At a {DEFAULT_MARGIN}% margin. An example, not a forecast.
         </p>
       ) : null}
     </div>
@@ -189,7 +216,7 @@ export function GrowthSurvey() {
 
   const current = screens[step]
   const detailsIndex = screens.findIndex((screen) => screen.id === "details")
-  const firstName = details.firstName.trim().split(/\s+/)[0]
+  const { firstName, lastName } = splitName(details.name)
 
   useEffect(() => {
     trackEvent("survey_step", { step: step + 1, question: current.id })
@@ -203,12 +230,13 @@ export function GrowthSurvey() {
 
   const bookingSrc = useMemo(() => {
     const params = new URLSearchParams({
-      first_name: details.firstName.trim(),
+      first_name: firstName,
+      last_name: lastName,
       email: details.email.trim(),
       phone: details.phone.trim(),
     })
     return `${BOOKING_URL}?${params.toString()}`
-  }, [details])
+  }, [details, firstName, lastName])
 
   // Saves run one at a time, so a quick tap can't create the same contact twice.
   function save(stage: "details" | "progress" | "complete", nextAnswers: SurveyAnswers) {
@@ -437,6 +465,7 @@ export function GrowthSurvey() {
                   <input
                     type={field.type}
                     autoComplete={field.autoComplete}
+                    placeholder={field.placeholder}
                     required={!field.optional}
                     value={details[field.key]}
                     onChange={(e) => setDetails((d) => ({ ...d, [field.key]: e.target.value }))}

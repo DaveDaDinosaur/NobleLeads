@@ -18,9 +18,10 @@ export const jobValueOptions: SurveyOption[] = [
 ]
 
 // The low end of each band, so the payback line on the price screen stays conservative.
-export const jobValueFloor: Record<string, number> = {
-  "£2,000 to £5,000": 2000,
-  "£5,000 to £10,000": 5000,
+/** A typical job in each band, for the payback example. The open-ended top band uses its floor. */
+export const jobValueExample: Record<string, number> = {
+  "£2,000 to £5,000": 3500,
+  "£5,000 to £10,000": 7500,
   "Over £10,000": 10000,
 }
 
@@ -37,10 +38,16 @@ export const decisionMakerOptions: SurveyOption[] = [
 ]
 
 export const priceReactionOptions: SurveyOption[] = [
-  { value: "Yes, that works", label: "Yes, that works for me" },
-  { value: "See what I get first", label: "I'd want to see what I get first" },
-  { value: "More than I can spend", label: "No, that's more than I can spend" },
+  { value: "Yes, that works", label: "Yes, I'd invest that" },
+  { value: "See what I get first", label: "I'd want to see more first" },
+  { value: "More than I can spend", label: "Not right now, it's more than I can invest" },
 ]
+
+/** "Jo Bloggs-Smith" → { firstName: "Jo", lastName: "Bloggs-Smith" }. */
+export function splitName(name: string) {
+  const [firstName = "", ...rest] = name.trim().split(/\s+/)
+  return { firstName, lastName: rest.join(" ") }
+}
 
 export type SurveyAnswers = {
   trade?: string
@@ -54,7 +61,7 @@ export type SurveyAnswers = {
 }
 
 export type SurveyDetails = {
-  firstName: string
+  name: string
   businessName: string
   phone: string
   email: string
