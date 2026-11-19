@@ -7,9 +7,7 @@ import {
   type SurveyAnswers,
   type SurveyDetails,
 } from "@/lib/survey"
-
-const API_BASE = "https://services.leadconnectorhq.com"
-const LOCATION_ID = "rDzOdgNXidfxh3AveWDf"
+import { clean, getFieldIds, ghl, LOCATION_ID, toCustomFields, toE164 } from "@/lib/ghl"
 
 type SurveyPayload = {
   stage?: "details" | "progress" | "complete"
@@ -18,43 +16,6 @@ type SurveyPayload = {
   details?: Partial<SurveyDetails>
   answers?: SurveyAnswers
   attribution?: Attribution
-}
-
-let fieldIds: Map<string, string> | null = null
-
-function clean(value: unknown) {
-  return typeof value === "string" ? value.trim().slice(0, 300) : ""
-}
-
-function toE164(phone: string) {
-  const compact = phone.replace(/[^\d+]/g, "")
-  if (compact.startsWith("+")) return compact
-  if (compact.startsWith("44")) return `+${compact}`
-  if (compact.startsWith("0")) return `+44${compact.slice(1)}`
-  return compact
-}
-
-async function ghl(path: string, token: string, method = "GET", body?: unknown) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    method,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Version: "2021-07-28",
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  })
-  if (!res.ok) throw new Error(`GHL ${method} ${path} failed (${res.status}): ${await res.text()}`)
-  return res.json()
-}
-
-async function getFieldIds(token: string) {
-  if (fieldIds) return fieldIds
-  const data = await ghl(`/locations/${LOCATION_ID}/customFields?model=contact`, token)
-  const fields = (data.customFields ?? []) as { id: string; name: string }[]
-  fieldIds = new Map(fields.map((field) => [field.name.toLowerCase(), field.id]))
-  return fieldIds
 }
 
 function fieldValues(
@@ -79,16 +40,7 @@ function fieldValues(
     "UTM term": attribution.utmTerm,
   }
 
-  return Object.entries(values).flatMap(([name, value]) => {
-    const text = clean(value)
-    if (!text) return []
-    const id = ids.get(name.toLowerCase())
-    if (!id) {
-      console.error(`Survey: no GHL custom field named "${name}"`)
-      return []
-    }
-    return [{ id, field_value: text }]
-  })
+  return toCustomFields(ids, values, "Survey")
 }
 
 function answersNote(answers: SurveyAnswers, tier: string) {

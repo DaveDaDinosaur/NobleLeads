@@ -1,0 +1,110 @@
+import type { Metadata } from "next"
+
+import { PrecallExperience } from "@/components/precall/precall-experience"
+import { getFieldIds, ghl, ghlToken, isContactId, LOCATION_ID } from "@/lib/ghl"
+import { DEFAULT_CALL_MINUTES, type PrecallContext } from "@/lib/precall"
+
+export const metadata: Metadata = {
+  title: { absolute: "Before your call | NobleLeads" },
+  description: "A few quick questions so your call is about your plan, not paperwork.",
+  robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
+}
+
+export const dynamic = "force-dynamic"
+
+type SearchParams = Promise<Record<string, string | string[] | undefined>>
+
+function param(params: Record<string, string | string[] | undefined>, ...keys: string[]) {
+  for (const key of keys) {
+    const value = params[key]
+    const text = (Array.isArray(value) ? value[0] : value)?.trim()
+    if (text) return text.slice(0, 120)
+  }
+  return undefined
+}
+
+/** Reads "2026-11-20 14:00:00" as London time. Full ISO strings and epoch milliseconds pass straight through. */
+function toIso(raw?: string) {
+  if (!raw) return undefined
+  if (/^\d{12,}$/.test(raw)) return new Date(Number(raw)).toISOString()
+  const local = raw.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?$/)
+  if (local) {
+    const [, y, mo, d, h, mi, s] = local.map(Number)
+    const asUtc = Date.UTC(y, mo - 1, d, h, mi, s || 0)
+    const londonHour = Number(
+      new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", hour: "2-digit", hourCycle: "h23" }).format(asUtc)
+    )
+    const offsetHours = (londonHour - h + 24) % 24
+    return new Date(asUtc - offsetHours * 3600000).toISOString()
+  }
+  const date = new Date(raw)
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString()
+}
+
+type GhlEvent = { startTime?: string; endTime?: string; appointmentStatus?: string; deleted?: boolean }
+
+async function loadContext(params: Record<string, string | string[] | undefined>): Promise<PrecallContext> {
+  const contactId = param(params, "c", "cid")
+  const context: PrecallContext = {
+    contactId: isContactId(contactId) ? contactId : undefined,
+    firstName: param(params, "fn"),
+    businessName: param(params, "bn"),
+    tradeName: param(params, "tr"),
+    callStart: toIso(param(params, "t")),
+    callMinutes: DEFAULT_CALL_MINUTES,
+  }
+
+  const token = ghlToken()
+  if (!context.contactId || !token) return context
+
+  // Anything that fails here just falls back to the URL values, so the page always loads.
+  const [contactResult, eventsResult, idsResult] = await Promise.allSettled([
+    ghl(`/contacts/${context.contactId}`, token, "GET", undefined, 3000),
+    ghl(`/contacts/${context.contactId}/appointments`, token, "GET", undefined, 3000),
+    getFieldIds(token),
+  ])
+
+  if (contactResult.status === "fulfilled" && contactResult.value.contact?.locationId === LOCATION_ID) {
+    const contact = contactResult.value.contact as {
+      firstName?: string
+      companyName?: string
+      website?: string
+      customFields?: { id: string; value?: unknown }[]
+    }
+    context.firstName = context.firstName ?? contact.firstName ?? undefined
+    context.businessName = context.businessName ?? contact.companyName ?? undefined
+    context.website = contact.website ?? undefined
+    if (!context.tradeName && idsResult.status === "fulfilled") {
+      const tradeId = idsResult.value.get("trade")
+      const trade = contact.customFields?.find((field) => field.id === tradeId)?.value
+      if (typeof trade === "string" && trade !== "Other") context.tradeName = trade
+    }
+  } else {
+    // The id didn't check out, so don't save answers against it.
+    context.contactId = undefined
+  }
+
+  if (context.contactId && eventsResult.status === "fulfilled") {
+    const events = ((eventsResult.value.events ?? []) as GhlEvent[])
+      .filter((event) => !event.deleted && !/cancel|invalid|noshow/i.test(event.appointmentStatus ?? ""))
+      .map((event) => ({ start: toIso(event.startTime), end: toIso(event.endTime) }))
+      .filter((event): event is { start: string; end: string | undefined } => Boolean(event.start))
+      .filter((event) => new Date(event.start).getTime() > Date.now() - 2 * 3600000)
+      .sort((a, b) => a.start.localeCompare(b.start))
+    const next = events[0]
+    if (next) {
+      context.callStart = next.start
+      if (next.end) {
+        const minutes = Math.round((new Date(next.end).getTime() - new Date(next.start).getTime()) / 60000)
+        if (minutes > 0 && minutes <= 180) context.callMinutes = minutes
+      }
+    }
+  }
+
+  return context
+}
+
+export default async function PrecallPage({ searchParams }: { searchParams: SearchParams }) {
+  const context = await loadContext(await searchParams)
+  return <PrecallExperience context={context} />
+}

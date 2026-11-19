@@ -377,3 +377,61 @@ html.lenis, html.lenis body { height: auto; }
     linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
   mask-composite: intersect;
 }
+
+/* Pre-call questions */
+.precall-shimmer {
+  background-image: linear-gradient(90deg, hsl(var(--muted)) 0%, hsl(225 10% 18%) 50%, hsl(var(--muted)) 100%);
+  background-size: 200% 100%;
+  animation: precall-shimmer 2.4s ease-in-out infinite;
+}
+@keyframes precall-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+.precall-ring-pulse { animation: precall-ring 2.6s ease-out infinite; }
+@keyframes precall-ring {
+  0% { box-shadow: 0 0 0 0 hsl(42 40% 56% / 0.35); }
+  70% { box-shadow: 0 0 0 14px hsl(42 40% 56% / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(42 40% 56% / 0); }
+}
+.precall-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 44px;
+  background: transparent;
+  cursor: pointer;
+}
+.precall-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, hsl(var(--secondary)) var(--fill, 0%), hsl(var(--muted)) var(--fill, 0%));
+}
+.precall-range::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, hsl(var(--secondary)) var(--fill, 0%), hsl(var(--muted)) var(--fill, 0%));
+}
+.precall-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  margin-top: -11px;
+  border-radius: 999px;
+  background: hsl(var(--foreground));
+  border: 6px solid hsl(var(--secondary));
+  box-shadow: 0 0 0 6px hsl(42 40% 56% / 0.15);
+  transition: transform 0.2s;
+}
+.precall-range:active::-webkit-slider-thumb { transform: scale(1.12); }
+.precall-range::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 999px;
+  background: hsl(var(--foreground));
+  border: 6px solid hsl(var(--secondary));
+}
+.precall-range:focus-visible { outline: none; }
+.precall-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px hsl(42 40% 56% / 0.5); }
+@media (prefers-reduced-motion: reduce) {
+  .precall-shimmer, .precall-ring-pulse { animation: none; }
+}
