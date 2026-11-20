@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { ArrowRight, Check, Pencil } from "lucide-react"
 
 import { gsap, prefersReducedMotion } from "@/components/motion/gsap"
-import { BlueprintArt, CalendarArt, CoinStackArt, dotsInside, MapArt, NetworkArt } from "@/components/precall/precall-art"
+import { BlueprintArt, CalendarArt, CoinStackArt, MapArt, NetworkArt } from "@/components/precall/precall-art"
 import { jobsToCoverFirstTerm, MIN_TERM_MONTHS } from "@/lib/offer"
 import {
   capacityOptions,
@@ -250,7 +250,6 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
   const shownTown = editingTown ? town.trim() : (context.town ?? "")
   const ringIndex = radius ? radiusOptions.indexOf(radius) : -1
   const canNext = editingTown ? town.trim().length > 1 : Boolean(radius)
-  const lit = dotsInside(ringIndex)
 
   return (
     <form
@@ -306,7 +305,6 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
           </button>
         </p>
       ) : null}
-      <span className="sr-only">{lit}</span>
       <Footer onSkip={onSkip} isLast={isLast} canNext={canNext} />
     </form>
   )
@@ -406,7 +404,7 @@ function CapacityStep({ answers, onAnswer, onSkip }: StepProps) {
   )
 }
 
-function SourcesStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
+function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
   const [sources, setSources] = useState<string[]>(answers.sources ?? [])
   const [note, setNote] = useState(answers.triedNote ?? "")
   const toggle = (s: string) => setSources((list) => (list.includes(s) ? list.filter((x) => x !== s) : [...list, s]))
@@ -414,7 +412,7 @@ function SourcesStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) 
   return (
     <>
       <Art className="h-24">
-        <NetworkArt options={sourceOptions} active={sources} label={context.businessName} />
+        <NetworkArt options={sourceOptions} active={sources} />
       </Art>
       <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
         {sourceOptions.map((source) => (

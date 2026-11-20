@@ -384,7 +384,7 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
       }
       if (s.includes(ADS_SOURCE)) return `Then you'll like the numbers part. Bring your questions ${when}.`
       if (s.includes("Checkatrade, MyBuilder or Bark")) {
-        return "Then you know what shared leads cost. Everything we build is yours to keep."
+        return "So you know what it's like paying for leads other firms get too. With your own ads, every enquiry comes to you alone."
       }
       if (s.includes("Word of mouth") || s.includes("Repeat customers")) {
         return "That means you do good work. Now more people just need to find you."

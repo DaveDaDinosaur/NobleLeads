@@ -740,10 +740,10 @@ function Done({
             <SealArt />
           </div>
           <h2 className="display mt-2 text-balance text-center text-[2rem] leading-[1.02] text-foreground sm:text-4xl" data-head>
-            {firstName ? `Leave it with me, ${firstName}.` : "Leave it with me."}
+            {firstName ? `Leave it with us, ${firstName}.` : "Leave it with us."}
           </h2>
           <p className="mt-3 text-center text-[15px] leading-relaxed text-muted-foreground" data-anim>
-            Here{"'"}s what I{"'"}m getting ready for {dayPhrase(day)}.
+            Here{"'"}s what we{"'"}re getting ready for {dayPhrase(day)}.
             {skipped > 0 ? ` The ${skipped === 1 ? "one" : skipped} you skipped, we'll cover on the call.` : ""}
           </p>
         </>

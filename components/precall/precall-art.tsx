@@ -82,72 +82,37 @@ export function BlueprintArt({ count }: { count: number }) {
   )
 }
 
-/** Fixed, hand-placed enquiry dots so the map looks the same every time. */
-const mapDots = [
-  [104, 92], [88, 108], [116, 112], [78, 84], [132, 88], [100, 66], [64, 110], [140, 120], [118, 140],
-  [76, 136], [150, 70], [52, 78], [158, 104], [96, 150], [44, 124], [128, 46], [70, 50], [164, 140],
-  [40, 92], [152, 156], [36, 150], [100, 30], [172, 60], [24, 64], [176, 112], [58, 166], [140, 176],
-]
-const ringRadii = [16, 30, 46, 62, 80]
+const ringRadii = [18, 34, 50, 66, 82]
 
-/** Area: a stylised local map. Enquiries inside their travel radius light up gold. */
+/** Area: their base with clean travel rings. The rings up to their chosen distance fill gold. */
 export function MapArt({ town, ringIndex }: { town?: string; ringIndex: number }) {
-  const ref = useRef<SVGSVGElement>(null)
-  useDrawOn(ref)
-  const reach = ringIndex >= 0 ? ringRadii[ringIndex] : 0
-
   return (
-    <svg ref={ref} viewBox="0 0 200 200" className="h-full w-full" aria-hidden>
-      <g fill="none" stroke={LINE} strokeWidth="1.4" strokeLinecap="round">
-        <path data-draw d="M0 120 C40 112 70 130 100 100 S160 70 200 84" />
-        <path data-draw d="M92 0 C96 40 84 70 100 100 S110 160 104 200" />
-        <path data-draw d="M10 30 C50 60 70 70 100 100" opacity="0.6" />
-        <path data-draw d="M190 180 C150 150 130 130 100 100" opacity="0.6" />
-        <path data-draw d="M0 176 C50 170 60 150 88 140" opacity="0.4" />
-        <path data-draw d="M200 20 C170 36 150 30 128 46" opacity="0.4" />
-      </g>
-      {ringRadii.map((r, i) => (
-        <circle
-          key={r}
-          cx="100"
-          cy="100"
-          r={r}
-          fill={i <= ringIndex ? "hsl(var(--secondary) / 0.05)" : "none"}
-          stroke={i <= ringIndex ? "hsl(var(--secondary) / 0.55)" : LINE}
-          strokeWidth="1"
-          strokeDasharray={i === ringIndex ? "none" : "3 4"}
-          className={i === ringIndex ? "precall-svg-pulse" : undefined}
-          style={{ transition: "stroke 0.5s, fill 0.5s", transformOrigin: "100px 100px" }}
-        />
-      ))}
-      {mapDots.map(([x, y], i) => {
-        const lit = Math.hypot(x - 100, y - 100) <= reach
+    <svg viewBox="0 0 200 200" className="h-full w-full" aria-hidden>
+      {ringRadii.map((r, i) => {
+        const on = i <= ringIndex
         return (
           <circle
-            key={i}
-            cx={x}
-            cy={y}
-            r={lit ? 2.6 : 1.8}
-            fill={lit ? GOLD : MUTED}
-            style={{ transition: `fill 0.4s ${i * 0.012}s, r 0.4s ${i * 0.012}s` }}
+            key={r}
+            cx="100"
+            cy="100"
+            r={r}
+            fill={on ? `hsl(var(--secondary) / ${i === ringIndex ? 0.08 : 0.04})` : "none"}
+            stroke={on ? "hsl(var(--secondary) / 0.6)" : LINE}
+            strokeWidth="1"
+            className={i === ringIndex ? "precall-svg-pulse" : undefined}
+            style={{ transition: `stroke 0.4s ${i * 0.05}s, fill 0.4s ${i * 0.05}s` }}
           />
         )
       })}
-      <circle cx="100" cy="100" r="9" fill="hsl(var(--secondary) / 0.18)" />
+      <circle cx="100" cy="100" r="10" fill="hsl(var(--secondary) / 0.15)" />
       <circle cx="100" cy="100" r="4.5" fill={GOLD} />
       {town ? (
-        <text x="100" y="122" textAnchor="middle" className="label-mono" fontSize="8" fill="hsl(var(--foreground))">
+        <text x="100" y="124" textAnchor="middle" className="label-mono" fontSize="8" fill="hsl(var(--foreground))">
           {town.length > 18 ? `${town.slice(0, 17)}…` : town}
         </text>
       ) : null}
     </svg>
   )
-}
-
-/** Count of enquiries lit inside a radius, for the caption under the map. */
-export function dotsInside(ringIndex: number) {
-  if (ringIndex < 0) return 0
-  return mapDots.filter(([x, y]) => Math.hypot(x - 100, y - 100) <= ringRadii[ringIndex]).length
 }
 
 /** Job value: a stack of coins that grows as the slider moves. */
@@ -217,7 +182,7 @@ export function CalendarArt({ capacity }: { capacity?: string }) {
 }
 
 /** Sources: where work comes from, drawn as lines feeding into their business. Picked sources light up and flow. */
-export function NetworkArt({ options, active, label }: { options: string[]; active: string[]; label?: string }) {
+export function NetworkArt({ options, active }: { options: string[]; active: string[] }) {
   const ref = useRef<SVGSVGElement>(null)
   useDrawOn(ref)
   const cx = 100
@@ -227,8 +192,6 @@ export function NetworkArt({ options, active, label }: { options: string[]; acti
     const angle = Math.PI * 1.08 + (i / (options.length - 1)) * Math.PI * 0.84
     return { option, x: cx + Math.cos(angle) * 88, y: cy + 6 + Math.sin(angle) * 66 }
   })
-  const name = label && label.length <= 18 ? label : "You"
-  const pill = Math.max(40, name.length * 5 + 18)
 
   return (
     <svg ref={ref} viewBox="0 0 200 100" className="h-full w-full overflow-visible" aria-hidden>
@@ -260,10 +223,8 @@ export function NetworkArt({ options, active, label }: { options: string[]; acti
           </g>
         )
       })}
-      <rect x={cx - pill / 2} y={cy + 4} width={pill} height="18" rx="9" fill="hsl(var(--card))" stroke={GOLD} />
-      <text x={cx} y={cy + 16} textAnchor="middle" fontSize="7.5" className="label-mono" fill="hsl(var(--foreground))">
-        {name}
-      </text>
+      <circle cx={cx} cy={cy + 10} r="9" fill="hsl(var(--card))" stroke={GOLD} strokeWidth="1.2" />
+      <circle cx={cx} cy={cy + 10} r="3.5" fill={GOLD} />
     </svg>
   )
 }
