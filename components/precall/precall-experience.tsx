@@ -183,9 +183,9 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
       const stage = stageRef.current
       if (!stage || prefersReducedMotion()) return
       const items = stage.querySelectorAll("[data-head], [data-anim]")
-      gsap.fromTo(items, { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: EASE_OUT, stagger: 0.03, clearProps: "transform,opacity" })
+      gsap.fromTo(items, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: EASE_OUT, stagger: 0.06, delay: 0.1, clearProps: "transform,opacity" })
       // Throttled animation frames must never leave a screen invisible.
-      const safety = window.setTimeout(() => gsap.set(items, { clearProps: "transform,opacity" }), 900)
+      const safety = window.setTimeout(() => gsap.set(items, { clearProps: "transform,opacity" }), 1800)
       return () => window.clearTimeout(safety)
     },
     { dependencies: [screen, declined, Boolean(payoff)], scope: stageRef }
@@ -214,11 +214,11 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
       finished = true
       out.kill()
       swap()
-      gsap.fromTo(stage, { y: 14 * direction, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: EASE_OUT, clearProps: "transform,opacity" })
-      window.setTimeout(() => gsap.set(stage, { clearProps: "transform,opacity" }), 700)
+      gsap.fromTo(stage, { y: 20 * direction, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: EASE_OUT, clearProps: "transform,opacity" })
+      window.setTimeout(() => gsap.set(stage, { clearProps: "transform,opacity" }), 1100)
     }
-    const out = gsap.to(stage, { y: -10 * direction, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: complete })
-    window.setTimeout(complete, 260)
+    const out = gsap.to(stage, { y: -12 * direction, opacity: 0, duration: 0.3, ease: "power2.in", onComplete: complete })
+    window.setTimeout(complete, 420)
   }
 
   /** A little chip carrying their answer from their finger into the plan. */
@@ -326,7 +326,7 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
     }
     // Long enough to read comfortably, short enough that it never feels like waiting.
     const words = text.split(/\s+/).length
-    const hold = prefersReducedMotion() ? 2600 : Math.min(4200, Math.max(skippedIt ? 1300 : 2000, 900 + words * 110))
+    const hold = prefersReducedMotion() ? 2600 : Math.min(5600, Math.max(skippedIt ? 1900 : 2900, 1400 + words * 140))
     setPayoff({
       id,
       answer: skippedIt ? "Skipped for now" : (summaryFor(id, next) ?? "Got it"),
@@ -490,7 +490,7 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
                     key={question.id}
                     as="h2"
                     onLoad
-                    duration={payoff ? 0 : 0.9}
+                    duration={payoff ? 0 : 1.2}
                     className={`display mt-4 text-balance leading-[1.02] text-foreground transition-[font-size,color] duration-500 ${
                       payoff ? "text-xl text-foreground/60 sm:text-2xl" : "text-[2rem] sm:text-4xl"
                     }`}
@@ -634,8 +634,8 @@ function PayoffBeat({ payoff }: { payoff: Payoff }) {
   useGSAP(
     () => {
       if (!ref.current || prefersReducedMotion()) return
-      gsap.from("[data-chip]", { y: 10, opacity: 0, scale: 0.96, duration: 0.45, ease: EASE_OUT })
-      gsap.from("[data-rule]", { scaleY: 0, transformOrigin: "top", duration: 0.6, ease: EASE_OUT, delay: 0.15 })
+      gsap.from("[data-chip]", { y: 12, opacity: 0, scale: 0.96, duration: 0.7, ease: EASE_OUT })
+      gsap.from("[data-rule]", { scaleY: 0, transformOrigin: "top", duration: 1, ease: EASE_OUT, delay: 0.3 })
     },
     { scope: ref }
   )
@@ -671,8 +671,8 @@ function PayoffBeat({ payoff }: { payoff: Payoff }) {
         <SplitReveal
           as="p"
           onLoad
-          delay={0.2}
-          duration={0.9}
+          delay={0.45}
+          duration={1.2}
           className="display mt-3 text-balance text-[1.5rem] leading-[1.22] text-foreground sm:text-[1.85rem]"
         >
           <span aria-live="polite">{payoff.text}</span>
@@ -728,7 +728,11 @@ function History({
               className="group min-touch flex w-full items-center gap-3 py-2.5 text-left"
             >
               <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm bg-secondary/15">
-                <Check className="h-2.5 w-2.5 text-secondary" strokeWidth={3} />
+                {row.value === "Skipped" ? (
+                  <span className="h-px w-2 bg-muted-foreground" />
+                ) : (
+                  <Check className="h-2.5 w-2.5 text-secondary" strokeWidth={3} />
+                )}
               </span>
               <span className="label-mono w-24 flex-shrink-0 truncate text-[10px] text-muted-foreground">{row.label}</span>
               <span className="min-w-0 flex-1 truncate text-sm text-foreground/85">{row.value}</span>

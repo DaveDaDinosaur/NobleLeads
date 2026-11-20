@@ -30,25 +30,36 @@ function useDrawOn(ref: React.RefObject<SVGSVGElement | null>) {
   )
 }
 
-/** Jobs: a blueprint of a job, with a gold pin dropped in for each kind of job they pick. */
+/** The house, in the order it gets built: groundwork, walls, roof, door, windows, chimney. */
+const houseParts = [
+  "M30 116 H170",
+  "M52 58 V116 H148 V58",
+  "M40 66 L100 24 L160 66",
+  "M88 116 V86 H112 V116",
+  "M62 72 H80 V88 H62 Z M71 72 V88 M62 80 H80 M120 72 H138 V88 H120 Z M129 72 V88 M120 80 H138",
+  "M128 38 V24 H138 V45",
+]
+
+/**
+ * Jobs: a blueprint of a house. Each kind of job they pick builds the next part of it in gold,
+ * so the more they want, the more of the job gets built.
+ */
 export function BlueprintArt({ count }: { count: number }) {
   const ref = useRef<SVGSVGElement>(null)
   useDrawOn(ref)
-  const pins = [
-    [70, 58],
-    [128, 50],
-    [100, 92],
-    [58, 104],
-    [142, 100],
-  ]
+  const built = Math.min(houseParts.length, count === 0 ? 0 : count + 1)
 
   useGSAP(
     () => {
-      if (!ref.current || prefersReducedMotion() || count === 0) return
-      const pin = ref.current.querySelector(`[data-pin="${count - 1}"]`)
-      if (pin) gsap.fromTo(pin, { y: -18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(2.6)" })
+      if (!ref.current || prefersReducedMotion()) return
+      ref.current.querySelectorAll<SVGPathElement>("[data-part]").forEach((part, i) => {
+        if (part.dataset.on === String(i < built)) return
+        part.dataset.on = String(i < built)
+        // Newly built parts draw themselves in; parts being taken away just fade.
+        if (i < built) gsap.fromTo(part, { drawSVG: "0%" }, { drawSVG: "100%", duration: 0.9, ease: "power2.inOut" })
+      })
     },
-    { scope: ref, dependencies: [count] }
+    { scope: ref, dependencies: [built] }
   )
 
   return (
@@ -58,26 +69,19 @@ export function BlueprintArt({ count }: { count: number }) {
           <path d="M10 0H0V10" fill="none" stroke={LINE} strokeWidth="0.5" />
         </pattern>
       </defs>
-      <rect x="0" y="0" width="200" height="130" fill="url(#bp-grid)" opacity="0.6" />
-      <g fill="none" stroke={MUTED} strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round">
-        <path data-draw d="M40 66 L100 24 L160 66" />
-        <path data-draw d="M52 58 V116 H148 V58" />
-        <path data-draw d="M88 116 V86 H112 V116" />
-        <path data-draw d="M62 72 H80 V88 H62 Z M71 72 V88 M62 80 H80" />
-        <path data-draw d="M120 72 H138 V88 H120 Z M129 72 V88 M120 80 H138" />
-        <path data-draw d="M128 38 V24 H138 V45" />
+      <rect x="0" y="0" width="200" height="130" fill="url(#bp-grid)" opacity="0.5" />
+      {/* The outline, waiting to be built */}
+      <g fill="none" stroke={MUTED} strokeWidth="1" strokeDasharray="2 3" strokeLinejoin="round" strokeLinecap="round" opacity="0.7">
+        {houseParts.map((d) => (
+          <path key={d} data-draw d={d} />
+        ))}
       </g>
-      <g stroke={GOLD} strokeWidth="0.6" strokeDasharray="2 3" opacity="0.6">
-        <path d="M30 116 H170" />
-        <path d="M30 120 V112 M170 120 V112" />
+      {/* What's been built, in gold */}
+      <g fill="none" stroke={GOLD} strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round">
+        {houseParts.map((d, i) => (
+          <path key={d} data-part d={d} opacity={i < built ? 1 : 0} style={{ transition: "opacity 0.2s" }} />
+        ))}
       </g>
-      {pins.map(([x, y], i) => (
-        <g key={i} data-pin={i} opacity={i < count ? 1 : 0} style={{ transition: "opacity 0.3s" }}>
-          <circle cx={x} cy={y} r="9" fill={GOLD} opacity="0.15" />
-          <path d={`M${x} ${y + 6} C${x - 6} ${y - 1} ${x - 5} ${y - 8} ${x} ${y - 8} C${x + 5} ${y - 8} ${x + 6} ${y - 1} ${x} ${y + 6} Z`} fill={GOLD} />
-          <circle cx={x} cy={y - 3} r="1.8" fill="hsl(var(--background))" />
-        </g>
-      ))}
     </svg>
   )
 }
@@ -167,11 +171,11 @@ export function CalendarArt({ capacity }: { capacity?: string }) {
               className={`relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-md border transition-colors duration-300 ${
                 on ? "border-secondary/60 bg-secondary/15" : "border-border bg-muted/20"
               }`}
-              style={{ transitionDelay: on ? `${order * 35}ms` : "0ms" }}
+              style={{ transitionDelay: on ? `${order * 75}ms` : "0ms" }}
             >
               <span
                 className={`h-1.5 rounded-full bg-secondary transition-all duration-300 ${on ? "w-3/5 opacity-100" : "w-0 opacity-0"}`}
-                style={{ transitionDelay: on ? `${order * 35 + 80}ms` : "0ms" }}
+                style={{ transitionDelay: on ? `${order * 75 + 120}ms` : "0ms" }}
               />
             </span>
           )

@@ -36,7 +36,7 @@ export const inputClass =
   "min-touch w-full min-w-0 rounded-md border border-border bg-card px-4 py-3.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary sm:text-sm"
 
 /** How long a single tap shows its tick before moving on. Long enough to register, short enough to feel quick. */
-const AUTO_ADVANCE_MS = 260
+const AUTO_ADVANCE_MS = 480
 
 function Chip({
   label,
@@ -126,7 +126,7 @@ export function Footer({
 }
 
 /** Single choice: tap, see the tick, then move on. */
-function useAutoAdvance(onAnswer: StepProps["onAnswer"]) {
+function useAutoAdvance(onAnswer: StepProps["onAnswer"], delay = AUTO_ADVANCE_MS) {
   const [picked, setPicked] = useState<string>()
   const timer = useRef<number>(undefined)
   useEffect(() => () => window.clearTimeout(timer.current), [])
@@ -135,7 +135,7 @@ function useAutoAdvance(onAnswer: StepProps["onAnswer"]) {
     pick(value: string, patch: Partial<PrecallAnswers>) {
       setPicked(value)
       window.clearTimeout(timer.current)
-      timer.current = window.setTimeout(() => onAnswer(patch), prefersReducedMotion() ? 0 : AUTO_ADVANCE_MS)
+      timer.current = window.setTimeout(() => onAnswer(patch), prefersReducedMotion() ? 0 : delay)
     },
   }
 }
@@ -386,7 +386,7 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
 }
 
 function CapacityStep({ answers, onAnswer, onSkip }: StepProps) {
-  const { picked, pick } = useAutoAdvance(onAnswer)
+  const { picked, pick } = useAutoAdvance(onAnswer, 1700)
   const current = picked ?? answers.capacity
   return (
     <>
