@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { ArrowRight, Check, Pencil } from "lucide-react"
 
-import { gsap, prefersReducedMotion } from "@/components/motion/gsap"
+import { prefersReducedMotion } from "@/components/motion/gsap"
 import { jobsToCoverFirstTerm, MIN_TERM_MONTHS } from "@/lib/offer"
 import {
   capacityOptions,
@@ -118,9 +118,7 @@ export function Footer({
             {nextLabel ?? (isLast ? "Finish my plan" : "Next")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
-        ) : (
-          <span className="flex-1 text-right text-xs text-muted-foreground">Tap one to carry on</span>
-        )}
+        ) : null}
       </div>
     </div>
   )
@@ -235,6 +233,8 @@ function AreaStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: StepP
   const [town, setTown] = useState(answers.town ?? "")
   const [radius, setRadius] = useState(answers.radius)
   const canNext = editingTown ? town.trim().length > 1 : Boolean(radius)
+  // With their town known, picking a distance is the whole answer, so it moves on like any single choice.
+  const { pick } = useAutoAdvance(onAnswer)
 
   useEffect(() => onDraft({ radius, town: editingTown ? town.trim() || undefined : undefined }), [radius, town, editingTown, onDraft])
 
@@ -259,17 +259,17 @@ function AreaStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: StepP
           className={`${inputClass} mb-4`}
         />
       ) : null}
-      <p className="min-h-4 text-center text-xs text-muted-foreground" aria-live="polite" data-anim>
-        {radius ? "Ads show to everyone in the gold area. Outside it, you never pay a penny." : "Pick how far you'll go."}
-      </p>
-      <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5" data-anim role="radiogroup" aria-label="How far you'll travel">
+      <div className="grid grid-cols-3 gap-2 sm:grid-cols-5" data-anim role="radiogroup" aria-label="How far you'll travel">
         {radiusOptions.map((option) => (
           <button
             key={option}
             type="button"
             role="radio"
             aria-checked={radius === option}
-            onClick={() => setRadius(option)}
+            onClick={() => {
+              setRadius(option)
+              if (!editingTown) pick(option, { radius: option })
+            }}
             className={`min-touch rounded-md border px-3 py-2 text-sm transition-all duration-200 active:scale-95 ${
               radius === option
                 ? "border-secondary bg-secondary/10 text-foreground"
@@ -288,7 +288,7 @@ function AreaStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: StepP
           </button>
         </p>
       ) : null}
-      <Footer onSkip={onSkip} isLast={isLast} canNext={canNext} />
+      <Footer onSkip={onSkip} isLast={isLast} canNext={canNext} showNext={editingTown} />
     </form>
   )
 }
@@ -298,44 +298,14 @@ function JobValueStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: S
   const [index, setIndex] = useState(nearestStopIndex(start))
   const value = jobValueStops[index]
   const jobs = jobsToCoverFirstTerm(value)
-  const numberRef = useRef<HTMLSpanElement>(null)
-  const shown = useRef({ v: value })
 
   useEffect(() => onDraft({ jobValue: value }), [value, onDraft])
-
-  // Rolls the big number between stops rather than snapping.
-  useEffect(() => {
-    const el = numberRef.current
-    if (!el) return
-    if (prefersReducedMotion()) {
-      el.textContent = formatJobValue(value)
-      return
-    }
-    const tween = gsap.to(shown.current, {
-      v: value,
-      duration: 0.35,
-      ease: "power3.out",
-      onUpdate: () => {
-        const rounded = Math.round(shown.current.v / 50) * 50
-        el.textContent = rounded === value ? formatJobValue(value) : formatJobValue(rounded).replace("+", "")
-      },
-    })
-    return () => {
-      tween.kill()
-    }
-  }, [value])
 
   const percent = (index / (jobValueStops.length - 1)) * 100
 
   return (
     <>
-      <div className="text-center" data-anim>
-        <span ref={numberRef} className="display block text-5xl tabular-nums text-foreground sm:text-6xl">
-          {formatJobValue(value)}
-        </span>
-        <span className="label-mono mt-2 block text-muted-foreground">a typical job</span>
-      </div>
-      <div className="mt-5" data-anim>
+      <div data-anim>
         <input
           type="range"
           min={0}
@@ -353,13 +323,10 @@ function JobValueStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: S
           <span>£50k+</span>
         </div>
       </div>
-      <div className="mt-5 rounded-md border border-secondary/25 bg-secondary/[0.06] p-4" data-anim>
-        <p className="text-[15px] leading-snug text-foreground">
-          About <span className="tabular-nums text-secondary">{jobs}</span> extra {jobs === 1 ? "job" : "jobs"} would cover your
-          first {MIN_TERM_MONTHS} months.
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">At a 30% margin. A rough guide, we{"'"}ll do it properly on the call.</p>
-      </div>
+      <p className="mt-4 text-sm text-muted-foreground" data-anim>
+        About <span className="tabular-nums text-foreground">{jobs}</span> extra {jobs === 1 ? "job" : "jobs"} would pay back your first{" "}
+        {MIN_TERM_MONTHS} months.
+      </p>
       <Footer onSkip={onSkip} isLast={isLast} canNext onNext={() => onAnswer({ jobValue: value })} />
     </>
   )
@@ -488,10 +455,20 @@ export type Profile = { businessName?: string; trade?: string; town?: string }
  * "Have I got this right?" Shows what we hold on them, one tap to confirm, tap a row to fix it.
  * Catches messy CRM data before it ends up in the plan.
  */
-export function ProfileCheck({ context, onDone }: { context: PrecallContext; onDone: (changes: Profile) => void }) {
+export function ProfileCheck({
+  context,
+  onDone,
+  onChange,
+}: {
+  context: PrecallContext
+  onDone: (changes: Profile) => void
+  /** Live edits, so the business card above updates as they type. */
+  onChange?: (values: Profile) => void
+}) {
   const original: Profile = { businessName: context.businessName, trade: tradeLabel(context.tradeName), town: context.town }
   const [values, setValues] = useState<Profile>(original)
   const [editing, setEditing] = useState<keyof Profile>()
+  useEffect(() => onChange?.(values), [values, onChange])
   const rows = (
     [
       { key: "businessName", label: "Business", placeholder: "Business name" },
@@ -554,9 +531,6 @@ export function ProfileCheck({ context, onDone }: { context: PrecallContext; onD
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-xs text-muted-foreground" data-anim>
-        Tap anything that{"'"}s wrong and I{"'"}ll update it.
-      </p>
       <Footer canNext={valid} nextLabel={changed ? "Save and carry on" : "Yes, that's right"} onNext={() => onDone(changes)} />
     </>
   )

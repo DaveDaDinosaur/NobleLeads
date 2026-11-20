@@ -453,3 +453,16 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .precall-svg-pulse { animation: none; }
 }
+
+/* Pre-call flow: screens rise in going forward and drop in going back */
+@keyframes precall-rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes precall-drop { from { opacity: 0; transform: translateY(-28px); } to { opacity: 1; transform: none; } }
+.precall-rise { animation: precall-rise 0.5s cubic-bezier(.2,.8,.2,1) both; }
+.precall-drop { animation: precall-drop 0.5s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes precall-typing { 0%, 60%, 100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-5px); opacity: 1; } }
+.precall-typing { animation: precall-typing 1.2s ease-in-out infinite; transform-box: fill-box; }
+@keyframes precall-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+.precall-blink { animation: precall-blink 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .precall-rise, .precall-drop, .precall-typing, .precall-blink { animation: none; }
+}

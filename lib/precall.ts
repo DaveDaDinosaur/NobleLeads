@@ -255,38 +255,38 @@ export function buildQuestions(context: PrecallContext): Question[] {
   const list: Question[] = []
   // A niche trade we don't recognise still counts as known. They can correct it on the check screen.
   if (!context.tradeName?.trim()) {
-    list.push({ id: "trade", question: "First up, what's your trade?", hint: "So the plan speaks your language." })
+    list.push({ id: "trade", question: "First up, what's your trade?", hint: "Pick one, or type your own." })
   }
   list.push(
     {
       id: "jobs",
       question: "Which jobs do you want more of?",
-      hint: "Pick as many as you like. The ads get built around these.",
+      hint: "Pick as many as you like.",
     },
     context.town
       ? {
           id: "area",
           question: `How far from ${context.town} will you travel?`,
-          hint: "For the right job. Your ads only show inside this area.",
+          hint: "The furthest you'd go for the right job.",
         }
       : {
           id: "area",
           question: "Where do you want them?",
-          hint: "Your base, and how far you'll travel for the right job.",
+          hint: "Your town, then how far you'd go.",
         }
   )
   if (!context.jobValueBand) {
     list.push({
       id: "jobValue",
       question: "What's a typical job worth?",
-      hint: "A rough figure is perfect. Slide to the nearest.",
+      hint: "Slide to the nearest. Rough is fine.",
     })
   }
   list.push(
     {
       id: "capacity",
       question: "How many more jobs a month could you take on?",
-      hint: "This becomes the target the plan works back from.",
+      hint: "Roughly is fine.",
     },
     {
       id: "sources",
@@ -296,7 +296,7 @@ export function buildQuestions(context: PrecallContext): Question[] {
     {
       id: "agenda",
       question: "Anything you want to make sure we cover?",
-      hint: "Questions, worries, anything at all. Totally optional.",
+      hint: "Optional. Tap one or type your own.",
     }
   )
   return list
@@ -396,6 +396,44 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
   }
 }
 
+/**
+ * The short line under the diagram once they answer. One idea, read at a glance,
+ * describing the picture it sits under.
+ */
+export function captionFor(id: QuestionId | "check", a: PrecallAnswers, context: PrecallContext): string {
+  switch (id) {
+    case "check":
+      return `Everything we prepare is built for ${context.businessName ?? "your business"}.`
+    case "trade": {
+      const trade = findTrade(a.trade)
+      return trade ? `We'll bring what's working for ${trade.plural} now.` : "We'll bring what's working for trades like yours."
+    }
+    case "jobs": {
+      const first = a.jobs?.[0] ?? a.jobsOther
+      return first ? `Your ads get built around ${midSentence(first)}.` : "Your ads get built around the work you want."
+    }
+    case "area":
+      return "Ads only show inside the gold. No wasted clicks."
+    case "jobValue": {
+      if (typeof a.jobValue !== "number") return "Noted."
+      const jobs = jobsToCoverFirstTerm(a.jobValue)
+      return `About ${jobs} extra ${jobs === 1 ? "job pays" : "jobs pay"} back your first ${MIN_TERM_MONTHS} months.`
+    }
+    case "capacity":
+      return a.capacity ? `The target: ${a.capacity} extra jobs a month.` : "Noted."
+    case "sources": {
+      const s = a.sources ?? []
+      if (s.includes(AGENCY_SOURCE)) return "We'll show you what we'd do differently."
+      if (s.includes("Checkatrade, MyBuilder or Bark")) return "Your own enquiries, not shared with other firms."
+      if (s.includes(ADS_SOURCE)) return "We'll go through the numbers properly."
+      if (s.includes("Word of mouth") || s.includes("Repeat customers")) return "Good work deserves to be found."
+      return "We'll build on what already works."
+    }
+    case "agenda":
+      return a.agenda ? "That's top of the list for the call." : "Bring anything you think of to the call."
+  }
+}
+
 /** What they'll walk away with from the call. Personalised as answers come in. */
 export function callDeliverables(a: PrecallAnswers, context: PrecallContext) {
   const town = a.town ?? context.town
@@ -421,7 +459,7 @@ export function callDeliverables(a: PrecallAnswers, context: PrecallContext) {
       title: "Your numbers",
       body:
         typeof value === "number"
-          ? `What it would cost, and why about ${jobsToCoverFirstTerm(value)} extra jobs pays back your first ${MIN_TERM_MONTHS} months.`
+          ? `What it would cost, and why about ${jobsToCoverFirstTerm(value)} extra ${jobsToCoverFirstTerm(value) === 1 ? "job pays" : "jobs pay"} back your first ${MIN_TERM_MONTHS} months.`
           : "What it would cost, and how many jobs it takes to pay for itself.",
       ready: typeof value === "number",
     },

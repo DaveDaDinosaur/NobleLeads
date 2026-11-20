@@ -14,11 +14,30 @@ function stamp(date: Date) {
   return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")
 }
 
-function timeLabel(date: Date) {
+export function timeLabel(date: Date) {
   return date
     .toLocaleTimeString("en-GB", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: TZ })
     .replace(":00", "")
     .replace(" ", "")
+}
+
+/** Calendar links for their call, or nothing if we don't know the time. */
+export function callLinks(context: PrecallContext) {
+  const start = callDate(context.callStart)
+  if (!start) return undefined
+  const end = new Date(start.getTime() + context.callMinutes * 60000)
+  return {
+    start,
+    end,
+    google: `https://calendar.google.com/calendar/render?${new URLSearchParams({
+      action: "TEMPLATE",
+      text: EVENT_TITLE,
+      dates: `${stamp(start)}/${stamp(end)}`,
+      details: EVENT_DETAILS,
+      ctz: TZ,
+    })}`,
+    ics: `/api/precall/ics?${new URLSearchParams({ start: start.toISOString(), mins: String(context.callMinutes) })}`,
+  }
 }
 
 export function CallTicket({ context }: { context: PrecallContext }) {
