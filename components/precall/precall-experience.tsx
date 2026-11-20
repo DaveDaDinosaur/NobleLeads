@@ -689,7 +689,8 @@ function PayoffBeat({ payoff }: { payoff: Payoff }) {
   )
 }
 
-/** Everything answered so far, folded into slim rows. The latest shows; earlier ones tuck under a toggle. */
+/** Everything answered so far, folded into slim rows. The latest shows; earlier ones tuck under a toggle.
+ *  Hidden on phones, where the plan button in the top bar already holds every answer. */
 function History({
   rows,
   open,
@@ -705,7 +706,7 @@ function History({
   const earlier = rows.slice(0, -1)
   const shown = open ? rows : rows.slice(-1)
   return (
-    <div className="mt-2 border-y border-border" data-anim>
+    <div className="mt-2 hidden border-y border-border sm:block" data-anim>
       {earlier.length ? (
         <button
           type="button"
