@@ -9,6 +9,7 @@ type SplitRevealProps = {
   className?: string
   children: ReactNode
   delay?: number
+  duration?: number
   onLoad?: boolean
 }
 
@@ -17,6 +18,7 @@ export function SplitReveal({
   className = "",
   children,
   delay = 0,
+  duration = 1.2,
   onLoad = false,
 }: SplitRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -37,7 +39,7 @@ export function SplitReveal({
         onSplit(self) {
           return gsap.from(self.lines, {
             yPercent: 115,
-            duration: 1.2,
+            duration,
             ease: EASE_OUT,
             stagger: 0.09,
             delay,

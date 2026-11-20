@@ -14,30 +14,11 @@ function stamp(date: Date) {
   return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")
 }
 
-export function timeLabel(date: Date) {
+function timeLabel(date: Date) {
   return date
     .toLocaleTimeString("en-GB", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: TZ })
     .replace(":00", "")
     .replace(" ", "")
-}
-
-/** Calendar links for their call, or nothing if we don't know the time. */
-export function callLinks(context: PrecallContext) {
-  const start = callDate(context.callStart)
-  if (!start) return undefined
-  const end = new Date(start.getTime() + context.callMinutes * 60000)
-  return {
-    start,
-    end,
-    google: `https://calendar.google.com/calendar/render?${new URLSearchParams({
-      action: "TEMPLATE",
-      text: EVENT_TITLE,
-      dates: `${stamp(start)}/${stamp(end)}`,
-      details: EVENT_DETAILS,
-      ctz: TZ,
-    })}`,
-    ics: `/api/precall/ics?${new URLSearchParams({ start: start.toISOString(), mins: String(context.callMinutes) })}`,
-  }
 }
 
 export function CallTicket({ context }: { context: PrecallContext }) {
@@ -89,7 +70,7 @@ export function CallTicket({ context }: { context: PrecallContext }) {
         )}
 
         <div className="mt-5 flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-md border border-secondary/40 bg-secondary/10 text-sm font-semibold text-secondary">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-secondary/40 bg-secondary/10 text-sm font-semibold text-secondary">
             G
           </span>
           <p className="text-sm leading-snug text-muted-foreground">

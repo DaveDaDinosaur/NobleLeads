@@ -466,3 +466,13 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .precall-rise, .precall-drop, .precall-typing, .precall-blink { animation: none; }
 }
+
+/* Pre-call: the gold rule that fills while "what this means for you" holds */
+@keyframes precall-hold {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.precall-hold { transform-origin: left; animation: precall-hold linear forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .precall-hold { animation: none; transform: scaleX(1); opacity: 0.4; }
+}
