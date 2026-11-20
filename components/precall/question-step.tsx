@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react"
 import { ArrowRight, Check, Pencil } from "lucide-react"
 
 import { gsap, prefersReducedMotion } from "@/components/motion/gsap"
-import { BlueprintArt, CalendarArt, CoinStackArt, MapArt, NetworkArt } from "@/components/precall/precall-art"
 import { jobsToCoverFirstTerm, MIN_TERM_MONTHS } from "@/lib/offer"
 import {
   capacityOptions,
@@ -30,13 +29,15 @@ type StepProps = {
   isLast: boolean
   onAnswer: (patch: Partial<PrecallAnswers>) => void
   onSkip: () => void
+  /** Live, uncommitted choices, so the dot picture can react before they press Next. */
+  onDraft: (patch: Partial<PrecallAnswers>) => void
 }
 
 export const inputClass =
-  "min-touch w-full min-w-0 rounded-2xl border border-border bg-card px-4 py-3.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary sm:text-sm"
+  "min-touch w-full min-w-0 rounded-md border border-border bg-card px-4 py-3.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary sm:text-sm"
 
-/** How long a single tap shows its tick before moving on. Long enough to register, short enough to feel quick. */
-const AUTO_ADVANCE_MS = 260
+/** How long a single tap shows its tick before moving on. */
+const AUTO_ADVANCE_MS = 240
 
 function Chip({
   label,
@@ -56,7 +57,7 @@ function Chip({
       aria-checked={selected}
       onClick={onClick}
       data-anim
-      className={`group min-touch flex w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3.5 text-left text-[15px] font-medium transition-all duration-200 active:scale-[0.97] sm:text-sm ${
+      className={`group min-touch flex w-full items-center justify-between gap-3 rounded-md border px-4 py-3.5 text-left text-[15px] font-medium transition-all duration-200 active:scale-[0.98] sm:text-sm ${
         selected
           ? "border-secondary bg-secondary/10 text-foreground"
           : "border-border bg-card text-foreground/85 hover:border-secondary/50"
@@ -64,9 +65,9 @@ function Chip({
     >
       <span>{label}</span>
       <span
-        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center border transition-all duration-200 ${
-          multi ? "rounded-md" : "rounded-full"
-        } ${selected ? "scale-100 border-secondary bg-secondary" : "scale-90 border-border"}`}
+        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-[4px] border transition-all duration-200 ${
+          selected ? "scale-100 border-secondary bg-secondary" : "scale-90 border-border"
+        }`}
       >
         <Check
           className={`h-3 w-3 text-secondary-foreground transition-transform duration-200 ${selected ? "scale-100" : "scale-0"}`}
@@ -77,7 +78,7 @@ function Chip({
   )
 }
 
-/** The action bar. Stays pinned to the bottom of the screen, in thumb reach, like an app. */
+/** The action bar. Stays pinned to the bottom of the screen while its step is on screen. */
 export function Footer({
   onSkip,
   onNext,
@@ -96,13 +97,13 @@ export function Footer({
   skipLabel?: string
 }) {
   return (
-    <div className="pb-safe sticky bottom-0 z-10 -mx-5 mt-auto bg-gradient-to-t from-background from-70% to-transparent px-5 pt-8 sm:-mx-8 sm:px-8">
+    <div className="pb-safe sticky bottom-0 z-20 -mx-5 mt-6 bg-gradient-to-t from-background from-70% to-transparent px-5 pt-6 sm:-mx-8 sm:px-8">
       <div className="flex items-center gap-3 pb-3">
         {onSkip ? (
           <button
             type="button"
             onClick={onSkip}
-            className="min-touch flex-shrink-0 rounded-full px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="min-touch flex-shrink-0 rounded-md px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             {skipLabel}
           </button>
@@ -112,7 +113,7 @@ export function Footer({
             type={onNext ? "button" : "submit"}
             onClick={onNext}
             disabled={!canNext}
-            className="group min-touch inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-secondary px-6 py-4 text-[15px] font-semibold text-secondary-foreground transition-all active:scale-[0.98] disabled:opacity-35 sm:ml-auto sm:min-w-[11rem] sm:flex-none"
+            className="group min-touch inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-secondary px-6 py-4 text-[15px] font-semibold text-secondary-foreground transition-all active:scale-[0.99] disabled:opacity-35 sm:ml-auto sm:min-w-[11rem] sm:flex-none"
           >
             {nextLabel ?? (isLast ? "Finish my plan" : "Next")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -140,14 +141,6 @@ function useAutoAdvance(onAnswer: StepProps["onAnswer"]) {
   }
 }
 
-function Art({ children, className = "h-32" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`mx-auto mt-6 w-full max-w-xs ${className}`} data-anim>
-      {children}
-    </div>
-  )
-}
-
 /** Shows what a typed trade will be treated as, so typos are caught gently. */
 function TradeMatch({ value }: { value: string }) {
   const match = findTrade(value)
@@ -170,13 +163,12 @@ function TradeStep({ answers, onAnswer, onSkip }: StepProps) {
   const [other, setOther] = useState(findTrade(answers.trade) ? "" : (answers.trade ?? ""))
   return (
     <form
-      className="flex flex-1 flex-col"
       onSubmit={(e) => {
         e.preventDefault()
         if (other.trim()) onAnswer({ trade: findTrade(other)?.name ?? other.trim() })
       }}
     >
-      <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup">
         {trades.map((trade) => (
           <Chip
             key={trade.slug}
@@ -202,20 +194,20 @@ function TradeStep({ answers, onAnswer, onSkip }: StepProps) {
   )
 }
 
-function JobsStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
+function JobsStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: StepProps) {
   const options = jobOptionsFor(answers.trade ?? context.tradeName)
   const [jobs, setJobs] = useState<string[]>(answers.jobs ?? [])
   const [otherOpen, setOtherOpen] = useState(Boolean(answers.jobsOther))
   const [other, setOther] = useState(answers.jobsOther ?? "")
   const toggle = (job: string) => setJobs((list) => (list.includes(job) ? list.filter((j) => j !== job) : [...list, job]))
   const count = jobs.length + (otherOpen && other.trim() ? 1 : 0)
+  const jobsOther = otherOpen && other.trim() ? other.trim() : undefined
+
+  useEffect(() => onDraft({ jobs, jobsOther }), [jobs, jobsOther, onDraft])
 
   return (
     <>
-      <Art className="h-28">
-        <BlueprintArt count={Math.min(count, 5)} />
-      </Art>
-      <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {options.map((job) => (
           <Chip key={job} label={job} multi selected={jobs.includes(job)} onClick={() => toggle(job)} />
         ))}
@@ -232,28 +224,22 @@ function JobsStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
           className={`${inputClass} mt-2`}
         />
       ) : null}
-      <Footer
-        onSkip={onSkip}
-        isLast={isLast}
-        canNext={count > 0}
-        onNext={() => onAnswer({ jobs, jobsOther: otherOpen && other.trim() ? other.trim() : undefined })}
-      />
+      <Footer onSkip={onSkip} isLast={isLast} canNext={count > 0} onNext={() => onAnswer({ jobs, jobsOther })} />
     </>
   )
 }
 
-function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
+function AreaStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: StepProps) {
   // When we already know their base, only the radius is asked. They can still correct the town.
   const [editingTown, setEditingTown] = useState(!context.town)
   const [town, setTown] = useState(answers.town ?? "")
   const [radius, setRadius] = useState(answers.radius)
-  const shownTown = editingTown ? town.trim() : (context.town ?? "")
-  const ringIndex = radius ? radiusOptions.indexOf(radius) : -1
   const canNext = editingTown ? town.trim().length > 1 : Boolean(radius)
+
+  useEffect(() => onDraft({ radius, town: editingTown ? town.trim() || undefined : undefined }), [radius, town, editingTown, onDraft])
 
   return (
     <form
-      className="flex flex-1 flex-col"
       onSubmit={(e) => {
         e.preventDefault()
         if (!canNext) return
@@ -270,16 +256,13 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
           placeholder="Your town or postcode"
           value={town}
           onChange={(e) => setTown(e.target.value)}
-          className={`${inputClass} mt-6`}
+          className={`${inputClass} mb-4`}
         />
       ) : null}
-      <Art className="h-52 sm:h-60">
-        <MapArt town={shownTown || undefined} ringIndex={ringIndex} />
-      </Art>
-      <p className="mt-1 min-h-4 text-center text-xs text-muted-foreground" aria-live="polite" data-anim>
-        {ringIndex >= 0 ? `Ads show to everyone in the gold area. Outside it, you never pay a penny.` : "Pick how far you'll go."}
+      <p className="min-h-4 text-center text-xs text-muted-foreground" aria-live="polite" data-anim>
+        {radius ? "Ads show to everyone in the gold area. Outside it, you never pay a penny." : "Pick how far you'll go."}
       </p>
-      <div className="mt-4 flex flex-wrap justify-center gap-2" data-anim role="radiogroup" aria-label="How far you'll travel">
+      <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5" data-anim role="radiogroup" aria-label="How far you'll travel">
         {radiusOptions.map((option) => (
           <button
             key={option}
@@ -287,7 +270,7 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
             role="radio"
             aria-checked={radius === option}
             onClick={() => setRadius(option)}
-            className={`min-touch rounded-full border px-4 py-2 text-sm transition-all duration-200 active:scale-95 ${
+            className={`min-touch rounded-md border px-3 py-2 text-sm transition-all duration-200 active:scale-95 ${
               radius === option
                 ? "border-secondary bg-secondary/10 text-foreground"
                 : "border-border bg-card text-foreground/80 hover:border-secondary/50"
@@ -310,13 +293,15 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
   )
 }
 
-function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
+function JobValueStep({ answers, context, onAnswer, onSkip, onDraft, isLast }: StepProps) {
   const start = answers.jobValue ?? findTrade(answers.trade ?? context.tradeName)?.typicalJob.value ?? 5000
   const [index, setIndex] = useState(nearestStopIndex(start))
   const value = jobValueStops[index]
   const jobs = jobsToCoverFirstTerm(value)
   const numberRef = useRef<HTMLSpanElement>(null)
   const shown = useRef({ v: value })
+
+  useEffect(() => onDraft({ jobValue: value }), [value, onDraft])
 
   // Rolls the big number between stops rather than snapping.
   useEffect(() => {
@@ -344,18 +329,13 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
 
   return (
     <>
-      <div className="mt-6 flex items-end justify-center gap-5" data-anim>
-        <div className="h-28 w-24 flex-shrink-0">
-          <CoinStackArt level={1 + Math.round((index / (jobValueStops.length - 1)) * 11)} />
-        </div>
-        <div className="pb-2">
-          <span ref={numberRef} className="display block text-5xl tabular-nums text-foreground sm:text-6xl">
-            {formatJobValue(value)}
-          </span>
-          <span className="label-mono mt-2 block text-muted-foreground">a typical job</span>
-        </div>
+      <div className="text-center" data-anim>
+        <span ref={numberRef} className="display block text-5xl tabular-nums text-foreground sm:text-6xl">
+          {formatJobValue(value)}
+        </span>
+        <span className="label-mono mt-2 block text-muted-foreground">a typical job</span>
       </div>
-      <div className="mt-6" data-anim>
+      <div className="mt-5" data-anim>
         <input
           type="range"
           min={0}
@@ -373,7 +353,7 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
           <span>£50k+</span>
         </div>
       </div>
-      <div className="mt-6 rounded-2xl border border-secondary/25 bg-secondary/[0.06] p-4" data-anim>
+      <div className="mt-5 rounded-md border border-secondary/25 bg-secondary/[0.06] p-4" data-anim>
         <p className="text-[15px] leading-snug text-foreground">
           About <span className="tabular-nums text-secondary">{jobs}</span> extra {jobs === 1 ? "job" : "jobs"} would cover your
           first {MIN_TERM_MONTHS} months.
@@ -385,16 +365,13 @@ function JobValueStep({ answers, context, onAnswer, onSkip, isLast }: StepProps)
   )
 }
 
-function CapacityStep({ answers, onAnswer, onSkip }: StepProps) {
+function CapacityStep({ answers, onAnswer, onSkip, onDraft }: StepProps) {
   const { picked, pick } = useAutoAdvance(onAnswer)
   const current = picked ?? answers.capacity
+  useEffect(() => onDraft({ capacity: current }), [current, onDraft])
   return (
     <>
-      <div className="mx-auto mt-6 w-full max-w-xs" data-anim>
-        <CalendarArt capacity={current} />
-        <p className="label-mono mt-2 text-center text-[10px] text-muted-foreground">Next month</p>
-      </div>
-      <div className="mt-6 grid grid-cols-2 gap-2" role="radiogroup">
+      <div className="grid grid-cols-2 gap-2" role="radiogroup">
         {capacityOptions.map((option) => (
           <Chip key={option} label={option} selected={current === option} onClick={() => pick(option, { capacity: option })} />
         ))}
@@ -404,17 +381,15 @@ function CapacityStep({ answers, onAnswer, onSkip }: StepProps) {
   )
 }
 
-function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
+function SourcesStep({ answers, onAnswer, onSkip, onDraft, isLast }: StepProps) {
   const [sources, setSources] = useState<string[]>(answers.sources ?? [])
   const [note, setNote] = useState(answers.triedNote ?? "")
   const toggle = (s: string) => setSources((list) => (list.includes(s) ? list.filter((x) => x !== s) : [...list, s]))
   const followUp = usesPaidHelp(sources)
+  useEffect(() => onDraft({ sources }), [sources, onDraft])
   return (
     <>
-      <Art className="h-24">
-        <NetworkArt options={sourceOptions} active={sources} />
-      </Art>
-      <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {sourceOptions.map((source) => (
           <Chip key={source} label={source} multi selected={sources.includes(source)} onClick={() => toggle(source)} />
         ))}
@@ -454,19 +429,18 @@ function AgendaStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
     setAgenda((text) => (text.includes(prompt) ? text : `${text.trim() ? `${text.trim()} ` : ""}${prompt}`))
   return (
     <form
-      className="flex flex-1 flex-col"
       onSubmit={(e) => {
         e.preventDefault()
         onAnswer({ agenda: agenda.trim() || undefined })
       }}
     >
-      <div className="mt-6 flex flex-wrap gap-2" data-anim>
+      <div className="flex flex-wrap gap-2" data-anim>
         {agendaPrompts.map((prompt) => (
           <button
             key={prompt}
             type="button"
             onClick={() => add(prompt)}
-            className={`min-touch rounded-full border px-3.5 py-2 text-left text-sm transition-colors ${
+            className={`min-touch rounded-md border px-3.5 py-2 text-left text-sm transition-colors ${
               agenda.includes(prompt)
                 ? "border-secondary bg-secondary/10 text-foreground"
                 : "border-border bg-card text-foreground/80 hover:border-secondary/50"
@@ -536,7 +510,7 @@ export function ProfileCheck({ context, onDone }: { context: PrecallContext; onD
 
   return (
     <>
-      <ul className="mt-6 overflow-hidden rounded-3xl border border-border bg-card" data-anim>
+      <ul className="overflow-hidden rounded-md border border-border bg-card" data-anim>
         {rows.map((row) => (
           <li key={row.key} className="border-b border-border last:border-b-0">
             {editing === row.key ? (

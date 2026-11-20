@@ -74,7 +74,7 @@ export function PlanCard({ lines, businessName, ready, dayLabel, className = "" 
   return (
     <div
       ref={ref}
-      className={`relative overflow-hidden rounded-3xl border bg-card transition-colors duration-700 ${
+      className={`relative overflow-hidden rounded-lg border bg-card transition-colors duration-700 ${
         ready ? "border-secondary/40" : "border-border"
       } ${className}`}
     >
@@ -93,13 +93,13 @@ export function PlanCard({ lines, businessName, ready, dayLabel, className = "" 
           {ready ? (
             <span
               data-seal
-              className="flex h-14 w-14 flex-shrink-0 flex-col items-center justify-center rounded-full border border-secondary bg-secondary/10 text-center"
+              className="flex h-14 w-14 flex-shrink-0 flex-col items-center justify-center rounded-md border border-secondary bg-secondary/10 text-center"
             >
               <Check className="h-4 w-4 text-secondary" />
               <span className="label-mono mt-0.5 text-[8px] leading-none text-secondary">Ready</span>
             </span>
           ) : (
-            <span className="label-mono flex-shrink-0 rounded-full border border-border px-2.5 py-1 text-[10px] text-muted-foreground">
+            <span className="label-mono flex-shrink-0 rounded-[4px] border border-border px-2.5 py-1 text-[10px] text-muted-foreground">
               Drafting
             </span>
           )}
@@ -108,7 +108,7 @@ export function PlanCard({ lines, businessName, ready, dayLabel, className = "" 
           {lines.map((line, index) => (
             <span
               key={line.id}
-              className={`h-1 flex-1 rounded-full transition-colors duration-500 ${
+              className={`h-[3px] flex-1 transition-colors duration-500 ${
                 index < filled ? "bg-secondary" : "bg-muted"
               }`}
             />
@@ -124,11 +124,11 @@ export function PlanCard({ lines, businessName, ready, dayLabel, className = "" 
           <div
             key={line.id}
             data-line={line.id}
-            className="grid grid-cols-[1.25rem_6.5rem_1fr] items-start gap-2 rounded-xl px-3 py-2.5 sm:grid-cols-[1.25rem_7.5rem_1fr]"
+            className="grid grid-cols-[1.25rem_6.5rem_1fr] items-start gap-2 rounded-md px-3 py-2.5 sm:grid-cols-[1.25rem_7.5rem_1fr]"
           >
             <span className="mt-0.5 flex h-4 w-4 items-center justify-center">
               {line.value ? (
-                <span data-tick className="flex h-4 w-4 items-center justify-center rounded-full bg-secondary">
+                <span data-tick className="flex h-4 w-4 items-center justify-center rounded-[3px] bg-secondary">
                   <Check className="h-2.5 w-2.5 text-secondary-foreground" strokeWidth={3} />
                 </span>
               ) : (

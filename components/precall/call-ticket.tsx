@@ -41,7 +41,7 @@ export function CallTicket({ context }: { context: PrecallContext }) {
       : undefined
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-border bg-card" data-ticket>
+    <div className="relative overflow-hidden rounded-lg border border-border bg-card" data-ticket>
       <div className="relative p-6 sm:p-8">
         <div className="flex items-center justify-between">
           <p className="label-mono text-secondary">Your call</p>
@@ -70,7 +70,7 @@ export function CallTicket({ context }: { context: PrecallContext }) {
         )}
 
         <div className="mt-5 flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-secondary/40 bg-secondary/10 text-sm font-semibold text-secondary">
+          <span className="flex h-9 w-9 items-center justify-center rounded-md border border-secondary/40 bg-secondary/10 text-sm font-semibold text-secondary">
             G
           </span>
           <p className="text-sm leading-snug text-muted-foreground">
@@ -93,7 +93,7 @@ export function CallTicket({ context }: { context: PrecallContext }) {
             <a
               href={ics}
               onClick={() => trackEvent("precall_add_calendar", { type: "ics" })}
-              className="min-touch inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-secondary/50"
+              className="min-touch inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-secondary/50"
             >
               <CalendarPlus className="h-4 w-4 text-secondary" />
               Apple or Outlook
@@ -103,7 +103,7 @@ export function CallTicket({ context }: { context: PrecallContext }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackEvent("precall_add_calendar", { type: "google" })}
-              className="min-touch inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-secondary/50"
+              className="min-touch inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-secondary/50"
             >
               <CalendarPlus className="h-4 w-4 text-secondary" />
               Google
