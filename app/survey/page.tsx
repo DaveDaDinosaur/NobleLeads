@@ -5,11 +5,6 @@ import { Footer } from "@/components/footer"
 import { SectionReveal } from "@/components/section-reveal"
 import { RuleList } from "@/components/growth/rules"
 import { GrowthSurvey } from "@/components/survey/growth-survey"
-import {
-  formatGBP,
-  MONTHLY_FEE,
-  SETUP_FEE,
-} from "@/lib/offer"
 import { buildMetadata } from "../(shared)/seo-config"
 
 export const metadata: Metadata = buildMetadata({
@@ -57,10 +52,6 @@ export default function SurveyPage() {
               <SectionReveal delay={150}>
                 <h2 className="label-mono mb-4 text-muted-foreground">What we{"'"}ll cover on the call</h2>
                 <RuleList items={onTheCall} tone="strong" />
-                <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-                  The price, up front: {formatGBP(SETUP_FEE)} setup, then {formatGBP(MONTHLY_FEE)} a month
-                  plus ad spend. 3-month minimum. No VAT.
-                </p>
               </SectionReveal>
             </div>
           </div>
