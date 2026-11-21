@@ -31,7 +31,6 @@ function fieldValues(
     Trade: answers.trade,
     Area: answers.area,
     "Typical job value": answers.jobValue,
-    "Price reaction": answers.priceReaction,
     Website: details.website,
     "Lead tier": tier,
     GCLID: attribution.gclid,
@@ -48,7 +47,6 @@ function answersNote(answers: SurveyAnswers, tier: string) {
     ["Trade", answers.otherTrade ? `Other: ${answers.otherTrade}` : answers.trade],
     ["Area", answers.area],
     ["Typical job value", answers.jobValue],
-    ["Ready to invest", answers.priceReaction],
   ]
   return `Website survey answers\n${lines.map(([label, value]) => `${label}: ${clean(value) || "-"}`).join("\n")}`
 }
@@ -124,7 +122,6 @@ export async function POST(request: Request) {
           "Survey complete",
           "source: website",
           tier,
-          ...(answers.priceReaction === "See what I get first" ? ["Price unsure"] : []),
         ],
       })
       await ghl(`/contacts/${contactId}/notes`, token, "POST", { body: answersNote(answers, tier) })

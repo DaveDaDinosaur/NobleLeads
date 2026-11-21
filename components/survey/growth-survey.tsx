@@ -7,24 +7,11 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { trackEvent } from "@/lib/analytics"
 import { readAttribution } from "@/lib/attribution"
-import {
-  BOOKING_URL,
-  DEFAULT_MARGIN,
-  FIRST_TERM_COST,
-  formatGBP,
-  jobsToCoverFirstTerm,
-  MIN_AD_SPEND,
-  MIN_JOB_VALUE,
-  MIN_TERM_MONTHS,
-  MONTHLY_FEE,
-  SETUP_FEE,
-} from "@/lib/offer"
+import { BOOKING_URL, formatGBP, MIN_JOB_VALUE } from "@/lib/offer"
 import {
   CONSENT_TEXT,
-  jobValueExample,
   jobValueOptions,
   leadOutcome,
-  priceReactionOptions,
   type LeadTier,
   type NotYetReason,
   type SurveyAnswers,
@@ -34,7 +21,7 @@ import {
 } from "@/lib/survey"
 import { trades } from "@/lib/trades"
 
-type AnswerKey = "trade" | "jobValue" | "priceReaction"
+type AnswerKey = "trade" | "jobValue"
 
 type Screen =
   | { id: AnswerKey; type: "choice"; question: string; hint?: string; options: SurveyOption[]; other?: boolean }
@@ -46,7 +33,7 @@ const screens: Screen[] = [
     id: "trade",
     type: "choice",
     question: "Let's build your plan. What's your trade?",
-    hint: "Four quick questions. We only work with UK trades.",
+    hint: "Three quick questions. We only work with UK trades.",
     options: trades.map((trade) => ({ value: trade.name, label: trade.name })),
     other: true,
   },
@@ -69,21 +56,9 @@ const screens: Screen[] = [
     hint: "We'll use this to show you what it takes to pay for itself.",
     options: jobValueOptions,
   },
-  {
-    id: "priceReaction",
-    type: "choice",
-    question: "Would you invest that to win more work?",
-    options: priceReactionOptions,
-  },
 ]
 
-const valueTags = ["Website", "Google Ads", "Instant follow-up", "Monthly report", "You own it"]
-
 const notYetCopy: Record<NotYetReason, { title: string; body: string }> = {
-  price: {
-    title: "That's completely fair.",
-    body: "It's a real investment, and it should only start when it's comfortable. We'll keep in touch, and you're welcome to come back whenever the time is right.",
-  },
   jobValue: {
     title: "Now probably isn't the right time.",
     body: `The system works best on jobs worth ${formatGBP(MIN_JOB_VALUE)} or more. Below that, it's hard for the ads to pay for themselves, and we'd rather tell you now than take your money.`,
@@ -119,56 +94,6 @@ function detailsValid(d: SurveyDetails) {
 
 const inputClass =
   "min-touch w-full min-w-0 rounded-lg border border-border bg-transparent px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary"
-
-function PriceBlock({ jobValue }: { jobValue?: string }) {
-  const example = jobValue ? jobValueExample[jobValue] : undefined
-  const jobs = example ? jobsToCoverFirstTerm(example) : 0
-
-  return (
-    <div className="mt-6">
-      <p className="label-mono text-muted-foreground">Your investment</p>
-      <ul className="mt-4 flex flex-wrap gap-2">
-        {valueTags.map((tag) => (
-          <li key={tag} className="rounded-full border border-border px-2.5 py-1 text-[11px] text-foreground/90 sm:text-xs">
-            {tag}
-          </li>
-        ))}
-      </ul>
-
-      <dl className="mt-6 grid grid-cols-3 border-y border-border">
-        {[
-          [formatGBP(SETUP_FEE), "one-off"],
-          [formatGBP(MONTHLY_FEE), "a month"],
-          [`+${formatGBP(MIN_AD_SPEND)}`, "ads, min"],
-        ].map(([value, label]) => (
-          <div key={label} className="border-r border-border py-4 pr-3 last:border-r-0 [&:not(:first-child)]:pl-3">
-            <dt className="display text-2xl tabular-nums text-foreground sm:text-3xl">{value}</dt>
-            <dd className="label-mono mt-1 text-[10px] text-muted-foreground">{label}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <div className="mt-6 space-y-2 border-l-2 border-secondary pl-4">
-        {example ? (
-          <>
-            <p className="text-base leading-snug text-foreground">
-              Pays for itself with {jobs} extra {formatGBP(example)} {jobs === 1 ? "job" : "jobs"}.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              That covers your first {MIN_TERM_MONTHS} months, {formatGBP(FIRST_TERM_COST)} all in.
-            </p>
-          </>
-        ) : null}
-        <p className="text-sm text-muted-foreground">Focus Refurbishment got 24 leads in a fortnight.</p>
-      </div>
-      {example ? (
-        <p className="mt-3 text-[11px] text-muted-foreground">
-          At a {DEFAULT_MARGIN}% margin. An example, not a forecast.
-        </p>
-      ) : null}
-    </div>
-  )
-}
 
 export function GrowthSurvey() {
   const [step, setStep] = useState(0)
@@ -319,13 +244,7 @@ export function GrowthSurvey() {
           ) : null}
         </div>
 
-        {current.id === "priceReaction" ? <PriceBlock jobValue={answers.jobValue} /> : null}
-
-        <h2
-          className={`display text-balance text-foreground ${
-            current.id === "priceReaction" ? "mt-6 text-2xl leading-[1.05] sm:text-3xl" : "mt-6 text-3xl leading-[1.02] sm:text-4xl"
-          }`}
-        >
+        <h2 className="display mt-6 text-balance text-3xl leading-[1.02] text-foreground sm:text-4xl">
           {current.question}
         </h2>
         {current.hint ? <p className="mt-3 text-sm text-muted-foreground">{current.hint}</p> : null}
