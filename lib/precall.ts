@@ -1,5 +1,5 @@
 import { formatGBP, jobsToCoverFirstTerm, MIN_TERM_MONTHS } from "@/lib/offer"
-import { jobValueExample } from "@/lib/survey"
+import { jobValueExample, jobValueOptions } from "@/lib/survey"
 import { trades, type Trade } from "@/lib/trades"
 
 /** What the page knows about the lead before they answer anything. Every field can be missing. */
@@ -14,6 +14,8 @@ export type PrecallContext = {
   jobValueBand?: string
   /** The survey's "Biggest frustration" answer. */
   frustration?: string
+  /** Answers already saved on the contact (by this page before, or a rep). Those questions are skipped. */
+  saved?: PrecallAnswers
   /** They finished the website survey, so they've already answered the basics. */
   fromSurvey?: boolean
   /** ISO start time of their call. */
@@ -265,6 +267,7 @@ export function formatJobValue(value: number) {
  */
 export function buildQuestions(context: PrecallContext): Question[] {
   const list: Question[] = []
+  const saved = context.saved ?? {}
   // A niche trade we don't recognise still counts as known. They can correct it on the check screen.
   if (!context.tradeName?.trim()) {
     list.push({ id: "trade", question: "First up, what's your trade?", hint: "So the plan speaks your language." })
@@ -311,7 +314,42 @@ export function buildQuestions(context: PrecallContext): Question[] {
       hint: "Questions, worries, anything at all. Totally optional.",
     }
   )
-  return list.map((q) => ({ ...q, short: shortLabels[q.id] }))
+  return list
+    .filter((q) => !isAnswered(q.id, saved))
+    .map((q) => ({ ...q, short: shortLabels[q.id] }))
+}
+
+/** The job value field holds either a survey band ("£2,000 to £5,000") or this page's figure ("£3,500"). */
+export function readJobValue(text?: string): { band?: string; value?: number } {
+  if (!text) return {}
+  const band = jobValueOptions.find((option) => option.value.toLowerCase() === text.trim().toLowerCase())
+  if (band) return { band: band.value }
+  const value = Number(text.replace(/[^\d.]/g, ""))
+  return Number.isFinite(value) && value > 0 ? { value: Math.round(value) } : {}
+}
+
+/** Turns this page's saved custom field text back into answers, so a returning lead isn't asked twice. */
+export function readSavedAnswers(field: (name: string) => string | undefined): PrecallAnswers {
+  const saved: PrecallAnswers = {}
+  const jobs = field("jobs wanted")
+  if (jobs) saved.jobs = jobs.split(/,\s*/).filter(Boolean)
+  const radius = field("service radius")
+  if (radius) saved.radius = radius
+  const { value } = readJobValue(field("typical job value"))
+  if (value) saved.jobValue = value
+  const capacity = field("extra jobs a month")
+  if (capacity) saved.capacity = capacity
+  const sources = field("lead sources")
+  if (sources) {
+    const [list, how] = sources.split(". How it went: ")
+    // Options can contain commas ("Checkatrade, MyBuilder or Bark"), so match them whole.
+    const picked = sourceOptions.filter((option) => list.includes(option))
+    saved.sources = picked.length ? picked : [list]
+    if (how) saved.triedNote = how
+  }
+  const agenda = field("call agenda")
+  if (agenda) saved.agenda = agenda
+  return saved
 }
 
 /** The job value to do the payback maths with: their slider answer, or a typical figure for their survey band. */
@@ -472,23 +510,25 @@ export function planLines(a: PrecallAnswers, context: PrecallContext, questions:
   const town = a.town ?? context.town
   const jobValue = effectiveJobValue(a, context)
   const bandOnly = typeof a.jobValue !== "number" && Boolean(context.jobValueBand)
+  // Answered before this visit, so not asked again.
+  const fromBefore = (id: QuestionId) => !asks.has(id) && isAnswered(id, context.saved ?? {})
 
   const lines: PlanLine[] = [
     { id: "trade", label: "Trade", value: tradeName, skipped: skipped("trade"), known: Boolean(knownTrade) },
-    { id: "jobs", label: "Jobs to win", value: jobs.length ? listText(jobs) : undefined, skipped: skipped("jobs") },
+    { id: "jobs", label: "Jobs to win", value: jobs.length ? listText(jobs) : undefined, skipped: skipped("jobs"), known: fromBefore("jobs") },
     {
       id: "area",
       label: "Area",
       value: town ? `${town}${a.radius ? `, ${a.radius}` : ""}` : undefined,
       skipped: skipped("area"),
-      known: Boolean(context.town && !a.radius && !a.town),
+      known: Boolean(context.town && !a.radius && !a.town) || fromBefore("area"),
     },
     {
       id: "jobValue",
       label: "Typical job",
       value: bandOnly ? context.jobValueBand : typeof a.jobValue === "number" ? formatJobValue(a.jobValue) : undefined,
       skipped: skipped("jobValue"),
-      known: bandOnly,
+      known: bandOnly || fromBefore("jobValue"),
     },
     {
       id: "payback",
@@ -501,18 +541,20 @@ export function planLines(a: PrecallAnswers, context: PrecallContext, questions:
       label: "Target",
       value: a.capacity ? `${a.capacity} extra jobs a month` : undefined,
       skipped: skipped("capacity"),
+      known: fromBefore("capacity"),
     },
     {
       id: "sources",
       label: "Work comes from",
       value: a.sources?.length ? listText(a.sources) : undefined,
       skipped: skipped("sources"),
+      known: fromBefore("sources"),
     },
   ]
   if (context.frustration && context.frustration !== "Something else") {
     lines.push({ id: "frustration", label: "To fix", value: context.frustration, known: true })
   }
-  if (a.agenda) lines.push({ id: "agenda", label: "You asked", value: a.agenda })
+  if (a.agenda) lines.push({ id: "agenda", label: "You asked", value: a.agenda, known: fromBefore("agenda") })
   // Only show the trade row when there's something to put in it or we're asking.
   return asks.has("trade") || tradeName ? lines : lines.slice(1)
 }

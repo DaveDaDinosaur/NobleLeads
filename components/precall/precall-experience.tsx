@@ -59,6 +59,62 @@ function dayPhrase(day?: string) {
 const isDesktop = () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
 
 export function PrecallExperience({ context }: { context: PrecallContext }) {
+  // Everything's already on their contact, so there's nothing left to ask.
+  const allSet = useMemo(() => buildQuestions(context).length === 0, [context])
+  return allSet ? <AllSet context={context} /> : <PrecallFlow context={context} />
+}
+
+/** Shown when every question already has an answer saved. Still marks them as done in the CRM. */
+function AllSet({ context }: { context: PrecallContext }) {
+  const day = callDayLabel(context.callStart)
+  const when = day ? (day === "today" || day === "tomorrow" ? `on the call ${day}` : `on ${day}`) : "on the call"
+
+  useEffect(() => {
+    trackEvent("precall_view", { known_contact: 1, all_set: 1 })
+    if (!context.contactId) return
+    fetch("/api/precall", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ contactId: context.contactId, stage: "complete", allSet: true }),
+      keepalive: true,
+    }).catch(() => undefined)
+  }, [context.contactId])
+
+  return (
+    <div className="fixed inset-0 flex h-[100dvh] flex-col overflow-y-auto bg-background" data-lenis-prevent>
+      <header className="pt-safe flex-shrink-0">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-3 sm:px-6">
+          <Link href="/" className="min-touch flex items-center gap-2 pl-1" aria-label="NobleLeads home">
+            <Image src="/images/noble-leads-logo.png" alt="" width={20} height={25} sizes="20px" priority className="object-contain" />
+            <span className="text-sm font-semibold tracking-tight text-foreground">
+              Noble <span className="text-gold-ripple">Leads</span>
+            </span>
+          </Link>
+          <a href={CALL_PHONE_HREF} className="min-touch inline-flex items-center gap-2 px-2 text-xs text-muted-foreground hover:text-foreground">
+            <Phone className="h-3.5 w-3.5 text-secondary" />
+            <span className="hidden sm:inline">{CALL_PHONE}</span>
+          </a>
+        </div>
+      </header>
+      <main className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center px-5 pb-16 text-center">
+        <div className="mx-auto h-28 w-40">
+          <SealArt />
+        </div>
+        <h1 className="display mt-2 text-balance text-[2rem] leading-[1.02] text-foreground sm:text-4xl">
+          {context.firstName ? `You're all set, ${context.firstName}.` : "You're all set."}
+        </h1>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+          We{"'"}ve got everything we need. See you {when}.
+        </p>
+        <div className="mt-8 text-left">
+          <CallTicket context={context} />
+        </div>
+      </main>
+    </div>
+  )
+}
+
+function PrecallFlow({ context }: { context: PrecallContext }) {
   const [profile, setProfile] = useState<Profile>({})
   // What we know, with any corrections from the check screen laid over the CRM's version.
   const known = useMemo<PrecallContext>(
@@ -81,7 +137,8 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
   const firstName = context.firstName
 
   const [index, setIndex] = useState(0)
-  const [answers, setAnswers] = useState<PrecallAnswers>({})
+  // Anything already saved on their contact starts filled in, so the plan shows it.
+  const [answers, setAnswers] = useState<PrecallAnswers>(() => ({ ...context.saved }))
   // After an answer: what they picked, and what it means for them, held for a beat before the next question.
   const [payoff, setPayoff] = useState<Payoff | null>(null)
   const [historyOpen, setHistoryOpen] = useState(false)
@@ -96,7 +153,7 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
   const asideRef = useRef<HTMLDivElement>(null)
   const pointer = useRef({ x: 0, y: 0 })
   const saveQueue = useRef<Promise<unknown>>(Promise.resolve())
-  const partialSig = useRef("")
+  const partialSig = useRef(JSON.stringify({ ...context.saved }))
   const payoffTimer = useRef<number>(undefined)
   const answersRef = useRef(answers)
   answersRef.current = answers
@@ -113,7 +170,7 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
   useEffect(() => {
     const saved = readSaved(storageKey)
     if (saved) {
-      setAnswers(saved.answers ?? {})
+      setAnswers({ ...context.saved, ...saved.answers })
       setProfile(saved.profile ?? {})
       setSent(Boolean(saved.sent))
       setDeclined(Boolean(saved.declined))

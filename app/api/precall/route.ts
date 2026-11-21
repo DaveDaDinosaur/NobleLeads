@@ -9,6 +9,8 @@ type PrecallPayload = {
   answers?: PrecallAnswers
   /** Only used when the link had no contact id, to find their existing booking. */
   match?: { name?: string; email?: string; phone?: string }
+  /** Every question was already answered before they opened the page. Just mark them done. */
+  allSet?: boolean
 }
 
 const questionIds: QuestionId[] = [
@@ -110,6 +112,12 @@ export async function POST(request: Request) {
       contactId = await findContact(token, payload.match)
     }
     if (!contactId) return Response.json({ saved: false, matched: false }, { status: 404 })
+
+    if (payload.allSet && stage === "complete") {
+      await ghl(`/contacts/${contactId}/tags`, token, "POST", { tags: ["Precall complete"] })
+      await ghl(`/contacts/${contactId}/tags`, token, "DELETE", { tags: ["Precall partial"] }).catch(() => undefined)
+      return Response.json({ saved: true, matched: true })
+    }
 
     let ids = new Map<string, string>()
     try {

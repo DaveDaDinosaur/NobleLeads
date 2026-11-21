@@ -20,10 +20,7 @@ import {
   SETUP_FEE,
 } from "@/lib/offer"
 import {
-  capacityOptions,
   CONSENT_TEXT,
-  decisionMakerOptions,
-  frustrationOptions,
   jobValueExample,
   jobValueOptions,
   leadOutcome,
@@ -37,7 +34,7 @@ import {
 } from "@/lib/survey"
 import { trades } from "@/lib/trades"
 
-type AnswerKey = "trade" | "frustration" | "jobValue" | "capacity" | "decisionMaker" | "priceReaction"
+type AnswerKey = "trade" | "jobValue" | "priceReaction"
 
 type Screen =
   | { id: AnswerKey; type: "choice"; question: string; hint?: string; options: SurveyOption[]; other?: boolean }
@@ -49,7 +46,7 @@ const screens: Screen[] = [
     id: "trade",
     type: "choice",
     question: "Let's build your plan. What's your trade?",
-    hint: "About two minutes. We only work with UK trades.",
+    hint: "Four quick questions. We only work with UK trades.",
     options: trades.map((trade) => ({ value: trade.name, label: trade.name })),
     other: true,
   },
@@ -58,13 +55,6 @@ const screens: Screen[] = [
     type: "area",
     question: "Where do you want more work?",
     hint: "We'll look at who you're up against there.",
-  },
-  {
-    id: "frustration",
-    type: "choice",
-    question: "What's holding you back right now?",
-    hint: "Pick the closest. It shapes your plan.",
-    options: frustrationOptions,
   },
   {
     id: "details",
@@ -80,20 +70,6 @@ const screens: Screen[] = [
     options: jobValueOptions,
   },
   {
-    id: "capacity",
-    type: "choice",
-    question: "If more work came in, when could you take it on?",
-    hint: "So we can plan when to start.",
-    options: capacityOptions,
-  },
-  {
-    id: "decisionMaker",
-    type: "choice",
-    question: "Who makes the call on investing in marketing?",
-    hint: "So we get the right people on your call.",
-    options: decisionMakerOptions,
-  },
-  {
     id: "priceReaction",
     type: "choice",
     question: "Would you invest that to win more work?",
@@ -107,14 +83,6 @@ const notYetCopy: Record<NotYetReason, { title: string; body: string }> = {
   price: {
     title: "That's completely fair.",
     body: "It's a real investment, and it should only start when it's comfortable. We'll keep in touch, and you're welcome to come back whenever the time is right.",
-  },
-  capacity: {
-    title: "Sounds like you've got plenty on.",
-    body: "That's a good problem to have. There's no point bringing in work you can't take on yet, so come back when you've got room for more.",
-  },
-  decision: {
-    title: "Thanks for looking into this.",
-    body: "The best next step is for whoever makes the decision to see it for themselves. Send them the link below, and they can go through the same questions.",
   },
   jobValue: {
     title: "Now probably isn't the right time.",
@@ -287,7 +255,6 @@ export function GrowthSurvey() {
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             We{"'"}ll go through your numbers and show you how the Growth System would work for your
             business. No pressure.
-            {outcome.tier === "Needs partner" ? " Bring your partner or colleague along, so you can decide together." : ""}
           </p>
         </div>
         <iframe
@@ -317,10 +284,10 @@ export function GrowthSurvey() {
             Change my answer
           </button>
           <Link
-            href={outcome.reason === "decision" ? "/growth-system" : "/blog"}
+            href="/blog"
             className="min-touch inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-secondary hover:underline"
           >
-            {outcome.reason === "decision" ? "See the Growth System" : "Read our free guides"}
+            Read our free guides
           </Link>
         </div>
       </div>

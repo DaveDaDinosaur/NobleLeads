@@ -7,6 +7,8 @@ import {
   cleanFirstName,
   cleanTown,
   DEFAULT_CALL_MINUTES,
+  readJobValue,
+  readSavedAnswers,
   type PrecallContext,
 } from "@/lib/precall"
 
@@ -94,13 +96,17 @@ async function loadContext(params: Record<string, string | string[] | undefined>
     const field = (name: string) => {
       const id = ids.get(name)
       const value = id ? contact.customFields?.find((f) => f.id === id)?.value : undefined
-      return typeof value === "string" && value.trim() ? value.trim().slice(0, 120) : undefined
+      return typeof value === "string" && value.trim() ? value.trim().slice(0, 1500) : undefined
     }
     const trade = field("trade")
     if (!context.tradeName && trade && trade !== "Other") context.tradeName = trade
     context.town = context.town ?? field("area") ?? (contact.city?.trim() || undefined)
-    context.jobValueBand = field("average job value")
+    // The survey and this page share the job value field. Older survey leads have it in "Average job value".
+    const jobValue = readJobValue(field("typical job value"))
+    context.jobValueBand = jobValue.band ?? readJobValue(field("average job value")).band
     context.frustration = field("biggest frustration")
+    // Anything this page saved before (another device, or cleared browser), so it isn't asked twice.
+    context.saved = readSavedAnswers((name) => field(name))
   } else {
     // The id didn't check out, so don't save answers against it.
     context.contactId = undefined

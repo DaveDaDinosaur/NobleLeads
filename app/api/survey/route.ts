@@ -26,14 +26,13 @@ function fieldValues(
   tier?: string
 ) {
   const values: Record<string, string | undefined> = {
+    // Trade, Area and Typical job value are the same fields the pre-call page reads and writes,
+    // so anything answered here isn't asked again there.
     Trade: answers.trade,
     Area: answers.area,
-    "Biggest frustration": answers.frustration,
-    Website: details.website,
-    "Average job value": answers.jobValue,
-    Capacity: answers.capacity,
-    "Decision maker": answers.decisionMaker,
+    "Typical job value": answers.jobValue,
     "Price reaction": answers.priceReaction,
+    Website: details.website,
     "Lead tier": tier,
     GCLID: attribution.gclid,
     "UTM campaign": attribution.utmCampaign,
@@ -48,11 +47,8 @@ function answersNote(answers: SurveyAnswers, tier: string) {
     ["Lead tier", tier],
     ["Trade", answers.otherTrade ? `Other: ${answers.otherTrade}` : answers.trade],
     ["Area", answers.area],
-    ["Biggest frustration", answers.frustration],
-    ["Average job value", answers.jobValue],
-    ["Capacity", answers.capacity],
-    ["Decision maker", answers.decisionMaker],
-    ["Price reaction", answers.priceReaction],
+    ["Typical job value", answers.jobValue],
+    ["Ready to invest", answers.priceReaction],
   ]
   return `Website survey answers\n${lines.map(([label, value]) => `${label}: ${clean(value) || "-"}`).join("\n")}`
 }
@@ -113,7 +109,7 @@ export async function POST(request: Request) {
 
     if (payload.stage === "details") {
       await ghl(`/contacts/${contactId}/tags`, token, "POST", {
-        tags: attribution.gclid ? ["Survey started", "Google Ads"] : ["Survey started"],
+        tags: ["Survey started", "source: website", ...(attribution.gclid ? ["Google Ads"] : [])],
       })
       await ghl(`/contacts/${contactId}/notes`, token, "POST", {
         body: `Consent given on the website survey at ${new Date().toISOString()}: "${CONSENT_TEXT}"`,
@@ -126,6 +122,7 @@ export async function POST(request: Request) {
       await ghl(`/contacts/${contactId}/tags`, token, "POST", {
         tags: [
           "Survey complete",
+          "source: website",
           tier,
           ...(answers.priceReaction === "See what I get first" ? ["Price unsure"] : []),
         ],
