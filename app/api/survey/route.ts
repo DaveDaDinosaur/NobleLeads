@@ -33,7 +33,7 @@ function fieldValues(
     "Typical job value": answers.jobValue,
     Website: details.website,
     "Lead tier": tier,
-    GCLID: attribution.gclid,
+    "Google click ID": attribution.gclid,
     "UTM campaign": attribution.utmCampaign,
     "UTM term": attribution.utmTerm,
   }
