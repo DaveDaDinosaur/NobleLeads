@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowUpRight, Check, ChevronDown, Pencil, Phone, X } from "l
 
 import { EASE_OUT, gsap, prefersReducedMotion, useGSAP } from "@/components/motion/gsap"
 import { SplitReveal } from "@/components/motion/split-reveal"
-import { CallTicket, GeorgeAvatar } from "@/components/precall/call-ticket"
+import { CallTicket } from "@/components/precall/call-ticket"
 import { PlanCard, planProgress } from "@/components/precall/plan-card"
 import { SealArt } from "@/components/precall/precall-art"
 import { Footer, ProfileCheck, QuestionStep, type Profile } from "@/components/precall/question-step"
@@ -834,8 +834,7 @@ function Welcome({
         <CallTicket context={context} />
       </div>
 
-      <div className="mt-8 flex items-start gap-3" data-anim>
-        <GeorgeAvatar />
+      <div className="mt-8" data-anim>
         <div>
           <p className="text-[15px] leading-relaxed text-foreground">
             Sharing some details now means we can spend the call on your plan for{business ? <> {business}</> : " your business"},
@@ -848,7 +847,6 @@ function Welcome({
                 ? "We have the basics from your enquiry. A few more details and we can prepare the rest."
                 : "Complete the next few steps and we'll research your market before the call."}
           </p>
-          <p className="label-mono mt-3 text-[10px] text-muted-foreground">George, founder</p>
         </div>
       </div>
 
