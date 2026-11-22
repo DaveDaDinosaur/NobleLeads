@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowUpRight, Check, ChevronDown, Pencil, Phone, X } from "l
 
 import { EASE_OUT, gsap, prefersReducedMotion, useGSAP } from "@/components/motion/gsap"
 import { SplitReveal } from "@/components/motion/split-reveal"
-import { CallTicket } from "@/components/precall/call-ticket"
+import { CallTicket, GeorgeAvatar } from "@/components/precall/call-ticket"
 import { PlanCard, planProgress } from "@/components/precall/plan-card"
 import { SealArt } from "@/components/precall/precall-art"
 import { Footer, ProfileCheck, QuestionStep, type Profile } from "@/components/precall/question-step"
@@ -672,13 +672,6 @@ function StepHeading({ eyebrow, title, hint }: { eyebrow?: string; title: string
   )
 }
 
-function Avatar({ size = "h-8 w-8" }: { size?: string }) {
-  return (
-    <span className={`flex ${size} flex-shrink-0 items-center justify-center rounded-full border border-secondary/40 bg-secondary/10 text-xs font-semibold text-secondary`}>
-      G
-    </span>
-  )
-}
 
 type Payoff = { id: QuestionId; answer: string; text: string; hold: number; skipped: boolean; advance: () => void }
 
@@ -842,7 +835,7 @@ function Welcome({
       </div>
 
       <div className="mt-8 flex items-start gap-3" data-anim>
-        <Avatar size="h-9 w-9" />
+        <GeorgeAvatar />
         <div>
           <p className="text-[15px] leading-relaxed text-foreground">
             Sharing some details now means we can spend the call on your plan for{business ? <> {business}</> : " your business"},

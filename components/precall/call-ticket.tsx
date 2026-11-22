@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { CalendarPlus, Phone } from "lucide-react"
 
 import { trackEvent } from "@/lib/analytics"
@@ -70,9 +71,7 @@ export function CallTicket({ context }: { context: PrecallContext }) {
         )}
 
         <div className="mt-5 flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-secondary/40 bg-secondary/10 text-sm font-semibold text-secondary">
-            G
-          </span>
+          <GeorgeAvatar />
           <p className="text-sm leading-snug text-muted-foreground">
             With <span className="text-foreground">George</span>, founder of NobleLeads
             {start ? null : ". The time is in your text or email."}
@@ -120,5 +119,19 @@ export function CallTicket({ context }: { context: PrecallContext }) {
         </a>
       </div>
     </div>
+  )
+}
+
+/** George's headshot, small and round. */
+export function GeorgeAvatar({ className = "h-9 w-9" }: { className?: string }) {
+  return (
+    <Image
+      src="/images/team/george.webp"
+      alt="George, founder of NobleLeads"
+      width={96}
+      height={96}
+      sizes="40px"
+      className={`${className} flex-shrink-0 rounded-full border border-secondary/40 object-cover`}
+    />
   )
 }
