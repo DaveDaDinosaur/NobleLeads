@@ -161,8 +161,8 @@ export function PlanCard({ lines, businessName, ready, dayLabel, className = "" 
       <div className="border-t border-border px-6 py-4 sm:px-8">
         <p className="text-xs leading-relaxed text-muted-foreground">
           {ready
-            ? `I'll bring this to ${dayLabel ? `the call ${dayLabel === "today" || dayLabel === "tomorrow" ? dayLabel : `on ${dayLabel}`}` : "our call"}, with your local search numbers and competitors.`
-            : "Fills in as you answer. Skipped questions just get covered on the call."}
+            ? `We'll bring this to ${dayLabel ? (dayLabel === "today" || dayLabel === "tomorrow" ? `${dayLabel}'s call` : `the call on ${dayLabel}`) : "the call"}, with local search data and competitor analysis.`
+            : "Builds as you answer. Anything skipped is covered on the call."}
         </p>
       </div>
     </div>

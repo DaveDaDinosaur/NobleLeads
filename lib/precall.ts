@@ -270,48 +270,48 @@ export function buildQuestions(context: PrecallContext): Question[] {
   const saved = context.saved ?? {}
   // A niche trade we don't recognise still counts as known. They can correct it on the check screen.
   if (!context.tradeName?.trim()) {
-    list.push({ id: "trade", question: "First up, what's your trade?", hint: "So the plan speaks your language." })
+    list.push({ id: "trade", question: "What's your trade?", hint: "So we can tailor the plan to your work." })
   }
   list.push(
     {
       id: "jobs",
       question: "Which jobs do you want more of?",
-      hint: "Pick as many as you like. The ads get built around these.",
+      hint: "Select all that apply. Your campaigns are built around these.",
     },
     context.town
       ? {
           id: "area",
           question: `How far from ${context.town} will you travel?`,
-          hint: "For the right job. Your ads only show inside this area.",
+          hint: "Choose the radius you cover.",
         }
       : {
           id: "area",
-          question: "Where do you want them?",
-          hint: "Your base, and how far you'll travel for the right job.",
+          question: "Where do you want the work?",
+          hint: "Your base, and how far you'll travel.",
         }
   )
   if (!context.jobValueBand) {
     list.push({
       id: "jobValue",
       question: "What's a typical job worth?",
-      hint: "A rough figure is perfect. Slide to the nearest.",
+      hint: "An estimate is fine.",
     })
   }
   list.push(
     {
       id: "capacity",
       question: "How many more jobs a month could you take on?",
-      hint: "This becomes the target the plan works back from.",
+      hint: "We'll use this as the target for your plan.",
     },
     {
       id: "sources",
       question: "Where does your work come from now?",
-      hint: "Pick all that apply, including anything you've tried.",
+      hint: "Select all that apply, including anything you've tried before.",
     },
     {
       id: "agenda",
       question: "Anything you want to make sure we cover?",
-      hint: "Questions, worries, anything at all. Totally optional.",
+      hint: "Any questions or concerns. Optional.",
     }
   )
   return list
@@ -405,44 +405,44 @@ export function reactionFor(id: QuestionId, a: PrecallAnswers, context: PrecallC
     case "trade": {
       const trade = findTrade(a.trade)
       return trade
-        ? `Good. I'll come with what's working for ${trade.plural} right now.`
-        : "Good. I'll come with what's working for trades like yours right now."
+        ? `We'll bring current results from other ${trade.plural}.`
+        : "We'll bring current results from businesses in similar trades."
     }
     case "jobs": {
       const first = a.jobs?.[0] ?? a.jobsOther
       return first
-        ? `Noted. ${when.charAt(0).toUpperCase() + when.slice(1)} I'll show you how many people near you search for ${midSentence(first)} every month.`
+        ? `We'll show you how many people search for ${midSentence(first)} locally each month.`
         : undefined
     }
     case "area": {
       const town = a.town ?? context.town
       return town
-        ? `${town}${a.radius ? `, ${a.radius}` : ""}. I'll look at who's winning work there before we speak.`
+        ? `We'll review who's winning work ${a.radius ? `within ${a.radius.replace(" +", "")} of` : "around"} ${town}.`
         : undefined
     }
     case "jobValue": {
       if (typeof a.jobValue !== "number") return undefined
       const jobs = jobsToCoverFirstTerm(a.jobValue)
-      return `At ${formatJobValue(a.jobValue)} a job, about ${jobs} extra ${jobs === 1 ? "job covers" : "jobs cover"} your first ${MIN_TERM_MONTHS} months. I'll show you the real numbers ${when}.`
+      return `At ${formatJobValue(a.jobValue)} a job, approx. ${jobs} extra ${jobs === 1 ? "job covers" : "jobs cover"} the first ${MIN_TERM_MONTHS} months. We'll go through the full figures ${when}.`
     }
     case "capacity":
-      return a.capacity ? `That's the target. I'll work out what it takes to hit it, and what it would cost.` : undefined
+      return a.capacity ? "We'll set out what it takes to reach that, and the cost." : undefined
     case "sources": {
       const s = a.sources ?? []
       if (s.includes(AGENCY_SOURCE)) {
-        return "Thanks for being straight. I'll show you what we'd do differently, and you can judge for yourself."
+        return "We'll explain how our approach differs, so you can compare."
       }
-      if (s.includes(ADS_SOURCE)) return `Then you'll like the numbers part. Bring your questions ${when}.`
+      if (s.includes(ADS_SOURCE)) return "We'll go through cost per lead and return on spend in detail."
       if (s.includes("Checkatrade, MyBuilder or Bark")) {
-        return "So you know what it's like paying for leads other firms get too. With your own ads, every enquiry comes to you alone."
+        return "Unlike shared lead platforms, every enquiry from your own campaigns comes to you alone."
       }
       if (s.includes("Word of mouth") || s.includes("Repeat customers")) {
-        return "That means you do good work. Now more people just need to find you."
+        return "A strong referral base. The aim is to reach more people like them."
       }
-      return s.length ? "Good to know. We'll build on what's already working." : undefined
+      return s.length ? "We'll build on what's already working." : undefined
     }
     case "agenda":
-      return a.agenda ? "Got it. That's top of the list." : undefined
+      return a.agenda ? "Noted. We'll cover this first." : undefined
   }
 }
 

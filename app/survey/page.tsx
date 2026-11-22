@@ -10,13 +10,13 @@ import { buildMetadata } from "../(shared)/seo-config"
 export const metadata: Metadata = buildMetadata({
   title: "Get Your Growth Plan",
   description:
-    "Tell us about your trade business and pick a time to talk. We'll go through your numbers and show you what the Growth System would look like for you.",
+    "Tell us about your trade business and choose a time to talk. We'll go through your figures and show you what the Growth System would look like for you.",
   canonicalPath: "/survey",
 })
 
 const onTheCall = [
   "How you show up on Google next to your local competitors",
-  "The jobs and searches we'd go after for you",
+  "The jobs and searches we'd target for you",
   "What it would cost, and how many jobs would cover it",
   "How quickly we could get you live",
 ]
@@ -36,8 +36,8 @@ export default function SurveyPage() {
                   See what this would look like for your business.
                 </h1>
                 <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-                  Tell us a bit about your trade and your jobs, then pick a time to talk. No
-                  pressure and no obligation.
+                  Tell us about your trade and the work you want, then choose a time to talk. No
+                  obligation.
                 </p>
               </SectionReveal>
             </div>

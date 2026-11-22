@@ -67,7 +67,7 @@ export function PrecallExperience({ context }: { context: PrecallContext }) {
 /** Shown when every question already has an answer saved. Still marks them as done in the CRM. */
 function AllSet({ context }: { context: PrecallContext }) {
   const day = callDayLabel(context.callStart)
-  const when = day ? (day === "today" || day === "tomorrow" ? `on the call ${day}` : `on ${day}`) : "on the call"
+  const whenCall = dayPhrase(day)
 
   useEffect(() => {
     trackEvent("precall_view", { known_contact: 1, all_set: 1 })
@@ -104,7 +104,7 @@ function AllSet({ context }: { context: PrecallContext }) {
           {context.firstName ? `You're all set, ${context.firstName}.` : "You're all set."}
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-          We{"'"}ve got everything we need. See you {when}.
+          We have everything we need ahead of {whenCall}.
         </p>
         <div className="mt-8 text-left">
           <CallTicket context={context} />
@@ -365,7 +365,7 @@ function PrecallFlow({ context }: { context: PrecallContext }) {
 
     const last = screen === questions[questions.length - 1]?.id
     if (!last) post("progress", next)
-    const text = skippedIt ? "No problem. We'll cover that one on the call." : reactionFor(id, next, known)
+    const text = skippedIt ? "We'll cover this on the call." : reactionFor(id, next, known)
     const advance = () => {
       window.clearTimeout(payoffTimer.current)
       if (last) {
@@ -534,7 +534,7 @@ function PrecallFlow({ context }: { context: PrecallContext }) {
 
             {screen === "check" ? (
               <div className="flex flex-1 flex-col">
-                <StepHeading eyebrow="Quick check" title="Have I got this right?" hint="So your plan's built on the right details." />
+                <StepHeading eyebrow="Quick check" title="Are these details correct?" hint="Please confirm these before we prepare your plan." />
                 <ProfileCheck context={context} onDone={checked} />
               </div>
             ) : null}
@@ -740,7 +740,7 @@ function PayoffBeat({ payoff }: { payoff: Payoff }) {
         <span className="block h-px w-full overflow-hidden bg-border">
           <span className="precall-hold block h-full bg-secondary" style={{ animationDuration: `${payoff.hold}ms` }} />
         </span>
-        <span className="label-mono mt-3 block text-[10px] text-muted-foreground">Tap to carry on</span>
+        <span className="label-mono mt-3 block text-[10px] text-muted-foreground">Tap to continue</span>
       </span>
     </button>
   )
@@ -821,20 +821,20 @@ function Welcome({
   onDecline: () => void
 }) {
   const business = context.businessName
-  const minutes = questionCount <= 6 ? "About a minute" : "About 2 minutes"
+  const minutes = questionCount <= 6 ? "Approx. 1 minute" : "Approx. 2 minutes"
   const path = [
-    { title: "You tell me about the business", body: `${minutes}. Mostly taps, skip anything.`, now: true },
-    { title: "I do the homework", body: "Your local searches, what they cost, and who you're up against." },
+    { title: "Tell us about the business", body: `${minutes}.`, now: true },
+    { title: "We research your market", body: "Local search volumes, costs and competitors." },
     {
-      title: "We go through your plan",
-      body: `${!day ? "On the call" : day === "today" || day === "tomorrow" ? day.charAt(0).toUpperCase() + day.slice(1) : `On ${day}`}. Your numbers, not a sales pitch.`,
+      title: "We present your plan",
+      body: `${!day ? "On the call" : day === "today" || day === "tomorrow" ? day.charAt(0).toUpperCase() + day.slice(1) : `On ${day}`}. Built on your figures.`,
     },
   ]
 
   return (
     <div className="flex flex-1 flex-col">
       <h1 className="display mt-4 text-balance text-[2.4rem] leading-[0.98] text-foreground sm:text-5xl" data-head>
-        {firstName ? `Thanks, ${firstName}. You're booked in.` : "Thanks. You're booked in."}
+        {firstName ? `Thanks, ${firstName}. Your call is booked.` : "Thanks. Your call is booked."}
       </h1>
 
       <div className="mt-6" data-anim>
@@ -845,15 +845,15 @@ function Welcome({
         <Avatar size="h-9 w-9" />
         <div>
           <p className="text-[15px] leading-relaxed text-foreground">
-            Most calls like this open with twenty minutes of questions. I{"'"}d rather spend ours showing you what
-            {business ? <> {business}</> : " your business"} could be winning.
+            Sharing some details now means we can spend the call on your plan for{business ? <> {business}</> : " your business"},
+            rather than on questions.
           </p>
           <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
             {resuming
-              ? "You've made a start already. Finish off and I'll have everything I need."
+              ? "Pick up where you left off."
               : context.fromSurvey
-                ? "You've already told me the basics. A few more taps and I'll do the homework for you."
-                : "Give me a minute now and I'll do the homework for you."}
+                ? "We have the basics from your enquiry. A few more details and we can prepare the rest."
+                : "Complete the next few steps and we'll research your market before the call."}
           </p>
           <p className="label-mono mt-3 text-[10px] text-muted-foreground">George, founder</p>
         </div>
@@ -880,9 +880,9 @@ function Welcome({
       <Footer
         canNext
         onNext={onStart}
-        nextLabel={resuming ? "Carry on" : "Let's do it"}
+        nextLabel={resuming ? "Continue" : "Get started"}
         onSkip={onDecline}
-        skipLabel="Not now"
+        skipLabel="Skip for now"
       />
     </div>
   )
@@ -984,8 +984,8 @@ function Done({
             We{"'"}ll cover it all on the call.
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground" data-anim>
-            Here{"'"}s what you{"'"}ll leave {dayPhrase(day)} with. If you change your mind, a minute of taps now means I can have
-            it ready before we speak.
+            What you{"'"}ll take away from {dayPhrase(day)}. Answer a few questions beforehand and we can prepare
+            it in advance.
           </p>
         </>
       ) : (
@@ -997,8 +997,8 @@ function Done({
             {firstName ? `Leave it with us, ${firstName}.` : "Leave it with us."}
           </h2>
           <p className="mt-3 text-center text-[15px] leading-relaxed text-muted-foreground" data-anim>
-            Here{"'"}s what we{"'"}re getting ready for {dayPhrase(day)}.
-            {skipped > 0 ? ` The ${skipped === 1 ? "one" : skipped} you skipped, we'll cover on the call.` : ""}
+            What we{"'"}re preparing for {dayPhrase(day)}.
+            {skipped > 0 ? " Anything skipped will be covered on the call." : ""}
           </p>
         </>
       )}
@@ -1014,13 +1014,13 @@ function Done({
           className="min-touch mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-6 py-4 text-[15px] font-semibold text-secondary-foreground transition-transform active:scale-[0.98]"
           data-anim
         >
-          Go on then, build my plan
+          Prepare my plan
         </button>
       ) : null}
 
       {needsMatch ? (
         <form onSubmit={sendMatch} className="mt-6 rounded-md border border-secondary/30 bg-secondary/[0.05] p-5" data-anim>
-          <p className="text-sm font-medium text-foreground">One last thing, so I can match this to your booking.</p>
+          <p className="text-sm font-medium text-foreground">Enter your email or mobile so we can match this to your booking.</p>
           <div className="mt-3 flex flex-col gap-2.5 sm:flex-row">
             <input
               type="text"
@@ -1037,12 +1037,12 @@ function Done({
               disabled={!contact.trim() || status === "sending"}
               className="min-touch rounded-md bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground disabled:opacity-40"
             >
-              {status === "sending" ? "Sending" : "Send to George"}
+              {status === "sending" ? "Sending" : "Submit"}
             </button>
           </div>
           {status === "missed" ? (
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              I couldn{"'"}t find a booking with that. Try the other one, or call {CALL_PHONE} and I{"'"}ll sort it.
+              We couldn{"'"}t find a booking with those details. Try the other, or call {CALL_PHONE} and we{"'"}ll look into it.
             </p>
           ) : null}
         </form>
@@ -1050,7 +1050,7 @@ function Done({
 
       {sent && !context.contactId ? (
         <p className="mt-4 text-sm text-secondary" data-anim>
-          Sent. I{"'"}ve got it.
+          Received, thank you.
         </p>
       ) : null}
 

@@ -277,7 +277,7 @@ function AreaStep({ answers, context, onAnswer, onSkip, isLast }: StepProps) {
         <MapArt town={shownTown || undefined} ringIndex={ringIndex} />
       </Art>
       <p className="mt-1 min-h-4 text-center text-xs text-muted-foreground" aria-live="polite" data-anim>
-        {ringIndex >= 0 ? `Ads show to everyone in the gold area. Outside it, you never pay a penny.` : "Pick how far you'll go."}
+        {ringIndex >= 0 ? "Your ads only show within the highlighted area." : "Select how far you'll travel."}
       </p>
       <div className="mt-4 flex flex-wrap justify-center gap-2" data-anim role="radiogroup" aria-label="How far you'll travel">
         {radiusOptions.map((option) => (
@@ -421,7 +421,7 @@ function SourcesStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
       </div>
       {followUp ? (
         <label className="mt-4 block">
-          <span className="text-sm text-muted-foreground">How has that gone? Optional, but it helps.</span>
+          <span className="text-sm text-muted-foreground">How has that gone? Optional.</span>
           <textarea
             rows={3}
             value={note}
@@ -481,7 +481,7 @@ function AgendaStep({ answers, onAnswer, onSkip, isLast }: StepProps) {
         data-anim
         value={agenda}
         onChange={(e) => setAgenda(e.target.value)}
-        placeholder="Or type anything you like"
+        placeholder="Or type your own"
         className={`${inputClass} mt-3 resize-none`}
       />
       <Footer onSkip={onSkip} isLast={isLast} canNext />
@@ -581,9 +581,9 @@ export function ProfileCheck({ context, onDone }: { context: PrecallContext; onD
         ))}
       </ul>
       <p className="mt-3 text-xs text-muted-foreground" data-anim>
-        Tap anything that{"'"}s wrong and I{"'"}ll update it.
+        Tap any detail to change it.
       </p>
-      <Footer canNext={valid} nextLabel={changed ? "Save and carry on" : "Yes, that's right"} onNext={() => onDone(changes)} />
+      <Footer canNext={valid} nextLabel={changed ? "Save and continue" : "Yes, that's correct"} onNext={() => onDone(changes)} />
     </>
   )
 }

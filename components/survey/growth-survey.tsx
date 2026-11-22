@@ -32,8 +32,8 @@ const screens: Screen[] = [
   {
     id: "trade",
     type: "choice",
-    question: "Let's build your plan. What's your trade?",
-    hint: "Three quick questions. We only work with UK trades.",
+    question: "What's your trade?",
+    hint: "Three short questions. We work with UK trades only.",
     options: trades.map((trade) => ({ value: trade.name, label: trade.name })),
     other: true,
   },
@@ -41,27 +41,27 @@ const screens: Screen[] = [
     id: "area",
     type: "area",
     question: "Where do you want more work?",
-    hint: "We'll look at who you're up against there.",
+    hint: "So we can review your local competitors.",
   },
   {
     id: "details",
     type: "details",
     question: "Who should we speak to?",
-    hint: "We'll look at your business before we talk.",
+    hint: "So we can review your business before the call.",
   },
   {
     id: "jobValue",
     type: "choice",
     question: "What's a typical job worth to you?",
-    hint: "We'll use this to show you what it takes to pay for itself.",
+    hint: "So we can show you what it takes to pay for itself.",
     options: jobValueOptions,
   },
 ]
 
 const notYetCopy: Record<NotYetReason, { title: string; body: string }> = {
   jobValue: {
-    title: "Now probably isn't the right time.",
-    body: `The system works best on jobs worth ${formatGBP(MIN_JOB_VALUE)} or more. Below that, it's hard for the ads to pay for themselves, and we'd rather tell you now than take your money.`,
+    title: "We may not be the right fit just yet.",
+    body: `The system works best on jobs worth ${formatGBP(MIN_JOB_VALUE)} or more. Below that, it's difficult for the ads to pay for themselves, so we'd rather be upfront now.`,
   },
 }
 
@@ -178,8 +178,8 @@ export function GrowthSurvey() {
           <p className="label-mono text-secondary">Thanks, {firstName}</p>
           <h2 className="display mt-4 text-3xl text-foreground sm:text-4xl">Pick a time that suits you.</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            We{"'"}ll go through your numbers and show you how the Growth System would work for your
-            business. No pressure.
+            We{"'"}ll go through your figures and show you how the Growth System would work for your
+            business. No obligation.
           </p>
         </div>
         <iframe
