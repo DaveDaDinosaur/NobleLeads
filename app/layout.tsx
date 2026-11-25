@@ -53,12 +53,14 @@ export const metadata: Metadata = {
       "Own your leads, don't rent them. Website, Google Ads and automatic follow-up for UK trades with high-value jobs.",
     type: "website",
     locale: "en_GB",
+    images: [{ url: "/og-default.jpg", width: 2848, height: 1504, alt: "Noble Leads" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Noble Leads | Own Your Leads. Lead Systems for UK Trades",
     description:
       "Own your leads, don't rent them. Website, Google Ads and automatic follow-up for UK trades with high-value jobs.",
+    images: ["/og-default.jpg"],
   },
   robots: {
     index: true,

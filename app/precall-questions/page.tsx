@@ -15,6 +15,14 @@ import {
 export const metadata: Metadata = {
   title: { absolute: "Before your call | NobleLeads" },
   description: "A few quick questions so your call is about your plan, not paperwork.",
+  // How the link looks when it's sent in WhatsApp or a text.
+  openGraph: {
+    title: "Before your call | Noble Leads",
+    description: "A few quick questions so we can prepare your plan before the call.",
+    type: "website",
+    locale: "en_GB",
+    images: [{ url: "/og-default.jpg", width: 2848, height: 1504, alt: "Noble Leads" }],
+  },
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 }
 
